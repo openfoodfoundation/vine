@@ -1,2 +1,2 @@
-# Open Food Foundation VINE: Vouchers INtegration Engine
+# Open Food Foundation VINE: Vouchers Integration Engine
 
