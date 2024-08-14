@@ -256,7 +256,7 @@
 
         </div>
         <div class="sl-flex sl-items-center sl-px-4 sl-py-3 sl-border-t">
-            Last updated: August 13, 2024
+            Last updated: August 14, 2024
         </div>
 
         <div class="sl-flex sl-items-center sl-px-4 sl-py-3 sl-border-t">
@@ -284,9 +284,9 @@
 
             <div class="sl-prose sl-markdown-viewer sl-my-4">
                 <h1 id="introduction">Introduction</h1>
-<p>The API documentation for Open Food Network Vine Platform.</p>
+<p>The API documentation for Open Food Network Vouchers.</p>
 <aside>
-    <strong>Base URL</strong>: <code>https://open-food-network-vouchers.test</code>
+    <strong>Base URL</strong>: <code>http://open-food-network-vouchers.test</code>
 </aside>
 <p>This documentation aims to provide all the information you need to work with our API.</p>
 <aside>As you scroll, you'll see code examples for working with the API in different programming languages in the dark area to the right (or as part of the content on mobile).
@@ -1790,7 +1790,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        12
+                        11
                     </div>
                 </div>
             </div>
@@ -1881,7 +1881,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request GET \
-    --get "https://open-food-network-vouchers.test/api/v1/system-statistics/12?cached=1&amp;fields=id%2Cnum_users" \
+    --get "https://open-food-network-vouchers.test/api/v1/system-statistics/11?cached=1&amp;fields=id%2Cnum_users" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>                                        </div>
@@ -1892,7 +1892,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://open-food-network-vouchers.test/api/v1/system-statistics/12"
+    "https://open-food-network-vouchers.test/api/v1/system-statistics/11"
 );
 
 const params = {
@@ -1919,7 +1919,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://open-food-network-vouchers.test/api/v1/system-statistics/12';
+$url = 'https://open-food-network-vouchers.test/api/v1/system-statistics/11';
 $response = $client-&gt;get(
     $url,
     [
@@ -1945,7 +1945,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://open-food-network-vouchers.test/api/v1/system-statistics/12'
+url = 'https://open-food-network-vouchers.test/api/v1/system-statistics/11'
 params = {
   'cached': '1',
   'fields': 'id,num_users',
