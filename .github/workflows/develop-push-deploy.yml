@@ -53,10 +53,9 @@ jobs:
           DB_PORT: ${{ job.services.mysql.ports[3306] }}
         run: php artisan test
       - name: Webhook
+        if: "${{ secrets.DOCKER_USERNAME }}"
+        uses: joelwmale/webhook-action@master
         env:
-          MY_KEY: ${{ secrets.DOCKER_USERNAME }}
           WEBHOOK_URL: ${{ secrets.DEPLOY_URL_STAGING }}
           data: "Deploy VINE staging please!"
-        if: "${{ env.MY_KEY != '' }}"
-        uses: joelwmale/webhook-action@master
 
