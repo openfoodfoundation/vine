@@ -52,4 +52,9 @@ jobs:
           DB_PASSWORD:
           DB_PORT: ${{ job.services.mysql.ports[3306] }}
         run: php artisan test
-#      TODO: Deploy
+      - name: Webhook
+        if: secrets.DEPLOY_URL_STAGING != ''
+        uses: joelwmale/webhook-action@master
+        env:
+          WEBHOOK_URL: ${{ secrets.DEPLOY_URL_STAGING }}
+          data: "Deploy VINE staging please!"
