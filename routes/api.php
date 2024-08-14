@@ -1,6 +1,7 @@
 <?php
 
 use App\Enums\PersonalAccessTokenAbility;
+use App\Http\Controllers\Api\V1\Admin\ApiAdminSearchController;
 use App\Http\Controllers\Api\V1\Admin\ApiAdminSystemStatisticsController;
 use App\Http\Controllers\Api\V1\Admin\ApiAdminTeamMerchantTeamsController;
 use App\Http\Controllers\Api\V1\Admin\ApiAdminTeamsController;
@@ -134,6 +135,7 @@ Route::group(['prefix' => 'v1'], function () {
     Route::prefix('admin')
         ->middleware(['auth:sanctum', CheckAdminStatus::class])
         ->group(function () {
+            Route::resource('/search', ApiAdminSearchController::class)->names('api.v1.admin.search');
             Route::resource('/system-statistics', ApiAdminSystemStatisticsController::class)->names('api.v1.admin.system-statistics');
             Route::resource('/team-merchant-teams', ApiAdminTeamMerchantTeamsController::class)->names('api.v1.admin.team-merchant-teams');
             Route::resource('/team-service-teams', ApiAdminTeamServiceTeamsController::class)->names('api.v1.admin.team-service-teams');

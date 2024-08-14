@@ -2,6 +2,8 @@
 
 namespace Tests\Feature\API;
 
+use App\Models\Team;
+use App\Models\TeamUser;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
@@ -14,6 +16,8 @@ class BaseAPITestCase extends TestCase
 
     public string $apiRoot = '/api/v1';
     public User|Model $user;
+    public TeamUser|Model $teamUser;
+    public Team|Model $team;
 
     public function createUser(): Collection|Model|User
     {
@@ -26,6 +30,25 @@ class BaseAPITestCase extends TestCase
     {
         $this->user = User::factory()->create([
             'is_admin' => 1,
+        ]);
+
+        return $this->user;
+    }
+
+    public function createUserWithTeam(): Model|Collection|User
+    {
+        $this->team = Team::factory()
+            ->create();
+
+        $this->user = User::factory()
+            ->create([
+                'current_team_id' => $this->team->id,
+                'is_admin'        => 0,
+            ]);
+
+        $this->teamUser = TeamUser::factory()->createQuietly([
+            'team_id' => $this->team->id,
+            'user_id' => $this->user->id,
         ]);
 
         return $this->user;
