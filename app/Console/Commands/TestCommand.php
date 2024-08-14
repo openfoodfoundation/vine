@@ -2,8 +2,11 @@
 
 namespace App\Console\Commands;
 
+use App\Models\Team;
+use App\Models\User;
+use App\Models\Voucher;
+use App\Models\VoucherSet;
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\Log;
 
 class TestCommand extends Command
 {
@@ -26,6 +29,9 @@ class TestCommand extends Command
      */
     public function handle()
     {
-        Log::info(now()->format('Y-m-d H:i:s'), []);
+        $users       = User::factory(100)->createQuietly();
+        $teams       = Team::factory(100)->createQuietly();
+        $vouchers    = Voucher::factory(100)->createQuietly();
+        $voucherSets = VoucherSet::factory(100)->createQuietly();
     }
 }
