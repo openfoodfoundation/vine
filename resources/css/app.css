@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body{
+    font-family: "Oswald", sans-serif;
+    @apply text-gray-800 font-light;
+}
+
+a {
+    @apply hover:underline ;
+}
+
+h2 {
+    @apply font-semibold text-xl text-gray-800 leading-tight;
+}
+
+
+.card{
+    @apply container lg:mx-auto p-6 lg:p-8 bg-white shadow-sm sm:rounded-lg my-8;
+}
