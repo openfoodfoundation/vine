@@ -9,7 +9,7 @@ const searchResults = ref({
     users: [],
     teams: [],
     vouchers: [],
-    voucher_sets: [],
+    voucherSets: [],
 });
 const showResults = ref(false);
 const showNoResults = ref(false);
@@ -32,7 +32,7 @@ watch(searchResults, () => {
             searchResults.value.users.length ||
             searchResults.value.teams.length ||
             searchResults.value.vouchers.length ||
-            searchResults.value.voucher_sets.length
+            searchResults.value.voucherSets.length
         ) {
             showResults.value = true;
         } else {
@@ -186,12 +186,12 @@ function highlightMatchingText(text) {
                     </div>
                 </div>
 
-                <div v-if="searchResults.voucher_sets.length > 0" class="my-8">
+                <div v-if="searchResults.voucherSets.length > 0" class="my-8">
                     <div class="font-bold text-gray-300 mb-1">
                         Voucher Sets
                     </div>
                     <div>
-                        <div v-for="voucherSet in searchResults.voucher_sets">
+                        <div v-for="voucherSet in searchResults.voucherSets">
                             <a :href="'/voucher-set/' + voucherSet.id"
                                class="flex justify-between w-full py-2 border-b"
                                tabindex="0">

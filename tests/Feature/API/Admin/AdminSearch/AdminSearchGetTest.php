@@ -91,7 +91,7 @@ class AdminSearchGetTest extends BaseAPITestCase
 
         $responseObject = json_decode($response->getContent(), false);
 
-        foreach ($responseObject->data->voucher_sets as $vs) {
+        foreach ($responseObject->data->voucherSets as $vs) {
             self::assertStringContainsString($query, $vs->id);
         }
     }
