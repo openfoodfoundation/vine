@@ -7,7 +7,7 @@ on:
 jobs:
   run-tests:
     env:
-      stagingDeploySecret: ${{secrets.DEPLOY_URL_STAGING_HEY}}
+      stagingDeploySecret: ${{secrets.DEPLOY_URL_STAGING}}
 
     runs-on: ubuntu-latest
     services:
