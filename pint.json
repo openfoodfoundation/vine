@@ -1,0 +1,118 @@
+{
+    "preset": "laravel",
+    "rules": {
+        "align_multiline_comment": {
+            "comment_type": "phpdocs_only"
+        },
+        "binary_operator_spaces": {
+            "default": "single_space",
+            "operators": {
+                "=>": "align_single_space_minimal",
+                "=": "align_single_space_minimal"
+            }
+        },
+        "array_indentation": true,
+        "array_syntax": {
+            "syntax": "short"
+        },
+        "blank_line_after_namespace": true,
+        "blank_line_after_opening_tag": true,
+        "blank_lines_before_namespace": true,
+        "cast_spaces": {
+            "space": "single"
+        },
+        "class_attributes_separation": {
+            "elements": {
+                "case": "none",
+                "const": "none",
+                "method": "one",
+                "property": "none",
+                "trait_import": "none"
+            }
+        },
+        "class_reference_name_casing": true,
+        "clean_namespace": true,
+        "combine_consecutive_issets": true,
+        "concat_space": {
+            "spacing": "one"
+        },
+        "constant_case": {
+            "case": "lower"
+        },
+        "control_structure_braces": true,
+        "control_structure_continuation_position": {
+            "position": "next_line"
+        },
+        "elseif": true,
+        "fully_qualified_strict_types": {
+            "import_symbols": true,
+            "leading_backslash_in_global_namespace": false
+        },
+        "function_declaration": true,
+        "global_namespace_import": {
+            "import_constants": true,
+            "import_functions": true
+        },
+        "indentation_type": true,
+        "lambda_not_used_import": true,
+        "linebreak_after_opening_tag": true,
+        "list_syntax": {
+            "syntax": "short"
+        },
+        "lowercase_cast": true,
+        "lowercase_keywords": true,
+        "lowercase_static_reference": true,
+        "magic_constant_casing": true,
+        "magic_method_casing": true,
+        "method_argument_space": true,
+        "method_chaining_indentation": true,
+        "multiline_comment_opening_closing": true,
+        "multiline_whitespace_before_semicolons": true,
+        "native_function_casing": true,
+        "native_type_declaration_casing": true,
+        "new_with_parentheses": {
+            "anonymous_class": true,
+            "named_class": true
+        },
+        "no_blank_lines_after_class_opening": true,
+        "no_break_comment": true,
+        "no_empty_comment": true,
+        "no_empty_phpdoc": true,
+        "no_empty_statement": true,
+        "no_extra_blank_lines": true,
+        "no_leading_import_slash": true,
+        "no_leading_namespace_whitespace": true,
+        "no_multiline_whitespace_around_double_arrow": true,
+        "no_multiple_statements_per_line": true,
+        "no_null_property_initialization": true,
+        "no_short_bool_cast": true,
+        "no_space_around_double_colon": true,
+        "no_spaces_after_function_name": true,
+        "no_superfluous_elseif": true,
+        "no_superfluous_phpdoc_tags": false,
+        "no_trailing_comma_in_singleline": true,
+        "no_trailing_whitespace": true,
+        "no_trailing_whitespace_in_comment": true,
+        "no_unneeded_import_alias": true,
+        "no_unused_imports": true,
+        "no_useless_concat_operator": true,
+        "no_useless_else": true,
+        "not_operator_with_successor_space": false,
+        "phpdoc_add_missing_param_annotation": {
+            "only_untyped": false
+        },
+        "phpdoc_align": true,
+        "phpdoc_annotation_without_dot": true,
+        "phpdoc_indent": true,
+        "phpdoc_inline_tag_normalizer": true,
+        "phpdoc_param_order": true,
+        "phpdoc_separation": true,
+        "single_import_per_statement": true,
+        "single_quote": true,
+        "ternary_operator_spaces": true,
+        "type_declaration_spaces": false,
+        "types_spaces": {
+            "space": "none"
+        }
+    }
+}
