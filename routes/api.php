@@ -1,6 +1,7 @@
 <?php
 
 use App\Enums\PersonalAccessTokenAbility;
+use App\Http\Controllers\Api\V1\Admin\ApiAdminAuditItemsController;
 use App\Http\Controllers\Api\V1\Admin\ApiAdminSearchController;
 use App\Http\Controllers\Api\V1\Admin\ApiAdminSystemStatisticsController;
 use App\Http\Controllers\Api\V1\Admin\ApiAdminTeamMerchantTeamsController;
@@ -8,6 +9,7 @@ use App\Http\Controllers\Api\V1\Admin\ApiAdminTeamsController;
 use App\Http\Controllers\Api\V1\Admin\ApiAdminTeamServiceTeamsController;
 use App\Http\Controllers\Api\V1\Admin\ApiAdminTeamUsersController;
 use App\Http\Controllers\Api\V1\Admin\ApiAdminUsersController;
+use App\Http\Controllers\Api\V1\ApiMyTeamAuditItemsController;
 use App\Http\Controllers\Api\V1\ApiMyTeamVouchersController;
 use App\Http\Controllers\Api\V1\ApiSystemStatisticsController;
 use App\Http\Middleware\CheckAdminStatus;
@@ -20,6 +22,59 @@ Route::group(['prefix' => 'v1'], function () {
      */
     Route::middleware(['auth:sanctum'])
         ->group(function () {
+
+            /**
+             * My Audit Items
+             */
+            Route::post('/my-team-audit-items', [ApiMyTeamAuditItemsController::class, 'store'])
+                ->name('api.v1.my-team-audit-items.post')
+                ->middleware(
+                    [
+                        'abilities:' .
+                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                        PersonalAccessTokenAbility::MY_TEAM_AUDIT_ITEMS_CREATE->value,
+                    ]
+                );
+
+            Route::get('/my-team-audit-items', [ApiMyTeamAuditItemsController::class, 'index'])
+                ->name('api.v1.my-team-audit-items.getMany')
+                ->middleware(
+                    [
+                        'abilities:' .
+                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                        PersonalAccessTokenAbility::MY_TEAM_AUDIT_ITEMS_READ->value,
+                    ]
+                );
+
+            Route::get('/my-team-audit-items/{id}', [ApiMyTeamAuditItemsController::class, 'show'])
+                ->name('api.v1.my-team-audit-items.get')
+                ->middleware(
+                    [
+                        'abilities:' .
+                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                        PersonalAccessTokenAbility::MY_TEAM_AUDIT_ITEMS_READ->value,
+                    ]
+                );
+
+            Route::put('/my-team-audit-items/{id}', [ApiMyTeamVouchersController::class, 'update'])
+                ->name('api.v1.my-team-audit-items.put')
+                ->middleware(
+                    [
+                        'abilities:' .
+                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                        PersonalAccessTokenAbility::MY_TEAM_AUDIT_ITEMS_UPDATE->value,
+                    ]
+                );
+
+            Route::delete('/my-team-audit-items/{id}', [ApiMyTeamAuditItemsController::class, 'destroy'])
+                ->name('api.v1.my-team-audit-items.delete')
+                ->middleware(
+                    [
+                        'abilities:' .
+                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                        PersonalAccessTokenAbility::MY_TEAM_AUDIT_ITEMS_DELETE->value,
+                    ]
+                );
 
             /**
              * My Vouchers
@@ -135,6 +190,7 @@ Route::group(['prefix' => 'v1'], function () {
     Route::prefix('admin')
         ->middleware(['auth:sanctum', CheckAdminStatus::class])
         ->group(function () {
+            Route::resource('/audit-items', ApiAdminAuditItemsController::class)->names('api.v1.admin.audit-items');
             Route::resource('/search', ApiAdminSearchController::class)->names('api.v1.admin.search');
             Route::resource('/system-statistics', ApiAdminSystemStatisticsController::class)->names('api.v1.admin.system-statistics');
             Route::resource('/team-merchant-teams', ApiAdminTeamMerchantTeamsController::class)->names('api.v1.admin.team-merchant-teams');
