@@ -35,7 +35,7 @@ class TestCommand extends Command
         $vouchers    = Voucher::factory(100)->createQuietly();
         $voucherSets = VoucherSet::factory(100)->createQuietly();
         $auditItems  = AuditItem::factory(100)->createQuietly([
-            'team_id' => 1
+            'team_id' => 1,
         ]);
     }
 }

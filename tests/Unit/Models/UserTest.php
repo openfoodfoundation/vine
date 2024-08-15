@@ -40,19 +40,19 @@ class UserTest extends TestCase
 
         AuditItem::factory($num)->create([
             'auditable_type' => User::class,
-            'auditable_id' => $user->id,
+            'auditable_id'   => $user->id,
         ]);
 
         // Same ID but different class, should NOT be returned
         AuditItem::factory($num)->create([
             'auditable_type' => Team::class,
-            'auditable_id' => $user->id,
+            'auditable_id'   => $user->id,
         ]);
 
         // Same class but different ID, should NOT be returned
         AuditItem::factory($num)->create([
             'auditable_type' => User::class,
-            'auditable_id' => $user->id + 1,
+            'auditable_id'   => $user->id + 1,
         ]);
 
         $userWithAuditItems = User::with('auditItems')->find($user->id);
