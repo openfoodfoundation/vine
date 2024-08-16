@@ -16,9 +16,7 @@ class RecordUserWasCreatedAuditItem implements ShouldQueue
      *
      * @param User $createdUser
      */
-    public function __construct(public User $createdUser)
-    {
-    }
+    public function __construct(public User $createdUser) {}
 
     /**
      * Execute the job.
