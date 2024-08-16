@@ -1,9 +1,8 @@
 <script setup>
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
-import {Head, usePage} from '@inertiajs/vue3';
+import {Head} from '@inertiajs/vue3';
 import AuditItemsComponent from "@/Components/AuditItemsComponent.vue";
-import Swal from "sweetalert2";
-import {onMounted, ref} from "vue";
+
 
 
 </script>
