@@ -20,7 +20,6 @@ class AuditItemServiceTest extends TestCase
     #[Test]
     public function testCreateAuditItemForEvent(): void
     {
-        $actioningUser = User::factory()->createQuietly();
 
         $num = rand(0, 3);
 

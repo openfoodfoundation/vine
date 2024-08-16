@@ -14,7 +14,6 @@ class RecordUserWasCreatedAuditItem implements ShouldQueue
     /**
      * Create a new job instance.
      *
-     * @param User $actioningUser
      * @param User $createdUser
      */
     public function __construct(public User $createdUser)
