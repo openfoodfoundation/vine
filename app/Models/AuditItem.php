@@ -15,8 +15,8 @@ class AuditItem extends Model
         'auditable_id',
         'auditable_type',
         'auditable_text',
-        'team_id',
-        'user_id',
+        'auditable_team_id',
+        'actioning_user_id',
     ];
 
     public function auditable(): MorphTo
@@ -26,6 +26,6 @@ class AuditItem extends Model
 
     public function team(): BelongsTo
     {
-        return $this->belongsTo(Team::class, 'team_id', 'id');
+        return $this->belongsTo(Team::class, 'auditable_team_id', 'id');
     }
 }

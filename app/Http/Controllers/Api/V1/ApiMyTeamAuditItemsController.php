@@ -17,7 +17,9 @@ class ApiMyTeamAuditItemsController extends Controller
     /**
      * Set the related data the GET request is allowed to ask for
      */
-    public array $availableRelations = [];
+    public array $availableRelations = [
+        'team',
+    ];
 
     public static array $searchableFields = [];
 

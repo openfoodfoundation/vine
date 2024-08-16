@@ -55,20 +55,6 @@ onMounted(() => {
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
 
 
-                    <div class="mb-8 p-4">
-                        <div class="mb-4">
-                            Filter to:
-                        </div>
-                        <div class="flex justify-start space-x-6">
-                            <div class="hover:cursor-pointer hover:underline" @click="filterTo('')">User</div>
-                            <div class="hover:cursor-pointer hover:underline" @click="filterTo('')">Team</div>
-                            <div class="hover:cursor-pointer hover:underline" @click="filterTo('')">Voucher Set</div>
-                            <div class="hover:cursor-pointer hover:underline" @click="filterTo('')">Voucher</div>
-                            <div class="hover:cursor-pointer hover:underline" @click="filterTo('')">No Filter</div>
-                        </div>
-                    </div>
-
-
                     <AuditItemsComponent :audit-items="auditItems" :is-admin="isAdmin"/>
 
                 </div>
