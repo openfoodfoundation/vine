@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
-use Illuminate\Support\Str;
 
 class AuditItem extends Model
 {
@@ -19,7 +18,6 @@ class AuditItem extends Model
         'auditable_text',
         'auditable_team_id',
     ];
-
     protected $appends = [
         'dashboard_url',
         'admin_url',
@@ -51,7 +49,7 @@ class AuditItem extends Model
         }
 
         return Attribute::make(
-            get: fn($value, $attributes) => $url,
+            get: fn ($value, $attributes) => $url,
         );
     }
 
@@ -73,8 +71,7 @@ class AuditItem extends Model
         }
 
         return Attribute::make(
-            get: fn($value, $attributes) => $url,
+            get: fn ($value, $attributes) => $url,
         );
     }
-
 }

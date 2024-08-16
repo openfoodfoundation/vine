@@ -21,7 +21,7 @@ class ApiAdminAuditItemsController extends Controller
     ];
 
     public static array $searchableFields = [
-        'id'
+        'id',
     ];
 
     /**

@@ -22,7 +22,7 @@ class ApiMyTeamAuditItemsController extends Controller
     ];
 
     public static array $searchableFields = [
-        'id'
+        'id',
     ];
 
     /**
