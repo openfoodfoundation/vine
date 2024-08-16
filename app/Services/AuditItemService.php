@@ -3,7 +3,6 @@
 namespace App\Services;
 
 use App\Models\AuditItem;
-use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 
 class AuditItemService

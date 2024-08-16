@@ -4,16 +4,13 @@ namespace App\Listeners\Users;
 
 use App\Events\Users\UserWasCreated;
 use App\Jobs\RecordUserWasCreatedAuditItem;
-use Auth;
 
 class HandleUserWasCreatedEvent
 {
     /**
      * Create the event listener.
      */
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 
     /**
      * Handle the event.

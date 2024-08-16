@@ -79,8 +79,6 @@ class AuditItemsGetTest extends BaseAPITestCase
 
         $responseObject = json_decode($response->getContent(), false);
 
-
-
         foreach ($responseObject->data->data as $auditItem) {
             self::assertSame($this->user->current_team_id, $auditItem->auditable_team_id);
         }
