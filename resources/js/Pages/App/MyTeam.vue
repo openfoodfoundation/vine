@@ -4,9 +4,11 @@ import {Head} from '@inertiajs/vue3';
 import {onMounted, ref} from "vue";
 
 const myTeam = ref({})
+const myTeams = ref({})
 
 onMounted(() => {
-    getMyTeam()
+    getMyTeam();
+    getMyTeams();
 })
 
 function getMyTeam() {
@@ -16,6 +18,16 @@ function getMyTeam() {
         console.log(error)
     })
 }
+
+function getMyTeams() {
+    axios.get('/my-teams?cached=false&orderBy=name,asc').then(response => {
+        myTeams.value = response.data.data
+    }).catch(error => {
+        console.log(error)
+    })
+}
+
+
 
 </script>
 
@@ -29,13 +41,14 @@ function getMyTeam() {
 
         <div class="card">
             <div class="flex items-start font-bold">
-                <div>#{{ myTeam.id }}</div>
                 <div class="pl-2 text-2xl">{{ myTeam.name }}</div>
             </div>
         </div>
 
         <div class="card">
-            <div class="text-sm pb-2 text-gray-500">Team members</div>
+            <div class="card-header">
+                Team members
+            </div>
 
             <div v-if="myTeam.team_users && myTeam.team_users.length > 0">
                 <div v-for="teamUser in myTeam.team_users" class="">
@@ -47,5 +60,35 @@ function getMyTeam() {
                 </div>
             </div>
         </div>
+
+        <div class="card">
+            <div class="card-header">
+                Teams You Belong To
+            </div>
+
+
+                <div v-for="team in myTeams.data" class="">
+                    <div class="border-b py-2 flex justify-between">
+
+                        <div>
+                            {{team.name}}
+                        </div>
+                        <div>
+                            <div v-if="team.id === $page.props.auth.user.current_team_id">
+                                Current
+                            </div>
+                            <div v-else>
+                                <a :href="'/switch-team/' + team.id" class="text-red-500">Switch to this team</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+        </div>
+
+        <div class="pb-32">
+
+        </div>
+
     </AuthenticatedLayout>
 </template>

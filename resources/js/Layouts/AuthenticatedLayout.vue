@@ -32,6 +32,11 @@ const showingNavigationDropdown = ref(false);
                                 <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
                                     Dashboard
                                 </NavLink>
+                                <a href="/api-documentation"
+                                   target="_blank"
+                                   class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-light leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
+                                    Api Docs
+                                </a>
                             </div>
                         </div>
 
@@ -71,6 +76,9 @@ const showingNavigationDropdown = ref(false);
                                             Admin Section
                                         </DropdownLink>
                                         <DropdownLink :href="route('profile.edit')"> Profile </DropdownLink>
+                                        <DropdownLink :href="route('my-team')">
+                                            My Team
+                                        </DropdownLink>
                                         <DropdownLink :href="route('logout')" method="post" as="button">
                                             Log Out
                                         </DropdownLink>
@@ -144,8 +152,12 @@ const showingNavigationDropdown = ref(false);
 
             <!-- Page Heading -->
             <header class="bg-white shadow" v-if="$slots.header">
-                <div class="container mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                <div class="container mx-auto py-6 px-4 sm:px-6 lg:px-8 flex justify-between items-center">
                     <slot name="header" />
+
+                    <div class="opacity-50">
+                        Logged into: {{ $page.props.auth.currentTeam.name}}
+                    </div>
                 </div>
             </header>
 

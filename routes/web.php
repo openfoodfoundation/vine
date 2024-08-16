@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Middleware\CheckAdminStatus;
+use App\Models\TeamUser;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -27,6 +29,21 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    Route::get('/switch-team/{id}', function ($id) {
+
+        $teamUserForThisTeam = TeamUser::where('user_id', Auth::id())
+            ->where('team_id', $id)->first();
+
+        if ($teamUserForThisTeam) {
+            Auth::user()->current_team_id = $id;
+            Auth::user()->save();
+
+        }
+
+        return Redirect::to('/my-team');
+
+    })->name('switch-team');
 
     /**
      * Admin routes

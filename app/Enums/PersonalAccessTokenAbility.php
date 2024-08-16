@@ -12,6 +12,10 @@ enum PersonalAccessTokenAbility: string
     case MY_PROFILE_READ          = 'my-profile-read';
     case MY_PROFILE_UPDATE        = 'my-profile-update';
     case MY_PROFILE_DELETE        = 'my-profile-delete';
+    case MY_TEAM_CREATE           = 'my-team-create';
+    case MY_TEAM_READ             = 'my-team-read';
+    case MY_TEAM_UPDATE           = 'my-team-update';
+    case MY_TEAM_DELETE           = 'my-team-delete';
     case MY_TEAM_VOUCHERS_CREATE  = 'my-team-vouchers-create';
     case MY_TEAM_VOUCHERS_READ    = 'my-team-vouchers-read';
     case MY_TEAM_VOUCHERS_UPDATE  = 'my-team-vouchers-update';
