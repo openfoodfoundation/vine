@@ -17,7 +17,7 @@ const showingNavigationDropdown = ref(false);
                 <!-- Primary Navigation Menu -->
                 <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="flex justify-between h-16">
-                        <div class="flex">
+                        <div class="flex items-center">
                             <!-- Logo -->
                             <div class="shrink-0 flex items-center">
                                 <Link :href="route('dashboard')">
@@ -33,16 +33,13 @@ const showingNavigationDropdown = ref(false);
                                     Dashboard
                                 </NavLink>
 
-                                <NavLink :href="route('audit-trail')" :active="route().current('audit-trail')">
-                                    Audit Trail
-                                </NavLink>
-
                                 <a href="/api-documentation"
                                    target="_blank"
                                    class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-light leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
                                     Api Docs
                                 </a>
                             </div>
+
                         </div>
 
                         <div class="hidden sm:flex sm:items-center sm:ms-6">
@@ -51,11 +48,12 @@ const showingNavigationDropdown = ref(false);
                                 <Dropdown align="right" width="48">
                                     <template #trigger>
                                         <span class="inline-flex rounded-md">
+
                                             <button
                                                 type="button"
                                                 class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4  rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150"
                                             >
-                                                {{ $page.props.auth.user.name }}
+                                                {{ $page.props.auth.user.name }} - {{ $page.props.auth.currentTeam.name}}
 
                                                 <svg
                                                     class="ms-2 -me-0.5 h-4 w-4"
@@ -70,7 +68,9 @@ const showingNavigationDropdown = ref(false);
                                                     />
                                                 </svg>
                                             </button>
+
                                         </span>
+
                                     </template>
 
                                     <template #content>
@@ -80,9 +80,14 @@ const showingNavigationDropdown = ref(false);
                                         >
                                             Admin Section
                                         </DropdownLink>
-                                        <DropdownLink :href="route('profile.edit')"> Profile </DropdownLink>
+                                        <DropdownLink :href="route('profile.edit')">
+                                            Profile
+                                        </DropdownLink>
                                         <DropdownLink :href="route('my-team')">
                                             My Team
+                                        </DropdownLink>
+                                        <DropdownLink :href="route('audit-trail')">
+                                            Audit Trail
                                         </DropdownLink>
                                         <DropdownLink :href="route('logout')" method="post" as="button">
                                             Log Out
@@ -146,6 +151,7 @@ const showingNavigationDropdown = ref(false);
                                 {{ $page.props.auth.user.name }}
                             </div>
                             <div class=" text-sm text-gray-500">{{ $page.props.auth.user.email }}</div>
+
                         </div>
 
                         <div class="mt-3 space-y-1">
@@ -160,12 +166,8 @@ const showingNavigationDropdown = ref(false);
 
             <!-- Page Heading -->
             <header class="bg-white shadow" v-if="$slots.header">
-                <div class="container mx-auto py-6 px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+                <div class="container mx-auto py-6 px-4 ">
                     <slot name="header" />
-
-                    <div class="opacity-50">
-                        Logged into: {{ $page.props.auth.currentTeam.name}}
-                    </div>
                 </div>
             </header>
 

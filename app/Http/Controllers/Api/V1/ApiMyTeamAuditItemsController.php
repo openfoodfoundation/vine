@@ -21,7 +21,9 @@ class ApiMyTeamAuditItemsController extends Controller
         'team',
     ];
 
-    public static array $searchableFields = [];
+    public static array $searchableFields = [
+        'id',
+    ];
 
     /**
      * GET /
