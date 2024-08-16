@@ -63,11 +63,6 @@ class User extends Authenticatable
         return $this->hasMany(TeamUser::class);
     }
 
-    public function auditItems(): MorphMany
-    {
-        return $this->morphMany(AuditItem::class, 'auditable');
-    }
-
     public function currentTeam(): BelongsTo
     {
         return $this->belongsTo(Team::class);
