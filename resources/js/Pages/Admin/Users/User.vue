@@ -1,7 +1,14 @@
 <script setup>
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
-import {Head, Link} from '@inertiajs/vue3';
+import {Head, Link, usePage} from '@inertiajs/vue3';
 import AdminTopNavigation from "@/Components/Admin/AdminTopNavigation.vue";
+import {onMounted, ref} from "vue";
+import Swal from "sweetalert2";
+import PaginatorComponent from "@/Components/Admin/PaginatorComponent.vue";
+import AdminUserDetailsComponent from "@/Components/Admin/AdminUserDetailsComponent.vue";
+import PrimaryButton from "@/Components/PrimaryButton.vue";
+import InputLabel from "@/Components/InputLabel.vue";
+import TextInput from "@/Components/TextInput.vue";
 
 const $props = defineProps({
     id: {
@@ -9,6 +16,57 @@ const $props = defineProps({
         type: Number,
     }
 });
+
+const limit = ref(5)
+const newPAT = ref({name: '', token_abilities: []})
+const personalAccessTokenAbilities = usePage().props.personalAccessTokenAbilities
+const userTeams = ref({})
+const user = ref({})
+
+onMounted(() => {
+    getUser()
+    getUserTeams()
+})
+
+function createPAT() {
+    newPAT.value.user_id = user.value.id
+    axios.post('/admin/user-personal-access-tokens', newPAT.value).then(response => {
+        Swal.fire({
+            title: 'Success!',
+            icon: 'success',
+            timer: 1000
+        }).then(() => {
+            newPAT.value = {name: '', token_abilities: []}
+            getUser()
+        })
+    }).catch(error => {
+        console.log(error)
+    })
+}
+
+function getUser() {
+    axios.get('/admin/users/' + $props.id + '?cached=false&relations=currentTeam').then(response => {
+        user.value = response.data.data
+    }).catch(error => {
+        console.log(error)
+    })
+}
+
+function getUserTeams(page = 1) {
+    axios.get('/admin/team-users?cached=false&page=' + page + '&where[]=user_id,' + $props.id + '&relations=team&limit=' + limit.value + '&orderBy=id,desc').then(response => {
+        userTeams.value = response.data.data;
+    }).catch(error => {
+        console.log(error)
+    })
+}
+
+function setDataPage(page) {
+    getUserTeams(page);
+}
+
+function textFormat(ability) {
+    return ability.replaceAll('-', ' ')
+}
 
 </script>
 
@@ -20,38 +78,97 @@ const $props = defineProps({
             <AdminTopNavigation></AdminTopNavigation>
         </template>
 
+        <div class="card">
+            <div class="flex items-start font-bold">
+                <div>#{{ $props.id }}</div>
+                <div class="pl-2 text-2xl">{{ user.name }}</div>
+            </div>
+        </div>
 
-        <div class=" card">
-            // User #{{ $props.id }} component
-
-
-            <div class="card">
+        <div class="card">
+            <div class="card-header">
                 User details
-                - (current team)
-                -
             </div>
 
+            <AdminUserDetailsComponent :user="user"/>
+        </div>
 
-            <div class="card">
+        <div class="card">
+            <div class="card-header">
                 User teams
-                - (cShow all teams) - link to team in admin panel
-                -if current, show as currenytly logg into
             </div>
 
-            <div class="card">
-                User PAT list
-                - PAT capabilities
-                - Team
+            <div v-if="userTeams.data && userTeams.data.length > 0">
+                <Link :href="route('admin.team', userTeam.team_id)" v-for="userTeam in userTeams.data" class="hover:no-underline hover:opacity-75">
+                    <div :class="{'border-b p-2': userTeams.data.length > 1}">
+                        <div v-if="userTeam.team">
+                            <div v-if="userTeam.team_id === user.current_team_id" class="text-xs text-red-500">*Current team</div>
+                            <div class="">{{ userTeam.team.name }}</div>
+                        </div>
+                    </div>
+                </Link>
             </div>
 
-            <div class="card">
-                Create PAT (no edit)
-                - name
-                - seletc abilities (ENUM - in scope doc for PAT Abilities
+            <div class="flex justify-end items-center mt-4">
+                <div class="w-full lg:w-1/3">
+                    <PaginatorComponent
+                        @setDataPage="setDataPage"
+                        :pagination-data="userTeams"></PaginatorComponent>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                User Personal Access Tokens (PATs))
             </div>
 
+            <div v-if="user.tokens && user.tokens.length">
+                <div v-for="userToken in user.tokens" class="border-b py-2">
+                    <div class="list-item ml-8">
+                        {{ userToken.name }}
+                    </div>
+                    <div v-if="userToken.abilities && userToken.abilities.length">
+                        <div v-for="ability in userToken.abilities" class="ml-8 text-xs">
+                            - {{ textFormat(ability) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div v-else>User does not have PATs.</div>
+        </div>
 
+        <div class="card">
+            <div class="card-header">
+                Create Personal Access Token (No Edit)
+            </div>
 
+            <div v-if="personalAccessTokenAbilities.length">
+                <div class="pb-4">
+                    <InputLabel for="name" value="PAT name"/>
+                    <TextInput
+                        id="name"
+                        type="text"
+                        class="mt-1 block w-full"
+                        v-model="newPAT.name"
+                        required
+                    />
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-4">
+                    <div v-for="ability in personalAccessTokenAbilities">
+                        <label :for="ability" class="cursor-pointer">
+                            <input type="checkbox" :id="ability" class="mr-4" :value="ability" v-model="newPAT.token_abilities"> {{ textFormat(ability) }}
+                        </label>
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-end mt-4">
+                    <PrimaryButton @click.prevent="createPAT()" class="ms-4" :class="{ 'opacity-25': !newPAT.name }" :desabled="!newPAT.name">
+                        Submit
+                    </PrimaryButton>
+                </div>
+            </div>
         </div>
     </AuthenticatedLayout>
 </template>

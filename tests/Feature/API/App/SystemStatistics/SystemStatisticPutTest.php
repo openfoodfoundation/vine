@@ -25,7 +25,8 @@ class SystemStatisticPutTest extends BaseAPITestCase
 
         $tokenString = $this->user->createToken(
             name     : 'Token',
-            abilities: []
+            abilities: [],
+            teamId: $this->user->current_team_id
         )->plainTextToken;
 
         $model   = SystemStatistic::factory()->create();
@@ -46,7 +47,8 @@ class SystemStatisticPutTest extends BaseAPITestCase
             name     : 'Token',
             abilities: [
                 PersonalAccessTokenAbility::SYSTEM_STATISTICS_DELETE->value,
-            ]
+            ],
+            teamId: $this->user->current_team_id
         )->plainTextToken;
         $model   = SystemStatistic::factory()->create();
         $payload = [];
