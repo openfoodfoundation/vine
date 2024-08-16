@@ -127,6 +127,32 @@ LOG_STACK=sentry  # or sentry,single etc for multiple
 
 Todo - explain how pint works, and under what circumstances it'll run
 
+## File Storage: Local vs. AWS S3
+You are free to use whichever storage cloud you like - the default environment variable of `FILESYSTEM_DISK=local` means that the application will use the local server.
+
+To configure the system to use AWS S3, first create a bucket in S3 and some access keys for your implementation. then update the following environment variables:
+
+```dotenv
+FILESYSTEM_DISK=s3
+
+AWS_ACCESS_KEY_ID=[YourApplicationKey]
+AWS_SECRET_ACCESS_KEY=[YourApplicationSecret]
+AWS_DEFAULT_REGION=[S3 Bucket location eg ap-southeast-2]
+AWS_BUCKET=[S3 Bucket Name]
+AWS_USE_PATH_STYLE_ENDPOINT=false
+```
+The S3 bucket uses a configuration called `root`, which separates the base bucket into the environment that the application is running under. This is based on `APP_ENV`. If you are running `APP_ENV=local` and your bucket was called `AWS_BUCKET=ofn-vine-uk`, your bucket folder structure would look like this:
+
+```
+/ofn-vine-uk
+    /local 👈 // Objects would be placed here by default at the path you provide
+    /staging
+    /production
+```
+
+NOTE: No extra config is required for this behaviour on AWS S3. It is not the default for any other filesystem storage providers.
+
+
 ## API Middleware - Protecting The API
 
 In /bootstrap.app.php we've configured middleware as follows:

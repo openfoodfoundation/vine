@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\Voucher;
 use App\Models\VoucherSet;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Storage;
 
 class TestCommand extends Command
 {
@@ -29,9 +30,7 @@ class TestCommand extends Command
      */
     public function handle()
     {
-        $users       = User::factory(100)->createQuietly();
-        $teams       = Team::factory(100)->createQuietly();
-        $vouchers    = Voucher::factory(100)->createQuietly();
-        $voucherSets = VoucherSet::factory(100)->createQuietly();
+
+
     }
 }

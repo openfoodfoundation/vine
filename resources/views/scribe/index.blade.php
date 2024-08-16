@@ -1869,7 +1869,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        11
+                        12
                     </div>
                 </div>
             </div>
@@ -1960,7 +1960,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request GET \
-    --get "https://open-food-network-vouchers.test/api/v1/system-statistics/11?cached=1&amp;fields=id%2Cnum_users" \
+    --get "https://open-food-network-vouchers.test/api/v1/system-statistics/12?cached=1&amp;fields=id%2Cnum_users" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>                                        </div>
@@ -1971,7 +1971,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://open-food-network-vouchers.test/api/v1/system-statistics/11"
+    "https://open-food-network-vouchers.test/api/v1/system-statistics/12"
 );
 
 const params = {
@@ -1998,7 +1998,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://open-food-network-vouchers.test/api/v1/system-statistics/11';
+$url = 'https://open-food-network-vouchers.test/api/v1/system-statistics/12';
 $response = $client-&gt;get(
     $url,
     [
@@ -2024,7 +2024,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://open-food-network-vouchers.test/api/v1/system-statistics/11'
+url = 'https://open-food-network-vouchers.test/api/v1/system-statistics/12'
 params = {
   'cached': '1',
   'fields': 'id,num_users',
@@ -3009,7 +3009,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        dolorem
+                        modi
                     </div>
                 </div>
             </div>
@@ -3050,7 +3050,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request PUT \
-    "https://open-food-network-vouchers.test/api/v1/my-team/dolorem" \
+    "https://open-food-network-vouchers.test/api/v1/my-team/modi" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>                                        </div>
@@ -3061,7 +3061,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://open-food-network-vouchers.test/api/v1/my-team/dolorem"
+    "https://open-food-network-vouchers.test/api/v1/my-team/modi"
 );
 
 const headers = {
@@ -3081,7 +3081,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://open-food-network-vouchers.test/api/v1/my-team/dolorem';
+$url = 'https://open-food-network-vouchers.test/api/v1/my-team/modi';
 $response = $client-&gt;put(
     $url,
     [
@@ -3103,7 +3103,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://open-food-network-vouchers.test/api/v1/my-team/dolorem'
+url = 'https://open-food-network-vouchers.test/api/v1/my-team/modi'
 headers = {
   'Authorization': 'Bearer {YOUR_API_TOKEN}',
   'Content-Type': 'application/json',
@@ -3243,7 +3243,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        eum
+                        unde
                     </div>
                 </div>
             </div>
@@ -3284,7 +3284,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request DELETE \
-    "https://open-food-network-vouchers.test/api/v1/my-team/eum" \
+    "https://open-food-network-vouchers.test/api/v1/my-team/unde" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>                                        </div>
@@ -3295,7 +3295,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://open-food-network-vouchers.test/api/v1/my-team/eum"
+    "https://open-food-network-vouchers.test/api/v1/my-team/unde"
 );
 
 const headers = {
@@ -3315,7 +3315,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://open-food-network-vouchers.test/api/v1/my-team/eum';
+$url = 'https://open-food-network-vouchers.test/api/v1/my-team/unde';
 $response = $client-&gt;delete(
     $url,
     [
@@ -3337,7 +3337,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://open-food-network-vouchers.test/api/v1/my-team/eum'
+url = 'https://open-food-network-vouchers.test/api/v1/my-team/unde'
 headers = {
   'Authorization': 'Bearer {YOUR_API_TOKEN}',
   'Content-Type': 'application/json',
