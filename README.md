@@ -152,15 +152,27 @@ The S3 bucket uses a configuration called `root`, which separates the base bucke
 
 NOTE: No extra config is required for this behaviour on AWS S3. It is not the default for any other filesystem storage providers.
 
+## Queue Configuration
+By default, the queue is set to `sync`: `QUEUE_CONNECTION=sync` which runs jobs as part of the current request. You are free to reconfigure this. 
+
+If using AWS SQS, you need to create queues for each environment, and update the env vars as follows:
+
+```dotenv
+QUEUE_CONNECTION=sqs
+SQS_QUEUE="queue-name-${APP_ENV}" # eg ofn-vine-uk-local as set in AWS SQS
+SQS_PREFIX=https://sqs.${AWS_DEFAULT_REGION}.amazonaws.com/[YOUR-AWS-ACCOUNT-ID]
+```
+You'll also need to run at least one properly configured queue worker on your server environment for this to work.
 
 ## API Middleware - Protecting The API
 
 In /bootstrap.app.php we've configured middleware as follows:
 
 ```php
-$middleware->alias([
-                  'abilities' => CheckForAnyTokenAbilities::class,
-              ]);
+$middleware->alias(
+    [
+        'abilities' => CheckForAnyTokenAbilities::class,
+    ]);
 ```
 
 This runs the API middleware through `CheckForAnyTokenAbilities`, checking the incoming personal access token for the
