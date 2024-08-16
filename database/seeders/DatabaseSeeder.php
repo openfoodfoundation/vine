@@ -64,7 +64,7 @@ class DatabaseSeeder extends Seeder
             );
 
             foreach ($userAndTeam['users'] as $user) {
-                $user = User::factory()->create(
+                $user = User::factory()->createQuietly(
                     [
                         'name'            => $user['name'],
                         'email'           => $user['email'],

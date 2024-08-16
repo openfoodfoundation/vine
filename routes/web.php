@@ -30,6 +30,10 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
+    Route::get('/audit-trail', function () {
+        return Inertia::render('AuditItems');
+    })->name('audit-trail');
+
     Route::get('/switch-team/{id}', function ($id) {
 
         $teamUserForThisTeam = TeamUser::where('user_id', Auth::id())
@@ -52,6 +56,10 @@ Route::middleware('auth')->group(function () {
         Route::get('/', function () {
             return Inertia::render('Admin/AdminHome');
         })->name('admin.home');
+
+        Route::get('/audit-trail', function () {
+            return Inertia::render('AuditItems');
+        })->name('admin.audit-trail');
 
         Route::get('/users', function () {
             return Inertia::render('Admin/Users/Users');

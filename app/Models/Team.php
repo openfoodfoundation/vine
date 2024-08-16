@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Team extends Model
@@ -15,5 +16,10 @@ class Team extends Model
     public function teamUsers(): HasMany
     {
         return $this->hasMany(TeamUser::class, 'team_id', 'id');
+    }
+
+    public function auditItems(): MorphMany
+    {
+        return $this->morphMany(AuditItem::class, 'auditable');
     }
 }
