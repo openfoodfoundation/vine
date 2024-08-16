@@ -36,7 +36,7 @@ class AuditItemsGetTest extends BaseAPITestCase
         $this->user = $this->createUserWithTeam();
 
         $model = AuditItem::factory()->create([
-            'team_id' => $this->team->id,
+            'auditable_team_id' => $this->team->id,
         ]);
 
         Sanctum::actingAs($this->user, abilities: []);
@@ -61,12 +61,12 @@ class AuditItemsGetTest extends BaseAPITestCase
         $num = rand(1, 40);
 
         AuditItem::factory($num)->create([
-            'team_id' => $this->team->id,
+            'auditable_team_id' => $this->team->id,
         ]);
 
         // Different team, should be inaccessible
         AuditItem::factory($num)->create([
-            'team_id' => $this->team->id + 1,
+            'auditable_team_id' => $this->team->id + 1,
         ]);
 
         Sanctum::actingAs($this->user, abilities: [
@@ -82,7 +82,7 @@ class AuditItemsGetTest extends BaseAPITestCase
         self::assertCount($num, $responseObject->data->data);
 
         foreach ($responseObject->data->data as $auditItem) {
-            self::assertSame($this->user->current_team_id, $auditItem->team_id);
+            self::assertSame($this->user->current_team_id, $auditItem->auditable_team_id);
         }
     }
 
@@ -92,7 +92,7 @@ class AuditItemsGetTest extends BaseAPITestCase
         $this->user = $this->createUserWithTeam();
 
         $model = AuditItem::factory()->create([
-            'team_id' => $this->team->id,
+            'auditable_team_id' => $this->team->id,
         ]);
 
         Sanctum::actingAs($this->user, abilities: [
@@ -117,7 +117,7 @@ class AuditItemsGetTest extends BaseAPITestCase
         $this->user = $this->createUserWithTeam();
 
         $model = AuditItem::factory()->create([
-            'team_id' => $this->team->id,
+            'auditable_team_id' => $this->team->id,
         ]);
 
         Sanctum::actingAs($this->user, abilities: [
@@ -135,7 +135,7 @@ class AuditItemsGetTest extends BaseAPITestCase
         $this->user = $this->createUserWithTeam();
 
         $model = AuditItem::factory()->create([
-            'team_id' => $this->team->id + 1,
+            'auditable_team_id' => $this->team->id + 1,
         ]);
 
         Sanctum::actingAs($this->user, abilities: [

@@ -42,7 +42,7 @@ class AuditItemPostTest extends BaseAPITestCase
         );
 
         $model = AuditItem::factory()->create([
-            'team_id' => $this->user->current_team_id,
+            'auditable_team_id' => $this->user->current_team_id,
         ]);
 
         $response = $this->postJson($this->apiRoot . $this->endpoint);
@@ -67,7 +67,7 @@ class AuditItemPostTest extends BaseAPITestCase
         );
 
         $model = AuditItem::factory()->create([
-            'team_id' => $this->user->current_team_id,
+            'auditable_team_id' => $this->user->current_team_id,
         ]);
 
         $response = $this->postJson($this->apiRoot . $this->endpoint);

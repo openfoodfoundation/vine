@@ -2,14 +2,12 @@
 
 namespace Database\Factories;
 
-use App\Models\Team;
+use App\Models\AuditItem;
 use App\Models\User;
-use App\Models\Voucher;
-use App\Models\VoucherSet;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\AuditItem>
+ * @extends Factory<AuditItem>
  */
 class AuditItemFactory extends Factory
 {
@@ -20,28 +18,12 @@ class AuditItemFactory extends Factory
      */
     public function definition(): array
     {
-        $num = rand(0, 3);
-
-        // If $num == 0, stays as user
-        $auditable = User::factory()->createQuietly();
-
-        if ($num === 1) {
-            $auditable = Team::factory()->createQuietly();
-        }
-
-        if ($num === 2) {
-            $auditable = Voucher::factory()->createQuietly();
-        }
-
-        if ($num === 3) {
-            $auditable = VoucherSet::factory()->createQuietly();
-        }
-
         return [
-            'auditable_type' => get_class($auditable),
-            'auditable_id'   => $auditable->id,
-            'auditable_text' => $this->faker->randomElement(['created', 'updated', 'deleted']),
-            'team_id'        => $this->faker->randomDigitNotNull(),
+            'auditable_type'    => User::class,
+            'auditable_id'      => $this->faker->randomDigitNotNull(),
+            'auditable_text'    => $this->faker->randomElement(['created', 'updated', 'deleted']),
+            'auditable_team_id' => $this->faker->randomDigitNotNull(),
+            'actioning_user_id' => $this->faker->randomDigitNotNull(),
         ];
     }
 }

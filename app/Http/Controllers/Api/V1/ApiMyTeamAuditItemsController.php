@@ -30,7 +30,7 @@ class ApiMyTeamAuditItemsController extends Controller
      */
     public function index(): JsonResponse
     {
-        $this->query = AuditItem::where('team_id', Auth::user()->current_team_id)->with($this->associatedData);
+        $this->query = AuditItem::where('auditable_team_id', Auth::user()->current_team_id)->with($this->associatedData);
         $this->query = $this->updateReadQueryBasedOnUrl();
         $this->data  = $this->query->paginate($this->limit);
 
@@ -53,13 +53,14 @@ class ApiMyTeamAuditItemsController extends Controller
     /**
      * GET /{id}
      *
-     * @param int $id
+     * @param  int  $id
      *
      * @return JsonResponse
+     * @throws DisallowedApiFieldException
      */
     public function show(int $id)
     {
-        $this->query = AuditItem::where('team_id', Auth::user()->current_team_id)->with($this->associatedData);
+        $this->query = AuditItem::where('auditable_team_id', Auth::user()->current_team_id)->with($this->associatedData);
         $this->query = $this->updateReadQueryBasedOnUrl();
         $this->data  = $this->query->find($id);
 
@@ -69,7 +70,7 @@ class ApiMyTeamAuditItemsController extends Controller
     /**
      * PUT /{id}
      *
-     * @param string $id
+     * @param  string  $id
      *
      * @return JsonResponse
      */
@@ -84,7 +85,7 @@ class ApiMyTeamAuditItemsController extends Controller
     /**
      * DELETE / {id}
      *
-     * @param string $id
+     * @param  string  $id
      *
      * @return JsonResponse
      */

@@ -11,6 +11,14 @@ class AuditItem extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'auditable_id',
+        'auditable_type',
+        'auditable_text',
+        'team_id',
+        'user_id',
+    ];
+
     public function auditable(): MorphTo
     {
         return $this->morphTo();

@@ -16,13 +16,14 @@ return new class() extends Migration
             $table->string('auditable_type')->index('ai_at');
             $table->string('auditable_id');
             $table->string('auditable_text');
-            $table->unsignedBigInteger('team_id')->index('ai_ti');
+            $table->unsignedBigInteger('auditable_team_id')->nullable()->index('ai_ati');
+            $table->unsignedBigInteger('actioning_user_id')->index('ai_aui');
             $table->timestamps();
             $table->softDeletes();
 
             $table->index(columns: ['auditable_type', 'auditable_id', 'auditable_text'], name: 'ai_ataiat');
             $table->index(columns: ['auditable_type', 'auditable_id'], name: 'ai_atai');
-            $table->index(columns: ['auditable_text', 'team_id'], name: 'ai_atti');
+            $table->index(columns: ['auditable_text', 'auditable_team_id'], name: 'ai_atati');
         });
     }
 

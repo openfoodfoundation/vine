@@ -38,7 +38,7 @@ Route::middleware('auth')->group(function () {
 
         Route::get('/audit-trail', function () {
             return Inertia::render('AuditItems');
-        })->name('audit-trail');
+        })->name('admin.audit-trail');
 
         Route::get('/users', function () {
             return Inertia::render('Admin/Users/Users');
