@@ -16,7 +16,6 @@ class AuditItem extends Model
         'auditable_type',
         'auditable_text',
         'auditable_team_id',
-        'actioning_user_id',
     ];
 
     public function auditable(): MorphTo

@@ -17,7 +17,6 @@ return new class() extends Migration
             $table->string('auditable_id');
             $table->string('auditable_text');
             $table->unsignedBigInteger('auditable_team_id')->nullable()->index('ai_ati');
-            $table->unsignedBigInteger('actioning_user_id')->index('ai_aui');
             $table->timestamps();
             $table->softDeletes();
 

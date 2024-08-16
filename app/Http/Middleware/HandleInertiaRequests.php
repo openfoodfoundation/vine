@@ -39,7 +39,7 @@ class HandleInertiaRequests extends Middleware
             ...parent::share($request),
             'auth' => [
                 'user'        => $request->user(),
-                'currentTeam' => Team::find($request->user()->current_team_id),
+                'currentTeam' => Team::find($request->user()?->current_team_id),
             ],
             'personalAccessTokenAbilities' => PersonalAccessTokenAbility::cases(),
         ];

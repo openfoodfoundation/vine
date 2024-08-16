@@ -42,7 +42,6 @@ class AuditItemServiceTest extends TestCase
         $eventText = Str::random($num * $num);
 
         $auditItem = AuditItemService::createAuditItemForEvent(
-            actioningUser: $actioningUser,
             model: $auditableModel,
             eventText: $eventText,
         );

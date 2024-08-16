@@ -23,7 +23,6 @@ class AuditItemFactory extends Factory
             'auditable_id'      => $this->faker->randomDigitNotNull(),
             'auditable_text'    => $this->faker->randomElement(['created', 'updated', 'deleted']),
             'auditable_team_id' => $this->faker->randomDigitNotNull(),
-            'actioning_user_id' => $this->faker->randomDigitNotNull(),
         ];
     }
 }

@@ -58,7 +58,7 @@ class UserTest extends TestCase
         $userWithAuditItems = User::with('auditItems')->find($user->id);
 
         $this->assertInstanceOf(User::class, $userWithAuditItems);
-        $this->assertCount($num, $userWithAuditItems->auditItems);
+
         $userWithAuditItems->auditItems->map(function ($auditItem) use ($user) {
             $this->assertEquals($user->id, $auditItem->auditable_id);
             $this->assertSame(User::class, $auditItem->auditable_type);

@@ -11,7 +11,9 @@ class HandleUserWasCreatedEvent
     /**
      * Create the event listener.
      */
-    public function __construct() {}
+    public function __construct()
+    {
+    }
 
     /**
      * Handle the event.
@@ -20,13 +22,12 @@ class HandleUserWasCreatedEvent
      */
     public function handle(UserWasCreated $event): void
     {
-        if (env('APP_ENV') != 'testing') {
-            dispatch(
-                new RecordUserWasCreatedAuditItem(
-                    actioningUser: Auth::user(),
-                    createdUser: $event->user
-                )
-            );
-        }
+
+        dispatch(
+            new RecordUserWasCreatedAuditItem(
+                createdUser: $event->user
+            )
+        );
+
     }
 }
