@@ -2,7 +2,6 @@
 
 namespace Tests\Unit\Models;
 
-use App\Models\AuditItem;
 use App\Models\Team;
 use App\Models\TeamUser;
 use App\Models\User;
@@ -30,5 +29,4 @@ class UserTest extends TestCase
         $this->assertSame($teamUser->user_id, $userWithTeamUsers->teamUsers->first()->user_id);
         $this->assertSame($teamUser->team_id, $userWithTeamUsers->teamUsers->first()->team_id);
     }
-
 }
