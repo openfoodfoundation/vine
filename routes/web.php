@@ -30,7 +30,6 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-
     Route::get('/audit-trail', function () {
         return Inertia::render('AuditItems');
     })->name('audit-trail');
@@ -49,7 +48,6 @@ Route::middleware('auth')->group(function () {
         return Redirect::to('/my-team');
 
     })->name('switch-team');
-
 
     /**
      * Admin routes

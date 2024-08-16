@@ -7,7 +7,6 @@ namespace App\Enums;
  */
 enum PersonalAccessTokenAbility: string
 {
-
     case SUPER_ADMIN                = 'super-admin'; // Allowed to do everything
     case MY_PROFILE_CREATE          = 'my-profile-create';
     case MY_PROFILE_READ            = 'my-profile-read';
@@ -29,5 +28,4 @@ enum PersonalAccessTokenAbility: string
     case SYSTEM_STATISTICS_READ     = 'system-statistics-read';
     case SYSTEM_STATISTICS_UPDATE   = 'system-statistics-update';
     case SYSTEM_STATISTICS_DELETE   = 'system-statistics-delete';
-
 }
