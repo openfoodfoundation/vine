@@ -1,58 +1,49 @@
 <?php
 
-/** @noinspection PhpUndefinedMethodInspection */
-
 /** @noinspection PhpUnusedParameterInspection */
+
+/** @noinspection PhpUndefinedMethodInspection */
 
 namespace App\Http\Controllers\Api\V1\Admin;
 
 use App\Enums\ApiResponse;
-use App\Exceptions\DisallowedApiFieldException;
+use App\Enums\PersonalAccessTokenAbility;
 use App\Http\Controllers\Api\HandlesAPIRequests;
 use App\Http\Controllers\Controller;
-use App\Models\TeamUser;
+use App\Models\User;
 use Exception;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 
-class ApiAdminTeamUsersController extends Controller
+class ApiAdminUserPersonalAccessTokensController extends Controller
 {
     use HandlesAPIRequests;
 
     /**
      * Set the related data the GET request is allowed to ask for
      */
-    public array $availableRelations = [
-        'team',
-        'user',
-    ];
+    public array $availableRelations = [];
 
-    public static array $searchableFields = [
-        'id',
-        'team_id',
-        'user_id',
-    ];
+    public static array $searchableFields = [];
 
     /**
      * GET /
      *
      * @return JsonResponse
-     *
-     * @throws DisallowedApiFieldException
      */
     public function index(): JsonResponse
     {
-        $this->query = TeamUser::with($this->associatedData);
-        $this->query = $this->updateReadQueryBasedOnUrl();
-        $this->data  = $this->query->paginate($this->limit);
+        $this->responseCode = 403;
+        $this->message      = ApiResponse::RESPONSE_METHOD_NOT_ALLOWED->value;
 
         return $this->respond();
     }
 
     /**
+     * POST /
+     *
      * @return JsonResponse
-     *                      POST /
      */
     public function store(): JsonResponse
     {
@@ -60,13 +51,20 @@ class ApiAdminTeamUsersController extends Controller
          * The validation array.
          */
         $validationArray = [
-            'team_id' => [
-                'required',
-                Rule::exists('teams', 'id'),
-            ],
             'user_id' => [
                 'required',
                 Rule::exists('users', 'id'),
+            ],
+            'name' => [
+                'required',
+                'string',
+            ],
+            'token_abilities' => [
+                'required',
+                'array',
+            ],
+            'token_abilities.*' => [
+                Rule::in(PersonalAccessTokenAbility::cases()),
             ],
         ];
 
@@ -83,19 +81,20 @@ class ApiAdminTeamUsersController extends Controller
 
             try {
 
-                $model = new TeamUser();
+                $userId         = $this->request->get('user_id');
+                $name           = $this->request->get('name');
+                $tokenAbilities = $this->request->get('token_abilities');
 
-                foreach ($validationArray as $key => $validationRule) {
-                    $value = $this->request->get($key);
-                    if ((isset($value))) {
-                        $model->$key = $value;
-                    }
-                }
+                $user = User::find($userId);
 
-                $model->save();
+                $token = $user->createToken(
+                    name: $name,
+                    abilities: $tokenAbilities,
+                    teamId: $user->current_team_id
+                );
 
                 $this->message = ApiResponse::RESPONSE_SAVED->value;
-                $this->data    = $model;
+                $this->data    = ['token' => $token->plainTextToken];
 
             }
             catch (Exception $e) {
@@ -111,10 +110,11 @@ class ApiAdminTeamUsersController extends Controller
     }
 
     /**
+     * GET / {id}
+     *
      * @param string $id
      *
      * @return JsonResponse
-     *                      GET / {id}
      */
     public function show(string $id)
     {
@@ -125,10 +125,11 @@ class ApiAdminTeamUsersController extends Controller
     }
 
     /**
+     * PUT/ {id}
+     *
      * @param string $id
      *
      * @return JsonResponse
-     *                      PUT/ {id}
      */
     public function update(string $id)
     {
@@ -139,7 +140,7 @@ class ApiAdminTeamUsersController extends Controller
     }
 
     /**
-     * DELETE /{id}
+     * DELETE / {id}
      *
      * @param string $id
      *
@@ -147,30 +148,8 @@ class ApiAdminTeamUsersController extends Controller
      */
     public function destroy(string $id)
     {
-        try {
-
-            $model = TeamUser::find($id);
-
-            if (!$model) {
-
-                $this->responseCode = 404;
-                $this->message      = ApiResponse::RESPONSE_NOT_FOUND->value;
-
-            }
-            else {
-
-                $model->delete();
-                $this->message = ApiResponse::RESPONSE_DELETED->value;
-
-            }
-
-        }
-        catch (Exception $e) {
-
-            $this->responseCode = 500;
-            $this->message      = ApiResponse::RESPONSE_ERROR->value . ':' . $e->getMessage();
-
-        }
+        $this->responseCode = 403;
+        $this->message      = ApiResponse::RESPONSE_METHOD_NOT_ALLOWED->value;
 
         return $this->respond();
     }

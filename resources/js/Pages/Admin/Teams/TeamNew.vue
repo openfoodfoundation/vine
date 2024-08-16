@@ -1,12 +1,17 @@
 <script setup>
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
-import { Head, Link } from '@inertiajs/vue3';
+import {Head} from '@inertiajs/vue3';
 import AdminTopNavigation from "@/Components/Admin/AdminTopNavigation.vue";
+import AdminTeamCreateComponent from "@/Components/Admin/AdminTeamCreateComponent.vue";
+
+function teamCreated(team) {
+    window.location.href = route('admin.team', team.id)
+}
 
 </script>
 
 <template>
-    <Head title="Create Team" />
+    <Head title="Create Team"/>
 
     <AuthenticatedLayout>
         <template #header>
@@ -14,7 +19,7 @@ import AdminTopNavigation from "@/Components/Admin/AdminTopNavigation.vue";
         </template>
 
         <div class="card">
-            Create team component
+            <AdminTeamCreateComponent @teamCreated="teamCreated" />
         </div>
 
     </AuthenticatedLayout>

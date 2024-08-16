@@ -5,6 +5,7 @@
 namespace App\Http\Controllers\Api\V1\Admin;
 
 use App\Enums\ApiResponse;
+use App\Exceptions\DisallowedApiFieldException;
 use App\Http\Controllers\Api\HandlesAPIRequests;
 use App\Http\Controllers\Controller;
 use App\Models\Team;
@@ -21,11 +22,17 @@ class ApiAdminTeamsController extends Controller
      */
     public array $availableRelations = [];
 
-    public static array $searchableFields = [];
+    public static array $searchableFields = [
+        'id',
+        'name',
+    ];
 
     /**
+     * GET /
+     *
      * @return JsonResponse
-     *                      GET /
+     *
+     * @throws DisallowedApiFieldException
      */
     public function index(): JsonResponse
     {
@@ -37,8 +44,9 @@ class ApiAdminTeamsController extends Controller
     }
 
     /**
+     * POST /
+     *
      * @return JsonResponse
-     *                      POST /
      */
     public function store(): JsonResponse
     {
@@ -94,10 +102,13 @@ class ApiAdminTeamsController extends Controller
     }
 
     /**
+     * GET / {id}
+     *
      * @param string $id
      *
      * @return JsonResponse
-     *                      GET / {id}
+     *
+     * @throws DisallowedApiFieldException
      */
     public function show(string $id)
     {
@@ -109,10 +120,11 @@ class ApiAdminTeamsController extends Controller
     }
 
     /**
+     * PUT/ {id}
+     *
      * @param string $id
      *
      * @return JsonResponse
-     *                      PUT/ {id}
      */
     public function update(string $id)
     {
@@ -171,10 +183,11 @@ class ApiAdminTeamsController extends Controller
     }
 
     /**
+     * DELETE / {id}
+     *
      * @param string $id
      *
      * @return JsonResponse
-     *                      DELETE / {id}
      */
     public function destroy(string $id)
     {

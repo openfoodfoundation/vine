@@ -1,20 +1,19 @@
 <?php
 
-namespace Tests\Feature\API\Admin\AdminTeams;
+namespace Tests\Feature\API\Admin\AdminUserPersonalAccessTokens;
 
-use App\Models\Team;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Laravel\Sanctum\Sanctum;
 use PHPUnit\Framework\Attributes\Test;
 use Tests\Feature\API\BaseAPITestCase;
 
-class AdminTeamsGetTest extends BaseAPITestCase
+class AdminTokensGetTest extends BaseAPITestCase
 {
     use RefreshDatabase;
     use WithFaker;
 
-    public string $endpoint = '/admin/teams';
+    public string $endpoint = '/admin/user-personal-access-tokens';
 
     #[Test]
     public function onlyAdminCanAccess(): void
@@ -29,7 +28,7 @@ class AdminTeamsGetTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function itCanGetAllTeams()
+    public function itCanNotGetAllTokens()
     {
         $this->user = $this->createAdminUser();
 
@@ -37,16 +36,13 @@ class AdminTeamsGetTest extends BaseAPITestCase
             $this->user
         );
 
-        Team::factory()->create();
+        $response = $this->getJson($this->apiRoot . $this->endpoint);
 
-        $response    = $this->getJson($this->apiRoot . $this->endpoint);
-        $responseObj = json_decode($response->getContent());
-
-        $response->assertStatus(200);
+        $response->assertStatus(403);
     }
 
     #[Test]
-    public function itCanGetASingleTeam()
+    public function itCanNotGetASingleToken()
     {
         $this->user = $this->createAdminUser();
 
@@ -54,12 +50,10 @@ class AdminTeamsGetTest extends BaseAPITestCase
             $this->user
         );
 
-        $model = Team::factory()->create();
+        $randomId = $this->faker->randomDigitNotNull();
 
-        $response    = $this->getJson($this->apiRoot . $this->endpoint . '/' . $model->id);
-        $responseObj = json_decode($response->getContent());
+        $response = $this->getJson($this->apiRoot . $this->endpoint . '/' . $randomId);
 
-        $response->assertStatus(200);
-        $this->assertEquals($model->name, $responseObj->data->name);
+        $response->assertStatus(403);
     }
 }

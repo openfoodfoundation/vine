@@ -18,7 +18,15 @@ h2 {
     @apply font-semibold text-xl text-gray-800 leading-tight;
 }
 
+input[type=checkbox]{
+    @apply rounded
+}
+
 
 .card{
     @apply container lg:mx-auto p-6 lg:p-8 bg-white shadow-sm sm:rounded-lg my-8;
+}
+
+.card-header {
+    @apply pb-2 mb-2 border-b border-dotted text-gray-300 text-lg;
 }

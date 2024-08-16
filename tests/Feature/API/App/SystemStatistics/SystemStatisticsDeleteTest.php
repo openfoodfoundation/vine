@@ -23,9 +23,13 @@ class SystemStatisticsDeleteTest extends BaseAPITestCase
     {
         $this->user = $this->createUser();
 
-        $tokenString = $this->user->createToken(name: 'Token', abilities: [])->plainTextToken;
-        $model       = SystemStatistic::factory()->create();
-        $payload     = [];
+        $tokenString = $this->user->createToken(
+            name: 'Token',
+            abilities: [],
+            teamId: $this->user->current_team_id
+        )->plainTextToken;
+        $model   = SystemStatistic::factory()->create();
+        $payload = [];
 
         $response = $this->withToken($tokenString)
             ->deleteJson($this->apiRoot . $this->endpoint . '/' . $model->id, $payload);
@@ -65,7 +69,8 @@ class SystemStatisticsDeleteTest extends BaseAPITestCase
             name     : 'Token',
             abilities: [
                 PersonalAccessTokenAbility::SYSTEM_STATISTICS_DELETE->value,
-            ]
+            ],
+            teamId: $this->user->current_team_id
         )->plainTextToken;
 
         $model   = SystemStatistic::factory()->create();

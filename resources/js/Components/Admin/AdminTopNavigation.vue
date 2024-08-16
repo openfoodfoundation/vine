@@ -100,8 +100,8 @@ function highlightMatchingText(text) {
         Admin Dashboard
     </h2>
 
-    <div class="flex justify-between">
-        <div class="mt-4 lg:flex lg:justify-start lg:items-center lg:gap-x-4 grid grid-cols-3">
+    <div class="flex justify-between flex-wrap">
+        <div class="w-full md:mt-4 md:w-2/3 md:flex-grow lg:flex lg:justify-start lg:items-start lg:gap-x-4 grid grid-cols-3">
             <Link :href="route('admin.home')">
                 Admin Home
             </Link>
@@ -129,8 +129,8 @@ function highlightMatchingText(text) {
             </Link>
         </div>
 
-        <div class="w-1/3">
-            <div class="py-1 h-full w-full pl-4">
+        <div class="w-full md:w-1/3">
+            <div class="py-1 h-full w-full pt-4 md:pt-0">
                 <input id="admin-search-box"
                        v-model="searchTerm"
                        autofocus
@@ -155,7 +155,7 @@ function highlightMatchingText(text) {
                     </div>
                     <div>
                         <div v-for="user in searchResults.users">
-                            <a :href="'/user/' + user.id"
+                            <a :href="'/admin/user/' + user.id"
                                class="flex justify-between w-full py-2 border-b"
                                tabindex="0">
                                 <div class="flex space-x-4">
@@ -174,7 +174,7 @@ function highlightMatchingText(text) {
                     </div>
                     <div>
                         <div v-for="team in searchResults.teams">
-                            <a :href="'/team/' + team.id"
+                            <a :href="'/admin/team/' + team.id"
                                class="flex justify-between w-full py-2 border-b"
                                tabindex="0">
                                 <div class="flex">
@@ -192,7 +192,7 @@ function highlightMatchingText(text) {
                     </div>
                     <div>
                         <div v-for="voucherSet in searchResults.voucherSets">
-                            <a :href="'/voucher-set/' + voucherSet.id"
+                            <a :href="'/admin/voucher-set/' + voucherSet.id"
                                class="flex justify-between w-full py-2 border-b"
                                tabindex="0">
                                 <div class="flex">
@@ -210,7 +210,7 @@ function highlightMatchingText(text) {
                     </div>
                     <div>
                         <div v-for="voucher in searchResults.vouchers">
-                            <a :href="'/voucher/' + voucher.id"
+                            <a :href="'/admin/voucher/' + voucher.id"
                                class="flex justify-between w-full py-2 border-b"
                                tabindex="0">
                                 <div class="flex">

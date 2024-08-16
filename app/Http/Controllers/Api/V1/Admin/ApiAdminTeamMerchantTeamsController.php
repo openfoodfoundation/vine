@@ -22,9 +22,15 @@ class ApiAdminTeamMerchantTeamsController extends Controller
     /**
      * Set the related data the GET request is allowed to ask for
      */
-    public array $availableRelations = [];
+    public array $availableRelations = [
+        'team',
+        'merchantTeam',
+    ];
 
-    public static array $searchableFields = [];
+    public static array $searchableFields = [
+        'team_id',
+        'merchant_team_id',
+    ];
 
     /**
      * GET /
