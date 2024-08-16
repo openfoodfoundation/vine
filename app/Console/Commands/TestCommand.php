@@ -2,6 +2,9 @@
 
 namespace App\Console\Commands;
 
+
+use App\Jobs\TestJob;
+use App\Models\User;
 use Illuminate\Console\Command;
 
 class TestCommand extends Command
@@ -23,5 +26,9 @@ class TestCommand extends Command
     /**
      * Execute the console command.
      */
-    public function handle() {}
+    public function handle() {
+
+
+
+    }
 }
