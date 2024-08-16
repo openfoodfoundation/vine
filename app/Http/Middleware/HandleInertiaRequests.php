@@ -37,7 +37,7 @@ class HandleInertiaRequests extends Middleware
     {
         return [
             ...parent::share($request),
-            'auth'                         => [
+            'auth' => [
                 'user'        => $request->user(),
                 'currentTeam' => Team::find($request->user()->current_team_id),
             ],

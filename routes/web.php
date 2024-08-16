@@ -33,7 +33,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/switch-team/{id}', function ($id) {
 
         $teamUserForThisTeam = TeamUser::where('user_id', Auth::id())
-                                       ->where('team_id', $id)->first();
+            ->where('team_id', $id)->first();
 
         if ($teamUserForThisTeam) {
             Auth::user()->current_team_id = $id;

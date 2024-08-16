@@ -30,55 +30,53 @@ Route::group(['prefix' => 'v1'], function () {
              * My Teams
              */
             Route::post('/my-teams', [ApiMyTeamsController::class, 'store'])
-                 ->name('api.v1.my-teams.post')
-                 ->middleware(
-                     [
-                         'abilities:' .
-                         PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
-                         PersonalAccessTokenAbility::MY_TEAM_CREATE->value,
-                     ]
-                 );
+                ->name('api.v1.my-teams.post')
+                ->middleware(
+                    [
+                        'abilities:' .
+                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                        PersonalAccessTokenAbility::MY_TEAM_CREATE->value,
+                    ]
+                );
             Route::get('/my-teams', [ApiMyTeamsController::class, 'index'])
-                 ->name('api.v1.my-teams.getMany')
-                 ->middleware(
-                     [
-                         'abilities:' .
-                         PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
-                         PersonalAccessTokenAbility::MY_TEAM_READ->value,
-                     ]
-                 );
+                ->name('api.v1.my-teams.getMany')
+                ->middleware(
+                    [
+                        'abilities:' .
+                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                        PersonalAccessTokenAbility::MY_TEAM_READ->value,
+                    ]
+                );
 
             Route::get('/my-teams/{id}', [ApiMyTeamsController::class, 'show'])
-                 ->name('api.v1.my-teams.get')
-                 ->middleware(
-                     [
-                         'abilities:' .
-                         PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
-                         PersonalAccessTokenAbility::MY_TEAM_READ->value,
-                     ]
-                 );
+                ->name('api.v1.my-teams.get')
+                ->middleware(
+                    [
+                        'abilities:' .
+                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                        PersonalAccessTokenAbility::MY_TEAM_READ->value,
+                    ]
+                );
 
             Route::put('/my-teams/{id}', [ApiMyTeamsController::class, 'update'])
-                 ->name('api.v1.my-teams.put')
-                 ->middleware(
-                     [
-                         'abilities:' .
-                         PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
-                         PersonalAccessTokenAbility::MY_TEAM_UPDATE->value,
-                     ]
-                 );
+                ->name('api.v1.my-teams.put')
+                ->middleware(
+                    [
+                        'abilities:' .
+                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                        PersonalAccessTokenAbility::MY_TEAM_UPDATE->value,
+                    ]
+                );
 
             Route::delete('/my-teams/{id}', [ApiMyTeamsController::class, 'destroy'])
-                 ->name('api.v1.my-teams.delete')
-                 ->middleware(
-                     [
-                         'abilities:' .
-                         PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
-                         PersonalAccessTokenAbility::MY_TEAM_DELETE->value,
-                     ]
-                 );
-
-
+                ->name('api.v1.my-teams.delete')
+                ->middleware(
+                    [
+                        'abilities:' .
+                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                        PersonalAccessTokenAbility::MY_TEAM_DELETE->value,
+                    ]
+                );
 
             /**
              * My Vouchers

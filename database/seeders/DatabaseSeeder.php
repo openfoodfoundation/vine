@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
 
         $usersAndTeams = [
             [
-                'team'  => [
+                'team' => [
                     'name' => 'OK200 Team',
                 ],
                 'users' => [
@@ -42,7 +42,7 @@ class DatabaseSeeder extends Seeder
                 ],
             ],
             [
-                'team'  => [
+                'team' => [
                     'name' => 'Open Food Network',
                 ],
                 'users' => [

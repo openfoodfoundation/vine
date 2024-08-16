@@ -30,13 +30,14 @@ class ApiMyTeamsController extends Controller
 
     public static array $searchableFields = [
         'id',
-        'name'
+        'name',
     ];
 
     /**
      * GET /
      *
      * @return JsonResponse
+     *
      * @throws DisallowedApiFieldException
      */
     #[Endpoint(
@@ -119,7 +120,9 @@ class ApiMyTeamsController extends Controller
 
     /**
      * POST /
+     *
      * @hideFromAPIDocumentation
+     *
      * @return JsonResponse
      */
     public function store(): JsonResponse
@@ -132,8 +135,11 @@ class ApiMyTeamsController extends Controller
 
     /**
      * GET / {id}
+     *
      * @hideFromAPIDocumentation
+     *
      * @param string $id
+     *
      * @return JsonResponse
      */
     public function show(string $id)
@@ -146,8 +152,11 @@ class ApiMyTeamsController extends Controller
 
     /**
      * PUT / {id}
+     *
      * @hideFromAPIDocumentation
+     *
      * @param string $id
+     *
      * @return JsonResponse
      */
     public function update(string $id)
@@ -160,7 +169,9 @@ class ApiMyTeamsController extends Controller
 
     /**
      * DELETE / {id}
+     *
      * @hideFromAPIDocumentation
+     *
      * @param string $id
      *
      * @return JsonResponse
