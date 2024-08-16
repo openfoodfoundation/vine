@@ -14,7 +14,7 @@ return new class() extends Migration
         Schema::create('audit_items', function (Blueprint $table) {
             $table->id();
             $table->string('auditable_type')->index('ai_at');
-            $table->string('auditable_id');
+            $table->string('auditable_id')->index('ai_ai');
             $table->string('auditable_text');
             $table->unsignedBigInteger('auditable_team_id')->nullable()->index('ai_ati');
             $table->timestamps();
