@@ -87,11 +87,7 @@ class ApiAdminUserPersonalAccessTokensController extends Controller
 
                 $user = User::find($userId);
 
-                $token = $user->createToken(
-                    name: $name,
-                    abilities: $tokenAbilities,
-                    teamId: $user->current_team_id
-                );
+                $token = $user->createToken($name, $tokenAbilities);
 
                 $this->message = ApiResponse::RESPONSE_SAVED->value;
                 $this->data    = ['token' => $token->plainTextToken];

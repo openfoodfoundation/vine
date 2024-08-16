@@ -2,8 +2,8 @@
 import {onMounted, ref} from "vue";
 import AdminTeamDetailsComponent from "@/Components/Admin/AdminTeamDetailsComponent.vue";
 import PrimaryButton from "@/Components/PrimaryButton.vue";
-import AdminTeamSearchComponent from "@/Components/Admin/AdminTeamSearchComponent.vue";
 import Swal from "sweetalert2";
+import AdminTeamSelectComponent from "@/Components/Admin/AdminTeamSelectComponent.vue";
 
 const $props = defineProps({
     teamId: {
@@ -47,17 +47,10 @@ function getMerchantTeams() {
     })
 }
 
-function submitTeamMerchant(text) {
+function submitTeamMerchant() {
     let payload = {
         team_id: $props.teamId,
         merchant_team_id: teamAddingAsMerchant.value.id
-    }
-
-    if (text === 'addedAsMerchant') {
-        payload = {
-            team_id: teamAddingAsMerchant.value.id,
-            merchant_team_id: $props.teamId
-        }
     }
 
     axios.post('/admin/team-merchant-teams', payload).then(response => {
@@ -93,24 +86,15 @@ function teamSelected(team) {
 
     <div v-if="addingNewMerchant">
         <div class="py-2">Select merchant team...</div>
-        <AdminTeamSearchComponent @teamSelected="teamSelected" />
+        <AdminTeamSelectComponent :excludeTeams="merchants" :teamId="teamId" @teamSelected="teamSelected"/>
     </div>
 
     <div v-else-if="creatingNewTeamMerchant">
-        <div class="flex items-center">
-            <div class="pr-20 border-r">
-                <div class="py-2">Adding <span class="font-bold">{{ teamAddingAsMerchant.name }}</span> as <span class="font-bold">{{ $props.teamName }}</span>'s merchant.</div>
-                <PrimaryButton @click="submitTeamMerchant('getNewMerchant')" class="ms-4">
-                    Add {{ teamAddingAsMerchant.name }} as merchant for {{ $props.teamName }}
-                </PrimaryButton>
-            </div>
-            <div class="pl-20">
-                <div class="py-2">Adding <span class="font-bold">{{ $props.teamName }}</span> as <span class="font-bold">{{ teamAddingAsMerchant.name }}</span>'s merchant.</div>
-                <PrimaryButton @click="submitTeamMerchant('addedAsMerchant')" class="ms-4">
-                    Add {{ $props.teamName }} as merchant for {{ teamAddingAsMerchant.name }}
-                </PrimaryButton>
-            </div>
-        </div>
+        <div class="py-2">Adding <span class="font-bold">{{ teamAddingAsMerchant.name }}</span> as merchant team?</div>
+        <PrimaryButton @click="submitTeamMerchant()" class="ms-4">
+            Add
+        </PrimaryButton>
+
     </div>
 
     <div v-else>
@@ -118,7 +102,7 @@ function teamSelected(team) {
             <div class="mb-2 font-semibold">{{ teamName }}'s merchant teams</div>
 
             <div v-for="merchant in merchants.data" class="border-b py-1">
-                <AdminTeamDetailsComponent :team="merchant.merchant_team" />
+                <AdminTeamDetailsComponent :team="merchant.merchant_team"/>
             </div>
         </div>
 
@@ -126,7 +110,7 @@ function teamSelected(team) {
             <div class="mb-2 font-semibold">{{ teamName }} is merchant team for</div>
 
             <div v-for="merchantTeam in merchantTeams.data" class="border-b py-1">
-                <AdminTeamDetailsComponent :team="merchantTeam.team" />
+                <AdminTeamDetailsComponent :team="merchantTeam.team"/>
             </div>
         </div>
 

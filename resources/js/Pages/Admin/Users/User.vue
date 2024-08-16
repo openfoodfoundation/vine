@@ -31,14 +31,19 @@ onMounted(() => {
 function createPAT() {
     newPAT.value.user_id = user.value.id
     axios.post('/admin/user-personal-access-tokens', newPAT.value).then(response => {
+        let token = response.data.data.token
+
         Swal.fire({
-            title: 'Success!',
-            icon: 'success',
-            timer: 1000
-        }).then(() => {
+            title: "Personal access token issued!",
+            html: `Please note that the token will be displayed only once. Make sure to save it securely. </br> <b>` + token + `</b>`,
+            icon: "warning",
+            confirmButtonColor: "#3085d6",
+            confirmButtonText: "Got it"
+        }).then((result) => {
             newPAT.value = {name: '', token_abilities: []}
             getUser()
-        })
+        });
+
     }).catch(error => {
         console.log(error)
     })

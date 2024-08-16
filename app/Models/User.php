@@ -64,17 +64,4 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Team::class);
     }
-
-    public function createToken(string $name, array $abilities, int $teamId, ?DateTimeInterface $expiresAt = null): NewAccessToken
-    {
-        $token = $this->tokens()->create([
-            'name'       => $name,
-            'token'      => hash('sha256', $plainTextToken = Str::random(40)),
-            'abilities'  => $abilities,
-            'team_id'    => $teamId,
-            'expires_at' => $expiresAt,
-        ]);
-
-        return new NewAccessToken($token, $token->getKey() . '|' . $plainTextToken);
-    }
 }

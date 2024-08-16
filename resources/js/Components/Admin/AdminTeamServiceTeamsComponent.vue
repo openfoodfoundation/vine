@@ -3,7 +3,7 @@ import {onMounted, ref} from "vue";
 import AdminTeamDetailsComponent from "@/Components/Admin/AdminTeamDetailsComponent.vue";
 import PrimaryButton from "@/Components/PrimaryButton.vue";
 import Swal from "sweetalert2";
-import AdminTeamSearchComponent from "@/Components/Admin/AdminTeamSearchComponent.vue";
+import AdminTeamSelectComponent from "@/Components/Admin/AdminTeamSelectComponent.vue";
 
 const $props = defineProps({
     teamId: {
@@ -47,17 +47,10 @@ function getServiceTeams() {
     })
 }
 
-function submitTeamService(text) {
+function submitTeamService() {
     let payload = {
         team_id: $props.teamId,
         service_team_id: teamAddingAsService.value.id
-    }
-
-    if (text === 'addedAsService') {
-        payload = {
-            team_id: teamAddingAsService.value.id,
-            service_team_id: $props.teamId
-        }
     }
 
     axios.post('/admin/team-service-teams', payload).then(response => {
@@ -93,24 +86,14 @@ function teamSelected(team) {
 
     <div v-if="addingNewService">
         <div class="py-2">Select service team...</div>
-        <AdminTeamSearchComponent @teamSelected="teamSelected" />
+        <AdminTeamSelectComponent :excludeTeams="services" :teamId="teamId" @teamSelected="teamSelected"/>
     </div>
 
     <div v-else-if="creatingNewTeamService">
-        <div class="flex items-center">
-            <div class="pr-20 border-r">
-                <div class="py-2">Adding <span class="font-bold">{{ teamAddingAsService.name }}</span> as <span class="font-bold">{{ $props.teamName }}</span>'s service.</div>
-                <PrimaryButton @click="submitTeamService('getNewService')" class="ms-4">
-                    Add {{ teamAddingAsService.name }} as service for {{ $props.teamName }}
-                </PrimaryButton>
-            </div>
-            <div class="pl-20">
-                <div class="py-2">Adding <span class="font-bold">{{ $props.teamName }}</span> as <span class="font-bold">{{ teamAddingAsService.name }}</span>'s service.</div>
-                <PrimaryButton @click="submitTeamService('addedAsService')" class="ms-4">
-                    Add {{ $props.teamName }} as service for {{ teamAddingAsService.name }}
-                </PrimaryButton>
-            </div>
-        </div>
+        <div class="py-2">Adding <span class="font-bold">{{ teamAddingAsService.name }}</span> as service team?</div>
+        <PrimaryButton @click="submitTeamService()" class="ms-4">
+            Add
+        </PrimaryButton>
     </div>
 
     <div v-else>
@@ -118,7 +101,7 @@ function teamSelected(team) {
             <div class="mb-2 font-semibold">{{ teamName }}'s service teams</div>
 
             <div v-for="service in services.data" class="border-b py-1">
-                <AdminTeamDetailsComponent :team="service.service_team" />
+                <AdminTeamDetailsComponent :team="service.service_team"/>
             </div>
         </div>
 
@@ -126,7 +109,7 @@ function teamSelected(team) {
             <div class="mb-2 font-semibold">{{ teamName }} is service team for</div>
 
             <div v-for="serviceTeam in serviceTeams.data" class="border-b py-1">
-                <AdminTeamDetailsComponent :team="serviceTeam.team" />
+                <AdminTeamDetailsComponent :team="serviceTeam.team"/>
             </div>
         </div>
 
