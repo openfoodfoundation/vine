@@ -23,9 +23,16 @@ class ApiAdminTeamUsersController extends Controller
     /**
      * Set the related data the GET request is allowed to ask for
      */
-    public array $availableRelations = [];
+    public array $availableRelations = [
+        'team',
+        'user',
+    ];
 
-    public static array $searchableFields = [];
+    public static array $searchableFields = [
+        'id',
+        'team_id',
+        'user_id',
+    ];
 
     /**
      * GET /

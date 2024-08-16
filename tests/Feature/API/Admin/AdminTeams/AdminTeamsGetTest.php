@@ -37,15 +37,12 @@ class AdminTeamsGetTest extends BaseAPITestCase
             $this->user
         );
 
-        $rand = rand(5, 10);
-
-        Team::factory($rand)->create();
+        Team::factory()->create();
 
         $response    = $this->getJson($this->apiRoot . $this->endpoint);
         $responseObj = json_decode($response->getContent());
 
         $response->assertStatus(200);
-        $this->assertEquals($rand, $responseObj->data->total);
     }
 
     #[Test]

@@ -1,10 +1,13 @@
 <?php
 
+/** @noinspection PhpOptionalBeforeRequiredParametersInspection */
+
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use App\Events\Users\UserWasCreated;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -63,5 +66,10 @@ class User extends Authenticatable
     public function auditItems(): MorphMany
     {
         return $this->morphMany(AuditItem::class, 'auditable');
+    }
+
+    public function currentTeam(): BelongsTo
+    {
+        return $this->belongsTo(Team::class);
     }
 }

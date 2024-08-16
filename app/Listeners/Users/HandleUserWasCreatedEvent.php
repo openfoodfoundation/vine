@@ -5,7 +5,6 @@ namespace App\Listeners\Users;
 use App\Events\Users\UserWasCreated;
 use App\Jobs\RecordUserWasCreatedAuditItem;
 use Auth;
-use Log;
 
 class HandleUserWasCreatedEvent
 {

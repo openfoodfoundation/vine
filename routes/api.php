@@ -8,8 +8,10 @@ use App\Http\Controllers\Api\V1\Admin\ApiAdminTeamMerchantTeamsController;
 use App\Http\Controllers\Api\V1\Admin\ApiAdminTeamsController;
 use App\Http\Controllers\Api\V1\Admin\ApiAdminTeamServiceTeamsController;
 use App\Http\Controllers\Api\V1\Admin\ApiAdminTeamUsersController;
+use App\Http\Controllers\Api\V1\Admin\ApiAdminUserPersonalAccessTokensController;
 use App\Http\Controllers\Api\V1\Admin\ApiAdminUsersController;
 use App\Http\Controllers\Api\V1\ApiMyTeamAuditItemsController;
+use App\Http\Controllers\Api\V1\ApiMyTeamController;
 use App\Http\Controllers\Api\V1\ApiMyTeamVouchersController;
 use App\Http\Controllers\Api\V1\ApiSystemStatisticsController;
 use App\Http\Middleware\CheckAdminStatus;
@@ -22,6 +24,8 @@ Route::group(['prefix' => 'v1'], function () {
      */
     Route::middleware(['auth:sanctum'])
         ->group(function () {
+
+            Route::resource('/my-team', ApiMyTeamController::class)->names('api.v1.my-team');
 
             /**
              * My Audit Items
@@ -197,6 +201,7 @@ Route::group(['prefix' => 'v1'], function () {
             Route::resource('/team-service-teams', ApiAdminTeamServiceTeamsController::class)->names('api.v1.admin.team-service-teams');
             Route::resource('/team-users', ApiAdminTeamUsersController::class)->names('api.v1.admin.team-users');
             Route::resource('/teams', ApiAdminTeamsController::class)->names('api.v1.admin.teams');
+            Route::resource('/user-personal-access-tokens', ApiAdminUserPersonalAccessTokensController::class)->names('api.v1.admin.tokens');
             Route::resource('/users', ApiAdminUsersController::class)->names('api.v1.admin.users');
 
         });

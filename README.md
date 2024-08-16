@@ -127,14 +127,52 @@ LOG_STACK=sentry  # or sentry,single etc for multiple
 
 Todo - explain how pint works, and under what circumstances it'll run
 
+## File Storage: Local vs. AWS S3
+You are free to use whichever storage cloud you like - the default environment variable of `FILESYSTEM_DISK=local` means that the application will use the local server.
+
+To configure the system to use AWS S3, first create a bucket in S3 and some access keys for your implementation. then update the following environment variables:
+
+```dotenv
+FILESYSTEM_DISK=s3
+
+AWS_ACCESS_KEY_ID=[YourApplicationKey]
+AWS_SECRET_ACCESS_KEY=[YourApplicationSecret]
+AWS_DEFAULT_REGION=[S3 Bucket location eg ap-southeast-2]
+AWS_BUCKET=[S3 Bucket Name]
+AWS_USE_PATH_STYLE_ENDPOINT=false
+```
+The S3 bucket uses a configuration called `root`, which separates the base bucket into the environment that the application is running under. This is based on `APP_ENV`. If you are running `APP_ENV=local` and your bucket was called `AWS_BUCKET=ofn-vine-uk`, your bucket folder structure would look like this:
+
+```
+/ofn-vine-uk
+    /local 👈 // Objects would be placed here by default at the path you provide
+    /staging
+    /production
+```
+
+NOTE: No extra config is required for this behaviour on AWS S3. It is not the default for any other filesystem storage providers.
+
+## Queue Configuration
+By default, the queue is set to `sync`: `QUEUE_CONNECTION=sync` which runs jobs as part of the current request. You are free to reconfigure this. 
+
+If using AWS SQS, you need to create queues for each environment, and update the env vars as follows:
+
+```dotenv
+QUEUE_CONNECTION=sqs
+SQS_QUEUE="queue-name-${APP_ENV}" # eg ofn-vine-uk-local as set in AWS SQS
+SQS_PREFIX=https://sqs.${AWS_DEFAULT_REGION}.amazonaws.com/[YOUR-AWS-ACCOUNT-ID]
+```
+You'll also need to run at least one properly configured queue worker on your server environment for this to work.
+
 ## API Middleware - Protecting The API
 
 In /bootstrap.app.php we've configured middleware as follows:
 
 ```php
-$middleware->alias([
-                  'abilities' => CheckForAnyTokenAbilities::class,
-              ]);
+$middleware->alias(
+    [
+        'abilities' => CheckForAnyTokenAbilities::class,
+    ]);
 ```
 
 This runs the API middleware through `CheckForAnyTokenAbilities`, checking the incoming personal access token for the
