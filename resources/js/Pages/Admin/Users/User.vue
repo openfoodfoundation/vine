@@ -84,10 +84,9 @@ function textFormat(ability) {
         </template>
 
         <div class="card">
-            <div class="flex items-start font-bold">
-                <div>#{{ $props.id }}</div>
-                <div class="pl-2 text-2xl">{{ user.name }}</div>
-            </div>
+
+            <h2>{{ user.name }}</h2>
+
         </div>
 
         <div class="card">
@@ -104,10 +103,13 @@ function textFormat(ability) {
             </div>
 
             <div v-if="userTeams.data && userTeams.data.length > 0">
-                <Link :href="route('admin.team', userTeam.team_id)" v-for="userTeam in userTeams.data" class="hover:no-underline hover:opacity-75">
+                <Link :href="route('admin.team', userTeam.team_id)" v-for="userTeam in userTeams.data"
+                      class="hover:no-underline hover:opacity-75">
                     <div :class="{'border-b p-2': userTeams.data.length > 1}">
                         <div v-if="userTeam.team">
-                            <div v-if="userTeam.team_id === user.current_team_id" class="text-xs text-red-500">*Current team</div>
+                            <div v-if="userTeam.team_id === user.current_team_id" class="text-xs text-red-500">*Current
+                                team
+                            </div>
                             <div class="">{{ userTeam.team.name }}</div>
                         </div>
                     </div>
@@ -163,13 +165,15 @@ function textFormat(ability) {
                 <div class="grid grid-cols-1 md:grid-cols-4">
                     <div v-for="ability in personalAccessTokenAbilities">
                         <label :for="ability" class="cursor-pointer">
-                            <input type="checkbox" :id="ability" class="mr-4" :value="ability" v-model="newPAT.token_abilities"> {{ textFormat(ability) }}
+                            <input type="checkbox" :id="ability" class="mr-4" :value="ability"
+                                   v-model="newPAT.token_abilities"> {{ textFormat(ability) }}
                         </label>
                     </div>
                 </div>
 
                 <div class="flex items-center justify-end mt-4">
-                    <PrimaryButton @click.prevent="createPAT()" class="ms-4" :class="{ 'opacity-25': !newPAT.name }" :desabled="!newPAT.name">
+                    <PrimaryButton @click.prevent="createPAT()" class="ms-4" :class="{ 'opacity-25': !newPAT.name }"
+                                   :desabled="!newPAT.name">
                         Submit
                     </PrimaryButton>
                 </div>

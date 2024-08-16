@@ -96,12 +96,15 @@ function highlightMatchingText(text) {
 
 <template>
 
+
     <h2>
         Admin Dashboard
     </h2>
 
+
     <div class="flex justify-between flex-wrap">
-        <div class="w-full md:mt-4 md:w-2/3 md:flex-grow lg:flex lg:justify-start lg:items-start lg:gap-x-4 grid grid-cols-3">
+        <div
+            class="w-full md:mt-4 md:w-2/3 md:flex-grow lg:flex lg:justify-start lg:items-start lg:gap-x-4 grid grid-cols-3">
             <Link :href="route('admin.home')">
                 Admin Home
             </Link>

@@ -1,46 +1,78 @@
 <script setup>
 import moment from "moment";
+import Swal from "sweetalert2";
+import {onMounted, ref} from "vue";
+import {Link} from "@inertiajs/vue3";
 
-const $props = defineProps(['auditItems', 'isAdmin'])
+const $props = defineProps(
+    {
+        isAdmin: {
+            type: Boolean,
+            default: false,
+            required: false
+        }
+    }
+)
+
+const auditItems = ref({});
+
+function getData() {
+
+    let endpoint = '/my-team-audit-items?cache=false&orderBy=id,desc';
+
+    if ($props.isAdmin) {
+        endpoint = '/admin/audit-items?cache=false&relations=team&orderBy=id,desc';
+    }
+
+    axios.get(endpoint).then(response => {
+
+        auditItems.value = response.data.data;
+
+    }).catch(error => {
+
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops!',
+            text: error.response.data.message
+        });
+    });
+}
+
+onMounted(() => {
+    getData();
+});
+
 
 </script>
 
 <template>
 
-    <div v-for="auditItem in $props.auditItems.data"
-         class="flex justify-between items-center border-b border-gray-200 p-4">
-        <div class="">
-             <span :class="{
-              'text-green-500': auditItem.auditable_text.includes('created'),
-              'text-orange-500': auditItem.auditable_text.includes('updated'),
-              'text-red-500': auditItem.auditable_text.includes('deleted')
-                }"
-                   class="capitalize font-bold"
-             >
-              {{ auditItem.auditable_text }}
-          </span>
+   <div class="card">
+       <div class="card-header">
+           Audit Trail
+       </div>
+       <div v-for="auditItem in auditItems.data">
+           <Link class="hover:no-underline" :href="(isAdmin)? auditItem.admin_url : auditItem.dashboard_url">
+               <div
+                   class="flex justify-between items-center border-b border-gray-200 p-4">
+                   <div>
+                       <div>
+                           {{ auditItem.auditable_text }}
+                       </div>
 
-            <span class="ml-6">
-                {{ auditItem.auditable_type.substring(auditItem.auditable_type.lastIndexOf("\\") + 1) }}
-            </span>
+                       <div class="text-xs text-gray-500 italic">
+                           {{ moment(auditItem.created_at).format("dddd, MMMM Do YYYY [at] h:mm:ss a") }}
+                       </div>
+                   </div>
 
-
-            <span class="text-sm text-gray-600 ml-2">
-                # {{ auditItem.auditable_id }}
-            </span>
-
-            <a v-if="isAdmin && auditItem.team?.id" :href="'/admin/team/' + auditItem.team.id">
-                <span class="text-sm text-gray-600 hover:underline hover:text-blue-500">
-                    {{ auditItem.team.name }}
-                </span>
-            </a>
-        </div>
-
-        <div class="">
-
-
-            {{ moment(auditItem.updated_at).format("dddd, MMMM Do YYYY [at] h:mm:ss a") }}
-        </div>
-    </div>
+                   <div>
+                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                           <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                       </svg>
+                   </div>
+               </div>
+           </Link>
+       </div>
+   </div>
 
 </template>
