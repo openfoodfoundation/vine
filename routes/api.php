@@ -1,7 +1,6 @@
 <?php
 
 use App\Enums\PersonalAccessTokenAbility;
-use App\Http\Controllers\Api\V1\Admin\ApiAdminAuditItemsController;
 use App\Http\Controllers\Api\V1\Admin\ApiAdminSearchController;
 use App\Http\Controllers\Api\V1\Admin\ApiAdminSystemStatisticsController;
 use App\Http\Controllers\Api\V1\Admin\ApiAdminTeamMerchantTeamsController;
@@ -10,8 +9,8 @@ use App\Http\Controllers\Api\V1\Admin\ApiAdminTeamServiceTeamsController;
 use App\Http\Controllers\Api\V1\Admin\ApiAdminTeamUsersController;
 use App\Http\Controllers\Api\V1\Admin\ApiAdminUserPersonalAccessTokensController;
 use App\Http\Controllers\Api\V1\Admin\ApiAdminUsersController;
-use App\Http\Controllers\Api\V1\ApiMyTeamAuditItemsController;
 use App\Http\Controllers\Api\V1\ApiMyTeamController;
+use App\Http\Controllers\Api\V1\ApiMyTeamsController;
 use App\Http\Controllers\Api\V1\ApiMyTeamVouchersController;
 use App\Http\Controllers\Api\V1\ApiSystemStatisticsController;
 use App\Http\Middleware\CheckAdminStatus;
@@ -28,55 +27,54 @@ Route::group(['prefix' => 'v1'], function () {
             Route::resource('/my-team', ApiMyTeamController::class)->names('api.v1.my-team');
 
             /**
-             * My Audit Items
+             * My Teams
              */
-            Route::post('/my-team-audit-items', [ApiMyTeamAuditItemsController::class, 'store'])
-                ->name('api.v1.my-team-audit-items.post')
+            Route::post('/my-teams', [ApiMyTeamsController::class, 'store'])
+                ->name('api.v1.my-teams.post')
                 ->middleware(
                     [
                         'abilities:' .
                         PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
-                        PersonalAccessTokenAbility::MY_TEAM_AUDIT_ITEMS_CREATE->value,
+                        PersonalAccessTokenAbility::MY_TEAM_CREATE->value,
+                    ]
+                );
+            Route::get('/my-teams', [ApiMyTeamsController::class, 'index'])
+                ->name('api.v1.my-teams.getMany')
+                ->middleware(
+                    [
+                        'abilities:' .
+                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                        PersonalAccessTokenAbility::MY_TEAM_READ->value,
                     ]
                 );
 
-            Route::get('/my-team-audit-items', [ApiMyTeamAuditItemsController::class, 'index'])
-                ->name('api.v1.my-team-audit-items.getMany')
+            Route::get('/my-teams/{id}', [ApiMyTeamsController::class, 'show'])
+                ->name('api.v1.my-teams.get')
                 ->middleware(
                     [
                         'abilities:' .
                         PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
-                        PersonalAccessTokenAbility::MY_TEAM_AUDIT_ITEMS_READ->value,
+                        PersonalAccessTokenAbility::MY_TEAM_READ->value,
                     ]
                 );
 
-            Route::get('/my-team-audit-items/{id}', [ApiMyTeamAuditItemsController::class, 'show'])
-                ->name('api.v1.my-team-audit-items.get')
+            Route::put('/my-teams/{id}', [ApiMyTeamsController::class, 'update'])
+                ->name('api.v1.my-teams.put')
                 ->middleware(
                     [
                         'abilities:' .
                         PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
-                        PersonalAccessTokenAbility::MY_TEAM_AUDIT_ITEMS_READ->value,
+                        PersonalAccessTokenAbility::MY_TEAM_UPDATE->value,
                     ]
                 );
 
-            Route::put('/my-team-audit-items/{id}', [ApiMyTeamVouchersController::class, 'update'])
-                ->name('api.v1.my-team-audit-items.put')
+            Route::delete('/my-teams/{id}', [ApiMyTeamsController::class, 'destroy'])
+                ->name('api.v1.my-teams.delete')
                 ->middleware(
                     [
                         'abilities:' .
                         PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
-                        PersonalAccessTokenAbility::MY_TEAM_AUDIT_ITEMS_UPDATE->value,
-                    ]
-                );
-
-            Route::delete('/my-team-audit-items/{id}', [ApiMyTeamAuditItemsController::class, 'destroy'])
-                ->name('api.v1.my-team-audit-items.delete')
-                ->middleware(
-                    [
-                        'abilities:' .
-                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
-                        PersonalAccessTokenAbility::MY_TEAM_AUDIT_ITEMS_DELETE->value,
+                        PersonalAccessTokenAbility::MY_TEAM_DELETE->value,
                     ]
                 );
 
@@ -194,7 +192,6 @@ Route::group(['prefix' => 'v1'], function () {
     Route::prefix('admin')
         ->middleware(['auth:sanctum', CheckAdminStatus::class])
         ->group(function () {
-            Route::resource('/audit-items', ApiAdminAuditItemsController::class)->names('api.v1.admin.audit-items');
             Route::resource('/search', ApiAdminSearchController::class)->names('api.v1.admin.search');
             Route::resource('/system-statistics', ApiAdminSystemStatisticsController::class)->names('api.v1.admin.system-statistics');
             Route::resource('/team-merchant-teams', ApiAdminTeamMerchantTeamsController::class)->names('api.v1.admin.team-merchant-teams');

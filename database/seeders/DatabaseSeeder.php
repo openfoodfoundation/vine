@@ -66,10 +66,11 @@ class DatabaseSeeder extends Seeder
             foreach ($userAndTeam['users'] as $user) {
                 $user = User::factory()->createQuietly(
                     [
-                        'name'     => $user['name'],
-                        'email'    => $user['email'],
-                        'password' => $user['email'],
-                        'is_admin' => 1,
+                        'name'            => $user['name'],
+                        'email'           => $user['email'],
+                        'password'        => $user['email'],
+                        'is_admin'        => 1,
+                        'current_team_id' => $team->id,
                     ]
                 );
 
