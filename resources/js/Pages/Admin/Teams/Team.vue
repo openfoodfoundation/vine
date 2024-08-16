@@ -4,11 +4,11 @@ import {Head, Link} from '@inertiajs/vue3';
 import AdminTopNavigation from "@/Components/Admin/AdminTopNavigation.vue";
 import {onMounted, ref} from "vue";
 import PaginatorComponent from "@/Components/Admin/PaginatorComponent.vue";
-import AdminUserSearchComponent from "@/Components/Admin/AdminUserSearchComponent.vue";
 import Swal from "sweetalert2";
 import AdminTeamMerchantTeamsComponent from "@/Components/Admin/AdminTeamMerchantTeamsComponent.vue";
 import AdminTeamDetailsComponent from "@/Components/Admin/AdminTeamDetailsComponent.vue";
 import AdminTeamServiceTeamsComponent from "@/Components/Admin/AdminTeamServiceTeamsComponent.vue";
+import AdminUserSelectComponent from "@/Components/Admin/AdminUserSelectComponent.vue";
 
 const $props = defineProps({
     id: {
@@ -120,7 +120,7 @@ function setDataPage(page) {
                 Add user to team
             </div>
 
-            <AdminUserSearchComponent :teamId="$props.id" @createNewTeamUser="createNewTeamUser" />
+            <AdminUserSelectComponent :teamId="$props.id" @createNewTeamUser="createNewTeamUser" />
         </div>
 
         <div class="card">
