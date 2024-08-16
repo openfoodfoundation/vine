@@ -53,9 +53,10 @@ class ApiMyTeamAuditItemsController extends Controller
     /**
      * GET /{id}
      *
-     * @param  int  $id
+     * @param int $id
      *
      * @return JsonResponse
+     *
      * @throws DisallowedApiFieldException
      */
     public function show(int $id)
@@ -70,7 +71,7 @@ class ApiMyTeamAuditItemsController extends Controller
     /**
      * PUT /{id}
      *
-     * @param  string  $id
+     * @param string $id
      *
      * @return JsonResponse
      */
@@ -85,7 +86,7 @@ class ApiMyTeamAuditItemsController extends Controller
     /**
      * DELETE / {id}
      *
-     * @param  string  $id
+     * @param string $id
      *
      * @return JsonResponse
      */
