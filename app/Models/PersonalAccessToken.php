@@ -7,6 +7,10 @@ use Laravel\Sanctum\PersonalAccessToken as SanctumPersonalAccessToken;
 
 class PersonalAccessToken extends SanctumPersonalAccessToken
 {
+
+    protected $casts = [
+        'abilities' => 'array',
+    ];
     /**
      * The attributes that are mass assignable.
      *

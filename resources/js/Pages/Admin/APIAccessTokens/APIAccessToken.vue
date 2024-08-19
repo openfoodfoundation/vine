@@ -56,9 +56,6 @@ function revokeApiAccessToken() {
     });
 }
 
-function textFormat(ability) {
-    return ability.replaceAll('-', ' ')
-}
 
 </script>
 
@@ -72,7 +69,10 @@ function textFormat(ability) {
 
         <div class="card">
 
-            <h2>{{ apiAccessToken.name }}</h2>
+            <h2>
+                {{ apiAccessToken.name }}
+                (#{{ apiAccessToken.id }})
+            </h2>
 
         </div>
 
@@ -81,34 +81,50 @@ function textFormat(ability) {
                 API Access Token details
             </div>
 
-            <div class="text-xs">#{{ apiAccessToken.id }}</div>
-            <div class="">{{ apiAccessToken.name }}</div>
-            <div v-if="apiAccessToken.last_used_at" class="mt-2">Last used at: {{ dateFormat(apiAccessToken.last_used_at) }}</div>
-        </div>
 
-        <div class="card">
-            <div class="card-header">
-                Issued to user
+            <div class="my-1">
+                 <span class="font-bold">
+                    Name:
+                </span>
+                {{ apiAccessToken.name }}
             </div>
+            <div class="my-1" v-if="apiAccessToken.tokenable_id">
+                 <span class="font-bold">
+                    Assigned To:
+                </span>
 
-            <div v-if="apiAccessToken.user">
-                <Link :href="route('admin.user', apiAccessToken.tokenable_id)">
-                    {{ apiAccessToken.user.name }}
+                <Link :href="route('admin.user', {id: apiAccessToken.tokenable_id})">
+                    {{ apiAccessToken.user?.name }}
                 </Link>
             </div>
+            <div class="my-1">
+                 <span class="font-bold">
+                    Created:
+                </span>
+                {{ dateFormat(apiAccessToken.created_at) }}
+            </div>
+            <div v-if="apiAccessToken.last_used_at" class="my-1">
+
+                <span class="font-bold">
+                    Last used:
+                </span>
+                {{ dateFormat(apiAccessToken.last_used_at) }}
+            </div>
+            <div v-if="apiAccessToken.expires_at" class="my-1">
+                <span class="font-bold">
+                    Expires:
+                </span>
+                {{ dateFormat(apiAccessToken.expires_at) }}
+            </div>
         </div>
 
         <div class="card">
             <div class="card-header">
-                API Access Token abilities
+                Abilities
             </div>
 
             <div v-if="apiAccessToken.abilities && apiAccessToken.abilities.length">
-                <div v-for="ability in apiAccessToken.abilities" class="py-1">
-                    <div class="list-item ml-8">
-                        {{ textFormat(ability) }}
-                    </div>
-                </div>
+                {{apiAccessToken.abilities.join(', ')}}
             </div>
         </div>
 

@@ -151,19 +151,21 @@ function clearAbilitiesList(){
 
         <div class="card">
             <div class="card-header">
-                User Personal Access Tokens (PATs))
+                User Personal Access Tokens (PATs)
             </div>
 
             <div v-if="user.tokens && user.tokens.length">
                 <div v-for="userToken in user.tokens" class="border-b py-2">
-                    <div class="list-item ml-8">
-                        {{ userToken.name }}
-                    </div>
-                    <div v-if="userToken.abilities && userToken.abilities.length">
-                        <div v-for="ability in userToken.abilities" class="ml-8 text-xs">
-                            - {{ textFormat(ability) }}
+                    <Link :href="route('admin.api-access-token', {id: userToken.id})">
+                        <div class="list-item ml-8">
+                            {{ userToken.name }}
                         </div>
-                    </div>
+                        <div v-if="userToken.abilities && userToken.abilities.length">
+                            <div v-for="ability in userToken.abilities" class="ml-8 text-xs">
+                                - {{ textFormat(ability) }}
+                            </div>
+                        </div>
+                    </Link>
                 </div>
             </div>
             <div v-else>User does not have PATs.</div>
