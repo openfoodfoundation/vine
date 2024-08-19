@@ -137,7 +137,7 @@ class ApiShopsController extends Controller
 
             $this->message = ApiResponse::RESPONSE_SAVED->value . '. Here is the API Token for the user linked to this new team. It will only be displayed ONCE, so please store it in a secure manner.';
             $this->data    = [
-                'token' => $token->plainTextToken
+                'token' => $token->plainTextToken,
             ];
 
         }
@@ -153,6 +153,8 @@ class ApiShopsController extends Controller
 
     /**
      * @hideFromAPIDocumentation
+     *
+     * @param int $id
      */
     public function show(int $id)
     {
@@ -164,6 +166,8 @@ class ApiShopsController extends Controller
 
     /**
      * @hideFromAPIDocumentation
+     *
+     * @param string $id
      */
     public function update(string $id)
     {
@@ -175,6 +179,8 @@ class ApiShopsController extends Controller
 
     /**
      * @hideFromAPIDocumentation
+     *
+     * @param string $id
      */
     public function destroy(string $id)
     {
