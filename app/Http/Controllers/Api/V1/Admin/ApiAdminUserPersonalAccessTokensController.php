@@ -69,7 +69,7 @@ class ApiAdminUserPersonalAccessTokensController extends Controller
         ];
 
         $messages = [
-            'token_abilities' => 'Please ensure the token has at least 1 ability associated to it.'
+            'token_abilities' => 'Please ensure the token has at least 1 ability associated to it.',
         ];
         $validator = Validator::make($this->request->all(), $validationArray, $messages);
 

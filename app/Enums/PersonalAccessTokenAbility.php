@@ -28,17 +28,14 @@ enum PersonalAccessTokenAbility: string
     case REDEMPTIONS_READ           = 'redemptions-read';
     case REDEMPTIONS_UPDATE         = 'redemptions-update';
     case REDEMPTIONS_DELETE         = 'redemptions-delete';
-
-    case SHOPS_CREATE = 'shops-create';
-    case SHOPS_READ   = 'shops-read';
-    case SHOPS_UPDATE = 'shops-update';
-    case SHOPS_DELETE = 'shops-delete';
-
-    case SYSTEM_STATISTICS_CREATE = 'system-statistics-create';
-    case SYSTEM_STATISTICS_READ   = 'system-statistics-read';
-    case SYSTEM_STATISTICS_UPDATE = 'system-statistics-update';
-    case SYSTEM_STATISTICS_DELETE = 'system-statistics-delete';
-
+    case SHOPS_CREATE               = 'shops-create';
+    case SHOPS_READ                 = 'shops-read';
+    case SHOPS_UPDATE               = 'shops-update';
+    case SHOPS_DELETE               = 'shops-delete';
+    case SYSTEM_STATISTICS_CREATE   = 'system-statistics-create';
+    case SYSTEM_STATISTICS_READ     = 'system-statistics-read';
+    case SYSTEM_STATISTICS_UPDATE   = 'system-statistics-update';
+    case SYSTEM_STATISTICS_DELETE   = 'system-statistics-delete';
 
     public static function abilityLabels(): array
     {
