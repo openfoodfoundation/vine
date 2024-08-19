@@ -82,19 +82,27 @@ class ApiAdminTeamServiceTeamsController extends Controller
 
             try {
 
-                $model = new TeamServiceTeam();
+                $model = TeamServiceTeam::where('team_id', $this->request->get('team_id'))
+                    ->where('service_team_id', $this->request->get('service_team_id'))
+                    ->first();
 
-                foreach ($validationArray as $key => $validationRule) {
-                    $value = $this->request->get($key);
-                    if ((isset($value))) {
-                        $model->$key = $value;
+                if (!$model) {
+                    $model = new TeamServiceTeam();
+
+                    foreach ($validationArray as $key => $validationRule) {
+                        $value = $this->request->get($key);
+                        if ((isset($value))) {
+                            $model->$key = $value;
+                        }
                     }
+
+                    $model->save();
+
                 }
 
-                $model->save();
-
                 $this->message = ApiResponse::RESPONSE_SAVED->value;
-                $this->data    = $model;
+
+                $this->data = $model;
 
             }
             catch (Exception $e) {

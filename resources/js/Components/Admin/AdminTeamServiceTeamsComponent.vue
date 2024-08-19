@@ -4,8 +4,9 @@ import {Link} from '@inertiajs/vue3';
 import AdminTeamDetailsComponent from "@/Components/Admin/AdminTeamDetailsComponent.vue";
 import PrimaryButton from "@/Components/PrimaryButton.vue";
 import Swal from "sweetalert2";
-import AdminTeamSelectComponent from "@/Components/Admin/AdminTeamSelectComponent.vue";
 import PaginatorComponent from "@/Components/Admin/PaginatorComponent.vue";
+import AdminTeamServiceTeamSelectComponent
+    from "@/Components/Admin/TeamServiceTeams/AdminTeamServiceTeamSelectComponent.vue";
 
 const $props = defineProps({
     teamId: {
@@ -101,7 +102,7 @@ function teamSelected(team) {
 
     <div v-if="addingNewService">
         <div class="py-2">Select service team...</div>
-        <AdminTeamSelectComponent :excludeTeams="services" :teamId="teamId" @teamSelected="teamSelected"/>
+        <AdminTeamServiceTeamSelectComponent :teamId="teamId"  @teamSelected="teamSelected"></AdminTeamServiceTeamSelectComponent>
     </div>
 
     <div v-else-if="creatingNewTeamService">

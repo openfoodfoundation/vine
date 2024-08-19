@@ -32,4 +32,14 @@ class Team extends Model
     {
         return $this->hasMany(TeamMerchantTeam::class, 'merchant_team_id', 'id');
     }
+
+    public function teamServiceTeams(): HasMany
+    {
+        return $this->hasMany(TeamServiceTeam::class, 'team_id', 'id');
+    }
+
+    public function teamsThisTeamIsServiceFor(): HasMany
+    {
+        return $this->hasMany(TeamServiceTeam::class, 'service_team_id', 'id');
+    }
 }

@@ -22,6 +22,7 @@ class ApiAdminTeamsController extends Controller
      */
     public array $availableRelations = [
         'teamsThisTeamIsMerchantFor',
+        'teamsThisTeamIsServiceFor',
     ];
 
     public static array $searchableFields = [

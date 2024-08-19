@@ -1,15 +1,12 @@
 <script setup>
-import {onMounted, ref} from "vue";
+import {ref} from "vue";
 import TextInput from "@/Components/TextInput.vue";
 import InputLabel from "@/Components/InputLabel.vue";
 import AdminTeamDetailsComponent from "@/Components/Admin/AdminTeamDetailsComponent.vue";
 import AdminTeamCreateComponent from "@/Components/Admin/AdminTeamCreateComponent.vue";
 
 const $props = defineProps({
-    excludeTeams: {
-        required: false,
-        default: {}
-    },
+
     teamId: {
         required: false,
         default: null
@@ -17,7 +14,6 @@ const $props = defineProps({
 })
 
 const creatingANewTeam = ref(false)
-const excludeTeamIdsArray = ref([])
 const searchStr = ref('')
 const teams = ref({})
 
@@ -26,30 +22,16 @@ const emit = defineEmits([
     ]
 );
 
-onMounted(() => {
-    createExcludeTeamIdsArray()
-})
-
-function createExcludeTeamIdsArray() {
-    if ($props.excludeTeams.data && $props.excludeTeams.data.length > 0) {
-        $props.excludeTeams.data.forEach((team) => {
-            if (team.service_team_id) {
-                excludeTeamIdsArray.value.push(team.service_team_id)
-            }
-            if (team.merchant_team_id) {
-                excludeTeamIdsArray.value.push(team.merchant_team_id)
-            }
-        })
-    }
-}
-
 function searchTeam() {
-    axios.get('/admin/teams?where[]=name,like,*' + searchStr.value + '*&limit=100').then(response => {
-        teams.value = response.data.data
+    axios.get('/admin/teams?where[]=name,like,*' + searchStr.value + '*&limit=100&relations=teamsThisTeamIsServiceFor').then(response => {
+        teams.value = response.data.data;
+
     }).catch(error => {
         console.log(error)
-    })
+    });
 }
+
+
 
 function startCreatingNewTeam() {
     creatingANewTeam.value = true
@@ -64,6 +46,12 @@ function teamSelected(team) {
     emit('teamSelected', team)
     searchStr.value = ''
     teams.value = {}
+}
+
+function myTeamIsATeamService(anotherTeam){
+    return anotherTeam.teams_this_team_is_service_for.find(subTeam => {
+        return subTeam.team_id === $props.teamId;
+    });
 }
 
 </script>
@@ -87,13 +75,9 @@ function teamSelected(team) {
 
         <div v-if="searchStr.length > 0 && teams.total > 0" class="mt-4">
             <div v-for="team in teams.data" class="border-b py-1">
-                <button @click="teamSelected(team)" class="flex justify-start items-end"
-                        :class="{'text-gray-500 cursor-not-allowed': (excludeTeamIdsArray.includes(team.id) || team.id === $props.teamId),
-                        'cursor-pointer': (!excludeTeamIdsArray.includes(team.id) && team.id !== $props.teamId)}"
-                :disabled="(excludeTeamIdsArray.includes(team.id) || team.id === $props.teamId)">
+                <button @click="teamSelected(team)" class="flex justify-start items-end">
                     <AdminTeamDetailsComponent :team="team"/>
-                    <span v-if="excludeTeamIdsArray.includes(team.id)" class="text-red-500 text-xs italic pl-2">***Already added</span>
-                    <span v-if="team.id === $props.teamId" class="text-red-500 text-xs italic pl-2">***Own team cannot be added</span>
+                    <span v-if="myTeamIsATeamService(team)" class="text-red-500 text-xs italic pl-2">***Already added</span>
                 </button>
             </div>
             <div class="text-red-500 text-sm mt-4 cursor-pointer hover:underline" @click="startCreatingNewTeam()">
@@ -107,4 +91,5 @@ function teamSelected(team) {
             </div>
         </div>
     </div>
+
 </template>

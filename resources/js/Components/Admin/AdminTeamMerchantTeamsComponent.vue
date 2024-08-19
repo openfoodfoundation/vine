@@ -4,7 +4,6 @@ import {Link} from '@inertiajs/vue3';
 import AdminTeamDetailsComponent from "@/Components/Admin/AdminTeamDetailsComponent.vue";
 import PrimaryButton from "@/Components/PrimaryButton.vue";
 import Swal from "sweetalert2";
-import AdminTeamSelectComponent from "@/Components/Admin/AdminTeamSelectComponent.vue";
 import PaginatorComponent from "@/Components/Admin/PaginatorComponent.vue";
 import AdminTeamMerchantTeamSelectComponent
     from "@/Components/Admin/TeamMerchantTeams/AdminTeamMerchantTeamSelectComponent.vue";
@@ -103,7 +102,6 @@ function teamSelected(team) {
 
     <div v-if="addingNewMerchant">
         <div class="py-2">Select merchant team...</div>
-<!--        <AdminTeamSelectComponent :excludeTeams="merchants" :teamId="teamId" @teamSelected="teamSelected"/>-->
         <AdminTeamMerchantTeamSelectComponent :teamId="teamId"  @teamSelected="teamSelected"></AdminTeamMerchantTeamSelectComponent>
     </div>
 

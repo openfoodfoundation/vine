@@ -1,5 +1,5 @@
 <script setup>
-import {onMounted, ref} from "vue";
+import {ref} from "vue";
 import TextInput from "@/Components/TextInput.vue";
 import InputLabel from "@/Components/InputLabel.vue";
 import AdminTeamDetailsComponent from "@/Components/Admin/AdminTeamDetailsComponent.vue";
@@ -14,7 +14,6 @@ const $props = defineProps({
 })
 
 const creatingANewTeam = ref(false)
-
 const searchStr = ref('')
 const teams = ref({})
 
@@ -22,11 +21,6 @@ const emit = defineEmits([
         'teamSelected'
     ]
 );
-
-onMounted(() => {
-
-})
-
 
 function searchTeam() {
     axios.get('/admin/teams?where[]=name,like,*' + searchStr.value + '*&limit=100&relations=teamsThisTeamIsMerchantFor').then(response => {
@@ -84,7 +78,6 @@ function myTeamIsATeamMerchant(anotherTeam){
                 <button @click="teamSelected(team)" class="flex justify-start items-end">
                     <AdminTeamDetailsComponent :team="team"/>
                     <span v-if="myTeamIsATeamMerchant(team)" class="text-red-500 text-xs italic pl-2">***Already added</span>
-                    <span v-if="team.id === $props.teamId" class="text-red-500 text-xs italic pl-2">***Own team cannot be added</span>
                 </button>
             </div>
             <div class="text-red-500 text-sm mt-4 cursor-pointer hover:underline" @click="startCreatingNewTeam()">
