@@ -20,8 +20,8 @@ const $props = defineProps({
 
 const limit = ref(5)
 const newPAT = ref({name: '', token_abilities: []})
-const personalAccessTokenAbilities = usePage().props.personalAccessTokenAbilities
-const platformAppTokenAbilities = usePage().props.platformAppTokenAbilities
+const personalAccessTokenAbilities = usePage().props.personalAccessTokenAbilities;
+const platformAppTokenAbilities = usePage().props.platformAppTokenAbilities;
 const userTeams = ref({})
 const user = ref({})
 
@@ -47,7 +47,11 @@ function createPAT() {
         });
 
     }).catch(error => {
-        console.log(error)
+        Swal.fire({
+            icon: "error",
+            title: "Oops..",
+            text: error.response.data.meta.message
+        })
     })
 }
 
@@ -63,7 +67,9 @@ function getUserTeams(page = 1) {
     axios.get('/admin/team-users?cached=false&page=' + page + '&where[]=user_id,' + $props.id + '&relations=team&limit=' + limit.value + '&orderBy=id,desc').then(response => {
         userTeams.value = response.data.data;
     }).catch(error => {
-        console.log(error)
+
+
+
     })
 }
 
@@ -76,7 +82,7 @@ function textFormat(ability) {
 }
 
 function selectPlatformAppType(){
-    newPAT.value.token_abilities = platformAppTokenAbilities;
+    newPAT.value.token_abilities = Object.keys(platformAppTokenAbilities);
 
     Swal.fire({
         icon: "info",
@@ -169,30 +175,23 @@ function clearAbilitiesList(){
 
             </div>
 
-            <div class="card">
-                <pre>{{personalAccessTokenAbilities}}</pre>
-            </div>
-
             <div v-if="personalAccessTokenAbilities.length">
-                <div class="pb-4">
-                    <InputLabel for="name" value="PAT name"/>
-                    <TextInput
-                        id="name"
-                        type="text"
-                        class="mt-1 block w-full"
-                        v-model="newPAT.name"
-                        required
-                    />
+
+
+                <div class="mt-8 mb-4">
+                    <h2>Step 1: Select Token Abilities</h2>
                 </div>
 
-
-
-                <div class="flex justify-start space-x-4 pb-4 ">
+                <div class="flex justify-start items-center space-x-4 pb-4 ">
                     <SecondaryButton @click="clearAbilitiesList">
                         Clear Selected
                     </SecondaryButton>
+
+                    <div class="pl-16">
+                        Quick select:
+                    </div>
                     <PrimaryButton @click="selectPlatformAppType()">
-                        Master App
+                        Platform App
                     </PrimaryButton>
                 </div>
 
@@ -208,9 +207,10 @@ function clearAbilitiesList(){
                                 {{abilityGroup.description}}
                             </div>
                             <div class="mt-8">
-                                <div v-for="ability in abilityGroup.abilities">
+                                <div v-for="(ability, key) in abilityGroup.abilities">
                                     <label :for="ability" class="cursor-pointer">
-                                        <input type="checkbox" :id="ability" class="mr-4" :value="ability"
+
+                                        <input type="checkbox" :id="ability" class="mr-4" :value="key"
                                                v-model="newPAT.token_abilities"> {{ textFormat(ability) }}
                                     </label>
                                 </div>
@@ -219,12 +219,26 @@ function clearAbilitiesList(){
                     </div>
                 </div>
 
-
+                <div class="mt-8">
+                    <h2>Step 2: Give the Token a name</h2>
+                </div>
+                <div class="pb-4">
+                    <TextInput
+                        id="name"
+                        type="text"
+                        class="mt-1 block w-full"
+                        v-model="newPAT.name"
+                        required
+                    />
+                </div>
+                <div>
+                    Selected Abilities: {{newPAT.token_abilities.join(', ')}}
+                </div>
 
                 <div class="flex items-center justify-end mt-4">
-                    <PrimaryButton @click.prevent="createPAT()" class="ms-4" :class="{ 'opacity-25': !newPAT.name }"
+                    <PrimaryButton @click.prevent="createPAT()" class="" :class="{ 'opacity-25': !newPAT.name }"
                                    :desabled="!newPAT.name">
-                        Submit
+                        Create New Token
                     </PrimaryButton>
                 </div>
             </div>

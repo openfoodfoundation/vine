@@ -37,12 +37,12 @@ class HandleInertiaRequests extends Middleware
     {
         return [
             ...parent::share($request),
-            'auth'                         => [
+            'auth' => [
                 'user'        => $request->user(),
                 'currentTeam' => Team::find($request->user()?->current_team_id),
             ],
             'personalAccessTokenAbilities' => PersonalAccessTokenAbility::groupsAbilityCasesWithDefinitions(),
-            'platformAppTokenAbilities'      => PersonalAccessTokenAbility::platformAppTokenAbilities(),
+            'platformAppTokenAbilities'    => PersonalAccessTokenAbility::platformAppTokenAbilities(),
         ];
     }
 }

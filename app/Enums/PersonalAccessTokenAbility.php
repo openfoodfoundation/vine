@@ -24,36 +24,52 @@ enum PersonalAccessTokenAbility: string
     case MY_TEAM_VOUCHERS_READ      = 'my-team-vouchers-read';
     case MY_TEAM_VOUCHERS_UPDATE    = 'my-team-vouchers-update';
     case MY_TEAM_VOUCHERS_DELETE    = 'my-team-vouchers-delete';
+    case REDEMPTIONS_CREATE         = 'redemptions-create';
+    case REDEMPTIONS_READ           = 'redemptions-read';
+    case REDEMPTIONS_UPDATE         = 'redemptions-update';
+    case REDEMPTIONS_DELETE         = 'redemptions-delete';
+    case SHOPS_CREATE               = 'shops-create';
+    case SHOPS_READ                 = 'shops-read';
+    case SHOPS_UPDATE               = 'shops-update';
+    case SHOPS_DELETE               = 'shops-delete';
     case SYSTEM_STATISTICS_CREATE   = 'system-statistics-create';
     case SYSTEM_STATISTICS_READ     = 'system-statistics-read';
     case SYSTEM_STATISTICS_UPDATE   = 'system-statistics-update';
     case SYSTEM_STATISTICS_DELETE   = 'system-statistics-delete';
-    case TEAMS_CREATE               = 'teams-create';
-    case TEAMS_READ                 = 'teams-read';
-    case TEAMS_UPDATE               = 'teams-update';
-    case TEAMS_DELETE               = 'teams-delete';
-
 
     public static function abilityLabels(): array
     {
-        $returnArray = [
-            self::SUPER_ADMIN->value       => 'Super Admin',
-            self::MY_PROFILE_CREATE->value => 'My Profile Create',
-            self::MY_PROFILE_READ->value   => 'My Profile Read',
-            self::MY_PROFILE_UPDATE->value => 'My Profile Update',
-            self::MY_PROFILE_DELETE->value => 'My Profile Delete',
-            self::MY_TEAM_CREATE->value    => 'My Team Create',
-            self::MY_TEAM_READ->value      => 'My Team Read',
-            self::MY_TEAM_UPDATE->value    => 'My Team Update',
-            self::MY_TEAM_DELETE->value    => 'My Team Delete',
-            self::TEAMS_READ->value        => 'Teams Read',
-            self::TEAMS_CREATE->value      => 'Teams Create',
-            self::SYSTEM_STATISTICS_READ->value      => 'System Statistics Read',
-            // MUST MATCH FULL LIS
+        return [
+            self::SUPER_ADMIN->value                => 'Super Admin: Perform most API actions',
+            self::MY_PROFILE_CREATE->value          => 'My Profile Create',
+            self::MY_PROFILE_READ->value            => 'My Profile Read',
+            self::MY_PROFILE_UPDATE->value          => 'My Profile Update',
+            self::MY_PROFILE_DELETE->value          => 'My Profile Delete',
+            self::MY_TEAM_CREATE->value             => 'My Team Create',
+            self::MY_TEAM_READ->value               => 'My Team Read',
+            self::MY_TEAM_UPDATE->value             => 'My Team Update',
+            self::MY_TEAM_DELETE->value             => 'My Team Delete',
+            self::MY_TEAM_AUDIT_ITEMS_CREATE->value => 'My Team Audit Items Create',
+            self::MY_TEAM_AUDIT_ITEMS_READ->value   => 'My Team Audit Items Read',
+            self::MY_TEAM_AUDIT_ITEMS_UPDATE->value => 'My Team Audit Items Update',
+            self::MY_TEAM_AUDIT_ITEMS_DELETE->value => 'My Team Audit Items Delete',
+            self::MY_TEAM_VOUCHERS_CREATE->value    => 'My Team Vouchers Create',
+            self::MY_TEAM_VOUCHERS_READ->value      => 'My Team Vouchers Read',
+            self::MY_TEAM_VOUCHERS_UPDATE->value    => 'My Team Vouchers Update',
+            self::MY_TEAM_VOUCHERS_DELETE->value    => 'My Team Vouchers Delete',
+            self::REDEMPTIONS_CREATE->value         => 'Redemptions Create: Perform a voucher redemption',
+            self::REDEMPTIONS_READ->value           => 'Redemptions Read: Retrieve a redemption',
+            self::REDEMPTIONS_UPDATE->value         => 'Redemptions Update: Update a redemption',
+            self::REDEMPTIONS_DELETE->value         => 'Redemptions Delete: Delete a redemption',
+            self::SHOPS_CREATE->value               => 'Shops Create: Create a shop that redeems vouchers',
+            self::SHOPS_READ->value                 => 'Shops Read: Retrieve shop details from the API',
+            self::SHOPS_UPDATE->value               => 'Shops Update: Update a shop',
+            self::SHOPS_DELETE->value               => 'Shops Delete: Delete a shop',
+            self::SYSTEM_STATISTICS_CREATE->value   => 'System Statistics Create',
+            self::SYSTEM_STATISTICS_READ->value     => 'System Statistics Read',
+            self::SYSTEM_STATISTICS_UPDATE->value   => 'System Statistics Update',
+            self::SYSTEM_STATISTICS_DELETE->value   => 'System Statistics Delete',
         ];
-
-        // Assert$returnArray
-        return $returnArray
     }
 
     /**
@@ -68,12 +84,11 @@ enum PersonalAccessTokenAbility: string
     public static function platformAppTokenAbilities(): array
     {
         return [
-            self::TEAMS_READ->value             => self::abilityLabels()[self::TEAMS_READ->value],
-            self::TEAMS_CREATE->value           => self::abilityLabels()[self::TEAMS_CREATE->value],
+            self::SHOPS_CREATE->value           => self::abilityLabels()[self::SHOPS_CREATE->value],
+            self::SHOPS_READ->value             => self::abilityLabels()[self::SHOPS_READ->value],
             self::SYSTEM_STATISTICS_READ->value => self::abilityLabels()[self::SYSTEM_STATISTICS_READ->value],
         ];
     }
-
 
     /**
      * The abilities that a "redemption" app API token should have.
@@ -83,7 +98,8 @@ enum PersonalAccessTokenAbility: string
     public static function redemptionAppTokenAbilities(): array
     {
         return [
-
+            self::REDEMPTIONS_CREATE->value => self::abilityLabels()[self::REDEMPTIONS_CREATE->value],
+            self::REDEMPTIONS_READ->value   => self::abilityLabels()[self::REDEMPTIONS_READ->value],
         ];
     }
 
@@ -94,19 +110,24 @@ enum PersonalAccessTokenAbility: string
                 'name'        => 'Super admin abilities',
                 'description' => 'A group of API abilities that allow an app to perform any / all actions on the API. Be careful assigning this ability!',
                 'abilities'   => [
-                    self::SUPER_ADMIN
-                ]
+                    self::SUPER_ADMIN->value => self::abilityLabels()[self::SUPER_ADMIN->value],
+                ],
             ],
             [
                 'name'        => 'Platform App',
                 'description' => 'Perform administrative tasks for your OFN platform implementation.',
-                'abilities'   => self::platformAppTokenAbilities()
+                'abilities'   => self::platformAppTokenAbilities(),
             ],
             [
                 'name'        => 'Redemptions',
                 'description' => 'A group of API abilities that allow an app to perform redemptions on the system.',
-                'abilities'   => self::redemptionAppTokenAbilities()
+                'abilities'   => self::redemptionAppTokenAbilities(),
             ],
         ];
+    }
+
+    public static function values(): array
+    {
+        return array_column(self::cases(), 'value');
     }
 }
