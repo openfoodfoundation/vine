@@ -3,11 +3,8 @@
 namespace App\Events\TeamUsers;
 
 use App\Models\TeamUser;
-use Illuminate\Broadcasting\Channel;
 use Illuminate\Broadcasting\InteractsWithSockets;
-use Illuminate\Broadcasting\PresenceChannel;
 use Illuminate\Broadcasting\PrivateChannel;
-use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 
@@ -19,11 +16,10 @@ class TeamUserWasCreated
 
     /**
      * Create a new event instance.
+     *
+     * @param TeamUser $teamUser
      */
-    public function __construct(public TeamUser $teamUser)
-    {
-        //
-    }
+    public function __construct(public TeamUser $teamUser) {}
 
     /**
      * Get the channels the event should broadcast on.

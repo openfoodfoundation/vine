@@ -10,13 +10,12 @@ class HandleTeamUserWasCreatedEvent
     /**
      * Create the event listener.
      */
-    public function __construct()
-    {
-        //
-    }
+    public function __construct() {}
 
     /**
      * Handle the event.
+     *
+     * @param TeamUserWasCreated $event
      */
     public function handle(TeamUserWasCreated $event): void
     {

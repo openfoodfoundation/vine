@@ -11,13 +11,12 @@ class HandleTeamWasCreatedEvent implements ShouldQueue
     /**
      * Create the event listener.
      */
-    public function __construct()
-    {
-        //
-    }
+    public function __construct() {}
 
     /**
      * Handle the event.
+     *
+     * @param TeamWasCreated $event
      */
     public function handle(TeamWasCreated $event): void
     {

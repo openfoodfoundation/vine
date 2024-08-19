@@ -25,7 +25,7 @@ class PersonalAccessToken extends SanctumPersonalAccessToken
     ];
 
     protected $dispatchesEvents = [
-        'created' => PersonalAccessTokenWasCreated::class
+        'created' => PersonalAccessTokenWasCreated::class,
     ];
 
     public function user(): BelongsTo

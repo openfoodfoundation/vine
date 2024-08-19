@@ -14,7 +14,7 @@ class TeamUser extends Model
     use SoftDeletes;
 
     protected $dispatchesEvents = [
-        'created' => TeamUserWasCreated::class
+        'created' => TeamUserWasCreated::class,
     ];
 
     public function team(): BelongsTo

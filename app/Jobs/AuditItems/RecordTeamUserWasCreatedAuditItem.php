@@ -18,9 +18,7 @@ class RecordTeamUserWasCreatedAuditItem implements ShouldQueue
      *
      * @param TeamUser $teamUser
      */
-    public function __construct(public TeamUser $teamUser)
-    {
-    }
+    public function __construct(public TeamUser $teamUser) {}
 
     /**
      * Execute the job.
@@ -32,7 +30,7 @@ class RecordTeamUserWasCreatedAuditItem implements ShouldQueue
 
         AuditItemService::createAuditItemForEvent(
             model    : $this->teamUser,
-            eventText: 'User '.$user->name.' was added to team "' . $team->name . '".',
+            eventText: 'User ' . $user->name . ' was added to team "' . $team->name . '".',
             teamId   : $this->teamUser->team_id
         );
     }

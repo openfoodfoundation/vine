@@ -3,7 +3,6 @@
 namespace App\Jobs\AuditItems;
 
 use App\Models\Team;
-use App\Models\User;
 use App\Services\AuditItemService;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Queue\Queueable;
@@ -17,9 +16,7 @@ class RecordTeamWasCreatedAuditItem implements ShouldQueue
      *
      * @param Team $team
      */
-    public function __construct(public Team $team)
-    {
-    }
+    public function __construct(public Team $team) {}
 
     /**
      * Execute the job.
