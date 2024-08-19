@@ -14,6 +14,7 @@ use App\Http\Controllers\Api\V1\ApiMyTeamAuditItemsController;
 use App\Http\Controllers\Api\V1\ApiMyTeamController;
 use App\Http\Controllers\Api\V1\ApiMyTeamsController;
 use App\Http\Controllers\Api\V1\ApiMyTeamVouchersController;
+use App\Http\Controllers\Api\V1\ApiShopsController;
 use App\Http\Controllers\Api\V1\ApiSystemStatisticsController;
 use App\Http\Middleware\CheckAdminStatus;
 use Illuminate\Support\Facades\Route;
@@ -187,6 +188,59 @@ Route::group(['prefix' => 'v1'], function () {
                 );
 
             /**
+             * Shops
+             */
+            Route::post('/shops', [ApiShopsController::class, 'store'])
+                ->name('api.v1.shops.post')
+                ->middleware(
+                    [
+                        'abilities:' .
+                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                        PersonalAccessTokenAbility::SHOPS_CREATE->value,
+                    ]
+                );
+
+            Route::get('/shops', [ApiShopsController::class, 'index'])
+                ->name('api.v1.shops.getMany')
+                ->middleware(
+                    [
+                        'abilities:' .
+                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                        PersonalAccessTokenAbility::SHOPS_READ->value,
+                    ]
+                );
+
+            Route::get('/shops/{id}', [ApiShopsController::class, 'show'])
+                ->name('api.v1.shops.get')
+                ->middleware(
+                    [
+                        'abilities:' .
+                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                        PersonalAccessTokenAbility::SHOPS_READ->value,
+                    ]
+                );
+
+            Route::put('/shops/{id}', [ApiShopsController::class, 'update'])
+                ->name('api.v1.shops.put')
+                ->middleware(
+                    [
+                        'abilities:' .
+                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                        PersonalAccessTokenAbility::SHOPS_UPDATE->value,
+                    ]
+                );
+
+            Route::delete('/shops/{id}', [ApiShopsController::class, 'destroy'])
+                ->name('api.v1.shops.delete')
+                ->middleware(
+                    [
+                        'abilities:' .
+                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                        PersonalAccessTokenAbility::SHOPS_DELETE->value,
+                    ]
+                );
+
+            /**
              * System Statistics
              */
             Route::post('/system-statistics', [ApiSystemStatisticsController::class, 'store'])
@@ -247,16 +301,51 @@ Route::group(['prefix' => 'v1'], function () {
     Route::prefix('admin')
         ->middleware(['auth:sanctum', CheckAdminStatus::class])
         ->group(function () {
-            Route::resource('/audit-items', ApiAdminAuditItemsController::class)->names('api.v1.admin.audit-items');
-            Route::resource('/search', ApiAdminSearchController::class)->names('api.v1.admin.search');
-            Route::resource('/system-statistics', ApiAdminSystemStatisticsController::class)->names('api.v1.admin.system-statistics');
-            Route::resource('/team-merchant-teams', ApiAdminTeamMerchantTeamsController::class)->names('api.v1.admin.team-merchant-teams');
-            Route::resource('/team-service-teams', ApiAdminTeamServiceTeamsController::class)->names('api.v1.admin.team-service-teams');
-            Route::resource('/team-users', ApiAdminTeamUsersController::class)->names('api.v1.admin.team-users');
-            Route::resource('/teams', ApiAdminTeamsController::class)->names('api.v1.admin.teams');
-            Route::resource('/user-personal-access-tokens', ApiAdminUserPersonalAccessTokensController::class)->names('api.v1.admin.tokens');
-            Route::resource('/users', ApiAdminUsersController::class)->names('api.v1.admin.users');
+
+            Route::resource(
+                '/audit-items',
+                ApiAdminAuditItemsController::class
+            )->names('api.v1.admin.audit-items');
+
+            Route::resource(
+                '/search',
+                ApiAdminSearchController::class
+            )->names('api.v1.admin.search');
+
+            Route::resource(
+                '/system-statistics',
+                ApiAdminSystemStatisticsController::class
+            )->names('api.v1.admin.system-statistics');
+
+            Route::resource(
+                '/team-merchant-teams',
+                ApiAdminTeamMerchantTeamsController::class
+            )->names('api.v1.admin.team-merchant-teams');
+
+            Route::resource(
+                '/team-service-teams',
+                ApiAdminTeamServiceTeamsController::class
+            )->names('api.v1.admin.team-service-teams');
+
+            Route::resource(
+                '/team-users',
+                ApiAdminTeamUsersController::class
+            )->names('api.v1.admin.team-users');
+
+            Route::resource(
+                '/teams',
+                ApiAdminTeamsController::class
+            )->names('api.v1.admin.teams');
+
+            Route::resource(
+                '/user-personal-access-tokens',
+                ApiAdminUserPersonalAccessTokensController::class
+            )->names('api.v1.admin.tokens');
+
+            Route::resource(
+                '/users',
+                ApiAdminUsersController::class
+            )->names('api.v1.admin.users');
 
         });
-
 });
