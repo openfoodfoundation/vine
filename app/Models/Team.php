@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Events\Teams\TeamWasCreated;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -12,6 +13,10 @@ class Team extends Model
 {
     use HasFactory;
     use SoftDeletes;
+
+    protected $dispatchesEvents = [
+        'created' => TeamWasCreated::class,
+    ];
 
     public function teamUsers(): HasMany
     {

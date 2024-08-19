@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
+use Laravel\Sanctum\PersonalAccessToken as SanctumPersonalAccessToken;
 
 class AuditItem extends Model
 {
@@ -44,6 +45,9 @@ class AuditItem extends Model
         switch ($this->auditable_type) {
             case User::class:
             case Team::class:
+            case PersonalAccessToken::class:
+            case SanctumPersonalAccessToken::class:
+            case TeamUser::class:
                 $url = '/my-team';
                 break;
         }
@@ -68,6 +72,14 @@ class AuditItem extends Model
             case Team::class:
                 $url = '/admin/team/' . $this->auditable_id;
                 break;
+            case TeamUser::class:
+                $url = '/admin/team/' . $this->auditable->team_id;
+                break;
+            case PersonalAccessToken::class:
+            case SanctumPersonalAccessToken::class:
+                $url = '/admin/api-access-token/' . $this->auditable_id;
+                break;
+
         }
 
         return Attribute::make(

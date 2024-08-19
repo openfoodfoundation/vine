@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Events\PersonalAccessTokens\PersonalAccessTokenWasCreated;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Laravel\Sanctum\PersonalAccessToken as SanctumPersonalAccessToken;
 
@@ -21,6 +22,10 @@ class PersonalAccessToken extends SanctumPersonalAccessToken
         'token',
         'abilities',
         'team_id',
+    ];
+
+    protected $dispatchesEvents = [
+        'created' => PersonalAccessTokenWasCreated::class,
     ];
 
     public function user(): BelongsTo
