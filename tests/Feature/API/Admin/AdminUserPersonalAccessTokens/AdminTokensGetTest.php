@@ -2,6 +2,7 @@
 
 namespace Tests\Feature\API\Admin\AdminUserPersonalAccessTokens;
 
+use App\Enums\PersonalAccessTokenAbility;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Laravel\Sanctum\Sanctum;
@@ -28,7 +29,7 @@ class AdminTokensGetTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function itCanNotGetAllTokens()
+    public function itCanGetAllTokens()
     {
         $this->user = $this->createAdminUser();
 
@@ -36,13 +37,24 @@ class AdminTokensGetTest extends BaseAPITestCase
             $this->user
         );
 
-        $response = $this->getJson($this->apiRoot . $this->endpoint);
+        $tokenName = $this->faker->name();
 
-        $response->assertStatus(403);
+        $tokenAbilities        = PersonalAccessTokenAbility::cases();
+        $rand                  = rand(0, (count($tokenAbilities) - 1));
+        $tokenAbility          = $tokenAbilities[$rand];
+        $tokenAbilitiesArray[] = $tokenAbility->value;
+
+        $this->user->createToken($tokenName, $tokenAbilitiesArray);
+
+        $response    = $this->getJson($this->apiRoot . $this->endpoint);
+        $responseObj = json_decode($response->getContent());
+
+        $response->assertStatus(200);
+        $this->assertEquals($tokenName, $responseObj->data->data[0]->name);
     }
 
     #[Test]
-    public function itCanNotGetASingleToken()
+    public function itCanGetASingleToken()
     {
         $this->user = $this->createAdminUser();
 
@@ -50,10 +62,22 @@ class AdminTokensGetTest extends BaseAPITestCase
             $this->user
         );
 
-        $randomId = $this->faker->randomDigitNotNull();
+        $tokenName = $this->faker->name();
 
-        $response = $this->getJson($this->apiRoot . $this->endpoint . '/' . $randomId);
+        $tokenAbilities        = PersonalAccessTokenAbility::cases();
+        $rand                  = rand(0, (count($tokenAbilities) - 1));
+        $tokenAbility          = $tokenAbilities[$rand];
+        $tokenAbilitiesArray[] = $tokenAbility->value;
 
-        $response->assertStatus(403);
+        $this->user->createToken($tokenName, $tokenAbilitiesArray);
+
+        $tokens  = $this->user->tokens;
+        $tokenId = json_decode($tokens[0]->id);
+
+        $response    = $this->getJson($this->apiRoot . $this->endpoint . '/' . $tokenId);
+        $responseObj = json_decode($response->getContent());
+
+        $response->assertStatus(200);
+        $this->assertEquals($tokenName, $responseObj->data->name);
     }
 }

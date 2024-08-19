@@ -1,7 +1,10 @@
 <?php
 
+/** @noinspection PhpUndefinedFieldInspection */
+
 namespace Tests\Feature\API\Admin\AdminUserPersonalAccessTokens;
 
+use App\Enums\PersonalAccessTokenAbility;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Foundation\Testing\WithFaker;
 use Laravel\Sanctum\Sanctum;
@@ -30,7 +33,7 @@ class AdminTokensDeleteTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function itCannotDeleteAToken()
+    public function itCanDeleteAToken()
     {
         $this->user = $this->createAdminUser();
 
@@ -38,10 +41,22 @@ class AdminTokensDeleteTest extends BaseAPITestCase
             $this->user
         );
 
-        $randomId = $this->faker->randomDigitNotNull();
+        $tokenName = $this->faker->name();
 
-        $response = $this->deleteJson($this->apiRoot . $this->endpoint . '/' . $randomId);
+        $tokenAbilities        = PersonalAccessTokenAbility::cases();
+        $rand                  = rand(0, (count($tokenAbilities) - 1));
+        $tokenAbility          = $tokenAbilities[$rand];
+        $tokenAbilitiesArray[] = $tokenAbility->value;
 
-        $response->assertStatus(403);
+        $this->user->createToken($tokenName, $tokenAbilitiesArray);
+
+        $tokens  = $this->user->tokens;
+        $tokenId = json_decode($tokens[0]->id);
+
+        $this->user->createToken($tokenName, $tokenAbilitiesArray);
+
+        $response = $this->deleteJson($this->apiRoot . $this->endpoint . '/' . $tokenId);
+
+        $response->assertStatus(200);
     }
 }

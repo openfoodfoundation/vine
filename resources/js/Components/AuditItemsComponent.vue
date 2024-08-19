@@ -1,5 +1,5 @@
 <script setup>
-import moment from "moment";
+import dayjs from "dayjs";
 import Swal from "sweetalert2";
 import {onMounted, ref} from "vue";
 import {Link} from "@inertiajs/vue3";
@@ -61,7 +61,7 @@ onMounted(() => {
                        </div>
 
                        <div class="text-xs text-gray-500 italic">
-                           {{ moment(auditItem.created_at).format("dddd, MMMM Do YYYY [at] h:mm:ss a") }}
+                           {{ dayjs(auditItem.created_at).format("dddd, MMMM Do YYYY [at] h:mm:ss a") }}
                        </div>
                    </div>
 
