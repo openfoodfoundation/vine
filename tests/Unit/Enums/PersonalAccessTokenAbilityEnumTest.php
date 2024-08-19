@@ -23,8 +23,8 @@ class PersonalAccessTokenAbilityEnumTest extends TestCase
     public function itReturnsPlatformAppTokenAbilities(): void
     {
         $expectedPlatformAppTokenAbilities = [
-            PersonalAccessTokenAbility::TEAMS_READ->value             => PersonalAccessTokenAbility::abilityLabels()[PersonalAccessTokenAbility::TEAMS_READ->value],
-            PersonalAccessTokenAbility::TEAMS_CREATE->value           => PersonalAccessTokenAbility::abilityLabels()[PersonalAccessTokenAbility::TEAMS_CREATE->value],
+            PersonalAccessTokenAbility::SHOPS_READ->value             => PersonalAccessTokenAbility::abilityLabels()[PersonalAccessTokenAbility::SHOPS_READ->value],
+            PersonalAccessTokenAbility::SHOPS_CREATE->value           => PersonalAccessTokenAbility::abilityLabels()[PersonalAccessTokenAbility::SHOPS_CREATE->value],
             PersonalAccessTokenAbility::SYSTEM_STATISTICS_READ->value => PersonalAccessTokenAbility::abilityLabels()[PersonalAccessTokenAbility::SYSTEM_STATISTICS_READ->value],
         ];
 
