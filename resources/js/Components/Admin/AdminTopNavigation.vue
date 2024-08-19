@@ -127,7 +127,7 @@ function highlightMatchingText(text) {
                 Redemptions
             </Link>
 
-            <Link :href="route('admin.teams')">
+            <Link :href="route('admin.api-access-tokens')">
                 API Access Tokens
             </Link>
         </div>

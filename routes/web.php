@@ -61,15 +61,15 @@ Route::middleware('auth')->group(function () {
             return Inertia::render('AuditItems');
         })->name('admin.audit-trail');
 
-        Route::get('/users', function () {
-            return Inertia::render('Admin/Users/Users');
-        })->name('admin.users');
+        Route::get('/api-access-tokens', function () {
+            return Inertia::render('Admin/APIAccessTokens/APIAccessTokens');
+        })->name('admin.api-access-tokens');
 
-        Route::get('/user/{id}', function (int $id) {
-            return Inertia::render('Admin/Users/User', [
+        Route::get('/api-access-token/{id}', function (int $id) {
+            return Inertia::render('Admin/APIAccessTokens/APIAccessToken', [
                 'id' => $id,
             ]);
-        })->name('admin.user');
+        })->name('admin.api-access-token');
 
         Route::get('/teams', function () {
             return Inertia::render('Admin/Teams/Teams');
@@ -84,6 +84,17 @@ Route::middleware('auth')->group(function () {
                 'id' => $id,
             ]);
         })->name('admin.team');
+
+        Route::get('/users', function () {
+            return Inertia::render('Admin/Users/Users');
+        })->name('admin.users');
+
+        Route::get('/user/{id}', function (int $id) {
+            return Inertia::render('Admin/Users/User', [
+                'id' => $id,
+            ]);
+        })->name('admin.user');
+
     });
 
 });

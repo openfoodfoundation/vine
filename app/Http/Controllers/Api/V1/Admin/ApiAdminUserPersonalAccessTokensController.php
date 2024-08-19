@@ -8,8 +8,10 @@ namespace App\Http\Controllers\Api\V1\Admin;
 
 use App\Enums\ApiResponse;
 use App\Enums\PersonalAccessTokenAbility;
+use App\Exceptions\DisallowedApiFieldException;
 use App\Http\Controllers\Api\HandlesAPIRequests;
 use App\Http\Controllers\Controller;
+use App\Models\PersonalAccessToken;
 use App\Models\User;
 use Exception;
 use Illuminate\Http\JsonResponse;
@@ -23,19 +25,26 @@ class ApiAdminUserPersonalAccessTokensController extends Controller
     /**
      * Set the related data the GET request is allowed to ask for
      */
-    public array $availableRelations = [];
+    public array $availableRelations = [
+        'user',
+    ];
 
-    public static array $searchableFields = [];
+    public static array $searchableFields = [
+        'id',
+    ];
 
     /**
      * GET /
      *
      * @return JsonResponse
+     *
+     * @throws DisallowedApiFieldException
      */
     public function index(): JsonResponse
     {
-        $this->responseCode = 403;
-        $this->message      = ApiResponse::RESPONSE_METHOD_NOT_ALLOWED->value;
+        $this->query = PersonalAccessToken::with($this->associatedData)->select(['id', 'tokenable_id', 'name', 'last_used_at', 'expires_at']);
+        $this->query = $this->updateReadQueryBasedOnUrl();
+        $this->data  = $this->query->paginate($this->limit);
 
         return $this->respond();
     }
@@ -114,11 +123,14 @@ class ApiAdminUserPersonalAccessTokensController extends Controller
      * @param string $id
      *
      * @return JsonResponse
+     *
+     * @throws DisallowedApiFieldException
      */
     public function show(string $id)
     {
-        $this->responseCode = 403;
-        $this->message      = ApiResponse::RESPONSE_METHOD_NOT_ALLOWED->value;
+        $this->query = PersonalAccessToken::with($this->associatedData)->select(['id', 'tokenable_type', 'tokenable_id', 'name', 'abilities', 'last_used_at', 'expires_at']);
+        $this->query = $this->updateReadQueryBasedOnUrl();
+        $this->data  = $this->query->find($id);
 
         return $this->respond();
     }
@@ -147,8 +159,30 @@ class ApiAdminUserPersonalAccessTokensController extends Controller
      */
     public function destroy(string $id)
     {
-        $this->responseCode = 403;
-        $this->message      = ApiResponse::RESPONSE_METHOD_NOT_ALLOWED->value;
+        try {
+
+            $model = PersonalAccessToken::find($id);
+
+            if (!$model) {
+
+                $this->responseCode = 404;
+                $this->message      = ApiResponse::RESPONSE_NOT_FOUND->value;
+
+            }
+            else {
+
+                $model->delete();
+                $this->message = ApiResponse::RESPONSE_DELETED->value;
+
+            }
+
+        }
+        catch (Exception $e) {
+
+            $this->responseCode = 500;
+            $this->message      = ApiResponse::RESPONSE_ERROR->value . ':' . $e->getMessage();
+
+        }
 
         return $this->respond();
     }
