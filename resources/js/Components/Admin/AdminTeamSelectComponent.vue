@@ -41,10 +41,6 @@ function createExcludeTeamIdsArray() {
             }
         })
     }
-
-    if ($props.teamId) {
-        excludeTeamIdsArray.value.push($props.teamId)
-    }
 }
 
 function searchTeam() {
@@ -91,10 +87,13 @@ function teamSelected(team) {
 
         <div v-if="searchStr.length > 0 && teams.total > 0" class="mt-4">
             <div v-for="team in teams.data" class="border-b py-1">
-                <button @click="teamSelected(team)" class="cursor-pointer flex justify-start items-end"
-                        :class="{'text-gray-500 cursor-not-allowed': excludeTeamIdsArray.includes(team.id)}"
-                :disabled="excludeTeamIdsArray.includes(team.id)">
+                <button @click="teamSelected(team)" class="flex justify-start items-end"
+                        :class="{'text-gray-500 cursor-not-allowed': (excludeTeamIdsArray.includes(team.id) || team.id === $props.teamId),
+                        'cursor-pointer': (!excludeTeamIdsArray.includes(team.id) && team.id !== $props.teamId)}"
+                :disabled="(excludeTeamIdsArray.includes(team.id) || team.id === $props.teamId)">
                     <AdminTeamDetailsComponent :team="team"/>
+                    <span v-if="excludeTeamIdsArray.includes(team.id)" class="text-red-500 text-xs italic pl-2">***Already added</span>
+                    <span v-if="team.id === $props.teamId" class="text-red-500 text-xs italic pl-2">***Own team cannot be added</span>
                 </button>
             </div>
             <div class="text-red-500 text-sm mt-4 cursor-pointer hover:underline" @click="startCreatingNewTeam()">

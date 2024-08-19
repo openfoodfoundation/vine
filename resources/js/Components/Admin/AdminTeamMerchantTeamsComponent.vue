@@ -1,9 +1,11 @@
 <script setup>
 import {onMounted, ref} from "vue";
+import {Link} from '@inertiajs/vue3';
 import AdminTeamDetailsComponent from "@/Components/Admin/AdminTeamDetailsComponent.vue";
 import PrimaryButton from "@/Components/PrimaryButton.vue";
 import Swal from "sweetalert2";
 import AdminTeamSelectComponent from "@/Components/Admin/AdminTeamSelectComponent.vue";
+import PaginatorComponent from "@/Components/Admin/PaginatorComponent.vue";
 
 const $props = defineProps({
     teamId: {
@@ -31,16 +33,22 @@ function addNewMerchant() {
     addingNewMerchant.value = true
 }
 
-function getMerchants() {
-    axios.get('/admin/team-merchant-teams?cached=false&where[]=team_id,' + $props.teamId + '&relations=merchantTeam').then(response => {
+function cancelAddingNewMerchant() {
+    addingNewMerchant.value = false
+    creatingNewTeamMerchant.value = false
+    teamAddingAsMerchant.value = {}
+}
+
+function getMerchants(page = 1) {
+    axios.get('/admin/team-merchant-teams?cached=false&where[]=team_id,' + $props.teamId + '&page=' + page + '&relations=merchantTeam').then(response => {
         merchants.value = response.data.data
     }).catch(error => {
         console.log(error)
     })
 }
 
-function getMerchantTeams() {
-    axios.get('/admin/team-merchant-teams?cached=false&where[]=merchant_team_id,' + $props.teamId + '&relations=team').then(response => {
+function getMerchantTeams(page = 1) {
+    axios.get('/admin/team-merchant-teams?cached=false&where[]=merchant_team_id,' + $props.teamId + '&page=' + page + '&relations=team').then(response => {
         merchantTeams.value = response.data.data
     }).catch(error => {
         console.log(error)
@@ -79,9 +87,16 @@ function teamSelected(team) {
 
 <template>
     <div class="flex justify-end">
-        <PrimaryButton @click="addNewMerchant()" class="ms-4">
-            Add Merchant Team
-        </PrimaryButton>
+        <div v-if="!addingNewMerchant && !creatingNewTeamMerchant">
+            <PrimaryButton @click="addNewMerchant()" class="ms-4">
+                Add Merchant Team
+            </PrimaryButton>
+        </div>
+        <div v-else>
+            <PrimaryButton @click="cancelAddingNewMerchant()" class="ms-4">
+                Cancel
+            </PrimaryButton>
+        </div>
     </div>
 
     <div v-if="addingNewMerchant">
@@ -94,7 +109,6 @@ function teamSelected(team) {
         <PrimaryButton @click="submitTeamMerchant()" class="">
             Add
         </PrimaryButton>
-
     </div>
 
     <div v-else>
@@ -109,7 +123,16 @@ function teamSelected(team) {
             </div>
 
             <div v-for="merchant in merchants.data" class="border-b py-1">
-                <AdminTeamDetailsComponent :team="merchant.merchant_team"/>
+                <Link :href="route('admin.team', merchant.merchant_team_id)">
+                    <AdminTeamDetailsComponent :team="merchant.merchant_team"/>
+                </Link>
+            </div>
+            <div class="flex justify-end items-center mt-4">
+                <div class="w-full lg:w-1/3">
+                    <PaginatorComponent
+                        @setDataPage="getMerchants"
+                        :pagination-data="merchants"></PaginatorComponent>
+                </div>
             </div>
         </div>
 
@@ -124,7 +147,16 @@ function teamSelected(team) {
             </div>
 
             <div v-for="merchantTeam in merchantTeams.data" class="border-b py-1">
-                <AdminTeamDetailsComponent :team="merchantTeam.team"/>
+                <Link :href="route('admin.team', merchantTeam.team_id)">
+                    <AdminTeamDetailsComponent :team="merchantTeam.team"/>
+                </Link>
+            </div>
+            <div class="flex justify-end items-center mt-4">
+                <div class="w-full lg:w-1/3">
+                    <PaginatorComponent
+                        @setDataPage="getMerchantTeams"
+                        :pagination-data="merchantTeams"></PaginatorComponent>
+                </div>
             </div>
         </div>
 

@@ -1,9 +1,11 @@
 <script setup>
 import {onMounted, ref} from "vue";
+import {Link} from '@inertiajs/vue3';
 import AdminTeamDetailsComponent from "@/Components/Admin/AdminTeamDetailsComponent.vue";
 import PrimaryButton from "@/Components/PrimaryButton.vue";
 import Swal from "sweetalert2";
 import AdminTeamSelectComponent from "@/Components/Admin/AdminTeamSelectComponent.vue";
+import PaginatorComponent from "@/Components/Admin/PaginatorComponent.vue";
 
 const $props = defineProps({
     teamId: {
@@ -31,16 +33,22 @@ function addNewService() {
     addingNewService.value = true
 }
 
-function getServices() {
-    axios.get('/admin/team-service-teams?cached=false&where[]=team_id,' + $props.teamId + '&relations=serviceTeam').then(response => {
+function cancelAddingNewService() {
+    addingNewService.value = false
+    creatingNewTeamService.value = false
+    teamAddingAsService.value = {}
+}
+
+function getServices(page = 1) {
+    axios.get('/admin/team-service-teams?cached=false&where[]=team_id,' + $props.teamId + '&page=' + page + '&relations=serviceTeam').then(response => {
         services.value = response.data.data
     }).catch(error => {
         console.log(error)
     })
 }
 
-function getServiceTeams() {
-    axios.get('/admin/team-service-teams?cached=false&where[]=service_team_id,' + $props.teamId + '&relations=team').then(response => {
+function getServiceTeams(page = 1) {
+    axios.get('/admin/team-service-teams?cached=false&where[]=service_team_id,' + $props.teamId + '&page=' + page + '&relations=team').then(response => {
         serviceTeams.value = response.data.data
     }).catch(error => {
         console.log(error)
@@ -79,9 +87,16 @@ function teamSelected(team) {
 
 <template>
     <div class="flex justify-end">
-        <PrimaryButton @click="addNewService()" class="ms-4">
-            Add Service Team
-        </PrimaryButton>
+        <div v-if="!addingNewService && !creatingNewTeamService">
+            <PrimaryButton @click="addNewService()" class="ms-4">
+                Add Service Team
+            </PrimaryButton>
+        </div>
+        <div v-else>
+            <PrimaryButton @click="cancelAddingNewService()" class="ms-4">
+                Cancel
+            </PrimaryButton>
+        </div>
     </div>
 
     <div v-if="addingNewService">
@@ -108,7 +123,16 @@ function teamSelected(team) {
             </div>
 
             <div v-for="service in services.data" class="border-b py-1">
-                <AdminTeamDetailsComponent :team="service.service_team"/>
+                <Link :href="route('admin.team', service.service_team_id)">
+                    <AdminTeamDetailsComponent :team="service.service_team"/>
+                </Link>
+            </div>
+            <div class="flex justify-end items-center mt-4">
+                <div class="w-full lg:w-1/3">
+                    <PaginatorComponent
+                        @setDataPage="getServices"
+                        :pagination-data="services"></PaginatorComponent>
+                </div>
             </div>
         </div>
 
@@ -123,7 +147,16 @@ function teamSelected(team) {
             </div>
 
             <div v-for="serviceTeam in serviceTeams.data" class="border-b py-1">
-                <AdminTeamDetailsComponent :team="serviceTeam.team"/>
+                <Link :href="route('admin.team', serviceTeam.team_id)">
+                    <AdminTeamDetailsComponent :team="serviceTeam.team"/>
+                </Link>
+            </div>
+            <div class="flex justify-end items-center mt-4">
+                <div class="w-full lg:w-1/3">
+                    <PaginatorComponent
+                        @setDataPage="getServiceTeams"
+                        :pagination-data="serviceTeams"></PaginatorComponent>
+                </div>
             </div>
         </div>
 
