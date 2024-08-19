@@ -82,18 +82,30 @@ class ApiAdminTeamMerchantTeamsController extends Controller
 
             try {
 
-                $model = new TeamMerchantTeam();
+                $model = TeamMerchantTeam::where('team_id', $this->request->get('team_id'))
+                                         ->where('merchant_team_id', $this->request->get('merchant_team_id'))
+                                         ->first();
 
-                foreach ($validationArray as $key => $validationRule) {
-                    $value = $this->request->get($key);
-                    if ((isset($value))) {
-                        $model->$key = $value;
+                if(!$model)
+                {
+                    $model = new TeamMerchantTeam();
+
+                    foreach ($validationArray as $key => $validationRule) {
+                        $value = $this->request->get($key);
+                        if ((isset($value))) {
+                            $model->$key = $value;
+                        }
                     }
+
+                    $model->save();
+
+
                 }
 
-                $model->save();
-
                 $this->message = ApiResponse::RESPONSE_SAVED->value;
+
+
+
                 $this->data    = $model;
 
             }

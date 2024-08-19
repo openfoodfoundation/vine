@@ -22,4 +22,14 @@ class Team extends Model
     {
         return $this->morphMany(AuditItem::class, 'auditable');
     }
+
+    public function teamMerchantTeams(): HasMany
+    {
+        return $this->hasMany(TeamMerchantTeam::class, 'team_id', 'id');
+    }
+
+    public function teamsThisTeamIsMerchantFor(): HasMany
+    {
+        return $this->hasMany(TeamMerchantTeam::class, 'merchant_team_id', 'id');
+    }
 }
