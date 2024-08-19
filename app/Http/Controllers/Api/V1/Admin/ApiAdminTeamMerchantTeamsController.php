@@ -83,11 +83,10 @@ class ApiAdminTeamMerchantTeamsController extends Controller
             try {
 
                 $model = TeamMerchantTeam::where('team_id', $this->request->get('team_id'))
-                                         ->where('merchant_team_id', $this->request->get('merchant_team_id'))
-                                         ->first();
+                    ->where('merchant_team_id', $this->request->get('merchant_team_id'))
+                    ->first();
 
-                if(!$model)
-                {
+                if (!$model) {
                     $model = new TeamMerchantTeam();
 
                     foreach ($validationArray as $key => $validationRule) {
@@ -99,14 +98,11 @@ class ApiAdminTeamMerchantTeamsController extends Controller
 
                     $model->save();
 
-
                 }
 
                 $this->message = ApiResponse::RESPONSE_SAVED->value;
 
-
-
-                $this->data    = $model;
+                $this->data = $model;
 
             }
             catch (Exception $e) {
