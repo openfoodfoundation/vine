@@ -20,11 +20,15 @@ class ApiAdminTeamsController extends Controller
     /**
      * Set the related data the GET request is allowed to ask for
      */
-    public array $availableRelations = [];
+    public array $availableRelations = [
+        'teamsThisTeamIsMerchantFor',
+        'teamsThisTeamIsServiceFor',
+    ];
 
     public static array $searchableFields = [
         'id',
         'name',
+
     ];
 
     /**
