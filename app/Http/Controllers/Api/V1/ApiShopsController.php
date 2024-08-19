@@ -66,7 +66,7 @@ class ApiShopsController extends Controller
          * The validation array.
          */
         $validationArray = [
-            'shop_name'  => [
+            'shop_name' => [
                 'required',
                 'string',
             ],
@@ -74,7 +74,7 @@ class ApiShopsController extends Controller
                 'required',
                 'email',
             ],
-            'user_name'  => [
+            'user_name' => [
                 'required',
                 'string',
             ],
@@ -144,7 +144,8 @@ class ApiShopsController extends Controller
             $this->message = ApiResponse::RESPONSE_SAVED->value . '. Here is the API Token for the user linked to this new team. It will only be displayed ONCE, so please store it in a secure manner.';
             $this->data    = $token->plainTextToken;
 
-        } catch (Exception $e) {
+        }
+        catch (Exception $e) {
 
             $this->responseCode = 500;
             $this->message      = ApiResponse::RESPONSE_ERROR->value . ': "' . $e->getMessage() . '".';
