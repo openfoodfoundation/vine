@@ -32,15 +32,9 @@ class ApiShopsController extends Controller
     public static array $searchableFields = [
     ];
 
-    #[Endpoint(
-        title: 'GET /',
-        authenticated: true
-    )]
-    #[Authenticated]
-    #[Response(
-        status: 403,
-        description: 'Method Not Allowed',
-    )]
+    /**
+     * @hideFromAPIDocumentation
+     */
     public function index(): JsonResponse
     {
         $this->responseCode = 403;
@@ -99,7 +93,7 @@ class ApiShopsController extends Controller
 
             $shopTeam = Team::where('name', $shopName)->first();
 
-            if (is_null($shopTeam)) {
+            if (!$shopTeam) {
                 $shopTeam       = new Team();
                 $shopTeam->name = $shopName;
                 $shopTeam->save();
@@ -112,7 +106,7 @@ class ApiShopsController extends Controller
 
             $shopUser = User::where('email', $userEmail)->first();
 
-            if (is_null($shopUser)) {
+            if (!$shopUser) {
                 $shopUser                  = new User();
                 $shopUser->email           = $userEmail;
                 $shopUser->password        = $userEmail;
@@ -126,7 +120,7 @@ class ApiShopsController extends Controller
              */
             $shopTeamUser = TeamUser::where('team_id', $shopTeam->id)->where('user_id', $shopUser->id)->first();
 
-            if (is_null($shopTeamUser)) {
+            if (!$shopTeamUser) {
                 $shopTeamUser          = new TeamUser();
                 $shopTeamUser->user_id = $shopUser->id;
                 $shopTeamUser->team_id = $shopTeam->id;
@@ -142,7 +136,9 @@ class ApiShopsController extends Controller
             );
 
             $this->message = ApiResponse::RESPONSE_SAVED->value . '. Here is the API Token for the user linked to this new team. It will only be displayed ONCE, so please store it in a secure manner.';
-            $this->data    = $token->plainTextToken;
+            $this->data    = [
+                'token' => $token->plainTextToken
+            ];
 
         }
         catch (Exception $e) {
@@ -155,16 +151,9 @@ class ApiShopsController extends Controller
         return $this->respond();
     }
 
-    #[Endpoint(
-        title: 'GET /{id}',
-        description: 'Get shop with ID {id}',
-        authenticated: true
-    )]
-    #[Authenticated]
-    #[Response(
-        status: 403,
-        description: 'Method Not Allowed',
-    )]
+    /**
+     * @hideFromAPIDocumentation
+     */
     public function show(int $id)
     {
         $this->responseCode = 403;
@@ -173,16 +162,9 @@ class ApiShopsController extends Controller
         return $this->respond();
     }
 
-    #[Endpoint(
-        title: 'PUT /{id}',
-        description: 'Update shop with ID {id}.',
-        authenticated: true
-    )]
-    #[Authenticated]
-    #[Response(
-        status: 403,
-        description: 'Method Not Allowed',
-    )]
+    /**
+     * @hideFromAPIDocumentation
+     */
     public function update(string $id)
     {
         $this->responseCode = 403;
@@ -191,16 +173,9 @@ class ApiShopsController extends Controller
         return $this->respond();
     }
 
-    #[Endpoint(
-        title: 'DELETE /',
-        description: 'DELETE shop with ID {id}.',
-        authenticated: true
-    )]
-    #[Authenticated]
-    #[Response(
-        status: 403,
-        description: 'Method Not Allowed',
-    )]
+    /**
+     * @hideFromAPIDocumentation
+     */
     public function destroy(string $id)
     {
         $this->responseCode = 403;
