@@ -50,7 +50,7 @@ class ApiShopsController extends Controller
     )]
     #[Authenticated]
     #[Response(
-        content: '{"meta":{"responseCode":200,"limit":50,"offset":0,"message":"Saved. Here is the API Token for the user linked to this new team. It will only be displayed ONCE, so please store it in a secure manner.","cached":false,"availableRelations":[]},"data":"{TOKEN}"',
+        content: '{"meta":{"responseCode":200,"limit":50,"offset":0,"message":"Saved. Here is the API Token for the user linked to this new team. It will only be displayed ONCE, so please store it in a secure manner.","cached":false,"availableRelations":[]},"data":{"token": "123|kjfhsgiufsghkjsfghkfgsjh"}}',
         status: 200,
         description: '',
     )]
