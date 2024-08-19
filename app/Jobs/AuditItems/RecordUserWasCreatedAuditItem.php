@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Jobs;
+namespace App\Jobs\AuditItems;
 
 use App\Models\User;
 use App\Services\AuditItemService;

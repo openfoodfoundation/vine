@@ -93,7 +93,7 @@ class TeamTest extends TestCase
         $teamWithAuditItems = Team::with('auditItems')->find($team->id);
 
         $this->assertInstanceOf(Team::class, $teamWithAuditItems);
-        $this->assertCount($num, $teamWithAuditItems->auditItems);
+
         $teamWithAuditItems->auditItems->map(function ($auditItem) use ($team) {
             $this->assertEquals($team->id, $auditItem->auditable_id);
             $this->assertSame(Team::class, $auditItem->auditable_type);

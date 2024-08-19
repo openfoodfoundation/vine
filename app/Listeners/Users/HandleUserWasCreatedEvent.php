@@ -3,7 +3,7 @@
 namespace App\Listeners\Users;
 
 use App\Events\Users\UserWasCreated;
-use App\Jobs\RecordUserWasCreatedAuditItem;
+use App\Jobs\AuditItems\RecordUserWasCreatedAuditItem;
 
 class HandleUserWasCreatedEvent
 {

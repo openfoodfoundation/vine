@@ -8,6 +8,7 @@ namespace App\Http\Controllers\Api\V1\Admin;
 
 use App\Enums\ApiResponse;
 use App\Enums\PersonalAccessTokenAbility;
+use App\Events\PersonalAccessTokens\PersonalAccessTokenWasCreated;
 use App\Exceptions\DisallowedApiFieldException;
 use App\Http\Controllers\Api\HandlesAPIRequests;
 use App\Http\Controllers\Controller;
@@ -103,6 +104,8 @@ class ApiAdminUserPersonalAccessTokensController extends Controller
 
                 $this->message = ApiResponse::RESPONSE_SAVED->value;
                 $this->data    = ['token' => $token->plainTextToken];
+
+                event(new PersonalAccessTokenWasCreated($token->accessToken));
 
             }
             catch (Exception $e) {

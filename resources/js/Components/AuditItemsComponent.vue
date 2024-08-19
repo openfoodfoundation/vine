@@ -18,10 +18,10 @@ const auditItems = ref({});
 
 function getData() {
 
-    let endpoint = '/my-team-audit-items?cache=false&orderBy=id,desc';
+    let endpoint = '/my-team-audit-items?cached=false&orderBy=id,desc';
 
     if ($props.isAdmin) {
-        endpoint = '/admin/audit-items?cache=false&relations=team&orderBy=id,desc';
+        endpoint = '/admin/audit-items?cached=false&relations=team&orderBy=id,desc';
     }
 
     axios.get(endpoint).then(response => {
