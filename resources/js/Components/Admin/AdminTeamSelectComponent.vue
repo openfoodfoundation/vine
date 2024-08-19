@@ -89,7 +89,7 @@ function teamSelected(team) {
             />
         </div>
 
-        <div v-if="searchStr.length > 0 && teams.total > 0" class="mt-4 px-8">
+        <div v-if="searchStr.length > 0 && teams.total > 0" class="mt-4">
             <div v-for="team in teams.data" class="border-b py-1">
                 <button @click="teamSelected(team)" class="cursor-pointer flex justify-start items-end"
                         :class="{'text-gray-500 cursor-not-allowed': excludeTeamIdsArray.includes(team.id)}"

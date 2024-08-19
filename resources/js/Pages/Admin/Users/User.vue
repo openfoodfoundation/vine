@@ -9,6 +9,7 @@ import AdminUserDetailsComponent from "@/Components/Admin/AdminUserDetailsCompon
 import PrimaryButton from "@/Components/PrimaryButton.vue";
 import InputLabel from "@/Components/InputLabel.vue";
 import TextInput from "@/Components/TextInput.vue";
+import SecondaryButton from "@/Components/SecondaryButton.vue";
 
 const $props = defineProps({
     id: {
@@ -20,6 +21,7 @@ const $props = defineProps({
 const limit = ref(5)
 const newPAT = ref({name: '', token_abilities: []})
 const personalAccessTokenAbilities = usePage().props.personalAccessTokenAbilities
+const platformAppTokenAbilities = usePage().props.platformAppTokenAbilities
 const userTeams = ref({})
 const user = ref({})
 
@@ -72,6 +74,22 @@ function setDataPage(page) {
 function textFormat(ability) {
     return ability.replaceAll('-', ' ')
 }
+
+function selectPlatformAppType(){
+    newPAT.value.token_abilities = platformAppTokenAbilities;
+
+    Swal.fire({
+        icon: "info",
+        title: "Platform Apps",
+        html: '<div>We have selected the minimum required abilities for an API token for a "Platform" type app.</div>' +
+            '<div class="mt-4">Be careful with these abilities, as they can perform additive and destructive actions, like creating teams, users and more API tokens.</div>'
+    })
+}
+
+function clearAbilitiesList(){
+    newPAT.value.token_abilities = [];
+}
+
 
 </script>
 
@@ -147,7 +165,12 @@ function textFormat(ability) {
 
         <div class="card">
             <div class="card-header">
-                Create Personal Access Token (No Edit)
+                Create Personal Access Token
+
+            </div>
+
+            <div class="card">
+                <pre>{{personalAccessTokenAbilities}}</pre>
             </div>
 
             <div v-if="personalAccessTokenAbilities.length">
@@ -162,14 +185,41 @@ function textFormat(ability) {
                     />
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-4">
-                    <div v-for="ability in personalAccessTokenAbilities">
-                        <label :for="ability" class="cursor-pointer">
-                            <input type="checkbox" :id="ability" class="mr-4" :value="ability"
-                                   v-model="newPAT.token_abilities"> {{ textFormat(ability) }}
-                        </label>
+
+
+                <div class="flex justify-start space-x-4 pb-4 ">
+                    <SecondaryButton @click="clearAbilitiesList">
+                        Clear Selected
+                    </SecondaryButton>
+                    <PrimaryButton @click="selectPlatformAppType()">
+                        Master App
+                    </PrimaryButton>
+                </div>
+
+
+
+                <div class="grid grid-cols-1 md:grid-cols-2 md:gap-2 ">
+                    <div v-for="abilityGroup in personalAccessTokenAbilities" class="border rounded-xl p-4">
+                        <div>
+                            <h2>
+                                {{abilityGroup.name}}
+                            </h2>
+                            <div class="text-xs">
+                                {{abilityGroup.description}}
+                            </div>
+                            <div class="mt-8">
+                                <div v-for="ability in abilityGroup.abilities">
+                                    <label :for="ability" class="cursor-pointer">
+                                        <input type="checkbox" :id="ability" class="mr-4" :value="ability"
+                                               v-model="newPAT.token_abilities"> {{ textFormat(ability) }}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
+
 
                 <div class="flex items-center justify-end mt-4">
                     <PrimaryButton @click.prevent="createPAT()" class="ms-4" :class="{ 'opacity-25': !newPAT.name }"

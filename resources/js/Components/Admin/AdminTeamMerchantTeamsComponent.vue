@@ -90,24 +90,38 @@ function teamSelected(team) {
     </div>
 
     <div v-else-if="creatingNewTeamMerchant">
-        <div class="py-2">Adding <span class="font-bold">{{ teamAddingAsMerchant.name }}</span> as merchant team?</div>
-        <PrimaryButton @click="submitTeamMerchant()" class="ms-4">
+        <div class="py-2">Add <span class="font-bold">{{ teamAddingAsMerchant.name }}</span> as merchant team?</div>
+        <PrimaryButton @click="submitTeamMerchant()" class="">
             Add
         </PrimaryButton>
 
     </div>
 
     <div v-else>
-        <div v-if="merchants.data && merchants.data.length" class="mb-2">
-            <div class="mb-2 font-semibold">{{ teamName }}'s merchant teams</div>
+        <div v-if="merchants.data && merchants.data.length" class="mb-8">
+            <div>
+                <div class="mb-2 font-semibold">
+                    {{ teamName }}'s merchant teams
+                </div>
+                <div class="text-xs italic">
+                    Teams that may redeem vouchers for {{ teamName }}
+                </div>
+            </div>
 
             <div v-for="merchant in merchants.data" class="border-b py-1">
                 <AdminTeamDetailsComponent :team="merchant.merchant_team"/>
             </div>
         </div>
 
-        <div v-if="merchantTeams.data && merchantTeams.data.length" class="mb-2">
-            <div class="mb-2 font-semibold">{{ teamName }} is merchant team for</div>
+        <div v-if="merchantTeams.data && merchantTeams.data.length" class="mb-8">
+            <div>
+                <div class="mb-2 font-semibold">
+                    {{ teamName }} is merchant team for
+                </div>
+                <div class="text-xs italic">
+                    {{ teamName }} may redeem vouchers for these teams
+                </div>
+            </div>
 
             <div v-for="merchantTeam in merchantTeams.data" class="border-b py-1">
                 <AdminTeamDetailsComponent :team="merchantTeam.team"/>

@@ -28,4 +28,85 @@ enum PersonalAccessTokenAbility: string
     case SYSTEM_STATISTICS_READ     = 'system-statistics-read';
     case SYSTEM_STATISTICS_UPDATE   = 'system-statistics-update';
     case SYSTEM_STATISTICS_DELETE   = 'system-statistics-delete';
+    case TEAMS_CREATE               = 'teams-create';
+    case TEAMS_READ                 = 'teams-read';
+    case TEAMS_UPDATE               = 'teams-update';
+    case TEAMS_DELETE               = 'teams-delete';
+
+
+    public static function abilityLabels(): array
+    {
+        $returnArray = [
+            self::SUPER_ADMIN->value       => 'Super Admin',
+            self::MY_PROFILE_CREATE->value => 'My Profile Create',
+            self::MY_PROFILE_READ->value   => 'My Profile Read',
+            self::MY_PROFILE_UPDATE->value => 'My Profile Update',
+            self::MY_PROFILE_DELETE->value => 'My Profile Delete',
+            self::MY_TEAM_CREATE->value    => 'My Team Create',
+            self::MY_TEAM_READ->value      => 'My Team Read',
+            self::MY_TEAM_UPDATE->value    => 'My Team Update',
+            self::MY_TEAM_DELETE->value    => 'My Team Delete',
+            self::TEAMS_READ->value        => 'Teams Read',
+            self::TEAMS_CREATE->value      => 'Teams Create',
+            self::SYSTEM_STATISTICS_READ->value      => 'System Statistics Read',
+            // MUST MATCH FULL LIS
+        ];
+
+        // Assert$returnArray
+        return $returnArray
+    }
+
+    /**
+     * The abilities that a "platform" app API token should have.
+     *
+     * Example: The OFN platform has a shop in its organisation chart, and the shop opts in to the vouchers' system.
+     * The OFN API token needs to create the team in the vouchers API, create a user for the shop, create an API
+     * token for that user, and save the API token locally in the OFN DB so that the shop may perform actions like redeeming, etc.
+     *
+     * @return PersonalAccessTokenAbility[]
+     */
+    public static function platformAppTokenAbilities(): array
+    {
+        return [
+            self::TEAMS_READ->value             => self::abilityLabels()[self::TEAMS_READ->value],
+            self::TEAMS_CREATE->value           => self::abilityLabels()[self::TEAMS_CREATE->value],
+            self::SYSTEM_STATISTICS_READ->value => self::abilityLabels()[self::SYSTEM_STATISTICS_READ->value],
+        ];
+    }
+
+
+    /**
+     * The abilities that a "redemption" app API token should have.
+     *
+     * @return array
+     */
+    public static function redemptionAppTokenAbilities(): array
+    {
+        return [
+
+        ];
+    }
+
+    public static function groupsAbilityCasesWithDefinitions(): array
+    {
+        return [
+            [
+                'name'        => 'Super admin abilities',
+                'description' => 'A group of API abilities that allow an app to perform any / all actions on the API. Be careful assigning this ability!',
+                'abilities'   => [
+                    self::SUPER_ADMIN
+                ]
+            ],
+            [
+                'name'        => 'Platform App',
+                'description' => 'Perform administrative tasks for your OFN platform implementation.',
+                'abilities'   => self::platformAppTokenAbilities()
+            ],
+            [
+                'name'        => 'Redemptions',
+                'description' => 'A group of API abilities that allow an app to perform redemptions on the system.',
+                'abilities'   => self::redemptionAppTokenAbilities()
+            ],
+        ];
+    }
 }

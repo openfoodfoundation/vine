@@ -91,22 +91,36 @@ function teamSelected(team) {
 
     <div v-else-if="creatingNewTeamService">
         <div class="py-2">Adding <span class="font-bold">{{ teamAddingAsService.name }}</span> as service team?</div>
-        <PrimaryButton @click="submitTeamService()" class="ms-4">
+        <PrimaryButton @click="submitTeamService()" class="">
             Add
         </PrimaryButton>
     </div>
 
     <div v-else>
-        <div v-if="services.data && services.data.length" class="mb-2">
-            <div class="mb-2 font-semibold">{{ teamName }}'s service teams</div>
+        <div v-if="services.data && services.data.length" class="mb-8">
+            <div>
+                <div class="mb-2 font-semibold">
+                    {{ teamName }}'s service teams
+                </div>
+                <div class="text-xs italic">
+                    {{ teamName }} may assign voucher sets for distribution to these teams
+                </div>
+            </div>
 
             <div v-for="service in services.data" class="border-b py-1">
                 <AdminTeamDetailsComponent :team="service.service_team"/>
             </div>
         </div>
 
-        <div v-if="serviceTeams.data && serviceTeams.data.length" class="mb-2">
-            <div class="mb-2 font-semibold">{{ teamName }} is service team for</div>
+        <div v-if="serviceTeams.data && serviceTeams.data.length" class="mb-8">
+            <div>
+                <div class="mb-2 font-semibold">
+                    {{ teamName }} is service team for
+                </div>
+                <div class="text-xs italic">
+                    {{ teamName }} may be assigned voucher sets for distribution by these teams
+                </div>
+            </div>
 
             <div v-for="serviceTeam in serviceTeams.data" class="border-b py-1">
                 <AdminTeamDetailsComponent :team="serviceTeam.team"/>
