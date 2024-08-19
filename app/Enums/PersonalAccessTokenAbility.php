@@ -33,27 +33,35 @@ enum PersonalAccessTokenAbility: string
     case TEAMS_UPDATE               = 'teams-update';
     case TEAMS_DELETE               = 'teams-delete';
 
-
     public static function abilityLabels(): array
     {
-        $returnArray = [
-            self::SUPER_ADMIN->value       => 'Super Admin',
-            self::MY_PROFILE_CREATE->value => 'My Profile Create',
-            self::MY_PROFILE_READ->value   => 'My Profile Read',
-            self::MY_PROFILE_UPDATE->value => 'My Profile Update',
-            self::MY_PROFILE_DELETE->value => 'My Profile Delete',
-            self::MY_TEAM_CREATE->value    => 'My Team Create',
-            self::MY_TEAM_READ->value      => 'My Team Read',
-            self::MY_TEAM_UPDATE->value    => 'My Team Update',
-            self::MY_TEAM_DELETE->value    => 'My Team Delete',
-            self::TEAMS_READ->value        => 'Teams Read',
-            self::TEAMS_CREATE->value      => 'Teams Create',
-            self::SYSTEM_STATISTICS_READ->value      => 'System Statistics Read',
-            // MUST MATCH FULL LIS
+        return [
+            self::SUPER_ADMIN->value                => 'Super Admin',
+            self::MY_PROFILE_CREATE->value          => 'My Profile Create',
+            self::MY_PROFILE_READ->value            => 'My Profile Read',
+            self::MY_PROFILE_UPDATE->value          => 'My Profile Update',
+            self::MY_PROFILE_DELETE->value          => 'My Profile Delete',
+            self::MY_TEAM_CREATE->value             => 'My Team Create',
+            self::MY_TEAM_READ->value               => 'My Team Read',
+            self::MY_TEAM_UPDATE->value             => 'My Team Update',
+            self::MY_TEAM_DELETE->value             => 'My Team Delete',
+            self::MY_TEAM_AUDIT_ITEMS_CREATE->value => 'My Team Audit Items Create',
+            self::MY_TEAM_AUDIT_ITEMS_READ->value   => 'My Team Audit Items Read',
+            self::MY_TEAM_AUDIT_ITEMS_UPDATE->value => 'My Team Audit Items Update',
+            self::MY_TEAM_AUDIT_ITEMS_DELETE->value => 'My Team Audit Items Delete',
+            self::MY_TEAM_VOUCHERS_CREATE->value    => 'My Team Vouchers Create',
+            self::MY_TEAM_VOUCHERS_READ->value      => 'My Team Vouchers Read',
+            self::MY_TEAM_VOUCHERS_UPDATE->value    => 'My Team Vouchers Update',
+            self::MY_TEAM_VOUCHERS_DELETE->value    => 'My Team Vouchers Delete',
+            self::SYSTEM_STATISTICS_CREATE->value   => 'System Statistics Create',
+            self::SYSTEM_STATISTICS_READ->value     => 'System Statistics Read',
+            self::SYSTEM_STATISTICS_UPDATE->value   => 'System Statistics Update',
+            self::SYSTEM_STATISTICS_DELETE->value   => 'System Statistics Delete',
+            self::TEAMS_CREATE->value               => 'Teams Create',
+            self::TEAMS_READ->value                 => 'Teams Read',
+            self::TEAMS_UPDATE->value               => 'Teams Update',
+            self::TEAMS_DELETE->value               => 'Teams Delete',
         ];
-
-        // Assert$returnArray
-        return $returnArray
     }
 
     /**
@@ -74,7 +82,6 @@ enum PersonalAccessTokenAbility: string
         ];
     }
 
-
     /**
      * The abilities that a "redemption" app API token should have.
      *
@@ -94,19 +101,24 @@ enum PersonalAccessTokenAbility: string
                 'name'        => 'Super admin abilities',
                 'description' => 'A group of API abilities that allow an app to perform any / all actions on the API. Be careful assigning this ability!',
                 'abilities'   => [
-                    self::SUPER_ADMIN
-                ]
+                    self::SUPER_ADMIN,
+                ],
             ],
             [
                 'name'        => 'Platform App',
                 'description' => 'Perform administrative tasks for your OFN platform implementation.',
-                'abilities'   => self::platformAppTokenAbilities()
+                'abilities'   => self::platformAppTokenAbilities(),
             ],
             [
                 'name'        => 'Redemptions',
                 'description' => 'A group of API abilities that allow an app to perform redemptions on the system.',
-                'abilities'   => self::redemptionAppTokenAbilities()
+                'abilities'   => self::redemptionAppTokenAbilities(),
             ],
         ];
+    }
+
+    public static function values(): array
+    {
+        return array_column(self::cases(), 'value');
     }
 }
