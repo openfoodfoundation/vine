@@ -58,16 +58,16 @@ class ShopPostTest extends BaseAPITestCase
             PersonalAccessTokenAbility::SHOPS_CREATE->value,
         ]);
 
-        $shopName = fake()->name();
-        $userName = fake()->name();
+        $shopName  = fake()->name();
+        $userName  = fake()->name();
         $userEmail = fake()->email();
 
         $user = User::whereEmail($userEmail)->first();
         self::assertNull($user);
 
         $payload = [
-            'shop_name' => $shopName,
-            'user_name' => $userName,
+            'shop_name'  => $shopName,
+            'user_name'  => $userName,
             'user_email' => $userEmail,
         ];
 
