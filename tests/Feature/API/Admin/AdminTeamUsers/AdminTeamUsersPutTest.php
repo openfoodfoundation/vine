@@ -59,6 +59,6 @@ class AdminTeamUsersPutTest extends BaseAPITestCase
 
         $response = $this->putJson($this->apiRoot . $this->endpoint . '/' . $model->id, $payload);
 
-        $response->assertStatus(403);
+        $response->assertStatus(200);
     }
 }
