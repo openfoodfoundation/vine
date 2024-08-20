@@ -10,6 +10,7 @@ use App\Enums\ApiResponse;
 use App\Exceptions\DisallowedApiFieldException;
 use App\Http\Controllers\Api\HandlesAPIRequests;
 use App\Http\Controllers\Controller;
+use App\Jobs\TeamUsers\SendTeamUserInvitationEmail;
 use App\Models\TeamUser;
 use Exception;
 use Illuminate\Http\JsonResponse;
@@ -132,8 +133,59 @@ class ApiAdminTeamUsersController extends Controller
      */
     public function update(string $id)
     {
-        $this->responseCode = 403;
-        $this->message      = ApiResponse::RESPONSE_METHOD_NOT_ALLOWED->value;
+        $validationArray = [
+            'send_invite_email' => [
+                'sometimes',
+                'boolean',
+            ],
+        ];
+
+        $validator = Validator::make($this->request->all(), $validationArray);
+
+        if ($validator->fails()) {
+
+            $this->responseCode = 400;
+            $this->message      = $validator->errors()
+                ->first();
+
+        }
+        else {
+
+            try {
+
+                $model = TeamUser::find($id);
+
+                if (!$model) {
+
+                    $this->responseCode = 404;
+                    $this->message      = ApiResponse::RESPONSE_NOT_FOUND->value;
+
+                }
+                else {
+
+                    if ($this->request->has('send_invite_email')) {
+                        $sendInviteEmail = $this->request->get('send_invite_email');
+
+                        if ($sendInviteEmail) {
+                            $model->invitation_sent_at = now();
+                            $model->save();
+
+                            dispatch(new SendTeamUserInvitationEmail($model));
+                        }
+                    }
+
+                    $this->message = ApiResponse::RESPONSE_UPDATED->value;
+                    $this->data    = $model;
+                }
+
+            }
+            catch (Exception $e) {
+
+                $this->responseCode = 500;
+                $this->message      = ApiResponse::RESPONSE_ERROR->value . ': "' . $e->getMessage() . '".';
+
+            }
+        }
 
         return $this->respond();
     }

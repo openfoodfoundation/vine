@@ -15,6 +15,7 @@ return new class() extends Migration
             $table->id();
             $table->unsignedBigInteger('team_id')->index('tu_ti');
             $table->unsignedBigInteger('user_id')->index('tu_ui');
+            $table->dateTime('invitation_sent_at')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
