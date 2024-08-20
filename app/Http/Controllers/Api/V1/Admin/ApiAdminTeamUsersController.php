@@ -146,7 +146,7 @@ class ApiAdminTeamUsersController extends Controller
 
             $this->responseCode = 400;
             $this->message      = $validator->errors()
-                                            ->first();
+                ->first();
 
         }
         else {
@@ -161,14 +161,12 @@ class ApiAdminTeamUsersController extends Controller
                     $this->message      = ApiResponse::RESPONSE_NOT_FOUND->value;
 
                 }
-                else{
+                else {
 
-                    if($this->request->has('send_invite_email'))
-                    {
+                    if ($this->request->has('send_invite_email')) {
                         $sendInviteEmail = $this->request->get('send_invite_email');
 
-                        if($sendInviteEmail)
-                        {
+                        if ($sendInviteEmail) {
                             $model->invitation_sent_at = now();
                             $model->save();
 
@@ -179,7 +177,6 @@ class ApiAdminTeamUsersController extends Controller
                     $this->message = ApiResponse::RESPONSE_UPDATED->value;
                     $this->data    = $model;
                 }
-
 
             }
             catch (Exception $e) {
