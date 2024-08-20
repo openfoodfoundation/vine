@@ -29,7 +29,6 @@ class SendTeamUserInvitationEmail implements ShouldQueue
      */
     public function handle(): void
     {
-        Log::info('SendTeamUserInvitationEmail');
         $userToNotify = User::find($this->teamUser->user_id);
 
         if($userToNotify)
