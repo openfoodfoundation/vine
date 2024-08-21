@@ -88,6 +88,36 @@ Release notes to be begun being generated only after production v1.0
 ----
 # Configuration
 
+----
+
+## Emails
+Currently supported integrations: `smtp`, and `mailgun`.
+
+#### SMTP Emails
+To configure your system to use a third party SMTP service, update the following environment variables. Note that you may need to update some configuration at your SMTP server provider to enable sending from your server installation IP range.
+
+```dotenv
+MAIL_MAILER=smtp
+MAIL_HOST=
+MAIL_PORT=
+MAIL_USERNAME=
+MAIL_PASSWORD=
+MAIL_ENCRYPTION=
+MAIL_FROM_ADDRESS="vine@openfoodnetwork.org.au"
+MAIL_FROM_NAME="${APP_NAME}"
+```
+
+#### Mailgun
+To use Mailgun, you'll need a configured domain, an API secret and to update the following environment variables. Note that MAILGUN_ENDPOINT is usually only required if not using the US region to send mail from.
+
+```dotenv
+MAIL_MAILER=mailgun
+MAILGUN_DOMAIN=
+MAILGUN_SECRET=
+MAILGUN_ENDPOINT=[if necessary to switch to EU]
+```
+---
+
 ## Application Logging Configuration
 We've configured the system so that you can use environment variables to configure which logging service you would like to use for the installation. To configure logging, update the `LOG_STACK` environment variable. 
 
@@ -121,11 +151,13 @@ SENTRY_LARAVEL_DSN=your_sentry_dsn
 # Update your log stack
 LOG_STACK=sentry  # or sentry,single etc for multiple
 ```
-
+----
 
 ## Code Linting / Formatting
 
 Todo - explain how pint works, and under what circumstances it'll run
+
+---- 
 
 ## File Storage: Local vs. AWS S3
 You are free to use whichever storage cloud you like - the default environment variable of `FILESYSTEM_DISK=local` means that the application will use the local server.

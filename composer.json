@@ -13,6 +13,8 @@
         "league/flysystem-aws-s3-v3": "^3.28",
         "sentry/sentry-laravel": "^4.7",
         "spatie/laravel-flare": "^1.0",
+        "symfony/http-client": "^7.1",
+        "symfony/mailgun-mailer": "^7.1",
         "tightenco/ziggy": "^2.0"
     },
     "require-dev": {
