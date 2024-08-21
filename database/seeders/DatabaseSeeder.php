@@ -51,6 +51,16 @@ class DatabaseSeeder extends Seeder
                         'email'    => 'maikel@openfoodnetwork.org.au',
                         'password' => 'maikel@openfoodnetwork.org.au',
                     ],
+                    [
+                        'name'     => 'Kirsten Larsen',
+                        'email'    => 'kirsten@openfoodnetwork.org.au',
+                        'password' => 'kirsten@openfoodnetwork.org.au',
+                    ],
+                    [
+                        'name'     => 'Inca Dunphy',
+                        'email'    => 'inca@openfoodnetwork.org.au',
+                        'password' => 'inca@openfoodnetwork.org.au',
+                    ],
                 ],
             ],
 
