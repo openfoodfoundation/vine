@@ -14,6 +14,8 @@ import AjaxLoadingIndicator from "@/Components/AjaxLoadingIndicator.vue";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 dayjs.extend(relativeTime);
+import utc from "dayjs/plugin/utc"
+dayjs.extend(utc);
 
 const $props = defineProps({
     id: {
@@ -128,7 +130,7 @@ function setDataPage(page) {
                         <div class="flex justify-end items-center">
 
                             <div v-if="teamUser.invitation_sent_at" class="pr-2 text-xs">
-                                Invited: {{dayjs(teamUser.invitation_sent_at).fromNow()}}
+                                Invited: {{dayjs.utc(teamUser.invitation_sent_at).fromNow()}}
                             </div>
 
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
