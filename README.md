@@ -3,7 +3,7 @@
 
 <p align="center">
 <a href="https://github.com/openfoodfoundation/vine/actions"><img src="https://github.com/openfoodfoundation/vine/actions/workflows/main-push-deploy.yml/badge.svg" alt="Build Status"></a>
-<a href="https://github.com/openfoodfoundation/vine/actions"><img src="https://github.com/openfoodfoundation/vine/workflows/develop-push-deploy.yml/badge.svg" alt="Build Status"></a>
+<a href="https://github.com/openfoodfoundation/vine/actions"><img src="https://github.com/openfoodfoundation/vine/actions/workflows/develop-push-deploy.yml/badge.svg" alt="Build Status"></a>
 </p>
 
 # Open Food Foundation VINE: Vouchers Integration Engine
