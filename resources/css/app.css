@@ -19,7 +19,7 @@ h2 {
 }
 
 input[type=checkbox], input[type=text]{
-    @apply rounded w-full
+    @apply rounded
 }
 
 

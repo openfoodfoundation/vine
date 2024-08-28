@@ -173,9 +173,9 @@ function updateAdminStatus() {
                 Admin status
             </div>
 
-            <label for="admin" class="cursor-pointer">
+            <label for="admin" class="cursor-pointer flex justify-start items-center">
                 <input @change="updateAdminStatus()" type="checkbox" id="admin" class="mr-4"
-                       :true-value="1" :false-value="0" v-model="user.is_admin"> Admin
+                       :true-value="1" :false-value="0" v-model="user.is_admin"> User is System Admin
             </label>
         </div>
 
