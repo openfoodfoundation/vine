@@ -56,6 +56,32 @@ function getServiceTeams(page = 1) {
     })
 }
 
+function removeServiceTeams(id) {
+    Swal.fire({
+        title: "Are you sure you want to delete?",
+        text: "This action cannot be undone. Please confirm if you wish to proceed.",
+        icon: "warning",
+        confirmButtonColor: "#3085d6",
+        confirmButtonText: "Delete service team",
+        showCancelButton: true,
+    }).then((result) => {
+        if (result.isConfirmed) {
+            axios.delete('/admin/team-service-teams/' + id).then(response => {
+                Swal.fire({
+                    title: 'Success!',
+                    icon: 'success',
+                    timer: 1000
+                }).then(() => {
+                    getServices()
+                    getServiceTeams()
+                })
+            }).catch(error => {
+                console.log(error)
+            })
+        }
+    });
+}
+
 function submitTeamService() {
     let payload = {
         team_id: $props.teamId,
@@ -123,10 +149,17 @@ function teamSelected(team) {
                 </div>
             </div>
 
-            <div v-for="service in services.data" class="border-b py-1">
+            <div v-for="service in services.data" class="border-b py-1 flex justify-between items-end">
                 <Link :href="route('admin.team', service.service_team_id)">
                     <AdminTeamDetailsComponent :team="service.service_team"/>
                 </Link>
+                <button @click="removeServiceTeams(service.id)" class="text-xs text-red-500 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"  class="size-3">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                    Delete
+                </button>
             </div>
             <div class="flex justify-end items-center mt-4">
                 <div class="w-full lg:w-1/3">
@@ -147,10 +180,17 @@ function teamSelected(team) {
                 </div>
             </div>
 
-            <div v-for="serviceTeam in serviceTeams.data" class="border-b py-1">
+            <div v-for="serviceTeam in serviceTeams.data" class="border-b py-1 flex justify-between items-end">
                 <Link :href="route('admin.team', serviceTeam.team_id)">
                     <AdminTeamDetailsComponent :team="serviceTeam.team"/>
                 </Link>
+                <button @click="removeServiceTeams(serviceTeam.id)" class="text-xs text-red-500 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"  class="size-3">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                    Delete
+                </button>
             </div>
             <div class="flex justify-end items-center mt-4">
                 <div class="w-full lg:w-1/3">
