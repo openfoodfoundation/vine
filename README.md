@@ -2,8 +2,8 @@
 <img src="https://openfoodnetwork.org.au/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBbVFCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--34ea38a5bd4cc160f7bbd5a7e0490805fe6fd137/logo-australia.png" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
-<a href="https://github.com/ok200team/open-food-network-vouchers/actions"><img src="https://github.com/ok200team/open-food-network-vouchers/actions/workflows/main-push-deploy.yml/badge.svg" alt="Build Status"></a>
-<a href="https://github.com/ok200team/open-food-network-vouchers/actions"><img src="https://github.com/ok200team/open-food-network-vouchers/actions/workflows/develop-push-deploy.yml/badge.svg" alt="Build Status"></a>
+<a href="https://github.com/openfoodfoundation/vine/actions"><img src="https://github.com/openfoodfoundation/vine/actions/workflows/main-push-deploy.yml/badge.svg" alt="Build Status"></a>
+<a href="https://github.com/openfoodfoundation/vine/actions"><img src="https://github.com/openfoodfoundation/vine/workflows/develop-push-deploy.yml/badge.svg" alt="Build Status"></a>
 </p>
 
 # Open Food Foundation VINE: Vouchers Integration Engine
