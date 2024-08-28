@@ -76,7 +76,9 @@ class ApiMyTeamController extends Controller
 
     /**
      * POST /
+     *
      * @hideFromAPIDocumentation
+     *
      * @return JsonResponse
      */
     public function store(): JsonResponse
@@ -89,8 +91,11 @@ class ApiMyTeamController extends Controller
 
     /**
      * GET / {id}
+     *
      * @hideFromAPIDocumentation
+     *
      * @param string $id
+     *
      * @return JsonResponse
      */
     public function show(string $id)
@@ -103,8 +108,11 @@ class ApiMyTeamController extends Controller
 
     /**
      * PUT / {id}
+     *
      * @hideFromAPIDocumentation
+     *
      * @param string $id
+     *
      * @return JsonResponse
      */
     public function update(string $id)
@@ -117,8 +125,11 @@ class ApiMyTeamController extends Controller
 
     /**
      * DELETE / {id}
+     *
      * @hideFromAPIDocumentation
+     *
      * @param string $id
+     *
      * @return JsonResponse
      */
     public function destroy(string $id)
