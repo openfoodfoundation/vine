@@ -46,6 +46,15 @@ class ApiAdminUsersController extends Controller
     public function index(): JsonResponse
     {
         $this->query = User::with($this->associatedData);
+
+        if ($this->request->has('search')) {
+            $str         = $this->request->get('search');
+            $this->query = $this->query->where(function ($query) use ($str) {
+                return $query->where('name', 'like', '%' . $str . '%')
+                    ->orWhere('email', 'like', '%' . $str . '%');
+            });
+        }
+
         $this->query = $this->updateReadQueryBasedOnUrl();
         $this->data  = $this->query->paginate($this->limit);
 
@@ -158,8 +167,57 @@ class ApiAdminUsersController extends Controller
      */
     public function update(string $id)
     {
-        $this->responseCode = 403;
-        $this->message      = ApiResponse::RESPONSE_METHOD_NOT_ALLOWED->value;
+        $validationArray = [
+            'is_admin' => [
+                'sometimes',
+                'boolean',
+            ],
+        ];
+
+        $validator = Validator::make($this->request->all(), $validationArray);
+
+        if ($validator->fails()) {
+
+            $this->responseCode = 400;
+            $this->message      = $validator->errors()
+                ->first();
+
+        }
+        else {
+
+            try {
+
+                $model = User::find($id);
+
+                if (!$model) {
+
+                    $this->responseCode = 404;
+                    $this->message      = ApiResponse::RESPONSE_NOT_FOUND->value;
+
+                }
+                else {
+
+                    foreach ($validationArray as $key => $validationRule) {
+                        $value = $this->request->get($key);
+                        if ((isset($value))) {
+                            $model->$key = $value;
+                        }
+                    }
+
+                    $model->save();
+
+                    $this->message = ApiResponse::RESPONSE_UPDATED->value;
+                    $this->data    = $model;
+                }
+
+            }
+            catch (Exception $e) {
+
+                $this->responseCode = 500;
+                $this->message      = ApiResponse::RESPONSE_ERROR->value . ': "' . $e->getMessage() . '".';
+
+            }
+        }
 
         return $this->respond();
     }
