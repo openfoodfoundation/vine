@@ -96,6 +96,17 @@ function clearAbilitiesList(){
     newPAT.value.token_abilities = [];
 }
 
+function updateAdminStatus() {
+    let payload = {
+        is_admin: user.value.is_admin
+    }
+    axios.put('/admin/users/' + $props.id, payload).then(response => {
+        getUser()
+    }).catch(error => {
+        console.log(error)
+    })
+}
+
 
 </script>
 
@@ -109,7 +120,15 @@ function clearAbilitiesList(){
 
         <div class="card">
 
-            <h2>{{ user.name }}</h2>
+            <div class="flex justify-between items-center">
+                <h2>{{ user.name }}</h2>
+
+                <div>
+                    <div v-if="$page.props.isImpersonating === null">
+                        <PrimaryButton><Link :href="route('admin.impersonate', $props.id)">Impersonate</Link></PrimaryButton>
+                    </div>
+                </div>
+            </div>
 
         </div>
 
@@ -147,6 +166,17 @@ function clearAbilitiesList(){
                         :pagination-data="userTeams"></PaginatorComponent>
                 </div>
             </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                Admin status
+            </div>
+
+            <label for="admin" class="cursor-pointer flex justify-start items-center">
+                <input @change="updateAdminStatus()" type="checkbox" id="admin" class="mr-4"
+                       :true-value="1" :false-value="0" v-model="user.is_admin"> User is System Admin
+            </label>
         </div>
 
         <div class="card">

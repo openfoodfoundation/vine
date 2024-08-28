@@ -6,15 +6,20 @@ import {onMounted, ref} from "vue";
 import PaginatorComponent from "@/Components/Admin/PaginatorComponent.vue";
 import Swal from "sweetalert2";
 import AdminTeamMerchantTeamsComponent from "@/Components/Admin/TeamMerchantTeams/AdminTeamMerchantTeamsComponent.vue";
-import AdminTeamDetailsComponent from "@/Components/Admin/AdminTeamDetailsComponent.vue";
 import AdminTeamServiceTeamsComponent from "@/Components/Admin/TeamServiceTeams/AdminTeamServiceTeamsComponent.vue";
 import AdminUserSelectComponent from "@/Components/Admin/AdminUserSelectComponent.vue";
 import SecondaryButton from "@/Components/SecondaryButton.vue";
 import AjaxLoadingIndicator from "@/Components/AjaxLoadingIndicator.vue";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
+
 dayjs.extend(relativeTime);
 import utc from "dayjs/plugin/utc"
+import InputLabel from "@/Components/InputLabel.vue";
+import TextInput from "@/Components/TextInput.vue";
+import PrimaryButton from "@/Components/PrimaryButton.vue";
+import DangerButton from "@/Components/DangerButton.vue";
+
 dayjs.extend(utc);
 
 const $props = defineProps({
@@ -24,7 +29,8 @@ const $props = defineProps({
     }
 });
 
-const limit = ref(5)
+const limit = ref(10)
+const newTeamName = ref('')
 const team = ref({})
 const teamUsers = ref({})
 const invitingTeamUser = ref(false)
@@ -56,6 +62,8 @@ function createNewTeamUser(addingUserId) {
 function getTeam() {
     axios.get('/admin/teams/' + $props.id + '?cached=false').then(response => {
         team.value = response.data.data
+
+        newTeamName.value = team.value.name
     }).catch(error => {
         console.log(error)
     })
@@ -69,13 +77,13 @@ function getTeamUsers(page = 1) {
     })
 }
 
-function sendInvite(teamUser){
+function sendInvite(teamUser) {
     invitingTeamUser.value = true;
     let payload = {
         send_invite_email: true
     };
 
-    axios.put('/admin/team-users/'+teamUser.id, payload).then(response => {
+    axios.put('/admin/team-users/' + teamUser.id, payload).then(response => {
         getTeamUsers();
         invitingTeamUser.value = false;
     }).catch(error => {
@@ -84,8 +92,53 @@ function sendInvite(teamUser){
     })
 }
 
+function confirmTeamUserDeletion(teamUser) {
+
+    Swal.fire({
+        icon: 'warning',
+        title: 'Are you sure?',
+        text: 'This will remove this user from this team. You can always add them back.',
+        showConfirmButton: true,
+        showCancelButton: true,
+    }).then(response => {
+        if (response.isConfirmed) {
+            axios.delete('/admin/team-users/' + teamUser.id).then(response => {
+                Swal.fire({
+                    title: 'Success!',
+                    icon: 'success',
+                    timer: 1000
+                }).then(() => {
+                    getTeamUsers()
+                })
+            }).catch(error => {
+                console.log(error)
+            })
+        }
+    });
+
+
+}
+
 function setDataPage(page) {
     getTeamUsers(page);
+}
+
+function updateTeam() {
+    let payload = {
+        name: newTeamName.value
+    }
+
+    axios.put('/admin/teams/' + $props.id, payload).then(response => {
+        Swal.fire({
+            title: 'Success!',
+            icon: 'success',
+            timer: 1000
+        }).then(() => {
+            getTeam()
+        })
+    }).catch(error => {
+        console.log(error)
+    })
 }
 
 </script>
@@ -111,7 +164,17 @@ function setDataPage(page) {
                 Team details
             </div>
 
-            <AdminTeamDetailsComponent :team="team"/>
+            <div class="flex justify-start items-center">
+                <div class="text-xs mr-2">#{{ team.id }}</div>
+                <TextInput
+                    id="name"
+                    type="text"
+                    class="mt-1 block w-full"
+                    v-model="newTeamName"/>
+            </div>
+            <div v-if="newTeamName !== team.name" class="mt-2 flex justify-end">
+                <primary-button @click="updateTeam()">Update</primary-button>
+            </div>
         </div>
 
         <div class="card">
@@ -121,7 +184,7 @@ function setDataPage(page) {
             </div>
 
             <div v-if="teamUsers.data && teamUsers.data.length > 0">
-                <div v-for="teamUser in teamUsers.data" class="flex  hover:opacity-75">
+                <div v-for="teamUser in teamUsers.data" class="flex justify-between items-center  hover:opacity-75">
                     <Link :href="route('admin.user', teamUser.user_id)"
                           class="border-b p-2 mr-2 flex-grow flex justify-between items-center hover:no-underline">
 
@@ -130,22 +193,31 @@ function setDataPage(page) {
                         <div class="flex justify-end items-center">
 
                             <div v-if="teamUser.invitation_sent_at" class="pr-2 text-xs">
-                                Invited: {{dayjs.utc(teamUser.invitation_sent_at).fromNow()}}
+                                Invited: {{ dayjs.utc(teamUser.invitation_sent_at).fromNow() }}
                             </div>
 
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                 stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"/>
                             </svg>
                         </div>
 
                     </Link>
-                    <SecondaryButton @click="sendInvite(teamUser)">
-                        <div>
-                            <div v-if="teamUser.invitation_sent_at">Resend Invite</div>
-                            <div v-else-if="invitingTeamUser" class="px-2">Sending..</div>
-                            <div v-else class="px-2">Send Invite</div>
-                        </div>
-                    </SecondaryButton>
+                    <div class="flex">
+                        <SecondaryButton @click="sendInvite(teamUser)" class="mr-2">
+                            <div>
+                                <div v-if="teamUser.invitation_sent_at">Resend Invite</div>
+                                <div v-else-if="invitingTeamUser" class="px-2">Sending..</div>
+                                <div v-else class="px-2">Send Invite</div>
+                            </div>
+                        </SecondaryButton>
+                        <DangerButton @click.prevent="confirmTeamUserDeletion(teamUser)">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                 stroke="currentColor" class="h-3 font-bold">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"/>
+                            </svg>
+                        </DangerButton>
+                    </div>
                 </div>
 
 
@@ -168,19 +240,13 @@ function setDataPage(page) {
             <AdminUserSelectComponent :teamId="$props.id" @createNewTeamUser="createNewTeamUser"/>
         </div>
 
-        <div class="card">
-            <div class="card-header">
-                Merchant teams
-            </div>
 
+        <div class="container mx-auto">
             <AdminTeamMerchantTeamsComponent :teamId="$props.id" :teamName="team.name"/>
         </div>
 
-        <div class="card">
-            <div class="card-header">
-                Service teams
-            </div>
 
+        <div class="container mx-auto">
             <AdminTeamServiceTeamsComponent :teamId="$props.id" :teamName="team.name"/>
         </div>
 

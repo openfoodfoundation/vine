@@ -43,6 +43,7 @@ class HandleInertiaRequests extends Middleware
             ],
             'personalAccessTokenAbilities' => PersonalAccessTokenAbility::groupsAbilityCasesWithDefinitions(),
             'platformAppTokenAbilities'    => PersonalAccessTokenAbility::platformAppTokenAbilities(),
+            'isImpersonating'              => session('vine:impersonator'),
         ];
     }
 }

@@ -3,6 +3,8 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Middleware\CheckAdminStatus;
 use App\Models\TeamUser;
+use App\Models\User;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
@@ -33,6 +35,30 @@ Route::middleware('auth')->group(function () {
     Route::get('/audit-trail', function () {
         return Inertia::render('AuditItems');
     })->name('audit-trail');
+
+    Route::get('/stop-impersonating', function (Request $request) {
+        // We will make sure we have an impersonator's user ID in the session and if the
+        // value doesn't exist in the session we will log this user out of the system
+        // since they aren't really impersonating anyone and manually hit this URL.
+        if (!$request->session()->has('vine:impersonator')) {
+            Auth::logout();
+
+            return redirect('/');
+        }
+
+        $userId = $request->session()->pull(
+            'vine:impersonator'
+        );
+
+        // After removing the impersonator user's ID from the session so we can retrieve
+        // the original user. Then, we will flush the entire session to clear out any
+        // stale data from while we were doing the impersonation of the other user.
+        $request->session()->flush();
+
+        Auth::login(User::findOrFail($userId));
+
+        return Redirect::to('/admin');
+    })->name('stop-impersonating');
 
     Route::get('/switch-team/{id}', function ($id) {
 
@@ -70,6 +96,21 @@ Route::middleware('auth')->group(function () {
                 'id' => $id,
             ]);
         })->name('admin.api-access-token');
+
+        Route::get('/impersonate/{userId}', function (Request $request, $userId) {
+            $request->session()->flush();
+
+            // We will store the original user's ID in the session so we can remember who we
+            // actually are when we need to stop impersonating the other user, which will
+            // allow us to pull the original user back out of the database when needed.
+            $request->session()->put(
+                'vine:impersonator',
+                $request->user()->id
+            );
+            Auth::login(User::findOrFail($userId));
+
+            return redirect('/');
+        })->name('admin.impersonate');
 
         Route::get('/teams', function () {
             return Inertia::render('Admin/Teams/Teams');

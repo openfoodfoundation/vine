@@ -38,7 +38,7 @@ function createNewUser() {
 }
 
 function searchUser() {
-    axios.get('/admin/users?search=' + searchStr.value + '&limit=100').then(response => {
+    axios.get('/admin/users?where[]=name,like,*' + searchStr.value + '*&limit=100').then(response => {
         users.value = response.data.data
     }).catch(error => {
         console.log(error)
@@ -82,7 +82,9 @@ function userSelected(userId) {
             />
         </div>
         <div class="flex items-center justify-end mt-4">
-            <PrimaryButton @click.prevent="createNewUser()" class="ms-4" :class="{ 'opacity-25': !newUser.name || !newUser.email }" :disabled="!newUser.name || !newUser.email">
+            <PrimaryButton @click.prevent="createNewUser()" class="ms-4"
+                           :class="{ 'opacity-25': !newUser.name || !newUser.email }"
+                           :disabled="!newUser.name || !newUser.email">
                 Submit
             </PrimaryButton>
         </div>
@@ -90,22 +92,25 @@ function userSelected(userId) {
 
     <div v-else>
         <div>
-            <InputLabel for="name" value="Name / Email (Type to search and press Enter)"/>
-            <TextInput @keyup.enter.prevent="searchUser()"
-                       id="name"
-                       type="text"
-                       class="mt-1 block w-full"
-                       v-model="searchStr"
-                       required
-            />
+            <InputLabel for="name" value="Find A User"/>
+
+            <TextInput
+                @keyup="searchUser()"
+                v-model="searchStr"
+                class="mt-1 block w-full"
+                placeholder="Search by name.."
+                type="text"
+            ></TextInput>
         </div>
 
-        <div v-if="searchStr.length > 0 && users.total > 0" class="mt-4 px-8">
-            <div v-for="user in users.data" class="border-b py-1">
-                <div @click="userSelected(user.id)" class="cursor-pointer">
-                    <AdminUserDetailsComponent :user="user"/>
-                </div>
-            </div>
+        <div v-if="searchStr.length > 0 && users.total > 0" class="mt-4">
+
+            <a href="#" @click="userSelected(user.id)"  class="border-b py-1" v-for="user in users.data" tabindex="0">
+
+                <AdminUserDetailsComponent :user="user" />
+
+            </a>
+
             <div class="text-red-500 text-sm mt-4 cursor-pointer hover:underline" @click="startCreatingNewUser()">
                 Create a new user?
             </div>

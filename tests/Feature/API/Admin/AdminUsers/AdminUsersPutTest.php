@@ -31,7 +31,7 @@ class AdminUsersPutTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function itCannotUpdateAUser()
+    public function itCanUpdateAUser()
     {
         $this->user = $this->createAdminUser();
 
@@ -39,10 +39,19 @@ class AdminUsersPutTest extends BaseAPITestCase
             $this->user
         );
 
-        $model = User::factory()->create();
+        $model = User::factory()->create([
+            'is_admin' => 0,
+        ]);
 
-        $response = $this->putJson($this->apiRoot . $this->endpoint . '/' . $model->id);
+        $payload = [
+            'is_admin' => 1,
+        ];
 
-        $response->assertStatus(403);
+        $response = $this->putJson($this->apiRoot . $this->endpoint . '/' . $model->id, $payload);
+
+        $response->assertStatus(200);
+
+        $responseObj = json_decode($response->getContent());
+        $this->assertEquals(1, $responseObj->data->is_admin);
     }
 }
