@@ -89,12 +89,11 @@ class ApiAdminTeamUsersController extends Controller
                  */
                 $teamId = $this->request->get('team_id');
                 $userId = $this->request->get('user_id');
-                $model = TeamUser::where('team_id', $teamId)
-                                 ->where('user_id', $userId)
-                                 ->first();
+                $model  = TeamUser::where('team_id', $teamId)
+                    ->where('user_id', $userId)
+                    ->first();
 
-                if(!$model)
-                {
+                if (!$model) {
                     $model = new TeamUser();
 
                     foreach ($validationArray as $key => $validationRule) {
@@ -106,7 +105,6 @@ class ApiAdminTeamUsersController extends Controller
 
                     $model->save();
                 }
-
 
                 $this->message = ApiResponse::RESPONSE_SAVED->value;
                 $this->data    = $model;
