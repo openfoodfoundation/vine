@@ -113,96 +113,117 @@ function teamSelected(team) {
 </script>
 
 <template>
-    <div class="flex justify-end">
-        <div v-if="!addingNewMerchant && !creatingNewTeamMerchant">
-            <PrimaryButton @click="addNewMerchant()" class="ms-4">
-                Add Merchant Team
-            </PrimaryButton>
-        </div>
-        <div v-else>
-            <PrimaryButton @click="cancelAddingNewMerchant()" class="ms-4">
-                Cancel
-            </PrimaryButton>
-        </div>
-    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-4">
+        <div class="card">
+            <div class="card-header flex justify-between items-center">
 
-    <div v-if="addingNewMerchant">
-        <div class="py-2">Select merchant team...</div>
-        <AdminTeamMerchantTeamSelectComponent :teamId="teamId"  @teamSelected="teamSelected"></AdminTeamMerchantTeamSelectComponent>
-    </div>
-
-    <div v-else-if="creatingNewTeamMerchant">
-        <div class="py-2">Add <span class="font-bold">{{ teamAddingAsMerchant.name }}</span> as merchant team?</div>
-        <PrimaryButton @click="submitTeamMerchant()" class="">
-            Add
-        </PrimaryButton>
-    </div>
-
-    <div v-else>
-        <div v-if="merchants.data && merchants.data.length" class="mb-8">
-            <div>
-                <div class="mb-2 font-semibold">
-                    {{ teamName }}'s merchant teams
+                <div>
+                    <div>
+                        Merchant teams
+                    </div>
+                    <div class="text-xs italic">
+                        These teams may redeem vouchers for {{ teamName }}
+                    </div>
                 </div>
-                <div class="text-xs italic">
-                    Teams that may redeem vouchers for {{ teamName }}
+
+                <div class="">
+                    <div class="flex justify-end">
+                        <div v-if="!addingNewMerchant && !creatingNewTeamMerchant">
+                            <PrimaryButton @click="addNewMerchant()" class="ms-4">
+                                Add Merchant Team
+                            </PrimaryButton>
+                        </div>
+                        <div v-else>
+                            <PrimaryButton @click="cancelAddingNewMerchant()" class="ms-4">
+                                Cancel
+                            </PrimaryButton>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div v-for="merchant in merchants.data" class="border-b py-1 flex justify-between items-end">
-                <Link :href="route('admin.team', merchant.merchant_team_id)">
-                    <AdminTeamDetailsComponent :team="merchant.merchant_team"/>
-                </Link>
-                <button @click="removeMerchantTeams(merchant.id)" class="text-xs text-red-500 flex items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"  class="size-3">
-                        <line x1="18" y1="6" x2="6" y2="18"></line>
-                        <line x1="6" y1="6" x2="18" y2="18"></line>
-                    </svg>
-                    Delete
-                </button>
+
+            <div v-if="addingNewMerchant">
+                <div class="py-2">Select merchant team...</div>
+                <AdminTeamMerchantTeamSelectComponent :teamId="teamId"
+                                                      @teamSelected="teamSelected"></AdminTeamMerchantTeamSelectComponent>
             </div>
-            <div class="flex justify-end items-center mt-4">
-                <div class="w-full lg:w-1/3">
-                    <PaginatorComponent
-                        @setDataPage="getMerchants"
-                        :pagination-data="merchants"></PaginatorComponent>
+
+            <div v-else-if="creatingNewTeamMerchant">
+                <div class="py-2">Add <span class="font-bold">{{ teamAddingAsMerchant.name }}</span> as merchant team?
+                </div>
+                <PrimaryButton @click="submitTeamMerchant()" class="">
+                    Add
+                </PrimaryButton>
+            </div>
+            <div v-else>
+                <div v-if="merchants.data && merchants.data.length" class="mb-8">
+
+                    <div v-for="merchant in merchants.data" class="border-b py-1 flex justify-between items-end">
+                        <Link :href="route('admin.team', merchant.merchant_team_id)">
+                            <AdminTeamDetailsComponent :team="merchant.merchant_team"/>
+                        </Link>
+                        <button @click="removeMerchantTeams(merchant.id)"
+                                class="text-xs text-red-500 flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                 stroke="currentColor" stroke-width="1.5" class="size-3">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                            Delete
+                        </button>
+                    </div>
+                    <div class="flex justify-end items-center mt-4">
+                        <div class="w-full lg:w-1/3">
+                            <PaginatorComponent
+                                @setDataPage="getMerchants"
+                                :pagination-data="merchants"></PaginatorComponent>
+                        </div>
+                    </div>
                 </div>
             </div>
+
         </div>
 
-        <div v-if="merchantTeams.data && merchantTeams.data.length" class="mb-8">
-            <div>
-                <div class="mb-2 font-semibold">
-                    {{ teamName }} is merchant team for
+        <div class="card">
+
+            <div class="card-header">
+                <div>
+                    Teams {{ teamName }} is merchant for
                 </div>
                 <div class="text-xs italic">
                     {{ teamName }} may redeem vouchers for these teams
                 </div>
             </div>
 
-            <div v-for="merchantTeam in merchantTeams.data" class="border-b py-1 flex justify-between items-end">
-                <Link :href="route('admin.team', merchantTeam.team_id)">
-                    <AdminTeamDetailsComponent :team="merchantTeam.team"/>
-                </Link>
-                <button @click="removeMerchantTeams(merchantTeam.id)" class="text-xs text-red-500 flex items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"  class="size-3">
-                        <line x1="18" y1="6" x2="6" y2="18"></line>
-                        <line x1="6" y1="6" x2="18" y2="18"></line>
-                    </svg>
-                    Delete
-                </button>
-            </div>
-            <div class="flex justify-end items-center mt-4">
-                <div class="w-full lg:w-1/3">
-                    <PaginatorComponent
-                        @setDataPage="getMerchantTeams"
-                        :pagination-data="merchantTeams"></PaginatorComponent>
+            <div v-if="merchantTeams.data && merchantTeams.data.length" class="mb-8">
+
+                <div v-for="merchantTeam in merchantTeams.data" class="border-b py-1 flex justify-between items-end">
+                    <Link :href="route('admin.team', merchantTeam.team_id)">
+                        <AdminTeamDetailsComponent :team="merchantTeam.team"/>
+                    </Link>
+                    <button @click="removeMerchantTeams(merchantTeam.id)"
+                            class="text-xs text-red-500 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                             stroke-width="1.5" class="size-3">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                        Delete
+                    </button>
+                </div>
+                <div class="flex justify-end items-center mt-4">
+                    <div class="w-full lg:w-1/3">
+                        <PaginatorComponent
+                            @setDataPage="getMerchantTeams"
+                            :pagination-data="merchantTeams"></PaginatorComponent>
+                    </div>
                 </div>
             </div>
+
         </div>
 
-        <div v-if="(merchants.data && merchants.data.length === 0) && (merchantTeams.data && merchantTeams.data.length === 0)">
-            {{ teamName }} does not have merchant teams
-        </div>
     </div>
+
+
 </template>

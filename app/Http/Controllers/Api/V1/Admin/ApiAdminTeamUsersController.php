@@ -84,16 +84,29 @@ class ApiAdminTeamUsersController extends Controller
 
             try {
 
-                $model = new TeamUser();
+                /**
+                 * If they already exist, do not create the team user
+                 */
+                $teamId = $this->request->get('team_id');
+                $userId = $this->request->get('user_id');
+                $model = TeamUser::where('team_id', $teamId)
+                                 ->where('user_id', $userId)
+                                 ->first();
 
-                foreach ($validationArray as $key => $validationRule) {
-                    $value = $this->request->get($key);
-                    if ((isset($value))) {
-                        $model->$key = $value;
+                if(!$model)
+                {
+                    $model = new TeamUser();
+
+                    foreach ($validationArray as $key => $validationRule) {
+                        $value = $this->request->get($key);
+                        if ((isset($value))) {
+                            $model->$key = $value;
+                        }
                     }
+
+                    $model->save();
                 }
 
-                $model->save();
 
                 $this->message = ApiResponse::RESPONSE_SAVED->value;
                 $this->data    = $model;

@@ -46,15 +46,6 @@ class ApiAdminUsersController extends Controller
     public function index(): JsonResponse
     {
         $this->query = User::with($this->associatedData);
-
-        if ($this->request->has('search')) {
-            $str         = $this->request->get('search');
-            $this->query = $this->query->where(function ($query) use ($str) {
-                return $query->where('name', 'like', '%' . $str . '%')
-                    ->orWhere('email', 'like', '%' . $str . '%');
-            });
-        }
-
         $this->query = $this->updateReadQueryBasedOnUrl();
         $this->data  = $this->query->paginate($this->limit);
 

@@ -7,6 +7,8 @@ import Swal from "sweetalert2";
 import PaginatorComponent from "@/Components/Admin/PaginatorComponent.vue";
 import AdminTeamServiceTeamSelectComponent
     from "@/Components/Admin/TeamServiceTeams/AdminTeamServiceTeamSelectComponent.vue";
+import AdminTeamMerchantTeamSelectComponent
+    from "@/Components/Admin/TeamMerchantTeams/AdminTeamMerchantTeamSelectComponent.vue";
 
 const $props = defineProps({
     teamId: {
@@ -113,96 +115,124 @@ function teamSelected(team) {
 </script>
 
 <template>
-    <div class="flex justify-end">
-        <div v-if="!addingNewService && !creatingNewTeamService">
-            <PrimaryButton @click="addNewService()" class="ms-4">
-                Add Service Team
-            </PrimaryButton>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-4">
+        <div class="card">
+            <div class="card-header flex justify-between items-center">
+
+                <div>
+                    <div>
+                        Service teams
+                    </div>
+                    <div class="text-xs italic">
+                        These teams may distribute vouchers for redemption at {{ teamName }}
+                    </div>
+                </div>
+
+                <div class="">
+                    <div class="flex justify-end">
+                        <div class="flex justify-end">
+                            <div v-if="!addingNewService && !creatingNewTeamService">
+                                <PrimaryButton @click="addNewService()" class="ms-4">
+                                    Add Service Team
+                                </PrimaryButton>
+                            </div>
+                            <div v-else>
+                                <PrimaryButton @click="cancelAddingNewService()" class="ms-4">
+                                    Cancel
+                                </PrimaryButton>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div v-if="addingNewService">
+                <div class="py-2">Select service team...</div>
+                <AdminTeamServiceTeamSelectComponent :teamId="teamId"  @teamSelected="teamSelected"></AdminTeamServiceTeamSelectComponent>
+            </div>
+
+            <div v-else-if="creatingNewTeamService">
+                <div class="py-2">Adding <span class="font-bold">{{ teamAddingAsService.name }}</span> as service team?</div>
+                <PrimaryButton @click="submitTeamService()" class="">
+                    Add
+                </PrimaryButton>
+            </div>
+            <div v-else>
+                <div v-if="services.data && services.data.length" class="mb-8">
+
+                    <div v-for="service in services.data" class="border-b py-1 flex justify-between items-end">
+                        <Link :href="route('admin.team', service.service_team_id)">
+                            <AdminTeamDetailsComponent :team="service.service_team"/>
+                        </Link>
+                        <button @click="removeServiceTeams(service.id)" class="text-xs text-red-500 flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"  class="size-3">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                            Delete
+                        </button>
+                    </div>
+                    <div class="flex justify-end items-center mt-4">
+                        <div class="w-full lg:w-1/3">
+                            <PaginatorComponent
+                                @setDataPage="getServices"
+                                :pagination-data="services"></PaginatorComponent>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+
         </div>
-        <div v-else>
-            <PrimaryButton @click="cancelAddingNewService()" class="ms-4">
-                Cancel
-            </PrimaryButton>
-        </div>
-    </div>
 
-    <div v-if="addingNewService">
-        <div class="py-2">Select service team...</div>
-        <AdminTeamServiceTeamSelectComponent :teamId="teamId"  @teamSelected="teamSelected"></AdminTeamServiceTeamSelectComponent>
-    </div>
+        <div class="card">
 
-    <div v-else-if="creatingNewTeamService">
-        <div class="py-2">Adding <span class="font-bold">{{ teamAddingAsService.name }}</span> as service team?</div>
-        <PrimaryButton @click="submitTeamService()" class="">
-            Add
-        </PrimaryButton>
-    </div>
-
-    <div v-else>
-        <div v-if="services.data && services.data.length" class="mb-8">
-            <div>
-                <div class="mb-2 font-semibold">
-                    {{ teamName }}'s service teams
+            <div class="card-header">
+                <div>
+                    Teams {{ teamName }} is service for
                 </div>
                 <div class="text-xs italic">
-                    {{ teamName }} may assign voucher sets for distribution to these teams
+                    {{ teamName }} may distribute vouchers to these teams
                 </div>
             </div>
 
-            <div v-for="service in services.data" class="border-b py-1 flex justify-between items-end">
-                <Link :href="route('admin.team', service.service_team_id)">
-                    <AdminTeamDetailsComponent :team="service.service_team"/>
-                </Link>
-                <button @click="removeServiceTeams(service.id)" class="text-xs text-red-500 flex items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"  class="size-3">
-                        <line x1="18" y1="6" x2="6" y2="18"></line>
-                        <line x1="6" y1="6" x2="18" y2="18"></line>
-                    </svg>
-                    Delete
-                </button>
-            </div>
-            <div class="flex justify-end items-center mt-4">
-                <div class="w-full lg:w-1/3">
-                    <PaginatorComponent
-                        @setDataPage="getServices"
-                        :pagination-data="services"></PaginatorComponent>
+            <div v-if="serviceTeams.data && serviceTeams.data.length" class="mb-8">
+
+
+                <div v-for="serviceTeam in serviceTeams.data" class="border-b py-1 flex justify-between items-end">
+                    <Link :href="route('admin.team', serviceTeam.team_id)">
+                        <AdminTeamDetailsComponent :team="serviceTeam.team"/>
+                    </Link>
+                    <button @click="removeServiceTeams(serviceTeam.id)" class="text-xs text-red-500 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"  class="size-3">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                        Delete
+                    </button>
+                </div>
+                <div class="flex justify-end items-center mt-4">
+                    <div class="w-full lg:w-1/3">
+                        <PaginatorComponent
+                            @setDataPage="getServiceTeams"
+                            :pagination-data="serviceTeams"></PaginatorComponent>
+                    </div>
                 </div>
             </div>
+
         </div>
 
-        <div v-if="serviceTeams.data && serviceTeams.data.length" class="mb-8">
-            <div>
-                <div class="mb-2 font-semibold">
-                    {{ teamName }} is service team for
-                </div>
-                <div class="text-xs italic">
-                    {{ teamName }} may be assigned voucher sets for distribution by these teams
-                </div>
-            </div>
-
-            <div v-for="serviceTeam in serviceTeams.data" class="border-b py-1 flex justify-between items-end">
-                <Link :href="route('admin.team', serviceTeam.team_id)">
-                    <AdminTeamDetailsComponent :team="serviceTeam.team"/>
-                </Link>
-                <button @click="removeServiceTeams(serviceTeam.id)" class="text-xs text-red-500 flex items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"  class="size-3">
-                        <line x1="18" y1="6" x2="6" y2="18"></line>
-                        <line x1="6" y1="6" x2="18" y2="18"></line>
-                    </svg>
-                    Delete
-                </button>
-            </div>
-            <div class="flex justify-end items-center mt-4">
-                <div class="w-full lg:w-1/3">
-                    <PaginatorComponent
-                        @setDataPage="getServiceTeams"
-                        :pagination-data="serviceTeams"></PaginatorComponent>
-                </div>
-            </div>
-        </div>
-
-        <div v-if="(services.data && services.data.length === 0) && (serviceTeams.data && serviceTeams.data.length === 0)">
-            {{ teamName }} does not have service teams
-        </div>
     </div>
+
+
+
+
+
+
+
 </template>
