@@ -109,7 +109,7 @@ Route::middleware('auth')->group(function () {
             );
             Auth::login(User::findOrFail($userId));
 
-            return redirect('/profile');
+            return redirect('/');
         })->name('admin.impersonate');
 
         Route::get('/teams', function () {

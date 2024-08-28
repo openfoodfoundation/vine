@@ -73,7 +73,7 @@ class AuditItem extends Model
                 $url = '/admin/team/' . $this->auditable_id;
                 break;
             case TeamUser::class:
-                $url = '/admin/team/' . $this->auditable->team_id;
+                $url = '/admin/team/' . $this->auditable_id;
                 break;
             case PersonalAccessToken::class:
             case SanctumPersonalAccessToken::class:
