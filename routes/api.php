@@ -28,20 +28,20 @@ Route::group(['prefix' => 'v1', 'middleware' => VerifyApiTokenSignature::class],
     Route::middleware(['auth:sanctum'])
         ->group(function () {
 
-//            Route::resource('/my-team', ApiMyTeamController::class)->names('api.v1.my-team');
+            //            Route::resource('/my-team', ApiMyTeamController::class)->names('api.v1.my-team');
 
             /**
              * My Team
              */
             Route::get('/my-team', [ApiMyTeamController::class, 'index'])
-                 ->name('api.v1.my-team.get')
-                 ->middleware(
-                     [
-                         'abilities:' .
-                         PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
-                         PersonalAccessTokenAbility::MY_TEAM_READ->value,
-                     ]
-                 );
+                ->name('api.v1.my-team.get')
+                ->middleware(
+                    [
+                        'abilities:' .
+                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                        PersonalAccessTokenAbility::MY_TEAM_READ->value,
+                    ]
+                );
 
             /**
              * My Audit Items

@@ -2,9 +2,8 @@
 
 namespace App\Services;
 
-use App\Models\AuditItem;
 use App\Models\PersonalAccessToken;
-use Illuminate\Database\Eloquent\Model;
+use DateTimeImmutable;
 use Illuminate\Support\Facades\Crypt;
 use Lcobucci\JWT\Encoding\ChainedFormatter;
 use Lcobucci\JWT\Encoding\JoseEncoder;
@@ -18,6 +17,7 @@ class PersonalAccessTokenService
      * Generate a JWT based on a Personal Access Token
      *
      * @param PersonalAccessToken|\Laravel\Sanctum\PersonalAccessToken $personalAccessToken
+     *
      * @return string
      */
     public static function generateJwtForPersonalAccessToken(PersonalAccessToken|\Laravel\Sanctum\PersonalAccessToken $personalAccessToken): string
@@ -26,7 +26,7 @@ class PersonalAccessTokenService
         $algorithm          = new Sha256();
         $patDecryptedSecret = Crypt::decrypt($personalAccessToken->secret);
         $signingKey         = InMemory::plainText($patDecryptedSecret);
-        $now                = new \DateTimeImmutable();
+        $now                = new DateTimeImmutable();
         $token              = $tokenBuilder
             ->issuedBy(config('app.url'))
             ->issuedAt($now)
