@@ -10,6 +10,7 @@
         "laravel/framework": "^11.9",
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.9",
+        "lcobucci/jwt": "^5.3",
         "league/flysystem-aws-s3-v3": "^3.28",
         "sentry/sentry-laravel": "^4.7",
         "spatie/laravel-flare": "^1.0",

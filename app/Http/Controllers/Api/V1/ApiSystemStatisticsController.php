@@ -15,9 +15,11 @@ use Knuckles\Scribe\Attributes\Endpoint;
 use Knuckles\Scribe\Attributes\Group;
 use Knuckles\Scribe\Attributes\QueryParam;
 use Knuckles\Scribe\Attributes\Response;
+use Knuckles\Scribe\Attributes\Subgroup;
 use Knuckles\Scribe\Attributes\UrlParam;
 
-#[Group('/system-statistics', 'Check out some Vine platform statistics.')]
+#[Group('App Endpoints')]
+#[Subgroup('/system-statistics', 'Vine platform statistics.')]
 class ApiSystemStatisticsController extends Controller
 {
     use HandlesAPIRequests;

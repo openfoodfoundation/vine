@@ -16,6 +16,7 @@ use App\Models\PersonalAccessToken;
 use App\Models\User;
 use Exception;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 
@@ -103,7 +104,10 @@ class ApiAdminUserPersonalAccessTokensController extends Controller
                 $token = $user->createToken($name, $tokenAbilities);
 
                 $this->message = ApiResponse::RESPONSE_SAVED->value;
-                $this->data    = ['token' => $token->plainTextToken];
+                $this->data    = [
+                    'token'  => $token->plainTextToken,
+                    'secret' => Crypt::decrypt($token->accessToken->secret),
+                ];
 
                 event(new PersonalAccessTokenWasCreated($token->accessToken));
 
