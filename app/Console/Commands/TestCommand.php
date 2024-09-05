@@ -2,18 +2,14 @@
 
 namespace App\Console\Commands;
 
-use App\Models\AuditItem;
 use App\Models\PersonalAccessToken;
-use App\Models\Team;
-use App\Models\User;
-use App\Models\Voucher;
-use App\Models\VoucherSet;
 use App\Services\PersonalAccessTokenService;
+use DateTimeImmutable;
 use Illuminate\Console\Command;
 use Lcobucci\JWT\Encoding\ChainedFormatter;
 use Lcobucci\JWT\Encoding\JoseEncoder;
-use Lcobucci\JWT\Signer\Key\InMemory;
 use Lcobucci\JWT\Signer\Hmac\Sha256;
+use Lcobucci\JWT\Signer\Key\InMemory;
 use Lcobucci\JWT\Token\Builder;
 
 class TestCommand extends Command
@@ -38,13 +34,13 @@ class TestCommand extends Command
     public function handle()
     {
         $model = PersonalAccessToken::find(5);
-        $jwt = PersonalAccessTokenService::generateJwtForPersonalAccessToken($model);
+        $jwt   = PersonalAccessTokenService::generateJwtForPersonalAccessToken($model);
         dd($jwt);
         $tokenBuilder = (new Builder(new JoseEncoder(), ChainedFormatter::default()));
         $algorithm    = new Sha256();
         $signingKey   = InMemory::plainText('BC0HYlfCbvFcn3BqbcwGkOdTOVilkdn3');
 
-        $now   = new \DateTimeImmutable();
+        $now   = new DateTimeImmutable();
         $token = $tokenBuilder
             // Configures the issuer (iss claim)
             ->issuedBy(env('APP_URL'))

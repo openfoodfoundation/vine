@@ -5,20 +5,16 @@ namespace App\Http\Middleware;
 use App\Enums\ApiResponse;
 use Carbon\Carbon;
 use Closure;
-use Illuminate\Auth\AuthenticationException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Crypt;
 use Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful;
 use Lcobucci\JWT\Encoding\CannotDecodeContent;
 use Lcobucci\JWT\Encoding\JoseEncoder;
-use Lcobucci\JWT\Signer;
 use Lcobucci\JWT\Signer\Hmac\Sha256;
 use Lcobucci\JWT\Signer\Key\InMemory;
 use Lcobucci\JWT\Token\InvalidTokenStructure;
 use Lcobucci\JWT\Token\Parser;
 use Lcobucci\JWT\Token\UnsupportedHeaderFound;
-use Lcobucci\JWT\UnencryptedToken;
-use Lcobucci\JWT\Validation\Constraint\RelatedTo;
 use Lcobucci\JWT\Validation\Constraint\SignedWith;
 use Lcobucci\JWT\Validation\Validator;
 use Symfony\Component\HttpFoundation\Response;
@@ -28,7 +24,8 @@ class VerifyApiTokenSignature
     /**
      * Handle an incoming request.
      *
-     * @param \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response) $next
+     * @param Request                                                                         $request
+     * @param Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response) $next
      */
     public function handle(Request $request, Closure $next): Response
     {
@@ -40,7 +37,6 @@ class VerifyApiTokenSignature
          */
         if (!EnsureFrontendRequestsAreStateful::fromFrontend($request)) {
 
-
             if (!$request->user() || !$request->user()->currentAccessToken()) {
                 $allow = false;
             }
@@ -48,16 +44,16 @@ class VerifyApiTokenSignature
             if (!$request->hasHeader('X-AUTHORIZATION')) {
                 $allow        = false;
                 $errorMessage = ApiResponse::RESPONSE_AUTHORIZATION_SIGNATURE_INCORRECT->value . ' ' . ApiResponse::RESPONSE_AUTHORIZATION_SIGNATURE_INCORRECT_JWT_HEADER_REQUIRED->value;
-            } else {
-
+            }
+            else {
 
                 try {
 
-                    $jwt               = $request->header('X-AUTHORIZATION');
-                    $jwtBits           = explode(' ', $jwt);
-                    $jwtContents       = end($jwtBits);
-                    $parser            = new Parser(new JoseEncoder());
-                    $token             = $parser->parse(
+                    $jwt         = $request->header('X-AUTHORIZATION');
+                    $jwtBits     = explode(' ', $jwt);
+                    $jwtContents = end($jwtBits);
+                    $parser      = new Parser(new JoseEncoder());
+                    $token       = $parser->parse(
                         $jwtContents
                     );
                     $accessTokenSecret = Crypt::decrypt($request->user()->currentAccessToken()->secret);
@@ -67,13 +63,16 @@ class VerifyApiTokenSignature
                     if ($token->isExpired(now())) {
                         $allow        = false;
                         $errorMessage = ApiResponse::RESPONSE_AUTHORIZATION_SIGNATURE_INCORRECT->value . ' ' . ApiResponse::RESPONSE_AUTHORIZATION_SIGNATURE_INCORRECT_EXPIRED->value;
-                    } else if (!$token->claims()->has('iat')) {
+                    }
+                    elseif (!$token->claims()->has('iat')) {
                         $allow        = false;
                         $errorMessage = ApiResponse::RESPONSE_AUTHORIZATION_SIGNATURE_INCORRECT->value . ' ' . ApiResponse::RESPONSE_AUTHORIZATION_SIGNATURE_INCORRECT_IAT_CLAIM_REQUIRED->value;
-                    } else if (!$token->claims()->has('exp')) {
+                    }
+                    elseif (!$token->claims()->has('exp')) {
                         $allow        = false;
                         $errorMessage = ApiResponse::RESPONSE_AUTHORIZATION_SIGNATURE_INCORRECT->value . ' ' . ApiResponse::RESPONSE_AUTHORIZATION_SIGNATURE_INCORRECT_EXP_CLAIM_REQUIRED->value;
-                    } else {
+                    }
+                    else {
 
                         $iat       = $token->claims()->get('iat');
                         $iatCarbon = Carbon::parse($iat);
@@ -84,10 +83,12 @@ class VerifyApiTokenSignature
                         if ($iatCarbon->isBefore(now()->subMinute())) {
                             $allow        = false;
                             $errorMessage = ApiResponse::RESPONSE_AUTHORIZATION_SIGNATURE_INCORRECT->value . ' ' . ApiResponse::RESPONSE_AUTHORIZATION_SIGNATURE_INCORRECT_IAT_EXPIRED->value;
-                        } else if ($expCarbon->isAfter($iatCarbon->addMinute())) {
+                        }
+                        elseif ($expCarbon->isAfter($iatCarbon->addMinute())) {
                             $allow        = false;
                             $errorMessage = ApiResponse::RESPONSE_AUTHORIZATION_SIGNATURE_INCORRECT->value . ' ' . ApiResponse::RESPONSE_AUTHORIZATION_SIGNATURE_INCORRECT_IAT_EXP_TOO_LARGE->value;
-                        } else {
+                        }
+                        else {
                             $isValid = $validator->validate($token, new SignedWith(new Sha256(), $signingKey));
 
                             if (!$isValid) {
@@ -102,8 +103,8 @@ class VerifyApiTokenSignature
 
                     }
 
-
-                } catch (CannotDecodeContent|InvalidTokenStructure|UnsupportedHeaderFound $e) {
+                }
+                catch (CannotDecodeContent|InvalidTokenStructure|UnsupportedHeaderFound $e) {
                     $allow        = false;
                     $errorMessage = ApiResponse::RESPONSE_AUTHORIZATION_SIGNATURE_INCORRECT;
                 }
@@ -111,7 +112,6 @@ class VerifyApiTokenSignature
             }
 
         }
-
 
         if (!$allow) {
             $reply = [

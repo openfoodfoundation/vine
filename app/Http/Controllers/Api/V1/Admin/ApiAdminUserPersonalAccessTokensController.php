@@ -105,7 +105,7 @@ class ApiAdminUserPersonalAccessTokensController extends Controller
 
                 $this->message = ApiResponse::RESPONSE_SAVED->value;
                 $this->data    = [
-                    'token' => $token->plainTextToken,
+                    'token'  => $token->plainTextToken,
                     'secret' => Crypt::decrypt($token->accessToken->secret),
                 ];
 

@@ -2,10 +2,8 @@
 
 namespace Tests\Feature\API;
 
-
 use App\Enums\ApiResponse;
 use App\Enums\PersonalAccessTokenAbility;
-use App\Models\PersonalAccessToken;
 use App\Services\PersonalAccessTokenService;
 use Laravel\Sanctum\Sanctum;
 use PHPUnit\Framework\Attributes\Test;
@@ -62,7 +60,6 @@ class ExternalRequestsMustBeSignedTest extends BaseAPITestCase
          */
         $jwt = PersonalAccessTokenService::generateJwtForPersonalAccessToken($newAccessToken->accessToken);
 
-
         /**
          * Pass it in as X-Authorization
          */
@@ -80,5 +77,4 @@ class ExternalRequestsMustBeSignedTest extends BaseAPITestCase
 
         $response->assertStatus(200);
     }
-
 }
