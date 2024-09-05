@@ -36,33 +36,6 @@ class TestCommand extends Command
         $model = PersonalAccessToken::find(5);
         $jwt   = PersonalAccessTokenService::generateJwtForPersonalAccessToken($model);
         dd($jwt);
-        $tokenBuilder = (new Builder(new JoseEncoder(), ChainedFormatter::default()));
-        $algorithm    = new Sha256();
-        $signingKey   = InMemory::plainText('BC0HYlfCbvFcn3BqbcwGkOdTOVilkdn3');
-
-        $now   = new DateTimeImmutable();
-        $token = $tokenBuilder
-            // Configures the issuer (iss claim)
-            ->issuedBy(env('APP_URL'))
-            // Configures the audience (aud claim)
-//            ->permittedFor('http://example.org')
-            // Configures the subject of the token (sub claim)
-//            ->relatedTo('component1')
-            // Configures the id (jti claim)
-//            ->identifiedBy('4f1g23a12aa')
-            // Configures the time that the token was issue (iat claim)
-            ->issuedAt($now)
-            // Configures the time that the token can be used (nbf claim)
-//            ->canOnlyBeUsedAfter($now->modify('+1 minute'))
-            // Configures the expiration time of the token (exp claim)
-            ->expiresAt($now->modify('+1 hour'))
-            // Configures a new claim, called "uid"
-//            ->withClaim('uid', 1)
-            // Configures a new header, called "foo"
-//            ->withHeader('foo', 'bar')
-            // Builds a new token
-            ->getToken($algorithm, $signingKey);
-
-        echo $token->toString();
+        
     }
 }
