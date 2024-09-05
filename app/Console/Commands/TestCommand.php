@@ -4,13 +4,7 @@ namespace App\Console\Commands;
 
 use App\Models\PersonalAccessToken;
 use App\Services\PersonalAccessTokenService;
-use DateTimeImmutable;
 use Illuminate\Console\Command;
-use Lcobucci\JWT\Encoding\ChainedFormatter;
-use Lcobucci\JWT\Encoding\JoseEncoder;
-use Lcobucci\JWT\Signer\Hmac\Sha256;
-use Lcobucci\JWT\Signer\Key\InMemory;
-use Lcobucci\JWT\Token\Builder;
 
 class TestCommand extends Command
 {
@@ -36,6 +30,6 @@ class TestCommand extends Command
         $model = PersonalAccessToken::find(5);
         $jwt   = PersonalAccessTokenService::generateJwtForPersonalAccessToken($model);
         dd($jwt);
-        
+
     }
 }
