@@ -15,8 +15,10 @@ use Knuckles\Scribe\Attributes\Endpoint;
 use Knuckles\Scribe\Attributes\Group;
 use Knuckles\Scribe\Attributes\QueryParam;
 use Knuckles\Scribe\Attributes\Response;
+use Knuckles\Scribe\Attributes\Subgroup;
 
-#[Group('/my-teams', 'Teams you are a member of.')]
+#[Group('App Endpoints')]
+#[Subgroup('/my-teams', 'Teams you are a member of.')]
 class ApiMyTeamsController extends Controller
 {
     use HandlesAPIRequests;

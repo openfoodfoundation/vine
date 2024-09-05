@@ -18,8 +18,10 @@ use Knuckles\Scribe\Attributes\Authenticated;
 use Knuckles\Scribe\Attributes\Endpoint;
 use Knuckles\Scribe\Attributes\Group;
 use Knuckles\Scribe\Attributes\Response;
+use Knuckles\Scribe\Attributes\Subgroup;
 
-#[Group('/shops', 'API for managing shops')]
+#[Group('App Endpoints')]
+#[Subgroup('/shops', 'API for managing shops')]
 class ApiShopsController extends Controller
 {
     use HandlesAPIRequests;

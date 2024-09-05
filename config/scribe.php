@@ -5,36 +5,30 @@ use Knuckles\Scribe\Matching\RouteMatcher;
 
 return [
     // The HTML <title> for the generated documentation. If this is empty, Scribe will infer it from config('app.name').
-    'title' => env('APP_NAME') . ' - API Documentation',
-
+    'title'       => env('APP_NAME') . ' - API Documentation',
     // A short description of your API. Will be included in the docs webpage, Postman collection and OpenAPI spec.
     'description' => 'The API documentation for ' . env('APP_NAME') . '.',
 
     // The base URL displayed in the docs. If this is empty, Scribe will use the value of config('app.url') at generation time.
     // If you're using `laravel` type, you can set this to a dynamic string, like '{{ config("app.tenant_url") }}' to get a dynamic base URL.
-    'base_url' => env('APP_PRODUCTION_URL'),
+    'base_url'    => env('APP_PRODUCTION_URL'),
 
     'routes' => [
         [
             // Routes that match these conditions will be included in the docs
-            'match' => [
+            'match'   => [
                 // Match only routes whose paths match this pattern (use * as a wildcard to match any characters). Example: 'users/*'.
                 'prefixes' => ['api/v1/*'],
 
                 // Match only routes whose domains match this pattern (use * as a wildcard to match any characters). Example: 'api.*'.
-                'domains' => ['*'],
+                'domains'  => ['*'],
             ],
-
-            // Include these routes even if they did not match the rules above.
-            'include' => [
-                // 'users.index', 'POST /new', '/auth/*'
-            ],
-
             // Exclude these routes even if they matched the rules above.
-            'exclude' => [
-                // 'GET /health',
-                '/api/v1/admin/*',
-            ],
+            //            'exclude' => [
+            //                // 'GET /health',
+            //                '/api/v1/admin/*',
+            //            ],
+
         ],
     ],
 
@@ -43,10 +37,10 @@ return [
     // - "laravel" will generate the documentation as a Blade view, so you can add routing and authentication.
     // - "external_static" and "external_laravel" do the same as above, but generate a basic template,
     // passing the OpenAPI spec as a URL, allowing you to easily use the docs with an external generator
-    'type' => 'laravel',
+    'type'   => 'laravel',
 
     // See https://scribe.knuckles.wtf/laravel/reference/config#theme for supported options
-    'theme' => 'elements',
+    'theme'  => 'elements',
 
     'static' => [
         // HTML documentation, assets and Postman collection will be generated to this folder.
@@ -57,11 +51,11 @@ return [
     'laravel' => [
         // Whether to automatically create a docs endpoint for you to view your generated docs.
         // If this is false, you can still set up routing manually.
-        'add_routes' => true,
+        'add_routes'       => true,
 
         // URL path to use for the docs endpoint (if `add_routes` is true).
         // By default, `/docs` opens the HTML page, `/docs.postman` opens the Postman collection, and `/docs.openapi` the OpenAPI spec.
-        'docs_url' => '/api-documentation',
+        'docs_url'         => '/api-documentation',
 
         // Directory within `public` in which to store CSS and JS assets.
         // By default, assets are stored in `public/vendor/scribe`.
@@ -69,17 +63,17 @@ return [
         'assets_directory' => null,
 
         // Middleware to attach to the docs endpoint (if `add_routes` is true).
-        'middleware' => [],
+        'middleware'       => [],
     ],
 
     'external' => [
         'html_attributes' => [],
     ],
 
-    'try_it_out' => [
+    'try_it_out'        => [
         // Add a Try It Out button to your endpoints so consumers can test endpoints right from their browser.
         // Don't forget to enable CORS headers for your endpoints.
-        'enabled' => false,
+        'enabled'  => false,
 
         // The base URL for the API tester to use (for example, you can set this to your staging URL).
         // Leave as null to use the current app URL when generating (config("app.url")).
@@ -93,35 +87,98 @@ return [
     ],
 
     // How is your API authenticated? This information will be used in the displayed docs, generated examples and response calls.
-    'auth' => [
+    'auth'              => [
         // Set this to true if ANY endpoints in your API use authentication.
-        'enabled' => true,
+        'enabled'     => true,
 
         // Set this to true if your API should be authenticated by default. If so, you must also set `enabled` (above) to true.
         // You can then use @unauthenticated or @authenticated on individual endpoints to change their status from the default.
-        'default' => true,
+        'default'     => true,
 
         // Where is the auth value meant to be sent in a request?
         // Options: query, body, basic, bearer, header (for custom header)
-        'in' => 'bearer',
+        'in'          => 'bearer',
 
         // The name of the auth parameter (eg token, key, apiKey) or header (eg Authorization, Api-Key).
-        'name' => 'key',
+        'name'        => 'key',
 
         // The value of the parameter to be used by Scribe to authenticate response calls.
         // This will NOT be included in the generated documentation. If empty, Scribe will use a random value.
-        'use_value' => env('SCRIBE_AUTH_KEY'),
+        'use_value'   => env('SCRIBE_AUTH_KEY'),
 
         // Placeholder your users will see for the auth parameter in the example requests.
         // Set this to null if you want Scribe to use a random value as placeholder instead.
         'placeholder' => '{YOUR_API_TOKEN}',
 
         // Any extra authentication-related info for your users. Markdown and HTML are supported.
-        'extra_info' => 'You or your developer will receive an API token from our admins; ensure to keep this somewhere safe.',
+        'extra_info'  => '
+## About API Credentials
+When you receive API credentials, they will be made up of a `token` and an accompanying `secret`. Your secret should never be displayed in front end code, or in any version control repositories, for security.
+
+## Signing Your requests
+All API requests must be signed, to improve API security. To do this, you must generate a [JWT](https://jwt.io/introduction) comprising your current request, signed with your API Token secret.
+
+Send the JWT content in the `X-Authorization` header as follows
+
+
+All JWTs must have the following claims:
+- iat - _current timestamp, in UTC_ - must not be less than a minute ago
+- exp - _expiry timestamp, in UTC_ - must not be more than a minute later than iat claim
+- iss - _indicating issuer of the jwt_
+
+### Generating a JWT
+
+#### PHP
+```php
+
+use Lcobucci\JWT\Encoding\ChainedFormatter;
+use Lcobucci\JWT\Encoding\JoseEncoder;
+use Lcobucci\JWT\Signer\Hmac\Sha256;
+use Lcobucci\JWT\Signer\Key\InMemory;
+use Lcobucci\JWT\Token\Builder;
+
+$tokenBuilder       = (new Builder(new JoseEncoder(), ChainedFormatter::default()));
+$algorithm          = new Sha256();
+$signingKey         = InMemory::plainText(YOUR_API_SECRET);
+$now                = new \DateTimeImmutable();
+$token              = $tokenBuilder
+    ->issuedBy(ISSUING_BODY)
+    ->issuedAt(now())
+    ->expiresAt(now()->addMinute(1))
+    ->getToken($algorithm, $signingKey);
+
+$jwt = $token->toString();
+```
+
+#### Ruby
+```ruby
+require \'jwt\'
+
+# Your secret signing key (must be a strong secret)
+signing_key = YOUR_API_SECRET
+
+# Define the payload (the data you want to encode in the token)
+payload = {
+  iss: YOUR_ISSUING_BODY,       # Your issuer
+  iat: Time.now.to_i            # Token issued at time (now)
+  exp: Time.now.to_i + 60       # Token expiration time (1 minute from now)
+}
+
+# Choose the algorithm for signing (HS256 is common for symmetric signing keys)
+algorithm = \'HS256\'
+
+# Generate the JWT
+token = JWT.encode(payload, signing_key, algorithm)
+
+puts "Generated JWT: #{token}"
+```
+',
     ],
 
     // Text to place in the "Introduction" section, right after the `description`. Markdown and HTML are supported.
-    'intro_text' => <<<'INTRO'
+    'intro_text'        => <<<'INTRO'
+
+
 This documentation aims to provide all the information you need to work with our API.
 
 <aside>As you scroll, you'll see code examples for working with the API in different programming languages in the dark area to the right (or as part of the content on mobile).
@@ -143,7 +200,7 @@ INTRO
     // For 'static' docs, the collection will be generated to public/docs/collection.json.
     // For 'laravel' docs, it will be generated to storage/app/scribe/collection.json.
     // Setting `laravel.add_routes` to true (above) will also add a route for the collection.
-    'postman' => [
+    'postman'           => [
         'enabled' => true,
 
         'overrides' => [
@@ -155,7 +212,7 @@ INTRO
     // For 'static' docs, the collection will be generated to public/docs/openapi.yaml.
     // For 'laravel' docs, it will be generated to storage/app/scribe/openapi.yaml.
     // Setting `laravel.add_routes` to true (above) will also add a route for the spec.
-    'openapi' => [
+    'openapi'           => [
         'enabled' => true,
 
         'overrides' => [
@@ -163,14 +220,24 @@ INTRO
         ],
     ],
 
-    'groups' => [
+    'groups'       => [
         // Endpoints which don't have a @group will be placed in this default group.
         'default' => 'Endpoints',
 
         // By default, Scribe will sort groups alphabetically, and endpoints in the order their routes are defined.
         // You can override this by listing the groups, subgroups and endpoints here in the order you want them.
         // See https://scribe.knuckles.wtf/blog/laravel-v4#easier-sorting and https://scribe.knuckles.wtf/laravel/reference/config#order for details
-        'order' => [],
+        'order'   => [
+            'App Endpoints' => [
+                '/my-team',
+                '/my-teams',
+                '/my-team-audit-items',
+                '/my-team-vouchers',
+                '/system-statistics',
+                '/shops',
+
+            ],
+        ],
     ],
 
     // Custom logo path. This will be used as the value of the src attribute for the <img> tag,
@@ -178,7 +245,7 @@ INTRO
     // For example, if your logo is in public/img:
     // - 'logo' => '../img/logo.png' // for `static` type (output folder is public/docs)
     // - 'logo' => 'img/logo.png' // for `laravel` type
-    'logo' => false,
+    'logo'         => false,
 
     // Customize the "Last updated" value displayed in the docs by specifying tokens and formats.
     // Examples:
@@ -189,9 +256,9 @@ INTRO
     // The format you pass to `git` can be either "short" or "long".
     'last_updated' => 'Last updated: {date:F j, Y}',
 
-    'examples' => [
+    'examples'                         => [
         // Set this to any number (eg. 1234) to generate the same example values for parameters on each run,
-        'faker_seed' => null,
+        'faker_seed'    => null,
 
         // With API resources and transformers, Scribe tries to generate example models to use in your API responses.
         // By default, Scribe will try the model's factory, and if that fails, try fetching the first from the database.
@@ -201,12 +268,12 @@ INTRO
 
     // The strategies Scribe will use to extract information about your routes at each stage.
     // If you create or install a custom strategy, add it here.
-    'strategies' => [
-        'metadata' => [
+    'strategies'                       => [
+        'metadata'        => [
             Strategies\Metadata\GetFromDocBlocks::class,
             Strategies\Metadata\GetFromMetadataAttributes::class,
         ],
-        'urlParameters' => [
+        'urlParameters'   => [
             Strategies\UrlParameters\GetFromLaravelAPI::class,
             Strategies\UrlParameters\GetFromUrlParamAttribute::class,
             Strategies\UrlParameters\GetFromUrlParamTag::class,
@@ -217,24 +284,25 @@ INTRO
             Strategies\QueryParameters\GetFromQueryParamAttribute::class,
             Strategies\QueryParameters\GetFromQueryParamTag::class,
         ],
-        'headers' => [
+        'headers'         => [
             Strategies\Headers\GetFromHeaderAttribute::class,
             Strategies\Headers\GetFromHeaderTag::class,
             [
                 'override',
                 [
-                    'Content-Type' => 'application/json',
-                    'Accept'       => 'application/json',
+                    'Content-Type'    => 'application/json',
+                    'Accept'          => 'application/json',
+                    'X-Authorisation' => 'JWT eyJ0eXAiOiJKV...',
                 ],
             ],
         ],
-        'bodyParameters' => [
+        'bodyParameters'  => [
             Strategies\BodyParameters\GetFromFormRequest::class,
             Strategies\BodyParameters\GetFromInlineValidator::class,
             Strategies\BodyParameters\GetFromBodyParamAttribute::class,
             Strategies\BodyParameters\GetFromBodyParamTag::class,
         ],
-        'responses' => [
+        'responses'       => [
             Strategies\Responses\UseResponseAttributes::class,
             Strategies\Responses\UseTransformerTags::class,
             Strategies\Responses\UseApiResourceTags::class,
@@ -243,7 +311,7 @@ INTRO
             [
                 Strategies\Responses\ResponseCalls::class,
                 [
-                    'only' => ['GET *'],
+                    'only'   => ['GET *'],
                     // Disable debug mode when generating response calls to avoid error stack traces in responses
                     'config' => [
                         'app.debug' => false,
@@ -251,7 +319,7 @@ INTRO
                 ],
             ],
         ],
-        'responseFields' => [
+        'responseFields'  => [
             Strategies\ResponseFields\GetFromResponseFieldAttribute::class,
             Strategies\ResponseFields\GetFromResponseFieldTag::class,
         ],

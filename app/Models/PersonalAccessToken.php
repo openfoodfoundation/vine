@@ -20,6 +20,7 @@ class PersonalAccessToken extends SanctumPersonalAccessToken
     protected $fillable = [
         'name',
         'token',
+        'secret',
         'abilities',
         'team_id',
     ];

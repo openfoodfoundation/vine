@@ -5,13 +5,19 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use DateTimeInterface;
 use App\Events\Users\UserWasCreated;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Crypt;
+use Illuminate\Support\Str;
 use Laravel\Sanctum\HasApiTokens;
+use Laravel\Sanctum\NewAccessToken;
+use Laravel\Sanctum\Sanctum;
 
 class User extends Authenticatable
 {
@@ -66,4 +72,41 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Team::class);
     }
+
+
+    /**
+     * Get the access tokens that belong to model.
+     *
+     * @return MorphMany
+     */
+    public function tokens(): MorphMany
+    {
+        return $this->morphMany(PersonalAccessToken::class, 'tokenable');
+    }
+
+
+    /**
+     * Create a new personal access token for the user.
+     *
+     * @param string $name
+     * @param array $abilities
+     * @param DateTimeInterface|null $expiresAt
+     * @return NewAccessToken
+     */
+    public function createToken(string $name, array $abilities = ['*'], DateTimeInterface $expiresAt = null): NewAccessToken
+    {
+
+        $plainTextToken = $this->generateTokenString();
+
+        $token = $this->tokens()->create([
+                                             'name'       => $name,
+                                             'token'      => hash('sha256', $plainTextToken),
+                                             'secret'     => Crypt::encrypt(Str::random(32)),
+                                             'abilities'  => $abilities,
+                                             'expires_at' => $expiresAt,
+                                         ]);
+
+        return new NewAccessToken($token, $token->getKey() . '|' . $plainTextToken);
+    }
+
 }

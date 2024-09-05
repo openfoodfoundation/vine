@@ -14,10 +14,25 @@ class BaseAPITestCase extends TestCase
 {
     use DatabaseTransactions;
 
-    public string $apiRoot = '/api/v1';
-    public User|Model $user;
+    public string         $apiRoot = '/api/v1';
+    public User|Model     $user;
     public TeamUser|Model $teamUser;
-    public Team|Model $team;
+    public Team|Model     $team;
+
+    protected function setUp(): void
+    {
+        parent::setUp();
+
+        /**
+         * Set default referer for all requests. This is necessary, or else
+         * we'd need to JWT-sign all requests, which would be a nightmare
+         */
+        $this->withHeaders(
+            [
+                'Referer' => env('APP_URL'),
+            ]
+        );
+    }
 
     public function createUser(): Collection|Model|User
     {
@@ -29,8 +44,8 @@ class BaseAPITestCase extends TestCase
     public function createAdminUser(): Collection|Model|User
     {
         $this->user = User::factory()->create([
-            'is_admin' => 1,
-        ]);
+                                                  'is_admin' => 1,
+                                              ]);
 
         return $this->user;
     }
@@ -38,18 +53,18 @@ class BaseAPITestCase extends TestCase
     public function createUserWithTeam(): Model|Collection|User
     {
         $this->team = Team::factory()
-            ->create();
+                          ->create();
 
         $this->user = User::factory()
-            ->create([
-                'current_team_id' => $this->team->id,
-                'is_admin'        => 0,
-            ]);
+                          ->create([
+                                       'current_team_id' => $this->team->id,
+                                       'is_admin'        => 0,
+                                   ]);
 
         $this->teamUser = TeamUser::factory()->createQuietly([
-            'team_id' => $this->team->id,
-            'user_id' => $this->user->id,
-        ]);
+                                                                 'team_id' => $this->team->id,
+                                                                 'user_id' => $this->user->id,
+                                                             ]);
 
         return $this->user;
     }
