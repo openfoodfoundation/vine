@@ -34,20 +34,11 @@ function cancelRedeemingPartial() {
 }
 
 function getVoucher() {
-    // axios.get('/my-team-vouchers/' + $props.voucherId + '&cached=false&relations=voucherSet').then(response => {
-    //     voucher.value = response.data.data
-    // }).catch(error => {
-    //     console.log(error)
-    // })
-    voucher.value = {
-        voucher_set_id: 'bd20b672-6ce9-3e27-9846-c1cdd2f42148',
-        created_by_team_id: 1,
-        allocated_to_service_team_id: 8,
-        is_test: 1,
-        voucher_value_original: 200,
-        voucher_value_remaining: 200,
-        last_redemption_at: null,
-    }
+    axios.get('/my-team-vouchers/' + $props.voucherId + '&cached=false&relations=voucherSet').then(response => {
+        voucher.value = response.data.data
+    }).catch(error => {
+        console.log(error)
+    })
 }
 
 function redeemAll() {
@@ -88,7 +79,7 @@ function redeemVoucher(amount) {
         amount: amount
     }
 
-    axios.post('/redeem', payload).then(response => {
+    axios.post('/voucher-redemptions', payload).then(response => {
 
         let responseText = (voucher.value.is_test) ? 'This was a test redemption. Do not provide the person with goods or services.' :
             'Please provide the customer with their goods / services to the value of $' + (amount / 100).toFixed(2) + '.';
@@ -99,6 +90,7 @@ function redeemVoucher(amount) {
             text: responseText,
         });
 
+        redeemingPartial.value = false
         getVoucher();
 
     }).catch(error => {
