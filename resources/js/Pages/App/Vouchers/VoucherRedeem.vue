@@ -3,6 +3,12 @@ import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import {Head} from '@inertiajs/vue3';
 import {onMounted, ref, watch} from "vue";
 import Swal from "sweetalert2";
+import dayjs from "dayjs";
+import relativeTime from "dayjs/plugin/relativeTime";
+import utc from "dayjs/plugin/utc"
+
+dayjs.extend(relativeTime);
+dayjs.extend(utc);
 
 const $props = defineProps({
     voucherSetId: {
@@ -34,7 +40,7 @@ function cancelRedeemingPartial() {
 }
 
 function getVoucher() {
-    axios.get('/my-team-vouchers/' + $props.voucherId + '&cached=false&relations=voucherSet').then(response => {
+    axios.get('/my-team-vouchers/' + $props.voucherId + '?cached=false&relations=voucherRedemptions').then(response => {
         voucher.value = response.data.data
     }).catch(error => {
         console.log(error)
@@ -188,36 +194,34 @@ watch(redeemingPartialDollarAmount, (val) => {
                     </div>
                 </div>
 
+                <div class="mt-8" v-if="!voucher.voucher_redemptions">
+                    <button class="w-full p-2 rounded border" @click="getVoucher()">
+                        See Redemptions
+                    </button>
+                </div>
 
-                <!-- Voucher redemptions section, maybe coming later -->
-<!--                <div class="mt-8" v-if="!voucher.voucher_redemptions">-->
-<!--                    <button class="w-full p-2 rounded border" @click="getVoucher()">-->
-<!--                        See Redemptions-->
-<!--                    </button>-->
-<!--                </div>-->
-<!--                -->
-<!--                <div class="mt-12 text-left" v-if="voucherForView.voucher_redemptions">-->
-<!--                    <div class="title">-->
-<!--                        Redemptions ({{ voucherForView.voucher_redemptions.length }})-->
-<!--                    </div>-->
+                <div class="mt-12 text-left" v-if="voucher.voucher_redemptions">
+                    <div class="title">
+                        Redemptions ({{ voucher.voucher_redemptions.length }})
+                    </div>
 
-<!--                    <div>-->
-<!--                        <div v-for="redemption in voucherForView.voucher_redemptions" class="flex justify-between items-center py-2 border-b">-->
-<!--                            <div>-->
-<!--                                <div class="text-lg">-->
-<!--                                    ${{ (redemption.redeemed_amount / 100).toFixed(2) }}-->
-<!--                                </div>-->
-<!--                            </div>-->
+                    <div>
+                        <div v-for="redemption in voucher.voucher_redemptions" class="flex justify-between items-center py-2 border-b">
+                            <div>
+                                <div class="text-lg">
+                                    ${{ (redemption.redeemed_amount / 100).toFixed(2) }}
+                                </div>
+                            </div>
 
-<!--                            <div class="text-center">-->
-<!--                                {{ relative(redemption.created_at) }}-->
-<!--                                <div class="text-xs">-->
-<!--                                    ({{ date(redemption.created_at) }})-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
+                            <div class="text-center">
+                                {{ dayjs.utc(redemption.created_at).fromNow() }}
+                                <div class="text-xs">
+                                    ({{ dayjs(redemption.created_at) }})
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
         </div>
