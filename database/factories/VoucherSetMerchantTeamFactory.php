@@ -18,7 +18,7 @@ class VoucherSetMerchantTeamFactory extends Factory
     public function definition(): array
     {
         return [
-            'voucher_set_id'        => fake()->randomDigitNotNull(),
+            'voucher_set_id'   => fake()->randomDigitNotNull(),
             'merchant_team_id' => fake()->randomDigitNotNull(),
         ];
     }
