@@ -20,7 +20,6 @@ return new class() extends Migration
             $table->unsignedBigInteger('total_set_value')->default(0)->index('vs_tsv');
             $table->unsignedBigInteger('total_set_value_remaining')->default(0)->index('vs_tsvr');
             $table->unsignedBigInteger('num_vouchers')->default(0)->index('vs_nv');
-            $table->unsignedBigInteger('num_vouchers_cancelled')->default(0)->index('vs_nvc');
             $table->unsignedBigInteger('num_voucher_redemptions')->default(0)->index('vs_nvr');
             $table->json('denomination_json')->nullable();
             $table->boolean('is_denomination_valid')->default(0);

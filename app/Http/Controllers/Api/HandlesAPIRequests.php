@@ -41,16 +41,16 @@ use Illuminate\Support\Facades\Cache;
  */
 trait HandlesAPIRequests
 {
-    public Request     $request;
-    public array       $fields       = [];
-    public int         $limit        = 50;
-    public string      $message      = '';
-    public int         $offset       = 0;
-    public int         $responseCode = 200;
-    public mixed       $data         = [];
-    protected mixed    $query        = false;
-    public bool        $cached       = true;
-    public string      $cacheKey     = '';
+    public Request $request;
+    public array $fields     = [];
+    public int $limit        = 50;
+    public string $message   = '';
+    public int $offset       = 0;
+    public int $responseCode = 200;
+    public mixed $data       = [];
+    protected mixed $query   = false;
+    public bool $cached      = true;
+    public string $cacheKey  = '';
 
     /**
      * Set the related data we'll ask for in GET API requests

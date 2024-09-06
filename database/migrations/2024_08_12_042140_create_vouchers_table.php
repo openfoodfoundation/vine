@@ -19,6 +19,7 @@ return new class() extends Migration
             $table->boolean('is_test')->default(0)->index('vs_it');
             $table->unsignedBigInteger('voucher_value_original')->index('v_vvo');
             $table->unsignedBigInteger('voucher_value_remaining')->index('v_vvr');
+            $table->integer('num_voucher_redemptions')->default(0)->index('v_nvr');
             $table->dateTime('last_redemption_at')->nullable('v_lra');
             $table->timestamps();
             $table->softDeletes();

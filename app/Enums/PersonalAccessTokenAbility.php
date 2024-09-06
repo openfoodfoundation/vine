@@ -36,6 +36,10 @@ enum PersonalAccessTokenAbility: string
     case SYSTEM_STATISTICS_READ     = 'system-statistics-read';
     case SYSTEM_STATISTICS_UPDATE   = 'system-statistics-update';
     case SYSTEM_STATISTICS_DELETE   = 'system-statistics-delete';
+    case VOUCHER_REDEMPTIONS_CREATE = 'voucher-redemptions-create';
+    case VOUCHER_REDEMPTIONS_READ   = 'voucher-redemptions-read';
+    case VOUCHER_REDEMPTIONS_UPDATE = 'voucher-redemptions-update';
+    case VOUCHER_REDEMPTIONS_DELETE = 'voucher-redemptions-delete';
 
     public static function abilityLabels(): array
     {

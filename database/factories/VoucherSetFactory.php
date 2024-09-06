@@ -24,7 +24,6 @@ class VoucherSetFactory extends Factory
             'total_set_value'              => $this->faker->numberBetween(1, 1000),
             'total_set_value_remaining'    => $this->faker->numberBetween(1, 1000),
             'num_vouchers'                 => $this->faker->numberBetween(1, 100),
-            'num_vouchers_cancelled'       => $this->faker->numberBetween(1, 10),
             'num_voucher_redemptions'      => $this->faker->numberBetween(1, 10),
         ];
     }
