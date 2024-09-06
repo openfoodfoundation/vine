@@ -162,12 +162,12 @@ watch(redeemingPartialDollarAmount, (val) => {
 
                         <div class="flex justify-between items-center" v-if="redeemingPartialDollarAmountIsValid">
                             <div class="w-1/2 pr-2">
-                                <button class="w-full p-8 rounded border font-bold" @click="cancelRedeemingPartial()">
+                                <button class="w-full p-8 font-bold text-2xl rounded border bg-gray-300" @click="cancelRedeemingPartial()">
                                     Cancel
                                 </button>
                             </div>
                             <div class="w-1/2 pl-2">
-                                <button class="w-full p-8 rounded border font-bold" @click="redeemPartial()">
+                                <button class="w-full p-8 font-bold text-2xl rounded border bg-gray-300" @click="redeemPartial()">
                                     Redeem
                                 </button>
                             </div>
@@ -181,7 +181,7 @@ watch(redeemingPartialDollarAmount, (val) => {
                             </button>
                         </div>
                         <div class="">
-                            <button class="w-full  p-8 font-bold text-2xl rounded border bg-gray-300" @click="redeemAll()">
+                            <button class="w-full p-8 font-bold text-2xl rounded border bg-gray-300" @click="redeemAll()">
                                 Redeem ALL
                             </button>
                         </div>
