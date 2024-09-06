@@ -91,7 +91,7 @@ class VoucherRedemptionGetTest extends BaseAPITestCase
                     'voucher_id'          => $voucher->id,
                     'voucher_set_id'      => $voucherSet->id,
                     'redeemed_by_user_id' => $this->user->id,
-                    'redeemed_amount'     => 1
+                    'redeemed_amount'     => 1,
                 ]
             );
 
