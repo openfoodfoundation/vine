@@ -8,7 +8,6 @@ use App\Models\Voucher;
 use App\Models\VoucherRedemption;
 use App\Models\VoucherSet;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Laravel\Sanctum\Sanctum;
 use PHPUnit\Framework\Attributes\Test;
 use Tests\Feature\API\BaseAPITestCase;
