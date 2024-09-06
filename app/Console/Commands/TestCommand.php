@@ -2,8 +2,6 @@
 
 namespace App\Console\Commands;
 
-use App\Models\AuditItem;
-use App\Models\Team;
 use App\Models\User;
 use App\Models\Voucher;
 use App\Models\VoucherSet;
