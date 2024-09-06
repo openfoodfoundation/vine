@@ -1,7 +1,7 @@
 <script setup>
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import {Head} from '@inertiajs/vue3';
-import {computed, onMounted, ref, watch} from "vue";
+import {onMounted, ref, watch} from "vue";
 import Swal from "sweetalert2";
 
 const $props = defineProps({
@@ -194,7 +194,6 @@ watch(redeemingPartialDollarAmount, (val) => {
                             </button>
                         </div>
                     </div>
-
                 </div>
 
 
