@@ -30,12 +30,16 @@ class TestCommand extends Command
      */
     public function handle()
     {
-        $users       = User::factory(100)->createQuietly();
-        $teams       = Team::factory(100)->createQuietly();
-        $vouchers    = Voucher::factory(100)->createQuietly();
-        $voucherSets = VoucherSet::factory(100)->createQuietly();
-        $auditItems  = AuditItem::factory(100)->createQuietly([
-            'team_id' => 1,
+        $me = User::find(3);
+
+        $voucherSet = VoucherSet::factory()->createQuietly([
+            'created_by_team_id' => $me->current_team_id,
+            'created_by_user_id' => $me->id,
         ]);
+
+        $voucher = Voucher::factory()->createQuietly([
+            'voucher_set_id' => $voucherSet->id,
+        ]);
+
     }
 }
