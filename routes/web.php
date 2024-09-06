@@ -2,8 +2,11 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Middleware\CheckAdminStatus;
+use App\Models\Team;
+use App\Models\TeamMerchantTeam;
 use App\Models\TeamUser;
 use App\Models\User;
+use App\Models\Voucher;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
@@ -35,6 +38,51 @@ Route::middleware('auth')->group(function () {
     Route::get('/audit-trail', function () {
         return Inertia::render('AuditItems');
     })->name('audit-trail');
+
+    Route::get('/redeem/{voucherSetId}/{voucherId}', function ($voucherSetId, $voucherId) {
+
+        $voucher = Voucher::with('voucherSet')->where('voucher_set_id', $voucherSetId)->find($voucherId);
+
+        /**
+         * Voucher doesn't exist
+         */
+        if (!$voucher) {
+            return Inertia::render('App/Vouchers/VoucherRedeemFailed', [
+                'voucherSetId' => $voucherSetId,
+                'voucherId'    => $voucherId,
+                'text'         => 'Voucher does not exist',
+            ]);
+        }
+
+        /**
+         * User does not have team
+         */
+        $team = Team::find(Auth::user()->current_team_id);
+        if (!$team) {
+            return Inertia::render('App/Vouchers/VoucherRedeemFailed', [
+                'voucherSetId' => $voucherSetId,
+                'voucherId'    => $voucherId,
+                'text'         => 'You have not set your team',
+            ]);
+        }
+
+        /**
+         * User's team is NOT a merchant of the team which create the voucher
+         */
+        $teamMerchant = TeamMerchantTeam::where('team_id', $voucher->created_by_team_id)->where('merchant_team_id', $team->id)->first();
+        if (!$teamMerchant) {
+            return Inertia::render('App/Vouchers/VoucherRedeemFailed', [
+                'voucherSetId' => $voucherSetId,
+                'voucherId'    => $voucherId,
+                'text'         => 'Your team is not allowed to redeem this voucher, sorry.',
+            ]);
+        }
+
+        return Inertia::render('App/Vouchers/VoucherRedeem', [
+            'voucherSetId' => $voucherSetId,
+            'voucherId'    => $voucherId,
+        ]);
+    })->name('voucher-redeem');
 
     Route::get('/stop-impersonating', function (Request $request) {
         // We will make sure we have an impersonator's user ID in the session and if the
