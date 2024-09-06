@@ -140,7 +140,7 @@ watch(redeemingPartialDollarAmount, (val) => {
                 </div>
 
                 <div>
-                    <div class="text-purple text-2xl font-bold mt-12">
+                    <div class="text-2xl font-bold mt-12">
                         ${{ (voucher.voucher_value_remaining / 100).toFixed(2) }} remaining
                     </div>
 
@@ -162,7 +162,7 @@ watch(redeemingPartialDollarAmount, (val) => {
                                    :class="{'border-green-500': redeemingPartialDollarAmountIsValid, 'border-red-500': !redeemingPartialDollarAmountIsValid}"
                             >
 
-                            <div v-if="!redeemingPartialDollarAmountIsValid" class="text-purple my-2">
+                            <div v-if="!redeemingPartialDollarAmountIsValid" class="my-2 text-red-500">
                                 Invalid redemption amount.
                             </div>
 
