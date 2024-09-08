@@ -17,6 +17,12 @@ return new class() extends Migration
             $table->unsignedBigInteger('merchant_team_id')->index('vsmt_mti');
             $table->timestamps();
             $table->softDeletes();
+
+            $table->index(
+                [
+                    'voucher_set_id',
+                    'merchant_team_id',
+                ], 'vsmt_vsimti');
         });
     }
 
