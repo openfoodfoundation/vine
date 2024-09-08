@@ -7,7 +7,6 @@ use App\Http\Controllers\Api\HandlesAPIRequests;
 use App\Http\Controllers\Controller;
 use App\Models\Voucher;
 use App\Models\VoucherRedemption;
-use App\Models\VoucherSet;
 use App\Models\VoucherSetMerchantTeam;
 use App\Services\VoucherService;
 use Exception;
@@ -110,9 +109,9 @@ class ApiVoucherRedemptionsController extends Controller
              * Ensure the users current team is a merchant for the voucher set.
              */
             $voucherSetMerchantTeamIds = VoucherSetMerchantTeam::where('voucher_set_id', $voucherSetId)
-                                                               ->pluck('merchant_team_id')
-                                                               ->unique()
-                                                               ->toArray();
+                ->pluck('merchant_team_id')
+                ->unique()
+                ->toArray();
 
             if (!in_array(Auth::user()->current_team_id, $voucherSetMerchantTeamIds)) {
                 $this->responseCode = 400;
@@ -138,12 +137,14 @@ class ApiVoucherRedemptionsController extends Controller
             if ($voucher->voucher_value_remaining <= 0) {
                 $this->responseCode = 400;
                 $this->message      = ApiResponse::RESPONSE_REDEMPTION_FAILED_VOUCHER_ALREADY_FULLY_REDEEMED->value;
+
                 return $this->respond();
             }
 
             if ($amount > $voucher->voucher_value_remaining) {
                 $this->responseCode = 400;
                 $this->message      = ApiResponse::RESPONSE_REDEMPTION_FAILED_REQUESTED_AMOUNT_TOO_HIGH->value;
+
                 return $this->respond();
             }
 
