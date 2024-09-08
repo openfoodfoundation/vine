@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class VoucherSet extends Model
@@ -33,16 +34,9 @@ class VoucherSet extends Model
         return $this->belongsTo(Team::class, 'allocated_to_service_team_id', 'id');
     }
 
-    /**
-     * @return HasOne
-     */
-    public function voucherSetMerchantTeam(): HasOne
-    {
-        return $this->hasOne(VoucherSetMerchantTeam::class, 'voucher_set_id', 'id');
-    }
 
-    public function voucherSetMerchantTeams(): BelongsToMany
+    public function voucherSetMerchantTeams(): HasMany
     {
-        return $this->belongsToMany(VoucherSetMerchantTeam::class, 'voucher_set_id', 'id');
+        return $this->hasMany(VoucherSetMerchantTeam::class, 'voucher_set_id', 'id');
     }
 }

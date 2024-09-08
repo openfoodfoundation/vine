@@ -56,13 +56,13 @@ class VoucherSetTest extends TestCase
             'merchant_team_id' => $team->id,
         ]);
 
-        $voucherSetWithMerchantTeam = VoucherSet::with('voucherSetMerchantTeam.merchantTeam')->find($voucherSet->id);
+        $voucherSetWithMerchantTeam = VoucherSet::with('voucherSetMerchantTeams.merchantTeam')->find($voucherSet->id);
 
         $this->assertInstanceOf(VoucherSet::class, $voucherSetWithMerchantTeam);
-        $this->assertInstanceOf(VoucherSetMerchantTeam::class, $voucherSetWithMerchantTeam->voucherSetMerchantTeam);
-        $this->assertInstanceOf(Team::class, $voucherSetWithMerchantTeam->voucherSetMerchantTeam->merchantTeam);
+        $this->assertInstanceOf(VoucherSetMerchantTeam::class, $voucherSetWithMerchantTeam->voucherSetMerchantTeams[0]);
+        $this->assertInstanceOf(Team::class, $voucherSetWithMerchantTeam->voucherSetMerchantTeams[0]->merchantTeam);
         $this->assertSame($voucherSet->id, $voucherSetWithMerchantTeam->id);
-        $this->assertSame($voucherSetMerchantTeam->id, $voucherSetWithMerchantTeam->voucherSetMerchantTeam->id);
-        $this->assertSame($team->id, $voucherSetWithMerchantTeam->voucherSetMerchantTeam->merchantTeam->id);
+        $this->assertSame($voucherSetMerchantTeam->id, $voucherSetWithMerchantTeam->voucherSetMerchantTeams[0]->id);
+        $this->assertSame($team->id, $voucherSetWithMerchantTeam->voucherSetMerchantTeams[0]->merchantTeam->id);
     }
 }
