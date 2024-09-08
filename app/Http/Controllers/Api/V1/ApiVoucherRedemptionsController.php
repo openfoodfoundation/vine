@@ -19,8 +19,10 @@ use Knuckles\Scribe\Attributes\Authenticated;
 use Knuckles\Scribe\Attributes\Endpoint;
 use Knuckles\Scribe\Attributes\Group;
 use Knuckles\Scribe\Attributes\Response;
+use Knuckles\Scribe\Attributes\Subgroup;
 
-#[Group('/voucher-redemptions', 'API for managing voucher redemptions')]
+#[Group('App Endpoints')]
+#[Subgroup('/voucher-redemptions', 'API for managing voucher redemptions')]
 class ApiVoucherRedemptionsController extends Controller
 {
     use HandlesAPIRequests;
