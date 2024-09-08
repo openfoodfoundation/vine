@@ -34,13 +34,17 @@ function createPAT() {
     newPAT.value.user_id = user.value.id
     axios.post('/admin/user-personal-access-tokens', newPAT.value).then(response => {
         let token = response.data.data.token
+        let secret = response.data.data.secret
 
         Swal.fire({
             title: "Personal access token issued!",
-            html: `Please note that the token will be displayed only once. Make sure to save it securely. </br> <b>` + token + `</b>`,
+            html: '<div>Please note that the token will be displayed only once. Make sure to save it securely.</div>' +
+                '<div class="mt-4">Token: <b>' + token + '</b></div>' +
+                '<div class="mt-4">Secret: <b>' + secret + '</b></div>' +
+                '<div class="mt-4 text-xs">You will need the secret in order to sign your API requests.</div>',
             icon: "warning",
             confirmButtonColor: "#3085d6",
-            confirmButtonText: "Got it"
+            confirmButtonText: "Got it!"
         }).then((result) => {
             newPAT.value = {name: '', token_abilities: []}
             getUser()

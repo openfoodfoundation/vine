@@ -14,10 +14,25 @@ class BaseAPITestCase extends TestCase
 {
     use DatabaseTransactions;
 
-    public string $apiRoot = '/api/v1';
-    public User|Model $user;
+    public string         $apiRoot = '/api/v1';
+    public User|Model     $user;
     public TeamUser|Model $teamUser;
-    public Team|Model $team;
+    public Team|Model     $team;
+
+    protected function setUp(): void
+    {
+        parent::setUp();
+
+        /**
+         * Set default referer for all requests. This is necessary, or else
+         * we'd need to JWT-sign all requests, which would be a nightmare
+         */
+        $this->withHeaders(
+            [
+                'Referer' => env('APP_URL'),
+            ]
+        );
+    }
 
     public function createUser(): Collection|Model|User
     {

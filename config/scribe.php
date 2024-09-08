@@ -6,7 +6,6 @@ use Knuckles\Scribe\Matching\RouteMatcher;
 return [
     // The HTML <title> for the generated documentation. If this is empty, Scribe will infer it from config('app.name').
     'title' => env('APP_NAME') . ' - API Documentation',
-
     // A short description of your API. Will be included in the docs webpage, Postman collection and OpenAPI spec.
     'description' => 'The API documentation for ' . env('APP_NAME') . '.',
 
@@ -24,17 +23,12 @@ return [
                 // Match only routes whose domains match this pattern (use * as a wildcard to match any characters). Example: 'api.*'.
                 'domains' => ['*'],
             ],
-
-            // Include these routes even if they did not match the rules above.
-            'include' => [
-                // 'users.index', 'POST /new', '/auth/*'
-            ],
-
             // Exclude these routes even if they matched the rules above.
-            'exclude' => [
-                // 'GET /health',
-                '/api/v1/admin/*',
-            ],
+            //            'exclude' => [
+            //                // 'GET /health',
+            //                '/api/v1/admin/*',
+            //            ],
+
         ],
     ],
 
@@ -117,11 +111,74 @@ return [
         'placeholder' => '{YOUR_API_TOKEN}',
 
         // Any extra authentication-related info for your users. Markdown and HTML are supported.
-        'extra_info' => 'You or your developer will receive an API token from our admins; ensure to keep this somewhere safe.',
+        'extra_info' => '
+## About API Credentials
+When you receive API credentials, they will be made up of a `token` and an accompanying `secret`. Your secret should never be displayed in front end code, or in any version control repositories, for security.
+
+## Signing Your requests
+All API requests must be signed, to improve API security. To do this, you must generate a [JWT](https://jwt.io/introduction) comprising your current request, signed with your API Token secret.
+
+Send the JWT content in the `X-Authorization` header as follows
+
+
+All JWTs must have the following claims:
+- iat - _current timestamp, in UTC_ - must not be less than a minute ago
+- exp - _expiry timestamp, in UTC_ - must not be more than a minute later than iat claim
+- iss - _indicating issuer of the jwt_
+
+### Generating a JWT
+
+#### PHP
+```php
+
+use Lcobucci\JWT\Encoding\ChainedFormatter;
+use Lcobucci\JWT\Encoding\JoseEncoder;
+use Lcobucci\JWT\Signer\Hmac\Sha256;
+use Lcobucci\JWT\Signer\Key\InMemory;
+use Lcobucci\JWT\Token\Builder;
+
+$tokenBuilder       = (new Builder(new JoseEncoder(), ChainedFormatter::default()));
+$algorithm          = new Sha256();
+$signingKey         = InMemory::plainText(YOUR_API_SECRET);
+$now                = new \DateTimeImmutable();
+$token              = $tokenBuilder
+    ->issuedBy(ISSUING_BODY)
+    ->issuedAt(now())
+    ->expiresAt(now()->addMinute(1))
+    ->getToken($algorithm, $signingKey);
+
+$jwt = $token->toString();
+```
+
+#### Ruby
+```ruby
+require \'jwt\'
+
+# Your secret signing key (must be a strong secret)
+signing_key = YOUR_API_SECRET
+
+# Define the payload (the data you want to encode in the token)
+payload = {
+  iss: YOUR_ISSUING_BODY,       # Your issuer
+  iat: Time.now.to_i            # Token issued at time (now)
+  exp: Time.now.to_i + 60       # Token expiration time (1 minute from now)
+}
+
+# Choose the algorithm for signing (HS256 is common for symmetric signing keys)
+algorithm = \'HS256\'
+
+# Generate the JWT
+token = JWT.encode(payload, signing_key, algorithm)
+
+puts "Generated JWT: #{token}"
+```
+',
     ],
 
     // Text to place in the "Introduction" section, right after the `description`. Markdown and HTML are supported.
     'intro_text' => <<<'INTRO'
+
+
 This documentation aims to provide all the information you need to work with our API.
 
 <aside>As you scroll, you'll see code examples for working with the API in different programming languages in the dark area to the right (or as part of the content on mobile).
@@ -170,7 +227,17 @@ INTRO
         // By default, Scribe will sort groups alphabetically, and endpoints in the order their routes are defined.
         // You can override this by listing the groups, subgroups and endpoints here in the order you want them.
         // See https://scribe.knuckles.wtf/blog/laravel-v4#easier-sorting and https://scribe.knuckles.wtf/laravel/reference/config#order for details
-        'order' => [],
+        'order' => [
+            'App Endpoints' => [
+                '/my-team',
+                '/my-teams',
+                '/my-team-audit-items',
+                '/my-team-vouchers',
+                '/system-statistics',
+                '/shops',
+
+            ],
+        ],
     ],
 
     // Custom logo path. This will be used as the value of the src attribute for the <img> tag,
@@ -223,8 +290,9 @@ INTRO
             [
                 'override',
                 [
-                    'Content-Type' => 'application/json',
-                    'Accept'       => 'application/json',
+                    'Content-Type'    => 'application/json',
+                    'Accept'          => 'application/json',
+                    'X-Authorisation' => 'JWT eyJ0eXAiOiJKV...',
                 ],
             ],
         ],

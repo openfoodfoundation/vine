@@ -18,9 +18,10 @@ use App\Http\Controllers\Api\V1\ApiShopsController;
 use App\Http\Controllers\Api\V1\ApiSystemStatisticsController;
 use App\Http\Controllers\Api\V1\ApiVoucherRedemptionsController;
 use App\Http\Middleware\CheckAdminStatus;
+use App\Http\Middleware\VerifyApiTokenSignature;
 use Illuminate\Support\Facades\Route;
 
-Route::group(['prefix' => 'v1'], function () {
+Route::group(['prefix' => 'v1', 'middleware' => VerifyApiTokenSignature::class], function () {
 
     /**
      * App API Routes
@@ -28,7 +29,20 @@ Route::group(['prefix' => 'v1'], function () {
     Route::middleware(['auth:sanctum'])
         ->group(function () {
 
-            Route::resource('/my-team', ApiMyTeamController::class)->names('api.v1.my-team');
+            //            Route::resource('/my-team', ApiMyTeamController::class)->names('api.v1.my-team');
+
+            /**
+             * My Team
+             */
+            Route::get('/my-team', [ApiMyTeamController::class, 'index'])
+                ->name('api.v1.my-team.get')
+                ->middleware(
+                    [
+                        'abilities:' .
+                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                        PersonalAccessTokenAbility::MY_TEAM_READ->value,
+                    ]
+                );
 
             /**
              * My Audit Items

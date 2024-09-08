@@ -2,9 +2,12 @@
 
 namespace App\Console\Commands;
 
+
 use App\Models\User;
 use App\Models\Voucher;
 use App\Models\VoucherSet;
+use App\Models\PersonalAccessToken;
+use App\Services\PersonalAccessTokenService;
 use Illuminate\Console\Command;
 
 class TestCommand extends Command
@@ -28,6 +31,7 @@ class TestCommand extends Command
      */
     public function handle()
     {
+
         $me = User::find(3);
 
         $voucherSet = VoucherSet::factory()->createQuietly([
@@ -38,6 +42,7 @@ class TestCommand extends Command
         $voucher = Voucher::factory()->createQuietly([
             'voucher_set_id' => $voucherSet->id,
         ]);
+
 
     }
 }
