@@ -48,7 +48,7 @@ class VoucherService
         }
 
         $voucher->voucher_value_remaining = $remainingAmount;
-        $voucher->save();
+        $voucher->saveQuietly();
 
     }
 
@@ -61,6 +61,6 @@ class VoucherService
     {
         $voucher->voucher_value_remaining = self::calculateVoucherAmountRemaining($voucher);
         $voucher->num_voucher_redemptions = VoucherRedemption::where('voucher_id', $voucher->id)->count();
-        $voucher->save();
+        $voucher->saveQuietly();
     }
 }
