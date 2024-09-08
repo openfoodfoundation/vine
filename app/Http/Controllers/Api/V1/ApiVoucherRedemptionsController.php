@@ -5,10 +5,10 @@ namespace App\Http\Controllers\Api\V1;
 use App\Enums\ApiResponse;
 use App\Http\Controllers\Api\HandlesAPIRequests;
 use App\Http\Controllers\Controller;
-use App\Models\Team;
 use App\Models\Voucher;
 use App\Models\VoucherRedemption;
 use App\Models\VoucherSet;
+use App\Models\VoucherSetMerchantTeam;
 use App\Services\VoucherService;
 use Exception;
 use Illuminate\Http\JsonResponse;
@@ -94,24 +94,29 @@ class ApiVoucherRedemptionsController extends Controller
             $voucherSetId = $this->request->get('voucher_set_id');
             $amount       = $this->request->get('amount');
 
-            // Already validated to exist
-            $voucherSet = VoucherSet::with('voucherSetMerchantTeam')->find($voucherSetId);
-
-            // Already validated to exist
+            /**
+             * Ensure the voucher exists with the set
+             */
             $voucher = Voucher::where('voucher_set_id', $voucherSetId)->find($voucherId);
 
-            $team = Team::find(Auth::user()->current_team_id);
-
-            if (!$team || !$voucherSet->voucherSetMerchantTeam) {
+            if (!$voucher) {
                 $this->responseCode = 404;
-                $this->message      = 'Team: ' . ApiResponse::RESPONSE_NOT_FOUND->value;
+                $this->message      = ApiResponse::RESPONSE_NOT_FOUND->value;
 
                 return $this->respond();
             }
 
-            if ($voucherSet->voucherSetMerchantTeam->merchant_team_id !== $team->id) {
+            /**
+             * Ensure the users current team is a merchant for the voucher set.
+             */
+            $voucherSetMerchantTeamIds = VoucherSetMerchantTeam::where('voucher_set_id', $voucherSetId)
+                                                               ->pluck('merchant_team_id')
+                                                               ->unique()
+                                                               ->toArray();
+
+            if (!in_array(Auth::user()->current_team_id, $voucherSetMerchantTeamIds)) {
                 $this->responseCode = 400;
-                $this->message      = 'Your team is not a merchant for this voucher; you may not redeem this voucher.';
+                $this->message      = ApiResponse::RESPONSE_INVALID_MERCHANT_TEAM->value;
 
                 return $this->respond();
             }
@@ -123,23 +128,22 @@ class ApiVoucherRedemptionsController extends Controller
             $voucher->refresh();
 
             if ($voucher->last_redemption_at > now()->subMinute()) {
+
                 $this->responseCode = 429;
-                $this->message      = 'Too many redemption attempts, please wait 60 seconds.';
+                $this->message      = ApiResponse::RESPONSE_REDEMPTION_FAILED_TOO_MANY_ATTEMPTS->value;
 
                 return $this->respond();
             }
 
             if ($voucher->voucher_value_remaining <= 0) {
                 $this->responseCode = 400;
-                $this->message      = 'This voucher has already been fully redeemed, no redemption made this time.';
-
+                $this->message      = ApiResponse::RESPONSE_REDEMPTION_FAILED_VOUCHER_ALREADY_FULLY_REDEEMED->value;
                 return $this->respond();
             }
 
             if ($amount > $voucher->voucher_value_remaining) {
                 $this->responseCode = 400;
-                $this->message      = 'No redeem: Amount is greater than voucher value remaining.';
-
+                $this->message      = ApiResponse::RESPONSE_REDEMPTION_FAILED_REQUESTED_AMOUNT_TOO_HIGH->value;
                 return $this->respond();
             }
 
@@ -157,7 +161,7 @@ class ApiVoucherRedemptionsController extends Controller
 
             VoucherService::updateVoucherAmountRemaining($voucher);
 
-            $this->message = ApiResponse::RESPONSE_SAVED->value;
+            $this->message = ApiResponse::RESPONSE_REDEMPTION_SUCCESSFUL->value;
             $this->data    = $redemption;
 
         }

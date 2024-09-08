@@ -2,6 +2,7 @@
 
 namespace Tests\Feature\API\App\VoucherRedemption;
 
+use App\Enums\ApiResponse;
 use App\Enums\PersonalAccessTokenAbility;
 use App\Models\Team;
 use App\Models\TeamUser;
@@ -112,10 +113,10 @@ class VoucherRedemptionPostTest extends BaseAPITestCase
         ];
 
         $response = $this->postJson($this->apiRoot . $this->endPoint, $payload);
-        $response->assertNotFound();
+        $response->assertStatus(400);
 
         $responseObject = json_decode($response->getContent(), false);
-        $this->assertSame('Team: Not found', $responseObject->meta->message);
+        $this->assertSame(ApiResponse::RESPONSE_INVALID_MERCHANT_TEAM->value, $responseObject->meta->message);
     }
 
     #[Test]
@@ -163,7 +164,7 @@ class VoucherRedemptionPostTest extends BaseAPITestCase
         $response->assertStatus(400);
 
         $responseObject = json_decode($response->getContent(), false);
-        $this->assertSame('Your team is not a merchant for this voucher; you may not redeem this voucher.', $responseObject->meta->message);
+        $this->assertSame(ApiResponse::RESPONSE_INVALID_MERCHANT_TEAM->value, $responseObject->meta->message);
     }
 
     #[Test]
@@ -199,7 +200,7 @@ class VoucherRedemptionPostTest extends BaseAPITestCase
         $response->assertStatus(429);
 
         $responseObject = json_decode($response->getContent(), false);
-        $this->assertSame('Too many redemption attempts, please wait 60 seconds.', $responseObject->meta->message);
+        $this->assertSame(ApiResponse::RESPONSE_REDEMPTION_FAILED_TOO_MANY_ATTEMPTS->value, $responseObject->meta->message);
     }
 
     #[Test]

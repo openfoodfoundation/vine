@@ -24,10 +24,6 @@ enum PersonalAccessTokenAbility: string
     case MY_TEAM_VOUCHERS_READ      = 'my-team-vouchers-read';
     case MY_TEAM_VOUCHERS_UPDATE    = 'my-team-vouchers-update';
     case MY_TEAM_VOUCHERS_DELETE    = 'my-team-vouchers-delete';
-    case REDEMPTIONS_CREATE         = 'redemptions-create';
-    case REDEMPTIONS_READ           = 'redemptions-read';
-    case REDEMPTIONS_UPDATE         = 'redemptions-update';
-    case REDEMPTIONS_DELETE         = 'redemptions-delete';
     case SHOPS_CREATE               = 'shops-create';
     case SHOPS_READ                 = 'shops-read';
     case SHOPS_UPDATE               = 'shops-update';
@@ -61,10 +57,6 @@ enum PersonalAccessTokenAbility: string
             self::MY_TEAM_VOUCHERS_READ->value      => 'My Team Vouchers Read',
             self::MY_TEAM_VOUCHERS_UPDATE->value    => 'My Team Vouchers Update',
             self::MY_TEAM_VOUCHERS_DELETE->value    => 'My Team Vouchers Delete',
-            self::REDEMPTIONS_CREATE->value         => 'Redemptions Create: Perform a voucher redemption',
-            self::REDEMPTIONS_READ->value           => 'Redemptions Read: Retrieve a redemption',
-            self::REDEMPTIONS_UPDATE->value         => 'Redemptions Update: Update a redemption',
-            self::REDEMPTIONS_DELETE->value         => 'Redemptions Delete: Delete a redemption',
             self::SHOPS_CREATE->value               => 'Shops Create: Create a shop that redeems vouchers',
             self::SHOPS_READ->value                 => 'Shops Read: Retrieve shop details from the API',
             self::SHOPS_UPDATE->value               => 'Shops Update: Update a shop',
@@ -73,6 +65,10 @@ enum PersonalAccessTokenAbility: string
             self::SYSTEM_STATISTICS_READ->value     => 'System Statistics Read',
             self::SYSTEM_STATISTICS_UPDATE->value   => 'System Statistics Update',
             self::SYSTEM_STATISTICS_DELETE->value   => 'System Statistics Delete',
+            self::VOUCHER_REDEMPTIONS_CREATE->value => 'Voucher Redemptions Create',
+            self::VOUCHER_REDEMPTIONS_READ->value   => 'Voucher Redemptions Read',
+            self::VOUCHER_REDEMPTIONS_UPDATE->value => 'Voucher Redemptions Update',
+            self::VOUCHER_REDEMPTIONS_DELETE->value => 'Voucher Redemptions Delete',
         ];
     }
 
@@ -102,8 +98,8 @@ enum PersonalAccessTokenAbility: string
     public static function redemptionAppTokenAbilities(): array
     {
         return [
-            self::REDEMPTIONS_CREATE->value => self::abilityLabels()[self::REDEMPTIONS_CREATE->value],
-            self::REDEMPTIONS_READ->value   => self::abilityLabels()[self::REDEMPTIONS_READ->value],
+            self::VOUCHER_REDEMPTIONS_CREATE->value => self::abilityLabels()[self::VOUCHER_REDEMPTIONS_CREATE->value],
+            self::VOUCHER_REDEMPTIONS_READ->value   => self::abilityLabels()[self::VOUCHER_REDEMPTIONS_READ->value],
         ];
     }
 
