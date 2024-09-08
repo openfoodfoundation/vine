@@ -28,5 +28,4 @@ enum ApiResponse: string
     case RESPONSE_REDEMPTION_FAILED_TOO_MANY_ATTEMPTS                   = 'Too many redemption attempts, please wait.';
     case RESPONSE_REDEMPTION_SUCCESSFUL                                 = 'Redemption successful.';
     case RESPONSE_UPDATED                                               = 'Updated';
-
 }
