@@ -14,7 +14,7 @@ return new class() extends Migration
         Schema::create('voucher_sets', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->unsignedBigInteger('created_by_team_id')->index('vs_cbti');
-            $table->unsignedBigInteger('allocated_to_service_team_id')->nullable()->index('vs_atsti');
+            $table->unsignedBigInteger('allocated_to_service_team_id')->index('vs_atsti');
             $table->unsignedBigInteger('created_by_user_id')->index('vs_cbui');
             $table->boolean('is_test')->default(0)->index('vs_it');
             $table->unsignedBigInteger('total_set_value')->default(0)->index('vs_tsv');
@@ -23,7 +23,6 @@ return new class() extends Migration
             $table->unsignedBigInteger('num_voucher_redemptions')->default(0)->index('vs_nvr');
             $table->json('denomination_json')->nullable();
             $table->boolean('is_denomination_valid')->default(0);
-            $table->dateTime('allocated_to_service_team_at')->nullable();
             $table->dateTime('voucher_generation_started_at')->nullable();
             $table->dateTime('voucher_generation_finished_at')->nullable();
             $table->dateTime('last_redemption_at')->nullable()->index('vs_lra');
