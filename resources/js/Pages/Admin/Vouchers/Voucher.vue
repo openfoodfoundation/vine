@@ -5,6 +5,7 @@ import AdminTopNavigation from "@/Components/Admin/AdminTopNavigation.vue";
 import PrimaryButton from "@/Components/PrimaryButton.vue";
 import {onMounted, ref} from "vue";
 import PaginatorComponent from "@/Components/Admin/PaginatorComponent.vue";
+import AdminUserDetailsComponent from "@/Components/Admin/AdminUserDetailsComponent.vue";
 
 const $props = defineProps({
     id: {
@@ -37,36 +38,31 @@ function getVoucher() {
             <AdminTopNavigation></AdminTopNavigation>
         </template>
 
-        <div class=" card">
-            Voucher #{{ $props.id }}
-<!--            <div v-if="voucherSets.data && voucherSets.data.length">-->
-<!--                <Link :href="route('admin.voucher-set', voucherSet.id)" v-for="voucherSet in voucherSets.data" class="hover:no-underline hover:opacity-75">-->
-<!--                    <div class="border-b flex justify-between items-center py-2 sm:p-2">-->
-<!--                        <div>-->
+        <div class="card">
+            <div class="flex justify-between items-center">
+                <h2>Voucher #{{ $props.id }}</h2>
+            </div>
+        </div>
 
-<!--                            <div class="font-bold">-->
-<!--                                 <span class="text-xs opacity-25">-->
-<!--                                  #{{ team.id }}-->
-<!--                                </span>-->
-<!--                                {{ team.name }}-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                        <div >-->
-<!--                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">-->
-<!--                                <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />-->
-<!--                            </svg>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </Link>-->
-<!--            </div>-->
+        <div class="card">
+            <div class="card-header">
+                Voucher set
+            </div>
 
-<!--            <div class="flex justify-end items-center mt-4">-->
-<!--                <div class="w-full lg:w-1/3">-->
-<!--                    <PaginatorComponent-->
-<!--                        @setDataPage="setDataPage"-->
-<!--                        :pagination-data="teams"></PaginatorComponent>-->
-<!--                </div>-->
-<!--            </div>-->
+            <div v-if="voucher.voucher_set_id">
+                <Link :href="route('admin.voucher-set', {id:voucher.voucher_set_id})">{{ voucher.voucher_set_id }}</Link>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                Voucher details
+            </div>
+
+            <div v-if="voucher.voucher_short_code">
+                Short code: {{ voucher.voucher_short_code }}
+            </div>
+
         </div>
     </AuthenticatedLayout>
 </template>
