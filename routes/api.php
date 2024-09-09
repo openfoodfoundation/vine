@@ -10,6 +10,8 @@ use App\Http\Controllers\Api\V1\Admin\ApiAdminTeamServiceTeamsController;
 use App\Http\Controllers\Api\V1\Admin\ApiAdminTeamUsersController;
 use App\Http\Controllers\Api\V1\Admin\ApiAdminUserPersonalAccessTokensController;
 use App\Http\Controllers\Api\V1\Admin\ApiAdminUsersController;
+use App\Http\Controllers\Api\V1\Admin\ApiAdminVouchersController;
+use App\Http\Controllers\Api\V1\Admin\ApiAdminVoucherSetsController;
 use App\Http\Controllers\Api\V1\ApiMyTeamAuditItemsController;
 use App\Http\Controllers\Api\V1\ApiMyTeamController;
 use App\Http\Controllers\Api\V1\ApiMyTeamsController;
@@ -77,7 +79,7 @@ Route::group(['prefix' => 'v1', 'middleware' => VerifyApiTokenSignature::class],
                     ]
                 );
 
-            Route::put('/my-team-audit-items/{id}', [ApiMyTeamVouchersController::class, 'update'])
+            Route::put('/my-team-audit-items/{id}', [ApiMyTeamAuditItemsController::class, 'update'])
                 ->name('api.v1.my-team-audit-items.put')
                 ->middleware(
                     [
@@ -415,5 +417,42 @@ Route::group(['prefix' => 'v1', 'middleware' => VerifyApiTokenSignature::class],
                 ApiAdminUsersController::class
             )->names('api.v1.admin.users');
 
+            /**
+             * Vouchers
+             */
+            Route::post('/vouchers', [ApiAdminVouchersController::class, 'store'])
+                ->name('api.v1.admin-vouchers.post');
+
+            Route::get('/vouchers', [ApiAdminVouchersController::class, 'index'])
+                ->name('api.v1.admin-vouchers.getMany');
+
+            Route::get('/vouchers/{id}', [ApiAdminVouchersController::class, 'show'])
+                ->name('api.v1.admin-vouchers.get');
+
+            Route::put('/vouchers/{id}', [ApiAdminVouchersController::class, 'update'])
+                ->name('api.v1.admin-vouchers.put');
+
+            Route::delete('/vouchers/{id}', [ApiAdminVouchersController::class, 'destroy'])
+                ->name('api.v1.admin-vouchers.delete');
+
+            /**
+             * Voucher Sets
+             */
+            Route::post('/voucher-sets', [ApiAdminVoucherSetsController::class, 'store'])
+                ->name('api.v1.admin-voucher-sets.post');
+
+            Route::get('/voucher-sets', [ApiAdminVoucherSetsController::class, 'index'])
+                ->name('api.v1.admin-voucher-sets.getMany');
+
+            Route::get('/voucher-sets/{id}', [ApiAdminVoucherSetsController::class, 'show'])
+                ->name('api.v1.admin-voucher-sets.get');
+
+            Route::put('/voucher-sets/{id}', [ApiAdminVoucherSetsController::class, 'update'])
+                ->name('api.v1.admin-voucher-sets.put');
+
+            Route::delete('/voucher-sets/{id}', [ApiAdminVoucherSetsController::class, 'destroy'])
+                ->name('api.v1.admin-voucher-sets.delete');
+
         });
+
 });
