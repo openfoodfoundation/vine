@@ -8,8 +8,10 @@ use App\Http\Controllers\Api\V1\Admin\ApiAdminTeamMerchantTeamsController;
 use App\Http\Controllers\Api\V1\Admin\ApiAdminTeamsController;
 use App\Http\Controllers\Api\V1\Admin\ApiAdminTeamServiceTeamsController;
 use App\Http\Controllers\Api\V1\Admin\ApiAdminTeamUsersController;
+use App\Http\Controllers\Api\V1\Admin\ApiAdminTeamVoucherTemplatesController;
 use App\Http\Controllers\Api\V1\Admin\ApiAdminUserPersonalAccessTokensController;
 use App\Http\Controllers\Api\V1\Admin\ApiAdminUsersController;
+use App\Http\Controllers\Api\V1\Admin\ApiFileUploadsController;
 use App\Http\Controllers\Api\V1\ApiMyTeamAuditItemsController;
 use App\Http\Controllers\Api\V1\ApiMyTeamController;
 use App\Http\Controllers\Api\V1\ApiMyTeamsController;
@@ -28,8 +30,6 @@ Route::group(['prefix' => 'v1', 'middleware' => VerifyApiTokenSignature::class],
      */
     Route::middleware(['auth:sanctum'])
         ->group(function () {
-
-            //            Route::resource('/my-team', ApiMyTeamController::class)->names('api.v1.my-team');
 
             /**
              * My Team
@@ -376,6 +376,11 @@ Route::group(['prefix' => 'v1', 'middleware' => VerifyApiTokenSignature::class],
             )->names('api.v1.admin.audit-items');
 
             Route::resource(
+                '/file-uploads',
+                ApiFileUploadsController::class
+            )->names('api.v1.admin.file-uploads');
+
+            Route::resource(
                 '/search',
                 ApiAdminSearchController::class
             )->names('api.v1.admin.search');
@@ -404,6 +409,11 @@ Route::group(['prefix' => 'v1', 'middleware' => VerifyApiTokenSignature::class],
                 '/teams',
                 ApiAdminTeamsController::class
             )->names('api.v1.admin.teams');
+
+            Route::resource(
+                '/team-voucher-templates',
+                ApiAdminTeamVoucherTemplatesController::class
+            )->names('api.v1.admin.team-voucher-templates');
 
             Route::resource(
                 '/user-personal-access-tokens',
