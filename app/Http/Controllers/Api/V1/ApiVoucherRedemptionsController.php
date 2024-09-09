@@ -202,6 +202,7 @@ class ApiVoucherRedemptionsController extends Controller
      * PUT /{id}
      *
      * @param int $id
+     *
      * @return JsonResponse
      */
     public function update(int $id): JsonResponse
