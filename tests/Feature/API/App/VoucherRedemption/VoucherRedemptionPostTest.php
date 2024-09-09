@@ -245,7 +245,7 @@ class VoucherRedemptionPostTest extends BaseAPITestCase
         $response->assertStatus(400);
 
         $responseObject = json_decode($response->getContent(), false);
-        $this->assertSame('This voucher has already been fully redeemed, no redemption made this time.', $responseObject->meta->message);
+        $this->assertSame(ApiResponse::RESPONSE_REDEMPTION_FAILED_VOUCHER_ALREADY_FULLY_REDEEMED->value, $responseObject->meta->message);
     }
 
     #[Test]
@@ -269,6 +269,6 @@ class VoucherRedemptionPostTest extends BaseAPITestCase
         $response->assertStatus(400);
 
         $responseObject = json_decode($response->getContent(), false);
-        $this->assertSame('The selected voucher set id is invalid.', $responseObject->meta->message);
+        $this->assertEquals('The selected voucher set id is invalid.', $responseObject->meta->message);
     }
 }
