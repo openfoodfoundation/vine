@@ -3,7 +3,6 @@
 namespace App\Models;
 
 use App\Events\Vouchers\VoucherWasUpdated;
-use Attribute;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -19,14 +18,11 @@ class Voucher extends Model
 
     protected $keyType   = 'string';
     public $incrementing = false;
-
-
-    protected $casts = [
+    protected $casts     = [
         'expires_at' => 'datetime',
     ];
-
     protected $dispatchesEvents = [
-        'updated' => VoucherWasUpdated::class
+        'updated' => VoucherWasUpdated::class,
     ];
 
     /**
