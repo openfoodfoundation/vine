@@ -7,6 +7,7 @@ use App\Models\TeamMerchantTeam;
 use App\Models\TeamUser;
 use App\Models\User;
 use App\Models\Voucher;
+use App\Models\VoucherSetMerchantTeam;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
@@ -67,10 +68,20 @@ Route::middleware('auth')->group(function () {
         }
 
         /**
-         * User's team is NOT a merchant of the team which create the voucher
+         * User's team is NOT a merchant of the voucher's service team
          */
-        $teamMerchant = TeamMerchantTeam::where('team_id', $voucher->created_by_team_id)->where('merchant_team_id', $team->id)->first();
-        if (!$teamMerchant) {
+        $teamMerchant = TeamMerchantTeam::where('team_id', $voucher->allocated_to_service_team_id)
+                                        ->where('merchant_team_id', $team->id)
+                                        ->first();
+
+        /**
+         * User's team is NOT a merchant for the voucher set
+         */
+        $teamMerchantOfVoucherSet = VoucherSetMerchantTeam::where('voucher_set_id', $voucherSetId)
+                                        ->where('merchant_team_id', $team->id)
+                                        ->first();
+
+        if (!$teamMerchant || !$teamMerchantOfVoucherSet) {
             return Inertia::render('App/Vouchers/VoucherRedeemFailed', [
                 'voucherSetId' => $voucherSetId,
                 'voucherId'    => $voucherId,
