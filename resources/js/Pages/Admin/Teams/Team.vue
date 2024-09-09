@@ -12,14 +12,14 @@ import SecondaryButton from "@/Components/SecondaryButton.vue";
 import AjaxLoadingIndicator from "@/Components/AjaxLoadingIndicator.vue";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
-
-dayjs.extend(relativeTime);
 import utc from "dayjs/plugin/utc"
-import InputLabel from "@/Components/InputLabel.vue";
 import TextInput from "@/Components/TextInput.vue";
 import PrimaryButton from "@/Components/PrimaryButton.vue";
 import DangerButton from "@/Components/DangerButton.vue";
+import VoucherSetsComponent from "@/Components/Admin/Vouchers/VoucherSetsComponent.vue";
+import VouchersComponent from "@/Components/Admin/Vouchers/VouchersComponent.vue";
 
+dayjs.extend(relativeTime);
 dayjs.extend(utc);
 
 const $props = defineProps({
@@ -29,11 +29,11 @@ const $props = defineProps({
     }
 });
 
+const invitingTeamUser = ref(false)
 const limit = ref(10)
 const newTeamName = ref('')
 const team = ref({})
 const teamUsers = ref({})
-const invitingTeamUser = ref(false)
 
 onMounted(() => {
     getTeam()
@@ -251,13 +251,31 @@ function updateTeam() {
         </div>
 
         <div class="card">
-            <div class="text-sm pb-2 text-gray-500">Voucher sets created by team</div>
-            - paginated
+            <div class="card-header">
+                Voucher sets created by team
+            </div>
+            <VoucherSetsComponent :team-id="$props.id" filter-voucher-sets="created_by_team_id"></VoucherSetsComponent>
         </div>
 
         <div class="card">
-            <div class="text-sm pb-2 text-gray-500">Voucher sets allocated to team</div>
-            - paginated
+            <div class="card-header">
+                Voucher sets allocated to team
+            </div>
+            <VoucherSetsComponent :team-id="$props.id" filter-voucher-sets="allocated_to_service_team_id"></VoucherSetsComponent>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                Vouchers created by team
+            </div>
+            <VouchersComponent :team-id="$props.id" filter-vouchers="created_by_team_id"></VouchersComponent>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                Vouchers allocated to team
+            </div>
+            <VouchersComponent :team-id="$props.id" filter-vouchers="allocated_to_service_team_id"></VouchersComponent>
         </div>
 
     </AuthenticatedLayout>

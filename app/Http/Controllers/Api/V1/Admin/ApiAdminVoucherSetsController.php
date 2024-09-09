@@ -26,9 +26,16 @@ class ApiAdminVoucherSetsController extends Controller
     /**
      * Set the related data the GET request is allowed to ask for
      */
-    public array $availableRelations = [];
+    public array $availableRelations = [
+        'createdByTeam',
+        'allocatedToServiceTeam',
+    ];
 
-    public static array $searchableFields = [];
+    public static array $searchableFields = [
+        'created_at',
+        'allocated_to_service_team_id',
+        'created_by_team_id',
+    ];
 
     /**
      * @throws DisallowedApiFieldException

@@ -115,15 +115,15 @@ function highlightMatchingText(text) {
                 Teams
             </Link>
 
-            <Link :href="route('admin.teams')">
+            <Link :href="route('admin.voucher-sets')">
                 Voucher Sets
             </Link>
 
-            <Link :href="route('admin.teams')">
+            <Link :href="route('admin.vouchers')">
                 Vouchers
             </Link>
 
-            <Link :href="route('admin.teams')">
+            <Link :href="route('admin.voucher-redemptions')">
                 Redemptions
             </Link>
 
