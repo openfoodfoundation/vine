@@ -22,7 +22,9 @@ return new class() extends Migration
                 [
                     'voucher_set_id',
                     'merchant_team_id',
-                ], 'vsmt_vsimti');
+                ],
+                'vsmt_vsimti'
+            );
         });
     }
 
