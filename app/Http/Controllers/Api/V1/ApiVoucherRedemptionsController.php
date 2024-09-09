@@ -64,7 +64,7 @@ class ApiVoucherRedemptionsController extends Controller
     public function store(): JsonResponse
     {
         $validationArray = [
-            'voucher_id'     => [
+            'voucher_id' => [
                 'required',
                 Rule::exists('vouchers', 'id'),
             ],
@@ -72,7 +72,7 @@ class ApiVoucherRedemptionsController extends Controller
                 'required',
                 Rule::exists('voucher_sets', 'id'),
             ],
-            'amount'         => [
+            'amount' => [
                 'integer',
                 'min:1',
             ],
@@ -109,9 +109,9 @@ class ApiVoucherRedemptionsController extends Controller
              * Ensure the users current team is a merchant for the voucher set.
              */
             $voucherSetMerchantTeamIds = VoucherSetMerchantTeam::where('voucher_set_id', $voucherSetId)
-                                                               ->pluck('merchant_team_id')
-                                                               ->unique()
-                                                               ->toArray();
+                ->pluck('merchant_team_id')
+                ->unique()
+                ->toArray();
 
             if (!in_array(Auth::user()->current_team_id, $voucherSetMerchantTeamIds)) {
                 $this->responseCode = 400;
@@ -166,13 +166,14 @@ class ApiVoucherRedemptionsController extends Controller
              * Set the redemption response wording
              */
             $amountInDollars         = '$' . number_format(($amount / 100), 2, '.', '');
-            $liveRedemptionResponse  = str_replace(search: 'XXX', replace: $amountInDollars, subject: ApiResponse::RESPONSE_REDEMPTION_LIVE_REDEMPTION->value,);
+            $liveRedemptionResponse  = str_replace(search: 'XXX', replace: $amountInDollars, subject: ApiResponse::RESPONSE_REDEMPTION_LIVE_REDEMPTION->value);
             $testRedemptionResponse  = ApiResponse::RESPONSE_REDEMPTION_TEST_REDEMPTION->value;
             $redemptionMessageSuffix = ($voucher->is_test == 1) ? $testRedemptionResponse : $liveRedemptionResponse;
             $this->message           = ApiResponse::RESPONSE_REDEMPTION_SUCCESSFUL->value . ' ' . $redemptionMessageSuffix;
             $this->data              = $redemption;
 
-        } catch (Exception $e) {
+        }
+        catch (Exception $e) {
             $this->responseCode = 500;
             $this->message      = ApiResponse::RESPONSE_ERROR->value . ':' . $e->getMessage();
         }
