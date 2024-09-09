@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Events\Vouchers\VoucherWasUpdated;
 use Attribute;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -19,14 +20,13 @@ class Voucher extends Model
     protected $keyType   = 'string';
     public $incrementing = false;
 
-    //    protected $appends   = [
-    //        'voucher_code',
-    //    ];
+
     protected $casts = [
         'expires_at' => 'datetime',
     ];
-    protected $dispatchesEvents = [
 
+    protected $dispatchesEvents = [
+        'updated' => VoucherWasUpdated::class
     ];
 
     /**
@@ -52,26 +52,6 @@ class Voucher extends Model
     {
         return $this->belongsTo(VoucherSet::class, 'voucher_set_id', 'id');
     }
-
-    //    /**
-    //     * @return HasMany
-    //     */
-    //    public function voucherRedemptions(): HasMany
-    //    {
-    //        return $this->hasMany(VoucherRedemption::class, 'voucher_id', 'id')->orderBy('created_at', 'desc');
-    //    }
-
-    //    /**
-    //     * Get the voucher's voucher_code
-    //     *
-    //     * @return Attribute
-    //     */
-    //    public function voucherCode(): Attribute
-    //    {
-    //        return Attribute::make(
-    //            get: fn ($value, $attributes) => substr($attributes['id'], 0, 5),
-    //        );
-    //    }
 
     public function voucherRedemptions(): HasMany
     {
