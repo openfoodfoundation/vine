@@ -21,7 +21,7 @@ use Knuckles\Scribe\Attributes\Response;
 use Knuckles\Scribe\Attributes\Subgroup;
 
 #[Group('App Endpoints')]
-#[Subgroup('/voucher-redemptions', 'API for managing voucher redemptions')]
+#[Subgroup('/voucher-redemptions', 'API for creating voucher redemptions')]
 class ApiVoucherRedemptionsController extends Controller
 {
     use HandlesAPIRequests;
