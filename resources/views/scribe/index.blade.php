@@ -1014,7 +1014,7 @@
 
         </div>
         <div class="sl-flex sl-items-center sl-px-4 sl-py-3 sl-border-t">
-            Last updated: September 8, 2024
+            Last updated: September 9, 2024
         </div>
 
         <div class="sl-flex sl-items-center sl-px-4 sl-py-3 sl-border-t">
@@ -4282,7 +4282,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        3
+                        2
                     </div>
                 </div>
             </div>
@@ -4373,7 +4373,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request GET \
-    --get "https://vine.openfoodnetwork.org.au/api/v1/system-statistics/3?cached=1&amp;fields=id%2Cnum_users" \
+    --get "https://vine.openfoodnetwork.org.au/api/v1/system-statistics/2?cached=1&amp;fields=id%2Cnum_users" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -4385,7 +4385,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/system-statistics/3"
+    "https://vine.openfoodnetwork.org.au/api/v1/system-statistics/2"
 );
 
 const params = {
@@ -4413,7 +4413,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/system-statistics/3';
+$url = 'https://vine.openfoodnetwork.org.au/api/v1/system-statistics/2';
 $response = $client-&gt;get(
     $url,
     [
@@ -4440,7 +4440,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/system-statistics/3'
+url = 'https://vine.openfoodnetwork.org.au/api/v1/system-statistics/2'
 params = {
   'cached': '1',
   'fields': 'id,num_users',
@@ -4671,7 +4671,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        fuga
+                        amet
                     </div>
                 </div>
             </div>
@@ -4698,7 +4698,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        schimmel.tomasa@example.net
+                        lkrajcik@example.com
                     </div>
                 </div>
             </div>
@@ -4722,7 +4722,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        aut
+                        ut
                     </div>
                 </div>
             </div>
@@ -4768,9 +4768,9 @@ response.json()</code></pre>                                        </div>
     --header "Accept: application/json" \
     --header "X-Authorisation: JWT eyJ0eXAiOiJKV..." \
     --data "{
-    \"shop_name\": \"fuga\",
-    \"user_email\": \"schimmel.tomasa@example.net\",
-    \"user_name\": \"aut\"
+    \"shop_name\": \"amet\",
+    \"user_email\": \"lkrajcik@example.com\",
+    \"user_name\": \"ut\"
 }"
 </code></pre>                                        </div>
                                     </div>
@@ -4791,9 +4791,9 @@ const headers = {
 };
 
 let body = {
-    "shop_name": "fuga",
-    "user_email": "schimmel.tomasa@example.net",
-    "user_name": "aut"
+    "shop_name": "amet",
+    "user_email": "lkrajcik@example.com",
+    "user_name": "ut"
 };
 
 fetch(url, {
@@ -4819,9 +4819,9 @@ $response = $client-&gt;post(
             'X-Authorisation' =&gt; 'JWT eyJ0eXAiOiJKV...',
         ],
         'json' =&gt; [
-            'shop_name' =&gt; 'fuga',
-            'user_email' =&gt; 'schimmel.tomasa@example.net',
-            'user_name' =&gt; 'aut',
+            'shop_name' =&gt; 'amet',
+            'user_email' =&gt; 'lkrajcik@example.com',
+            'user_name' =&gt; 'ut',
         ],
     ]
 );
@@ -4838,9 +4838,9 @@ import json
 
 url = 'https://vine.openfoodnetwork.org.au/api/v1/shops'
 payload = {
-    "shop_name": "fuga",
-    "user_email": "schimmel.tomasa@example.net",
-    "user_name": "aut"
+    "shop_name": "amet",
+    "user_email": "lkrajcik@example.com",
+    "user_name": "ut"
 }
 headers = {
   'Authorization': 'Bearer {YOUR_API_TOKEN}',
@@ -4913,7 +4913,7 @@ response.json()</code></pre>                                        </div>
             >
                 /voucher-redemptions
             </h2>
-                                        <p>API for managing voucher redemptions</p>
+                                        <p>API for creating voucher redemptions</p>
                         <br>
                             <div class="sl-stack sl-stack--vertical sl-stack--8 HttpOperation sl-flex sl-flex-col sl-items-stretch sl-w-full">
     <div class="sl-stack sl-stack--vertical sl-stack--5 sl-flex sl-flex-col sl-items-stretch">
@@ -5057,7 +5057,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        qui
+                        eligendi
                     </div>
                 </div>
             </div>
@@ -5081,7 +5081,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        commodi
+                        nulla
                     </div>
                 </div>
             </div>
@@ -5106,7 +5106,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        62
+                        10
                     </div>
                 </div>
             </div>
@@ -5152,9 +5152,9 @@ response.json()</code></pre>                                        </div>
     --header "Accept: application/json" \
     --header "X-Authorisation: JWT eyJ0eXAiOiJKV..." \
     --data "{
-    \"voucher_id\": \"qui\",
-    \"voucher_set_id\": \"commodi\",
-    \"amount\": 62
+    \"voucher_id\": \"eligendi\",
+    \"voucher_set_id\": \"nulla\",
+    \"amount\": 10
 }"
 </code></pre>                                        </div>
                                     </div>
@@ -5175,9 +5175,9 @@ const headers = {
 };
 
 let body = {
-    "voucher_id": "qui",
-    "voucher_set_id": "commodi",
-    "amount": 62
+    "voucher_id": "eligendi",
+    "voucher_set_id": "nulla",
+    "amount": 10
 };
 
 fetch(url, {
@@ -5203,9 +5203,9 @@ $response = $client-&gt;post(
             'X-Authorisation' =&gt; 'JWT eyJ0eXAiOiJKV...',
         ],
         'json' =&gt; [
-            'voucher_id' =&gt; 'qui',
-            'voucher_set_id' =&gt; 'commodi',
-            'amount' =&gt; 62,
+            'voucher_id' =&gt; 'eligendi',
+            'voucher_set_id' =&gt; 'nulla',
+            'amount' =&gt; 10,
         ],
     ]
 );
@@ -5222,9 +5222,9 @@ import json
 
 url = 'https://vine.openfoodnetwork.org.au/api/v1/voucher-redemptions'
 payload = {
-    "voucher_id": "qui",
-    "voucher_set_id": "commodi",
-    "amount": 62
+    "voucher_id": "eligendi",
+    "voucher_set_id": "nulla",
+    "amount": 10
 }
 headers = {
   'Authorization': 'Bearer {YOUR_API_TOKEN}',
@@ -5962,7 +5962,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        sunt
+                        exercitationem
                     </div>
                 </div>
             </div>
@@ -6003,7 +6003,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request GET \
-    --get "https://vine.openfoodnetwork.org.au/api/v1/admin/audit-items/sunt" \
+    --get "https://vine.openfoodnetwork.org.au/api/v1/admin/audit-items/exercitationem" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -6015,7 +6015,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/audit-items/sunt"
+    "https://vine.openfoodnetwork.org.au/api/v1/admin/audit-items/exercitationem"
 );
 
 const headers = {
@@ -6036,7 +6036,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/audit-items/sunt';
+$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/audit-items/exercitationem';
 $response = $client-&gt;get(
     $url,
     [
@@ -6059,7 +6059,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/audit-items/sunt'
+url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/audit-items/exercitationem'
 headers = {
   'Authorization': 'Bearer {YOUR_API_TOKEN}',
   'Content-Type': 'application/json',
@@ -6286,7 +6286,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        voluptatem
+                        harum
                     </div>
                 </div>
             </div>
@@ -6327,7 +6327,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request PUT \
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/audit-items/voluptatem" \
+    "https://vine.openfoodnetwork.org.au/api/v1/admin/audit-items/harum" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -6339,7 +6339,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/audit-items/voluptatem"
+    "https://vine.openfoodnetwork.org.au/api/v1/admin/audit-items/harum"
 );
 
 const headers = {
@@ -6360,7 +6360,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/audit-items/voluptatem';
+$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/audit-items/harum';
 $response = $client-&gt;put(
     $url,
     [
@@ -6383,7 +6383,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/audit-items/voluptatem'
+url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/audit-items/harum'
 headers = {
   'Authorization': 'Bearer {YOUR_API_TOKEN}',
   'Content-Type': 'application/json',
@@ -6542,7 +6542,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        consequatur
+                        qui
                     </div>
                 </div>
             </div>
@@ -6583,7 +6583,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request DELETE \
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/audit-items/consequatur" \
+    "https://vine.openfoodnetwork.org.au/api/v1/admin/audit-items/qui" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -6595,7 +6595,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/audit-items/consequatur"
+    "https://vine.openfoodnetwork.org.au/api/v1/admin/audit-items/qui"
 );
 
 const headers = {
@@ -6616,7 +6616,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/audit-items/consequatur';
+$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/audit-items/qui';
 $response = $client-&gt;delete(
     $url,
     [
@@ -6639,7 +6639,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/audit-items/consequatur'
+url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/audit-items/qui'
 headers = {
   'Authorization': 'Bearer {YOUR_API_TOKEN}',
   'Content-Type': 'application/json',
@@ -6802,7 +6802,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        zemaqornshiqvbxpgnnrbpgjulmzlmubbvsfcqtyosfus
+                        uoevlukwrt
                     </div>
                 </div>
             </div>
@@ -6848,7 +6848,7 @@ response.json()</code></pre>                                        </div>
     --header "Accept: application/json" \
     --header "X-Authorisation: JWT eyJ0eXAiOiJKV..." \
     --data "{
-    \"query\": \"zemaqornshiqvbxpgnnrbpgjulmzlmubbvsfcqtyosfus\"
+    \"query\": \"uoevlukwrt\"
 }"
 </code></pre>                                        </div>
                                     </div>
@@ -6869,7 +6869,7 @@ const headers = {
 };
 
 let body = {
-    "query": "zemaqornshiqvbxpgnnrbpgjulmzlmubbvsfcqtyosfus"
+    "query": "uoevlukwrt"
 };
 
 fetch(url, {
@@ -6895,7 +6895,7 @@ $response = $client-&gt;get(
             'X-Authorisation' =&gt; 'JWT eyJ0eXAiOiJKV...',
         ],
         'json' =&gt; [
-            'query' =&gt; 'zemaqornshiqvbxpgnnrbpgjulmzlmubbvsfcqtyosfus',
+            'query' =&gt; 'uoevlukwrt',
         ],
     ]
 );
@@ -6912,7 +6912,7 @@ import json
 
 url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/search'
 payload = {
-    "query": "zemaqornshiqvbxpgnnrbpgjulmzlmubbvsfcqtyosfus"
+    "query": "uoevlukwrt"
 }
 headers = {
   'Authorization': 'Bearer {YOUR_API_TOKEN}',
@@ -7361,7 +7361,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        aliquid
+                        assumenda
                     </div>
                 </div>
             </div>
@@ -7402,7 +7402,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request GET \
-    --get "https://vine.openfoodnetwork.org.au/api/v1/admin/search/aliquid" \
+    --get "https://vine.openfoodnetwork.org.au/api/v1/admin/search/assumenda" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -7414,7 +7414,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/search/aliquid"
+    "https://vine.openfoodnetwork.org.au/api/v1/admin/search/assumenda"
 );
 
 const headers = {
@@ -7435,7 +7435,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/search/aliquid';
+$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/search/assumenda';
 $response = $client-&gt;get(
     $url,
     [
@@ -7458,7 +7458,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/search/aliquid'
+url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/search/assumenda'
 headers = {
   'Authorization': 'Bearer {YOUR_API_TOKEN}',
   'Content-Type': 'application/json',
@@ -7685,7 +7685,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        iste
+                        cum
                     </div>
                 </div>
             </div>
@@ -7726,7 +7726,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request PUT \
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/search/iste" \
+    "https://vine.openfoodnetwork.org.au/api/v1/admin/search/cum" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -7738,7 +7738,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/search/iste"
+    "https://vine.openfoodnetwork.org.au/api/v1/admin/search/cum"
 );
 
 const headers = {
@@ -7759,7 +7759,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/search/iste';
+$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/search/cum';
 $response = $client-&gt;put(
     $url,
     [
@@ -7782,7 +7782,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/search/iste'
+url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/search/cum'
 headers = {
   'Authorization': 'Bearer {YOUR_API_TOKEN}',
   'Content-Type': 'application/json',
@@ -7941,7 +7941,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        tenetur
+                        voluptatem
                     </div>
                 </div>
             </div>
@@ -7982,7 +7982,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request DELETE \
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/search/tenetur" \
+    "https://vine.openfoodnetwork.org.au/api/v1/admin/search/voluptatem" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -7994,7 +7994,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/search/tenetur"
+    "https://vine.openfoodnetwork.org.au/api/v1/admin/search/voluptatem"
 );
 
 const headers = {
@@ -8015,7 +8015,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/search/tenetur';
+$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/search/voluptatem';
 $response = $client-&gt;delete(
     $url,
     [
@@ -8038,7 +8038,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/search/tenetur'
+url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/search/voluptatem'
 headers = {
   'Authorization': 'Bearer {YOUR_API_TOKEN}',
   'Content-Type': 'application/json',
@@ -8712,7 +8712,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        quisquam
+                        quasi
                     </div>
                 </div>
             </div>
@@ -8753,7 +8753,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request GET \
-    --get "https://vine.openfoodnetwork.org.au/api/v1/admin/system-statistics/quisquam" \
+    --get "https://vine.openfoodnetwork.org.au/api/v1/admin/system-statistics/quasi" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -8765,7 +8765,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/system-statistics/quisquam"
+    "https://vine.openfoodnetwork.org.au/api/v1/admin/system-statistics/quasi"
 );
 
 const headers = {
@@ -8786,7 +8786,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/system-statistics/quisquam';
+$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/system-statistics/quasi';
 $response = $client-&gt;get(
     $url,
     [
@@ -8809,7 +8809,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/system-statistics/quisquam'
+url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/system-statistics/quasi'
 headers = {
   'Authorization': 'Bearer {YOUR_API_TOKEN}',
   'Content-Type': 'application/json',
@@ -9036,7 +9036,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        in
+                        temporibus
                     </div>
                 </div>
             </div>
@@ -9077,7 +9077,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request PUT \
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/system-statistics/in" \
+    "https://vine.openfoodnetwork.org.au/api/v1/admin/system-statistics/temporibus" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -9089,7 +9089,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/system-statistics/in"
+    "https://vine.openfoodnetwork.org.au/api/v1/admin/system-statistics/temporibus"
 );
 
 const headers = {
@@ -9110,7 +9110,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/system-statistics/in';
+$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/system-statistics/temporibus';
 $response = $client-&gt;put(
     $url,
     [
@@ -9133,7 +9133,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/system-statistics/in'
+url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/system-statistics/temporibus'
 headers = {
   'Authorization': 'Bearer {YOUR_API_TOKEN}',
   'Content-Type': 'application/json',
@@ -9292,7 +9292,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        et
+                        odio
                     </div>
                 </div>
             </div>
@@ -9333,7 +9333,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request DELETE \
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/system-statistics/et" \
+    "https://vine.openfoodnetwork.org.au/api/v1/admin/system-statistics/odio" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -9345,7 +9345,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/system-statistics/et"
+    "https://vine.openfoodnetwork.org.au/api/v1/admin/system-statistics/odio"
 );
 
 const headers = {
@@ -9366,7 +9366,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/system-statistics/et';
+$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/system-statistics/odio';
 $response = $client-&gt;delete(
     $url,
     [
@@ -9389,7 +9389,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/system-statistics/et'
+url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/system-statistics/odio'
 headers = {
   'Authorization': 'Bearer {YOUR_API_TOKEN}',
   'Content-Type': 'application/json',
@@ -9838,7 +9838,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        minus
+                        est
                     </div>
                 </div>
             </div>
@@ -9862,7 +9862,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        deserunt
+                        vero
                     </div>
                 </div>
             </div>
@@ -9908,8 +9908,8 @@ response.json()</code></pre>                                        </div>
     --header "Accept: application/json" \
     --header "X-Authorisation: JWT eyJ0eXAiOiJKV..." \
     --data "{
-    \"team_id\": \"minus\",
-    \"merchant_team_id\": \"deserunt\"
+    \"team_id\": \"est\",
+    \"merchant_team_id\": \"vero\"
 }"
 </code></pre>                                        </div>
                                     </div>
@@ -9930,8 +9930,8 @@ const headers = {
 };
 
 let body = {
-    "team_id": "minus",
-    "merchant_team_id": "deserunt"
+    "team_id": "est",
+    "merchant_team_id": "vero"
 };
 
 fetch(url, {
@@ -9957,8 +9957,8 @@ $response = $client-&gt;post(
             'X-Authorisation' =&gt; 'JWT eyJ0eXAiOiJKV...',
         ],
         'json' =&gt; [
-            'team_id' =&gt; 'minus',
-            'merchant_team_id' =&gt; 'deserunt',
+            'team_id' =&gt; 'est',
+            'merchant_team_id' =&gt; 'vero',
         ],
     ]
 );
@@ -9975,8 +9975,8 @@ import json
 
 url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/team-merchant-teams'
 payload = {
-    "team_id": "minus",
-    "merchant_team_id": "deserunt"
+    "team_id": "est",
+    "merchant_team_id": "vero"
 }
 headers = {
   'Authorization': 'Bearer {YOUR_API_TOKEN}',
@@ -10136,7 +10136,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        alias
+                        saepe
                     </div>
                 </div>
             </div>
@@ -10177,7 +10177,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request GET \
-    --get "https://vine.openfoodnetwork.org.au/api/v1/admin/team-merchant-teams/alias" \
+    --get "https://vine.openfoodnetwork.org.au/api/v1/admin/team-merchant-teams/saepe" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -10189,7 +10189,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/team-merchant-teams/alias"
+    "https://vine.openfoodnetwork.org.au/api/v1/admin/team-merchant-teams/saepe"
 );
 
 const headers = {
@@ -10210,7 +10210,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/team-merchant-teams/alias';
+$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/team-merchant-teams/saepe';
 $response = $client-&gt;get(
     $url,
     [
@@ -10233,7 +10233,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/team-merchant-teams/alias'
+url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/team-merchant-teams/saepe'
 headers = {
   'Authorization': 'Bearer {YOUR_API_TOKEN}',
   'Content-Type': 'application/json',
@@ -10460,7 +10460,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        minima
+                        id
                     </div>
                 </div>
             </div>
@@ -10501,7 +10501,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request PUT \
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/team-merchant-teams/minima" \
+    "https://vine.openfoodnetwork.org.au/api/v1/admin/team-merchant-teams/id" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -10513,7 +10513,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/team-merchant-teams/minima"
+    "https://vine.openfoodnetwork.org.au/api/v1/admin/team-merchant-teams/id"
 );
 
 const headers = {
@@ -10534,7 +10534,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/team-merchant-teams/minima';
+$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/team-merchant-teams/id';
 $response = $client-&gt;put(
     $url,
     [
@@ -10557,7 +10557,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/team-merchant-teams/minima'
+url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/team-merchant-teams/id'
 headers = {
   'Authorization': 'Bearer {YOUR_API_TOKEN}',
   'Content-Type': 'application/json',
@@ -10716,7 +10716,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        et
+                        illum
                     </div>
                 </div>
             </div>
@@ -10757,7 +10757,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request DELETE \
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/team-merchant-teams/et" \
+    "https://vine.openfoodnetwork.org.au/api/v1/admin/team-merchant-teams/illum" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -10769,7 +10769,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/team-merchant-teams/et"
+    "https://vine.openfoodnetwork.org.au/api/v1/admin/team-merchant-teams/illum"
 );
 
 const headers = {
@@ -10790,7 +10790,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/team-merchant-teams/et';
+$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/team-merchant-teams/illum';
 $response = $client-&gt;delete(
     $url,
     [
@@ -10813,7 +10813,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/team-merchant-teams/et'
+url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/team-merchant-teams/illum'
 headers = {
   'Authorization': 'Bearer {YOUR_API_TOKEN}',
   'Content-Type': 'application/json',
@@ -11262,7 +11262,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        fugiat
+                        culpa
                     </div>
                 </div>
             </div>
@@ -11286,7 +11286,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        repudiandae
+                        ipsa
                     </div>
                 </div>
             </div>
@@ -11332,8 +11332,8 @@ response.json()</code></pre>                                        </div>
     --header "Accept: application/json" \
     --header "X-Authorisation: JWT eyJ0eXAiOiJKV..." \
     --data "{
-    \"team_id\": \"fugiat\",
-    \"service_team_id\": \"repudiandae\"
+    \"team_id\": \"culpa\",
+    \"service_team_id\": \"ipsa\"
 }"
 </code></pre>                                        </div>
                                     </div>
@@ -11354,8 +11354,8 @@ const headers = {
 };
 
 let body = {
-    "team_id": "fugiat",
-    "service_team_id": "repudiandae"
+    "team_id": "culpa",
+    "service_team_id": "ipsa"
 };
 
 fetch(url, {
@@ -11381,8 +11381,8 @@ $response = $client-&gt;post(
             'X-Authorisation' =&gt; 'JWT eyJ0eXAiOiJKV...',
         ],
         'json' =&gt; [
-            'team_id' =&gt; 'fugiat',
-            'service_team_id' =&gt; 'repudiandae',
+            'team_id' =&gt; 'culpa',
+            'service_team_id' =&gt; 'ipsa',
         ],
     ]
 );
@@ -11399,8 +11399,8 @@ import json
 
 url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/team-service-teams'
 payload = {
-    "team_id": "fugiat",
-    "service_team_id": "repudiandae"
+    "team_id": "culpa",
+    "service_team_id": "ipsa"
 }
 headers = {
   'Authorization': 'Bearer {YOUR_API_TOKEN}',
@@ -11560,7 +11560,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        quo
+                        et
                     </div>
                 </div>
             </div>
@@ -11601,7 +11601,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request GET \
-    --get "https://vine.openfoodnetwork.org.au/api/v1/admin/team-service-teams/quo" \
+    --get "https://vine.openfoodnetwork.org.au/api/v1/admin/team-service-teams/et" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -11613,7 +11613,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/team-service-teams/quo"
+    "https://vine.openfoodnetwork.org.au/api/v1/admin/team-service-teams/et"
 );
 
 const headers = {
@@ -11634,7 +11634,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/team-service-teams/quo';
+$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/team-service-teams/et';
 $response = $client-&gt;get(
     $url,
     [
@@ -11657,7 +11657,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/team-service-teams/quo'
+url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/team-service-teams/et'
 headers = {
   'Authorization': 'Bearer {YOUR_API_TOKEN}',
   'Content-Type': 'application/json',
@@ -11884,7 +11884,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        pariatur
+                        iusto
                     </div>
                 </div>
             </div>
@@ -11925,7 +11925,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request PUT \
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/team-service-teams/pariatur" \
+    "https://vine.openfoodnetwork.org.au/api/v1/admin/team-service-teams/iusto" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -11937,7 +11937,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/team-service-teams/pariatur"
+    "https://vine.openfoodnetwork.org.au/api/v1/admin/team-service-teams/iusto"
 );
 
 const headers = {
@@ -11958,7 +11958,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/team-service-teams/pariatur';
+$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/team-service-teams/iusto';
 $response = $client-&gt;put(
     $url,
     [
@@ -11981,7 +11981,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/team-service-teams/pariatur'
+url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/team-service-teams/iusto'
 headers = {
   'Authorization': 'Bearer {YOUR_API_TOKEN}',
   'Content-Type': 'application/json',
@@ -12140,7 +12140,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        dolorem
+                        consequatur
                     </div>
                 </div>
             </div>
@@ -12181,7 +12181,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request DELETE \
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/team-service-teams/dolorem" \
+    "https://vine.openfoodnetwork.org.au/api/v1/admin/team-service-teams/consequatur" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -12193,7 +12193,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/team-service-teams/dolorem"
+    "https://vine.openfoodnetwork.org.au/api/v1/admin/team-service-teams/consequatur"
 );
 
 const headers = {
@@ -12214,7 +12214,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/team-service-teams/dolorem';
+$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/team-service-teams/consequatur';
 $response = $client-&gt;delete(
     $url,
     [
@@ -12237,7 +12237,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/team-service-teams/dolorem'
+url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/team-service-teams/consequatur'
 headers = {
   'Authorization': 'Bearer {YOUR_API_TOKEN}',
   'Content-Type': 'application/json',
@@ -12686,7 +12686,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        itaque
+                        sunt
                     </div>
                 </div>
             </div>
@@ -12710,7 +12710,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        omnis
+                        aperiam
                     </div>
                 </div>
             </div>
@@ -12756,8 +12756,8 @@ response.json()</code></pre>                                        </div>
     --header "Accept: application/json" \
     --header "X-Authorisation: JWT eyJ0eXAiOiJKV..." \
     --data "{
-    \"team_id\": \"itaque\",
-    \"user_id\": \"omnis\"
+    \"team_id\": \"sunt\",
+    \"user_id\": \"aperiam\"
 }"
 </code></pre>                                        </div>
                                     </div>
@@ -12778,8 +12778,8 @@ const headers = {
 };
 
 let body = {
-    "team_id": "itaque",
-    "user_id": "omnis"
+    "team_id": "sunt",
+    "user_id": "aperiam"
 };
 
 fetch(url, {
@@ -12805,8 +12805,8 @@ $response = $client-&gt;post(
             'X-Authorisation' =&gt; 'JWT eyJ0eXAiOiJKV...',
         ],
         'json' =&gt; [
-            'team_id' =&gt; 'itaque',
-            'user_id' =&gt; 'omnis',
+            'team_id' =&gt; 'sunt',
+            'user_id' =&gt; 'aperiam',
         ],
     ]
 );
@@ -12823,8 +12823,8 @@ import json
 
 url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/team-users'
 payload = {
-    "team_id": "itaque",
-    "user_id": "omnis"
+    "team_id": "sunt",
+    "user_id": "aperiam"
 }
 headers = {
   'Authorization': 'Bearer {YOUR_API_TOKEN}',
@@ -12984,7 +12984,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        dolorem
+                        voluptate
                     </div>
                 </div>
             </div>
@@ -13025,7 +13025,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request GET \
-    --get "https://vine.openfoodnetwork.org.au/api/v1/admin/team-users/dolorem" \
+    --get "https://vine.openfoodnetwork.org.au/api/v1/admin/team-users/voluptate" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -13037,7 +13037,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/team-users/dolorem"
+    "https://vine.openfoodnetwork.org.au/api/v1/admin/team-users/voluptate"
 );
 
 const headers = {
@@ -13058,7 +13058,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/team-users/dolorem';
+$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/team-users/voluptate';
 $response = $client-&gt;get(
     $url,
     [
@@ -13081,7 +13081,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/team-users/dolorem'
+url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/team-users/voluptate'
 headers = {
   'Authorization': 'Bearer {YOUR_API_TOKEN}',
   'Content-Type': 'application/json',
@@ -13308,7 +13308,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        et
+                        esse
                     </div>
                 </div>
             </div>
@@ -13377,7 +13377,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request PUT \
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/team-users/et" \
+    "https://vine.openfoodnetwork.org.au/api/v1/admin/team-users/esse" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -13393,7 +13393,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/team-users/et"
+    "https://vine.openfoodnetwork.org.au/api/v1/admin/team-users/esse"
 );
 
 const headers = {
@@ -13419,7 +13419,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/team-users/et';
+$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/team-users/esse';
 $response = $client-&gt;put(
     $url,
     [
@@ -13445,7 +13445,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/team-users/et'
+url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/team-users/esse'
 payload = {
     "send_invite_email": true
 }
@@ -13607,7 +13607,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        laudantium
+                        deleniti
                     </div>
                 </div>
             </div>
@@ -13648,7 +13648,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request DELETE \
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/team-users/laudantium" \
+    "https://vine.openfoodnetwork.org.au/api/v1/admin/team-users/deleniti" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -13660,7 +13660,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/team-users/laudantium"
+    "https://vine.openfoodnetwork.org.au/api/v1/admin/team-users/deleniti"
 );
 
 const headers = {
@@ -13681,7 +13681,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/team-users/laudantium';
+$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/team-users/deleniti';
 $response = $client-&gt;delete(
     $url,
     [
@@ -13704,7 +13704,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/team-users/laudantium'
+url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/team-users/deleniti'
 headers = {
   'Authorization': 'Bearer {YOUR_API_TOKEN}',
   'Content-Type': 'application/json',
@@ -14153,7 +14153,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        et
+                        magnam
                     </div>
                 </div>
             </div>
@@ -14199,7 +14199,7 @@ response.json()</code></pre>                                        </div>
     --header "Accept: application/json" \
     --header "X-Authorisation: JWT eyJ0eXAiOiJKV..." \
     --data "{
-    \"name\": \"et\"
+    \"name\": \"magnam\"
 }"
 </code></pre>                                        </div>
                                     </div>
@@ -14220,7 +14220,7 @@ const headers = {
 };
 
 let body = {
-    "name": "et"
+    "name": "magnam"
 };
 
 fetch(url, {
@@ -14246,7 +14246,7 @@ $response = $client-&gt;post(
             'X-Authorisation' =&gt; 'JWT eyJ0eXAiOiJKV...',
         ],
         'json' =&gt; [
-            'name' =&gt; 'et',
+            'name' =&gt; 'magnam',
         ],
     ]
 );
@@ -14263,7 +14263,7 @@ import json
 
 url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/teams'
 payload = {
-    "name": "et"
+    "name": "magnam"
 }
 headers = {
   'Authorization': 'Bearer {YOUR_API_TOKEN}',
@@ -14423,7 +14423,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        totam
+                        quia
                     </div>
                 </div>
             </div>
@@ -14464,7 +14464,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request GET \
-    --get "https://vine.openfoodnetwork.org.au/api/v1/admin/teams/totam" \
+    --get "https://vine.openfoodnetwork.org.au/api/v1/admin/teams/quia" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -14476,7 +14476,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/teams/totam"
+    "https://vine.openfoodnetwork.org.au/api/v1/admin/teams/quia"
 );
 
 const headers = {
@@ -14497,7 +14497,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/teams/totam';
+$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/teams/quia';
 $response = $client-&gt;get(
     $url,
     [
@@ -14520,7 +14520,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/teams/totam'
+url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/teams/quia'
 headers = {
   'Authorization': 'Bearer {YOUR_API_TOKEN}',
   'Content-Type': 'application/json',
@@ -14747,7 +14747,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        nisi
+                        qui
                     </div>
                 </div>
             </div>
@@ -14808,7 +14808,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request PUT \
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/teams/nisi" \
+    "https://vine.openfoodnetwork.org.au/api/v1/admin/teams/qui" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -14821,7 +14821,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/teams/nisi"
+    "https://vine.openfoodnetwork.org.au/api/v1/admin/teams/qui"
 );
 
 const headers = {
@@ -14842,7 +14842,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/teams/nisi';
+$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/teams/qui';
 $response = $client-&gt;put(
     $url,
     [
@@ -14865,7 +14865,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/teams/nisi'
+url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/teams/qui'
 headers = {
   'Authorization': 'Bearer {YOUR_API_TOKEN}',
   'Content-Type': 'application/json',
@@ -15024,7 +15024,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        corporis
+                        nemo
                     </div>
                 </div>
             </div>
@@ -15065,7 +15065,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request DELETE \
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/teams/corporis" \
+    "https://vine.openfoodnetwork.org.au/api/v1/admin/teams/nemo" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -15077,7 +15077,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/teams/corporis"
+    "https://vine.openfoodnetwork.org.au/api/v1/admin/teams/nemo"
 );
 
 const headers = {
@@ -15098,7 +15098,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/teams/corporis';
+$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/teams/nemo';
 $response = $client-&gt;delete(
     $url,
     [
@@ -15121,7 +15121,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/teams/corporis'
+url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/teams/nemo'
 headers = {
   'Authorization': 'Bearer {YOUR_API_TOKEN}',
   'Content-Type': 'application/json',
@@ -15570,7 +15570,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        reiciendis
+                        dolorem
                     </div>
                 </div>
             </div>
@@ -15594,7 +15594,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        illo
+                        accusantium
                     </div>
                 </div>
             </div>
@@ -15654,8 +15654,8 @@ response.json()</code></pre>                                        </div>
     --header "Accept: application/json" \
     --header "X-Authorisation: JWT eyJ0eXAiOiJKV..." \
     --data "{
-    \"user_id\": \"reiciendis\",
-    \"name\": \"illo\"
+    \"user_id\": \"dolorem\",
+    \"name\": \"accusantium\"
 }"
 </code></pre>                                        </div>
                                     </div>
@@ -15676,8 +15676,8 @@ const headers = {
 };
 
 let body = {
-    "user_id": "reiciendis",
-    "name": "illo"
+    "user_id": "dolorem",
+    "name": "accusantium"
 };
 
 fetch(url, {
@@ -15703,8 +15703,8 @@ $response = $client-&gt;post(
             'X-Authorisation' =&gt; 'JWT eyJ0eXAiOiJKV...',
         ],
         'json' =&gt; [
-            'user_id' =&gt; 'reiciendis',
-            'name' =&gt; 'illo',
+            'user_id' =&gt; 'dolorem',
+            'name' =&gt; 'accusantium',
         ],
     ]
 );
@@ -15721,8 +15721,8 @@ import json
 
 url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/user-personal-access-tokens'
 payload = {
-    "user_id": "reiciendis",
-    "name": "illo"
+    "user_id": "dolorem",
+    "name": "accusantium"
 }
 headers = {
   'Authorization': 'Bearer {YOUR_API_TOKEN}',
@@ -15879,7 +15879,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        aut
+                        enim
                     </div>
                 </div>
             </div>
@@ -15920,7 +15920,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request GET \
-    --get "https://vine.openfoodnetwork.org.au/api/v1/admin/user-personal-access-tokens/aut" \
+    --get "https://vine.openfoodnetwork.org.au/api/v1/admin/user-personal-access-tokens/enim" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -15932,7 +15932,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/user-personal-access-tokens/aut"
+    "https://vine.openfoodnetwork.org.au/api/v1/admin/user-personal-access-tokens/enim"
 );
 
 const headers = {
@@ -15953,7 +15953,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/user-personal-access-tokens/aut';
+$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/user-personal-access-tokens/enim';
 $response = $client-&gt;get(
     $url,
     [
@@ -15976,7 +15976,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/user-personal-access-tokens/aut'
+url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/user-personal-access-tokens/enim'
 headers = {
   'Authorization': 'Bearer {YOUR_API_TOKEN}',
   'Content-Type': 'application/json',
@@ -16200,7 +16200,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        aut
+                        qui
                     </div>
                 </div>
             </div>
@@ -16241,7 +16241,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request PUT \
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/user-personal-access-tokens/aut" \
+    "https://vine.openfoodnetwork.org.au/api/v1/admin/user-personal-access-tokens/qui" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -16253,7 +16253,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/user-personal-access-tokens/aut"
+    "https://vine.openfoodnetwork.org.au/api/v1/admin/user-personal-access-tokens/qui"
 );
 
 const headers = {
@@ -16274,7 +16274,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/user-personal-access-tokens/aut';
+$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/user-personal-access-tokens/qui';
 $response = $client-&gt;put(
     $url,
     [
@@ -16297,7 +16297,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/user-personal-access-tokens/aut'
+url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/user-personal-access-tokens/qui'
 headers = {
   'Authorization': 'Bearer {YOUR_API_TOKEN}',
   'Content-Type': 'application/json',
@@ -16453,7 +16453,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        sit
+                        iure
                     </div>
                 </div>
             </div>
@@ -16494,7 +16494,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request DELETE \
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/user-personal-access-tokens/sit" \
+    "https://vine.openfoodnetwork.org.au/api/v1/admin/user-personal-access-tokens/iure" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -16506,7 +16506,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/user-personal-access-tokens/sit"
+    "https://vine.openfoodnetwork.org.au/api/v1/admin/user-personal-access-tokens/iure"
 );
 
 const headers = {
@@ -16527,7 +16527,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/user-personal-access-tokens/sit';
+$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/user-personal-access-tokens/iure';
 $response = $client-&gt;delete(
     $url,
     [
@@ -16550,7 +16550,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/user-personal-access-tokens/sit'
+url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/user-personal-access-tokens/iure'
 headers = {
   'Authorization': 'Bearer {YOUR_API_TOKEN}',
   'Content-Type': 'application/json',
@@ -16999,7 +16999,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        aperiam
+                        dolor
                     </div>
                 </div>
             </div>
@@ -17026,7 +17026,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        dach.abigail@example.com
+                        altenwerth.dane@example.com
                     </div>
                 </div>
             </div>
@@ -17048,7 +17048,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        7
+                        20
                     </div>
                 </div>
             </div>
@@ -17094,9 +17094,9 @@ response.json()</code></pre>                                        </div>
     --header "Accept: application/json" \
     --header "X-Authorisation: JWT eyJ0eXAiOiJKV..." \
     --data "{
-    \"name\": \"aperiam\",
-    \"email\": \"dach.abigail@example.com\",
-    \"current_team_id\": 7
+    \"name\": \"dolor\",
+    \"email\": \"altenwerth.dane@example.com\",
+    \"current_team_id\": 20
 }"
 </code></pre>                                        </div>
                                     </div>
@@ -17117,9 +17117,9 @@ const headers = {
 };
 
 let body = {
-    "name": "aperiam",
-    "email": "dach.abigail@example.com",
-    "current_team_id": 7
+    "name": "dolor",
+    "email": "altenwerth.dane@example.com",
+    "current_team_id": 20
 };
 
 fetch(url, {
@@ -17145,9 +17145,9 @@ $response = $client-&gt;post(
             'X-Authorisation' =&gt; 'JWT eyJ0eXAiOiJKV...',
         ],
         'json' =&gt; [
-            'name' =&gt; 'aperiam',
-            'email' =&gt; 'dach.abigail@example.com',
-            'current_team_id' =&gt; 7,
+            'name' =&gt; 'dolor',
+            'email' =&gt; 'altenwerth.dane@example.com',
+            'current_team_id' =&gt; 20,
         ],
     ]
 );
@@ -17164,9 +17164,9 @@ import json
 
 url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/users'
 payload = {
-    "name": "aperiam",
-    "email": "dach.abigail@example.com",
-    "current_team_id": 7
+    "name": "dolor",
+    "email": "altenwerth.dane@example.com",
+    "current_team_id": 20
 }
 headers = {
   'Authorization': 'Bearer {YOUR_API_TOKEN}',
@@ -17326,7 +17326,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        iste
+                        consectetur
                     </div>
                 </div>
             </div>
@@ -17367,7 +17367,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request GET \
-    --get "https://vine.openfoodnetwork.org.au/api/v1/admin/users/iste" \
+    --get "https://vine.openfoodnetwork.org.au/api/v1/admin/users/consectetur" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -17379,7 +17379,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/users/iste"
+    "https://vine.openfoodnetwork.org.au/api/v1/admin/users/consectetur"
 );
 
 const headers = {
@@ -17400,7 +17400,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/users/iste';
+$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/users/consectetur';
 $response = $client-&gt;get(
     $url,
     [
@@ -17423,7 +17423,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/users/iste'
+url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/users/consectetur'
 headers = {
   'Authorization': 'Bearer {YOUR_API_TOKEN}',
   'Content-Type': 'application/json',
@@ -17650,7 +17650,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        eius
+                        quae
                     </div>
                 </div>
             </div>
@@ -17675,7 +17675,15 @@ response.json()</code></pre>                                        </div>
                                             <span class="sl-truncate sl-text-muted">boolean</span>
                                     </div>
                                     </div>
-                                    </div>
+                                            <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
+                <span>Example:</span> <!-- <span> important for spacing -->
+                <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
+                    <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
+                        1
+                    </div>
+                </div>
+            </div>
+            </div>
 </div>
 
             </div>
@@ -17711,13 +17719,13 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request PUT \
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/users/eius" \
+    "https://vine.openfoodnetwork.org.au/api/v1/admin/users/quae" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "X-Authorisation: JWT eyJ0eXAiOiJKV..." \
     --data "{
-    \"is_admin\": false
+    \"is_admin\": true
 }"
 </code></pre>                                        </div>
                                     </div>
@@ -17727,7 +17735,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/users/eius"
+    "https://vine.openfoodnetwork.org.au/api/v1/admin/users/quae"
 );
 
 const headers = {
@@ -17738,7 +17746,7 @@ const headers = {
 };
 
 let body = {
-    "is_admin": false
+    "is_admin": true
 };
 
 fetch(url, {
@@ -17753,7 +17761,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/users/eius';
+$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/users/quae';
 $response = $client-&gt;put(
     $url,
     [
@@ -17764,7 +17772,7 @@ $response = $client-&gt;put(
             'X-Authorisation' =&gt; 'JWT eyJ0eXAiOiJKV...',
         ],
         'json' =&gt; [
-            'is_admin' =&gt; false,
+            'is_admin' =&gt; true,
         ],
     ]
 );
@@ -17779,9 +17787,9 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/users/eius'
+url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/users/quae'
 payload = {
-    "is_admin": false
+    "is_admin": true
 }
 headers = {
   'Authorization': 'Bearer {YOUR_API_TOKEN}',
@@ -17941,7 +17949,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        alias
+                        delectus
                     </div>
                 </div>
             </div>
@@ -17982,7 +17990,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request DELETE \
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/users/alias" \
+    "https://vine.openfoodnetwork.org.au/api/v1/admin/users/delectus" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -17994,7 +18002,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/users/alias"
+    "https://vine.openfoodnetwork.org.au/api/v1/admin/users/delectus"
 );
 
 const headers = {
@@ -18015,7 +18023,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/users/alias';
+$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/users/delectus';
 $response = $client-&gt;delete(
     $url,
     [
@@ -18038,7 +18046,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/users/alias'
+url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/users/delectus'
 headers = {
   'Authorization': 'Bearer {YOUR_API_TOKEN}',
   'Content-Type': 'application/json',
