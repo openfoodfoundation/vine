@@ -71,15 +71,15 @@ Route::middleware('auth')->group(function () {
          * User's team is NOT a merchant of the voucher's service team
          */
         $teamMerchant = TeamMerchantTeam::where('team_id', $voucher->allocated_to_service_team_id)
-                                        ->where('merchant_team_id', $team->id)
-                                        ->first();
+            ->where('merchant_team_id', $team->id)
+            ->first();
 
         /**
          * User's team is NOT a merchant for the voucher set
          */
         $teamMerchantOfVoucherSet = VoucherSetMerchantTeam::where('voucher_set_id', $voucherSetId)
-                                        ->where('merchant_team_id', $team->id)
-                                        ->first();
+            ->where('merchant_team_id', $team->id)
+            ->first();
 
         if (!$teamMerchant || !$teamMerchantOfVoucherSet) {
             return Inertia::render('App/Vouchers/VoucherRedeemFailed', [
