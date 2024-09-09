@@ -87,13 +87,10 @@ function redeemVoucher(amount) {
 
     axios.post('/voucher-redemptions', payload).then(response => {
 
-        let responseText = (voucher.value.is_test) ? 'This was a test redemption. Do not provide the person with goods or services.' :
-            'Please provide the customer with their goods / services to the value of $' + (amount / 100).toFixed(2) + '.';
-
         Swal.fire({
             icon: 'success',
             title: 'Redeemed.',
-            text: responseText,
+            text: response.data.meta.message,
         });
 
         redeemingPartial.value = false
@@ -110,7 +107,9 @@ function redeemVoucher(amount) {
 
 watch(redeemingPartialDollarAmount, (val) => {
     redeemingPartialDollarAmountIsValid.value = (val > 0) &&
-        (parseInt((val * 100).toFixed(0)) <= parseInt(voucher.value.voucher_value_remaining.toFixed(0)))
+        (
+            parseInt((val * 100).toFixed(0)) <= parseInt(voucher.value.voucher_value_remaining.toFixed(0))
+        )
 })
 </script>
 
@@ -125,7 +124,7 @@ watch(redeemingPartialDollarAmount, (val) => {
         <div class="card">
 
             <div class="title text-2xl">
-                Redeem Voucher *** maybe short code here later ***
+                Redeem Voucher <span class="uppercase">{{ voucher.voucher_short_code }}</span>
             </div>
 
             <div class="my-4">

@@ -13,6 +13,7 @@ return new class() extends Migration
     {
         Schema::create('vouchers', function (Blueprint $table) {
             $table->uuid('id')->primary();
+            $table->string('voucher_short_code')->nullable()->index('v_vsc');
             $table->uuid('voucher_set_id')->index('v_vsi');
             $table->unsignedBigInteger('created_by_team_id')->index('v_ti');
             $table->unsignedBigInteger('allocated_to_service_team_id')->index('v_atsti');

@@ -26,6 +26,9 @@ enum ApiResponse: string
     case RESPONSE_REDEMPTION_FAILED_VOUCHER_ALREADY_FULLY_REDEEMED      = 'This voucher has already been fully redeemed, no redemption made this time.';
     case RESPONSE_REDEMPTION_FAILED_REQUESTED_AMOUNT_TOO_HIGH           = 'Requested amount is greater than voucher value remaining, no redemption made this time.';
     case RESPONSE_REDEMPTION_FAILED_TOO_MANY_ATTEMPTS                   = 'Too many redemption attempts, please wait.';
+
+    case RESPONSE_REDEMPTION_LIVE_REDEMPTION                            = 'This was a test redemption. Do NOT provide the person with goods or services.';
+    case RESPONSE_REDEMPTION_TEST_REDEMPTION                            = 'Please provide the customer with their goods / services to the value of XXX.';
     case RESPONSE_REDEMPTION_SUCCESSFUL                                 = 'Redemption successful.';
     case RESPONSE_UPDATED                                               = 'Updated';
 }
