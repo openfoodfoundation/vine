@@ -16,6 +16,7 @@ use App\Http\Controllers\Api\V1\ApiMyTeamsController;
 use App\Http\Controllers\Api\V1\ApiMyTeamVouchersController;
 use App\Http\Controllers\Api\V1\ApiShopsController;
 use App\Http\Controllers\Api\V1\ApiSystemStatisticsController;
+use App\Http\Controllers\Api\V1\ApiVoucherRedemptionsController;
 use App\Http\Middleware\CheckAdminStatus;
 use App\Http\Middleware\VerifyApiTokenSignature;
 use Illuminate\Support\Facades\Route;
@@ -198,6 +199,59 @@ Route::group(['prefix' => 'v1', 'middleware' => VerifyApiTokenSignature::class],
                         'abilities:' .
                         PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
                         PersonalAccessTokenAbility::MY_TEAM_VOUCHERS_DELETE->value,
+                    ]
+                );
+
+            /**
+             * Voucher Redemptions
+             */
+            Route::post('/voucher-redemptions', [ApiVoucherRedemptionsController::class, 'store'])
+                ->name('api.v1.voucher-redemptions.post')
+                ->middleware(
+                    [
+                        'abilities:' .
+                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                        PersonalAccessTokenAbility::VOUCHER_REDEMPTIONS_CREATE->value,
+                    ]
+                );
+
+            Route::get('/voucher-redemptions', [ApiVoucherRedemptionsController::class, 'index'])
+                ->name('api.v1.voucher-redemptions.getMany')
+                ->middleware(
+                    [
+                        'abilities:' .
+                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                        PersonalAccessTokenAbility::VOUCHER_REDEMPTIONS_READ->value,
+                    ]
+                );
+
+            Route::get('/voucher-redemptions/{id}', [ApiVoucherRedemptionsController::class, 'show'])
+                ->name('api.v1.voucher-redemptions.get')
+                ->middleware(
+                    [
+                        'abilities:' .
+                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                        PersonalAccessTokenAbility::VOUCHER_REDEMPTIONS_READ->value,
+                    ]
+                );
+
+            Route::put('/voucher-redemptions/{id}', [ApiVoucherRedemptionsController::class, 'update'])
+                ->name('api.v1.voucher-redemptions.put')
+                ->middleware(
+                    [
+                        'abilities:' .
+                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                        PersonalAccessTokenAbility::VOUCHER_REDEMPTIONS_UPDATE->value,
+                    ]
+                );
+
+            Route::delete('/voucher-redemptions/{id}', [ApiVoucherRedemptionsController::class, 'destroy'])
+                ->name('api.v1.voucher-redemptions.delete')
+                ->middleware(
+                    [
+                        'abilities:' .
+                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                        PersonalAccessTokenAbility::VOUCHER_REDEMPTIONS_DELETE->value,
                     ]
                 );
 

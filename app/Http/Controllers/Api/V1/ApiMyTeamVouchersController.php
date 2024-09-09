@@ -26,7 +26,9 @@ class ApiMyTeamVouchersController extends Controller
     /**
      * Set the related data the GET request is allowed to ask for
      */
-    public array $availableRelations = [];
+    public array $availableRelations = [
+        'voucherRedemptions',
+    ];
 
     public static array $searchableFields = [
         'id',
@@ -191,8 +193,8 @@ class ApiMyTeamVouchersController extends Controller
     public function show(string $id)
     {
 
-        $this->query = Voucher::where('team_id', Auth::user()->current_team_id)
-            ->orWhere('assigned_to_team_id', Auth::user()->current_team_id)
+        $this->query = Voucher::where('created_by_team_id', Auth::user()->current_team_id)
+            ->orWhere('allocated_to_service_team_id', Auth::user()->current_team_id)
             ->with($this->associatedData);
 
         $this->query = $this->updateReadQueryBasedOnUrl();

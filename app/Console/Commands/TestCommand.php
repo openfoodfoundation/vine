@@ -2,8 +2,9 @@
 
 namespace App\Console\Commands;
 
-use App\Models\PersonalAccessToken;
-use App\Services\PersonalAccessTokenService;
+use App\Models\User;
+use App\Models\Voucher;
+use App\Models\VoucherSet;
 use Illuminate\Console\Command;
 
 class TestCommand extends Command
@@ -27,9 +28,17 @@ class TestCommand extends Command
      */
     public function handle()
     {
-        $model = PersonalAccessToken::find(5);
-        $jwt   = PersonalAccessTokenService::generateJwtForPersonalAccessToken($model);
-        dd($jwt);
+
+        $me = User::find(3);
+
+        $voucherSet = VoucherSet::factory()->createQuietly([
+            'created_by_team_id' => $me->current_team_id,
+            'created_by_user_id' => $me->id,
+        ]);
+
+        $voucher = Voucher::factory()->createQuietly([
+            'voucher_set_id' => $voucherSet->id,
+        ]);
 
     }
 }

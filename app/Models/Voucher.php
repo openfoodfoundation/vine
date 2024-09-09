@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Voucher extends Model
@@ -71,4 +72,9 @@ class Voucher extends Model
     //            get: fn ($value, $attributes) => substr($attributes['id'], 0, 5),
     //        );
     //    }
+
+    public function voucherRedemptions(): HasMany
+    {
+        return $this->hasMany(VoucherRedemption::class, 'voucher_id', 'id');
+    }
 }
