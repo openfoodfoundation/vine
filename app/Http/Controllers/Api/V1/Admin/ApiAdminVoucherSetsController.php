@@ -207,7 +207,6 @@ class ApiAdminVoucherSetsController extends Controller
      * @param string $id
      *
      * @return JsonResponse
-     *
      */
     public function destroy(string $id)
     {

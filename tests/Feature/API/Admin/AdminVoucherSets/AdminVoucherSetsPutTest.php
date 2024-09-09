@@ -2,7 +2,6 @@
 
 namespace Tests\Feature\API\Admin\AdminVoucherSets;
 
-use App\Models\Voucher;
 use App\Models\VoucherSet;
 use Laravel\Sanctum\Sanctum;
 use PHPUnit\Framework\Attributes\Test;

@@ -6,7 +6,6 @@ namespace Tests\Feature\API\Admin\AdminVouchers;
 
 use App\Models\Team;
 use App\Models\Voucher;
-use App\Models\VoucherSet;
 use Laravel\Sanctum\Sanctum;
 use PHPUnit\Framework\Attributes\Test;
 use Tests\Feature\API\BaseAPITestCase;
