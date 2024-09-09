@@ -10,7 +10,6 @@ use App\Enums\ApiResponse;
 use App\Http\Controllers\Api\HandlesAPIRequests;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
@@ -21,7 +20,6 @@ class ApiFileUploadsController extends Controller
      * Use the HandlesAPIRequests trait to keep the controller lean
      */
     use HandlesAPIRequests;
-
 
     /**
      * Set the related data the GET request is allowed to ask for
@@ -47,15 +45,15 @@ class ApiFileUploadsController extends Controller
     public function store(): JsonResponse
     {
         $validationArray = [
-            'acceptedFileTypes'  => [
+            'acceptedFileTypes' => [
                 'required',
                 'string',
             ],
-            'folder'             => [
+            'folder' => [
                 'required',
                 'string',
             ],
-            'files'              => [
+            'files' => [
                 'required',
                 'array',
             ],
@@ -82,7 +80,8 @@ class ApiFileUploadsController extends Controller
             $this->responseCode = 400;
             $this->message      = $validator->errors()
                 ->first();
-        } else {
+        }
+        else {
 
             /**
              * Check accepted file types. If any incoming files
@@ -104,7 +103,7 @@ class ApiFileUploadsController extends Controller
                 }
             }
 
-            $files = $this->request->file('files');
+            $files      = $this->request->file('files');
             $visibility = $this->request->get('visibility');
 
             /**
@@ -123,7 +122,8 @@ class ApiFileUploadsController extends Controller
 
                 if (!isset($visibility) || ($visibility != 'public')) {
                     // Don't make it public
-                } else {
+                }
+                else {
                     /**
                      * Set the file as public
                      */
@@ -133,7 +133,7 @@ class ApiFileUploadsController extends Controller
                 $returnFilePathOnly = $this->request->get('returnFilePathOnly');
 
                 $this->data[] = (isset($returnFilePathOnly) && ($returnFilePathOnly != null)) ? $path : Storage::url($path);
-//                $this->data = $path;
+                //                $this->data = $path;
             }
 
             $this->message = ApiResponse::RESPONSE_SAVED->value;
@@ -147,6 +147,8 @@ class ApiFileUploadsController extends Controller
 
     /**
      * GET /{id}
+     *
+     * @param int $id
      */
     public function show(int $id): JsonResponse
     {
@@ -166,11 +168,13 @@ class ApiFileUploadsController extends Controller
 
     /**
      * DELETE /{id}
+     *
+     * @param int $id
      */
     public function destroy(int $id): JsonResponse
     {
         $this->responseCode = 403;
-        $this->message      =ApiResponse::RESPONSE_METHOD_NOT_ALLOWED->value;
+        $this->message      = ApiResponse::RESPONSE_METHOD_NOT_ALLOWED->value;
 
         return $this->respond();
     }

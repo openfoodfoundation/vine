@@ -17,10 +17,8 @@ use Imagick;
 use ImagickException;
 use Intervention\Image\Laravel\Facades\Image;
 
-
 class VoucherTemplateService
 {
-
     public const BLEED_LINE_AMOUNT_MILLIMETRES = 5;
 
     public static function generateWorkingVoucherTemplate(VoucherTemplate $voucherTemplate): void
@@ -43,27 +41,33 @@ class VoucherTemplateService
 
         $code = 'AB1234';
 
-        $img->text($voucherTemplate->voucher_code_prefix.' '.$code, $voucherTemplate->voucher_code_x, $voucherTemplate->voucher_code_y, function ($font) use ($voucherTemplate) {
+        $img->text($voucherTemplate->voucher_code_prefix . ' ' . $code, $voucherTemplate->voucher_code_x, $voucherTemplate->voucher_code_y, function ($font) use ($voucherTemplate) {
             $font->file(public_path($voucherTemplate->overlay_font_path));
             $font->size($voucherTemplate->voucher_code_size_px);
         });
 
-        $img->text($voucherTemplate->voucher_expiry_prefix.' 11-Jan-2025', $voucherTemplate->voucher_expiry_x, $voucherTemplate->voucher_expiry_y,
+        $img->text(
+            $voucherTemplate->voucher_expiry_prefix . ' 11-Jan-2025',
+            $voucherTemplate->voucher_expiry_x,
+            $voucherTemplate->voucher_expiry_y,
             function ($font) use ($voucherTemplate) {
                 $font->file(public_path($voucherTemplate->overlay_font_path));
                 $font->size($voucherTemplate->voucher_expiry_size_px);
-            });
+            }
+        );
 
-        $img->text($voucherTemplate->voucher_value_prefix.'25.99', $voucherTemplate->voucher_value_x, $voucherTemplate->voucher_value_y, function ($font) use ($voucherTemplate) {
+        $img->text($voucherTemplate->voucher_value_prefix . '25.99', $voucherTemplate->voucher_value_x, $voucherTemplate->voucher_value_y, function ($font) use ($voucherTemplate) {
             $font->file(public_path($voucherTemplate->overlay_font_path));
             $font->size($voucherTemplate->voucher_value_size_px);
         });
 
-
-        Storage::put($voucherTemplate->voucher_example_template_path, (string)$img->encode());
+        Storage::put($voucherTemplate->voucher_example_template_path, (string) $img->encode());
     }
 
     /**
+     * @param VoucherTemplate $voucherTemplate
+     * @param Voucher         $voucher
+     *
      * @throws Exception
      */
     public static function generateVoucherTemplate(VoucherTemplate $voucherTemplate, Voucher $voucher): void
@@ -87,48 +91,56 @@ class VoucherTemplateService
         $code = Str::substr($voucher->id, 0, 5);
         $code = strtoupper($code);
 
-        $img->text($voucherTemplate->voucher_code_prefix .' '. $code, $voucherTemplate->voucher_id_x, $voucherTemplate->voucher_id_y, function ($font) use ($voucherTemplate) {
+        $img->text($voucherTemplate->voucher_code_prefix . ' ' . $code, $voucherTemplate->voucher_id_x, $voucherTemplate->voucher_id_y, function ($font) use ($voucherTemplate) {
             $font->file(public_path($voucherTemplate->overlay_font_path));
             $font->size($voucherTemplate->voucher_id_size_px);
         });
 
         $expiry = ($voucher->expires_at == null) ? '---' : $voucher->expires_at->format('d-M-Y');
-        $img->text($voucherTemplate->voucher_expiry_prefix.' '.$expiry, $voucherTemplate->voucher_expiry_x, $voucherTemplate->voucher_expiry_y,
+        $img->text(
+            $voucherTemplate->voucher_expiry_prefix . ' ' . $expiry,
+            $voucherTemplate->voucher_expiry_x,
+            $voucherTemplate->voucher_expiry_y,
             function ($font) use ($voucherTemplate) {
                 $font->file(public_path($voucherTemplate->overlay_font_path));
                 $font->size($voucherTemplate->voucher_expiry_size_px);
-            });
+            }
+        );
 
         $value = number_format(($voucher->voucher_value_original / 100), 2);
-        $img->text($voucherTemplate->voucher_value_prefix . $value, $voucherTemplate->voucher_value_x, $voucherTemplate->voucher_value_y,
+        $img->text(
+            $voucherTemplate->voucher_value_prefix . $value,
+            $voucherTemplate->voucher_value_x,
+            $voucherTemplate->voucher_value_y,
             function ($font) use ($voucherTemplate) {
                 $font->file(public_path($voucherTemplate->overlay_font_path));
                 $font->size($voucherTemplate->voucher_value_size_px);
-            });
+            }
+        );
 
         // Place the branded file in different locations
         $path = '/voucher-sets/' . $voucher->voucher_set_id . '/vouchers/all/branded/' . $voucher->id . '.png';
-        Storage::put($path, (string)$img->encode());
+        Storage::put($path, (string) $img->encode());
 
         $path = '/voucher-sets/' . $voucher->voucher_set_id . '/vouchers/individual/' . $voucher->id . '/branded/voucher-branded.png';
-        Storage::put($path, (string)$img->encode());
+        Storage::put($path, (string) $img->encode());
 
-
-//        dispatch(new GenerateStorageBrandedPDF($voucher));
+        //        dispatch(new GenerateStorageBrandedPDF($voucher));
 
     }
 
     /**
      * Generate a PDF branded card for a given voucher, so long as it has a template
      *
+     * @param Voucher $voucher
+     *
      * @throws Exception
      */
     public static function generateAndSavePdfFromVoucherImageFile(Voucher $voucher): void
     {
         $localImageFile = self::downloadVoucherImageFileFromS3($voucher);
-        if($localImageFile)
-        {
-            $localPdfFile   = self::convertLocalImageToPdf($localImageFile);
+        if ($localImageFile) {
+            $localPdfFile = self::convertLocalImageToPdf($localImageFile);
 
             self::uploadVoucherPdfToS3($localPdfFile, $voucher);
         }
@@ -137,7 +149,9 @@ class VoucherTemplateService
 
     /**
      * @param Voucher $voucher
+     *
      * @return string
+     *
      * @throws Exception
      */
     public static function downloadVoucherImageFileFromS3(Voucher $voucher): string|bool
@@ -147,7 +161,8 @@ class VoucherTemplateService
         $exists = Storage::exists($remotePathAllPNG);
 
         if (!$exists) {
-            Log::info('Voucher branded image does not exist for voucher ' . $voucher->id.'. Skipping.');
+            Log::info('Voucher branded image does not exist for voucher ' . $voucher->id . '. Skipping.');
+
             return false;
         }
 
@@ -159,13 +174,14 @@ class VoucherTemplateService
         return $fileName;
     }
 
-
     /**
      * Upload an output file to S3
      *
-     * @param string $fileName
+     * @param string  $fileName
      * @param Voucher $voucher
+     *
      * @return bool
+     *
      * @throws Exception
      */
     public static function uploadVoucherPdfToS3(string $fileName, Voucher $voucher): bool
@@ -180,13 +196,11 @@ class VoucherTemplateService
             throw new Exception('Local file not found: ' . $fileName);
         }
 
-
         $contents = Storage::disk('local')->get($fileName);
 
         $remotePathAll = '/voucher-sets/' . $voucher->voucher_set_id . '/vouchers/all/branded/pdf/' . $fileName;
 
         $remotePathIndividual = '/voucher-sets/' . $voucher->voucher_set_id . '/vouchers/individual/' . $voucher->id . '/branded/pdf/voucher-branded.pdf';
-
 
         Storage::put($remotePathAll, $contents);
         Storage::put($remotePathIndividual, $contents);
@@ -200,7 +214,9 @@ class VoucherTemplateService
 
     /**
      * @param string $fileName
+     *
      * @return string
+     *
      * @throws ImagickException
      */
     public static function convertLocalImageToPdf(string $fileName): string
@@ -222,7 +238,7 @@ class VoucherTemplateService
         /**
          * Save it locally
          */
-        $image->writeImage(storage_path('app/'.$fileName.'.pdf'));
+        $image->writeImage(storage_path('app/' . $fileName . '.pdf'));
 
         /**
          * Clean up
@@ -243,7 +259,6 @@ class VoucherTemplateService
             Storage::disk('local')->delete($fileName);
         }
 
-        return $fileName.'.pdf';
+        return $fileName . '.pdf';
     }
-
 }

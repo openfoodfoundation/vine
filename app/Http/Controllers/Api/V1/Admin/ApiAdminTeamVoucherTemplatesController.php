@@ -25,15 +25,16 @@ class ApiAdminTeamVoucherTemplatesController extends Controller
      * @var array
      */
     public array $availableRelations = [
-        'team'
+        'team',
     ];
 
     public static array $searchableFields = [
-        'team_id'
+        'team_id',
     ];
 
     /**
      * GET /
+     *
      * @throws DisallowedApiFieldException
      */
     public function index(): JsonResponse
@@ -51,35 +52,35 @@ class ApiAdminTeamVoucherTemplatesController extends Controller
     public function store(): JsonResponse
     {
         $validationArray = [
-            'team_id'                => [
+            'team_id' => [
                 'required',
-                Rule::exists('teams', 'id')
+                Rule::exists('teams', 'id'),
             ],
-            'voucher_template_path'  => [
+            'voucher_template_path' => [
                 'required',
                 'string',
             ],
-            'voucher_qr_size_px'     => [
+            'voucher_qr_size_px' => [
                 'required',
                 'integer',
             ],
-            'voucher_qr_x'           => [
+            'voucher_qr_x' => [
                 'required',
                 'integer',
             ],
-            'voucher_qr_y'           => [
+            'voucher_qr_y' => [
                 'required',
                 'integer',
             ],
-            'voucher_code_size_px'   => [
+            'voucher_code_size_px' => [
                 'required',
                 'integer',
             ],
-            'voucher_code_x'         => [
+            'voucher_code_x' => [
                 'required',
                 'integer',
             ],
-            'voucher_code_y'         => [
+            'voucher_code_y' => [
                 'required',
                 'integer',
             ],
@@ -87,27 +88,27 @@ class ApiAdminTeamVoucherTemplatesController extends Controller
                 'required',
                 'integer',
             ],
-            'voucher_expiry_x'       => [
+            'voucher_expiry_x' => [
                 'required',
                 'integer',
             ],
-            'voucher_expiry_y'       => [
+            'voucher_expiry_y' => [
                 'required',
                 'integer',
             ],
-            'voucher_value_size_px'  => [
+            'voucher_value_size_px' => [
                 'required',
                 'integer',
             ],
-            'voucher_value_x'        => [
+            'voucher_value_x' => [
                 'required',
                 'integer',
             ],
-            'voucher_value_y'        => [
+            'voucher_value_y' => [
                 'required',
                 'integer',
             ],
-            'overlay_font_path'      => [
+            'overlay_font_path' => [
                 'required',
                 'string',
             ],
@@ -118,8 +119,9 @@ class ApiAdminTeamVoucherTemplatesController extends Controller
         if ($validator->fails()) {
             $this->responseCode = 400;
             $this->message      = $validator->errors()
-                                            ->first();
-        } else {
+                ->first();
+        }
+        else {
             try {
                 $model = new VoucherTemplate();
                 foreach ($validationArray as $key => $validationRule) {
@@ -151,11 +153,13 @@ class ApiAdminTeamVoucherTemplatesController extends Controller
                 $this->data    = $model;
                 $this->message = ApiResponse::RESPONSE_SAVED->value;
 
-            } catch (Exception $exception) {
+            }
+            catch (Exception $exception) {
                 $this->responseCode = 400;
                 $this->message      = ApiResponse::RESPONSE_ERROR->value . ': ' . $exception->getMessage();
             }
         }
+
         /**
          * Respond
          */
@@ -164,6 +168,9 @@ class ApiAdminTeamVoucherTemplatesController extends Controller
 
     /**
      * GET /{id}
+     *
+     * @param int $id
+     *
      * @throws DisallowedApiFieldException
      */
     public function show(int $id): JsonResponse
@@ -177,39 +184,41 @@ class ApiAdminTeamVoucherTemplatesController extends Controller
 
     /**
      * PUT /{id}
+     *
+     * @param int $id
      */
     public function update(int $id): JsonResponse
     {
         $validationArray = [
-            'voucher_template_path'  => [
+            'voucher_template_path' => [
                 'required',
                 'string',
             ],
-            'voucher_qr_size_px'     => [
+            'voucher_qr_size_px' => [
                 'sometimes',
                 'integer',
             ],
-            'voucher_qr_x'           => [
+            'voucher_qr_x' => [
                 'sometimes',
                 'integer',
             ],
-            'voucher_qr_y'           => [
+            'voucher_qr_y' => [
                 'sometimes',
                 'integer',
             ],
-            'voucher_code_size_px'   => [
+            'voucher_code_size_px' => [
                 'sometimes',
                 'integer',
             ],
-            'voucher_code_x'         => [
+            'voucher_code_x' => [
                 'sometimes',
                 'integer',
             ],
-            'voucher_code_y'         => [
+            'voucher_code_y' => [
                 'sometimes',
                 'integer',
             ],
-            'voucher_code_prefix'    => [
+            'voucher_code_prefix' => [
                 'sometimes',
                 'nullable',
             ],
@@ -217,43 +226,43 @@ class ApiAdminTeamVoucherTemplatesController extends Controller
                 'sometimes',
                 'integer',
             ],
-            'voucher_expiry_x'       => [
+            'voucher_expiry_x' => [
                 'sometimes',
                 'integer',
             ],
-            'voucher_expiry_y'       => [
+            'voucher_expiry_y' => [
                 'sometimes',
                 'nullable',
                 'integer',
             ],
-            'voucher_expiry_prefix'  => [
+            'voucher_expiry_prefix' => [
                 'sometimes',
                 'nullable',
             ],
-            'voucher_value_size_px'  => [
+            'voucher_value_size_px' => [
                 'sometimes',
                 'integer',
             ],
-            'voucher_value_x'        => [
+            'voucher_value_x' => [
                 'sometimes',
                 'integer',
             ],
-            'voucher_value_y'        => [
+            'voucher_value_y' => [
                 'sometimes',
                 'integer',
             ],
-            'voucher_value_prefix'   => [
+            'voucher_value_prefix' => [
                 'sometimes',
                 'nullable',
             ],
-            'overlay_font_path'      => [
+            'overlay_font_path' => [
                 'sometimes',
                 'string',
             ],
-            'archive'                => [
+            'archive' => [
                 'sometimes',
                 'boolean',
-            ]
+            ],
         ];
 
         $validator = Validator::make($this->request->all(), $validationArray);
@@ -261,17 +270,19 @@ class ApiAdminTeamVoucherTemplatesController extends Controller
         if ($validator->fails()) {
             $this->responseCode = 400;
             $this->message      = $validator->errors()
-                                            ->first();
-        } else {
+                ->first();
+        }
+        else {
             $model = VoucherTemplate::find($id);
 
             if (!$model) {
                 $this->responseCode = 404;
                 $this->message      = ApiResponse::RESPONSE_NOT_FOUND->value;
-            } else {
+            }
+            else {
 
                 $ignoreKeys = [
-                    'archive'
+                    'archive',
                 ];
 
                 foreach ($validationArray as $key => $validationRule) {
@@ -292,7 +303,6 @@ class ApiAdminTeamVoucherTemplatesController extends Controller
                     $model->archived_at = ($archiveRequest) ? now() : null;
 
                 }
-
 
                 $model->save();
 
@@ -316,7 +326,8 @@ class ApiAdminTeamVoucherTemplatesController extends Controller
                 $this->message = 'hello?';
                 $this->data    = $model;
                 try {
-                } catch (Exception $e) {
+                }
+                catch (Exception $e) {
                     $this->responseCode = 500;
                     $this->message      = ApiResponse::RESPONSE_ERROR->value . ':' . $e->getMessage();
                 }
@@ -328,22 +339,26 @@ class ApiAdminTeamVoucherTemplatesController extends Controller
 
     /**
      * DELETE /{id}
+     *
+     * @param int $id
      */
     public function destroy(int $id): JsonResponse
     {
         try {
             $model = VoucherTemplate::where('team_id', Auth::user()->current_team_id)
-                                    ->find($id);
+                ->find($id);
 
             if (!$model) {
                 $this->responseCode = 404;
                 $this->message      = ApiResponse::RESPONSE_NOT_FOUND->value;
-            } else {
+            }
+            else {
                 $model->delete();
 
                 $this->message = ApiResponse::RESPONSE_DELETED->value;
             }
-        } catch (Exception $e) {
+        }
+        catch (Exception $e) {
             $this->responseCode = 500;
             $this->message      = ApiResponse::RESPONSE_ERROR->value . ':' . $e->getMessage();
         }

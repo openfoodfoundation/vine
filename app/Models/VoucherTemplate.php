@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\Storage;
-use Laravel\Sanctum\PersonalAccessToken as SanctumPersonalAccessToken;
 
 class VoucherTemplate extends Model
 {
@@ -16,14 +15,13 @@ class VoucherTemplate extends Model
     use SoftDeletes;
 
     protected $appends = [
-        'example_template_image_url'
+        'example_template_image_url',
     ];
 
     public function team(): BelongsTo
     {
         return $this->belongsTo(Team::class);
     }
-
 
     /**
      * Get the image url from AWS
@@ -33,11 +31,10 @@ class VoucherTemplate extends Model
     public function exampleTemplateImageUrl(): Attribute
     {
         return Attribute::make(
-            get: fn ($value, $attributes) => (!is_null($this->voucher_example_template_path))? Storage::temporaryUrl(
+            get: fn ($value, $attributes) => (!is_null($this->voucher_example_template_path)) ? Storage::temporaryUrl(
                 path: $this->voucher_example_template_path,
                 expiration: now()->addHour()
             ) : '',
         );
     }
-
 }

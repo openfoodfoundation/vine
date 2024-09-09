@@ -17,7 +17,7 @@ class VoucherTemplateFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+
         ];
     }
 }

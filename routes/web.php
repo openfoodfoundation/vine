@@ -185,7 +185,6 @@ Route::middleware('auth')->group(function () {
             ]);
         })->name('admin.team');
 
-
         Route::get('/team-voucher-templates/new', function () {
             return Inertia::render('Admin/VoucherTemplates/VoucherTemplateNew');
         })->name('admin.team-voucher-templates.new');
