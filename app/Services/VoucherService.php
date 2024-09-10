@@ -67,7 +67,7 @@ class VoucherService
 
     /**
      * Generates a random short code for a voucher of the format: [A-Z][A-Z][0-9][0-9][0-9][0-9].
-     * AKA: Two uppercase letters followed by digits.
+     * AKA: Two uppercase letters followed by four digits.
      *
      * This function is not for ASSIGNING the short code, it only GENERATES it.
      * The functionality is isolated for testing purposes. The assignment occurs in the following job.
