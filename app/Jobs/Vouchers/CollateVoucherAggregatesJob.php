@@ -4,11 +4,9 @@ namespace App\Jobs\Vouchers;
 
 use App\Models\Voucher;
 use App\Services\VoucherService;
+use Exception;
 use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Foundation\Queue\Queueable;
-use Illuminate\Queue\InteractsWithQueue;
-use Illuminate\Queue\SerializesModels;
 
 class CollateVoucherAggregatesJob implements ShouldQueue
 {
@@ -16,15 +14,15 @@ class CollateVoucherAggregatesJob implements ShouldQueue
 
     /**
      * Create a new job instance.
+     *
+     * @param Voucher $voucher
      */
-    public function __construct(public Voucher $voucher)
-    {
-        //
-    }
+    public function __construct(public Voucher $voucher) {}
 
     /**
      * Execute the job.
-     * @throws \Exception
+     *
+     * @throws Exception
      */
     public function handle(): void
     {

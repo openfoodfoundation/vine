@@ -23,7 +23,6 @@ class Voucher extends Model
     protected $casts     = [
         'expires_at' => 'datetime',
     ];
-
     protected $dispatchesEvents = [
         'created' => VoucherWasCreated::class,
         'updated' => VoucherWasUpdated::class,
