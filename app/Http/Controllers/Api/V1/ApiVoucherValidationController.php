@@ -72,21 +72,6 @@ class ApiVoucherValidationController extends Controller
             'value' => [
                 'required',
                 'string',
-                function ($attribute, $value, $fail) {
-
-                    $type = $this->request->input('type');
-
-                    if ($type === 'voucher_id') {
-                        if (!Voucher::where('id', $value)->exists()) {
-                            $fail('The selected voucher ID is invalid.');
-                        }
-                    }
-                    elseif ($type === 'voucher_short_code') {
-                        if (!Voucher::where('voucher_short_code', $value)->exists()) {
-                            $fail('The selected voucher code is invalid.');
-                        }
-                    }
-                },
             ],
         ];
 
@@ -101,9 +86,13 @@ class ApiVoucherValidationController extends Controller
 
         try {
 
+            /**
+             * Retrieve the voucher, if it exists, using the provided identifier
+             */
+            $identifierType    = $this->request->get('type');
             $voucherIdentifier = $this->request->get('value');
 
-            $voucher = match ($this->request->get('type')) {
+            $voucher = match ($identifierType) {
                 'voucher_id'   => Voucher::find($voucherIdentifier),
                 'voucher_code' => Voucher::where('voucher_short_code', $voucherIdentifier)->first(),
             };
@@ -115,19 +104,28 @@ class ApiVoucherValidationController extends Controller
                 return $this->respond();
             }
 
-            $requestSignature = $this->request->header(self::$hmacSignatureHeader, default: '');
-
+            /**
+             * Recreate the expected HMAC signature
+             */
             $data = $this->request->getContent();
 
-            $verificationSignature = hash_hmac('sha256', $data, 'Secret');
+            $expectedSignature = hash_hmac('sha256', $data, 'Secret');
 
-            if (!hash_equals($verificationSignature, $requestSignature)) {
+            /**
+             * Test the provided HMAC signature against the expected one
+             */
+            $providedSignature = $this->request->header(self::$hmacSignatureHeader, default: '');
+
+            if (!hash_equals($expectedSignature, $providedSignature)) {
                 $this->responseCode = 401;
                 $this->message      = ApiResponse::RESPONSE_HMAC_SIGNATURE_INCORRECT->value;
 
                 return $this->respond();
             }
 
+            /**
+             * At this point everything checks out, we can return the voucher details
+             */
             $this->data = $voucher;
 
         }
