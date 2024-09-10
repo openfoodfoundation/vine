@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Events\VoucherRedemptions\VoucherRedemptionCreated;
+use App\Events\VoucherRedemptions\VoucherRedemptionWasCreated;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -13,6 +13,6 @@ class VoucherRedemption extends Model
     use SoftDeletes;
 
     protected $dispatchesEvents = [
-        'created' => VoucherRedemptionCreated::class,
+        'created' => VoucherRedemptionWasCreated::class,
     ];
 }

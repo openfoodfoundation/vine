@@ -2,12 +2,12 @@
 
 namespace App\Listeners\VoucherRedemptions;
 
-use App\Events\VoucherRedemptions\VoucherRedemptionCreated;
+use App\Events\VoucherRedemptions\VoucherRedemptionWasCreated;
 use App\Models\Voucher;
 use App\Services\VoucherService;
 use Exception;
 
-class HandleVoucherRedemptionCreatedEvent
+class HandleVoucherRedemptionWasCreatedEvent
 {
     /**
      * Create the event listener.
@@ -17,11 +17,11 @@ class HandleVoucherRedemptionCreatedEvent
     /**
      * Handle the event.
      *
-     * @param VoucherRedemptionCreated $event
+     * @param VoucherRedemptionWasCreated $event
      *
      * @throws Exception
      */
-    public function handle(VoucherRedemptionCreated $event): void
+    public function handle(VoucherRedemptionWasCreated $event): void
     {
         $voucher = Voucher::find($event->voucherRedemption->voucher_id);
 
