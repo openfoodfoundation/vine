@@ -52,7 +52,6 @@ class ApiVoucherValidationController extends Controller
         description: 'Verify the validity of a voucher',
         authenticated: true
     )]
-    #[Authenticated]
     #[Response(
         content: '',
         status: 200,
