@@ -18,6 +18,7 @@ import PrimaryButton from "@/Components/PrimaryButton.vue";
 import DangerButton from "@/Components/DangerButton.vue";
 import VoucherSetsComponent from "@/Components/Admin/Vouchers/VoucherSetsComponent.vue";
 import VouchersComponent from "@/Components/Admin/Vouchers/VouchersComponent.vue";
+import AdminTeamVoucherTemplatesList from "@/Components/Admin/Teams/AdminTeamVoucherTemplatesList.vue";
 
 dayjs.extend(relativeTime);
 dayjs.extend(utc);
@@ -277,6 +278,13 @@ function updateTeam() {
             </div>
             <VouchersComponent :team-id="$props.id" filter-vouchers="allocated_to_service_team_id"></VouchersComponent>
         </div>
+
+        <div class="container mx-auto" v-if="team.id">
+            <AdminTeamVoucherTemplatesList :team="team"></AdminTeamVoucherTemplatesList>
+        </div>
+
+
+        <div class="p-32"></div>
 
     </AuthenticatedLayout>
 </template>
