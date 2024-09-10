@@ -85,24 +85,6 @@ class ApiVoucherValidationController extends Controller
         try {
 
             /**
-             * Retrieve the voucher, if it exists, using the provided identifier
-             */
-            $identifierType    = $this->request->get('type');
-            $voucherIdentifier = $this->request->get('value');
-
-            $voucher = match ($identifierType) {
-                'voucher_id'   => Voucher::find($voucherIdentifier),
-                'voucher_code' => Voucher::where('voucher_short_code', $voucherIdentifier)->first(),
-            };
-
-            if (!$voucher) {
-                $this->responseCode = 404;
-                $this->message      = ApiResponse::RESPONSE_NOT_FOUND->value;
-
-                return $this->respond();
-            }
-
-            /**
              * Recreate the expected HMAC signature
              */
             $data = $this->request->getContent();
@@ -117,6 +99,24 @@ class ApiVoucherValidationController extends Controller
             if (!hash_equals($expectedSignature, $providedSignature)) {
                 $this->responseCode = 401;
                 $this->message      = ApiResponse::RESPONSE_HMAC_SIGNATURE_INCORRECT->value;
+
+                return $this->respond();
+            }
+
+            /**
+             * Retrieve the voucher, if it exists, using the provided identifier
+             */
+            $identifierType    = $this->request->get('type');
+            $voucherIdentifier = $this->request->get('value');
+
+            $voucher = match ($identifierType) {
+                'voucher_id'   => Voucher::find($voucherIdentifier),
+                'voucher_code' => Voucher::where('voucher_short_code', $voucherIdentifier)->first(),
+            };
+
+            if (!$voucher) {
+                $this->responseCode = 404;
+                $this->message      = ApiResponse::RESPONSE_NOT_FOUND->value;
 
                 return $this->respond();
             }
