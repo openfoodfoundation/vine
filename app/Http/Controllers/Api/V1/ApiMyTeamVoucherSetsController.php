@@ -1,4 +1,5 @@
 <?php
+
 /** @noinspection PhpUnusedParameterInspection */
 
 namespace App\Http\Controllers\Api\V1;
@@ -110,7 +111,8 @@ class ApiMyTeamVoucherSetsController extends Controller
         if ($this->request->has('filter-voucher-sets')) {
             $filterField = $this->request->get('filter-voucher-sets');
             $this->query = VoucherSet::where($filterField, Auth::user()->current_team_id)->with($this->associatedData);
-        } else {
+        }
+        else {
             $this->query = VoucherSet::where('created_by_team_id', Auth::user()->current_team_id)
                 ->orWhere('allocated_to_service_team_id', Auth::user()->current_team_id)
                 ->with($this->associatedData);

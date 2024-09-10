@@ -1,4 +1,5 @@
 <?php
+
 /** @noinspection PhpUndefinedFieldInspection */
 
 namespace Tests\Feature\API\App\MyTeamVoucherSets;
