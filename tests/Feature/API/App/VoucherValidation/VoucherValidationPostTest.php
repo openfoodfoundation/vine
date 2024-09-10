@@ -52,7 +52,6 @@ class VoucherValidationPostTest extends BaseAPITestCase
         $response->assertStatus(400);
     }
 
-
     #[Test]
     public function itCanValidateVoucherUsingShortCode()
     {

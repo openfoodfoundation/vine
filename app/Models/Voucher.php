@@ -19,7 +19,6 @@ class Voucher extends Model
 
     protected $keyType   = 'string';
     public $incrementing = false;
-
     protected $casts     = [
         'expires_at' => 'datetime',
     ];
