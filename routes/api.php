@@ -17,19 +17,45 @@ use App\Http\Controllers\Api\V1\ApiMyTeamVouchersController;
 use App\Http\Controllers\Api\V1\ApiShopsController;
 use App\Http\Controllers\Api\V1\ApiSystemStatisticsController;
 use App\Http\Controllers\Api\V1\ApiVoucherRedemptionsController;
+use App\Http\Controllers\Api\V1\ApiVoucherValidationController;
 use App\Http\Middleware\CheckAdminStatus;
+use App\Http\Middleware\PreventTooManyRequestsMiddleware;
 use App\Http\Middleware\VerifyApiTokenSignature;
 use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix' => 'v1', 'middleware' => VerifyApiTokenSignature::class], function () {
 
     /**
+     * Open routes (non-authenticated)
+     */
+
+    /**
+     * Voucher Validation (for unattended redemptions)
+     */
+    Route::middleware(PreventTooManyRequestsMiddleware::class)->group(function () {
+
+        Route::post('/voucher-validation', [ApiVoucherValidationController::class, 'store'])
+            ->name('api.v1.voucher-validation.post');
+
+        Route::get('/voucher-validation', [ApiVoucherValidationController::class, 'index'])
+            ->name('api.v1.voucher-validation.getMany');
+
+        Route::get('/voucher-validation/{id}', [ApiVoucherValidationController::class, 'show'])
+            ->name('api.v1.voucher-validation.get');
+
+        Route::put('/voucher-validation/{id}', [ApiVoucherValidationController::class, 'update'])
+            ->name('api.v1.voucher-validation.put');
+
+        Route::delete('/voucher-validation/{id}', [ApiVoucherValidationController::class, 'destroy'])
+            ->name('api.v1.voucher-validation.delete');
+
+    });
+
+    /**
      * App API Routes
      */
     Route::middleware(['auth:sanctum'])
         ->group(function () {
-
-            //            Route::resource('/my-team', ApiMyTeamController::class)->names('api.v1.my-team');
 
             /**
              * My Team
@@ -361,59 +387,58 @@ Route::group(['prefix' => 'v1', 'middleware' => VerifyApiTokenSignature::class],
                     ]
                 );
 
-        });
+            /**
+             * Admin Api Routes
+             */
+            Route::prefix('admin')
+                ->middleware(['auth:sanctum', CheckAdminStatus::class])
+                ->group(function () {
 
-    /**
-     * Admin Api Routes
-     */
-    Route::prefix('admin')
-        ->middleware(['auth:sanctum', CheckAdminStatus::class])
-        ->group(function () {
+                    Route::resource(
+                        '/audit-items',
+                        ApiAdminAuditItemsController::class
+                    )->names('api.v1.admin.audit-items');
 
-            Route::resource(
-                '/audit-items',
-                ApiAdminAuditItemsController::class
-            )->names('api.v1.admin.audit-items');
+                    Route::resource(
+                        '/search',
+                        ApiAdminSearchController::class
+                    )->names('api.v1.admin.search');
 
-            Route::resource(
-                '/search',
-                ApiAdminSearchController::class
-            )->names('api.v1.admin.search');
+                    Route::resource(
+                        '/system-statistics',
+                        ApiAdminSystemStatisticsController::class
+                    )->names('api.v1.admin.system-statistics');
 
-            Route::resource(
-                '/system-statistics',
-                ApiAdminSystemStatisticsController::class
-            )->names('api.v1.admin.system-statistics');
+                    Route::resource(
+                        '/team-merchant-teams',
+                        ApiAdminTeamMerchantTeamsController::class
+                    )->names('api.v1.admin.team-merchant-teams');
 
-            Route::resource(
-                '/team-merchant-teams',
-                ApiAdminTeamMerchantTeamsController::class
-            )->names('api.v1.admin.team-merchant-teams');
+                    Route::resource(
+                        '/team-service-teams',
+                        ApiAdminTeamServiceTeamsController::class
+                    )->names('api.v1.admin.team-service-teams');
 
-            Route::resource(
-                '/team-service-teams',
-                ApiAdminTeamServiceTeamsController::class
-            )->names('api.v1.admin.team-service-teams');
+                    Route::resource(
+                        '/team-users',
+                        ApiAdminTeamUsersController::class
+                    )->names('api.v1.admin.team-users');
 
-            Route::resource(
-                '/team-users',
-                ApiAdminTeamUsersController::class
-            )->names('api.v1.admin.team-users');
+                    Route::resource(
+                        '/teams',
+                        ApiAdminTeamsController::class
+                    )->names('api.v1.admin.teams');
 
-            Route::resource(
-                '/teams',
-                ApiAdminTeamsController::class
-            )->names('api.v1.admin.teams');
+                    Route::resource(
+                        '/user-personal-access-tokens',
+                        ApiAdminUserPersonalAccessTokensController::class
+                    )->names('api.v1.admin.tokens');
 
-            Route::resource(
-                '/user-personal-access-tokens',
-                ApiAdminUserPersonalAccessTokensController::class
-            )->names('api.v1.admin.tokens');
+                    Route::resource(
+                        '/users',
+                        ApiAdminUsersController::class
+                    )->names('api.v1.admin.users');
 
-            Route::resource(
-                '/users',
-                ApiAdminUsersController::class
-            )->names('api.v1.admin.users');
-
+                });
         });
 });
