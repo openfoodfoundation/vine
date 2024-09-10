@@ -54,7 +54,7 @@ class ApiAdminSearchController extends Controller
             ->get();
         $this->data['teams'] = Team::where('name', 'LIKE', $search)
             ->get();
-        $this->data['vouchers'] = Voucher::where('id', 'LIKE', $search)
+        $this->data['vouchers'] = Voucher::where('id', 'LIKE', $search)->orWhere('voucher_short_code', 'LIKE', $search)
             ->get();
         $this->data['voucherSets'] = VoucherSet::where('id', 'LIKE', $search)
             ->get();
