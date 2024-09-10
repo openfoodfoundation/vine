@@ -19,16 +19,14 @@ class PreventTooManyRequestsMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        $ip            = $request->ip();
-        $userAgent     = $request->header('User-Agent');
-        $hmacSignature = $request->header('X-HMAC-Signature');
+        $ip        = $request->ip();
+        $userAgent = $request->header('User-Agent');
 
         /**
-         * Create an identifier based on the IP address, User-Agent header value
-         * (as the user might be part of a shared IP network) and the X-HMAC-Signature
-         * header value (which is a requirement of the validation endpoint)
+         * Create an identifier based on the IP address and the User-Agent header value
+         * (as the user might be part of a shared IP network)
          */
-        $identifier = md5($ip . $userAgent . $hmacSignature);
+        $identifier = md5($ip . $userAgent);
 
         /**
          * Check if there was a cache hit for the identifier and whether a request
