@@ -35,6 +35,7 @@ class ApiAdminVouchersController extends Controller
         'created_at',
         'allocated_to_service_team_id',
         'created_by_team_id',
+        'voucher_set_id',
     ];
 
     /**

@@ -1,11 +1,15 @@
 <script setup>
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
-import { Head, Link } from '@inertiajs/vue3';
+import {Head, Link} from '@inertiajs/vue3';
 import AdminTopNavigation from "@/Components/Admin/AdminTopNavigation.vue";
-import PrimaryButton from "@/Components/PrimaryButton.vue";
 import {onMounted, ref} from "vue";
 import PaginatorComponent from "@/Components/Admin/PaginatorComponent.vue";
-import AdminUserDetailsComponent from "@/Components/Admin/AdminUserDetailsComponent.vue";
+import dayjs from "dayjs";
+import relativeTime from "dayjs/plugin/relativeTime";
+import utc from "dayjs/plugin/utc"
+
+dayjs.extend(relativeTime);
+dayjs.extend(utc);
 
 const $props = defineProps({
     id: {
@@ -13,8 +17,8 @@ const $props = defineProps({
     }
 })
 
-
 const voucher = ref({})
+// const voucherRedemptions = ref(null)
 
 onMounted(() => {
     getVoucher()
@@ -23,15 +27,23 @@ onMounted(() => {
 function getVoucher() {
     axios.get('/admin/vouchers/' + $props.id + '?cached=false&relations=createdByTeam,allocatedToServiceTeam').then(response => {
         voucher.value = response.data.data
+
+        // if (voucher.value.num_voucher_redemptions > 0) {
+        //     getVoucherRedemptions()
+        // }
     }).catch(error => {
         console.log(error)
     })
 }
 
+// function getVoucherRedemptions() {
+//
+// }
+
 </script>
 
 <template>
-    <Head title="Voucher set" />
+    <Head title="Voucher set"/>
 
     <AuthenticatedLayout>
         <template #header>
@@ -39,8 +51,12 @@ function getVoucher() {
         </template>
 
         <div class="card">
-            <div class="flex justify-between items-center">
-                <h2>Voucher #{{ $props.id }}</h2>
+            <div class="opacity-25 text-sm">{{ $props.id }}</div>
+            <h2 v-if="voucher.voucher_short_code">
+                {{ voucher.voucher_short_code }}
+            </h2>
+            <div v-if="voucher.is_test" class="font-bold text-red-500 text-sm">
+                Test voucher
             </div>
         </div>
 
@@ -56,13 +72,55 @@ function getVoucher() {
 
         <div class="card">
             <div class="card-header">
+                Created by team
+            </div>
+
+            <div v-if="voucher.created_by_team">
+                <Link :href="route('admin.team', {id:voucher.created_by_team_id})">{{ voucher.created_by_team.name }}</Link>
+            </div>
+            <div v-if="voucher.created_at" class="text-xs mt-2">
+                Created at: {{ dayjs.utc(voucher.created_at).fromNow() }} ({{ dayjs(voucher.created_at) }})
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                Allocated to team
+            </div>
+
+            <div v-if="voucher.allocated_to_service_team_id">
+                <Link :href="route('admin.team', {id:voucher.allocated_to_service_team_id})">{{ voucher.allocated_to_service_team.name }}</Link>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
                 Voucher details
             </div>
 
-            <div v-if="voucher.voucher_short_code">
-                Short code: {{ voucher.voucher_short_code }}
+            <div>
+                Original value: <span class="font-bold">${{ voucher.voucher_value_original / 100 }}</span>
             </div>
-
+            <div>
+                Remaining value: <span class="font-bold">${{ voucher.voucher_value_remaining / 100 }}</span>
+            </div>
+            <div>
+                Redemptions: <span class="font-bold">{{ voucher.num_voucher_redemptions }}</span>
+            </div>
+            <div v-if="voucher.last_redemption_at">
+                Last redeemed at: {{ dayjs.utc(voucher.last_redemption_at).fromNow() }} ({{ dayjs(voucher.last_redemption_at) }})
+            </div>
         </div>
+
+        <!-- ToDo redemption list?? -->
+<!--        <div class="card">-->
+<!--            <div class="card-header">-->
+<!--                Voucher redemptions-->
+<!--            </div>-->
+
+<!--            <div v-if="voucherRedemptions">-->
+<!--                -->
+<!--            </div>-->
+<!--        </div>-->
     </AuthenticatedLayout>
 </template>

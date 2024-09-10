@@ -5,13 +5,19 @@ import AdminTopNavigation from "@/Components/Admin/AdminTopNavigation.vue";
 import PrimaryButton from "@/Components/PrimaryButton.vue";
 import {onMounted, ref} from "vue";
 import PaginatorComponent from "@/Components/Admin/PaginatorComponent.vue";
+import dayjs from "dayjs";
+import relativeTime from "dayjs/plugin/relativeTime";
+import utc from "dayjs/plugin/utc"
+import VouchersComponent from "@/Components/Admin/Vouchers/VouchersComponent.vue";
+
+dayjs.extend(relativeTime);
+dayjs.extend(utc);
 
 const $props = defineProps({
     id: {
         required: true,
     }
 })
-
 
 const voucherSet = ref({})
 
@@ -37,36 +43,69 @@ function getVoucherSet() {
             <AdminTopNavigation></AdminTopNavigation>
         </template>
 
-        <div class=" card">
-            Voucher set #{{ $props.id }}
-<!--            <div v-if="voucherSets.data && voucherSets.data.length">-->
-<!--                <Link :href="route('admin.voucher-set', voucherSet.id)" v-for="voucherSet in voucherSets.data" class="hover:no-underline hover:opacity-75">-->
-<!--                    <div class="border-b flex justify-between items-center py-2 sm:p-2">-->
-<!--                        <div>-->
+        <div class="card">
+            <h2>
+                {{ $props.id }}
+            </h2>
+            <div v-if="voucherSet.is_test" class="font-bold text-red-500 text-sm">
+                Test voucher set
+            </div>
+        </div>
 
-<!--                            <div class="font-bold">-->
-<!--                                 <span class="text-xs opacity-25">-->
-<!--                                  #{{ team.id }}-->
-<!--                                </span>-->
-<!--                                {{ team.name }}-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                        <div >-->
-<!--                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">-->
-<!--                                <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />-->
-<!--                            </svg>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </Link>-->
-<!--            </div>-->
+        <div class="card">
+            <div class="card-header">
+                Created by team
+            </div>
 
-<!--            <div class="flex justify-end items-center mt-4">-->
-<!--                <div class="w-full lg:w-1/3">-->
-<!--                    <PaginatorComponent-->
-<!--                        @setDataPage="setDataPage"-->
-<!--                        :pagination-data="teams"></PaginatorComponent>-->
-<!--                </div>-->
-<!--            </div>-->
+            <div v-if="voucherSet.created_by_team">
+                <Link :href="route('admin.team', {id:voucherSet.created_by_team_id})">{{ voucherSet.created_by_team.name }}</Link>
+            </div>
+            <div v-if="voucherSet.created_at" class="text-xs mt-2">
+                Created at: {{ dayjs.utc(voucherSet.created_at).fromNow() }} ({{ dayjs(voucherSet.created_at) }})
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                Allocated to team
+            </div>
+
+            <div v-if="voucherSet.allocated_to_service_team_id">
+                <Link :href="route('admin.team', {id:voucherSet.allocated_to_service_team_id})">{{ voucherSet.allocated_to_service_team.name }}</Link>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                Voucher set details
+            </div>
+
+            <div>
+                Total set value: <span class="font-bold">${{ voucherSet.total_set_value / 100 }}</span>
+            </div>
+            <div>
+                Total remaining value: <span class="font-bold">${{ voucherSet.total_set_value_remaining / 100 }}</span>
+            </div>
+            <div>
+                Vouchers: <span class="font-bold">{{ voucherSet.num_vouchers }}</span>
+            </div>
+            <div>
+                Redemptions: <span class="font-bold">{{ voucherSet.num_voucher_redemptions }}</span>
+            </div>
+            <div v-if="voucherSet.last_redemption_at">
+                Last redeemed at: {{ dayjs.utc(voucherSet.last_redemption_at).fromNow() }} ({{ dayjs(voucherSet.last_redemption_at) }})
+            </div>
+            <div v-if="voucherSet.expires_at">
+                Expires at: {{ dayjs.utc(voucherSet.expires_at).fromNow() }} ({{ dayjs(voucherSet.expires_at) }})
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                Vouchers
+            </div>
+
+            <VouchersComponent :voucher-set-id="$props.id"></VouchersComponent>
         </div>
     </AuthenticatedLayout>
 </template>

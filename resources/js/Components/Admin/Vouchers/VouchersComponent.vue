@@ -17,6 +17,10 @@ const $props = defineProps({
     filterVouchers: {
         required: false,
         default: null
+    },
+    voucherSetId: {
+        required: false,
+        default: null
     }
 })
 
@@ -24,7 +28,7 @@ const limit = ref(50)
 const vouchers = ref({})
 
 onMounted(() => {
-    if ($props.teamId) {
+    if ($props.teamId || $props.voucherSetId) {
         limit.value = 10
     }
 
@@ -35,6 +39,8 @@ function getVouchers(page = 1) {
     let urlBit = ''
     if ($props.teamId && $props.filterVouchers) {
         urlBit = '&where[]=' + $props.filterVouchers + ',' + $props.teamId
+    } else if ($props.voucherSetId) {
+        urlBit = '&where[]=voucher_set_id,' + $props.voucherSetId
     }
 
     axios.get('/admin/vouchers?cached=false&page=' + page + '&limit=' + limit.value + urlBit + '&orderBy=created_at,desc&relations=createdByTeam,allocatedToServiceTeam').then(response => {
@@ -73,7 +79,7 @@ function getVouchers(page = 1) {
                     <div>
                         Remaining value: ${{ voucher.voucher_value_remaining / 100 }}
                     </div>
-                    <div v-if="voucher.created_by_team">
+                    <div v-if="voucher.created_at">
                         Created at: {{ dayjs.utc(voucher.created_at).fromNow() }} ({{ dayjs(voucher.created_at) }})
                     </div>
                 </div>
