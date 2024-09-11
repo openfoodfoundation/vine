@@ -49,7 +49,7 @@ class VoucherValidationPostTest extends BaseAPITestCase
         $response = $this->withHeader('X-HMAC-Signature', $verificationSignature)
             ->postJson($this->apiRoot . $this->endPoint, $payload);
 
-        $response->assertStatus(400);
+        $response->assertStatus(404);
     }
 
     #[Test]
