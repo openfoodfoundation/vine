@@ -62,6 +62,7 @@ class VoucherService
     public static function collateVoucherAggregates(Voucher $voucher): void
     {
         self::updateVoucherAmountRemaining($voucher);
+        $voucher->refresh();
 
         if ($voucher->voucher_value_remaining <= 0) {
             $voucher->voucher_short_code = null;
