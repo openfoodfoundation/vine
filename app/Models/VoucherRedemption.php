@@ -12,7 +12,6 @@ class VoucherRedemption extends Model
     use HasFactory;
     use SoftDeletes;
 
-
     public function redeemedByUser(): BelongsTo
     {
         return $this->belongsTo(User::class, 'redeemed_by_user_id', 'id');
