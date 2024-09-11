@@ -4,6 +4,7 @@ namespace App\Listeners\Vouchers;
 
 use App\Events\Vouchers\VoucherWasCreated;
 use App\Jobs\Vouchers\AssignUniqueShortCodeToVoucherJob;
+use App\Jobs\Vouchers\CollateVoucherAggregatesJob;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
 class HandleVoucherWasCreatedEvent implements ShouldQueue
@@ -21,5 +22,6 @@ class HandleVoucherWasCreatedEvent implements ShouldQueue
     public function handle(VoucherWasCreated $event): void
     {
         dispatch(new AssignUniqueShortCodeToVoucherJob($event->voucher));
+        dispatch(new CollateVoucherAggregatesJob($event->voucher));
     }
 }

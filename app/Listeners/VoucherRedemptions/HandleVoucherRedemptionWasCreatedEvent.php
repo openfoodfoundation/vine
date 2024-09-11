@@ -3,8 +3,9 @@
 namespace App\Listeners\VoucherRedemptions;
 
 use App\Events\VoucherRedemptions\VoucherRedemptionWasCreated;
+use App\Jobs\Vouchers\CollateVoucherAggregatesJob;
 use App\Models\Voucher;
-use App\Services\VoucherService;
+use App\Models\VoucherSet;
 use Exception;
 
 class HandleVoucherRedemptionWasCreatedEvent
@@ -23,16 +24,22 @@ class HandleVoucherRedemptionWasCreatedEvent
      */
     public function handle(VoucherRedemptionWasCreated $event): void
     {
-        $voucher = Voucher::find($event->voucherRedemption->voucher_id);
+        $voucher    = Voucher::find($event->voucherRedemption->voucher_id);
+        $voucherSet = VoucherSet::find($event->voucherRedemption->voucher_set_id);
 
-        if ($voucher) {
+        if ($voucher && $voucherSet) {
 
-            VoucherService::updateVoucherAmountRemaining($voucher);
+            /**
+             * Update the last redemption at
+             */
+            $voucher->last_redemption_at = now();
+            $voucher->saveQuietly();
 
-            if ($voucher->voucher_value_remaining <= 0) {
-                $voucher->voucher_short_code = null;
-                $voucher->saveQuietly();
-            }
+            $voucherSet->last_redemption_at = now();
+            $voucherSet->saveQuietly();
+
+            dispatch(new CollateVoucherAggregatesJob($voucher));
         }
+
     }
 }

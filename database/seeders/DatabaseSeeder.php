@@ -7,7 +7,11 @@ use App\Models\TeamUser;
 use App\Models\User;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Voucher;
+use App\Models\VoucherRedemption;
+use App\Models\VoucherSet;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Artisan;
 
 class DatabaseSeeder extends Seeder
 {
@@ -92,7 +96,38 @@ class DatabaseSeeder extends Seeder
                 );
             }
 
+            $voucherSet = VoucherSet::factory()->createQuietly([
+                'created_by_team_id'           => $team->id,
+                'created_by_user_id'           => $user->id,
+                'allocated_to_service_team_id' => $team->id,
+            ]);
+
+            $vouchers = Voucher::factory(rand(100, 200))->create(
+                [
+                    'voucher_set_id'               => $voucherSet->id,
+                    'created_by_team_id'           => $team->id,
+                    'allocated_to_service_team_id' => $team->id,
+                ]
+            );
+
+            foreach ($vouchers as $voucher) {
+                if (rand(1, 5) === 3) {
+                    VoucherRedemption::factory()->create(
+                        [
+                            'redeemed_amount'     => (rand(1, $voucher->voucher_value_original)),
+                            'redeemed_by_team_id' => $team->id,
+                            'redeemed_by_user_id' => $user->id,
+                            'voucher_set_id'      => $voucher->voucher_set_id,
+                            'voucher_id'          => $voucher->id,
+                        ]
+                    );
+                }
+
+            }
+
         }
+
+        Artisan::call('app:dispatch-collate-system-statistics-job');
 
     }
 }
