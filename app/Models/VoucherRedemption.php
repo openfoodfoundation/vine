@@ -13,7 +13,6 @@ class VoucherRedemption extends Model
     use HasFactory;
     use SoftDeletes;
 
-
     protected $dispatchesEvents = [
         'created' => VoucherRedemptionWasCreated::class,
     ];
@@ -27,6 +26,4 @@ class VoucherRedemption extends Model
     {
         return $this->belongsTo(Team::class, 'redeemed_by_team_id', 'id');
     }
-
-
 }
