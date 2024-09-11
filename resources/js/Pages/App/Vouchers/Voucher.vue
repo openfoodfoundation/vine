@@ -44,8 +44,25 @@ function getVoucher() {
             <h2 v-if="voucher.voucher_short_code">
                 #{{ voucher.voucher_short_code }}
             </h2>
+            <div class="text-sm opacity-25">
+                {{ voucher.id }}
+            </div>
             <div v-if="voucher.is_test" class="font-bold text-red-500 text-sm">
                 Test voucher
+            </div>
+
+            <div v-if="voucher.allocated_to_service_team_id" class="mt-2 text-sm">
+                <div>
+                    Allocated to: <span class="font-bold">{{ voucher.allocated_to_service_team.name }}</span>
+                </div>
+            </div>
+            <div v-if="voucher.created_by_team" class="text-sm">
+                <div>
+                    Created by: <span class="font-bold">{{ voucher.created_by_team.name }}</span>
+                </div>
+            </div>
+            <div class="text-sm">
+                Created at: <span class="font-bold">{{ dayjs.utc(voucher.created_at).fromNow() }} ({{ dayjs(voucher.created_at) }})</span>
             </div>
         </div>
 
@@ -54,16 +71,6 @@ function getVoucher() {
                 Voucher details
             </div>
 
-            <div v-if="voucher.created_by_team">
-                <div>
-                    Created by: <span class="font-bold">{{ voucher.created_by_team.name }}</span>
-                </div>
-            </div>
-            <div v-if="voucher.allocated_to_service_team_id">
-                <div>
-                    Allocated to: <span class="font-bold">{{ voucher.allocated_to_service_team.name }}</span>
-                </div>
-            </div>
             <div>
                 Original value: <span class="font-bold">${{ voucher.voucher_value_original / 100 }}</span>
             </div>

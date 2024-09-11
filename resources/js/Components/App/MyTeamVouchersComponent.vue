@@ -56,7 +56,7 @@ function getMyTeamVouchers(page = 1) {
                     <div v-if="voucher.created_by_team && voucher.created_by_team_id !== usePage().props.auth.user.current_team_id">
                         Created by: {{ voucher.created_by_team.name }}
                     </div>
-                    <div v-if="voucher.allocated_to_service_team && voucher.allocated_to_service_team !== usePage().props.auth.user.current_team_id">
+                    <div v-if="voucher.allocated_to_service_team && voucher.allocated_to_service_team_id !== usePage().props.auth.user.current_team_id">
                         Allocated to: {{ voucher.allocated_to_service_team.name }}
                     </div>
                 </div>

@@ -53,7 +53,7 @@ function getMyTeamVoucherSets(page = 1) {
                     <div v-if="voucherSet.created_by_team && voucherSet.created_by_team_id !== usePage().props.auth.user.current_team_id">
                         Created by: {{ voucherSet.created_by_team.name }}
                     </div>
-                    <div v-if="voucherSet.allocated_to_service_team && voucherSet.allocated_to_service_team !== usePage().props.auth.user.current_team_id">
+                    <div v-if="voucherSet.allocated_to_service_team && voucherSet.allocated_to_service_team_id !== usePage().props.auth.user.current_team_id">
                         Allocated to: {{ voucherSet.allocated_to_service_team.name }}
                     </div>
                 </div>

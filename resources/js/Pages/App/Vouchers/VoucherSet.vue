@@ -57,6 +57,19 @@ function getVoucherSet() {
             <div v-if="voucherSet.is_test" class="font-bold text-red-500 text-sm">
                 Test voucher set
             </div>
+            <div v-if="voucherSet.allocated_to_service_team_id" class="mt-2 text-sm">
+                <div>
+                    Allocated to: <span class="font-bold">{{ voucherSet.allocated_to_service_team.name }}</span>
+                </div>
+            </div>
+            <div v-if="voucherSet.created_by_team" class="text-sm">
+                <div>
+                    Created by: <span class="font-bold">{{ voucherSet.created_by_team.name }}</span>
+                </div>
+            </div>
+            <div class="text-sm">
+                Created at: <span class="font-bold">{{ dayjs.utc(voucherSet.created_at).fromNow() }} ({{ dayjs(voucherSet.created_at) }})</span>
+            </div>
         </div>
 
         <div class="card">
@@ -64,16 +77,6 @@ function getVoucherSet() {
                 Voucher set details
             </div>
 
-            <div v-if="voucherSet.created_by_team">
-                <div>
-                    Created by: <span class="font-bold">{{ voucherSet.created_by_team.name }}</span>
-                </div>
-            </div>
-            <div v-if="voucherSet.allocated_to_service_team_id">
-                <div>
-                    Allocated to: <span class="font-bold">{{ voucherSet.allocated_to_service_team.name }}</span>
-                </div>
-            </div>
             <div>
                 Total set value: <span class="font-bold">${{ voucherSet.total_set_value / 100 }}</span>
             </div>

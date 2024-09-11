@@ -45,6 +45,46 @@ Route::group(['prefix' => 'v1', 'middleware' => VerifyApiTokenSignature::class],
                     ]
                 );
 
+            Route::put('/my-team/{id}', [ApiMyTeamController::class, 'update'])
+                ->name('api.v1.my-team.put')
+                ->middleware(
+                    [
+                        'abilities:' .
+                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                        PersonalAccessTokenAbility::MY_TEAM_UPDATE->value,
+                    ]
+                );
+
+            Route::post('/my-team', [ApiMyTeamController::class, 'store'])
+                ->name('api.v1.my-team.post')
+                ->middleware(
+                    [
+                        'abilities:' .
+                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                        PersonalAccessTokenAbility::MY_TEAM_CREATE->value,
+                    ]
+                );
+
+            Route::get('/my-team/{id}', [ApiMyTeamController::class, 'show'])
+                ->name('api.v1.my-team.get')
+                ->middleware(
+                    [
+                        'abilities:' .
+                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                        PersonalAccessTokenAbility::MY_TEAM_READ->value,
+                    ]
+                );
+
+            Route::delete('/my-team/{id}', [ApiMyTeamController::class, 'destroy'])
+                ->name('api.v1.my-team.delete')
+                ->middleware(
+                    [
+                        'abilities:' .
+                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                        PersonalAccessTokenAbility::MY_TEAM_DELETE->value,
+                    ]
+                );
+
             /**
              * My Audit Items
              */
