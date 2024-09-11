@@ -2,7 +2,7 @@
 
 namespace App\Listeners\Vouchers;
 
-use App\Events\Vouchers\VoucherWasUpdated;
+use App\Events\Vouchers\VoucherWasCreated;
 use App\Jobs\Vouchers\AssignUniqueShortCodeToVoucherJob;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
@@ -16,9 +16,9 @@ class HandleVoucherWasCreatedEvent implements ShouldQueue
     /**
      * Handle the event.
      *
-     * @param VoucherWasUpdated $event
+     * @param VoucherWasCreated $event
      */
-    public function handle(VoucherWasUpdated $event): void
+    public function handle(VoucherWasCreated $event): void
     {
         dispatch(new AssignUniqueShortCodeToVoucherJob($event->voucher));
     }
