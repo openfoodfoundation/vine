@@ -24,7 +24,7 @@ class DatabaseSeeder extends Seeder
 
         $usersAndTeams = [
             [
-                'team'  => [
+                'team' => [
                     'name' => 'OK200 Team',
                 ],
                 'users' => [
@@ -46,7 +46,7 @@ class DatabaseSeeder extends Seeder
                 ],
             ],
             [
-                'team'  => [
+                'team' => [
                     'name' => 'Open Food Network',
                 ],
                 'users' => [
@@ -96,24 +96,22 @@ class DatabaseSeeder extends Seeder
                 );
             }
 
-
             $voucherSet = VoucherSet::factory()->createQuietly([
-                                                                   'created_by_team_id'           => $team->id,
-                                                                   'created_by_user_id'           => $user->id,
-                                                                   'allocated_to_service_team_id' => $team->id,
-                                                               ]);
+                'created_by_team_id'           => $team->id,
+                'created_by_user_id'           => $user->id,
+                'allocated_to_service_team_id' => $team->id,
+            ]);
 
             $vouchers = Voucher::factory(rand(100, 200))->create(
                 [
                     'voucher_set_id'               => $voucherSet->id,
                     'created_by_team_id'           => $team->id,
                     'allocated_to_service_team_id' => $team->id,
-                ]);
+                ]
+            );
 
-            foreach($vouchers as $voucher)
-            {
-                if(rand(1,5) === 3)
-                {
+            foreach ($vouchers as $voucher) {
+                if (rand(1, 5) === 3) {
                     VoucherRedemption::factory()->create(
                         [
                             'redeemed_amount'     => (rand(1, $voucher->voucher_value_original)),
@@ -125,9 +123,7 @@ class DatabaseSeeder extends Seeder
                     );
                 }
 
-
             }
-
 
         }
 

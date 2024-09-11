@@ -24,7 +24,7 @@ class HandleVoucherRedemptionWasCreatedEvent
      */
     public function handle(VoucherRedemptionWasCreated $event): void
     {
-        $voucher = Voucher::find($event->voucherRedemption->voucher_id);
+        $voucher    = Voucher::find($event->voucherRedemption->voucher_id);
         $voucherSet = VoucherSet::find($event->voucherRedemption->voucher_set_id);
 
         if ($voucher && $voucherSet) {
@@ -37,7 +37,6 @@ class HandleVoucherRedemptionWasCreatedEvent
 
             $voucherSet->last_redemption_at = now();
             $voucherSet->saveQuietly();
-
 
             dispatch(new CollateVoucherAggregatesJob($voucher));
         }

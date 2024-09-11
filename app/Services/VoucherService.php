@@ -29,6 +29,7 @@ class VoucherService
     {
 
         $redeemedAmount = self::calculateVoucherAmountRedeemed($voucher);
+
         return $voucher->voucher_value_original - $redeemedAmount;
     }
 
