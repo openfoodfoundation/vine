@@ -304,7 +304,7 @@ Route::group(['prefix' => 'v1', 'middleware' => VerifyApiTokenSignature::class],
                 );
 
             /**
-            * Voucher Validation (for unattended redemptions)
+             * Voucher Validation (for unattended redemptions)
              */
             Route::middleware('throttle:validations')->group(function () {
 
@@ -324,7 +324,6 @@ Route::group(['prefix' => 'v1', 'middleware' => VerifyApiTokenSignature::class],
                     ->name('api.v1.voucher-validation.delete');
 
             });
-
 
             /**
              * Voucher Redemptions
