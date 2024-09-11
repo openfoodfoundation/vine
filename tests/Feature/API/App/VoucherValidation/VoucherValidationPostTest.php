@@ -95,7 +95,7 @@ class VoucherValidationPostTest extends BaseAPITestCase
             $this->user
         );
 
-        $voucherSet         = VoucherSet::factory()->createQuietly();
+        $voucherSet = VoucherSet::factory()->createQuietly();
 
         $voucherSetMerchant = VoucherSetMerchantTeam::factory()->createQuietly(
             [
@@ -135,7 +135,7 @@ class VoucherValidationPostTest extends BaseAPITestCase
             $this->user
         );
 
-        $voucherSet         = VoucherSet::factory()->createQuietly();
+        $voucherSet = VoucherSet::factory()->createQuietly();
 
         $voucherSetMerchant = VoucherSetMerchantTeam::factory()->createQuietly(
             [

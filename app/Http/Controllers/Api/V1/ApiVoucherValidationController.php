@@ -75,13 +75,13 @@ class ApiVoucherValidationController extends Controller
     public function store(): JsonResponse
     {
         $validationArray = [
-            'type'  => [
+            'type' => [
                 'required',
                 'string',
                 Rule::in([
-                             'voucher_id',
-                             'voucher_code',
-                         ]),
+                    'voucher_id',
+                    'voucher_code',
+                ]),
             ],
             'value' => [
                 'required',
@@ -107,7 +107,7 @@ class ApiVoucherValidationController extends Controller
             $voucherIdentifier = $this->request->get('value');
 
             $voucher = match ($identifierType) {
-                'voucher_id' => Voucher::find($voucherIdentifier),
+                'voucher_id'   => Voucher::find($voucherIdentifier),
                 'voucher_code' => Voucher::where('voucher_short_code', $voucherIdentifier)->first(),
             };
 
@@ -122,9 +122,9 @@ class ApiVoucherValidationController extends Controller
              * Ensure that the authenticated user is a merchant for this voucher set
              */
             $voucherSetMerchantTeamIds = VoucherSetMerchantTeam::where('voucher_set_id', $voucher->voucher_set_id)
-                                                               ->where('merchant_team_id', Auth::user()->current_team_id)
-                                                               ->pluck('merchant_team_id')
-                                                               ->toArray();
+                ->where('merchant_team_id', Auth::user()->current_team_id)
+                ->pluck('merchant_team_id')
+                ->toArray();
 
             if (
                 !in_array(
@@ -138,7 +138,6 @@ class ApiVoucherValidationController extends Controller
                 return $this->respond();
             }
 
-
             $voucher->setHidden(
                 [
                     'created_by_team_id',
@@ -151,7 +150,8 @@ class ApiVoucherValidationController extends Controller
              */
             $this->data = $voucher;
 
-        } catch (Exception $e) {
+        }
+        catch (Exception $e) {
             $this->responseCode = 500;
             $this->message      = ApiResponse::RESPONSE_ERROR->value . ':' . $e->getMessage();
         }
