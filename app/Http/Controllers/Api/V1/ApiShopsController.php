@@ -15,6 +15,7 @@ use Exception;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Validator;
 use Knuckles\Scribe\Attributes\Authenticated;
+use Knuckles\Scribe\Attributes\BodyParam;
 use Knuckles\Scribe\Attributes\Endpoint;
 use Knuckles\Scribe\Attributes\Group;
 use Knuckles\Scribe\Attributes\Response;
@@ -51,6 +52,24 @@ class ApiShopsController extends Controller
         authenticated: true
     )]
     #[Authenticated]
+    #[BodyParam(
+        name       : 'shop_name',
+        type       : 'string',
+        description: 'The name of the shop.',
+        required   : true
+    )]
+    #[BodyParam(
+        name       : 'user_email',
+        type       : 'email',
+        description: 'The email for the shop merchant user.',
+        required   : true
+    )]
+    #[BodyParam(
+        name       : 'user_name',
+        type       : 'string',
+        description: 'The name of the user.',
+        required   : true
+    )]
     #[Response(
         content: '{"meta":{"responseCode":200,"limit":50,"offset":0,"message":"Saved. Here is the API Token for the user linked to this new team. It will only be displayed ONCE, so please store it in a secure manner.","cached":false,"availableRelations":[]},"data":{"token": "123|kjfhsgiufsghkjsfghkfgsjh"}}',
         status: 200,
