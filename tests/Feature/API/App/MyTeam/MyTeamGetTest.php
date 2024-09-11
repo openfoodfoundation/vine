@@ -1,4 +1,5 @@
 <?php
+
 /** @noinspection PhpUndefinedFieldInspection */
 
 namespace Tests\Feature\API\App\MyTeam;
@@ -71,5 +72,4 @@ class MyTeamGetTest extends BaseAPITestCase
 
         $response->assertStatus(403);
     }
-
 }
