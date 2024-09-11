@@ -1,5 +1,5 @@
 <script setup>
-import {Link} from '@inertiajs/vue3';
+import {Link, usePage} from '@inertiajs/vue3';
 import {onMounted, ref} from "vue";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
@@ -53,20 +53,11 @@ function getMyTeamVouchers(page = 1) {
                     <div v-if="voucher.is_test" class="text-red-500">
                         Test voucher
                     </div>
-                    <div v-if="voucher.created_by_team">
+                    <div v-if="voucher.created_by_team && voucher.created_by_team_id !== usePage().props.auth.user.current_team_id">
                         Created by: {{ voucher.created_by_team.name }}
                     </div>
-                    <div v-if="voucher.allocated_to_service_team">
+                    <div v-if="voucher.allocated_to_service_team && voucher.allocated_to_service_team !== usePage().props.auth.user.current_team_id">
                         Allocated to: {{ voucher.allocated_to_service_team.name }}
-                    </div>
-                    <div>
-                        Original value: ${{ voucher.voucher_value_original / 100 }}
-                    </div>
-                    <div>
-                        Remaining value: ${{ voucher.voucher_value_remaining / 100 }}
-                    </div>
-                    <div v-if="voucher.created_at">
-                        Created at: {{ dayjs.utc(voucher.created_at).fromNow() }} ({{ dayjs(voucher.created_at) }})
                     </div>
                 </div>
 

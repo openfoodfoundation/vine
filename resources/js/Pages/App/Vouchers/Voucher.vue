@@ -47,11 +47,22 @@ function getVoucher() {
             <div v-if="voucher.is_test" class="font-bold text-red-500 text-sm">
                 Test voucher
             </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                Voucher details
+            </div>
+
             <div v-if="voucher.created_by_team">
-                <div>Created by: {{ voucher.created_by_team.name }}</div>
+                <div>
+                    Created by: <span class="font-bold">{{ voucher.created_by_team.name }}</span>
+                </div>
             </div>
             <div v-if="voucher.allocated_to_service_team_id">
-                <div>Allocated to: {{ voucher.allocated_to_service_team.name }}</div>
+                <div>
+                    Allocated to: <span class="font-bold">{{ voucher.allocated_to_service_team.name }}</span>
+                </div>
             </div>
             <div>
                 Original value: <span class="font-bold">${{ voucher.voucher_value_original / 100 }}</span>
@@ -67,8 +78,6 @@ function getVoucher() {
             </div>
         </div>
 
-        <div class="pb-32">
-
-        </div>
+        <div class="pb-32"></div>
     </AuthenticatedLayout>
 </template>

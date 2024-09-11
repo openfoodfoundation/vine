@@ -1,5 +1,5 @@
 <script setup>
-import {Link} from '@inertiajs/vue3';
+import {Link, usePage} from '@inertiajs/vue3';
 import {onMounted, ref} from "vue";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
@@ -50,23 +50,11 @@ function getMyTeamVoucherSets(page = 1) {
                     <div v-if="voucherSet.is_test" class="text-red-500">
                         Test voucher set
                     </div>
-                    <div v-if="voucherSet.created_by_team">
+                    <div v-if="voucherSet.created_by_team && voucherSet.created_by_team_id !== usePage().props.auth.user.current_team_id">
                         Created by: {{ voucherSet.created_by_team.name }}
                     </div>
-                    <div v-if="voucherSet.allocated_to_service_team">
+                    <div v-if="voucherSet.allocated_to_service_team && voucherSet.allocated_to_service_team !== usePage().props.auth.user.current_team_id">
                         Allocated to: {{ voucherSet.allocated_to_service_team.name }}
-                    </div>
-                    <div>
-                        Total set value: ${{ voucherSet.total_set_value / 100 }}
-                    </div>
-                    <div>
-                        Total remaining value: ${{ voucherSet.total_set_value_remaining / 100 }}
-                    </div>
-                    <div>
-                        Vouchers: {{ voucherSet.num_vouchers }}
-                    </div>
-                    <div v-if="voucherSet.created_at">
-                        Created at: {{ dayjs.utc(voucherSet.created_at).fromNow() }} ({{ dayjs(voucherSet.created_at) }})
                     </div>
                 </div>
 
