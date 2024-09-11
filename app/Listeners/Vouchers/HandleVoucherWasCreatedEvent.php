@@ -5,6 +5,8 @@ namespace App\Listeners\Vouchers;
 use App\Events\Vouchers\VoucherWasCreated;
 use App\Jobs\Vouchers\AssignUniqueShortCodeToVoucherJob;
 use App\Jobs\Vouchers\CollateVoucherAggregatesJob;
+use App\Jobs\VoucherSets\CollateVoucherSetAggregatesJob;
+use App\Models\VoucherSet;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
 class HandleVoucherWasCreatedEvent implements ShouldQueue
@@ -23,5 +25,13 @@ class HandleVoucherWasCreatedEvent implements ShouldQueue
     {
         dispatch(new AssignUniqueShortCodeToVoucherJob($event->voucher));
         dispatch(new CollateVoucherAggregatesJob($event->voucher));
+
+        $voucherSet = VoucherSet::find($event->voucher->voucher_set_id);
+
+        if ($voucherSet) {
+
+            dispatch(new CollateVoucherSetAggregatesJob($voucherSet));
+
+        }
     }
 }
