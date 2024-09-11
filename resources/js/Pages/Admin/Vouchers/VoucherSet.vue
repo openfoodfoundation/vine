@@ -107,5 +107,7 @@ function getVoucherSet() {
 
             <VouchersComponent :voucher-set-id="$props.id"></VouchersComponent>
         </div>
+
+        <div class="pb-32"></div>
     </AuthenticatedLayout>
 </template>

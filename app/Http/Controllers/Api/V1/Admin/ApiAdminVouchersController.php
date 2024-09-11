@@ -29,6 +29,8 @@ class ApiAdminVouchersController extends Controller
     public array $availableRelations = [
         'createdByTeam',
         'allocatedToServiceTeam',
+        'voucherRedemptions.redeemedByUser',
+        'voucherRedemptions.redeemedByTeam',
     ];
 
     public static array $searchableFields = [
