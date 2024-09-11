@@ -152,6 +152,15 @@ SENTRY_LARAVEL_DSN=your_sentry_dsn
 LOG_STACK=sentry  # or sentry,single etc for multiple
 ```
 ----
+## Voucher Validation Request Rate Limiting
+
+By default, the API endpoint for `/voucher-validation` is rate-limited to 60 requests per minute, per API token (or user). To update this, uncomment the `VALIDATION_THROTTLE_MAX_PER_MINUTE` environment variable and re-deploy the application. 
+
+Setting this to a **lower** number increases protection from dictionary-style attacks on the API, however it means that a shop's integration might introduce reduced user experience for customers.
+
+Your API integration's front end will need to gracefully handle and notify users when 429 responses are returned from the Vine API.
+
+----
 
 ## Code Linting / Formatting
 

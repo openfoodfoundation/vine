@@ -211,7 +211,7 @@ Route::group(['prefix' => 'v1', 'middleware' => VerifyApiTokenSignature::class],
             /**
              * Voucher Validation (for unattended redemptions)
              */
-            Route::middleware(PreventTooManyRequestsMiddleware::class)->group(function () {
+            Route::middleware('throttle:validations')->group(function () {
 
                 Route::post('/voucher-validation', [ApiVoucherValidationController::class, 'store'])
                     ->name('api.v1.voucher-validation.post');

@@ -51,7 +51,7 @@ class ApiVoucherValidationController extends Controller
      */
     #[Endpoint(
         title        : 'POST /',
-        description  : 'Verify the validity of a voucher',
+        description  : 'Verify the validity of a voucher. Throttled by VALIDATION_THROTTLE_MAX_PER_MINUTE configuration (default 60 requests per minute per API token)',
         authenticated: true
     )]
     #[Authenticated]
