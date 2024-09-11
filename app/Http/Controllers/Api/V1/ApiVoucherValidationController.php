@@ -6,10 +6,14 @@ use App\Enums\ApiResponse;
 use App\Http\Controllers\Api\HandlesAPIRequests;
 use App\Http\Controllers\Controller;
 use App\Models\Voucher;
+use App\Models\VoucherSetMerchantTeam;
 use Exception;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
+use Knuckles\Scribe\Attributes\Authenticated;
+use Knuckles\Scribe\Attributes\BodyParam;
 use Knuckles\Scribe\Attributes\Endpoint;
 use Knuckles\Scribe\Attributes\Group;
 use Knuckles\Scribe\Attributes\Response;
@@ -28,8 +32,7 @@ class ApiVoucherValidationController extends Controller
      */
     public array $availableRelations = [];
 
-    public static array $searchableFields      = [];
-    private static string $hmacSignatureHeader = 'X-HMAC-Signature';
+    public static array $searchableFields = [];
 
     /**
      * @hideFromAPIDocumentation
@@ -47,25 +50,38 @@ class ApiVoucherValidationController extends Controller
      * POST /
      */
     #[Endpoint(
-        title: 'POST /',
-        description: 'Verify the validity of a voucher',
+        title        : 'POST /',
+        description  : 'Verify the validity of a voucher',
         authenticated: true
     )]
+    #[Authenticated]
+    #[BodyParam(
+        name       : 'type',
+        type       : 'string',
+        description: 'The validation type. Must be one of: voucher_code,voucher_id',
+        required   : true,
+    )]
+    #[BodyParam(
+        name       : 'value',
+        type       : 'string',
+        description: 'The validation value.',
+        required   : true,
+    )]
     #[Response(
-        content: '',
-        status: 200,
+        content    : '',
+        status     : 200,
         description: '',
     )]
     public function store(): JsonResponse
     {
         $validationArray = [
-            'type' => [
+            'type'  => [
                 'required',
                 'string',
                 Rule::in([
-                    'voucher_id',
-                    'voucher_code',
-                ]),
+                             'voucher_id',
+                             'voucher_code',
+                         ]),
             ],
             'value' => [
                 'required',
@@ -85,32 +101,13 @@ class ApiVoucherValidationController extends Controller
         try {
 
             /**
-             * Recreate the expected HMAC signature
-             */
-            $data = $this->request->getContent();
-
-            $expectedSignature = hash_hmac('sha256', $data, 'Secret');
-
-            /**
-             * Test the provided HMAC signature against the expected one
-             */
-            $providedSignature = $this->request->header(self::$hmacSignatureHeader, default: '');
-
-            if (!hash_equals($expectedSignature, $providedSignature)) {
-                $this->responseCode = 401;
-                $this->message      = ApiResponse::RESPONSE_HMAC_SIGNATURE_INCORRECT->value;
-
-                return $this->respond();
-            }
-
-            /**
              * Retrieve the voucher, if it exists, using the provided identifier
              */
             $identifierType    = $this->request->get('type');
             $voucherIdentifier = $this->request->get('value');
 
             $voucher = match ($identifierType) {
-                'voucher_id'   => Voucher::find($voucherIdentifier),
+                'voucher_id' => Voucher::find($voucherIdentifier),
                 'voucher_code' => Voucher::where('voucher_short_code', $voucherIdentifier)->first(),
             };
 
@@ -122,12 +119,39 @@ class ApiVoucherValidationController extends Controller
             }
 
             /**
+             * Ensure that the authenticated user is a merchant for this voucher set
+             */
+            $voucherSetMerchantTeamIds = VoucherSetMerchantTeam::where('voucher_set_id', $voucher->voucher_set_id)
+                                                               ->where('merchant_team_id', Auth::user()->current_team_id)
+                                                               ->pluck('merchant_team_id')
+                                                               ->toArray();
+
+            if (
+                !in_array(
+                    needle  : Auth::user()->current_team_id,
+                    haystack: $voucherSetMerchantTeamIds
+                )
+            ) {
+                $this->responseCode = 400;
+                $this->message      = ApiResponse::RESPONSE_INVALID_MERCHANT_TEAM->value;
+
+                return $this->respond();
+            }
+
+
+            $voucher->setHidden(
+                [
+                    'created_by_team_id',
+                    'allocated_to_service_team_id',
+                ]
+            );
+
+            /**
              * At this point everything checks out, we can return the voucher details
              */
             $this->data = $voucher;
 
-        }
-        catch (Exception $e) {
+        } catch (Exception $e) {
             $this->responseCode = 500;
             $this->message      = ApiResponse::RESPONSE_ERROR->value . ':' . $e->getMessage();
         }

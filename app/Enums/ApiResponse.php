@@ -22,7 +22,6 @@ enum ApiResponse: string
     case RESPONSE_AUTHORIZATION_SIGNATURE_INCORRECT_IAT_EXPIRED         = 'IAT claim expired.';
     case RESPONSE_AUTHORIZATION_SIGNATURE_INCORRECT_IAT_EXP_TOO_LARGE   = 'IAT and EXP too far apart. Max diff: 1 minute.';
     case RESPONSE_AUTHORIZATION_SIGNATURE_INCORRECT_EXPIRED             = 'Token expired.';
-    case RESPONSE_HMAC_SIGNATURE_INCORRECT                              = 'Incorrect HMAC signature.';
     case RESPONSE_INVALID_MERCHANT_TEAM                                 = 'Invalid merchant team.';
     case RESPONSE_QUERY_FILTER_DISALLOWED                               = 'Query filter disallowed';
     case RESPONSE_REDEMPTION_FAILED_VOUCHER_ALREADY_FULLY_REDEEMED      = 'This voucher has already been fully redeemed, no redemption made this time.';

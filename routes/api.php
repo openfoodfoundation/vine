@@ -32,28 +32,6 @@ Route::group(['prefix' => 'v1', 'middleware' => VerifyApiTokenSignature::class],
      */
 
     /**
-     * Voucher Validation (for unattended redemptions)
-     */
-    Route::middleware(PreventTooManyRequestsMiddleware::class)->group(function () {
-
-        Route::post('/voucher-validation', [ApiVoucherValidationController::class, 'store'])
-            ->name('api.v1.voucher-validation.post');
-
-        Route::get('/voucher-validation', [ApiVoucherValidationController::class, 'index'])
-            ->name('api.v1.voucher-validation.getMany');
-
-        Route::get('/voucher-validation/{id}', [ApiVoucherValidationController::class, 'show'])
-            ->name('api.v1.voucher-validation.get');
-
-        Route::put('/voucher-validation/{id}', [ApiVoucherValidationController::class, 'update'])
-            ->name('api.v1.voucher-validation.put');
-
-        Route::delete('/voucher-validation/{id}', [ApiVoucherValidationController::class, 'destroy'])
-            ->name('api.v1.voucher-validation.delete');
-
-    });
-
-    /**
      * App API Routes
      */
     Route::middleware(['auth:sanctum'])
@@ -229,6 +207,28 @@ Route::group(['prefix' => 'v1', 'middleware' => VerifyApiTokenSignature::class],
                         PersonalAccessTokenAbility::MY_TEAM_VOUCHERS_DELETE->value,
                     ]
                 );
+
+            /**
+             * Voucher Validation (for unattended redemptions)
+             */
+            Route::middleware(PreventTooManyRequestsMiddleware::class)->group(function () {
+
+                Route::post('/voucher-validation', [ApiVoucherValidationController::class, 'store'])
+                    ->name('api.v1.voucher-validation.post');
+
+                Route::get('/voucher-validation', [ApiVoucherValidationController::class, 'index'])
+                    ->name('api.v1.voucher-validation.getMany');
+
+                Route::get('/voucher-validation/{id}', [ApiVoucherValidationController::class, 'show'])
+                    ->name('api.v1.voucher-validation.get');
+
+                Route::put('/voucher-validation/{id}', [ApiVoucherValidationController::class, 'update'])
+                    ->name('api.v1.voucher-validation.put');
+
+                Route::delete('/voucher-validation/{id}', [ApiVoucherValidationController::class, 'destroy'])
+                    ->name('api.v1.voucher-validation.delete');
+
+            });
 
             /**
              * Voucher Redemptions
