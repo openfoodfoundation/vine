@@ -240,7 +240,6 @@ class VoucherValidationPostTest extends BaseAPITestCase
             $response->assertStatus(200);
         }
 
-
         $extraResponse = $this->postJson($this->apiRoot . $this->endPoint, $payload);
 
         $extraResponse->assertStatus(429);
@@ -285,7 +284,6 @@ class VoucherValidationPostTest extends BaseAPITestCase
         $extraResponse = $this->postJson($this->apiRoot . $this->endPoint, $payload);
         $extraResponse->assertStatus(429);
 
-
         /**
          * Create a request using a different user / different API token
          */
@@ -303,12 +301,10 @@ class VoucherValidationPostTest extends BaseAPITestCase
             ]
         );
 
-
         $payload2 = [
             'type'  => 'voucher_code',
             'value' => $voucher->voucher_short_code,
         ];
-
 
         $extraResponseForNewUser = $this->postJson($this->apiRoot . $this->endPoint, $payload2);
         $extraResponseForNewUser->assertStatus(200);
