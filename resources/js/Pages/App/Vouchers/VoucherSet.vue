@@ -80,7 +80,7 @@ function getVoucherSet() {
                 Redeemed percentage: <span class="font-bold">{{ Math.round(((voucherSet.total_set_value - voucherSet.total_set_value_remaining) / voucherSet.total_set_value) * 10000) / 100 }}%</span>
             </div>
             <div v-if="voucherSet.last_redemption_at">
-                Last redeemed at: {{ dayjs.utc(voucherSet.last_redemption_at).fromNow() }} ({{ dayjs(voucherSet.last_redemption_at) }})
+                Last redeemed at: <span class="font-bold">{{ dayjs.utc(voucherSet.last_redemption_at).fromNow() }} ({{ dayjs(voucherSet.last_redemption_at) }})</span>
             </div>
         </div>
 

@@ -74,7 +74,7 @@ function getVoucher() {
                 Redemptions: <span class="font-bold">{{ voucher.num_voucher_redemptions }}</span>
             </div>
             <div v-if="voucher.last_redemption_at">
-                Last redeemed at: {{ dayjs.utc(voucher.last_redemption_at).fromNow() }} ({{ dayjs(voucher.last_redemption_at) }})
+                Last redeemed at: <span class="font-bold">{{ dayjs.utc(voucher.last_redemption_at).fromNow() }} ({{ dayjs(voucher.last_redemption_at) }})</span>
             </div>
         </div>
 
