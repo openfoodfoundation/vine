@@ -39,8 +39,8 @@ Route::group(['prefix' => 'v1', 'middleware' => VerifyApiTokenSignature::class],
         ->group(function () {
 
             /**
-              * My Team
-              */
+             * My Team
+             */
             Route::get('/my-team', [ApiMyTeamController::class, 'index'])
                 ->name('api.v1.my-team.get')
                 ->middleware(
@@ -52,8 +52,8 @@ Route::group(['prefix' => 'v1', 'middleware' => VerifyApiTokenSignature::class],
                 );
 
             /**
-              * My Audit Items
-              */
+             * My Audit Items
+             */
             Route::post('/my-team-audit-items', [ApiMyTeamAuditItemsController::class, 'store'])
                 ->name('api.v1.my-team-audit-items.post')
                 ->middleware(
@@ -105,8 +105,8 @@ Route::group(['prefix' => 'v1', 'middleware' => VerifyApiTokenSignature::class],
                 );
 
             /**
-              * My Teams
-              */
+             * My Teams
+             */
             Route::post('/my-teams', [ApiMyTeamsController::class, 'store'])
                 ->name('api.v1.my-teams.post')
                 ->middleware(
@@ -157,8 +157,8 @@ Route::group(['prefix' => 'v1', 'middleware' => VerifyApiTokenSignature::class],
                 );
 
             /**
-              * My Vouchers
-              */
+             * My Vouchers
+             */
             Route::post('/my-team-vouchers', [ApiMyTeamVouchersController::class, 'store'])
                 ->name('api.v1.my-team-vouchers.post')
                 ->middleware(
@@ -210,8 +210,8 @@ Route::group(['prefix' => 'v1', 'middleware' => VerifyApiTokenSignature::class],
                 );
 
             /**
-              * Voucher Validation (for unattended redemptions)
-              */
+             * Voucher Validation (for unattended redemptions)
+             */
             Route::middleware('throttle:validations')->group(function () {
 
                 Route::post('/voucher-validation', [ApiVoucherValidationController::class, 'store'])
@@ -232,8 +232,8 @@ Route::group(['prefix' => 'v1', 'middleware' => VerifyApiTokenSignature::class],
             });
 
             /**
-              * Voucher Redemptions
-              */
+             * Voucher Redemptions
+             */
             Route::post('/voucher-redemptions', [ApiVoucherRedemptionsController::class, 'store'])
                 ->name('api.v1.voucher-redemptions.post')
                 ->middleware(
@@ -285,8 +285,8 @@ Route::group(['prefix' => 'v1', 'middleware' => VerifyApiTokenSignature::class],
                 );
 
             /**
-              * Shops
-              */
+             * Shops
+             */
             Route::post('/shops', [ApiShopsController::class, 'store'])
                 ->name('api.v1.shops.post')
                 ->middleware(
@@ -338,8 +338,8 @@ Route::group(['prefix' => 'v1', 'middleware' => VerifyApiTokenSignature::class],
                 );
 
             /**
-              * System Statistics
-              */
+             * System Statistics
+             */
             Route::post('/system-statistics', [ApiSystemStatisticsController::class, 'store'])
                 ->name('api.v1.system-statistics.post')
                 ->middleware(
@@ -391,8 +391,8 @@ Route::group(['prefix' => 'v1', 'middleware' => VerifyApiTokenSignature::class],
                 );
 
             /**
-              * Admin Api Routes
-              */
+             * Admin Api Routes
+             */
             Route::prefix('admin')
                 ->middleware(['auth:sanctum', CheckAdminStatus::class])
                 ->group(function () {
@@ -458,8 +458,8 @@ Route::group(['prefix' => 'v1', 'middleware' => VerifyApiTokenSignature::class],
                     )->names('api.v1.admin.team-voucher-templates');
 
                     /**
-                       * Vouchers
-                       */
+                     * Vouchers
+                     */
                     Route::post('/vouchers', [ApiAdminVouchersController::class, 'store'])
                         ->name('api.v1.admin-vouchers.post');
 
@@ -476,8 +476,8 @@ Route::group(['prefix' => 'v1', 'middleware' => VerifyApiTokenSignature::class],
                         ->name('api.v1.admin-vouchers.delete');
 
                     /**
-                       * Voucher Sets
-                       */
+                     * Voucher Sets
+                     */
                     Route::post('/voucher-sets', [ApiAdminVoucherSetsController::class, 'store'])
                         ->name('api.v1.admin-voucher-sets.post');
 
