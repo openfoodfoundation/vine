@@ -9,6 +9,7 @@ enum ApiResponse: string
 {
     case RESPONSE_DELETED                                               = 'Deleted';
     case RESPONSE_ERROR                                                 = 'Error';
+    case RESPONSE_FILE_TYPE_NOT_ALLOWED                                 = 'File type not allowed';
     case RESPONSE_METHOD_NOT_ALLOWED                                    = 'Method Not Allowed';
     case RESPONSE_NOT_FOUND                                             = 'Not found';
     case RESPONSE_OK                                                    = 'OK';

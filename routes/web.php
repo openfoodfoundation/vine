@@ -185,6 +185,16 @@ Route::middleware('auth')->group(function () {
             ]);
         })->name('admin.team');
 
+        Route::get('/team-voucher-templates/new', function () {
+            return Inertia::render('Admin/VoucherTemplates/VoucherTemplateNew');
+        })->name('admin.team-voucher-templates.new');
+
+        Route::get('/team-voucher-template/{id}', function (int $id) {
+            return Inertia::render('Admin/VoucherTemplates/VoucherTemplateEdit', [
+                'id' => $id,
+            ]);
+        })->name('admin.user');
+
         Route::get('/users', function () {
             return Inertia::render('Admin/Users/Users');
         })->name('admin.users');

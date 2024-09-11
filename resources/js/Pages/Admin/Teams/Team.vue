@@ -19,6 +19,7 @@ import InputLabel from "@/Components/InputLabel.vue";
 import TextInput from "@/Components/TextInput.vue";
 import PrimaryButton from "@/Components/PrimaryButton.vue";
 import DangerButton from "@/Components/DangerButton.vue";
+import AdminTeamVoucherTemplatesList from "@/Components/Admin/Teams/AdminTeamVoucherTemplatesList.vue";
 
 dayjs.extend(utc);
 
@@ -259,6 +260,13 @@ function updateTeam() {
             <div class="text-sm pb-2 text-gray-500">Voucher sets allocated to team</div>
             - paginated
         </div>
+
+        <div class="container mx-auto" v-if="team.id">
+            <AdminTeamVoucherTemplatesList :team="team"></AdminTeamVoucherTemplatesList>
+        </div>
+
+
+        <div class="p-32"></div>
 
     </AuthenticatedLayout>
 </template>
