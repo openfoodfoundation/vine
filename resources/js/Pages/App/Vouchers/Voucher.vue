@@ -23,7 +23,7 @@ onMounted(() => {
 });
 
 function getVoucher() {
-    axios.get('/my-team-vouchers/' + $props.voucherId + '?cached=false&relations=createdByTeam,allocatedToServiceTeam,voucherRedemptions').then(response => {
+    axios.get('/my-team-vouchers/' + $props.voucherId + '?cached=false&relations=createdByTeam,allocatedToServiceTeam,voucherRedemptions.redeemedByUser,voucherRedemptions.redeemedByTeam').then(response => {
         voucher.value = response.data.data
     }).catch(error => {
         console.log(error)
@@ -75,6 +75,26 @@ function getVoucher() {
             </div>
             <div v-if="voucher.last_redemption_at">
                 Last redeemed at: <span class="font-bold">{{ dayjs.utc(voucher.last_redemption_at).fromNow() }} ({{ dayjs(voucher.last_redemption_at) }})</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                Voucher redemptions
+            </div>
+
+            <div v-if="voucher.voucher_redemptions && voucher.voucher_redemptions.length" class="text-sm">
+                <div v-for="redemption in voucher.voucher_redemptions" class="border-b py-2 sm:p-2">
+                    <div>
+                        Redeemed amount: <span class="font-bold">${{ redemption.redeemed_amount / 100 }}</span>
+                    </div>
+                    <div v-if="redemption.redeemed_by_user && redemption.redeemed_by_team">
+                        Redeemed by: <span class="font-bold">{{ redemption.redeemed_by_user.name }} ({{ redemption.redeemed_by_team.name }})</span>
+                    </div>
+                    <div v-if="redemption.created_at">
+                        Redeemed at: <span class="font-bold">{{ dayjs.utc(redemption.created_at).fromNow() }} ({{ dayjs(redemption.created_at) }})</span>
+                    </div>
+                </div>
             </div>
         </div>
 
