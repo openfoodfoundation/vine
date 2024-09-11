@@ -21,7 +21,6 @@ use App\Http\Controllers\Api\V1\ApiSystemStatisticsController;
 use App\Http\Controllers\Api\V1\ApiVoucherRedemptionsController;
 use App\Http\Controllers\Api\V1\ApiVoucherValidationController;
 use App\Http\Middleware\CheckAdminStatus;
-use App\Http\Middleware\PreventTooManyRequestsMiddleware;
 use App\Http\Middleware\VerifyApiTokenSignature;
 use Illuminate\Support\Facades\Route;
 
