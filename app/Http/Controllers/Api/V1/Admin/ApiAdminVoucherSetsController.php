@@ -17,7 +17,7 @@ use Knuckles\Scribe\Attributes\Response;
 use Knuckles\Scribe\Attributes\Subgroup;
 use Knuckles\Scribe\Attributes\UrlParam;
 
-#[Group('App Endpoints')]
+#[Group('Admin Endpoints')]
 #[Subgroup('/admin/voucher-sets', 'Admin endpoint for unrestricted management of voucher sets')]
 class ApiAdminVoucherSetsController extends Controller
 {
