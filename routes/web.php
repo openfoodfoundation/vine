@@ -283,6 +283,30 @@ Route::middleware('auth')->group(function () {
             return redirect('/');
         })->name('admin.impersonate');
 
+        Route::get('/vouchers', function () {
+            return Inertia::render('Admin/Vouchers/Vouchers');
+        })->name('admin.vouchers');
+
+        Route::get('/voucher/{id}', function (string $id) {
+            return Inertia::render('Admin/Vouchers/Voucher', [
+                'id' => $id,
+            ]);
+        })->name('admin.voucher');
+
+        Route::get('/voucher-sets', function () {
+            return Inertia::render('Admin/Vouchers/VoucherSets');
+        })->name('admin.voucher-sets');
+
+        Route::get('/voucher-set/{id}', function (string $id) {
+            return Inertia::render('Admin/Vouchers/VoucherSet', [
+                'id' => $id,
+            ]);
+        })->name('admin.voucher-set');
+
+        Route::get('/voucher-redemptions', function () {
+            return Inertia::render('Admin/Vouchers/VoucherRedemptions');
+        })->name('admin.voucher-redemptions');
+
         Route::get('/teams', function () {
             return Inertia::render('Admin/Teams/Teams');
         })->name('admin.teams');

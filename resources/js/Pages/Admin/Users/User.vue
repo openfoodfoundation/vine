@@ -5,7 +5,7 @@ import AdminTopNavigation from "@/Components/Admin/AdminTopNavigation.vue";
 import {onMounted, ref} from "vue";
 import Swal from "sweetalert2";
 import PaginatorComponent from "@/Components/Admin/PaginatorComponent.vue";
-import AdminUserDetailsComponent from "@/Components/Admin/AdminUserDetailsComponent.vue";
+import AdminUserDetailsComponent from "@/Components/Admin/Users/AdminUserDetailsComponent.vue";
 import PrimaryButton from "@/Components/PrimaryButton.vue";
 import InputLabel from "@/Components/InputLabel.vue";
 import TextInput from "@/Components/TextInput.vue";

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Events\VoucherRedemptions\VoucherRedemptionWasCreated;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -11,6 +12,10 @@ class VoucherRedemption extends Model
 {
     use HasFactory;
     use SoftDeletes;
+
+    protected $dispatchesEvents = [
+        'created' => VoucherRedemptionWasCreated::class,
+    ];
 
     public function redeemedByUser(): BelongsTo
     {

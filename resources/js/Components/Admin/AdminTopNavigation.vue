@@ -115,15 +115,15 @@ function highlightMatchingText(text) {
                 Teams
             </Link>
 
-            <Link :href="route('admin.teams')">
+            <Link :href="route('admin.voucher-sets')">
                 Voucher Sets
             </Link>
 
-            <Link :href="route('admin.teams')">
+            <Link :href="route('admin.vouchers')">
                 Vouchers
             </Link>
 
-            <Link :href="route('admin.teams')">
+            <Link :href="route('admin.voucher-redemptions')">
                 Redemptions
             </Link>
 
@@ -218,6 +218,9 @@ function highlightMatchingText(text) {
                                tabindex="0">
                                 <div class="flex">
                                     <div v-html="highlightMatchingText(voucher.id)"></div>
+                                    <div class="ml-2">
+                                        <div v-html="highlightMatchingText('(' + voucher.voucher_short_code + ')')"></div>
+                                    </div>
                                 </div>
                                 <i class="fa fa-chevron-right flex items-center"></i>
                             </a>

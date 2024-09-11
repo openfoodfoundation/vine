@@ -11,6 +11,8 @@ use App\Http\Controllers\Api\V1\Admin\ApiAdminTeamUsersController;
 use App\Http\Controllers\Api\V1\Admin\ApiAdminTeamVoucherTemplatesController;
 use App\Http\Controllers\Api\V1\Admin\ApiAdminUserPersonalAccessTokensController;
 use App\Http\Controllers\Api\V1\Admin\ApiAdminUsersController;
+use App\Http\Controllers\Api\V1\Admin\ApiAdminVouchersController;
+use App\Http\Controllers\Api\V1\Admin\ApiAdminVoucherSetsController;
 use App\Http\Controllers\Api\V1\Admin\ApiFileUploadsController;
 use App\Http\Controllers\Api\V1\ApiMyTeamAuditItemsController;
 use App\Http\Controllers\Api\V1\ApiMyTeamController;
@@ -20,11 +22,16 @@ use App\Http\Controllers\Api\V1\ApiMyTeamVoucherSetsController;
 use App\Http\Controllers\Api\V1\ApiShopsController;
 use App\Http\Controllers\Api\V1\ApiSystemStatisticsController;
 use App\Http\Controllers\Api\V1\ApiVoucherRedemptionsController;
+use App\Http\Controllers\Api\V1\ApiVoucherValidationController;
 use App\Http\Middleware\CheckAdminStatus;
 use App\Http\Middleware\VerifyApiTokenSignature;
 use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix' => 'v1', 'middleware' => VerifyApiTokenSignature::class], function () {
+
+    /**
+     * Open routes (non-authenticated)
+     */
 
     /**
      * App API Routes
@@ -118,7 +125,7 @@ Route::group(['prefix' => 'v1', 'middleware' => VerifyApiTokenSignature::class],
                     ]
                 );
 
-            Route::put('/my-team-audit-items/{id}', [ApiMyTeamVouchersController::class, 'update'])
+            Route::put('/my-team-audit-items/{id}', [ApiMyTeamAuditItemsController::class, 'update'])
                 ->name('api.v1.my-team-audit-items.put')
                 ->middleware(
                     [
@@ -297,6 +304,29 @@ Route::group(['prefix' => 'v1', 'middleware' => VerifyApiTokenSignature::class],
                 );
 
             /**
+            * Voucher Validation (for unattended redemptions)
+             */
+            Route::middleware('throttle:validations')->group(function () {
+
+                Route::post('/voucher-validation', [ApiVoucherValidationController::class, 'store'])
+                    ->name('api.v1.voucher-validation.post');
+
+                Route::get('/voucher-validation', [ApiVoucherValidationController::class, 'index'])
+                    ->name('api.v1.voucher-validation.getMany');
+
+                Route::get('/voucher-validation/{id}', [ApiVoucherValidationController::class, 'show'])
+                    ->name('api.v1.voucher-validation.get');
+
+                Route::put('/voucher-validation/{id}', [ApiVoucherValidationController::class, 'update'])
+                    ->name('api.v1.voucher-validation.put');
+
+                Route::delete('/voucher-validation/{id}', [ApiVoucherValidationController::class, 'destroy'])
+                    ->name('api.v1.voucher-validation.delete');
+
+            });
+
+
+            /**
              * Voucher Redemptions
              */
             Route::post('/voucher-redemptions', [ApiVoucherRedemptionsController::class, 'store'])
@@ -455,69 +485,121 @@ Route::group(['prefix' => 'v1', 'middleware' => VerifyApiTokenSignature::class],
                     ]
                 );
 
+            /**
+             * Admin Api Routes
+             */
+            Route::prefix('admin')
+                ->middleware(['auth:sanctum', CheckAdminStatus::class])
+                ->group(function () {
+
+                    Route::resource(
+                        '/audit-items',
+                        ApiAdminAuditItemsController::class
+                    )->names('api.v1.admin.audit-items');
+
+                    Route::resource(
+                        '/search',
+                        ApiAdminSearchController::class
+                    )->names('api.v1.admin.search');
+
+                    Route::resource(
+                        '/system-statistics',
+                        ApiAdminSystemStatisticsController::class
+                    )->names('api.v1.admin.system-statistics');
+
+                    Route::resource(
+                        '/file-uploads',
+                        ApiFileUploadsController::class
+                    )->names('api.v1.admin.file-uploads');
+
+                    Route::resource(
+                        '/search',
+                        ApiAdminSearchController::class
+                    )->names('api.v1.admin.search');
+
+                    Route::resource(
+                        '/team-merchant-teams',
+                        ApiAdminTeamMerchantTeamsController::class
+                    )->names('api.v1.admin.team-merchant-teams');
+
+                    Route::resource(
+                        '/team-service-teams',
+                        ApiAdminTeamServiceTeamsController::class
+                    )->names('api.v1.admin.team-service-teams');
+
+                    Route::resource(
+                        '/team-users',
+                        ApiAdminTeamUsersController::class
+                    )->names('api.v1.admin.team-users');
+
+                    Route::resource(
+                        '/teams',
+                        ApiAdminTeamsController::class
+                    )->names('api.v1.admin.teams');
+
+                    Route::resource(
+                        '/user-personal-access-tokens',
+                        ApiAdminUserPersonalAccessTokensController::class
+                    )->names('api.v1.admin.tokens');
+
+                    Route::resource(
+                        '/users',
+                        ApiAdminUsersController::class
+                    )->names('api.v1.admin.users');
+
+                    Route::resource(
+                        '/team-voucher-templates',
+                        ApiAdminTeamVoucherTemplatesController::class
+                    )->names('api.v1.admin.team-voucher-templates');
+
+                    /**
+                     * Vouchers
+                     */
+                    Route::post('/vouchers', [ApiAdminVouchersController::class, 'store'])
+                        ->name('api.v1.admin-vouchers.post');
+
+                    Route::get('/vouchers', [ApiAdminVouchersController::class, 'index'])
+                        ->name('api.v1.admin-vouchers.getMany');
+
+                    Route::get('/vouchers/{id}', [ApiAdminVouchersController::class, 'show'])
+                        ->name('api.v1.admin-vouchers.get');
+
+                    Route::put('/vouchers/{id}', [ApiAdminVouchersController::class, 'update'])
+                        ->name('api.v1.admin-vouchers.put');
+
+                    Route::delete('/vouchers/{id}', [ApiAdminVouchersController::class, 'destroy'])
+                        ->name('api.v1.admin-vouchers.delete');
+
+                    /**
+                     * Voucher Sets
+                     */
+                    Route::post('/voucher-sets', [ApiAdminVoucherSetsController::class, 'store'])
+                        ->name('api.v1.admin-voucher-sets.post');
+
+                    Route::get('/voucher-sets', [ApiAdminVoucherSetsController::class, 'index'])
+                        ->name('api.v1.admin-voucher-sets.getMany');
+
+                    Route::get('/voucher-sets/{id}', [ApiAdminVoucherSetsController::class, 'show'])
+                        ->name('api.v1.admin-voucher-sets.get');
+
+                    Route::put('/voucher-sets/{id}', [ApiAdminVoucherSetsController::class, 'update'])
+                        ->name('api.v1.admin-voucher-sets.put');
+
+                    Route::delete('/voucher-sets/{id}', [ApiAdminVoucherSetsController::class, 'destroy'])
+                        ->name('api.v1.admin-voucher-sets.delete');
+
+                    Route::resource(
+                        '/user-personal-access-tokens',
+                        ApiAdminUserPersonalAccessTokensController::class
+                    )->names('api.v1.admin.tokens');
+
+                    Route::resource(
+                        '/users',
+                        ApiAdminUsersController::class
+                    )->names('api.v1.admin.users');
+
+                });
+
         });
 
-    /**
-     * Admin Api Routes
-     */
-    Route::prefix('admin')
-        ->middleware(['auth:sanctum', CheckAdminStatus::class])
-        ->group(function () {
-
-            Route::resource(
-                '/audit-items',
-                ApiAdminAuditItemsController::class
-            )->names('api.v1.admin.audit-items');
-
-            Route::resource(
-                '/file-uploads',
-                ApiFileUploadsController::class
-            )->names('api.v1.admin.file-uploads');
-
-            Route::resource(
-                '/search',
-                ApiAdminSearchController::class
-            )->names('api.v1.admin.search');
-
-            Route::resource(
-                '/system-statistics',
-                ApiAdminSystemStatisticsController::class
-            )->names('api.v1.admin.system-statistics');
-
-            Route::resource(
-                '/team-merchant-teams',
-                ApiAdminTeamMerchantTeamsController::class
-            )->names('api.v1.admin.team-merchant-teams');
-
-            Route::resource(
-                '/team-service-teams',
-                ApiAdminTeamServiceTeamsController::class
-            )->names('api.v1.admin.team-service-teams');
-
-            Route::resource(
-                '/team-users',
-                ApiAdminTeamUsersController::class
-            )->names('api.v1.admin.team-users');
-
-            Route::resource(
-                '/teams',
-                ApiAdminTeamsController::class
-            )->names('api.v1.admin.teams');
-
-            Route::resource(
-                '/team-voucher-templates',
-                ApiAdminTeamVoucherTemplatesController::class
-            )->names('api.v1.admin.team-voucher-templates');
-
-            Route::resource(
-                '/user-personal-access-tokens',
-                ApiAdminUserPersonalAccessTokensController::class
-            )->names('api.v1.admin.tokens');
-
-            Route::resource(
-                '/users',
-                ApiAdminUsersController::class
-            )->names('api.v1.admin.users');
-
-        });
 });

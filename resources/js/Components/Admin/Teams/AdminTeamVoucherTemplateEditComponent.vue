@@ -4,7 +4,7 @@ import TextInput from "@/Components/TextInput.vue";
 import InputLabel from "@/Components/InputLabel.vue";
 import PrimaryButton from "@/Components/PrimaryButton.vue";
 import Swal from "sweetalert2";
-import AdminUserDetailsComponent from "@/Components/Admin/AdminUserDetailsComponent.vue";
+import AdminUserDetailsComponent from "@/Components/Admin/Users/AdminUserDetailsComponent.vue";
 import SecondaryButton from "@/Components/SecondaryButton.vue";
 import {Link} from "@inertiajs/vue3";
 import DangerButton from "@/Components/DangerButton.vue";

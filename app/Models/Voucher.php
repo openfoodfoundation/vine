@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Events\Vouchers\VoucherWasCreated;
 use App\Events\Vouchers\VoucherWasUpdated;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -22,6 +23,7 @@ class Voucher extends Model
         'expires_at' => 'datetime',
     ];
     protected $dispatchesEvents = [
+        'created' => VoucherWasCreated::class,
         'updated' => VoucherWasUpdated::class,
     ];
 
