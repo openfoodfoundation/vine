@@ -1,7 +1,7 @@
 <script setup>
 import {onMounted, ref} from "vue";
 import {Link} from '@inertiajs/vue3';
-import AdminTeamDetailsComponent from "@/Components/Admin/AdminTeamDetailsComponent.vue";
+import AdminTeamDetailsComponent from "@/Components/Admin/Teams/AdminTeamDetailsComponent.vue";
 import PrimaryButton from "@/Components/PrimaryButton.vue";
 import Swal from "sweetalert2";
 import PaginatorComponent from "@/Components/Admin/PaginatorComponent.vue";

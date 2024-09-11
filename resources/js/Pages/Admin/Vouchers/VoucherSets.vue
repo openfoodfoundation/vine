@@ -14,7 +14,10 @@ import VoucherSetsComponent from "@/Components/Admin/Vouchers/VoucherSetsCompone
             <AdminTopNavigation></AdminTopNavigation>
         </template>
 
-        <div class=" card">
+        <div class="card">
+            <div class="card-header">
+                Voucher Sets
+            </div>
             <VoucherSetsComponent></VoucherSetsComponent>
         </div>
     </AuthenticatedLayout>

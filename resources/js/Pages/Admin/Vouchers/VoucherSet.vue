@@ -54,6 +54,67 @@ function getVoucherSet() {
 
         <div class="card">
             <div class="card-header">
+                Voucher set details
+            </div>
+
+            <div class="grid grid-cols-4 gap-y-12 text-center mt-8">
+                <div>
+                    <div class="font-bold text-3xl">
+                        ${{ voucherSet.total_set_value / 100 }}
+                    </div>
+                    Total set value
+                </div>
+                <div>
+                    <div class="font-bold text-3xl">
+                        ${{ voucherSet.total_set_value_remaining / 100 }}
+                    </div>
+                    Total remaining value
+                </div>
+                <div>
+                    <div class="font-bold text-3xl">
+                        {{ voucherSet.num_vouchers }}
+                    </div>
+                    # Vouchers
+                </div>
+                <div>
+                    <div class="font-bold text-3xl">
+                        {{ voucherSet.num_voucher_redemptions }}
+                    </div>
+                    # Redemptions
+                </div>
+
+
+                <div v-if="voucherSet.last_redemption_at">
+                    <div>
+                        Last redeemed
+                    </div>
+                    <div class="font-bold text-3xl">
+                        {{ dayjs.utc(voucherSet.last_redemption_at).fromNow() }}
+                    </div>
+                    <div class="text-xs">
+                        ({{ dayjs(voucherSet.last_redemption_at) }})
+                    </div>
+
+                </div>
+
+                <div v-if="voucherSet.expires_at">
+                    <div>
+                        Expires
+                    </div>
+                    <div class="font-bold text-3xl">
+                        {{ dayjs.utc(voucherSet.expires_at).fromNow() }}
+                    </div>
+                    <div>
+                        ({{ dayjs(voucherSet.expires_at) }})
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
                 Created by team
             </div>
 
@@ -75,30 +136,7 @@ function getVoucherSet() {
             </div>
         </div>
 
-        <div class="card">
-            <div class="card-header">
-                Voucher set details
-            </div>
 
-            <div>
-                Total set value: <span class="font-bold">${{ voucherSet.total_set_value / 100 }}</span>
-            </div>
-            <div>
-                Total remaining value: <span class="font-bold">${{ voucherSet.total_set_value_remaining / 100 }}</span>
-            </div>
-            <div>
-                Vouchers: <span class="font-bold">{{ voucherSet.num_vouchers }}</span>
-            </div>
-            <div>
-                Redemptions: <span class="font-bold">{{ voucherSet.num_voucher_redemptions }}</span>
-            </div>
-            <div v-if="voucherSet.last_redemption_at">
-                Last redeemed at: {{ dayjs.utc(voucherSet.last_redemption_at).fromNow() }} ({{ dayjs(voucherSet.last_redemption_at) }})
-            </div>
-            <div v-if="voucherSet.expires_at">
-                Expires at: {{ dayjs.utc(voucherSet.expires_at).fromNow() }} ({{ dayjs(voucherSet.expires_at) }})
-            </div>
-        </div>
 
         <div class="card">
             <div class="card-header">

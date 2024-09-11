@@ -26,6 +26,7 @@ class CollateVoucherAggregatesJob implements ShouldQueue
      */
     public function handle(): void
     {
+        VoucherService::updateVoucherAmountRemaining($this->voucher);
         VoucherService::collateVoucherAggregates($this->voucher);
     }
 }

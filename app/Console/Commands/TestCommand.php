@@ -31,14 +31,7 @@ class TestCommand extends Command
 
         $me = User::find(3);
 
-        $voucherSet = VoucherSet::factory()->createQuietly([
-            'created_by_team_id' => $me->current_team_id,
-            'created_by_user_id' => $me->id,
-        ]);
 
-        $voucher = Voucher::factory()->createQuietly([
-            'voucher_set_id' => $voucherSet->id,
-        ]);
 
     }
 }

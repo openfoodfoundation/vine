@@ -74,10 +74,10 @@ function getVouchers(page = 1) {
                         Allocated to: {{ voucher.allocated_to_service_team.name }}
                     </div>
                     <div>
-                        Original value: ${{ voucher.voucher_value_original / 100 }}
+                        Original value: ${{ (voucher.voucher_value_original / 100).toFixed(2) }}
                     </div>
                     <div>
-                        Remaining value: ${{ voucher.voucher_value_remaining / 100 }}
+                        Remaining value: ${{ (voucher.voucher_value_remaining / 100).toFixed(2) }}
                     </div>
                     <div v-if="voucher.created_at">
                         Created at: {{ dayjs.utc(voucher.created_at).fromNow() }} ({{ dayjs(voucher.created_at) }})

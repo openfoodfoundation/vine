@@ -2,7 +2,7 @@
 import {ref} from "vue";
 import TextInput from "@/Components/TextInput.vue";
 import InputLabel from "@/Components/InputLabel.vue";
-import AdminUserDetailsComponent from "@/Components/Admin/AdminUserDetailsComponent.vue";
+import AdminUserDetailsComponent from "@/Components/Admin/Users/AdminUserDetailsComponent.vue";
 import PrimaryButton from "@/Components/PrimaryButton.vue";
 
 const $props = defineProps({

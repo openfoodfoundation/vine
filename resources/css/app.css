@@ -24,9 +24,9 @@ input[type=checkbox], input[type=text], input[type=number]{
 
 
 .card{
-    @apply container lg:mx-auto p-6 lg:p-8 bg-white shadow-sm sm:rounded-lg my-8;
+    @apply container lg:mx-auto p-6 lg:p-8 bg-white shadow-sm sm:rounded-lg my-4;
 }
 
 .card-header {
-    @apply pb-2 mb-2 border-b border-dotted text-gray-300 text-lg;
+    @apply pb-2 mb-2 border-b border-dotted text-gray-300 text-lg capitalize;
 }

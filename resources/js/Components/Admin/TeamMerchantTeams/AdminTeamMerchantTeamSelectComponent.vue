@@ -2,8 +2,8 @@
 import {ref} from "vue";
 import TextInput from "@/Components/TextInput.vue";
 import InputLabel from "@/Components/InputLabel.vue";
-import AdminTeamDetailsComponent from "@/Components/Admin/AdminTeamDetailsComponent.vue";
-import AdminTeamCreateComponent from "@/Components/Admin/AdminTeamCreateComponent.vue";
+import AdminTeamDetailsComponent from "@/Components/Admin/Teams/AdminTeamDetailsComponent.vue";
+import AdminTeamCreateComponent from "@/Components/Admin/Teams/AdminTeamCreateComponent.vue";
 
 const $props = defineProps({
 

@@ -7,7 +7,7 @@ import PaginatorComponent from "@/Components/Admin/PaginatorComponent.vue";
 import Swal from "sweetalert2";
 import AdminTeamMerchantTeamsComponent from "@/Components/Admin/TeamMerchantTeams/AdminTeamMerchantTeamsComponent.vue";
 import AdminTeamServiceTeamsComponent from "@/Components/Admin/TeamServiceTeams/AdminTeamServiceTeamsComponent.vue";
-import AdminUserSelectComponent from "@/Components/Admin/AdminUserSelectComponent.vue";
+import AdminUserSelectComponent from "@/Components/Admin/Users/AdminUserSelectComponent.vue";
 import SecondaryButton from "@/Components/SecondaryButton.vue";
 import AjaxLoadingIndicator from "@/Components/AjaxLoadingIndicator.vue";
 import dayjs from "dayjs";

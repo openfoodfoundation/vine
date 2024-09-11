@@ -2,7 +2,7 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import {Head} from '@inertiajs/vue3';
 import AdminTopNavigation from "@/Components/Admin/AdminTopNavigation.vue";
-import AdminTeamCreateComponent from "@/Components/Admin/AdminTeamCreateComponent.vue";
+import AdminTeamCreateComponent from "@/Components/Admin/Teams/AdminTeamCreateComponent.vue";
 
 function teamCreated(team) {
     window.location.href = route('admin.team', team.id)

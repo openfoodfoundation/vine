@@ -15,6 +15,9 @@ import VouchersComponent from "@/Components/Admin/Vouchers/VouchersComponent.vue
         </template>
 
         <div class=" card">
+            <div class="card-header">
+                Vouchers
+            </div>
             <VouchersComponent></VouchersComponent>
         </div>
     </AuthenticatedLayout>

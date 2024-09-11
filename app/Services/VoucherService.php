@@ -27,8 +27,8 @@ class VoucherService
      */
     public static function calculateVoucherAmountRemaining(Voucher $voucher): int
     {
-        $redeemedAmount = self::calculateVoucherAmountRedeemed($voucher);
 
+        $redeemedAmount = self::calculateVoucherAmountRedeemed($voucher);
         return $voucher->voucher_value_original - $redeemedAmount;
     }
 
@@ -62,6 +62,11 @@ class VoucherService
     {
         $voucher->voucher_value_remaining = self::calculateVoucherAmountRemaining($voucher);
         $voucher->num_voucher_redemptions = VoucherRedemption::where('voucher_id', $voucher->id)->count();
+
+        if ($voucher->voucher_value_remaining == 0) {
+            $voucher->voucher_short_code = null;
+        }
+
         $voucher->saveQuietly();
     }
 
