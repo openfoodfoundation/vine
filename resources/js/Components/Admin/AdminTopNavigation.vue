@@ -104,7 +104,7 @@ function highlightMatchingText(text) {
 
     <div class="flex justify-between flex-wrap">
         <div
-            class="w-full md:mt-4 md:w-2/3 md:flex-grow lg:flex lg:justify-start lg:items-start lg:gap-x-4 grid grid-cols-3">
+            class="w-full md:mt-4 md:w-2/3 md:flex-grow lg:flex lg:justify-start lg:items-start lg:gap-x-4 grid grid-cols-3 font-normal text-base">
             <Link :href="route('admin.home')">
                 Admin Home
             </Link>

@@ -2,9 +2,10 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import {Head} from '@inertiajs/vue3';
 import {onMounted, ref} from "vue";
-import MyTeamTopNavigation from "@/Components/MyTeamTopNavigation.vue";
+import MyTeamTopNavigation from "@/Components/App/Search/SearchComponent.vue";
 import MyTeamVouchersComponent from "@/Components/App/MyTeamVouchersComponent.vue";
 import MyTeamVoucherSetsComponent from "@/Components/App/MyTeamVoucherSetsComponent.vue";
+import SearchComponent from "@/Components/App/Search/SearchComponent.vue";
 
 const myTeam = ref({})
 const myTeams = ref({})
@@ -37,7 +38,7 @@ function getMyTeams() {
 
     <AuthenticatedLayout>
         <template #header>
-            <MyTeamTopNavigation />
+            My Team
         </template>
 
         <div class="card">
@@ -46,7 +47,7 @@ function getMyTeams() {
             </div>
         </div>
 
-        <div class="card">
+        <div class="card" id="myTeamMembers">
             <div class="card-header">
                 Team members
             </div>

@@ -37,7 +37,7 @@ function getVoucher() {
 
     <AuthenticatedLayout>
         <template #header>
-            <h2 class="font-normal text-xl text-gray-800 leading-tight">Voucher</h2>
+            Voucher
         </template>
 
         <div class="grid grid-cols-2 gap-8 container mx-auto mt-8">

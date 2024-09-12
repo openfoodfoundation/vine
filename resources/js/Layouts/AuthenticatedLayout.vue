@@ -5,8 +5,9 @@ import Dropdown from '@/Components/Dropdown.vue';
 import DropdownLink from '@/Components/DropdownLink.vue';
 import NavLink from '@/Components/NavLink.vue';
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink.vue';
-import { Link } from '@inertiajs/vue3';
+import {Link} from '@inertiajs/vue3';
 import PrimaryButton from "@/Components/PrimaryButton.vue";
+import SearchComponent from "@/Components/App/Search/SearchComponent.vue";
 
 const showingNavigationDropdown = ref(false);
 </script>
@@ -171,9 +172,14 @@ const showingNavigationDropdown = ref(false);
             </nav>
 
             <!-- Page Heading -->
-            <header class="bg-white shadow" v-if="$slots.header">
-                <div class="container mx-auto py-6 px-4 ">
-                    <slot name="header" />
+            <header class="bg-white" v-if="$slots.header">
+                <div class="container mx-auto py-6 px-4 flex justify-between items-center">
+                    <div class="w-full flex-grow font-bold text-lg">
+                        <slot name="header" />
+                    </div>
+                    <div class="md:w-1/2" v-if="!$page.url.startsWith('/admin')">
+                        <SearchComponent />
+                    </div>
                 </div>
             </header>
 
