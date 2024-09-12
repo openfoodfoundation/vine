@@ -1,30 +1,29 @@
 <script setup>
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import {Head, Link} from '@inertiajs/vue3';
-import AdminTopNavigation from "@/Components/Admin/AdminTopNavigation.vue";
 import {onMounted, ref} from "vue";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import utc from "dayjs/plugin/utc"
 
-
 dayjs.extend(relativeTime);
 dayjs.extend(utc);
 
 const $props = defineProps({
-    id: {
-        required: true,
-    }
-})
+    voucherId: {
+        type: String,
+        required: false,
+    },
+});
 
 const voucher = ref({})
 
 onMounted(() => {
     getVoucher()
-})
+});
 
 function getVoucher() {
-    axios.get('/admin/vouchers/' + $props.id + '?cached=false&relations=voucherSet,createdByTeam,allocatedToServiceTeam,voucherRedemptions.redeemedByUser,voucherRedemptions.redeemedByTeam').then(response => {
+    axios.get('/my-team-vouchers/' + $props.voucherId + '?cached=false&relations=createdByTeam,allocatedToServiceTeam,voucherRedemptions.redeemedByUser,voucherRedemptions.redeemedByTeam,voucherSet').then(response => {
         voucher.value = response.data.data
     }).catch(error => {
         console.log(error)
@@ -34,13 +33,12 @@ function getVoucher() {
 </script>
 
 <template>
-    <Head title="Voucher set"/>
+    <Head title="Voucher"/>
 
     <AuthenticatedLayout>
         <template #header>
-            <AdminTopNavigation></AdminTopNavigation>
+            <h2 class="font-normal text-xl text-gray-800 leading-tight">Voucher</h2>
         </template>
-
 
         <div class="grid grid-cols-2 gap-8 container mx-auto mt-8">
             <div class="card">
@@ -48,15 +46,12 @@ function getVoucher() {
                     Voucher Details
                 </div>
                 <h2 class="opacity-25">
-                    ID: {{ $props.id }}
+                    ID: {{ voucher.id }}
                 </h2>
                 <div class="mt-4" v-if="voucher.voucher_short_code">
                     <h2>
                         Short Code: {{ voucher.voucher_short_code }}
                     </h2>
-                    <div class="text-xs text-gray-500">
-                        Short codes are used in unattended (online) redemptions
-                    </div>
                 </div>
                 <div v-if="voucher.is_test" class="font-bold text-red-500 text-sm">
                     Test voucher
@@ -69,7 +64,7 @@ function getVoucher() {
                 </div>
 
                 <div v-if="voucher.voucher_set_id">
-                    <Link :href="route('admin.voucher-set', {id:voucher.voucher_set_id})">{{ voucher.voucher_set_id }}</Link>
+                    <Link :href="route('voucher-set', {id:voucher.voucher_set_id})">{{ voucher.voucher_set_id }}</Link>
                 </div>
             </div>
         </div>
@@ -78,7 +73,6 @@ function getVoucher() {
             <div class="card-header">
                 Voucher details
             </div>
-
 
             <div class="grid grid-cols-4 gap-y-12 text-center mt-8">
                 <div>
@@ -111,7 +105,6 @@ function getVoucher() {
                     <div class="text-xs">
                         ({{ dayjs(voucher.last_redemption_at) }})
                     </div>
-
                 </div>
 
                 <div v-if="voucher.voucher_set?.expires_at">
@@ -124,7 +117,6 @@ function getVoucher() {
                     <div class="text-xs">
                         ({{ dayjs(voucher.voucher_set.expires_at) }})
                     </div>
-
                 </div>
 
             </div>
@@ -138,7 +130,7 @@ function getVoucher() {
                 </div>
 
                 <div v-if="voucher.created_by_team">
-                    <Link :href="route('admin.team', {id:voucher.created_by_team_id})">{{ voucher.created_by_team?.name }}</Link>
+                    {{ voucher.created_by_team.name }}
                 </div>
                 <div v-if="voucher.created_at" class="text-xs mt-2">
                     Created at: {{ dayjs.utc(voucher.created_at).fromNow() }} ({{ dayjs(voucher.created_at) }})
@@ -151,12 +143,10 @@ function getVoucher() {
                 </div>
 
                 <div v-if="voucher.allocated_to_service_team">
-                    <Link :href="route('admin.team', {id:voucher.allocated_to_service_team_id})">{{ voucher.allocated_to_service_team?.name }}</Link>
+                    {{ voucher.allocated_to_service_team.name }}
                 </div>
             </div>
         </div>
-
-
 
         <div class="card">
             <div class="card-header">
