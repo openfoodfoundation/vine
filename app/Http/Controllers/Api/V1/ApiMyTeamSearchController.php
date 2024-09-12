@@ -92,7 +92,7 @@ class ApiMyTeamSearchController extends Controller
     /**
      * GET /{id}
      *
-     * @param  int  $id
+     * @param int $id
      *
      * @return JsonResponse
      */
@@ -107,7 +107,7 @@ class ApiMyTeamSearchController extends Controller
     /**
      * PUT /{id}
      *
-     * @param  string  $id
+     * @param string $id
      *
      * @return JsonResponse
      */
@@ -122,7 +122,7 @@ class ApiMyTeamSearchController extends Controller
     /**
      * DELETE / {id}
      *
-     * @param  string  $id
+     * @param string $id
      *
      * @return JsonResponse
      */

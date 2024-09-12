@@ -308,7 +308,6 @@ Route::group(['prefix' => 'v1', 'middleware' => VerifyApiTokenSignature::class],
                     ]
                 );
 
-
             /**
              * My Team Vouchers (created by or allocated to my team)
              */

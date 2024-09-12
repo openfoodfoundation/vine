@@ -50,7 +50,7 @@ class MyTeamSearchGetTest extends BaseAPITestCase
     #[Test]
     public function itReturnsRelevantVoucherData()
     {
-        $this->user           = $this->createUser();
+        $this->user = $this->createUser();
         $this->user->save();
 
         Sanctum::actingAs(
@@ -79,7 +79,7 @@ class MyTeamSearchGetTest extends BaseAPITestCase
     #[Test]
     public function itReturnsRelevantVoucherSetData()
     {
-        $this->user           = $this->createUserWithTeam();
+        $this->user = $this->createUserWithTeam();
         $this->user->save();
 
         Sanctum::actingAs(
@@ -108,7 +108,7 @@ class MyTeamSearchGetTest extends BaseAPITestCase
     #[Test]
     public function itReturnsNotReturnIrrelevantData()
     {
-        $this->user           = $this->createUser();
+        $this->user = $this->createUser();
         $this->user->save();
 
         Sanctum::actingAs(
@@ -121,8 +121,8 @@ class MyTeamSearchGetTest extends BaseAPITestCase
         $otherTeam = Team::factory()->createQuietly();
 
         $voucher = Voucher::factory()->createQuietly([
-            'created_by_team_id' => $otherTeam->id,
-            'allocated_to_service_team_id' => $otherTeam->id
+            'created_by_team_id'           => $otherTeam->id,
+            'allocated_to_service_team_id' => $otherTeam->id,
         ]);
 
         $query = Str::substr($voucher->id, 2, 3);
