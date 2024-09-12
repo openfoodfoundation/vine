@@ -61,10 +61,10 @@ function getVoucherRedemption() {
                 </div>
 
                 <div v-if="voucherRedemption.voucher_id">
-                    <Link :href="route('admin.voucher', voucherRedemption.voucher_id)">{{ voucherRedemption.voucher_id }}</Link>
+                    Voucher <Link :href="route('admin.voucher', voucherRedemption.voucher_id)">#{{ voucherRedemption.voucher_id }}</Link>
                 </div>
                 <div v-if="voucherRedemption.voucher_set_id">
-                    <Link :href="route('admin.voucher-set', voucherRedemption.voucher_set_id)">{{ voucherRedemption.voucher_set_id }}</Link>
+                    Voucher set <Link :href="route('admin.voucher-set', voucherRedemption.voucher_set_id)">#{{ voucherRedemption.voucher_set_id }}</Link>
                 </div>
             </div>
         </div>
