@@ -12,6 +12,11 @@ const $props = defineProps({
         type: String,
         required: false,
     },
+    title: {
+        type: String,
+        required: true,
+        default: ''
+    },
     text: {
         type: String,
         required: true,
@@ -21,11 +26,11 @@ const $props = defineProps({
 </script>
 
 <template>
-    <Head title="Voucher redeem"/>
+    <Head :title="$props.title"/>
 
     <AuthenticatedLayout>
         <template #header>
-            <h2 class="font-normal text-xl text-gray-800 leading-tight">Voucher Redeem</h2>
+            <h2 class="font-normal text-xl text-gray-800 leading-tight">{{ $props.title }}</h2>
         </template>
 
         <div class="card">
