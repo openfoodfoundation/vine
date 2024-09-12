@@ -119,7 +119,7 @@ class ApiMyTeamVouchersController extends Controller
 
         $this->query = Voucher::where(function ($query) {
             $query->where('created_by_team_id', Auth::user()->current_team_id)
-                  ->orWhere('allocated_to_service_team_id', Auth::user()->current_team_id);
+                ->orWhere('allocated_to_service_team_id', Auth::user()->current_team_id);
         });
 
         $this->query = $this->query->with($this->associatedData);
@@ -200,12 +200,12 @@ class ApiMyTeamVouchersController extends Controller
 
         $this->query = Voucher::where(function ($query) {
             $query->where('created_by_team_id', Auth::user()->current_team_id)
-                  ->orWhere('allocated_to_service_team_id', Auth::user()->current_team_id);
+                ->orWhere('allocated_to_service_team_id', Auth::user()->current_team_id);
         });
 
         $this->query = $this->query->with($this->associatedData);
         $this->query = $this->updateReadQueryBasedOnUrl();
-        $this->data = $this->query->find($id);
+        $this->data  = $this->query->find($id);
 
         return $this->respond();
     }
