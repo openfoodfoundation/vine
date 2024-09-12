@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature\API\App\MyTeamVoucherSets;
+namespace Tests\Feature\API\App\MyTeamVouchers\MyTeamVouchersCreated;
 
 use App\Enums\PersonalAccessTokenAbility;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -8,11 +8,11 @@ use Laravel\Sanctum\Sanctum;
 use PHPUnit\Framework\Attributes\Test;
 use Tests\Feature\API\BaseAPITestCase;
 
-class MyTeamVoucherSetsPostTest extends BaseAPITestCase
+class MyTeamVouchersPostTest extends BaseAPITestCase
 {
     use RefreshDatabase;
 
-    protected string $endPoint = '/my-team-voucher-sets';
+    protected string $endPoint = '/my-team-vouchers-created';
 
     #[Test]
     public function authenticationRequired(): void
@@ -44,7 +44,7 @@ class MyTeamVoucherSetsPostTest extends BaseAPITestCase
         $this->user = $this->createUserWithTeam();
 
         Sanctum::actingAs($this->user, abilities: [
-            PersonalAccessTokenAbility::MY_TEAM_VOUCHER_SETS_CREATE->value,
+            PersonalAccessTokenAbility::MY_TEAM_VOUCHERS_CREATE->value,
         ]);
 
         $response = $this->postJson($this->apiRoot . $this->endPoint);

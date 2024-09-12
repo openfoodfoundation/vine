@@ -17,8 +17,12 @@ use App\Http\Controllers\Api\V1\Admin\ApiFileUploadsController;
 use App\Http\Controllers\Api\V1\ApiMyTeamAuditItemsController;
 use App\Http\Controllers\Api\V1\ApiMyTeamController;
 use App\Http\Controllers\Api\V1\ApiMyTeamsController;
+use App\Http\Controllers\Api\V1\ApiMyTeamVouchersAllocatedController;
 use App\Http\Controllers\Api\V1\ApiMyTeamVouchersController;
+use App\Http\Controllers\Api\V1\ApiMyTeamVouchersCreatedController;
+use App\Http\Controllers\Api\V1\ApiMyTeamVoucherSetsAllocatedController;
 use App\Http\Controllers\Api\V1\ApiMyTeamVoucherSetsController;
+use App\Http\Controllers\Api\V1\ApiMyTeamVoucherSetsCreatedController;
 use App\Http\Controllers\Api\V1\ApiShopsController;
 use App\Http\Controllers\Api\V1\ApiSystemStatisticsController;
 use App\Http\Controllers\Api\V1\ApiVoucherRedemptionsController;
@@ -198,7 +202,7 @@ Route::group(['prefix' => 'v1', 'middleware' => VerifyApiTokenSignature::class],
                 );
 
             /**
-             * My Vouchers
+             * My Team Vouchers (created by or allocated to my team)
              */
             Route::post('/my-team-vouchers', [ApiMyTeamVouchersController::class, 'store'])
                 ->name('api.v1.my-team-vouchers.post')
@@ -251,7 +255,113 @@ Route::group(['prefix' => 'v1', 'middleware' => VerifyApiTokenSignature::class],
                 );
 
             /**
-             * My Voucher Sets
+             * My Team Vouchers (created by my team)
+             */
+            Route::post('/my-team-vouchers-created', [ApiMyTeamVouchersCreatedController::class, 'store'])
+                ->name('api.v1.my-team-vouchers-created.post')
+                ->middleware(
+                    [
+                        'abilities:' .
+                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                        PersonalAccessTokenAbility::MY_TEAM_VOUCHERS_CREATE->value,
+                    ]
+                );
+
+            Route::get('/my-team-vouchers-created', [ApiMyTeamVouchersCreatedController::class, 'index'])
+                ->name('api.v1.my-team-vouchers-created.getMany')
+                ->middleware(
+                    [
+                        'abilities:' .
+                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                        PersonalAccessTokenAbility::MY_TEAM_VOUCHERS_READ->value,
+                    ]
+                );
+
+            Route::get('/my-team-vouchers-created/{id}', [ApiMyTeamVouchersCreatedController::class, 'show'])
+                ->name('api.v1.my-team-vouchers-created.get')
+                ->middleware(
+                    [
+                        'abilities:' .
+                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                        PersonalAccessTokenAbility::MY_TEAM_VOUCHERS_READ->value,
+                    ]
+                );
+
+            Route::put('/my-team-vouchers-created/{id}', [ApiMyTeamVouchersCreatedController::class, 'update'])
+                ->name('api.v1.my-team-vouchers-created.put')
+                ->middleware(
+                    [
+                        'abilities:' .
+                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                        PersonalAccessTokenAbility::MY_TEAM_VOUCHERS_UPDATE->value,
+                    ]
+                );
+
+            Route::delete('/my-team-vouchers-created/{id}', [ApiMyTeamVouchersCreatedController::class, 'destroy'])
+                ->name('api.v1.my-team-vouchers-created.delete')
+                ->middleware(
+                    [
+                        'abilities:' .
+                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                        PersonalAccessTokenAbility::MY_TEAM_VOUCHERS_DELETE->value,
+                    ]
+                );
+
+            /**
+             * My Team Vouchers (allocated to my team)
+             */
+            Route::post('/my-team-vouchers-allocated', [ApiMyTeamVouchersAllocatedController::class, 'store'])
+                ->name('api.v1.my-team-vouchers-allocated.post')
+                ->middleware(
+                    [
+                        'abilities:' .
+                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                        PersonalAccessTokenAbility::MY_TEAM_VOUCHERS_CREATE->value,
+                    ]
+                );
+
+            Route::get('/my-team-vouchers-allocated', [ApiMyTeamVouchersAllocatedController::class, 'index'])
+                ->name('api.v1.my-team-vouchers-allocated.getMany')
+                ->middleware(
+                    [
+                        'abilities:' .
+                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                        PersonalAccessTokenAbility::MY_TEAM_VOUCHERS_READ->value,
+                    ]
+                );
+
+            Route::get('/my-team-vouchers-allocated/{id}', [ApiMyTeamVouchersAllocatedController::class, 'show'])
+                ->name('api.v1.my-team-vouchers-allocated.get')
+                ->middleware(
+                    [
+                        'abilities:' .
+                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                        PersonalAccessTokenAbility::MY_TEAM_VOUCHERS_READ->value,
+                    ]
+                );
+
+            Route::put('/my-team-vouchers-allocated/{id}', [ApiMyTeamVouchersAllocatedController::class, 'update'])
+                ->name('api.v1.my-team-vouchers-allocated.put')
+                ->middleware(
+                    [
+                        'abilities:' .
+                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                        PersonalAccessTokenAbility::MY_TEAM_VOUCHERS_UPDATE->value,
+                    ]
+                );
+
+            Route::delete('/my-team-vouchers-allocated/{id}', [ApiMyTeamVouchersAllocatedController::class, 'destroy'])
+                ->name('api.v1.my-team-vouchers-allocated.delete')
+                ->middleware(
+                    [
+                        'abilities:' .
+                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                        PersonalAccessTokenAbility::MY_TEAM_VOUCHERS_DELETE->value,
+                    ]
+                );
+
+            /**
+             * My Team Voucher Sets
              */
             Route::post('/my-team-voucher-sets', [ApiMyTeamVoucherSetsController::class, 'store'])
                 ->name('api.v1.my-team-voucher-sets.post')
@@ -295,6 +405,112 @@ Route::group(['prefix' => 'v1', 'middleware' => VerifyApiTokenSignature::class],
 
             Route::delete('/my-team-voucher-sets/{id}', [ApiMyTeamVoucherSetsController::class, 'destroy'])
                 ->name('api.v1.my-team-voucher-sets.delete')
+                ->middleware(
+                    [
+                        'abilities:' .
+                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                        PersonalAccessTokenAbility::MY_TEAM_VOUCHER_SETS_DELETE->value,
+                    ]
+                );
+
+            /**
+             * My Team Voucher Sets (created by my team)
+             */
+            Route::post('/my-team-voucher-sets-created', [ApiMyTeamVoucherSetsCreatedController::class, 'store'])
+                ->name('api.v1.my-team-voucher-sets-created.post')
+                ->middleware(
+                    [
+                        'abilities:' .
+                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                        PersonalAccessTokenAbility::MY_TEAM_VOUCHER_SETS_CREATE->value,
+                    ]
+                );
+
+            Route::get('/my-team-voucher-sets-created', [ApiMyTeamVoucherSetsCreatedController::class, 'index'])
+                ->name('api.v1.my-team-voucher-sets-created.getMany')
+                ->middleware(
+                    [
+                        'abilities:' .
+                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                        PersonalAccessTokenAbility::MY_TEAM_VOUCHER_SETS_READ->value,
+                    ]
+                );
+
+            Route::get('/my-team-voucher-sets-created/{id}', [ApiMyTeamVoucherSetsCreatedController::class, 'show'])
+                ->name('api.v1.my-team-voucher-sets-created.get')
+                ->middleware(
+                    [
+                        'abilities:' .
+                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                        PersonalAccessTokenAbility::MY_TEAM_VOUCHER_SETS_READ->value,
+                    ]
+                );
+
+            Route::put('/my-team-voucher-sets-created/{id}', [ApiMyTeamVoucherSetsCreatedController::class, 'update'])
+                ->name('api.v1.my-team-voucher-sets-created.put')
+                ->middleware(
+                    [
+                        'abilities:' .
+                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                        PersonalAccessTokenAbility::MY_TEAM_VOUCHER_SETS_UPDATE->value,
+                    ]
+                );
+
+            Route::delete('/my-team-voucher-sets-created/{id}', [ApiMyTeamVoucherSetsCreatedController::class, 'destroy'])
+                ->name('api.v1.my-team-voucher-sets-created.delete')
+                ->middleware(
+                    [
+                        'abilities:' .
+                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                        PersonalAccessTokenAbility::MY_TEAM_VOUCHER_SETS_DELETE->value,
+                    ]
+                );
+
+            /**
+             * My Team Voucher Sets (allocated to my team)
+             */
+            Route::post('/my-team-voucher-sets-allocated', [ApiMyTeamVoucherSetsAllocatedController::class, 'store'])
+                ->name('api.v1.my-team-voucher-sets-allocated.post')
+                ->middleware(
+                    [
+                        'abilities:' .
+                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                        PersonalAccessTokenAbility::MY_TEAM_VOUCHER_SETS_CREATE->value,
+                    ]
+                );
+
+            Route::get('/my-team-voucher-sets-allocated', [ApiMyTeamVoucherSetsAllocatedController::class, 'index'])
+                ->name('api.v1.my-team-voucher-sets-allocated.getMany')
+                ->middleware(
+                    [
+                        'abilities:' .
+                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                        PersonalAccessTokenAbility::MY_TEAM_VOUCHER_SETS_READ->value,
+                    ]
+                );
+
+            Route::get('/my-team-voucher-sets-allocated/{id}', [ApiMyTeamVoucherSetsAllocatedController::class, 'show'])
+                ->name('api.v1.my-team-voucher-sets-allocated.get')
+                ->middleware(
+                    [
+                        'abilities:' .
+                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                        PersonalAccessTokenAbility::MY_TEAM_VOUCHER_SETS_READ->value,
+                    ]
+                );
+
+            Route::put('/my-team-voucher-sets-allocated/{id}', [ApiMyTeamVoucherSetsAllocatedController::class, 'update'])
+                ->name('api.v1.my-team-voucher-sets-allocated.put')
+                ->middleware(
+                    [
+                        'abilities:' .
+                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                        PersonalAccessTokenAbility::MY_TEAM_VOUCHER_SETS_UPDATE->value,
+                    ]
+                );
+
+            Route::delete('/my-team-voucher-sets-allocated/{id}', [ApiMyTeamVoucherSetsAllocatedController::class, 'destroy'])
+                ->name('api.v1.my-team-voucher-sets-allocated.delete')
                 ->middleware(
                     [
                         'abilities:' .

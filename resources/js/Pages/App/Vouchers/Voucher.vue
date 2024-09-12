@@ -51,7 +51,7 @@ function getVoucher() {
                 Test voucher
             </div>
 
-            <div v-if="voucher.allocated_to_service_team_id" class="mt-2 text-sm">
+            <div v-if="voucher.allocated_to_service_team" class="mt-2 text-sm">
                 <div>
                     Allocated to: <span class="font-bold">{{ voucher.allocated_to_service_team.name }}</span>
                 </div>

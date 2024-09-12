@@ -89,7 +89,7 @@ function getMyTeams() {
                 Voucher sets Created by my team
             </div>
 
-            <MyTeamVoucherSetsComponent filter-voucher-sets="created_by_team_id"></MyTeamVoucherSetsComponent>
+            <MyTeamVoucherSetsComponent filter-voucher-sets="-created"></MyTeamVoucherSetsComponent>
         </div>
 
         <div class="card">
@@ -97,14 +97,14 @@ function getMyTeams() {
                 Voucher sets allocated to my team
             </div>
 
-            <MyTeamVoucherSetsComponent filter-voucher-sets="allocated_to_service_team_id"></MyTeamVoucherSetsComponent>
+            <MyTeamVoucherSetsComponent filter-voucher-sets="-allocated"></MyTeamVoucherSetsComponent>
         </div>
 
         <div class="card">
             <div class="card-header">
                 Vouchers Created by my team
             </div>
-            <MyTeamVouchersComponent filter-vouchers="created_by_team_id"></MyTeamVouchersComponent>
+            <MyTeamVouchersComponent filter-vouchers="-created"></MyTeamVouchersComponent>
         </div>
 
         <div class="card">
@@ -112,7 +112,7 @@ function getMyTeams() {
                 Vouchers allocated to my team
             </div>
 
-            <MyTeamVouchersComponent filter-vouchers="allocated_to_service_team_id"></MyTeamVouchersComponent>
+            <MyTeamVouchersComponent filter-vouchers="-allocated"></MyTeamVouchersComponent>
         </div>
 
         <div class="pb-32">

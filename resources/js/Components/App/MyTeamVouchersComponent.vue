@@ -24,12 +24,13 @@ onMounted(() => {
 });
 
 function getMyTeamVouchers(page = 1) {
-    let urlBit = ''
+    let url = '/my-team-vouchers'
+
     if ($props.filterVouchers) {
-        urlBit = '&filter-vouchers=' + $props.filterVouchers
+        url = url + $props.filterVouchers
     }
 
-    axios.get('/my-team-vouchers?cached=false' + urlBit + '&page=' + page + '&limit=' + limit.value + '&relations=createdByTeam,allocatedToServiceTeam').then(response => {
+    axios.get(url + '?cached=false&page=' + page + '&limit=' + limit.value + '&relations=createdByTeam,allocatedToServiceTeam').then(response => {
         myTeamVouchers.value = response.data.data
     }).catch(error => {
         console.log(error)

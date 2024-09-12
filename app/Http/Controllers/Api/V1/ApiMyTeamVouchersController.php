@@ -27,22 +27,17 @@ class ApiMyTeamVouchersController extends Controller
      * Set the related data the GET request is allowed to ask for
      */
     public array $availableRelations = [
-        'voucherRedemptions.redeemedByUser',
-        'voucherRedemptions.redeemedByTeam',
-        'createdByTeam',
-        'allocatedToServiceTeam',
+        'voucherRedemptions',
     ];
 
     public static array $searchableFields = [
         'id',
         'voucher_set_id',
-        'allocated_to_service_team_id',
         'voucher_value_original',
         'voucher_value_remaining',
         'last_redemption_at',
         'created_at',
         'updated_at',
-        'created_by_team_id',
     ];
 
     /**
@@ -117,15 +112,10 @@ class ApiMyTeamVouchersController extends Controller
     )]
     public function index(): JsonResponse
     {
-        if ($this->request->has('filter-vouchers')) {
-            $filterField = $this->request->get('filter-vouchers');
-            $this->query = Voucher::where($filterField, Auth::user()->current_team_id)->with($this->associatedData);
-        }
-        else {
-            $this->query = Voucher::where('created_by_team_id', Auth::user()->current_team_id)
-                ->orWhere('allocated_to_service_team_id', Auth::user()->current_team_id)
-                ->with($this->associatedData);
-        }
+
+        $this->query = Voucher::where('created_by_team_id', Auth::user()->current_team_id)
+            ->orWhere('allocated_to_service_team_id', Auth::user()->current_team_id)
+            ->with($this->associatedData);
 
         $this->query = $this->updateReadQueryBasedOnUrl();
 
