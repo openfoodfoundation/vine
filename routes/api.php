@@ -11,6 +11,7 @@ use App\Http\Controllers\Api\V1\Admin\ApiAdminTeamUsersController;
 use App\Http\Controllers\Api\V1\Admin\ApiAdminTeamVoucherTemplatesController;
 use App\Http\Controllers\Api\V1\Admin\ApiAdminUserPersonalAccessTokensController;
 use App\Http\Controllers\Api\V1\Admin\ApiAdminUsersController;
+use App\Http\Controllers\Api\V1\Admin\ApiAdminVoucherRedemptionsController;
 use App\Http\Controllers\Api\V1\Admin\ApiAdminVouchersController;
 use App\Http\Controllers\Api\V1\Admin\ApiAdminVoucherSetsController;
 use App\Http\Controllers\Api\V1\Admin\ApiFileUploadsController;
@@ -755,6 +756,11 @@ Route::group(['prefix' => 'v1', 'middleware' => VerifyApiTokenSignature::class],
                         '/user-personal-access-tokens',
                         ApiAdminUserPersonalAccessTokensController::class
                     )->names('api.v1.admin.tokens');
+
+                    Route::resource(
+                        '/voucher-redemptions',
+                        ApiAdminVoucherRedemptionsController::class
+                    )->names('api.v1.admin.voucher-redemptions');
 
                     Route::resource(
                         '/team-voucher-templates',
