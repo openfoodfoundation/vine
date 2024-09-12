@@ -15,7 +15,6 @@ use Knuckles\Scribe\Attributes\Group;
 use Knuckles\Scribe\Attributes\QueryParam;
 use Knuckles\Scribe\Attributes\Response;
 use Knuckles\Scribe\Attributes\Subgroup;
-use Knuckles\Scribe\Attributes\UrlParam;
 
 #[Group('App Endpoints')]
 #[Subgroup('/my-team-vouchers', 'Manage your team\'s vouchers. Returns vouchers allocated to your team.')]
@@ -146,7 +145,6 @@ class ApiMyTeamVouchersAllocatedController extends Controller
      * @param string $id
      *
      * @return JsonResponse
-     *
      */
     public function show(string $id)
     {
