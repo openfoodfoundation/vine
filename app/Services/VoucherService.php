@@ -61,12 +61,15 @@ class VoucherService
      */
     public static function collateVoucherAggregates(Voucher $voucher): void
     {
-        $voucher->voucher_value_remaining = self::calculateVoucherAmountRemaining($voucher);
-        $voucher->num_voucher_redemptions = VoucherRedemption::where('voucher_id', $voucher->id)->count();
+        self::updateVoucherAmountRemaining($voucher);
+        $voucher->refresh();
 
-        if ($voucher->voucher_value_remaining == 0) {
+        if ($voucher->voucher_value_remaining <= 0) {
             $voucher->voucher_short_code = null;
         }
+
+        $voucher->num_voucher_redemptions = VoucherRedemption::where('voucher_id', $voucher->id)->count();
+        $voucher->last_redemption_at      = VoucherRedemption::where('voucher_id')->max('created_at');
 
         $voucher->saveQuietly();
     }

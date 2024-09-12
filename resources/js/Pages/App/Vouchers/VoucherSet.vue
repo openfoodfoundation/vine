@@ -6,6 +6,7 @@ import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import utc from "dayjs/plugin/utc"
 import VouchersComponent from "@/Components/Admin/Vouchers/VouchersComponent.vue";
+import MyTeamVouchersComponent from "@/Components/App/MyTeamVouchersComponent.vue";
 
 dayjs.extend(relativeTime);
 dayjs.extend(utc);
@@ -17,21 +18,11 @@ const $props = defineProps({
     },
 });
 
-const vouchers = ref({})
 const voucherSet = ref({})
 
 onMounted(() => {
     getVoucherSet()
-    getVouchers()
 });
-
-function getVouchers() {
-    axios.get('/my-team-vouchers?cached=false&where=voucher_set_id,' + $props.voucherSetId).then(response => {
-        vouchers.value = response.data.data
-    }).catch(error => {
-        console.log(error)
-    })
-}
 
 function getVoucherSet() {
     axios.get('/my-team-voucher-sets/' + $props.voucherSetId + '?cached=false&relations=createdByTeam,allocatedToServiceTeam,voucherSetMerchantTeams.merchantTeam').then(response => {
@@ -164,24 +155,7 @@ function getVoucherSet() {
                 Vouchers
             </div>
 
-            <div v-if="vouchers.data && vouchers.data.length">
-                <Link :href="route('voucher', voucher.id)" v-for="voucher in vouchers.data" class="hover:no-underline hover:opacity-75">
-                    <div class="border-b flex justify-between items-center py-2 sm:p-2">
-                        <div v-if="voucher.voucher_short_code">
-                            #{{ voucher.voucher_short_code }}
-                        </div>
-                        <div v-else>
-                            #{{ voucher.id }}
-                        </div>
-
-                        <div>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"/>
-                            </svg>
-                        </div>
-                    </div>
-                </Link>
-            </div>
+            <MyTeamVouchersComponent :voucher-set-id="$props.voucherSetId"></MyTeamVouchersComponent>
         </div>
 
         <div class="pb-32"></div>

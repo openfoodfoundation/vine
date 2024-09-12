@@ -10,7 +10,7 @@ dayjs.extend(relativeTime);
 dayjs.extend(utc);
 
 const $props = defineProps({
-    filterVouchers: {
+    voucherSetId: {
         required: false,
         default: null
     },
@@ -24,13 +24,7 @@ onMounted(() => {
 });
 
 function getMyTeamVouchers(page = 1) {
-    let url = '/my-team-vouchers'
-
-    if ($props.filterVouchers) {
-        url = url + $props.filterVouchers
-    }
-
-    axios.get(url + '?cached=false&page=' + page + '&limit=' + limit.value + '&relations=createdByTeam,allocatedToServiceTeam').then(response => {
+    axios.get('/my-team-vouchers?cached=false&where[]=voucher_set_id,' + $props.voucherSetId + '&page=' + page + '&limit=' + limit.value + '&relations=createdByTeam,allocatedToServiceTeam').then(response => {
         myTeamVouchers.value = response.data.data
     }).catch(error => {
         console.log(error)
