@@ -17,6 +17,7 @@ class VoucherFactory extends Factory
     public function definition(): array
     {
         $value = rand(500, 1000);
+
         return [
             'id'                           => $this->faker->uuid(),
             'voucher_set_id'               => $this->faker->uuid(),
