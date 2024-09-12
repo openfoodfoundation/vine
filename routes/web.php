@@ -33,6 +33,14 @@ Route::middleware('auth')->group(function () {
         return Inertia::render('App/MyTeam');
     })->name('my-team');
 
+    Route::get('/my-voucher-sets', function () {
+        return Inertia::render('App/MyVoucherSets');
+    })->name('my-voucher-sets');
+
+    Route::get('/my-vouchers', function () {
+        return Inertia::render('App/MyVouchers');
+    })->name('my-vouchers');
+
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
@@ -329,7 +337,7 @@ Route::middleware('auth')->group(function () {
             return Inertia::render('Admin/VoucherTemplates/VoucherTemplateEdit', [
                 'id' => $id,
             ]);
-        })->name('admin.user');
+        })->name('team-voucher-template');
 
         Route::get('/users', function () {
             return Inertia::render('Admin/Users/Users');

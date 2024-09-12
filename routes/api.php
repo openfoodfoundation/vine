@@ -17,6 +17,7 @@ use App\Http\Controllers\Api\V1\Admin\ApiFileUploadsController;
 use App\Http\Controllers\Api\V1\ApiMyTeamAuditItemsController;
 use App\Http\Controllers\Api\V1\ApiMyTeamController;
 use App\Http\Controllers\Api\V1\ApiMyTeamsController;
+use App\Http\Controllers\Api\V1\ApiMyTeamSearchController;
 use App\Http\Controllers\Api\V1\ApiMyTeamVouchersController;
 use App\Http\Controllers\Api\V1\ApiMyTeamVoucherSetsAllocatedController;
 use App\Http\Controllers\Api\V1\ApiMyTeamVoucherSetsController;
@@ -45,7 +46,7 @@ Route::group(['prefix' => 'v1', 'middleware' => VerifyApiTokenSignature::class],
              * My Team
              */
             Route::get('/my-team', [ApiMyTeamController::class, 'index'])
-                ->name('api.v1.my-team.get')
+                ->name('api.v1.my-team.getMany')
                 ->middleware(
                     [
                         'abilities:' .
@@ -196,6 +197,112 @@ Route::group(['prefix' => 'v1', 'middleware' => VerifyApiTokenSignature::class],
                         'abilities:' .
                         PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
                         PersonalAccessTokenAbility::MY_TEAM_DELETE->value,
+                    ]
+                );
+
+            /**
+             * My Search
+             */
+            Route::post('/my-team-search', [ApiMyTeamSearchController::class, 'store'])
+                ->name('api.v1.my-team-search.post')
+                ->middleware(
+                    [
+                        'abilities:' .
+                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                        PersonalAccessTokenAbility::MY_TEAM_SEARCH_CREATE->value,
+                    ]
+                );
+
+            Route::get('/my-team-search', [ApiMyTeamSearchController::class, 'index'])
+                ->name('api.v1.my-team-search.getMany')
+                ->middleware(
+                    [
+                        'abilities:' .
+                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                        PersonalAccessTokenAbility::MY_TEAM_SEARCH_READ->value,
+                    ]
+                );
+
+            Route::get('/my-team-search/{id}', [ApiMyTeamSearchController::class, 'show'])
+                ->name('api.v1.my-team-search.get')
+                ->middleware(
+                    [
+                        'abilities:' .
+                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                        PersonalAccessTokenAbility::MY_TEAM_SEARCH_READ->value,
+                    ]
+                );
+
+            Route::put('/my-team-search/{id}', [ApiMyTeamSearchController::class, 'update'])
+                ->name('api.v1.my-team-search.put')
+                ->middleware(
+                    [
+                        'abilities:' .
+                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                        PersonalAccessTokenAbility::MY_TEAM_SEARCH_UPDATE->value,
+                    ]
+                );
+
+            Route::delete('/my-team-search/{id}', [ApiMyTeamSearchController::class, 'destroy'])
+                ->name('api.v1.my-team-search.delete')
+                ->middleware(
+                    [
+                        'abilities:' .
+                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                        PersonalAccessTokenAbility::MY_TEAM_SEARCH_DELETE->value,
+                    ]
+                );
+
+            /**
+             * My Voucher Sets
+             */
+            Route::post('/my-team-voucher-sets', [ApiMyTeamVoucherSetsController::class, 'store'])
+                ->name('api.v1.my-team-voucher-sets.post')
+                ->middleware(
+                    [
+                        'abilities:' .
+                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                        PersonalAccessTokenAbility::MY_TEAM_VOUCHERS_CREATE->value,
+                    ]
+                );
+
+            Route::get('/my-team-voucher-sets', [ApiMyTeamVoucherSetsController::class, 'index'])
+                ->name('api.v1.my-team-voucher-sets.getMany')
+                ->middleware(
+                    [
+                        'abilities:' .
+                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                        PersonalAccessTokenAbility::MY_TEAM_VOUCHERS_READ->value,
+                    ]
+                );
+
+            Route::get('/my-team-voucher-sets/{id}', [ApiMyTeamVouchersController::class, 'show'])
+                ->name('api.v1.my-team-vouchers.get')
+                ->middleware(
+                    [
+                        'abilities:' .
+                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                        PersonalAccessTokenAbility::MY_TEAM_VOUCHERS_READ->value,
+                    ]
+                );
+
+            Route::put('/my-team-vouchers/{id}', [ApiMyTeamVouchersController::class, 'update'])
+                ->name('api.v1.my-team-vouchers.put')
+                ->middleware(
+                    [
+                        'abilities:' .
+                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                        PersonalAccessTokenAbility::MY_TEAM_VOUCHERS_UPDATE->value,
+                    ]
+                );
+
+            Route::delete('/my-team-vouchers/{id}', [ApiMyTeamVouchersController::class, 'destroy'])
+                ->name('api.v1.my-team-vouchers.delete')
+                ->middleware(
+                    [
+                        'abilities:' .
+                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                        PersonalAccessTokenAbility::MY_TEAM_VOUCHERS_DELETE->value,
                     ]
                 );
 
@@ -648,11 +755,6 @@ Route::group(['prefix' => 'v1', 'middleware' => VerifyApiTokenSignature::class],
                         '/user-personal-access-tokens',
                         ApiAdminUserPersonalAccessTokensController::class
                     )->names('api.v1.admin.tokens');
-
-                    Route::resource(
-                        '/users',
-                        ApiAdminUsersController::class
-                    )->names('api.v1.admin.users');
 
                     Route::resource(
                         '/team-voucher-templates',
