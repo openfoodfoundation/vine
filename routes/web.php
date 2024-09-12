@@ -337,7 +337,7 @@ Route::middleware('auth')->group(function () {
             return Inertia::render('Admin/VoucherTemplates/VoucherTemplateEdit', [
                 'id' => $id,
             ]);
-        })->name('admin.user');
+        })->name('team-voucher-template');
 
         Route::get('/users', function () {
             return Inertia::render('Admin/Users/Users');

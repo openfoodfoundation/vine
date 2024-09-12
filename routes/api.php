@@ -48,7 +48,7 @@ Route::group(['prefix' => 'v1', 'middleware' => VerifyApiTokenSignature::class],
              * My Team
              */
             Route::get('/my-team', [ApiMyTeamController::class, 'index'])
-                ->name('api.v1.my-team.get')
+                ->name('api.v1.my-team.getMany')
                 ->middleware(
                     [
                         'abilities:' .
@@ -863,11 +863,6 @@ Route::group(['prefix' => 'v1', 'middleware' => VerifyApiTokenSignature::class],
                         '/user-personal-access-tokens',
                         ApiAdminUserPersonalAccessTokensController::class
                     )->names('api.v1.admin.tokens');
-
-                    Route::resource(
-                        '/users',
-                        ApiAdminUsersController::class
-                    )->names('api.v1.admin.users');
 
                     Route::resource(
                         '/team-voucher-templates',
