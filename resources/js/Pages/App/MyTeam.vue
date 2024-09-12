@@ -2,6 +2,7 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import {Head} from '@inertiajs/vue3';
 import {onMounted, ref} from "vue";
+import MyTeamTopNavigation from "@/Components/MyTeamTopNavigation.vue";
 
 const myTeam = ref({})
 const myTeams = ref({})
@@ -36,7 +37,7 @@ function getMyTeams() {
 
     <AuthenticatedLayout>
         <template #header>
-            <h2 class="font-normal text-xl text-gray-800 leading-tight">My Team</h2>
+            <MyTeamTopNavigation />
         </template>
 
         <div class="card">

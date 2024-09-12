@@ -1,6 +1,7 @@
 <script setup>
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import {Head} from '@inertiajs/vue3';
+import MyTeamTopNavigation from "@/Components/MyTeamTopNavigation.vue";
 </script>
 
 <template>
@@ -8,7 +9,7 @@ import {Head} from '@inertiajs/vue3';
 
     <AuthenticatedLayout>
         <template #header>
-            <h2 class="font-normal text-xl text-gray-800 leading-tight">Dashboard</h2>
+            <MyTeamTopNavigation/>
         </template>
 
         <div class="card">

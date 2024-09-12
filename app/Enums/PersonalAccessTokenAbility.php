@@ -20,6 +20,10 @@ enum PersonalAccessTokenAbility: string
     case MY_TEAM_AUDIT_ITEMS_READ   = 'my-team-audit-items-read';
     case MY_TEAM_AUDIT_ITEMS_UPDATE = 'my-team-audit-items-update';
     case MY_TEAM_AUDIT_ITEMS_DELETE = 'my-team-audit-items-delete';
+    case MY_TEAM_SEARCH_CREATE      = 'my-team-search-create';
+    case MY_TEAM_SEARCH_READ        = 'my-team-search-read';
+    case MY_TEAM_SEARCH_UPDATE      = 'my-team-search-update';
+    case MY_TEAM_SEARCH_DELETE      = 'my-team-search-delete';
     case MY_TEAM_VOUCHERS_CREATE    = 'my-team-vouchers-create';
     case MY_TEAM_VOUCHERS_READ      = 'my-team-vouchers-read';
     case MY_TEAM_VOUCHERS_UPDATE    = 'my-team-vouchers-update';
@@ -53,6 +57,10 @@ enum PersonalAccessTokenAbility: string
             self::MY_TEAM_AUDIT_ITEMS_READ->value   => 'My Team Audit Items Read',
             self::MY_TEAM_AUDIT_ITEMS_UPDATE->value => 'My Team Audit Items Update',
             self::MY_TEAM_AUDIT_ITEMS_DELETE->value => 'My Team Audit Items Delete',
+            self::MY_TEAM_SEARCH_CREATE->value      => 'My Team Search Create',
+            self::MY_TEAM_SEARCH_READ->value        => 'My Team Search Read',
+            self::MY_TEAM_SEARCH_UPDATE->value      => 'My Team Search Update',
+            self::MY_TEAM_SEARCH_DELETE->value      => 'My Team Search Delete',
             self::MY_TEAM_VOUCHERS_CREATE->value    => 'My Team Vouchers Create',
             self::MY_TEAM_VOUCHERS_READ->value      => 'My Team Vouchers Read',
             self::MY_TEAM_VOUCHERS_UPDATE->value    => 'My Team Vouchers Update',
