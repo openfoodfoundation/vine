@@ -5,6 +5,7 @@ import {onMounted, ref} from "vue";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import utc from "dayjs/plugin/utc"
+import VouchersComponent from "@/Components/Admin/Vouchers/VouchersComponent.vue";
 
 dayjs.extend(relativeTime);
 dayjs.extend(utc);
@@ -51,24 +52,11 @@ function getVoucherSet() {
         </template>
 
         <div class="card">
-            <h2 class="opacity-25">
-                #{{ voucherSet.id }}
+            <h2>
+                {{ voucherSet.id }}
             </h2>
             <div v-if="voucherSet.is_test" class="font-bold text-red-500 text-sm">
                 Test voucher set
-            </div>
-            <div v-if="voucherSet.allocated_to_service_team_id" class="mt-2 text-sm">
-                <div>
-                    Allocated to: <span class="font-bold">{{ voucherSet.allocated_to_service_team.name }}</span>
-                </div>
-            </div>
-            <div v-if="voucherSet.created_by_team" class="text-sm">
-                <div>
-                    Created by: <span class="font-bold">{{ voucherSet.created_by_team.name }}</span>
-                </div>
-            </div>
-            <div class="text-sm">
-                Created at: <span class="font-bold">{{ dayjs.utc(voucherSet.created_at).fromNow() }} ({{ dayjs(voucherSet.created_at) }})</span>
             </div>
         </div>
 
@@ -77,23 +65,85 @@ function getVoucherSet() {
                 Voucher set details
             </div>
 
-            <div>
-                Total set value: <span class="font-bold">${{ voucherSet.total_set_value / 100 }}</span>
+            <div class="grid grid-cols-4 gap-y-12 text-center mt-8">
+                <div>
+                    <div class="font-bold text-3xl">
+                        ${{ voucherSet.total_set_value / 100 }}
+                    </div>
+                    Total set value
+                </div>
+                <div>
+                    <div class="font-bold text-3xl">
+                        ${{ voucherSet.total_set_value_remaining / 100 }}
+                    </div>
+                    Total remaining value
+                </div>
+                <div>
+                    <div class="font-bold text-3xl">
+                        {{ Math.round(((voucherSet.total_set_value - voucherSet.total_set_value_remaining) / voucherSet.total_set_value) * 10000) / 100 }}%
+                    </div>
+                    Redeemed percentage
+                </div>
+                <div>
+                    <div class="font-bold text-3xl">
+                        {{ voucherSet.num_vouchers }}
+                    </div>
+                    # Vouchers
+                </div>
+                <div>
+                    <div class="font-bold text-3xl">
+                        {{ voucherSet.num_voucher_redemptions }}
+                    </div>
+                    # Redemptions
+                </div>
+
+                <div v-if="voucherSet.last_redemption_at">
+                    <div>
+                        Last redeemed
+                    </div>
+                    <div class="font-bold text-3xl">
+                        {{ dayjs.utc(voucherSet.last_redemption_at).fromNow() }}
+                    </div>
+                    <div class="text-xs">
+                        ({{ dayjs(voucherSet.last_redemption_at) }})
+                    </div>
+                </div>
+
+                <div v-if="voucherSet.expires_at">
+                    <div>
+                        Expires
+                    </div>
+                    <div class="font-bold text-3xl">
+                        {{ dayjs.utc(voucherSet.expires_at).fromNow() }}
+                    </div>
+                    <div class="text-xs">
+                        ({{ dayjs(voucherSet.expires_at) }})
+                    </div>
+                </div>
+
             </div>
-            <div>
-                Total remaining value: <span class="font-bold">${{ voucherSet.total_set_value_remaining / 100 }}</span>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                Created by team
             </div>
-            <div>
-                Vouchers: <span class="font-bold">{{ voucherSet.num_vouchers }}</span>
+
+            <div v-if="voucherSet.created_by_team">
+                {{ voucherSet.created_by_team.name }}
             </div>
-            <div>
-                Redemptions: <span class="font-bold">{{ voucherSet.num_voucher_redemptions }}</span>
+            <div v-if="voucherSet.created_at" class="text-xs mt-2">
+                Created at: {{ dayjs.utc(voucherSet.created_at).fromNow() }} ({{ dayjs(voucherSet.created_at) }})
             </div>
-            <div>
-                Redeemed percentage: <span class="font-bold">{{ Math.round(((voucherSet.total_set_value - voucherSet.total_set_value_remaining) / voucherSet.total_set_value) * 10000) / 100 }}%</span>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                Allocated to team
             </div>
-            <div v-if="voucherSet.last_redemption_at">
-                Last redeemed at: <span class="font-bold">{{ dayjs.utc(voucherSet.last_redemption_at).fromNow() }} ({{ dayjs(voucherSet.last_redemption_at) }})</span>
+
+            <div v-if="voucherSet.allocated_to_service_team">
+                {{ voucherSet.allocated_to_service_team.name }}
             </div>
         </div>
 

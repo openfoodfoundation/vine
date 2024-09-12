@@ -27,7 +27,11 @@ class ApiMyTeamVouchersController extends Controller
      * Set the related data the GET request is allowed to ask for
      */
     public array $availableRelations = [
-        'voucherRedemptions',
+        'voucherRedemptions.redeemedByUser',
+        'voucherRedemptions.redeemedByTeam',
+        'createdByTeam',
+        'allocatedToServiceTeam',
+        'voucherSet',
     ];
 
     public static array $searchableFields = [
