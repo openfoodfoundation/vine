@@ -263,7 +263,6 @@ Route::group(['prefix' => 'v1', 'middleware' => VerifyApiTokenSignature::class],
                     ]
                 );
 
-
             /**
              * My Vouchers
              */
