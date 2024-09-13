@@ -1,7 +1,6 @@
 <script setup>
 import {onMounted, ref} from "vue";
 import TextInput from "@/Components/TextInput.vue";
-import InputLabel from "@/Components/InputLabel.vue";
 import PrimaryButton from "@/Components/PrimaryButton.vue";
 import Swal from "sweetalert2";
 
@@ -11,7 +10,11 @@ const $props = defineProps({
     }
 })
 
-const team = ref({name: ''})
+const countries = ref({})
+const team = ref({
+    name: '',
+    country_id: ''
+})
 
 const emit = defineEmits([
         'teamCreated'
@@ -22,6 +25,8 @@ onMounted(() => {
     if ($props.searchStr !== null) {
         team.value.name = $props.searchStr
     }
+
+    getCountries();
 })
 
 function createNewTeam() {
@@ -41,22 +46,47 @@ function createNewTeam() {
     })
 }
 
+
+function getCountries() {
+    axios.get('/countries?limit=250').then(response => {
+        countries.value = response.data.data;
+    }).catch(error => {
+        console.log(error)
+    })
+}
+
 </script>
 
 <template>
     <form @submit.prevent="createNewTeam()">
         <div>
-            <InputLabel for="name" value="Name"/>
-            <TextInput
-                id="name"
-                type="text"
-                class="mt-1 block w-full"
-                v-model="team.name"
-                required
-            />
+            <div class="flex justify-start items-center mt-4">
+                <label class="w-full font-bold" for="name">
+                    Team Name:
+                    <TextInput
+                        id="name"
+                        v-model="team.name"
+                        class="mt-1 block w-full font-normal"
+                        type="text"/>
+                </label>
+            </div>
+
+            <div class="flex justify-start items-center mt-4">
+                <label class="w-full font-bold" for="country">
+                    Country:
+                    <select id="country" v-model="team.country_id" class="mt-1 block w-full font-normal">
+                        <option :value="''">Select a country</option>
+                        <option v-for="country in countries.data" :key="country.id" :value="country.id">
+                            {{ country.name }}
+                        </option>
+                    </select>
+                </label>
+            </div>
         </div>
         <div class="flex items-center justify-end mt-4">
-            <PrimaryButton class="ms-4" :class="{ 'opacity-25': !team.name }" :disabled="!team.name">
+            <PrimaryButton :class="{ 'opacity-25': !team.name || !team.country_id }" :disabled="!team.name || !team.country_id"
+                           class="ms-4 hover:cursor-pointer"
+                           @click="">
                 Submit
             </PrimaryButton>
         </div>

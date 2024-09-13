@@ -7,12 +7,12 @@ use App\Models\TeamUser;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Foundation\Testing\DatabaseTransactions;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
 class BaseAPITestCase extends TestCase
 {
-    use DatabaseTransactions;
+    use RefreshDatabase;
 
     public string         $apiRoot = '/api/v1';
     public User|Model     $user;

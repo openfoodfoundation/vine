@@ -14,6 +14,7 @@ use App\Http\Controllers\Api\V1\Admin\ApiAdminUsersController;
 use App\Http\Controllers\Api\V1\Admin\ApiAdminVouchersController;
 use App\Http\Controllers\Api\V1\Admin\ApiAdminVoucherSetsController;
 use App\Http\Controllers\Api\V1\Admin\ApiFileUploadsController;
+use App\Http\Controllers\Api\V1\ApiCountriesController;
 use App\Http\Controllers\Api\V1\ApiMyTeamAuditItemsController;
 use App\Http\Controllers\Api\V1\ApiMyTeamController;
 use App\Http\Controllers\Api\V1\ApiMyTeamsController;
@@ -29,14 +30,62 @@ use Illuminate\Support\Facades\Route;
 Route::group(['prefix' => 'v1', 'middleware' => VerifyApiTokenSignature::class], function () {
 
     /**
-     * Open routes (non-authenticated)
-     */
-
-    /**
      * App API Routes
      */
     Route::middleware(['auth:sanctum'])
         ->group(function () {
+
+            /**
+             * Countries
+             */
+            Route::post('/countries', [ApiCountriesController::class, 'store'])
+                ->name('api.v1.countries.post')
+                ->middleware(
+                    [
+                        'abilities:' .
+                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                        PersonalAccessTokenAbility::COUNTRIES_CREATE->value,
+                    ]
+                );
+            Route::get('/countries', [ApiCountriesController::class, 'index'])
+                ->name('api.v1.countries.getMany')
+                ->middleware(
+                    [
+                        'abilities:' .
+                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                        PersonalAccessTokenAbility::COUNTRIES_READ->value,
+                    ]
+                );
+
+            Route::get('/countries/{id}', [ApiCountriesController::class, 'show'])
+                ->name('api.v1.countries.get')
+                ->middleware(
+                    [
+                        'abilities:' .
+                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                        PersonalAccessTokenAbility::COUNTRIES_READ->value,
+                    ]
+                );
+
+            Route::put('/countries/{id}', [ApiCountriesController::class, 'update'])
+                ->name('api.v1.countries.put')
+                ->middleware(
+                    [
+                        'abilities:' .
+                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                        PersonalAccessTokenAbility::COUNTRIES_UPDATE->value,
+                    ]
+                );
+
+            Route::delete('/countries/{id}', [ApiCountriesController::class, 'destroy'])
+                ->name('api.v1.countries.delete')
+                ->middleware(
+                    [
+                        'abilities:' .
+                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                        PersonalAccessTokenAbility::COUNTRIES_DELETE->value,
+                    ]
+                );
 
             /**
              * My Team
@@ -448,14 +497,29 @@ Route::group(['prefix' => 'v1', 'middleware' => VerifyApiTokenSignature::class],
                     )->names('api.v1.admin.tokens');
 
                     Route::resource(
-                        '/users',
-                        ApiAdminUsersController::class
-                    )->names('api.v1.admin.users');
-
-                    Route::resource(
                         '/team-voucher-templates',
                         ApiAdminTeamVoucherTemplatesController::class
                     )->names('api.v1.admin.team-voucher-templates');
+
+
+                    /**
+                     * User
+                     */
+                    Route::post('/users', [ApiAdminUsersController::class, 'store'])
+                        ->name('api.v1.admin.users.post');
+
+                    Route::get('/users', [ApiAdminUsersController::class, 'index'])
+                        ->name('api.v1.admin.users.getMany');
+
+                    Route::get('/users/{id}', [ApiAdminUsersController::class, 'show'])
+                        ->name('api.v1.admin.users.get');
+
+                    Route::put('/users/{id}', [ApiAdminUsersController::class, 'update'])
+                        ->name('api.v1.admin.users.put');
+
+                    Route::delete('/users/{id}', [ApiAdminUsersController::class, 'destroy'])
+                        ->name('api.v1.admin.users.delete');
+
 
                     /**
                      * Vouchers
@@ -497,11 +561,6 @@ Route::group(['prefix' => 'v1', 'middleware' => VerifyApiTokenSignature::class],
                         '/user-personal-access-tokens',
                         ApiAdminUserPersonalAccessTokensController::class
                     )->names('api.v1.admin.tokens');
-
-                    Route::resource(
-                        '/users',
-                        ApiAdminUsersController::class
-                    )->names('api.v1.admin.users');
 
                 });
 

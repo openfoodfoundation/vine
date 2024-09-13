@@ -8,6 +8,10 @@ namespace App\Enums;
 enum PersonalAccessTokenAbility: string
 {
     case SUPER_ADMIN                = 'super-admin'; // Allowed to do everything
+    case COUNTRIES_CREATE           = 'countries-create';
+    case COUNTRIES_READ             = 'countries-read';
+    case COUNTRIES_UPDATE           = 'countries-update';
+    case COUNTRIES_DELETE           = 'countries-delete';
     case MY_PROFILE_CREATE          = 'my-profile-create';
     case MY_PROFILE_READ            = 'my-profile-read';
     case MY_PROFILE_UPDATE          = 'my-profile-update';
@@ -41,6 +45,10 @@ enum PersonalAccessTokenAbility: string
     {
         return [
             self::SUPER_ADMIN->value                => 'Super Admin: Perform most API actions',
+            self::COUNTRIES_CREATE->value           => 'Countries Create',
+            self::COUNTRIES_READ->value             => 'Countries Read',
+            self::COUNTRIES_UPDATE->value           => 'Countries Update',
+            self::COUNTRIES_DELETE->value           => 'Countries Delete',
             self::MY_PROFILE_CREATE->value          => 'My Profile Create',
             self::MY_PROFILE_READ->value            => 'My Profile Read',
             self::MY_PROFILE_UPDATE->value          => 'My Profile Update',

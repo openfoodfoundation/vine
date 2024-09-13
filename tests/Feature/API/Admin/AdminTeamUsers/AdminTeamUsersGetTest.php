@@ -39,6 +39,7 @@ class AdminTeamUsersGetTest extends BaseAPITestCase
             $this->user
         );
 
+        $existing = TeamUser::count();
         $rand = rand(5, 10);
         $user = User::factory()->create();
         $team = Team::factory()->create();
@@ -51,7 +52,7 @@ class AdminTeamUsersGetTest extends BaseAPITestCase
         $responseObj = json_decode($response->getContent());
 
         $response->assertStatus(200);
-        $this->assertEquals($rand, $responseObj->data->total);
+        $this->assertEquals($existing + $rand, $responseObj->data->total);
     }
 
     #[Test]

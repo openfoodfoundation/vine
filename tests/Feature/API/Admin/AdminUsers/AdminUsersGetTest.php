@@ -39,14 +39,15 @@ class AdminUsersGetTest extends BaseAPITestCase
 
         $rand = rand(5, 10);
 
+        $existing = User::count();
+
         User::factory($rand)->create();
 
         $response    = $this->getJson($this->apiRoot . $this->endpoint);
         $responseObj = json_decode($response->getContent());
 
         $response->assertStatus(200);
-        $numTotalUser = $rand + 1; //adding admin user to created users
-        $this->assertEquals($numTotalUser, $responseObj->data->total);
+        $this->assertEquals($existing + $rand, $responseObj->data->total);
     }
 
     #[Test]
