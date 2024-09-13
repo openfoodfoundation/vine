@@ -2,7 +2,7 @@
 
 /** @noinspection PhpUndefinedFieldInspection */
 
-namespace Feature\API\App\MyTeamVoucherSets\MyTeamVoucherSetsCreated;
+namespace Tests\Feature\API\App\MyTeamVoucherSets\MyTeamVoucherSetsCreated;
 
 use App\Enums\PersonalAccessTokenAbility;
 use App\Models\Team;
