@@ -26,4 +26,9 @@ class VoucherRedemption extends Model
     {
         return $this->belongsTo(Team::class, 'redeemed_by_team_id', 'id');
     }
+
+    public function voucher(): BelongsTo
+    {
+        return $this->belongsTo(Voucher::class);
+    }
 }

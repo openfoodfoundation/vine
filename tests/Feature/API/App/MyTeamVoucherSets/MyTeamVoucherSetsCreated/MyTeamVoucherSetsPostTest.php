@@ -1,6 +1,6 @@
 <?php
 
-namespace Feature\API\App\MyTeamVoucherSets\MyTeamVoucherSetsCreated;
+namespace Tests\Feature\API\App\MyTeamVoucherSets\MyTeamVoucherSetsCreated;
 
 use App\Enums\PersonalAccessTokenAbility;
 use Illuminate\Foundation\Testing\RefreshDatabase;

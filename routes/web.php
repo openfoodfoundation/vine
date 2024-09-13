@@ -315,6 +315,12 @@ Route::middleware('auth')->group(function () {
             return Inertia::render('Admin/Vouchers/VoucherRedemptions');
         })->name('admin.voucher-redemptions');
 
+        Route::get('/voucher-redemption/{id}', function (int $id) {
+            return Inertia::render('Admin/Vouchers/VoucherRedemption', [
+                'id' => $id,
+            ]);
+        })->name('admin.voucher-redemption');
+
         Route::get('/teams', function () {
             return Inertia::render('Admin/Teams/Teams');
         })->name('admin.teams');
