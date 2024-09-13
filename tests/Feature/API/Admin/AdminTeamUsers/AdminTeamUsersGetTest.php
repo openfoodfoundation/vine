@@ -40,9 +40,9 @@ class AdminTeamUsersGetTest extends BaseAPITestCase
         );
 
         $existing = TeamUser::count();
-        $rand = rand(5, 10);
-        $user = User::factory()->create();
-        $team = Team::factory()->create();
+        $rand     = rand(5, 10);
+        $user     = User::factory()->create();
+        $team     = Team::factory()->create();
         TeamUser::factory($rand)->create([
             'user_id' => $user->id,
             'team_id' => $team->id,

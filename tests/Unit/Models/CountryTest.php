@@ -7,7 +7,6 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use League\ISO3166\ISO3166;
 use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
-use function Aws\map;
 
 class CountryTest extends TestCase
 {

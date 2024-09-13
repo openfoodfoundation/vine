@@ -4,7 +4,6 @@ namespace Tests\Feature\API\App\Countries;
 
 use App\Enums\ApiResponse;
 use App\Enums\PersonalAccessTokenAbility;
-use App\Models\AuditItem;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Laravel\Sanctum\Sanctum;
@@ -30,7 +29,6 @@ class CountriesGetTest extends BaseAPITestCase
 
         $response->assertStatus(401);
     }
-
 
     #[Test]
     public function itCanNotGetAllResourcesIncorrectAbility()
@@ -72,5 +70,4 @@ class CountriesGetTest extends BaseAPITestCase
 
         $this->assertCount(count($iso->all()), $responseObj->data->data);
     }
-
 }

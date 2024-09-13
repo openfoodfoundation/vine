@@ -4,7 +4,6 @@ namespace Tests\Feature\API\App\Countries;
 
 use App\Enums\ApiResponse;
 use App\Enums\PersonalAccessTokenAbility;
-use App\Models\AuditItem;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Foundation\Testing\WithFaker;
 use Laravel\Sanctum\Sanctum;

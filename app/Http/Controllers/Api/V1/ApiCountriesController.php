@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Http\Controllers\Api\V1;
 
 use App\Enums\ApiResponse;
@@ -8,9 +7,7 @@ use App\Exceptions\DisallowedApiFieldException;
 use App\Http\Controllers\Api\HandlesAPIRequests;
 use App\Http\Controllers\Controller;
 use App\Models\Country;
-use App\Models\Team;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Support\Facades\Auth;
 use Knuckles\Scribe\Attributes\Authenticated;
 use Knuckles\Scribe\Attributes\Endpoint;
 use Knuckles\Scribe\Attributes\Group;
