@@ -3,20 +3,13 @@
 namespace App\Http\Controllers\Api\V1\Admin;
 
 use App\Enums\ApiResponse;
-use App\Exceptions\DisallowedApiFieldException;
 use App\Http\Controllers\Api\HandlesAPIRequests;
 use App\Http\Controllers\Controller;
-use App\Models\Team;
 use App\Models\VoucherSetMerchantTeamApprovalRequest;
 use Exception;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
-use Knuckles\Scribe\Attributes\Authenticated;
-use Knuckles\Scribe\Attributes\Endpoint;
 use Knuckles\Scribe\Attributes\Group;
-use Knuckles\Scribe\Attributes\QueryParam;
-use Knuckles\Scribe\Attributes\Response;
 use Knuckles\Scribe\Attributes\Subgroup;
 
 #[Group('App Endpoints')]
@@ -36,7 +29,6 @@ class ApiVoucherSetMerchantTeamApprovalRequestController extends Controller
      * GET /
      *
      * @return JsonResponse
-     *
      */
     public function index(): JsonResponse
     {

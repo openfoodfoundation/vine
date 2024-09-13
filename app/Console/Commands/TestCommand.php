@@ -31,10 +31,10 @@ class TestCommand extends Command
 
         $me = User::find(2);
 
-//        $test = VoucherSetMerchantTeamApprovalRequest::factory()->create([
-//            'voucher_set_id'=> '2a8b36c2-cc05-3726-ba93-f4bf452e885a',
-//            'merchant_user_id' => 2
-//        ]);
+        //        $test = VoucherSetMerchantTeamApprovalRequest::factory()->create([
+        //            'voucher_set_id'=> '2a8b36c2-cc05-3726-ba93-f4bf452e885a',
+        //            'merchant_user_id' => 2
+        //        ]);
 
         $request = VoucherSetMerchantTeamApprovalRequest::find(1);
 

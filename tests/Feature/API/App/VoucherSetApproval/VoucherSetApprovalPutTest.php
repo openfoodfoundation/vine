@@ -1,4 +1,5 @@
 <?php
+
 /** @noinspection PhpUndefinedMethodInspection */
 
 namespace Tests\Feature\API\App\VoucherSetApproval;
