@@ -9,6 +9,7 @@ use App\Models\User;
 use App\Models\Voucher;
 use App\Models\VoucherSet;
 use App\Models\VoucherSetMerchantTeam;
+use App\Models\VoucherSetMerchantTeamApprovalRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
@@ -26,6 +27,42 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/voucher-set-merchant-team-approval-request-approved/{id}', function (Request $request) {
+    if (!$request->hasValidSignature()) {
+        $approvalRequest = VoucherSetMerchantTeamApprovalRequest::findOrFail($request->id);
+
+        Auth::loginUsingId($approvalRequest->merchant_user_id);
+        return Inertia::render('App/VoucherSetMerchantTeamApprovalRequest', [
+            'id'     => $approvalRequest->id,
+            'status' => 'approved',
+        ]);
+    }
+
+    return Inertia::render('App/ErrorMessageLogoutPage', [
+        'title' => 'Voucher set approval',
+        'text'  => 'URL is invalid.',
+    ]);
+
+})->name('voucher-set-merchant-team-approval-request-approved');
+
+Route::get('/voucher-set-merchant-team-approval-request-rejected/{id}', function (Request $request) {
+    if (!$request->hasValidSignature()) {
+        $approvalRequest = VoucherSetMerchantTeamApprovalRequest::findOrFail($request->id);
+
+        Auth::loginUsingId($approvalRequest->merchant_user_id);
+        return Inertia::render('App/VoucherSetMerchantTeamApprovalRequest', [
+            'id'     => $approvalRequest->id,
+            'status' => 'rejected',
+        ]);
+    }
+
+    return Inertia::render('App/ErrorMessageLogoutPage', [
+        'title' => 'Voucher set approval',
+        'text'  => 'URL is invalid.',
+    ]);
+
+})->name('voucher-set-merchant-team-approval-request-rejected');
 
 Route::middleware('auth')->group(function () {
 

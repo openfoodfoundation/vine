@@ -15,6 +15,7 @@ use App\Http\Controllers\Api\V1\Admin\ApiAdminVoucherRedemptionsController;
 use App\Http\Controllers\Api\V1\Admin\ApiAdminVouchersController;
 use App\Http\Controllers\Api\V1\Admin\ApiAdminVoucherSetsController;
 use App\Http\Controllers\Api\V1\Admin\ApiFileUploadsController;
+use App\Http\Controllers\Api\V1\Admin\ApiVoucherSetMerchantTeamApprovalRequestController;
 use App\Http\Controllers\Api\V1\ApiMyTeamAuditItemsController;
 use App\Http\Controllers\Api\V1\ApiMyTeamController;
 use App\Http\Controllers\Api\V1\ApiMyTeamsController;
@@ -36,6 +37,8 @@ Route::group(['prefix' => 'v1', 'middleware' => VerifyApiTokenSignature::class],
     /**
      * Open routes (non-authenticated)
      */
+    Route::put('/voucher-set-approval/{id}', [ApiVoucherSetMerchantTeamApprovalRequestController::class, 'update'])
+        ->name('api.v1.voucher-set-approval.put');
 
     /**
      * App API Routes
