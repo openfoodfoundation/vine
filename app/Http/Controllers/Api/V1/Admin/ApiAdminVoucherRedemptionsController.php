@@ -210,7 +210,7 @@ class ApiAdminVoucherRedemptionsController extends Controller
 
     /**
      * DELETE /{id}
-     *
+     * @hideFromAPIDocumentation
      * @param string $id
      *
      * @return JsonResponse

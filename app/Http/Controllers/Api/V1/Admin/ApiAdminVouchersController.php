@@ -216,33 +216,14 @@ class ApiAdminVouchersController extends Controller
      * DELETE /{id}
      *
      * @param string $id
-     *
+     * @hideFromAPIDocumentation
      * @return JsonResponse
+     *
      */
     public function destroy(string $id)
     {
-        try {
-
-            $model = Voucher::find($id);
-
-            if (!$model) {
-
-                $this->responseCode = 404;
-                $this->message      = ApiResponse::RESPONSE_NOT_FOUND->value;
-
-                return $this->respond();
-            }
-
-            $model->delete();
-            $this->message = ApiResponse::RESPONSE_DELETED->value;
-
-        }
-        catch (Exception $e) {
-
-            $this->responseCode = 500;
-            $this->message      = ApiResponse::RESPONSE_ERROR->value . ':' . $e->getMessage();
-
-        }
+        $this->responseCode = 403;
+        $this->message      = ApiResponse::RESPONSE_METHOD_NOT_ALLOWED->value;
 
         return $this->respond();
     }
