@@ -4,7 +4,6 @@ namespace Tests\Feature\API\Admin\AdminVoucherSets;
 
 use App\Models\VoucherSet;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 use Laravel\Sanctum\Sanctum;
 use PHPUnit\Framework\Attributes\Test;
 use Tests\Feature\API\BaseAPITestCase;

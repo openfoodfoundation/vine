@@ -501,7 +501,6 @@ Route::group(['prefix' => 'v1', 'middleware' => VerifyApiTokenSignature::class],
                         ApiAdminTeamVoucherTemplatesController::class
                     )->names('api.v1.admin.team-voucher-templates');
 
-
                     /**
                      * User
                      */
@@ -519,7 +518,6 @@ Route::group(['prefix' => 'v1', 'middleware' => VerifyApiTokenSignature::class],
 
                     Route::delete('/users/{id}', [ApiAdminUsersController::class, 'destroy'])
                         ->name('api.v1.admin.users.delete');
-
 
                     /**
                      * Vouchers
