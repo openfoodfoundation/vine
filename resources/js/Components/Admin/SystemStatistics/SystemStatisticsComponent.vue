@@ -176,12 +176,12 @@ getData();
             <SecondaryButton>
 
                 <div class="w-full">
-                    <Link :href="route('admin.teams')" class="hover:no-underline">
+                    <Link :href="route('admin.voucher-redemptions')" class="hover:no-underline">
                         <div class="flex justify-center text-3xl">
                             {{ formatStatisticNumber(latestSystemStatistic.sum_voucher_value_redeemed) }}
                         </div>
                         <div class="text-xs">
-                            $ Redemptions (x)
+                            $ Redemptions
                         </div>
                     </Link>
                 </div>
@@ -189,11 +189,7 @@ getData();
             </SecondaryButton>
 
 
-
-
-            <div>
-                X = Yet to be linked
-            </div>
+            
 
         </div>
     </div>
