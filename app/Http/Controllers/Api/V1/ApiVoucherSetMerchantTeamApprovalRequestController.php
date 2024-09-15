@@ -1,22 +1,23 @@
 <?php
 
-namespace App\Http\Controllers\Api\V1\Admin;
+/** @noinspection PhpUndefinedMethodInspection */
+
+/** @noinspection PhpUnusedParameterInspection */
+
+namespace App\Http\Controllers\Api\V1;
 
 use App\Enums\ApiResponse;
-use App\Exceptions\DisallowedApiFieldException;
+use App\Enums\VoucherSetMerchantTeamApprovalRequestStatus;
+use App\Events\VoucherSetMerchantTeamApprovalRequest\VoucherSetMerchantTeamApprovalRequestWasApproved;
+use App\Events\VoucherSetMerchantTeamApprovalRequest\VoucherSetMerchantTeamApprovalRequestWasRejected;
 use App\Http\Controllers\Api\HandlesAPIRequests;
 use App\Http\Controllers\Controller;
-use App\Models\Team;
 use App\Models\VoucherSetMerchantTeamApprovalRequest;
 use Exception;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
-use Knuckles\Scribe\Attributes\Authenticated;
-use Knuckles\Scribe\Attributes\Endpoint;
+use Illuminate\Validation\Rule;
 use Knuckles\Scribe\Attributes\Group;
-use Knuckles\Scribe\Attributes\QueryParam;
-use Knuckles\Scribe\Attributes\Response;
 use Knuckles\Scribe\Attributes\Subgroup;
 
 #[Group('App Endpoints')]
@@ -36,7 +37,6 @@ class ApiVoucherSetMerchantTeamApprovalRequestController extends Controller
      * GET /
      *
      * @return JsonResponse
-     *
      */
     public function index(): JsonResponse
     {
@@ -93,6 +93,7 @@ class ApiVoucherSetMerchantTeamApprovalRequestController extends Controller
             'approval_status' => [
                 'required',
                 'string',
+                Rule::in([VoucherSetMerchantTeamApprovalRequestStatus::APPROVED->value, VoucherSetMerchantTeamApprovalRequestStatus::REJECTED->value]),
             ],
         ];
 
@@ -128,6 +129,16 @@ class ApiVoucherSetMerchantTeamApprovalRequestController extends Controller
 
                     $model->approval_status_last_updated_at = now();
                     $model->save();
+
+                    $result = $this->request->get('approval_status');
+
+                    if ($result == VoucherSetMerchantTeamApprovalRequestStatus::APPROVED->value) {
+                        event(new VoucherSetMerchantTeamApprovalRequestWasApproved($model));
+                    }
+
+                    if ($result == VoucherSetMerchantTeamApprovalRequestStatus::REJECTED->value) {
+                        event(new VoucherSetMerchantTeamApprovalRequestWasRejected($model));
+                    }
 
                     $this->message = ApiResponse::RESPONSE_UPDATED->value;
                     $this->data    = $model;

@@ -13,6 +13,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Notifications\Notification;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Str;
 use Laravel\Sanctum\HasApiTokens;
@@ -105,5 +106,13 @@ class User extends Authenticatable
         ]);
 
         return new NewAccessToken($token, $token->getKey() . '|' . $plainTextToken);
+    }
+
+    /**
+     * Route notifications for the Slack channel.
+     */
+    public function routeNotificationForSlack(Notification $notification): mixed
+    {
+        return '#' . env('SLACK_BOT_USER_DEFAULT_CHANNEL');
     }
 }

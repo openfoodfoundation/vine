@@ -1,5 +1,6 @@
 <?php
 
+use App\Enums\VoucherSetMerchantTeamApprovalRequestStatus;
 use App\Http\Controllers\ProfileController;
 use App\Http\Middleware\CheckAdminStatus;
 use App\Models\Team;
@@ -32,10 +33,9 @@ Route::get('/voucher-set-merchant-team-approval-request-approved/{id}', function
     if (!$request->hasValidSignature()) {
         $approvalRequest = VoucherSetMerchantTeamApprovalRequest::findOrFail($request->id);
 
-        Auth::loginUsingId($approvalRequest->merchant_user_id);
         return Inertia::render('App/VoucherSetMerchantTeamApprovalRequest', [
             'id'     => $approvalRequest->id,
-            'status' => 'approved',
+            'status' => VoucherSetMerchantTeamApprovalRequestStatus::APPROVED->value,
         ]);
     }
 
@@ -50,10 +50,9 @@ Route::get('/voucher-set-merchant-team-approval-request-rejected/{id}', function
     if (!$request->hasValidSignature()) {
         $approvalRequest = VoucherSetMerchantTeamApprovalRequest::findOrFail($request->id);
 
-        Auth::loginUsingId($approvalRequest->merchant_user_id);
         return Inertia::render('App/VoucherSetMerchantTeamApprovalRequest', [
             'id'     => $approvalRequest->id,
-            'status' => 'rejected',
+            'status' => VoucherSetMerchantTeamApprovalRequestStatus::REJECTED->value,
         ]);
     }
 

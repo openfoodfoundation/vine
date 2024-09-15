@@ -1,12 +1,10 @@
 <?php
 
-namespace App\Events;
+namespace App\Events\VoucherSetMerchantTeamApprovalRequest;
 
-use Illuminate\Broadcasting\Channel;
+use App\Models\VoucherSetMerchantTeamApprovalRequest;
 use Illuminate\Broadcasting\InteractsWithSockets;
-use Illuminate\Broadcasting\PresenceChannel;
 use Illuminate\Broadcasting\PrivateChannel;
-use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 
@@ -16,11 +14,10 @@ class VoucherSetMerchantTeamApprovalRequestWasApproved
 
     /**
      * Create a new event instance.
+     *
+     * @param VoucherSetMerchantTeamApprovalRequest $request
      */
-    public function __construct()
-    {
-        //
-    }
+    public function __construct(public VoucherSetMerchantTeamApprovalRequest $request) {}
 
     /**
      * Get the channels the event should broadcast on.
