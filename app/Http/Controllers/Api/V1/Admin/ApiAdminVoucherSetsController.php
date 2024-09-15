@@ -210,7 +210,9 @@ class ApiAdminVoucherSetsController extends Controller
 
     /**
      * DELETE /{id}
+     *
      * @hideFromAPIDocumentation
+     *
      * @param string $id
      *
      * @return JsonResponse

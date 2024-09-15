@@ -7,7 +7,6 @@ use App\Exceptions\DisallowedApiFieldException;
 use App\Http\Controllers\Api\HandlesAPIRequests;
 use App\Http\Controllers\Controller;
 use App\Models\Voucher;
-use Exception;
 use Illuminate\Http\JsonResponse;
 use Knuckles\Scribe\Attributes\Authenticated;
 use Knuckles\Scribe\Attributes\Endpoint;
@@ -216,9 +215,10 @@ class ApiAdminVouchersController extends Controller
      * DELETE /{id}
      *
      * @param string $id
-     * @hideFromAPIDocumentation
-     * @return JsonResponse
      *
+     * @hideFromAPIDocumentation
+     *
+     * @return JsonResponse
      */
     public function destroy(string $id)
     {
