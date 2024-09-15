@@ -47,7 +47,7 @@ class AdminVouchersDeleteTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function adminCanDeleteData()
+    public function adminCanNotDeleteData()
     {
         $this->user = $this->createAdminUser();
 
@@ -59,6 +59,6 @@ class AdminVouchersDeleteTest extends BaseAPITestCase
             ->create();
 
         $response = $this->delete($this->apiRoot . $this->endpoint . '/' . $voucher->id);
-        $response->assertStatus(200);
+        $response->assertStatus(403);
     }
 }
