@@ -1,16 +1,17 @@
 <?php
 
-/** @noinspection PhpUndefinedFieldInspection */
-
 namespace Tests\Feature\API\Admin\AdminVoucherSets;
 
 use App\Models\VoucherSet;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Laravel\Sanctum\Sanctum;
 use PHPUnit\Framework\Attributes\Test;
 use Tests\Feature\API\BaseAPITestCase;
 
 class AdminVoucherSetsGetTest extends BaseAPITestCase
 {
+    use DatabaseMigrations;
+
     private string $endpoint = '/admin/voucher-sets';
 
     #[Test]

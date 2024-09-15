@@ -37,6 +37,8 @@ class AdminTeamMerchantTeamsGetTest extends BaseAPITestCase
             $this->user
         );
 
+        $existing = TeamMerchantTeam::count();
+
         $rand = rand(5, 10);
 
         TeamMerchantTeam::factory($rand)->create();
@@ -45,7 +47,8 @@ class AdminTeamMerchantTeamsGetTest extends BaseAPITestCase
         $responseObj = json_decode($response->getContent());
 
         $response->assertStatus(200);
-        $this->assertEquals($rand, $responseObj->data->total);
+
+        $this->assertEquals($existing + $rand, $responseObj->data->total);
     }
 
     #[Test]

@@ -12,6 +12,7 @@ use App\Models\Team;
 use Exception;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
 
 class ApiAdminTeamsController extends Controller
 {
@@ -62,6 +63,11 @@ class ApiAdminTeamsController extends Controller
                 'required',
                 'string',
             ],
+            'country_id' => [
+                'required',
+                'integer',
+                Rule::exists('countries', 'id'),
+            ],
 
         ];
 
@@ -82,7 +88,7 @@ class ApiAdminTeamsController extends Controller
 
                 foreach ($validationArray as $key => $validationRule) {
                     $value = $this->request->get($key);
-                    if ((isset($value))) {
+                    if (isset($value)) {
                         $model->$key = $value;
                     }
                 }
@@ -138,6 +144,11 @@ class ApiAdminTeamsController extends Controller
         $validationArray = [
             'name' => [
                 'sometimes',
+            ],
+            'country_id' => [
+                'sometimes',
+                'integer',
+                Rule::exists('countries', 'id'),
             ],
         ];
 

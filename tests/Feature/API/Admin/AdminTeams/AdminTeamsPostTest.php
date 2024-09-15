@@ -39,7 +39,8 @@ class AdminTeamsPostTest extends BaseAPITestCase
         );
 
         $payload = [
-            'name' => $this->faker->name(),
+            'name'       => $this->faker->name(),
+            'country_id' => $this->faker->numberBetween(1, 200),
         ];
 
         $response    = $this->postJson($this->apiRoot . $this->endpoint, $payload);
