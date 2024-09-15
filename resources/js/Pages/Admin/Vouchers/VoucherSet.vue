@@ -104,7 +104,7 @@ function getVoucherSet() {
                     <div class="font-bold text-3xl">
                         {{ dayjs.utc(voucherSet.expires_at).fromNow() }}
                     </div>
-                    <div>
+                    <div class="text-xs">
                         ({{ dayjs(voucherSet.expires_at) }})
                     </div>
 
@@ -131,7 +131,7 @@ function getVoucherSet() {
                 Allocated to team
             </div>
 
-            <div v-if="voucherSet.allocated_to_service_team_id">
+            <div v-if="voucherSet.allocated_to_service_team">
                 <Link :href="route('admin.team', {id:voucherSet.allocated_to_service_team_id})">{{ voucherSet.allocated_to_service_team.name }}</Link>
             </div>
         </div>

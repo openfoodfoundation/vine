@@ -27,14 +27,16 @@ class ApiMyTeamVouchersController extends Controller
      * Set the related data the GET request is allowed to ask for
      */
     public array $availableRelations = [
-        'voucherRedemptions',
+        'voucherRedemptions.redeemedByUser',
+        'voucherRedemptions.redeemedByTeam',
+        'createdByTeam',
+        'allocatedToServiceTeam',
+        'voucherSet',
     ];
 
     public static array $searchableFields = [
         'id',
         'voucher_set_id',
-        'team_id',
-        'assigned_to_team_id',
         'voucher_value_original',
         'voucher_value_remaining',
         'last_redemption_at',
@@ -115,9 +117,12 @@ class ApiMyTeamVouchersController extends Controller
     public function index(): JsonResponse
     {
 
-        $this->query = Voucher::where('team_id', Auth::user()->current_team_id)
-            ->orWhere('assigned_to_team_id', Auth::user()->current_team_id)
-            ->with($this->associatedData);
+        $this->query = Voucher::where(function ($query) {
+            $query->where('created_by_team_id', Auth::user()->current_team_id)
+                ->orWhere('allocated_to_service_team_id', Auth::user()->current_team_id);
+        });
+
+        $this->query = $this->query->with($this->associatedData);
 
         $this->query = $this->updateReadQueryBasedOnUrl();
 
@@ -193,10 +198,12 @@ class ApiMyTeamVouchersController extends Controller
     public function show(string $id)
     {
 
-        $this->query = Voucher::where('created_by_team_id', Auth::user()->current_team_id)
-            ->orWhere('allocated_to_service_team_id', Auth::user()->current_team_id)
-            ->with($this->associatedData);
+        $this->query = Voucher::where(function ($query) {
+            $query->where('created_by_team_id', Auth::user()->current_team_id)
+                ->orWhere('allocated_to_service_team_id', Auth::user()->current_team_id);
+        });
 
+        $this->query = $this->query->with($this->associatedData);
         $this->query = $this->updateReadQueryBasedOnUrl();
         $this->data  = $this->query->find($id);
 

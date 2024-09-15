@@ -232,9 +232,12 @@ INTRO
                 '/my-team',
                 '/my-teams',
                 '/my-team-audit-items',
+                '/my-team-voucher-sets',
                 '/my-team-vouchers',
                 '/system-statistics',
                 '/shops',
+                '/voucher-validation',
+                '/voucher-redemptions',
 
             ],
         ],

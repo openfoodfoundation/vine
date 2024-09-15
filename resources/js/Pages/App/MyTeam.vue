@@ -2,6 +2,10 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import {Head} from '@inertiajs/vue3';
 import {onMounted, ref} from "vue";
+import MyTeamTopNavigation from "@/Components/App/Search/SearchComponent.vue";
+import MyTeamVouchersComponent from "@/Components/App/MyTeamVouchersComponent.vue";
+import MyTeamVoucherSetsComponent from "@/Components/App/MyTeamVoucherSetsComponent.vue";
+import SearchComponent from "@/Components/App/Search/SearchComponent.vue";
 
 const myTeam = ref({})
 const myTeams = ref({})
@@ -27,16 +31,14 @@ function getMyTeams() {
     })
 }
 
-
-
 </script>
 
 <template>
-    <Head title="Dashboard" />
+    <Head title="Dashboard"/>
 
     <AuthenticatedLayout>
         <template #header>
-            <h2 class="font-normal text-xl text-gray-800 leading-tight">My Team</h2>
+            My Team
         </template>
 
         <div class="card">
@@ -45,7 +47,7 @@ function getMyTeams() {
             </div>
         </div>
 
-        <div class="card">
+        <div class="card" id="myTeamMembers">
             <div class="card-header">
                 Team members
             </div>
@@ -66,24 +68,38 @@ function getMyTeams() {
                 Teams You Belong To
             </div>
 
+            <div v-for="team in myTeams.data" class="">
+                <div class="border-b py-2 flex justify-between">
 
-                <div v-for="team in myTeams.data" class="">
-                    <div class="border-b py-2 flex justify-between">
-
-                        <div>
-                            {{team.name}}
+                    <div>
+                        {{ team.name }}
+                    </div>
+                    <div>
+                        <div v-if="team.id === $page.props.auth.user.current_team_id">
+                            Current
                         </div>
-                        <div>
-                            <div v-if="team.id === $page.props.auth.user.current_team_id">
-                                Current
-                            </div>
-                            <div v-else>
-                                <a :href="'/switch-team/' + team.id" class="text-red-500">Switch to this team</a>
-                            </div>
+                        <div v-else>
+                            <a :href="'/switch-team/' + team.id" class="text-red-500">Switch to this team</a>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
 
+        <div class="card">
+            <div class="card-header">
+                Voucher sets Created by my team
+            </div>
+
+            <MyTeamVoucherSetsComponent filter-voucher-sets="-created"></MyTeamVoucherSetsComponent>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                Voucher sets allocated to my team
+            </div>
+
+            <MyTeamVoucherSetsComponent filter-voucher-sets="-allocated"></MyTeamVoucherSetsComponent>
         </div>
 
         <div class="pb-32">

@@ -121,7 +121,7 @@ function getVoucher() {
                     <div class="font-bold text-3xl">
                         {{ dayjs.utc(voucher.voucher_set.expires_at).fromNow() }}
                     </div>
-                    <div>
+                    <div class="text-xs">
                         ({{ dayjs(voucher.voucher_set.expires_at) }})
                     </div>
 
@@ -150,12 +150,11 @@ function getVoucher() {
                     Allocated to team
                 </div>
 
-                <div v-if="voucher.allocated_to_service_team_id">
+                <div v-if="voucher.allocated_to_service_team">
                     <Link :href="route('admin.team', {id:voucher.allocated_to_service_team_id})">{{ voucher.allocated_to_service_team?.name }}</Link>
                 </div>
             </div>
         </div>
-
 
 
         <div class="card">
@@ -164,17 +163,29 @@ function getVoucher() {
             </div>
 
             <div v-if="voucher.voucher_redemptions && voucher.voucher_redemptions.length" class="text-sm">
-                <div v-for="redemption in voucher.voucher_redemptions" class="border-b py-2 sm:p-2">
-                    <div>
-                        Redeemed amount: <span class="font-bold">${{ redemption.redeemed_amount / 100 }}</span>
+                <Link :href="route('admin.voucher-redemption', redemption.id)" v-for="redemption in voucher.voucher_redemptions" class="hover:no-underline hover:opacity-75">
+                    <div class="border-b flex justify-between items-center py-2 sm:p-2">
+                        <div>
+                            <div class="text-xs opacity-25">
+                                #{{ redemption.id }}
+                            </div>
+                            <div>
+                                Redeemed amount: <span class="font-bold">${{ redemption.redeemed_amount / 100 }}</span>
+                            </div>
+                            <div v-if="redemption.redeemed_by_user && redemption.redeemed_by_team">
+                                Redeemed by: <span class="font-bold">{{ redemption.redeemed_by_user.name }} ({{ redemption.redeemed_by_team.name }})</span>
+                            </div>
+                            <div v-if="redemption.created_at">
+                                Redeemed at: <span class="font-bold">{{ dayjs.utc(redemption.created_at).fromNow() }} ({{ dayjs(redemption.created_at) }})</span>
+                            </div>
+                        </div>
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"/>
+                            </svg>
+                        </div>
                     </div>
-                    <div v-if="redemption.redeemed_by_user && redemption.redeemed_by_team">
-                        Redeemed by: <span class="font-bold">{{ redemption.redeemed_by_user.name }} ({{ redemption.redeemed_by_team.name }})</span>
-                    </div>
-                    <div v-if="redemption.created_at">
-                        Redeemed at: <span class="font-bold">{{ dayjs.utc(redemption.created_at).fromNow() }} ({{ dayjs(redemption.created_at) }})</span>
-                    </div>
-                </div>
+                </Link>
             </div>
         </div>
 

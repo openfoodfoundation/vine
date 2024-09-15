@@ -7,6 +7,7 @@ namespace App\Enums;
  */
 enum PersonalAccessTokenAbility: string
 {
+
     case SUPER_ADMIN                = 'super-admin'; // Allowed to do everything
     case COUNTRIES_CREATE           = 'countries-create';
     case COUNTRIES_READ             = 'countries-read';
@@ -41,42 +42,65 @@ enum PersonalAccessTokenAbility: string
     case VOUCHER_REDEMPTIONS_UPDATE = 'voucher-redemptions-update';
     case VOUCHER_REDEMPTIONS_DELETE = 'voucher-redemptions-delete';
 
+
+    case MY_TEAM_SEARCH_CREATE = 'my-team-search-create';
+    case MY_TEAM_SEARCH_READ   = 'my-team-search-read';
+    case MY_TEAM_SEARCH_UPDATE = 'my-team-search-update';
+    case MY_TEAM_SEARCH_DELETE = 'my-team-search-delete';
+
+    case MY_TEAM_VOUCHER_SETS_CREATE = 'my-team-voucher-sets-create';
+    case MY_TEAM_VOUCHER_SETS_READ   = 'my-team-voucher-sets-read';
+    case MY_TEAM_VOUCHER_SETS_UPDATE = 'my-team-voucher-sets-update';
+    case MY_TEAM_VOUCHER_SETS_DELETE = 'my-team-voucher-sets-delete';
+
+
     public static function abilityLabels(): array
     {
+
         return [
-            self::SUPER_ADMIN->value                => 'Super Admin: Perform most API actions',
-            self::COUNTRIES_CREATE->value           => 'Countries Create',
-            self::COUNTRIES_READ->value             => 'Countries Read',
-            self::COUNTRIES_UPDATE->value           => 'Countries Update',
-            self::COUNTRIES_DELETE->value           => 'Countries Delete',
-            self::MY_PROFILE_CREATE->value          => 'My Profile Create',
-            self::MY_PROFILE_READ->value            => 'My Profile Read',
-            self::MY_PROFILE_UPDATE->value          => 'My Profile Update',
-            self::MY_PROFILE_DELETE->value          => 'My Profile Delete',
-            self::MY_TEAM_CREATE->value             => 'My Team Create',
-            self::MY_TEAM_READ->value               => 'My Team Read',
-            self::MY_TEAM_UPDATE->value             => 'My Team Update',
-            self::MY_TEAM_DELETE->value             => 'My Team Delete',
-            self::MY_TEAM_AUDIT_ITEMS_CREATE->value => 'My Team Audit Items Create',
-            self::MY_TEAM_AUDIT_ITEMS_READ->value   => 'My Team Audit Items Read',
-            self::MY_TEAM_AUDIT_ITEMS_UPDATE->value => 'My Team Audit Items Update',
-            self::MY_TEAM_AUDIT_ITEMS_DELETE->value => 'My Team Audit Items Delete',
-            self::MY_TEAM_VOUCHERS_CREATE->value    => 'My Team Vouchers Create',
-            self::MY_TEAM_VOUCHERS_READ->value      => 'My Team Vouchers Read',
-            self::MY_TEAM_VOUCHERS_UPDATE->value    => 'My Team Vouchers Update',
-            self::MY_TEAM_VOUCHERS_DELETE->value    => 'My Team Vouchers Delete',
-            self::SHOPS_CREATE->value               => 'Shops Create: Create a shop that redeems vouchers',
-            self::SHOPS_READ->value                 => 'Shops Read: Retrieve shop details from the API',
-            self::SHOPS_UPDATE->value               => 'Shops Update: Update a shop',
-            self::SHOPS_DELETE->value               => 'Shops Delete: Delete a shop',
-            self::SYSTEM_STATISTICS_CREATE->value   => 'System Statistics Create',
-            self::SYSTEM_STATISTICS_READ->value     => 'System Statistics Read',
-            self::SYSTEM_STATISTICS_UPDATE->value   => 'System Statistics Update',
-            self::SYSTEM_STATISTICS_DELETE->value   => 'System Statistics Delete',
-            self::VOUCHER_REDEMPTIONS_CREATE->value => 'Voucher Redemptions Create',
-            self::VOUCHER_REDEMPTIONS_READ->value   => 'Voucher Redemptions Read',
-            self::VOUCHER_REDEMPTIONS_UPDATE->value => 'Voucher Redemptions Update',
-            self::VOUCHER_REDEMPTIONS_DELETE->value => 'Voucher Redemptions Delete',
+            self::SUPER_ADMIN->value                 => 'Super Admin: Perform most API actions',
+            self::COUNTRIES_CREATE->value            => 'Countries Create',
+            self::COUNTRIES_READ->value              => 'Countries Read',
+            self::COUNTRIES_UPDATE->value            => 'Countries Update',
+            self::COUNTRIES_DELETE->value            => 'Countries Delete',
+            self::MY_PROFILE_CREATE->value           => 'My Profile Create',
+            self::MY_PROFILE_READ->value             => 'My Profile Read',
+            self::MY_PROFILE_UPDATE->value           => 'My Profile Update',
+            self::MY_PROFILE_DELETE->value           => 'My Profile Delete',
+            self::MY_TEAM_CREATE->value              => 'My Team Create',
+            self::MY_TEAM_READ->value                => 'My Team Read',
+            self::MY_TEAM_UPDATE->value              => 'My Team Update',
+            self::MY_TEAM_DELETE->value              => 'My Team Delete',
+            self::MY_TEAM_AUDIT_ITEMS_CREATE->value  => 'My Team Audit Items Create',
+            self::MY_TEAM_AUDIT_ITEMS_READ->value    => 'My Team Audit Items Read',
+            self::MY_TEAM_AUDIT_ITEMS_UPDATE->value  => 'My Team Audit Items Update',
+            self::MY_TEAM_AUDIT_ITEMS_DELETE->value  => 'My Team Audit Items Delete',
+            self::MY_TEAM_SEARCH_CREATE->value       => 'My Team Search Create',
+            self::MY_TEAM_SEARCH_READ->value         => 'My Team Search Read',
+            self::MY_TEAM_SEARCH_UPDATE->value       => 'My Team Search Update',
+            self::MY_TEAM_SEARCH_DELETE->value       => 'My Team Search Delete',
+            self::MY_TEAM_VOUCHERS_CREATE->value     => 'My Team Vouchers Create',
+            self::MY_TEAM_VOUCHERS_READ->value       => 'My Team Vouchers Read',
+            self::MY_TEAM_VOUCHERS_UPDATE->value     => 'My Team Vouchers Update',
+            self::MY_TEAM_VOUCHERS_DELETE->value     => 'My Team Vouchers Delete',
+            self::MY_TEAM_VOUCHER_SETS_CREATE->value => 'My Team Voucher Sets Create',
+            self::MY_TEAM_VOUCHER_SETS_READ->value   => 'My Team Voucher Sets Read',
+            self::MY_TEAM_VOUCHER_SETS_UPDATE->value => 'My Team Voucher Sets Update',
+            self::MY_TEAM_VOUCHER_SETS_DELETE->value => 'My Team Voucher Sets Delete',
+            self::SHOPS_CREATE->value                => 'Shops Create: Create a shop that redeems vouchers',
+            self::SHOPS_READ->value                  => 'Shops Read: Retrieve shop details from the API',
+            self::SHOPS_UPDATE->value                => 'Shops Update: Update a shop',
+            self::SHOPS_DELETE->value                => 'Shops Delete: Delete a shop',
+            self::SYSTEM_STATISTICS_CREATE->value    => 'System Statistics Create',
+            self::SYSTEM_STATISTICS_READ->value      => 'System Statistics Read',
+            self::SYSTEM_STATISTICS_UPDATE->value    => 'System Statistics Update',
+            self::SYSTEM_STATISTICS_DELETE->value    => 'System Statistics Delete',
+            self::VOUCHER_REDEMPTIONS_CREATE->value  => 'Voucher Redemptions Create',
+            self::VOUCHER_REDEMPTIONS_READ->value    => 'Voucher Redemptions Read',
+            self::VOUCHER_REDEMPTIONS_UPDATE->value  => 'Voucher Redemptions Update',
+            self::VOUCHER_REDEMPTIONS_DELETE->value  => 'Voucher Redemptions Delete',
+
+
         ];
     }
 

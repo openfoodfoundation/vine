@@ -16,13 +16,15 @@ class VoucherFactory extends Factory
      */
     public function definition(): array
     {
+        $value = rand(500, 1000);
+
         return [
             'id'                           => $this->faker->uuid(),
             'voucher_set_id'               => $this->faker->uuid(),
             'created_by_team_id'           => $this->faker->numberBetween(1, 10),
             'allocated_to_service_team_id' => $this->faker->numberBetween(1, 10),
-            'voucher_value_original'       => $this->faker->numberBetween(1, 1000),
-            'voucher_value_remaining'      => $this->faker->numberBetween(1, 1000),
+            'voucher_value_original'       => $value,
+            'voucher_value_remaining'      => $value,
         ];
     }
 }

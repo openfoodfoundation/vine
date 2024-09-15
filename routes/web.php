@@ -7,6 +7,7 @@ use App\Models\TeamMerchantTeam;
 use App\Models\TeamUser;
 use App\Models\User;
 use App\Models\Voucher;
+use App\Models\VoucherSet;
 use App\Models\VoucherSetMerchantTeam;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -32,6 +33,14 @@ Route::middleware('auth')->group(function () {
         return Inertia::render('App/MyTeam');
     })->name('my-team');
 
+    Route::get('/my-voucher-sets', function () {
+        return Inertia::render('App/MyVoucherSets');
+    })->name('my-voucher-sets');
+
+    Route::get('/my-vouchers', function () {
+        return Inertia::render('App/MyVouchers');
+    })->name('my-vouchers');
+
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
@@ -48,10 +57,11 @@ Route::middleware('auth')->group(function () {
          * Voucher doesn't exist
          */
         if (!$voucher) {
-            return Inertia::render('App/Vouchers/VoucherRedeemFailed', [
+            return Inertia::render('App/ErrorMessagePage', [
                 'voucherSetId' => $voucherSetId,
                 'voucherId'    => $voucherId,
-                'text'         => 'Voucher does not exist',
+                'title'        => 'Voucher Redeem',
+                'text'         => 'Voucher does not exist.',
             ]);
         }
 
@@ -60,10 +70,11 @@ Route::middleware('auth')->group(function () {
          */
         $team = Team::find(Auth::user()->current_team_id);
         if (!$team) {
-            return Inertia::render('App/Vouchers/VoucherRedeemFailed', [
+            return Inertia::render('App/ErrorMessagePage', [
                 'voucherSetId' => $voucherSetId,
                 'voucherId'    => $voucherId,
-                'text'         => 'You have not set your team',
+                'title'        => 'Voucher Redeem',
+                'text'         => 'You have not set your team.',
             ]);
         }
 
@@ -82,9 +93,10 @@ Route::middleware('auth')->group(function () {
             ->first();
 
         if (!$teamMerchant || !$teamMerchantOfVoucherSet) {
-            return Inertia::render('App/Vouchers/VoucherRedeemFailed', [
+            return Inertia::render('App/ErrorMessagePage', [
                 'voucherSetId' => $voucherSetId,
                 'voucherId'    => $voucherId,
+                'title'        => 'Voucher Redeem',
                 'text'         => 'Your team is not allowed to redeem this voucher, sorry.',
             ]);
         }
@@ -94,6 +106,114 @@ Route::middleware('auth')->group(function () {
             'voucherId'    => $voucherId,
         ]);
     })->name('voucher-redeem');
+
+    Route::get('/voucher/{voucherId}', function ($voucherId) {
+
+        $voucher = Voucher::find($voucherId);
+
+        /**
+         * Voucher doesn't exist
+         */
+        if (!$voucher) {
+            return Inertia::render('App/ErrorMessagePage', [
+                'voucherId' => $voucherId,
+                'title'     => 'Voucher',
+                'text'      => 'Voucher does not exist.',
+            ]);
+        }
+
+        /**
+         * User does not have team
+         */
+        $team = Team::find(Auth::user()->current_team_id);
+        if (!$team) {
+            return Inertia::render('App/ErrorMessagePage', [
+                'voucherId' => $voucherId,
+                'title'     => 'Voucher',
+                'text'      => 'You have not set your team',
+            ]);
+        }
+
+        /**
+         * User's team is NOT a merchant of the voucher's service team
+         */
+        $teamMerchant = TeamMerchantTeam::where('team_id', $voucher->allocated_to_service_team_id)
+            ->where('merchant_team_id', $team->id)
+            ->first();
+
+        /**
+         * User's team is NOT a merchant for the voucher set
+         */
+        $teamMerchantOfVoucherSet = VoucherSetMerchantTeam::where('voucher_set_id', $voucher->voucher_set_id)
+            ->where('merchant_team_id', $team->id)
+            ->first();
+
+        if (($voucher->created_by_team_id != $team->id && $voucher->allocated_to_service_team_id != $team->id) && !$teamMerchant && !$teamMerchantOfVoucherSet) {
+            return Inertia::render('App/ErrorMessagePage', [
+                'voucherId' => $voucherId,
+                'title'     => 'Voucher',
+                'text'      => 'Your team is not allowed to see this voucher, sorry.',
+            ]);
+        }
+
+        return Inertia::render('App/Vouchers/Voucher', [
+            'voucherId' => $voucherId,
+        ]);
+    })->name('voucher');
+
+    Route::get('/voucher-set/{voucherSetId}', function ($voucherSetId) {
+
+        $voucherSet = VoucherSet::find($voucherSetId);
+
+        /**
+         * Voucher set doesn't exist
+         */
+        if (!$voucherSet) {
+            return Inertia::render('App/ErrorMessagePage', [
+                'voucherSetId' => $voucherSetId,
+                'title'        => 'Voucher Set',
+                'text'         => 'Voucher set does not exist.',
+            ]);
+        }
+
+        /**
+         * User does not have team
+         */
+        $team = Team::find(Auth::user()->current_team_id);
+        if (!$team) {
+            return Inertia::render('App/ErrorMessagePage', [
+                'voucherSetId' => $voucherSetId,
+                'title'        => 'Voucher Set',
+                'text'         => 'You have not set your team',
+            ]);
+        }
+
+        /**
+         * User's team is NOT a merchant of the voucher set's service team
+         */
+        $teamMerchant = TeamMerchantTeam::where('team_id', $voucherSet->allocated_to_service_team_id)
+            ->where('merchant_team_id', $team->id)
+            ->first();
+
+        /**
+         * User's team is NOT a merchant for the voucher set
+         */
+        $teamMerchantOfVoucherSet = VoucherSetMerchantTeam::where('voucher_set_id', $voucherSetId)
+            ->where('merchant_team_id', $team->id)
+            ->first();
+
+        if (($voucherSet->created_by_team_id != $team->id && $voucherSet->allocated_to_service_team_id != $team->id) && !$teamMerchant && !$teamMerchantOfVoucherSet) {
+            return Inertia::render('App/ErrorMessagePage', [
+                'voucherId' => $voucherSetId,
+                'title'     => 'Voucher Set',
+                'text'      => 'Your team is not allowed to see this voucher set, sorry.',
+            ]);
+        }
+
+        return Inertia::render('App/Vouchers/VoucherSet', [
+            'voucherSetId' => $voucherSetId,
+        ]);
+    })->name('voucher-set');
 
     Route::get('/stop-impersonating', function (Request $request) {
         // We will make sure we have an impersonator's user ID in the session and if the
@@ -194,6 +314,12 @@ Route::middleware('auth')->group(function () {
         Route::get('/voucher-redemptions', function () {
             return Inertia::render('Admin/Vouchers/VoucherRedemptions');
         })->name('admin.voucher-redemptions');
+
+        Route::get('/voucher-redemption/{id}', function (int $id) {
+            return Inertia::render('Admin/Vouchers/VoucherRedemption', [
+                'id' => $id,
+            ]);
+        })->name('admin.voucher-redemption');
 
         Route::get('/teams', function () {
             return Inertia::render('Admin/Teams/Teams');
