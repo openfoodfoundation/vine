@@ -12,7 +12,6 @@ class VoucherSetMerchantTeamApprovalRequest extends Model
     use HasFactory;
     use SoftDeletes;
 
-
     public function voucherSet(): BelongsTo
     {
         return $this->belongsTo(VoucherSet::class);

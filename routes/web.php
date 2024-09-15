@@ -33,6 +33,11 @@ Route::get('/voucher-set-merchant-team-approval-request-approved/{id}', function
     if (!$request->hasValidSignature()) {
         $approvalRequest = VoucherSetMerchantTeamApprovalRequest::findOrFail($request->id);
 
+<<<<<<< HEAD
+=======
+        Auth::loginUsingId($approvalRequest->merchant_user_id);
+
+>>>>>>> 5552fcbaa21be484b14835406949704debd2367a
         return Inertia::render('App/VoucherSetMerchantTeamApprovalRequest', [
             'id'     => $approvalRequest->id,
             'status' => VoucherSetMerchantTeamApprovalRequestStatus::APPROVED->value,
@@ -50,6 +55,11 @@ Route::get('/voucher-set-merchant-team-approval-request-rejected/{id}', function
     if (!$request->hasValidSignature()) {
         $approvalRequest = VoucherSetMerchantTeamApprovalRequest::findOrFail($request->id);
 
+<<<<<<< HEAD
+=======
+        Auth::loginUsingId($approvalRequest->merchant_user_id);
+
+>>>>>>> 5552fcbaa21be484b14835406949704debd2367a
         return Inertia::render('App/VoucherSetMerchantTeamApprovalRequest', [
             'id'     => $approvalRequest->id,
             'status' => VoucherSetMerchantTeamApprovalRequestStatus::REJECTED->value,
