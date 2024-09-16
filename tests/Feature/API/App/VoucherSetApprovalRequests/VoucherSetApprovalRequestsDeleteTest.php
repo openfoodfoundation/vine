@@ -2,8 +2,6 @@
 
 namespace Tests\Feature\API\App\VoucherSetApprovalRequests;
 
-use App\Models\Voucher;
-use App\Models\VoucherRedemption;
 use App\Models\VoucherSet;
 use App\Models\VoucherSetMerchantTeamApprovalRequest;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -39,7 +37,7 @@ class VoucherSetApprovalRequestsDeleteTest extends BaseAPITestCase
         $model = VoucherSetMerchantTeamApprovalRequest::factory()
             ->create(
                 [
-                    'voucher_set_id'      => $voucherSet->id,
+                    'voucher_set_id' => $voucherSet->id,
                 ]
             );
 
