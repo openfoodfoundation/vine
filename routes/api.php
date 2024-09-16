@@ -36,7 +36,6 @@ use Illuminate\Support\Facades\Route;
 Route::group(['prefix' => 'v1'], function () {
 
     /**
-     * <<<<<<< HEAD
      * Open routes (non-authenticated)
      */
     Route::put('/voucher-set-approval/{id}', [ApiVoucherSetMerchantTeamApprovalRequestController::class, 'update'])
@@ -885,10 +884,8 @@ Route::group(['prefix' => 'v1'], function () {
                             '/user-personal-access-tokens',
                             ApiAdminUserPersonalAccessTokensController::class
                         )->names('api.v1.admin.tokens');
-                        >>>>>>>
-                        develop
 
-                });
+                    });
 
                 /**
                  * Voucher Redemptions

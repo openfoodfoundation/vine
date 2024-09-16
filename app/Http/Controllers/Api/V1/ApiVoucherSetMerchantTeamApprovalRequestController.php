@@ -7,22 +7,16 @@
 namespace App\Http\Controllers\Api\V1;
 
 use App\Enums\ApiResponse;
-<<<<<<< HEAD:app/Http/Controllers/Api/V1/ApiVoucherSetMerchantTeamApprovalRequestController.php
 use App\Enums\VoucherSetMerchantTeamApprovalRequestStatus;
 use App\Events\VoucherSetMerchantTeamApprovalRequest\VoucherSetMerchantTeamApprovalRequestWasApproved;
 use App\Events\VoucherSetMerchantTeamApprovalRequest\VoucherSetMerchantTeamApprovalRequestWasRejected;
-=======
->>>>>>> 5552fcbaa21be484b14835406949704debd2367a:app/Http/Controllers/Api/V1/Admin/ApiVoucherSetMerchantTeamApprovalRequestController.php
 use App\Http\Controllers\Api\HandlesAPIRequests;
 use App\Http\Controllers\Controller;
 use App\Models\VoucherSetMerchantTeamApprovalRequest;
 use Exception;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Validator;
-<<<<<<< HEAD:app/Http/Controllers/Api/V1/ApiVoucherSetMerchantTeamApprovalRequestController.php
 use Illuminate\Validation\Rule;
-=======
->>>>>>> 5552fcbaa21be484b14835406949704debd2367a:app/Http/Controllers/Api/V1/Admin/ApiVoucherSetMerchantTeamApprovalRequestController.php
 use Knuckles\Scribe\Attributes\Group;
 use Knuckles\Scribe\Attributes\Subgroup;
 

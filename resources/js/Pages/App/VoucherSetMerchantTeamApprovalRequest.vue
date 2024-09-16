@@ -27,8 +27,10 @@ function showMessage() {
         icon: "warning",
         confirmButtonColor: "#3085d6",
         confirmButtonText: $props.status === 'approved' ? "Approve voucher set" : "Reject voucher set",
+        showDenyButton: true,
+        denyButtonText: `Cancel`,
         allowOutsideClick: false,
-        showCancelButton: true,
+        showCancelButton: false,
     }).then((result) => {
         if (result.isConfirmed) {
             let payload = {
@@ -49,6 +51,19 @@ function showMessage() {
                 })
             }).catch(error => {
                 console.log(error)
+            })
+        } else if (result.isDenied) {
+            Swal.fire({
+                title: $props.status === 'approved' ? "Voucher set has not been approved" : "Voucher set has not been rejected",
+                text: "Please go back to the email to approve or reject the voucher set.",
+                icon: "warning",
+                confirmButtonColor: "#3085d6",
+                allowOutsideClick: false,
+                confirmButtonText: "Go to dashboard",
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = route('dashboard')
+                }
             })
         }
     });
