@@ -1,15 +1,17 @@
 <?php
-
+/** @noinspection PhpUndefinedFieldInspection */
+/** @noinspection SpellCheckingInspection */
 /** @noinspection PhpUndefinedMethodInspection */
 
 namespace Tests\Feature\API\App\VoucherSetApprovalRequests;
 
+use App\Enums\PersonalAccessTokenAbility;
 use App\Enums\VoucherSetMerchantTeamApprovalRequestStatus;
-use App\Models\User;
 use App\Models\VoucherSet;
 use App\Models\VoucherSetMerchantTeamApprovalRequest;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Event;
+use Laravel\Sanctum\Sanctum;
 use PHPUnit\Framework\Attributes\Test;
 use Tests\Feature\API\BaseAPITestCase;
 
@@ -20,15 +22,64 @@ class VoucherSetApprovalRequestsPutTest extends BaseAPITestCase
     protected string $endPoint = '/vsmtar';
 
     #[Test]
-    public function standardUserWithoutPermissionCanAccess()
+    public function itFailsIfNotAuthenticated()
     {
         Event::fake();
 
-        $voucherSet   = VoucherSet::factory()->create();
-        $merchantUser = User::factory()->create();
+        $this->user = $this->createUser();
+
+        $voucherSet = VoucherSet::factory()->create();
+
+        $model = VoucherSetMerchantTeamApprovalRequest::factory()
+            ->create(
+                [
+                    'voucher_set_id' => $voucherSet->id,
+                ]
+            );
+
+        $response = $this->putJson($this->apiRoot . $this->endPoint . '/' . $model->id);
+        $response->assertStatus(401);
+    }
+
+    #[Test]
+    public function itFailsUpdateWithoutAbility()
+    {
+        Event::fake();
+
+        $this->user = $this->createUser();
+
+        Sanctum::actingAs(
+            $this->user
+        );
+
+        $voucherSet = VoucherSet::factory()->create();
+
+        $model = VoucherSetMerchantTeamApprovalRequest::factory()
+            ->create(
+                [
+                    'voucher_set_id' => $voucherSet->id,
+                ]
+            );
+
+        $response = $this->putJson($this->apiRoot . $this->endPoint . '/' . $model->id);
+        $response->assertStatus(401);
+    }
+
+    #[Test]
+    public function itCanUpdateWithAbility()
+    {
+        Event::fake();
+
+        $this->user = $this->createUserWithTeam();
+
+        Sanctum::actingAs($this->user, abilities: [
+            PersonalAccessTokenAbility::VOUCHER_SET_MERCHANT_TEAM_APPROVAL_REQUESTS_UPDATE->value,
+        ]);
+
+        $voucherSet = VoucherSet::factory()->create();
 
         $model = VoucherSetMerchantTeamApprovalRequest::factory()->create([
-            'merchant_user_id' => $merchantUser->id,
+            'merchant_user_id' => $this->user->id,
             'voucher_set_id'   => $voucherSet->id,
         ]);
 

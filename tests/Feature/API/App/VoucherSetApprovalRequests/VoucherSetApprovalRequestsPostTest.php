@@ -1,4 +1,5 @@
 <?php
+/** @noinspection SpellCheckingInspection */
 
 namespace Tests\Feature\API\App\VoucherSetApprovalRequests;
 
@@ -28,9 +29,7 @@ class VoucherSetApprovalRequestsPostTest extends BaseAPITestCase
     {
         $this->user = $this->createUserWithTeam();
 
-        Sanctum::actingAs($this->user, abilities: [
-            // Missing token
-        ]);
+        Sanctum::actingAs($this->user);
 
         $response = $this->postJson($this->apiRoot . $this->endPoint);
         $response->assertStatus(401);
