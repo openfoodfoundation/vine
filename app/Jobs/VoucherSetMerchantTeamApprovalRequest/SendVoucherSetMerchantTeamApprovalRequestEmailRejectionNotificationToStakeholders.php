@@ -1,4 +1,6 @@
-<?php /** @noinspection PhpUndefinedMethodInspection */
+<?php
+
+/** @noinspection PhpUndefinedMethodInspection */
 
 namespace App\Jobs\VoucherSetMerchantTeamApprovalRequest;
 
