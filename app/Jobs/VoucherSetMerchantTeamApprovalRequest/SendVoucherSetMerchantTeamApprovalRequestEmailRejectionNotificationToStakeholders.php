@@ -1,14 +1,14 @@
-<?php /** @noinspection PhpUndefinedMethodInspection */
+<?php
+/** @noinspection PhpUndefinedMethodInspection */
 
 namespace App\Jobs\VoucherSetMerchantTeamApprovalRequest;
 
 use App\Models\User;
 use App\Models\VoucherSetMerchantTeamApprovalRequest;
 use App\Notifications\Slack\VoucherSetMerchantTeamApprovalRequest\VoucherSetMerchantTeamApprovalRequestRejectedNotification;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Queue\Queueable;
 
-class SendVoucherSetMerchantTeamApprovalRequestEmailRejectionNotificationToStakeholders implements ShouldQueue
+class SendVoucherSetMerchantTeamApprovalRequestEmailRejectionNotificationToStakeholders
 {
     use Queueable;
 

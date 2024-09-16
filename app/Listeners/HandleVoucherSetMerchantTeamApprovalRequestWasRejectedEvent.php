@@ -2,7 +2,8 @@
 
 namespace App\Listeners;
 
-use App\Events\VoucherSetMerchantTeamApprovalRequestWasRejected;
+use App\Events\VoucherSetMerchantTeamApprovalRequest\VoucherSetMerchantTeamApprovalRequestWasRejected;
+use App\Jobs\VoucherSetMerchantTeamApprovalRequest\SendVoucherSetMerchantTeamApprovalRequestEmailRejectionNotificationToStakeholders;
 
 class HandleVoucherSetMerchantTeamApprovalRequestWasRejectedEvent
 {
@@ -16,5 +17,8 @@ class HandleVoucherSetMerchantTeamApprovalRequestWasRejectedEvent
      *
      * @param VoucherSetMerchantTeamApprovalRequestWasRejected $event
      */
-    public function handle(VoucherSetMerchantTeamApprovalRequestWasRejected $event): void {}
+    public function handle(VoucherSetMerchantTeamApprovalRequestWasRejected $event): void
+    {
+        dispatch(new SendVoucherSetMerchantTeamApprovalRequestEmailRejectionNotificationToStakeholders($event->request));
+    }
 }

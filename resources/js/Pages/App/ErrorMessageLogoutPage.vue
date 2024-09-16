@@ -2,6 +2,11 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import {Head, Link} from '@inertiajs/vue3';
 import PrimaryButton from "@/Components/PrimaryButton.vue";
+import InputLabel from "@/Components/InputLabel.vue";
+import Checkbox from "@/Components/Checkbox.vue";
+import InputError from "@/Components/InputError.vue";
+import GuestLayout from "@/Layouts/GuestLayout.vue";
+import TextInput from "@/Components/TextInput.vue";
 
 const $props = defineProps({
     voucherSetId: {
@@ -26,16 +31,17 @@ const $props = defineProps({
 </script>
 
 <template>
-    <Head :title="$props.title"/>
+    <GuestLayout>
+        <Head :title="$props.title"/>
 
-    <div class="card">
-        <div class="mb-8">
-            {{ $props.text }}
+        <div class="p-12 text-center">
+            <div class="mb-8 font-bold">
+                {{ $props.text }}
+            </div>
+
+            <Link :href="route('dashboard')">
+                <PrimaryButton>Back to home</PrimaryButton>
+            </Link>
         </div>
-
-        <Link :href="route('dashboard')">
-            <PrimaryButton>Back to home</PrimaryButton>
-        </Link>
-    </div>
-
+    </GuestLayout>
 </template>

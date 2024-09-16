@@ -2,7 +2,7 @@
 
 namespace App\Listeners;
 
-use App\Events\VoucherSetMerchantTeamApprovalRequestWasApproved;
+use App\Events\VoucherSetMerchantTeamApprovalRequest\VoucherSetMerchantTeamApprovalRequestWasApproved;
 
 class HandleVoucherSetMerchantTeamApprovalRequestWasApprovedEvent
 {

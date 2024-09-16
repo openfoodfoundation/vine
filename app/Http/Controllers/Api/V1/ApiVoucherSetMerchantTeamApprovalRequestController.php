@@ -130,13 +130,13 @@ class ApiVoucherSetMerchantTeamApprovalRequestController extends Controller
                     $model->approval_status_last_updated_at = now();
                     $model->save();
 
-                    $result = $this->request->get('approval_status');
+                    $answer = $this->request->get('approval_status');
 
-                    if ($result == VoucherSetMerchantTeamApprovalRequestStatus::APPROVED->value) {
+                    if ($answer == VoucherSetMerchantTeamApprovalRequestStatus::APPROVED->value) {
                         event(new VoucherSetMerchantTeamApprovalRequestWasApproved($model));
                     }
 
-                    if ($result == VoucherSetMerchantTeamApprovalRequestStatus::REJECTED->value) {
+                    if ($answer == VoucherSetMerchantTeamApprovalRequestStatus::REJECTED->value) {
                         event(new VoucherSetMerchantTeamApprovalRequestWasRejected($model));
                     }
 

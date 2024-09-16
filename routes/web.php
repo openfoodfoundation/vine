@@ -30,7 +30,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/voucher-set-merchant-team-approval-request-approved/{id}', function (Request $request) {
-    if (!$request->hasValidSignature()) {
+    if ($request->hasValidSignature()) {
         $approvalRequest = VoucherSetMerchantTeamApprovalRequest::findOrFail($request->id);
 
         return Inertia::render('App/VoucherSetMerchantTeamApprovalRequest', [
@@ -47,7 +47,7 @@ Route::get('/voucher-set-merchant-team-approval-request-approved/{id}', function
 })->name('voucher-set-merchant-team-approval-request-approved');
 
 Route::get('/voucher-set-merchant-team-approval-request-rejected/{id}', function (Request $request) {
-    if (!$request->hasValidSignature()) {
+    if ($request->hasValidSignature()) {
         $approvalRequest = VoucherSetMerchantTeamApprovalRequest::findOrFail($request->id);
 
         return Inertia::render('App/VoucherSetMerchantTeamApprovalRequest', [
