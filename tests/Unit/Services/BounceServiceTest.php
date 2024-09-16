@@ -2,20 +2,13 @@
 
 namespace Tests\Unit\Services;
 
-use App\Models\AuditItem;
-use App\Models\Team;
 use App\Models\User;
-use App\Models\Voucher;
-use App\Models\VoucherSet;
 use App\Models\VoucherSetMerchantTeamApprovalRequest;
-use App\Services\AuditItemService;
 use App\Services\BounceService;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
-use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Event;
 use PHPUnit\Framework\Attributes\Test;
-use Str;
 use Tests\TestCase;
 
 class BounceServiceTest extends TestCase
