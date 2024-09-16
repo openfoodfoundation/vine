@@ -19,7 +19,6 @@ class VoucherSetMerchantTeamApprovalRequestWasApproved
      */
     public function __construct(public VoucherSetMerchantTeamApprovalRequest $request) {}
 
-
     /**
      * Get the channels the event should broadcast on.
      *

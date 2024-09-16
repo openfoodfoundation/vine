@@ -49,7 +49,6 @@ Route::group(['prefix' => 'v1'], function () {
         Route::middleware(['auth:sanctum'])
             ->group(function () {
 
-
                 /**
                  * Countries
                  */
