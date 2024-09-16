@@ -17,7 +17,7 @@
     Reject
 </x-mail::button>
 
-    This link will be available for the next 7 days.
+    This link will be available for the next 2 days.
     Thank you for using our platform!
 
 </x-mail::message>

@@ -2,14 +2,13 @@
 
 namespace App\Notifications\Mail\VoucherSetMerchantTeamApprovalRequest;
 
-use App\Models\VoucherSet;
+use App\Models\User;
 use App\Models\VoucherSetMerchantTeamApprovalRequest;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
-use Illuminate\Support\Facades\URL;
 
-class VoucherSetMerchantTeamApprovalRequestEmailNotification extends Notification
+class VoucherSetMerchantTeamApprovalRequestRejectedNotification extends Notification
 {
     use Queueable;
 
@@ -41,28 +40,14 @@ class VoucherSetMerchantTeamApprovalRequestEmailNotification extends Notificatio
      */
     public function toMail(object $notifiable): MailMessage
     {
-        $urlApprove = URL::temporarySignedRoute(
-            'voucher-set-merchant-team-approval-request-approved',
-            now()->addDays(2),
-            ['id' => $this->request->id]
-        );
-
-        $urlReject = URL::temporarySignedRoute(
-            'voucher-set-merchant-team-approval-request-rejected',
-            now()->addDays(2),
-            ['id' => $this->request->id]
-        );
-
-        $voucherSet = VoucherSet::with('createdByTeam')->find($this->request->voucher_set_id);
+        $merchantUser = User::with('currentTeam')->find($this->request->merchant_user_id);
 
         return (new MailMessage())
-            ->subject('A Vine voucher set has been generated for your service')
-            ->markdown('mail.voucher-set-approval-request', [
-                'voucherSetId' => $this->request->voucher_set_id,
-                'createdBy'    => $voucherSet->createdByTeam->name,
-                'approve'      => $urlApprove,
-                'reject'       => $urlReject,
-            ]);
+            ->subject('A voucher set has been rejected by ' . $merchantUser->name)
+            ->line($merchantUser->name . ' from ' . $merchantUser->currentTeam->name . ' has chosen to reject the approval of their merchant involvement in voucher set #' . $this->request->voucher_set_id . '.')
+            ->line('Please liaise with your team to work out next steps - the Vine platform has not generated this voucher set at this point.')
+            ->action('View voucher set', url('/voucher-set/' . $this->request->merchant_user_id))
+            ->line('Thank you for using our application!');
     }
 
     /**

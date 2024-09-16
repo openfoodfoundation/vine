@@ -3,8 +3,6 @@
 namespace App\Console\Commands;
 
 use App\Models\User;
-use App\Models\VoucherSetMerchantTeamApprovalRequest;
-use App\Notifications\Mail\VoucherSetMerchantTeamApprovalRequest\VoucherSetMerchantTeamApprovalRequestEmailNotification;
 use Illuminate\Console\Command;
 
 class TestCommand extends Command
@@ -29,16 +27,7 @@ class TestCommand extends Command
     public function handle()
     {
 
-        $me = User::find(2);
-
-        //        $test = VoucherSetMerchantTeamApprovalRequest::factory()->create([
-        //            'voucher_set_id'=> '3cf330c3-7405-353d-ac82-ddccb24bf942',
-        //            'merchant_user_id' => 2
-        //        ]);
-
-        $request = VoucherSetMerchantTeamApprovalRequest::find(1);
-
-        $me->notify(new VoucherSetMerchantTeamApprovalRequestEmailNotification($request));
+        $me = User::find(3);
 
     }
 }

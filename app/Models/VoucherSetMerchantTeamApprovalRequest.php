@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Events\VoucherSetMerchantTeamApprovalRequest\VoucherSetMerchantTeamApprovalRequestWasCreated;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -11,6 +12,10 @@ class VoucherSetMerchantTeamApprovalRequest extends Model
 {
     use HasFactory;
     use SoftDeletes;
+
+    protected $dispatchesEvents = [
+        'created' => VoucherSetMerchantTeamApprovalRequestWasCreated::class,
+    ];
 
     public function voucherSet(): BelongsTo
     {

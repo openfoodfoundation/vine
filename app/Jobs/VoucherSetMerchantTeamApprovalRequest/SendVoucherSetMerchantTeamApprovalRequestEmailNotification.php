@@ -2,6 +2,7 @@
 
 namespace App\Jobs\VoucherSetMerchantTeamApprovalRequest;
 
+use App\Models\User;
 use App\Models\VoucherSetMerchantTeamApprovalRequest;
 use App\Notifications\Mail\VoucherSetMerchantTeamApprovalRequest\VoucherSetMerchantTeamApprovalRequestEmailNotification;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -23,9 +24,9 @@ class SendVoucherSetMerchantTeamApprovalRequestEmailNotification implements Shou
      */
     public function handle(): void
     {
-        $merchantUserId = $this->request->merchant_user_id;
+        $merchantUser = User::find($this->request->merchant_user_id);
 
-        $merchantUserId->notify(new VoucherSetMerchantTeamApprovalRequestEmailNotification($this->request));
+        $merchantUser->notify(new VoucherSetMerchantTeamApprovalRequestEmailNotification($this->request));
 
     }
 }

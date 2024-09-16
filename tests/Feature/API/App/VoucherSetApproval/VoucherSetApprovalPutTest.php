@@ -5,8 +5,11 @@
 namespace Tests\Feature\API\App\VoucherSetApproval;
 
 use App\Enums\VoucherSetMerchantTeamApprovalRequestStatus;
+use App\Models\User;
+use App\Models\VoucherSet;
 use App\Models\VoucherSetMerchantTeamApprovalRequest;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Facades\Event;
 use PHPUnit\Framework\Attributes\Test;
 use Tests\Feature\API\BaseAPITestCase;
 
@@ -19,7 +22,15 @@ class VoucherSetApprovalPutTest extends BaseAPITestCase
     #[Test]
     public function standardUserWithoutPermissionCanAccess()
     {
-        $model = VoucherSetMerchantTeamApprovalRequest::factory()->create();
+        Event::fake();
+
+        $voucherSet   = VoucherSet::factory()->create();
+        $merchantUser = User::factory()->create();
+
+        $model = VoucherSetMerchantTeamApprovalRequest::factory()->create([
+            'merchant_user_id' => $merchantUser->id,
+            'voucher_set_id'   => $voucherSet->id,
+        ]);
 
         $payload = [
             'approval_status' => VoucherSetMerchantTeamApprovalRequestStatus::APPROVED->value,

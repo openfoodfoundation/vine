@@ -30,35 +30,32 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/voucher-set-merchant-team-approval-request-approved/{id}', function (Request $request) {
-    if ($request->hasValidSignature()) {
-        $approvalRequest = VoucherSetMerchantTeamApprovalRequest::findOrFail($request->id);
-
-        return Inertia::render('App/VoucherSetMerchantTeamApprovalRequest', [
-            'id'     => $approvalRequest->id,
-            'status' => VoucherSetMerchantTeamApprovalRequestStatus::APPROVED->value,
+    if (!$request->hasValidSignature()) {
+        return Inertia::render('App/ErrorMessageLogoutPage', [
+            'title' => 'Voucher set approval',
+            'text'  => 'URL is invalid.',
         ]);
     }
+    $approvalRequest = VoucherSetMerchantTeamApprovalRequest::findOrFail($request->id);
 
-    return Inertia::render('App/ErrorMessageLogoutPage', [
-        'title' => 'Voucher set approval',
-        'text'  => 'URL is invalid.',
+    return Inertia::render('App/VoucherSetMerchantTeamApprovalRequest', [
+        'id'     => $approvalRequest->id,
+        'status' => VoucherSetMerchantTeamApprovalRequestStatus::APPROVED->value,
     ]);
-
 })->name('voucher-set-merchant-team-approval-request-approved');
 
 Route::get('/voucher-set-merchant-team-approval-request-rejected/{id}', function (Request $request) {
-    if ($request->hasValidSignature()) {
-        $approvalRequest = VoucherSetMerchantTeamApprovalRequest::findOrFail($request->id);
-
-        return Inertia::render('App/VoucherSetMerchantTeamApprovalRequest', [
-            'id'     => $approvalRequest->id,
-            'status' => VoucherSetMerchantTeamApprovalRequestStatus::REJECTED->value,
+    if (!$request->hasValidSignature()) {
+        return Inertia::render('App/ErrorMessageLogoutPage', [
+            'title' => 'Voucher set approval',
+            'text'  => 'URL is invalid.',
         ]);
     }
+    $approvalRequest = VoucherSetMerchantTeamApprovalRequest::findOrFail($request->id);
 
-    return Inertia::render('App/ErrorMessageLogoutPage', [
-        'title' => 'Voucher set approval',
-        'text'  => 'URL is invalid.',
+    return Inertia::render('App/VoucherSetMerchantTeamApprovalRequest', [
+        'id'     => $approvalRequest->id,
+        'status' => VoucherSetMerchantTeamApprovalRequestStatus::REJECTED->value,
     ]);
 
 })->name('voucher-set-merchant-team-approval-request-rejected');
