@@ -35,6 +35,7 @@ class VoucherSetGenerationEmailNotification extends Notification implements Shou
      * Get the mail representation of the notification.
      *
      * @param object $notifiable
+     *
      * @return MailMessage
      */
     public function toMail(object $notifiable): MailMessage
