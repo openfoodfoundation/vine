@@ -18,11 +18,10 @@ class VoucherSetMerchantTeamApprovalRequestEmailNotification extends Notificatio
     /**
      * Create a new notification instance.
      *
+     * @param VoucherSetMerchantTeamApprovalRequest $voucherSetMerchantTeamApprovalRequest
      * @param VoucherSetMerchantTeamApprovalRequest $request
      */
-    public function __construct(public VoucherSetMerchantTeamApprovalRequest $voucherSetMerchantTeamApprovalRequest)
-    {
-    }
+    public function __construct(public VoucherSetMerchantTeamApprovalRequest $voucherSetMerchantTeamApprovalRequest) {}
 
     /**
      * Get the notification's delivery channels.
