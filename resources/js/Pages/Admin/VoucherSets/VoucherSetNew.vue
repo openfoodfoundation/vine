@@ -2,23 +2,22 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import {Head} from '@inertiajs/vue3';
 import AdminTopNavigation from "@/Components/Admin/AdminTopNavigation.vue";
-import VoucherSetsComponent from "@/Components/Admin/Vouchers/VoucherSetsComponent.vue";
-
+import VoucherSetNewComponent from "@/Components/Admin/VoucherSets/VoucherSetNewComponent.vue";
 </script>
 
 <template>
-    <Head title="Voucher sets"/>
+    <Head title="Vouchers"/>
 
     <AuthenticatedLayout>
         <template #header>
-            <AdminTopNavigation></AdminTopNavigation>
+            <AdminTopNavigation/>
         </template>
 
-        <div class="card">
+        <div class=" card">
             <div class="card-header">
-                Voucher Sets
+                Voucher Set New
             </div>
-            <VoucherSetsComponent></VoucherSetsComponent>
+            <VoucherSetNewComponent/>
         </div>
     </AuthenticatedLayout>
 </template>
