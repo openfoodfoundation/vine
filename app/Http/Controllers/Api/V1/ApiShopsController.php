@@ -11,6 +11,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Team;
 use App\Models\TeamUser;
 use App\Models\User;
+use Auth;
 use Exception;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Validator;
@@ -115,8 +116,19 @@ class ApiShopsController extends Controller
             $shopTeam = Team::where('name', $shopName)->first();
 
             if (!$shopTeam) {
-                $shopTeam       = new Team();
-                $shopTeam->name = $shopName;
+
+                $usersCurrentTeam = Team::find(Auth::user()->current_team_id);
+
+                if (!$usersCurrentTeam) {
+                    $this->responseCode = 404;
+                    $this->message      = ApiResponse::RESPONSE_NOT_FOUND->value;
+
+                    return $this->respond();
+                }
+
+                $shopTeam             = new Team();
+                $shopTeam->name       = $shopName;
+                $shopTeam->country_id = $usersCurrentTeam->country_id;
                 $shopTeam->save();
             }
 

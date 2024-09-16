@@ -33,12 +33,19 @@ const $props = defineProps({
 const invitingTeamUser = ref(false)
 const limit = ref(10)
 const newTeamName = ref('')
-const team = ref({})
+const selectedCountryId = ref('')
+const countries = ref({})
+const team = ref({
+    name: '',
+    country_id: ''
+
+})
 const teamUsers = ref({})
 
 onMounted(() => {
     getTeam()
     getTeamUsers()
+    getCountries()
 })
 
 function createNewTeamUser(addingUserId) {
@@ -60,9 +67,19 @@ function createNewTeamUser(addingUserId) {
     })
 }
 
+function getCountries() {
+    axios.get('/countries?limit=250').then(response => {
+        countries.value = response.data.data;
+    }).catch(error => {
+        console.log(error)
+    })
+}
+
 function getTeam() {
     axios.get('/admin/teams/' + $props.id + '?cached=false').then(response => {
         team.value = response.data.data
+
+        selectedCountryId.value = team.value.country_id
 
         newTeamName.value = team.value.name
     }).catch(error => {
@@ -125,21 +142,60 @@ function setDataPage(page) {
 }
 
 function updateTeam() {
+
+
     let payload = {
-        name: newTeamName.value
+        name: newTeamName.value,
+        country_id: selectedCountryId.value
     }
 
-    axios.put('/admin/teams/' + $props.id, payload).then(response => {
+    if (team.value.country_id !== selectedCountryId.value) {
         Swal.fire({
-            title: 'Success!',
-            icon: 'success',
-            timer: 1000
-        }).then(() => {
-            getTeam()
+            title: 'Wait...',
+            icon: 'warning',
+            text: 'It looks like you\'re changing this teams\' country. Please be aware this will NOT update the selected currency for any of their existing voucher sets.',
+            confirmButtonText: 'I get it. Proceed.',
+            cancelButtonText: 'Go back',
+            showCancelButton: true,
+            showConfirmButton: true,
+            allowOutsideClick: false
+        }).then(result => {
+
+            if (result.isDismissed) {
+                return;
+            }
+
+            if (result.isConfirmed) {
+                axios.put('/admin/teams/' + $props.id, payload).then(response => {
+                    Swal.fire({
+                        title: 'Success!',
+                        icon: 'success',
+                        timer: 1000
+                    }).then(() => {
+                        getTeam()
+                    })
+                }).catch(error => {
+                    console.log(error)
+                })
+            }
+
         })
-    }).catch(error => {
-        console.log(error)
-    })
+    }
+    else {
+        axios.put('/admin/teams/' + $props.id, payload).then(response => {
+            Swal.fire({
+                title: 'Success!',
+                icon: 'success',
+                timer: 1000
+            }).then(() => {
+                getTeam()
+            })
+        }).catch(error => {
+            console.log(error)
+        })
+    }
+
+
 }
 
 </script>
@@ -155,8 +211,10 @@ function updateTeam() {
         <div class="card">
             <div class="">
 
-                <h2>{{ team.name }}</h2>
-                <div>#{{ $props.id }}</div>
+                <h2>
+                    <span class="text-gray-300 pr-1">#{{ $props.id }}</span>
+                    {{ team.name }}
+                </h2>
             </div>
         </div>
 
@@ -165,15 +223,28 @@ function updateTeam() {
                 Team details
             </div>
 
-            <div class="flex justify-start items-center">
-                <div class="text-xs mr-2">#{{ team.id }}</div>
-                <TextInput
-                    id="name"
-                    type="text"
-                    class="mt-1 block w-full"
-                    v-model="newTeamName"/>
+            <div class="flex justify-start items-center mt-4">
+                <label for="name" class="w-full font-bold">
+                    Team Name:
+                    <TextInput
+                        id="name"
+                        type="text"
+                        class="mt-1 block w-full font-normal"
+                        v-model="newTeamName"/>
+                </label>
             </div>
-            <div v-if="newTeamName !== team.name" class="mt-2 flex justify-end">
+
+            <div class="flex justify-start items-center mt-4">
+                <label for="country" class="w-full font-bold">
+                    Country:
+                    <select id="country" class="mt-1 block w-full font-normal" v-model="selectedCountryId">
+                        <option v-for="country in countries.data" :value="country.id" :key="country.id">
+                            {{ country.name }}
+                        </option>
+                    </select>
+                </label>
+            </div>
+            <div v-if="newTeamName !== team.name || selectedCountryId !== team.country_id" class="mt-8 flex justify-end">
                 <primary-button @click="updateTeam()">Update</primary-button>
             </div>
         </div>

@@ -17,7 +17,8 @@ class TeamFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => fake()->name(),
+            'name'       => fake()->name(),
+            'country_id' => fake()->randomDigitNotNull(),
         ];
     }
 }

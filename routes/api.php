@@ -15,6 +15,7 @@ use App\Http\Controllers\Api\V1\Admin\ApiAdminVoucherRedemptionsController;
 use App\Http\Controllers\Api\V1\Admin\ApiAdminVouchersController;
 use App\Http\Controllers\Api\V1\Admin\ApiAdminVoucherSetsController;
 use App\Http\Controllers\Api\V1\Admin\ApiFileUploadsController;
+use App\Http\Controllers\Api\V1\ApiCountriesController;
 use App\Http\Controllers\Api\V1\ApiMyTeamAuditItemsController;
 use App\Http\Controllers\Api\V1\ApiMyTeamController;
 use App\Http\Controllers\Api\V1\ApiMyTeamsController;
@@ -35,6 +36,7 @@ use Illuminate\Support\Facades\Route;
 Route::group(['prefix' => 'v1'], function () {
 
     /**
+     * <<<<<<< HEAD
      * Open routes (non-authenticated)
      */
     Route::put('/voucher-set-approval/{id}', [ApiVoucherSetMerchantTeamApprovalRequestController::class, 'update'])
@@ -47,6 +49,59 @@ Route::group(['prefix' => 'v1'], function () {
          */
         Route::middleware(['auth:sanctum'])
             ->group(function () {
+
+
+                /**
+                 * Countries
+                 */
+                Route::post('/countries', [ApiCountriesController::class, 'store'])
+                    ->name('api.v1.countries.post')
+                    ->middleware(
+                        [
+                            'abilities:' .
+                            PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                            PersonalAccessTokenAbility::COUNTRIES_CREATE->value,
+                        ]
+                    );
+                Route::get('/countries', [ApiCountriesController::class, 'index'])
+                    ->name('api.v1.countries.getMany')
+                    ->middleware(
+                        [
+                            'abilities:' .
+                            PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                            PersonalAccessTokenAbility::COUNTRIES_READ->value,
+                        ]
+                    );
+
+                Route::get('/countries/{id}', [ApiCountriesController::class, 'show'])
+                    ->name('api.v1.countries.get')
+                    ->middleware(
+                        [
+                            'abilities:' .
+                            PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                            PersonalAccessTokenAbility::COUNTRIES_READ->value,
+                        ]
+                    );
+
+                Route::put('/countries/{id}', [ApiCountriesController::class, 'update'])
+                    ->name('api.v1.countries.put')
+                    ->middleware(
+                        [
+                            'abilities:' .
+                            PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                            PersonalAccessTokenAbility::COUNTRIES_UPDATE->value,
+                        ]
+                    );
+
+                Route::delete('/countries/{id}', [ApiCountriesController::class, 'destroy'])
+                    ->name('api.v1.countries.delete')
+                    ->middleware(
+                        [
+                            'abilities:' .
+                            PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                            PersonalAccessTokenAbility::COUNTRIES_DELETE->value,
+                        ]
+                    );
 
                 /**
                  * My Team
@@ -543,6 +598,295 @@ Route::group(['prefix' => 'v1'], function () {
 
                     Route::delete('/voucher-validation/{id}', [ApiVoucherValidationController::class, 'destroy'])
                         ->name('api.v1.voucher-validation.delete');
+
+                });
+
+                /**
+                 * Voucher Redemptions
+                 */
+                Route::post('/voucher-redemptions', [ApiVoucherRedemptionsController::class, 'store'])
+                    ->name('api.v1.voucher-redemptions.post')
+                    ->middleware(
+                        [
+                            'abilities:' .
+                            PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                            PersonalAccessTokenAbility::VOUCHER_REDEMPTIONS_CREATE->value,
+                        ]
+                    );
+
+                Route::get('/voucher-redemptions', [ApiVoucherRedemptionsController::class, 'index'])
+                    ->name('api.v1.voucher-redemptions.getMany')
+                    ->middleware(
+                        [
+                            'abilities:' .
+                            PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                            PersonalAccessTokenAbility::VOUCHER_REDEMPTIONS_READ->value,
+                        ]
+                    );
+
+                Route::get('/voucher-redemptions/{id}', [ApiVoucherRedemptionsController::class, 'show'])
+                    ->name('api.v1.voucher-redemptions.get')
+                    ->middleware(
+                        [
+                            'abilities:' .
+                            PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                            PersonalAccessTokenAbility::VOUCHER_REDEMPTIONS_READ->value,
+                        ]
+                    );
+
+                Route::put('/voucher-redemptions/{id}', [ApiVoucherRedemptionsController::class, 'update'])
+                    ->name('api.v1.voucher-redemptions.put')
+                    ->middleware(
+                        [
+                            'abilities:' .
+                            PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                            PersonalAccessTokenAbility::VOUCHER_REDEMPTIONS_UPDATE->value,
+                        ]
+                    );
+
+                Route::delete('/voucher-redemptions/{id}', [ApiVoucherRedemptionsController::class, 'destroy'])
+                    ->name('api.v1.voucher-redemptions.delete')
+                    ->middleware(
+                        [
+                            'abilities:' .
+                            PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                            PersonalAccessTokenAbility::VOUCHER_REDEMPTIONS_DELETE->value,
+                        ]
+                    );
+
+                /**
+                 * Shops
+                 */
+                Route::post('/shops', [ApiShopsController::class, 'store'])
+                    ->name('api.v1.shops.post')
+                    ->middleware(
+                        [
+                            'abilities:' .
+                            PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                            PersonalAccessTokenAbility::SHOPS_CREATE->value,
+                        ]
+                    );
+
+                Route::get('/shops', [ApiShopsController::class, 'index'])
+                    ->name('api.v1.shops.getMany')
+                    ->middleware(
+                        [
+                            'abilities:' .
+                            PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                            PersonalAccessTokenAbility::SHOPS_READ->value,
+                        ]
+                    );
+
+                Route::get('/shops/{id}', [ApiShopsController::class, 'show'])
+                    ->name('api.v1.shops.get')
+                    ->middleware(
+                        [
+                            'abilities:' .
+                            PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                            PersonalAccessTokenAbility::SHOPS_READ->value,
+                        ]
+                    );
+
+                Route::put('/shops/{id}', [ApiShopsController::class, 'update'])
+                    ->name('api.v1.shops.put')
+                    ->middleware(
+                        [
+                            'abilities:' .
+                            PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                            PersonalAccessTokenAbility::SHOPS_UPDATE->value,
+                        ]
+                    );
+
+                Route::delete('/shops/{id}', [ApiShopsController::class, 'destroy'])
+                    ->name('api.v1.shops.delete')
+                    ->middleware(
+                        [
+                            'abilities:' .
+                            PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                            PersonalAccessTokenAbility::SHOPS_DELETE->value,
+                        ]
+                    );
+
+                /**
+                 * System Statistics
+                 */
+                Route::post('/system-statistics', [ApiSystemStatisticsController::class, 'store'])
+                    ->name('api.v1.system-statistics.post')
+                    ->middleware(
+                        [
+                            'abilities:' .
+                            PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                            PersonalAccessTokenAbility::SYSTEM_STATISTICS_CREATE->value,
+                        ]
+                    );
+
+                Route::get('/system-statistics', [ApiSystemStatisticsController::class, 'index'])
+                    ->name('api.v1.system-statistics.getMany')
+                    ->middleware(
+                        [
+                            'abilities:' .
+                            PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                            PersonalAccessTokenAbility::SYSTEM_STATISTICS_READ->value,
+                        ]
+                    );
+
+                Route::get('/system-statistics/{id}', [ApiSystemStatisticsController::class, 'show'])
+                    ->name('api.v1.system-statistics.get')
+                    ->middleware(
+                        [
+                            'abilities:' .
+                            PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                            PersonalAccessTokenAbility::SYSTEM_STATISTICS_READ->value,
+                        ]
+                    );
+
+                Route::put('/system-statistics/{id}', [ApiSystemStatisticsController::class, 'update'])
+                    ->name('api.v1.system-statistics.put')
+                    ->middleware(
+                        [
+                            'abilities:' .
+                            PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                            PersonalAccessTokenAbility::SYSTEM_STATISTICS_UPDATE->value,
+                        ]
+                    );
+
+                Route::delete('/system-statistics/{id}', [ApiSystemStatisticsController::class, 'destroy'])
+                    ->name('api.v1.system-statistics.delete')
+                    ->middleware(
+                        [
+                            'abilities:' .
+                            PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                            PersonalAccessTokenAbility::SYSTEM_STATISTICS_DELETE->value,
+                        ]
+                    );
+
+                /**
+                 * Admin Api Routes
+                 */
+                Route::prefix('admin')
+                    ->middleware(['auth:sanctum', CheckAdminStatus::class])
+                    ->group(function () {
+
+                        Route::resource(
+                            '/audit-items',
+                            ApiAdminAuditItemsController::class
+                        )->names('api.v1.admin.audit-items');
+
+                        Route::resource(
+                            '/search',
+                            ApiAdminSearchController::class
+                        )->names('api.v1.admin.search');
+
+                        Route::resource(
+                            '/system-statistics',
+                            ApiAdminSystemStatisticsController::class
+                        )->names('api.v1.admin.system-statistics');
+
+                        Route::resource(
+                            '/file-uploads',
+                            ApiFileUploadsController::class
+                        )->names('api.v1.admin.file-uploads');
+
+                        Route::resource(
+                            '/search',
+                            ApiAdminSearchController::class
+                        )->names('api.v1.admin.search');
+
+                        Route::resource(
+                            '/team-merchant-teams',
+                            ApiAdminTeamMerchantTeamsController::class
+                        )->names('api.v1.admin.team-merchant-teams');
+
+                        Route::resource(
+                            '/team-service-teams',
+                            ApiAdminTeamServiceTeamsController::class
+                        )->names('api.v1.admin.team-service-teams');
+
+                        Route::resource(
+                            '/team-users',
+                            ApiAdminTeamUsersController::class
+                        )->names('api.v1.admin.team-users');
+
+                        Route::resource(
+                            '/teams',
+                            ApiAdminTeamsController::class
+                        )->names('api.v1.admin.teams');
+
+                        Route::resource(
+                            '/user-personal-access-tokens',
+                            ApiAdminUserPersonalAccessTokensController::class
+                        )->names('api.v1.admin.tokens');
+
+                        Route::resource(
+                            '/voucher-redemptions',
+                            ApiAdminVoucherRedemptionsController::class
+                        )->names('api.v1.admin.voucher-redemptions');
+
+                        Route::resource(
+                            '/team-voucher-templates',
+                            ApiAdminTeamVoucherTemplatesController::class
+                        )->names('api.v1.admin.team-voucher-templates');
+
+                        /**
+                         * User
+                         */
+                        Route::post('/users', [ApiAdminUsersController::class, 'store'])
+                            ->name('api.v1.admin.users.post');
+
+                        Route::get('/users', [ApiAdminUsersController::class, 'index'])
+                            ->name('api.v1.admin.users.getMany');
+
+                        Route::get('/users/{id}', [ApiAdminUsersController::class, 'show'])
+                            ->name('api.v1.admin.users.get');
+
+                        Route::put('/users/{id}', [ApiAdminUsersController::class, 'update'])
+                            ->name('api.v1.admin.users.put');
+
+                        Route::delete('/users/{id}', [ApiAdminUsersController::class, 'destroy'])
+                            ->name('api.v1.admin.users.delete');
+
+                        /**
+                         * Vouchers
+                         */
+                        Route::post('/vouchers', [ApiAdminVouchersController::class, 'store'])
+                            ->name('api.v1.admin-vouchers.post');
+
+                        Route::get('/vouchers', [ApiAdminVouchersController::class, 'index'])
+                            ->name('api.v1.admin-vouchers.getMany');
+
+                        Route::get('/vouchers/{id}', [ApiAdminVouchersController::class, 'show'])
+                            ->name('api.v1.admin-vouchers.get');
+
+                        Route::put('/vouchers/{id}', [ApiAdminVouchersController::class, 'update'])
+                            ->name('api.v1.admin-vouchers.put');
+
+                        Route::delete('/vouchers/{id}', [ApiAdminVouchersController::class, 'destroy'])
+                            ->name('api.v1.admin-vouchers.delete');
+
+                        /**
+                         * Voucher Sets
+                         */
+                        Route::post('/voucher-sets', [ApiAdminVoucherSetsController::class, 'store'])
+                            ->name('api.v1.admin-voucher-sets.post');
+
+                        Route::get('/voucher-sets', [ApiAdminVoucherSetsController::class, 'index'])
+                            ->name('api.v1.admin-voucher-sets.getMany');
+
+                        Route::get('/voucher-sets/{id}', [ApiAdminVoucherSetsController::class, 'show'])
+                            ->name('api.v1.admin-voucher-sets.get');
+
+                        Route::put('/voucher-sets/{id}', [ApiAdminVoucherSetsController::class, 'update'])
+                            ->name('api.v1.admin-voucher-sets.put');
+
+                        Route::delete('/voucher-sets/{id}', [ApiAdminVoucherSetsController::class, 'destroy'])
+                            ->name('api.v1.admin-voucher-sets.delete');
+
+                        Route::resource(
+                            '/user-personal-access-tokens',
+                            ApiAdminUserPersonalAccessTokensController::class
+                        )->names('api.v1.admin.tokens');
+                        >>>>>>>
+                        develop
 
                 });
 

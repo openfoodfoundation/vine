@@ -25,7 +25,8 @@ class DatabaseSeeder extends Seeder
         $usersAndTeams = [
             [
                 'team' => [
-                    'name' => 'OK200 Team',
+                    'name'       => 'OK200 Team',
+                    'country_id' => 14, // australia
                 ],
                 'users' => [
                     [
@@ -47,7 +48,8 @@ class DatabaseSeeder extends Seeder
             ],
             [
                 'team' => [
-                    'name' => 'Open Food Network',
+                    'name'       => 'Open Food Network',
+                    'country_id' => 14, // australia
                 ],
                 'users' => [
                     [

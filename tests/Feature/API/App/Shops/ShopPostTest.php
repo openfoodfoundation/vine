@@ -52,7 +52,7 @@ class ShopPostTest extends BaseAPITestCase
     #[Test]
     public function userWithPermissionCanCreate()
     {
-        $this->user = $this->createUser();
+        $this->user = $this->createUserWithTeam();
 
         Sanctum::actingAs($this->user, abilities: [
             PersonalAccessTokenAbility::SHOPS_CREATE->value,

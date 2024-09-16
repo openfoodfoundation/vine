@@ -8,6 +8,10 @@ namespace App\Enums;
 enum PersonalAccessTokenAbility: string
 {
     case SUPER_ADMIN                 = 'super-admin'; // Allowed to do everything
+    case COUNTRIES_CREATE            = 'countries-create';
+    case COUNTRIES_READ              = 'countries-read';
+    case COUNTRIES_UPDATE            = 'countries-update';
+    case COUNTRIES_DELETE            = 'countries-delete';
     case MY_PROFILE_CREATE           = 'my-profile-create';
     case MY_PROFILE_READ             = 'my-profile-read';
     case MY_PROFILE_UPDATE           = 'my-profile-update';
@@ -20,18 +24,10 @@ enum PersonalAccessTokenAbility: string
     case MY_TEAM_AUDIT_ITEMS_READ    = 'my-team-audit-items-read';
     case MY_TEAM_AUDIT_ITEMS_UPDATE  = 'my-team-audit-items-update';
     case MY_TEAM_AUDIT_ITEMS_DELETE  = 'my-team-audit-items-delete';
-    case MY_TEAM_SEARCH_CREATE       = 'my-team-search-create';
-    case MY_TEAM_SEARCH_READ         = 'my-team-search-read';
-    case MY_TEAM_SEARCH_UPDATE       = 'my-team-search-update';
-    case MY_TEAM_SEARCH_DELETE       = 'my-team-search-delete';
     case MY_TEAM_VOUCHERS_CREATE     = 'my-team-vouchers-create';
     case MY_TEAM_VOUCHERS_READ       = 'my-team-vouchers-read';
     case MY_TEAM_VOUCHERS_UPDATE     = 'my-team-vouchers-update';
     case MY_TEAM_VOUCHERS_DELETE     = 'my-team-vouchers-delete';
-    case MY_TEAM_VOUCHER_SETS_CREATE = 'my-team-voucher-sets-create';
-    case MY_TEAM_VOUCHER_SETS_READ   = 'my-team-voucher-sets-read';
-    case MY_TEAM_VOUCHER_SETS_UPDATE = 'my-team-voucher-sets-update';
-    case MY_TEAM_VOUCHER_SETS_DELETE = 'my-team-voucher-sets-delete';
     case SHOPS_CREATE                = 'shops-create';
     case SHOPS_READ                  = 'shops-read';
     case SHOPS_UPDATE                = 'shops-update';
@@ -44,11 +40,24 @@ enum PersonalAccessTokenAbility: string
     case VOUCHER_REDEMPTIONS_READ    = 'voucher-redemptions-read';
     case VOUCHER_REDEMPTIONS_UPDATE  = 'voucher-redemptions-update';
     case VOUCHER_REDEMPTIONS_DELETE  = 'voucher-redemptions-delete';
+    case MY_TEAM_SEARCH_CREATE       = 'my-team-search-create';
+    case MY_TEAM_SEARCH_READ         = 'my-team-search-read';
+    case MY_TEAM_SEARCH_UPDATE       = 'my-team-search-update';
+    case MY_TEAM_SEARCH_DELETE       = 'my-team-search-delete';
+    case MY_TEAM_VOUCHER_SETS_CREATE = 'my-team-voucher-sets-create';
+    case MY_TEAM_VOUCHER_SETS_READ   = 'my-team-voucher-sets-read';
+    case MY_TEAM_VOUCHER_SETS_UPDATE = 'my-team-voucher-sets-update';
+    case MY_TEAM_VOUCHER_SETS_DELETE = 'my-team-voucher-sets-delete';
 
     public static function abilityLabels(): array
     {
+
         return [
             self::SUPER_ADMIN->value                 => 'Super Admin: Perform most API actions',
+            self::COUNTRIES_CREATE->value            => 'Countries Create',
+            self::COUNTRIES_READ->value              => 'Countries Read',
+            self::COUNTRIES_UPDATE->value            => 'Countries Update',
+            self::COUNTRIES_DELETE->value            => 'Countries Delete',
             self::MY_PROFILE_CREATE->value           => 'My Profile Create',
             self::MY_PROFILE_READ->value             => 'My Profile Read',
             self::MY_PROFILE_UPDATE->value           => 'My Profile Update',
@@ -85,6 +94,7 @@ enum PersonalAccessTokenAbility: string
             self::VOUCHER_REDEMPTIONS_READ->value    => 'Voucher Redemptions Read',
             self::VOUCHER_REDEMPTIONS_UPDATE->value  => 'Voucher Redemptions Update',
             self::VOUCHER_REDEMPTIONS_DELETE->value  => 'Voucher Redemptions Delete',
+
         ];
     }
 
