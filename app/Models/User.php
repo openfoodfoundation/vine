@@ -112,6 +112,7 @@ class User extends Authenticatable
      * Route notifications for the Slack channel.
      *
      * @param Notification $notification
+     * @return mixed
      */
     public function routeNotificationForSlack(Notification $notification): mixed
     {
