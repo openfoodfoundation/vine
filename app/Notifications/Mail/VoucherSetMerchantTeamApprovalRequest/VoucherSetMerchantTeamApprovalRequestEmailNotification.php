@@ -2,8 +2,10 @@
 
 namespace App\Notifications\Mail\VoucherSetMerchantTeamApprovalRequest;
 
+use App\Models\User;
 use App\Models\VoucherSet;
 use App\Models\VoucherSetMerchantTeamApprovalRequest;
+use App\Services\BounceService;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
@@ -18,7 +20,9 @@ class VoucherSetMerchantTeamApprovalRequestEmailNotification extends Notificatio
      *
      * @param VoucherSetMerchantTeamApprovalRequest $request
      */
-    public function __construct(public VoucherSetMerchantTeamApprovalRequest $request) {}
+    public function __construct(public VoucherSetMerchantTeamApprovalRequest $voucherSetMerchantTeamApprovalRequest)
+    {
+    }
 
     /**
      * Get the notification's delivery channels.
@@ -41,10 +45,17 @@ class VoucherSetMerchantTeamApprovalRequestEmailNotification extends Notificatio
      */
     public function toMail(object $notifiable): MailMessage
     {
-        $urlApprove = URL::temporarySignedRoute(
-            'voucher-set-merchant-team-approval-request-approved',
-            now()->addDays(2),
-            ['id' => $this->request->id]
+        $user = User::find($notifiable->id);
+
+        $urlApprove = BounceService::generateSignedUrlForUser(
+            user        : $user,
+            expiry      : now()->addDays(2),
+            redirectPath: '/voucher-set-merchant-team-approval-request-approved/' . $this->voucherSetMerchantTeamApprovalRequest->id
+        );
+        $urlReject = BounceService::generateSignedUrlForUser(
+            user        : $user,
+            expiry      : now()->addDays(2),
+            redirectPath: '/voucher-set-merchant-team-approval-request-approved/' . $this->voucherSetMerchantTeamApprovalRequest->id
         );
 
         $urlReject = URL::temporarySignedRoute(

@@ -4,6 +4,10 @@ namespace App\Console\Commands;
 
 use App\Models\User;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Crypt;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\URL;
+
 
 class TestCommand extends Command
 {
@@ -27,7 +31,21 @@ class TestCommand extends Command
     public function handle()
     {
 
-        $me = User::find(3);
+        $me = User::find(1);
+
+
+        $myUrl = URL::temporarySignedRoute(
+            'bounce',
+            now()->addDays(2),
+            [
+                'id' => Crypt::encrypt($me->id),
+                'redirectPath' => '/my-team'
+            ]
+        );
+
+
+        dd($myUrl);
+
 
     }
 }
