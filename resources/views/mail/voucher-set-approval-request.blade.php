@@ -3,7 +3,7 @@
     #
 
     Hello.
-    A Vine voucher set has been generated for your service.
+    A Vine voucher set is about to be been generated that may be redeemed at your shop
     Voucher set #{{$voucherSetId}}
     Created by {{$createdBy}}
 

@@ -56,7 +56,7 @@ class VoucherSetMerchantTeamApprovalRequestEmailNotification extends Notificatio
         $voucherSet = VoucherSet::with('createdByTeam')->find($this->request->voucher_set_id);
 
         return (new MailMessage())
-            ->subject('A Vine voucher set has been generated for your service')
+            ->subject('A Vine voucher set is about to be been generated that may be redeemed at your shop')
             ->markdown('mail.voucher-set-approval-request', [
                 'voucherSetId' => $this->request->voucher_set_id,
                 'createdBy'    => $voucherSet->createdByTeam->name,
