@@ -1,6 +1,5 @@
 <?php
 
-use App\Enums\VoucherSetMerchantTeamApprovalRequestStatus;
 use App\Http\Controllers\ProfileController;
 use App\Http\Middleware\CheckAdminStatus;
 use App\Models\Team;
@@ -63,39 +62,6 @@ Route::get('/bounce', function (Request $request) {
 
 })->name('bounce');
 
-/// Remove
-Route::get('/voucher-set-merchant-team-approval-request-approved/{id}', function (Request $request) {
-    if (!$request->hasValidSignature()) {
-        return Inertia::render('App/ErrorMessageLogoutPage', [
-            'title' => 'Voucher set approval',
-            'text'  => 'URL is invalid.',
-        ]);
-    }
-    $approvalRequest = VoucherSetMerchantTeamApprovalRequest::findOrFail($request->id);
-
-    return Inertia::render('App/VoucherSetMerchantTeamApprovalRequest', [
-        'id'     => $approvalRequest->id,
-        'status' => VoucherSetMerchantTeamApprovalRequestStatus::APPROVED->value,
-    ]);
-})->name('voucher-set-merchant-team-approval-request-approved');
-
-/// Remove
-Route::get('/voucher-set-merchant-team-approval-request-rejected/{id}', function (Request $request) {
-    if (!$request->hasValidSignature()) {
-        return Inertia::render('App/ErrorMessageLogoutPage', [
-            'title' => 'Voucher set approval',
-            'text'  => 'URL is invalid.',
-        ]);
-    }
-    $approvalRequest = VoucherSetMerchantTeamApprovalRequest::findOrFail($request->id);
-
-    return Inertia::render('App/VoucherSetMerchantTeamApprovalRequest', [
-        'id'     => $approvalRequest->id,
-        'status' => VoucherSetMerchantTeamApprovalRequestStatus::REJECTED->value,
-    ]);
-
-})->name('voucher-set-merchant-team-approval-request-rejected');
-
 Route::middleware('auth')->group(function () {
 
     Route::get('/dashboard', function () {
@@ -106,7 +72,7 @@ Route::middleware('auth')->group(function () {
         return Inertia::render('App/MyTeam');
     })->name('my-team');
 
-    Route::get('/my-voucher-set-merchant-team-approval-request/{approvalRequestId}', function ($approvalRequestId) {
+    Route::get('/my-voucher-set-merchant-team-approval-request/{approvalRequestId}', function (Request $request, $approvalRequestId) {
 
         $approvalRequest = VoucherSetMerchantTeamApprovalRequest::where('merchant_user_id', Auth::id())
             ->find($approvalRequestId);
@@ -115,13 +81,10 @@ Route::middleware('auth')->group(function () {
             return Redirect::to('/');
         }
 
-        // Inertia vue component
-        // Grab the $approvalRequest from the API
-        // Show the user the current status
-        // Give the user the buttons to update the statis
-        // API call to update the status
-        // Redirect after API call is successful
-        // "You are selecting X" - any previous approvals or rejections will be overwritten. Sure?
+        return Inertia::render('App/VoucherSets/VoucherSetMerchantTeamApproval', [
+            'approvalRequestId' => $approvalRequestId,
+            'approve'           => $request->selected == 'approve',
+        ]);
 
     })->name('my-voucher-set-merchant-team-approval-request');
 

@@ -10,15 +10,21 @@ use App\Enums\ApiResponse;
 use App\Enums\VoucherSetMerchantTeamApprovalRequestStatus;
 use App\Events\VoucherSetMerchantTeamApprovalRequest\VoucherSetMerchantTeamApprovalRequestWasApproved;
 use App\Events\VoucherSetMerchantTeamApprovalRequest\VoucherSetMerchantTeamApprovalRequestWasRejected;
+use App\Exceptions\DisallowedApiFieldException;
 use App\Http\Controllers\Api\HandlesAPIRequests;
 use App\Http\Controllers\Controller;
 use App\Models\VoucherSetMerchantTeamApprovalRequest;
 use Exception;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
+use Knuckles\Scribe\Attributes\Authenticated;
+use Knuckles\Scribe\Attributes\Endpoint;
 use Knuckles\Scribe\Attributes\Group;
+use Knuckles\Scribe\Attributes\QueryParam;
 use Knuckles\Scribe\Attributes\Subgroup;
+use Knuckles\Scribe\Attributes\UrlParam;
 
 #[Group('App Endpoints')]
 #[Subgroup('/voucher-set-merchant-team-approval-request', 'Retrieve voucher set merchant team approval request details.')]
@@ -35,6 +41,8 @@ class ApiVoucherSetMerchantTeamApprovalRequestController extends Controller
 
     /**
      * GET /
+     *
+     * @hideFromAPIDocumentation
      *
      * @return JsonResponse
      */
@@ -69,11 +77,41 @@ class ApiVoucherSetMerchantTeamApprovalRequestController extends Controller
      * @param string $id
      *
      * @return JsonResponse
+     *
+     * @throws DisallowedApiFieldException
      */
+    #[Endpoint(
+        title        : 'GET /{id}',
+        description  : 'Retrieve a single voucher set merchant team approval request for user.',
+        authenticated: true,
+    )]
+    #[Authenticated]
+    #[UrlParam(
+        name       : 'id',
+        type       : 'int',
+        description: 'ID.',
+        example    : '1234'
+    )]
+    #[QueryParam(
+        name       : 'cached',
+        type       : 'bool',
+        description: 'Request the response to be cached. Default: `true`.',
+        required   : false,
+        example    : 1
+    )]
+    #[QueryParam(
+        name       : 'fields',
+        type       : 'string',
+        description: 'Comma-separated list of database fields to return within the object.',
+        required   : false,
+        example    : 'id,created_at'
+    )]
     public function show(string $id)
     {
-        $this->responseCode = 403;
-        $this->message      = ApiResponse::RESPONSE_METHOD_NOT_ALLOWED->value;
+        $this->query = VoucherSetMerchantTeamApprovalRequest::where('merchant_user_id', Auth::id())
+            ->with($this->associatedData);
+        $this->query = $this->updateReadQueryBasedOnUrl();
+        $this->data  = $this->query->find($id);
 
         return $this->respond();
     }
@@ -110,7 +148,7 @@ class ApiVoucherSetMerchantTeamApprovalRequestController extends Controller
 
             try {
 
-                $model = VoucherSetMerchantTeamApprovalRequest::find($id);
+                $model = VoucherSetMerchantTeamApprovalRequest::where('merchant_user_id', Auth::id())->find($id);
 
                 if (!$model) {
 

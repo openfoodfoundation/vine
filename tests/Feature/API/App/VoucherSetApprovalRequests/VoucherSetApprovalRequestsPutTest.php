@@ -2,7 +2,7 @@
 
 /** @noinspection PhpUndefinedMethodInspection */
 
-namespace Tests\Feature\API\App\VoucherSetApproval;
+namespace Tests\Feature\API\App\VoucherSetApprovalRequests;
 
 use App\Enums\VoucherSetMerchantTeamApprovalRequestStatus;
 use App\Models\User;
@@ -13,11 +13,11 @@ use Illuminate\Support\Facades\Event;
 use PHPUnit\Framework\Attributes\Test;
 use Tests\Feature\API\BaseAPITestCase;
 
-class VoucherSetApprovalPutTest extends BaseAPITestCase
+class VoucherSetApprovalRequestsPutTest extends BaseAPITestCase
 {
     use RefreshDatabase;
 
-    protected string $endPoint = '/voucher-set-approval';
+    protected string $endPoint = '/vsmtar';
 
     #[Test]
     public function standardUserWithoutPermissionCanAccess()

@@ -1,4 +1,5 @@
 <?php
+/** @noinspection PhpUndefinedMethodInspection */
 
 namespace App\Notifications\Mail\VoucherSetMerchantTeamApprovalRequest;
 
@@ -9,7 +10,6 @@ use App\Services\BounceService;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
-use Illuminate\Support\Facades\URL;
 
 class VoucherSetMerchantTeamApprovalRequestEmailNotification extends Notification
 {
@@ -19,7 +19,6 @@ class VoucherSetMerchantTeamApprovalRequestEmailNotification extends Notificatio
      * Create a new notification instance.
      *
      * @param VoucherSetMerchantTeamApprovalRequest $voucherSetMerchantTeamApprovalRequest
-     * @param VoucherSetMerchantTeamApprovalRequest $request
      */
     public function __construct(public VoucherSetMerchantTeamApprovalRequest $voucherSetMerchantTeamApprovalRequest) {}
 
@@ -49,26 +48,20 @@ class VoucherSetMerchantTeamApprovalRequestEmailNotification extends Notificatio
         $urlApprove = BounceService::generateSignedUrlForUser(
             user        : $user,
             expiry      : now()->addDays(2),
-            redirectPath: '/voucher-set-merchant-team-approval-request-approved/' . $this->voucherSetMerchantTeamApprovalRequest->id
+            redirectPath: '/my-voucher-set-merchant-team-approval-request/' . $this->voucherSetMerchantTeamApprovalRequest->id . '?selected=approve'
         );
         $urlReject = BounceService::generateSignedUrlForUser(
             user        : $user,
             expiry      : now()->addDays(2),
-            redirectPath: '/voucher-set-merchant-team-approval-request-approved/' . $this->voucherSetMerchantTeamApprovalRequest->id
+            redirectPath: '/my-voucher-set-merchant-team-approval-request/' . $this->voucherSetMerchantTeamApprovalRequest->id . '?selected=reject'
         );
 
-        $urlReject = URL::temporarySignedRoute(
-            'voucher-set-merchant-team-approval-request-rejected',
-            now()->addDays(2),
-            ['id' => $this->request->id]
-        );
-
-        $voucherSet = VoucherSet::with('createdByTeam')->find($this->request->voucher_set_id);
+        $voucherSet = VoucherSet::with('createdByTeam')->find($this->voucherSetMerchantTeamApprovalRequest->voucher_set_id);
 
         return (new MailMessage())
             ->subject('A Vine voucher set is about to be been generated that may be redeemed at your shop')
             ->markdown('mail.voucher-set-approval-request', [
-                'voucherSetId' => $this->request->voucher_set_id,
+                'voucherSetId' => $this->voucherSetMerchantTeamApprovalRequest->voucher_set_id,
                 'createdBy'    => $voucherSet->createdByTeam->name,
                 'approve'      => $urlApprove,
                 'reject'       => $urlReject,

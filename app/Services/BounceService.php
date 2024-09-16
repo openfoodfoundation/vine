@@ -33,7 +33,7 @@ class BounceService
             name      : 'bounce',
             parameters: [
                 'id'           => Crypt::encrypt($user->id),
-                'redirectPath' => $redirectPath . '?selected=approve',
+                'redirectPath' => $redirectPath,
             ],
             expiration: $expiry
         );
