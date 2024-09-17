@@ -15,6 +15,7 @@ use Exception;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
 use Knuckles\Scribe\Attributes\Authenticated;
 use Knuckles\Scribe\Attributes\Endpoint;
 use Knuckles\Scribe\Attributes\Group;
@@ -123,9 +124,10 @@ class ApiMyTeamController extends Controller
     public function update(string $id)
     {
         $validationArray = [
-            'name' => [
+            'country_id' => [
                 'sometimes',
-                'string',
+                'integer',
+                Rule::exists('countries', 'id'),
             ],
         ];
 

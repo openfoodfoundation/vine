@@ -1,8 +1,12 @@
 <?php
+/** @noinspection PhpUndefinedMethodInspection */
+
+/** @noinspection PhpUndefinedFieldInspection */
 
 namespace Tests\Feature\API\App\MyTeam;
 
 use App\Enums\PersonalAccessTokenAbility;
+use App\Models\Country;
 use App\Models\Team;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Laravel\Sanctum\Sanctum;
@@ -51,7 +55,18 @@ class MyTeamPutTest extends BaseAPITestCase
             PersonalAccessTokenAbility::MY_TEAM_UPDATE->value,
         ]);
 
-        $response = $this->putJson($this->apiRoot . $this->endPoint . '/' . $this->user->current_team_id);
+        $randId = rand(0, (Country::count() - 1));
+
+        $country = Country::find($randId);
+
+        $payload = [
+            'country_id' => $country->id,
+        ];
+
+        $response = $this->putJson($this->apiRoot . $this->endPoint . '/' . $this->user->current_team_id, $payload);
         $response->assertStatus(200);
+
+        $userTeam = Team::find($this->user->current_team_id);
+        $this->assertEquals($country->id, $userTeam->country_id);
     }
 }

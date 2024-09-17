@@ -27,7 +27,9 @@ class ApiCountriesController extends Controller
     public array $availableRelations = [
     ];
 
-    public static array $searchableFields = [];
+    public static array $searchableFields = [
+        'name',
+    ];
 
     /**
      * GET /
