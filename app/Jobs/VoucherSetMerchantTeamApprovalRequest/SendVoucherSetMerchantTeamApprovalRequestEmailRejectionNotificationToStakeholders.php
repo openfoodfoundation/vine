@@ -27,8 +27,12 @@ class SendVoucherSetMerchantTeamApprovalRequestEmailRejectionNotificationToStake
     public function handle(): void
     {
         $voucherSet = VoucherSet::find($this->request->voucher_set_id);
-        $user       = User::find($voucherSet->created_by_user_id);
+        $teamUsers  = User::where('current_team_id', $voucherSet->created_by_team_id)->get();
 
-        $user->notify(new VoucherSetMerchantTeamApprovalRequestRejectedNotification($this->request));
+        if ($teamUsers) {
+            foreach ($teamUsers as $teamUser) {
+                $teamUser->notify(new VoucherSetMerchantTeamApprovalRequestRejectedNotification($this->request));
+            }
+        }
     }
 }
