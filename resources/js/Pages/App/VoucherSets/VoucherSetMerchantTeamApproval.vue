@@ -35,9 +35,13 @@ function getVoucherSetMerchantTeamApprovalRequest() {
 }
 
 function save() {
+    let string = 'Approve'
+    if (!approved.value) {
+        string = 'Reject'
+    }
     Swal.fire({
         title: approved.value ? "Are you sure approving?" : "Are you sure rejecting?",
-        text: "This action cannot be undone. Please confirm if you wish to proceed.",
+        text: "You are selecting '" + string + "' - any previous approvals or rejections will be overwritten. Sure?",
         icon: "warning",
         confirmButtonColor: "#3085d6",
         confirmButtonText: approved.value ? "Approve voucher set" : "Reject voucher set",
