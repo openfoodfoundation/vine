@@ -3,6 +3,7 @@ import {onMounted, ref} from "vue";
 import TextInput from "@/Components/TextInput.vue";
 import PrimaryButton from "@/Components/PrimaryButton.vue";
 import Swal from "sweetalert2";
+import swal from "sweetalert2";
 
 const $props = defineProps({
     searchStr: {
@@ -42,13 +43,17 @@ function createNewTeam() {
             team.value = {}
         })
     }).catch(error => {
-        console.log(error)
+        swal.fire({
+            icon: 'error',
+            title: 'Oops!',
+            text: error.response.data.message,
+        });
     })
 }
 
 
 function getCountries() {
-    axios.get('/countries?limit=250').then(response => {
+    axios.get('/countries?limit=300').then(response => {
         countries.value = response.data.data;
     }).catch(error => {
         console.log(error)
