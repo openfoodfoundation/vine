@@ -33,6 +33,7 @@ class ApiMyTeamController extends Controller
      */
     public array $availableRelations = [
         'teamUsers.user',
+        'country',
     ];
 
     public static array $searchableFields = [];
