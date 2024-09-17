@@ -86,7 +86,7 @@ function save() {
             </div>
             <div class="grid grid-cols-3 gap-4 text-center font-bold text-xl m-20">
                 <div></div>
-                <div @click="save()" class="py-8 border-2 rounded-xl bg-black text-white">
+                <div @click="save()" class="py-8 border-2 rounded-xl bg-black text-white cursor-pointer">
                     <div>Selected:
                         <span v-if="approved">APPROVED</span>
                         <span v-else>REJECTED</span>

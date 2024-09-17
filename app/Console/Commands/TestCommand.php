@@ -3,6 +3,9 @@
 namespace App\Console\Commands;
 
 use App\Models\User;
+use App\Models\VoucherSet;
+use App\Models\VoucherSetMerchantTeamApprovalRequest;
+use App\Notifications\Mail\VoucherSetMerchantTeamApprovalRequest\VoucherSetMerchantTeamApprovalRequestEmailNotification;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\URL;
@@ -29,18 +32,30 @@ class TestCommand extends Command
     public function handle()
     {
 
-        $me = User::find(1);
+        $me = User::find(2);
 
-        $myUrl = URL::temporarySignedRoute(
-            'bounce',
-            now()->addDays(2),
-            [
-                'id'           => Crypt::encrypt($me->id),
-                'redirectPath' => '/my-team',
-            ]
-        );
+        $voucherSet = VoucherSet::factory()->create([
+            'created_by_team_id' => 2
+        ]);
 
-        dd($myUrl);
+        $approvalRequest = VoucherSetMerchantTeamApprovalRequest::factory()->create([
+            'voucher_set_id' => $voucherSet->id,
+            'merchant_user_id' => $me->id
+        ]);
+
+        $me->notify(new VoucherSetMerchantTeamApprovalRequestEmailNotification($approvalRequest));
+
+
+//        $myUrl = URL::temporarySignedRoute(
+//            'bounce',
+//            now()->addDays(2),
+//            [
+//                'id'           => Crypt::encrypt($me->id),
+//                'redirectPath' => '/my-team',
+//            ]
+//        );
+//
+//        dd($myUrl);
 
     }
 }
