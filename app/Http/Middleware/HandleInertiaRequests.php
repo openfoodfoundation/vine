@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use App\Enums\PersonalAccessTokenAbility;
+use App\Enums\VoucherSetType;
 use App\Models\Country;
 use App\Models\Team;
 use Illuminate\Http\Request;
@@ -43,11 +44,12 @@ class HandleInertiaRequests extends Middleware
             'auth' => [
                 'user'        => $request->user(),
                 'currentTeam' => $team,
-                'teamCountry' => Country::find($team->country_id),
+                'teamCountry' => Country::find($team?->country_id),
             ],
             'personalAccessTokenAbilities' => PersonalAccessTokenAbility::groupsAbilityCasesWithDefinitions(),
             'platformAppTokenAbilities'    => PersonalAccessTokenAbility::platformAppTokenAbilities(),
             'isImpersonating'              => session('vine:impersonator'),
+            'voucherSetTypes'              => VoucherSetType::values(),
         ];
     }
 }

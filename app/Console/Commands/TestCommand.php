@@ -2,6 +2,8 @@
 
 namespace App\Console\Commands;
 
+use App\Models\Team;
+use App\Models\TeamServiceTeam;
 use App\Models\User;
 use Illuminate\Console\Command;
 
@@ -26,8 +28,16 @@ class TestCommand extends Command
      */
     public function handle()
     {
+        $teams = Team::factory(8)->createQuietly();
 
-        $me = User::find(3);
+        foreach ($teams as $team) {
 
+            TeamServiceTeam::factory()->createQuietly(
+                [
+                    'service_team_id' => $team->id,
+                    'team_id' => 1
+                ]
+            );
+        }
     }
 }

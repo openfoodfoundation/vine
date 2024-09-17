@@ -9,6 +9,8 @@ use App\Http\Controllers\Controller;
 use App\Models\VoucherSet;
 use Exception;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
 use Knuckles\Scribe\Attributes\Authenticated;
 use Knuckles\Scribe\Attributes\Endpoint;
 use Knuckles\Scribe\Attributes\Group;
@@ -124,8 +126,82 @@ class ApiAdminVoucherSetsController extends Controller
      */
     public function store(): JsonResponse
     {
-        $this->responseCode = 403;
-        $this->message      = ApiResponse::RESPONSE_METHOD_NOT_ALLOWED->value;
+        $validationArray = [
+            'is_test' => [
+                'required',
+                'boolean',
+            ],
+            'allocated_to_service_team_id' => [
+                'required',
+                Rule::exists('teams', 'id'),
+            ],
+            'merchant_team_ids' => [
+                'required',
+                'array',
+            ],
+            'merchant_team_ids.*' => [
+                'integer',
+                Rule::exists('teams', 'id'),
+            ],
+            'funded_by_team_id' => [
+                'sometimes',
+            ],
+            'total_set_value' => [
+                'required',
+            ],
+            'denominations' => [
+                'required',
+                'array',
+            ],
+            'expires_at' => [
+                'required',
+                'string',
+            ],
+            'voucher_set_type' => [
+                'required',
+                'string',
+            ],
+        ];
+
+        $validator = Validator::make($this->request->all(), $validationArray);
+
+        if ($validator->fails()) {
+
+            $this->responseCode = 400;
+            $this->message      = $validator->errors()
+                ->first();
+
+            return $this->respond();
+
+        }
+
+        try {
+
+            $model = new VoucherSet();
+
+            foreach ($validationArray as $key => $validationRule) {
+                $value = $this->request->get($key);
+                if (isset($value)) {
+                    if ($key == 'denominations') {
+                        $value = json_encode($value);
+                    }
+                    $model->$key = $value;
+                }
+            }
+
+            $model->save();
+
+            $this->message = ApiResponse::RESPONSE_SAVED->value;
+
+            $this->data = $model;
+
+        }
+        catch (Exception $e) {
+
+            $this->responseCode = 500;
+            $this->message      = ApiResponse::RESPONSE_ERROR->value . ': "' . $e->getMessage() . '".';
+
+        }
 
         return $this->respond();
     }

@@ -15,7 +15,6 @@ return new class() extends Migration
             $table->uuid('id')->primary();
             $table->unsignedBigInteger('created_by_team_id')->index('vs_cbti');
             $table->unsignedBigInteger('allocated_to_service_team_id')->index('vs_atsti');
-            $table->unsignedBigInteger('funded_by_team_id')->nullable()->index('vs_fbti');
             $table->unsignedBigInteger('created_by_user_id')->index('vs_cbui');
             $table->boolean('is_test')->default(0)->index('vs_it');
             $table->unsignedBigInteger('total_set_value')->default(0)->index('vs_tsv');
