@@ -1,4 +1,5 @@
 <?php
+
 /** @noinspection SpellCheckingInspection */
 
 namespace Tests\Feature\API\App\VoucherSetApprovalRequests;
