@@ -100,12 +100,17 @@ function searchCountry() {
             </div>
         </div>
 
-        <div v-else class="flex justify-between items-center">
-            <div @click="updatingCountry = true" class="cursor-pointer flex-grow mr-2">
-                {{ newCountry.name }} ({{ newCountry.currency_code }})
+        <div v-else>
+            <div class="flex justify-between items-center">
+                <div @click="updatingCountry = true" class="cursor-pointer flex-grow mr-2">
+                    {{ newCountry.name }} ({{ newCountry.currency_code }})
+                </div>
+                <div class="ml-2" v-if="searchStr.length > 0 && newCountry.id !== myTeam.country_id">
+                    <PrimaryButton @click="saveNewCountry()">Save</PrimaryButton>
+                </div>
             </div>
-            <div class="ml-2">
-                <PrimaryButton @click="saveNewCountry()" v-if="searchStr.length > 0 && newCountry.id !== myTeam.country_id">Save</PrimaryButton>
+            <div v-if="searchStr.length > 0 && newCountry.id !== myTeam.country_id" class="text-red-500 text-xs font-bold mt-2">
+                *Swapping a team's country will NOT update the selected currency for existing voucher sets
             </div>
         </div>
     </div>
