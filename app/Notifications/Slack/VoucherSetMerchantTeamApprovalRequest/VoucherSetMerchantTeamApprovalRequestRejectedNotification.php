@@ -47,7 +47,7 @@ class VoucherSetMerchantTeamApprovalRequestRejectedNotification extends Notifica
         $link         = URL::to('/admin/voucher-set/' . $this->request->voucher_set_id);
 
         return (new SlackMessage())
-            ->headerBlock(':ng: Voucher set merchant team approval request has been rejected!')
+            ->headerBlock(':no_good: Voucher set merchant team approval request has been rejected!')
             ->contextBlock(function (ContextBlock $block) use ($rejectedUser) {
                 $block->text('Voucher set #' . $this->request->voucher_set_id . ' has been rejected by ' . $rejectedUser->name . ' (' . $rejectedUser->currentTeam->name . ').');
             })
