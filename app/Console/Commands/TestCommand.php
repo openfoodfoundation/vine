@@ -35,27 +35,26 @@ class TestCommand extends Command
         $me = User::find(2);
 
         $voucherSet = VoucherSet::factory()->create([
-            'created_by_team_id' => 2
+            'created_by_team_id' => 2,
         ]);
 
         $approvalRequest = VoucherSetMerchantTeamApprovalRequest::factory()->create([
-            'voucher_set_id' => $voucherSet->id,
-            'merchant_user_id' => $me->id
+            'voucher_set_id'   => $voucherSet->id,
+            'merchant_user_id' => $me->id,
         ]);
 
         $me->notify(new VoucherSetMerchantTeamApprovalRequestEmailNotification($approvalRequest));
 
-
-//        $myUrl = URL::temporarySignedRoute(
-//            'bounce',
-//            now()->addDays(2),
-//            [
-//                'id'           => Crypt::encrypt($me->id),
-//                'redirectPath' => '/my-team',
-//            ]
-//        );
-//
-//        dd($myUrl);
+        //        $myUrl = URL::temporarySignedRoute(
+        //            'bounce',
+        //            now()->addDays(2),
+        //            [
+        //                'id'           => Crypt::encrypt($me->id),
+        //                'redirectPath' => '/my-team',
+        //            ]
+        //        );
+        //
+        //        dd($myUrl);
 
     }
 }
