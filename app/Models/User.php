@@ -107,16 +107,4 @@ class User extends Authenticatable
 
         return new NewAccessToken($token, $token->getKey() . '|' . $plainTextToken);
     }
-
-    /**
-     * Route notifications for the Slack channel.
-     *
-     * @param Notification $notification
-     *
-     * @return mixed
-     */
-    public function routeNotificationForSlack(Notification $notification): mixed
-    {
-        return '#' . env('SLACK_BOT_USER_DEFAULT_CHANNEL');
-    }
 }
