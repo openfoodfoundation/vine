@@ -9,6 +9,7 @@ use App\Enums\ApiResponse;
 use App\Exceptions\DisallowedApiFieldException;
 use App\Http\Controllers\Api\HandlesAPIRequests;
 use App\Http\Controllers\Controller;
+use App\Models\Team;
 use App\Models\TeamMerchantTeam;
 use Exception;
 use Illuminate\Http\JsonResponse;
@@ -80,37 +81,55 @@ class ApiAdminTeamMerchantTeamsController extends Controller
         }
         else {
 
-            try {
+            /**
+             * Check country
+             */
+            $team     = Team::find($this->request->get('team_id'));
+            $merchant = Team::find($this->request->get('merchant_team_id'));
 
-                $model = TeamMerchantTeam::where('team_id', $this->request->get('team_id'))
-                    ->where('merchant_team_id', $this->request->get('merchant_team_id'))
-                    ->first();
+            if ($team->country_id != $merchant->country_id) {
 
-                if (!$model) {
-                    $model = new TeamMerchantTeam();
+                $this->responseCode = 404;
+                $this->message      = ApiResponse::RESPONSE_COUNTRY_MISMATCH->value;
 
-                    foreach ($validationArray as $key => $validationRule) {
-                        $value = $this->request->get($key);
-                        if ((isset($value))) {
-                            $model->$key = $value;
+            }
+            else {
+
+                try {
+
+                    $model = TeamMerchantTeam::where('team_id', $this->request->get('team_id'))
+                        ->where('merchant_team_id', $this->request->get('merchant_team_id'))
+                        ->first();
+
+                    if (!$model) {
+
+                        $model = new TeamMerchantTeam();
+
+                        foreach ($validationArray as $key => $validationRule) {
+                            $value = $this->request->get($key);
+                            if ((isset($value))) {
+                                $model->$key = $value;
+                            }
                         }
+
+                        $model->save();
+
                     }
 
-                    $model->save();
+                    $this->message = ApiResponse::RESPONSE_SAVED->value;
+
+                    $this->data = $model;
+
+                }
+                catch (Exception $e) {
+
+                    $this->responseCode = 500;
+                    $this->message      = ApiResponse::RESPONSE_ERROR->value . ': "' . $e->getMessage() . '".';
 
                 }
 
-                $this->message = ApiResponse::RESPONSE_SAVED->value;
-
-                $this->data = $model;
-
             }
-            catch (Exception $e) {
 
-                $this->responseCode = 500;
-                $this->message      = ApiResponse::RESPONSE_ERROR->value . ': "' . $e->getMessage() . '".';
-
-            }
         }
 
         return $this->respond();
