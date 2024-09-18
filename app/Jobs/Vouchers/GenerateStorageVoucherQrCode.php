@@ -18,9 +18,7 @@ class GenerateStorageVoucherQrCode implements ShouldQueue
      *
      * @param Voucher $voucher
      */
-    public function __construct(public Voucher $voucher)
-    {
-    }
+    public function __construct(public Voucher $voucher) {}
 
     /**
      * Execute the job.
@@ -49,8 +47,8 @@ class GenerateStorageVoucherQrCode implements ShouldQueue
         $path = '/voucher-sets/' . $this->voucher->voucher_set_id . '/vouchers/all/svg/' . $this->voucher->id . '.svg';
         $file = Storage::put($path, $dataSvg);
 
-//        if (isset($this->voucher->team->voucherTemplate->voucher_template_path)) {
-//            dispatch(new GenerateStorageBrandedQrTemplate($this->voucher));
-//        }
+        //        if (isset($this->voucher->team->voucherTemplate->voucher_template_path)) {
+        //            dispatch(new GenerateStorageBrandedQrTemplate($this->voucher));
+        //        }
     }
 }
