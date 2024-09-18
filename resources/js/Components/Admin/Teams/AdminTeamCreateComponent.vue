@@ -42,7 +42,11 @@ function createNewTeam() {
             team.value = {}
         })
     }).catch(error => {
-        console.log(error)
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops!',
+            text: error.response.data.message,
+        });
     })
 }
 
