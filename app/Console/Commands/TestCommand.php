@@ -35,9 +35,9 @@ class TestCommand extends Command
         $me = User::find(2);
 
         $voucherSet = VoucherSet::factory()->create([
-            'created_by_team_id' => 1,
+            'created_by_team_id'           => 1,
             'allocated_to_service_team_id' => 1,
-            'created_by_user_id' => 2
+            'created_by_user_id'           => 2,
         ]);
 
         $approvalRequest = VoucherSetMerchantTeamApprovalRequest::factory()->create([
