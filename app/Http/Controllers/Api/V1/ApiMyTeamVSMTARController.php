@@ -36,7 +36,9 @@ class ApiMyTeamVSMTARController extends Controller
      * Set the related data the GET request is allowed to ask for
      */
     public array $availableRelations = [
-        'voucherSet',
+        'voucherSet.createdByTeam',
+        'voucherSet.allocatedToServiceTeam',
+        'merchantTeam',
     ];
 
     public static array $searchableFields = [];

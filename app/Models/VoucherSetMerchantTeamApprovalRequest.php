@@ -26,4 +26,9 @@ class VoucherSetMerchantTeamApprovalRequest extends Model
     {
         return $this->belongsTo(User::class, 'merchant_user_id', 'id');
     }
+
+    public function merchantTeam(): BelongsTo
+    {
+        return $this->belongsTo(Team::class, 'merchant_team_id', 'id');
+    }
 }

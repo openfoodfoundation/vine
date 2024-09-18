@@ -14,7 +14,7 @@ class VoucherSetApprovalRequestsPostTest extends BaseAPITestCase
 {
     use RefreshDatabase;
 
-    protected string $endPoint = '/vsmtar';
+    protected string $endPoint = '/my-team-vsmtar';
 
     #[Test]
     public function itFailsIfNotAuthenticated()

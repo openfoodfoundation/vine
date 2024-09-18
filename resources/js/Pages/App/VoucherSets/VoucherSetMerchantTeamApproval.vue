@@ -1,15 +1,20 @@
 <script setup>
 import {Head, usePage} from '@inertiajs/vue3';
-import GuestLayout from "@/Layouts/GuestLayout.vue";
 import {onMounted, ref} from "vue";
 import Swal from "sweetalert2";
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
 import PrimaryButton from "@/Components/PrimaryButton.vue";
 import SecondaryButton from "@/Components/SecondaryButton.vue";
+import dayjs from "dayjs";
+import relativeTime from "dayjs/plugin/relativeTime";
+import utc from "dayjs/plugin/utc"
+
+dayjs.extend(relativeTime);
+dayjs.extend(utc);
 
 const $props = defineProps({
     approvalRequestId: {
-        type: Number,
+        type: String,
         required: true,
     },
     approve: {
@@ -30,24 +35,17 @@ onMounted(() => {
     approved.value = !!$props.approve;
 })
 
-function checkUserIsLoggedIntoTheCorrectTeam()
-{
-    if(usePage().props.auth.user.current_team_id === voucherSetMerchantTeamApprovalRequest.value.merchant_team_id)
-    {
+function checkUserIsLoggedIntoTheCorrectTeam() {
+    if (usePage().props.auth.user.current_team_id === voucherSetMerchantTeamApprovalRequest.value.merchant_team_id) {
         userIsLoggedIntoCorrectTeam.value = true;
     }
-    console.log(usePage().props.auth.user.current_team_id);
-    console.log(voucherSetMerchantTeamApprovalRequest.value.merchant_team_id);
-    console.log((usePage().props.auth.user.current_team_id === voucherSetMerchantTeamApprovalRequest.value.merchant_team_id))
 }
 
 function getVoucherSetMerchantTeamApprovalRequest() {
-    axios.get('/my-team-vsmtar/' + $props.approvalRequestId + '?cached=false&relations=voucherSet').then(response => {
-
+    axios.get('/my-team-vsmtar/' + $props.approvalRequestId + '?cached=false&relations=voucherSet.createdByTeam,voucherSet.allocatedToServiceTeam,merchantTeam').then(response => {
+        voucherSetMerchantTeamApprovalRequest.value = response.data.data;
 
         checkUserIsLoggedIntoTheCorrectTeam();
-
-        voucherSetMerchantTeamApprovalRequest.value = response.data.data;
     }).catch(error => {
         console.log(error)
     })
@@ -101,54 +99,75 @@ function save() {
             Voucher set approval
         </template>
 
-        <div class="card" v-if="userIsLoggedIntoCorrectTeam">
-            This request is related to a different merchant team. Please log into team "[INTENDED VOucher Set Merchant team name]".
+        <div class="card" v-if="!userIsLoggedIntoCorrectTeam && voucherSetMerchantTeamApprovalRequest.merchant_team">
+            This request is related to a different merchant team. Please log into team "{{ voucherSetMerchantTeamApprovalRequest.merchant_team.name }}".
         </div>
         <div class="card" v-else>
             <div class="card-header">
-                Voucher Set: [XXXX]
+                Voucher Set
             </div>
-            <div>
+            <div class="pt-4">
                 <div>
                     <div class="font-bold">
                         Voucher set details
                     </div>
-                    ID:
-                    created by team:
-                    Service team name:
-                    Voucher set total value: $xyz
+                    <div class="pt-4">
+                        ID: {{ voucherSetMerchantTeamApprovalRequest.voucher_set_id }}
+                    </div>
+                    <div v-if="voucherSetMerchantTeamApprovalRequest.voucher_set && voucherSetMerchantTeamApprovalRequest.voucher_set.created_by_team">
+                        Created by team: {{ voucherSetMerchantTeamApprovalRequest.voucher_set.created_by_team.name }}
+                    </div>
+                    <div v-if="voucherSetMerchantTeamApprovalRequest.voucher_set && voucherSetMerchantTeamApprovalRequest.voucher_set.allocated_to_service_team">
+                        Service team name: {{ voucherSetMerchantTeamApprovalRequest.voucher_set.allocated_to_service_team.name }}
+                    </div>
+                    <div v-if="voucherSetMerchantTeamApprovalRequest.voucher_set" class="pb-4">
+                        Voucher set total value: ${{ voucherSetMerchantTeamApprovalRequest.voucher_set.total_set_value }}
+                    </div>
                 </div>
-                <div>
-                    You have been requested to approve your team's ([TEAMNAME]]) involvement with this voucher set, which will be redeeming vouchers within the Vine platform. Approving this request means that your organisation will apply discounts as per voucher redemptions made at your shop or premises using the Vine system.
+                <div class="py-8" v-if="voucherSetMerchantTeamApprovalRequest.merchant_team">
+                    You have been requested to approve your team's ({{ voucherSetMerchantTeamApprovalRequest.merchant_team.name }}) involvement with this voucher set, which will be redeeming vouchers within the Vine platform. Approving this
+                    request means that your organisation will apply
+                    discounts
+                    as per voucher redemptions made at your shop or premises using the Vine system.
 
                     Vouchers up to the value of the voucher set above may be redeemed at your premises or store.
 
                     Please select your choice below.
                 </div>
-                <div class="grid grid-cols-3 gap-4 text-center font-bold text-xl m-20">
-                    <div @click="approved = false" class="py-12 border-2 rounded-xl cursor-pointer" :class="{'bg-red-500 border-red-500 text-white': !approved}">Reject</div>
-                    <div></div>
-                    <div @click="approved = true" class="py-12 border-2 rounded-xl cursor-pointer" :class="{'bg-green-500 border-green-500 text-white': approved}">Approve</div>
-                </div>
-                <div class="grid grid-cols-3 gap-4 text-center font-bold text-xl m-20">
-                    <div></div>
-                    <div @click="save()" class="py-8 border-2 rounded-xl bg-black text-white cursor-pointer">
-                        <div>Selected:
-                            <span v-if="approved">APPROVED</span>
-                            <span v-else>REJECTED</span>
-                        </div>
-                        <div class="mt-2">Save</div>
+
+                <div v-if="voucherSetMerchantTeamApprovalRequest.approval_status !== 'ready'" class="py-4">
+                    <div>
+                        You have already {{ voucherSetMerchantTeamApprovalRequest.approval_status }} {{ dayjs.utc(voucherSetMerchantTeamApprovalRequest.approval_status_last_updated_at).fromNow() }} so no further action is needed.
                     </div>
-                    <div></div>
+                    <div class="text-xs capitalize">
+                        {{ voucherSetMerchantTeamApprovalRequest.approval_status }} at ({{ dayjs(voucherSetMerchantTeamApprovalRequest.approval_status_last_updated_at) }})
+                    </div>
                 </div>
 
-                <PrimaryButton>Primary</PrimaryButton>
-                <SecondaryButton>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 mr-2 text-red-500">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
-                    </svg>
 
-                    Secondary</SecondaryButton>
+                <div>
+                    <SecondaryButton @click="approved = false" class="mr-2" :class="{'opacity-50': approved}">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 mr-2 text-red-500">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M18.364 18.364A9 9 0 0 0 5.636 5.636m12.728 12.728A9 9 0 0 1 5.636 5.636m12.728 12.728L5.636 5.636"/>
+                        </svg>
+                        Reject
+                    </SecondaryButton>
+                    <SecondaryButton @click="approved = true" class="ml-2" :class="{'opacity-50': !approved}">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 mr-2 text-green-500">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
+                        </svg>
+                        Approve
+                    </SecondaryButton>
+                </div>
+
+                <div>
+                    <PrimaryButton @click="save()" class="mt-4">
+                        Select
+                        <span v-if="approved" class="px-2 text-green-500">APPROVED</span>
+                        <span v-else class="px-2 text-red-500">REJECTED</span>
+                        & Save
+                    </PrimaryButton>
+                </div>
             </div>
 
         </div>

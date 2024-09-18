@@ -691,7 +691,7 @@ Route::group(['prefix' => 'v1', 'middleware' => VerifyApiTokenSignature::class],
                     ]
                 );
 
-            Route::delete('/vsmtar/{id}', [ApiMyTeamVSMTARController::class, 'destroy'])
+            Route::delete('/my-team-vsmtar/{id}', [ApiMyTeamVSMTARController::class, 'destroy'])
                 ->name('api.v1.my-team-vsmtar.delete')
                 ->middleware(
                     [

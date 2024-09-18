@@ -20,6 +20,7 @@ class VoucherSetMerchantTeamApprovalRequestFactory extends Factory
     {
         return [
             'voucher_set_id'   => $this->faker->randomDigitNotNull(),
+            'merchant_team_id' => $this->faker->randomDigitNotNull(),
             'merchant_user_id' => $this->faker->randomDigitNotNull(),
             'approval_status'  => VoucherSetMerchantTeamApprovalRequestStatus::READY->value,
         ];

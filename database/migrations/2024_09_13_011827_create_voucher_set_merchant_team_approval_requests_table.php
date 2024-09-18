@@ -15,6 +15,7 @@ return new class() extends Migration
         Schema::create('voucher_set_merchant_team_approval_requests', function (Blueprint $table) {
             $table->id();
             $table->uuid('voucher_set_id')->index('vsmtar_vsi');
+            $table->unsignedBigInteger('merchant_team_id')->index('vsmtar_vsmti');
             $table->unsignedBigInteger('merchant_user_id')->index('vsmtar_mui');
             $table->string('approval_status')->default(VoucherSetMerchantTeamApprovalRequestStatus::READY->value);
             $table->dateTime('approval_status_last_updated_at')->nullable();
