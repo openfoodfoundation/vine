@@ -1,0 +1,62 @@
+<?php
+
+namespace App\Jobs\Vouchers;
+
+use App\Models\Voucher;
+use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Foundation\Bus\Dispatchable;
+use Illuminate\Foundation\Queue\Queueable;
+use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Queue\SerializesModels;
+use Illuminate\Support\Facades\URL;
+
+class GenerateStorageVoucherQrCode implements ShouldQueue
+{
+    use Queueable;
+
+    /**
+     * Create a new job instance.
+     */
+    public function __construct(public Voucher $voucher)
+    {
+        //
+    }
+
+    /**
+     * Execute the job.
+     */
+    public function handle(): void
+    {
+        $redeemUrl = URL::to('/redeem/' . $this->voucher->voucher_set_id . '/' . $this->voucher->id);
+
+        /**
+         * PNG
+         */
+
+
+
+
+
+
+
+        // PNG
+        $dataPng = (new Generator())->format('png')->size(600)->generate($redeemUrl);
+        $path = '/voucher-sets/'.$this->voucher->voucher_set_id.'/vouchers/individual/'.$this->voucher->id.'/png/voucher-qr.png';
+        $file = Storage::put($path, $dataPng);
+
+        $path = '/voucher-sets/'.$this->voucher->voucher_set_id.'/vouchers/all/png/'.$this->voucher->id.'.png';
+        $file = Storage::put($path, $dataPng);
+
+        // SVG
+        $dataSvg = (new Generator())->format('svg')->size(600)->generate($redeemUrl);
+        $path = '/voucher-sets/'.$this->voucher->voucher_set_id.'/vouchers/individual/'.$this->voucher->id.'/svg/voucher-qr.svg';
+        $file = Storage::put($path, $dataSvg);
+
+        $path = '/voucher-sets/'.$this->voucher->voucher_set_id.'/vouchers/all/svg/'.$this->voucher->id.'.svg';
+        $file = Storage::put($path, $dataSvg);
+
+        if (isset($this->voucher->team->voucherTemplate->voucher_template_path)) {
+            dispatch(new GenerateStorageBrandedQrTemplate($this->voucher));
+        }
+    }
+}
