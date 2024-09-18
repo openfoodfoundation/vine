@@ -18,9 +18,9 @@ class VoucherSetMerchantTeamApprovalRequestRejectedNotification extends Notifica
     /**
      * Create a new notification instance.
      *
-     * @param VoucherSetMerchantTeamApprovalRequest $request
+     * @param VoucherSetMerchantTeamApprovalRequest $voucherSetMerchantTeamApprovalRequest
      */
-    public function __construct(public VoucherSetMerchantTeamApprovalRequest $request) {}
+    public function __construct(public VoucherSetMerchantTeamApprovalRequest $voucherSetMerchantTeamApprovalRequest) {}
 
     /**
      * Get the notification's delivery channels.
@@ -43,13 +43,13 @@ class VoucherSetMerchantTeamApprovalRequestRejectedNotification extends Notifica
      */
     public function toSlack(object $notifiable): SlackMessage
     {
-        $rejectedUser = User::with('currentTeam')->find($this->request->merchant_user_id);
-        $link         = URL::to('/admin/voucher-set/' . $this->request->voucher_set_id);
+        $rejectedUser = User::with('currentTeam')->find($this->voucherSetMerchantTeamApprovalRequest->merchant_user_id);
+        $link         = URL::to('/admin/voucher-set/' . $this->voucherSetMerchantTeamApprovalRequest->voucher_set_id);
 
         return (new SlackMessage())
             ->headerBlock(':no_good: Voucher set merchant team approval request has been rejected!')
             ->contextBlock(function (ContextBlock $block) use ($rejectedUser) {
-                $block->text('Voucher set #' . $this->request->voucher_set_id . ' has been rejected by ' . $rejectedUser->name . ' (' . $rejectedUser->currentTeam->name . ').');
+                $block->text('Voucher set #' . $this->voucherSetMerchantTeamApprovalRequest->voucher_set_id . ' has been rejected by ' . $rejectedUser->name . ' (' . $rejectedUser->currentTeam->name . ').');
             })
             ->actionsBlock(function (ActionsBlock $action) use ($link) {
                 $action->button('Go to voucher set page')->url($link);
