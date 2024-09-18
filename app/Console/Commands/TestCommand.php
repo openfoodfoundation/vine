@@ -30,51 +30,50 @@ class TestCommand extends Command
     public function handle()
     {
 
-//        $voucher = new Voucher();
-//        $voucher->voucher_set_id = 'abc123';
-//        $voucher->created_by_team_id = 1;
-//        $voucher->allocated_to_service_team_id = 2;
-//        $voucher->voucher_value_original = 0;
-//        $voucher->voucher_value_remaining = 0;
-//        $voucher->num_voucher_redemptions = 0;
-//        $voucher->save();
+        //        $voucher = new Voucher();
+        //        $voucher->voucher_set_id = 'abc123';
+        //        $voucher->created_by_team_id = 1;
+        //        $voucher->allocated_to_service_team_id = 2;
+        //        $voucher->voucher_value_original = 0;
+        //        $voucher->voucher_value_remaining = 0;
+        //        $voucher->num_voucher_redemptions = 0;
+        //        $voucher->save();
 
         $voucher = Voucher::factory()->create();
 
-
-//        $me = User::find(2);
-//
-//        $denomination = [];
-//
-//        $voucherItem              = new stdClass();
-//        $voucherItem->value       = 100;
-//        $voucherItem->number      = 5;
-//        $voucherItem->dollarValue = 5;
-//        $denomination[]           = $voucherItem;
-//
-//        $voucherItem              = new stdClass();
-//        $voucherItem->value       = 500;
-//        $voucherItem->number      = 2;
-//        $voucherItem->dollarValue = 10;
-//        $denomination[]           = $voucherItem;
-//
-//        $voucherItem              = new stdClass();
-//        $voucherItem->value       = 1000;
-//        $voucherItem->number      = 2;
-//        $voucherItem->dollarValue = 20;
-//        $denomination[]           = $voucherItem;
-//
-//        $myJSON = json_encode($denomination);
-//
-//        $voucherSet = VoucherSet::factory()->create([
-//            'created_by_team_id'           => 1,
-//            'allocated_to_service_team_id' => 2,
-//            'created_by_user_id'           => $me->id,
-//            'total_set_value'              => 3500,
-//            'total_set_value_remaining'    => 3500,
-//            'denomination_json'            => $myJSON,
-//            'is_denomination_valid' => 1,
-//        ]);
-//
+        //        $me = User::find(2);
+        //
+        //        $denomination = [];
+        //
+        //        $voucherItem              = new stdClass();
+        //        $voucherItem->value       = 100;
+        //        $voucherItem->number      = 5;
+        //        $voucherItem->dollarValue = 5;
+        //        $denomination[]           = $voucherItem;
+        //
+        //        $voucherItem              = new stdClass();
+        //        $voucherItem->value       = 500;
+        //        $voucherItem->number      = 2;
+        //        $voucherItem->dollarValue = 10;
+        //        $denomination[]           = $voucherItem;
+        //
+        //        $voucherItem              = new stdClass();
+        //        $voucherItem->value       = 1000;
+        //        $voucherItem->number      = 2;
+        //        $voucherItem->dollarValue = 20;
+        //        $denomination[]           = $voucherItem;
+        //
+        //        $myJSON = json_encode($denomination);
+        //
+        //        $voucherSet = VoucherSet::factory()->create([
+        //            'created_by_team_id'           => 1,
+        //            'allocated_to_service_team_id' => 2,
+        //            'created_by_user_id'           => $me->id,
+        //            'total_set_value'              => 3500,
+        //            'total_set_value_remaining'    => 3500,
+        //            'denomination_json'            => $myJSON,
+        //            'is_denomination_valid' => 1,
+        //        ]);
+        //
     }
 }
