@@ -32,7 +32,7 @@ class TestCommand extends Command
     public function handle()
     {
 
-        $me = User::find(2);
+        $me = User::find(1);
 
         $voucherSet = VoucherSet::factory()->create([
             'created_by_team_id' => 2,

@@ -28,14 +28,16 @@ use Knuckles\Scribe\Attributes\UrlParam;
 
 #[Group('App Endpoints')]
 #[Subgroup('/voucher-set-merchant-team-approval-request', 'Retrieve voucher set merchant team approval request details.')]
-class ApiVoucherSetMerchantTeamApprovalRequestController extends Controller
+class ApiMyTeamVSMTARController extends Controller
 {
     use HandlesAPIRequests;
 
     /**
      * Set the related data the GET request is allowed to ask for
      */
-    public array $availableRelations = [];
+    public array $availableRelations = [
+        'voucherSet'
+    ];
 
     public static array $searchableFields = [];
 

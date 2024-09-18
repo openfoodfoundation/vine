@@ -27,7 +27,7 @@ use App\Http\Controllers\Api\V1\ApiMyTeamVoucherSetsCreatedController;
 use App\Http\Controllers\Api\V1\ApiShopsController;
 use App\Http\Controllers\Api\V1\ApiSystemStatisticsController;
 use App\Http\Controllers\Api\V1\ApiVoucherRedemptionsController;
-use App\Http\Controllers\Api\V1\ApiVoucherSetMerchantTeamApprovalRequestController;
+use App\Http\Controllers\Api\V1\ApiMyTeamVSMTARController;
 use App\Http\Controllers\Api\V1\ApiVoucherValidationController;
 use App\Http\Middleware\CheckAdminStatus;
 use App\Http\Middleware\VerifyApiTokenSignature;
@@ -651,8 +651,8 @@ Route::group(['prefix' => 'v1', 'middleware' => VerifyApiTokenSignature::class],
             /**
              * Voucher set merchant team approval request
              */
-            Route::get('/vsmtar', [ApiVoucherSetMerchantTeamApprovalRequestController::class, 'index'])
-                ->name('api.v1.vsmtar.getMany')
+            Route::get('/my-team-vsmtar', [ApiMyTeamVSMTARController::class, 'index'])
+                ->name('api.v1.my-team-vsmtar.getMany')
                 ->middleware(
                     [
                         'abilities:' .
@@ -661,8 +661,8 @@ Route::group(['prefix' => 'v1', 'middleware' => VerifyApiTokenSignature::class],
                     ]
                 );
 
-            Route::post('/vsmtar', [ApiVoucherSetMerchantTeamApprovalRequestController::class, 'store'])
-                ->name('api.v1.vsmtar.post')
+            Route::post('/my-team-vsmtar', [ApiMyTeamVSMTARController::class, 'store'])
+                ->name('api.v1.my-team-vsmtar.post')
                 ->middleware(
                     [
                         'abilities:' .
@@ -671,8 +671,8 @@ Route::group(['prefix' => 'v1', 'middleware' => VerifyApiTokenSignature::class],
                     ]
                 );
 
-            Route::get('/vsmtar/{id}', [ApiVoucherSetMerchantTeamApprovalRequestController::class, 'show'])
-                ->name('api.v1.vsmtar.get')
+            Route::get('/my-team-vsmtar/{id}', [ApiMyTeamVSMTARController::class, 'show'])
+                ->name('api.v1.my-team-vsmtar.get')
                 ->middleware(
                     [
                         'abilities:' .
@@ -681,8 +681,8 @@ Route::group(['prefix' => 'v1', 'middleware' => VerifyApiTokenSignature::class],
                     ]
                 );
 
-            Route::put('/vsmtar/{id}', [ApiVoucherSetMerchantTeamApprovalRequestController::class, 'update'])
-                ->name('api.v1.vsmtar.put')
+            Route::put('/my-team-vsmtar/{id}', [ApiMyTeamVSMTARController::class, 'update'])
+                ->name('api.v1.my-team-vsmtar.put')
                 ->middleware(
                     [
                         'abilities:' .
@@ -691,8 +691,8 @@ Route::group(['prefix' => 'v1', 'middleware' => VerifyApiTokenSignature::class],
                     ]
                 );
 
-            Route::delete('/vsmtar/{id}', [ApiVoucherSetMerchantTeamApprovalRequestController::class, 'destroy'])
-                ->name('api.v1.vsmtar.delete')
+            Route::delete('/vsmtar/{id}', [ApiMyTeamVSMTARController::class, 'destroy'])
+                ->name('api.v1.my-team-vsmtar.delete')
                 ->middleware(
                     [
                         'abilities:' .
