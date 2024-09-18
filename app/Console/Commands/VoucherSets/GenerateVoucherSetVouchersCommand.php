@@ -98,5 +98,6 @@ class GenerateVoucherSetVouchersCommand extends Command
         }
 
         return 0;
+
     }
 }
