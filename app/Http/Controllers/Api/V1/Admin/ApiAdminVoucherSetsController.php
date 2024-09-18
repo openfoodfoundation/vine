@@ -14,6 +14,7 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 use Knuckles\Scribe\Attributes\Authenticated;
+use Knuckles\Scribe\Attributes\BodyParam;
 use Knuckles\Scribe\Attributes\Endpoint;
 use Knuckles\Scribe\Attributes\Group;
 use Knuckles\Scribe\Attributes\QueryParam;
@@ -122,10 +123,67 @@ class ApiAdminVoucherSetsController extends Controller
     }
 
     /**
-     * @hideFromAPIDocumentation
-     *
      * @return JsonResponse
      */
+    #[Endpoint(
+        title: 'POST /',
+        description: 'Create a new voucher set.',
+        authenticated: true
+    )]
+    #[Authenticated]
+    #[BodyParam(
+        name: 'is_test',
+        type: 'boolean',
+        description: 'Whether the voucher set is for testing purposes',
+        required: true
+    )]
+    #[BodyParam(
+        name: 'allocated_to_service_team_id',
+        type: 'integer',
+        description: 'The ID of the service team being allocated to',
+        required: true
+    )]
+    #[BodyParam(
+        name: 'merchant_team_ids',
+        type: 'array',
+        description: 'The IDs of the merchant team(s) being assigned to',
+        required: true
+    )]
+    #[BodyParam(
+        name: 'funded_by_team_id',
+        type: 'array',
+        description: 'The ID of the funding team associated with the voucher set',
+        required: false
+    )]
+    #[BodyParam(
+        name: 'total_set_value',
+        type: 'integer',
+        description: 'The total value of the voucher set',
+        required: true
+    )]
+    #[BodyParam(
+        name: 'denominations',
+        type: 'array',
+        description: 'An array describing the voucher denominations by number and value',
+        required: true
+    )]
+    #[BodyParam(
+        name: 'expires_at',
+        type: 'string',
+        description: 'The expiration date of the voucher set, if one exists',
+        required: false
+    )]
+    #[BodyParam(
+        name: 'voucher_set_type',
+        type: 'string',
+        description: 'The type of the voucher set, must be one of: "food equity" or "promotion"',
+        required: true
+    )]
+    #[Response(
+        content: '',
+        status: 200,
+        description: '',
+    )]
     public function store(): JsonResponse
     {
         $validationArray = [
@@ -135,6 +193,7 @@ class ApiAdminVoucherSetsController extends Controller
             ],
             'allocated_to_service_team_id' => [
                 'required',
+                'integer',
                 Rule::exists('teams', 'id'),
             ],
             'merchant_team_ids' => [
@@ -150,6 +209,7 @@ class ApiAdminVoucherSetsController extends Controller
             ],
             'total_set_value' => [
                 'required',
+                'integer',
             ],
             'denominations' => [
                 'required',
@@ -193,7 +253,7 @@ class ApiAdminVoucherSetsController extends Controller
 
                     /**
                      * Merchant team ids are used
-                     * down via a linking model
+                     * down below via a linking model
                      */
                     if ($key !== 'merchant_team_ids') {
                         $model->$key = $value;
