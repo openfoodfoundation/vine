@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Models\Team;
+use App\Models\TeamMerchantTeam;
 use App\Models\TeamServiceTeam;
 use Illuminate\Console\Command;
 
@@ -31,9 +32,9 @@ class TestCommand extends Command
 
         foreach ($teams as $team) {
 
-            TeamServiceTeam::factory()->createQuietly(
+            TeamMerchantTeam::factory()->createQuietly(
                 [
-                    'service_team_id' => $team->id,
+                    'merchant_team_id' => $team->id,
                     'team_id'         => 1,
                 ]
             );

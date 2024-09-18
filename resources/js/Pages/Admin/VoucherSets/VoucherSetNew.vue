@@ -13,11 +13,7 @@ import VoucherSetNewComponent from "@/Components/Admin/VoucherSets/VoucherSetNew
             <AdminTopNavigation/>
         </template>
 
-        <div class=" card">
-            <div class="card-header">
-                Voucher Set New
-            </div>
-            <VoucherSetNewComponent/>
-        </div>
+        <VoucherSetNewComponent/>
+
     </AuthenticatedLayout>
 </template>

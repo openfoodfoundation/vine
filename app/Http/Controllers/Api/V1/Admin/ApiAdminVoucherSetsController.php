@@ -7,6 +7,8 @@ use App\Exceptions\DisallowedApiFieldException;
 use App\Http\Controllers\Api\HandlesAPIRequests;
 use App\Http\Controllers\Controller;
 use App\Models\VoucherSet;
+use App\Models\VoucherSetMerchantTeam;
+use Auth;
 use Exception;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Validator;
@@ -154,8 +156,9 @@ class ApiAdminVoucherSetsController extends Controller
                 'array',
             ],
             'expires_at' => [
-                'required',
+                'sometimes',
                 'string',
+                'nullable',
             ],
             'voucher_set_type' => [
                 'required',
@@ -183,13 +186,32 @@ class ApiAdminVoucherSetsController extends Controller
                 $value = $this->request->get($key);
                 if (isset($value)) {
                     if ($key == 'denominations') {
-                        $value = json_encode($value);
+                        $model->denomination_json = json_encode($value);
+
+                        continue;
                     }
-                    $model->$key = $value;
+
+                    /**
+                     * Merchant team ids are used
+                     * down via a linking model
+                     */
+                    if ($key !== 'merchant_team_ids') {
+                        $model->$key = $value;
+                    }
                 }
             }
 
+            $model->created_by_user_id = Auth::id();
+            $model->created_by_team_id = Auth::user()->current_team_id;
             $model->save();
+
+            $merchantTeamIds = $this->request->get('merchant_team_ids');
+            foreach ($merchantTeamIds as $merchantTeamId) {
+                $voucherSetMerchantTeam                   = new VoucherSetMerchantTeam();
+                $voucherSetMerchantTeam->voucher_set_id   = $model->id;
+                $voucherSetMerchantTeam->merchant_team_id = $merchantTeamId;
+                $voucherSetMerchantTeam->save();
+            }
 
             $this->message = ApiResponse::RESPONSE_SAVED->value;
 

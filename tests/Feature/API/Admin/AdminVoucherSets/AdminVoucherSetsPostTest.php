@@ -4,6 +4,7 @@
 
 namespace Tests\Feature\API\Admin\AdminVoucherSets;
 
+use App\Enums\VoucherSetType;
 use App\Models\Team;
 use App\Models\VoucherSet;
 use Laravel\Sanctum\Sanctum;
@@ -37,7 +38,7 @@ class AdminVoucherSetsPostTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function adminCanNotSaveData()
+    public function adminCanSaveData()
     {
         $this->user = $this->createAdminUser();
 
@@ -48,21 +49,22 @@ class AdminVoucherSetsPostTest extends BaseAPITestCase
         $team = Team::factory()
             ->create();
 
-        $voucherSet = VoucherSet::factory()
-            ->create([
-                'created_by_team_id' => $team->id,
-                'created_by_user_id' => $this->user->id,
-            ]);
+        $serviceTeam = Team::factory()->create();
+
+        $merchantTeams = Team::factory(5)->create();
 
         $payload = [
-            'voucher_set_id'          => $voucherSet->id,
-            'team_id'                 => $team->id,
-            'voucher_value_original'  => fake()->randomDigitNotNull,
-            'voucher_value_remaining' => fake()->randomDigitNotNull,
-            'last_redemption_at'      => now(),
+            'is_test'                      => 1,
+            'allocated_to_service_team_id' => $serviceTeam->id,
+            'merchant_team_ids'            => $merchantTeams->pluck('id')->toArray(),
+            'total_set_value'              => 10,
+            'denominations'                => [
+                ['number' => 1, 'value' => 10],
+            ],
+            'voucher_set_type' => VoucherSetType::FOOD_EQUITY->value,
         ];
 
         $response = $this->post($this->apiRoot . $this->endpoint, $payload);
-        $response->assertStatus(403);
+        $response->assertStatus(200);
     }
 }
