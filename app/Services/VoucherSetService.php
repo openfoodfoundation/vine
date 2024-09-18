@@ -38,6 +38,7 @@ class VoucherSetService
      * Determine if a voucher set's JSON is valid, and matched its value
      *
      * @param VoucherSet $voucherSet
+     *
      * @return mixed
      */
     public static function validateVoucherSetDenominations(VoucherSet $voucherSet): bool

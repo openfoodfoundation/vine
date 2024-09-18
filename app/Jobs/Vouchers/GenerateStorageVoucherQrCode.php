@@ -4,10 +4,7 @@ namespace App\Jobs\Vouchers;
 
 use App\Models\Voucher;
 use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Foundation\Queue\Queueable;
-use Illuminate\Queue\InteractsWithQueue;
-use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\URL;
 
 class GenerateStorageVoucherQrCode implements ShouldQueue
@@ -16,11 +13,10 @@ class GenerateStorageVoucherQrCode implements ShouldQueue
 
     /**
      * Create a new job instance.
+     *
+     * @param Voucher $voucher
      */
-    public function __construct(public Voucher $voucher)
-    {
-        //
-    }
+    public function __construct(public Voucher $voucher) {}
 
     /**
      * Execute the job.
@@ -33,26 +29,20 @@ class GenerateStorageVoucherQrCode implements ShouldQueue
          * PNG
          */
 
-
-
-
-
-
-
         // PNG
         $dataPng = (new Generator())->format('png')->size(600)->generate($redeemUrl);
-        $path = '/voucher-sets/'.$this->voucher->voucher_set_id.'/vouchers/individual/'.$this->voucher->id.'/png/voucher-qr.png';
-        $file = Storage::put($path, $dataPng);
+        $path    = '/voucher-sets/' . $this->voucher->voucher_set_id . '/vouchers/individual/' . $this->voucher->id . '/png/voucher-qr.png';
+        $file    = Storage::put($path, $dataPng);
 
-        $path = '/voucher-sets/'.$this->voucher->voucher_set_id.'/vouchers/all/png/'.$this->voucher->id.'.png';
+        $path = '/voucher-sets/' . $this->voucher->voucher_set_id . '/vouchers/all/png/' . $this->voucher->id . '.png';
         $file = Storage::put($path, $dataPng);
 
         // SVG
         $dataSvg = (new Generator())->format('svg')->size(600)->generate($redeemUrl);
-        $path = '/voucher-sets/'.$this->voucher->voucher_set_id.'/vouchers/individual/'.$this->voucher->id.'/svg/voucher-qr.svg';
-        $file = Storage::put($path, $dataSvg);
+        $path    = '/voucher-sets/' . $this->voucher->voucher_set_id . '/vouchers/individual/' . $this->voucher->id . '/svg/voucher-qr.svg';
+        $file    = Storage::put($path, $dataSvg);
 
-        $path = '/voucher-sets/'.$this->voucher->voucher_set_id.'/vouchers/all/svg/'.$this->voucher->id.'.svg';
+        $path = '/voucher-sets/' . $this->voucher->voucher_set_id . '/vouchers/all/svg/' . $this->voucher->id . '.svg';
         $file = Storage::put($path, $dataSvg);
 
         if (isset($this->voucher->team->voucherTemplate->voucher_template_path)) {
