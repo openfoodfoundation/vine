@@ -109,7 +109,7 @@ class ApiVoucherSetMerchantTeamApprovalRequestController extends Controller
     public function show(string $id)
     {
         $this->query = VoucherSetMerchantTeamApprovalRequest::where('merchant_user_id', Auth::id())
-            ->with($this->associatedData);
+                                                            ->with($this->associatedData);
         $this->query = $this->updateReadQueryBasedOnUrl();
         $this->data  = $this->query->find($id);
 
@@ -131,7 +131,11 @@ class ApiVoucherSetMerchantTeamApprovalRequestController extends Controller
             'approval_status' => [
                 'required',
                 'string',
-                Rule::in([VoucherSetMerchantTeamApprovalRequestStatus::APPROVED->value, VoucherSetMerchantTeamApprovalRequestStatus::REJECTED->value]),
+                Rule::in(
+                    [
+                        VoucherSetMerchantTeamApprovalRequestStatus::APPROVED->value,
+                        VoucherSetMerchantTeamApprovalRequestStatus::REJECTED->value
+                    ]),
             ],
         ];
 
@@ -141,10 +145,9 @@ class ApiVoucherSetMerchantTeamApprovalRequestController extends Controller
 
             $this->responseCode = 400;
             $this->message      = $validator->errors()
-                ->first();
+                                            ->first();
 
-        }
-        else {
+        } else {
 
             try {
 
@@ -155,8 +158,7 @@ class ApiVoucherSetMerchantTeamApprovalRequestController extends Controller
                     $this->responseCode = 404;
                     $this->message      = ApiResponse::RESPONSE_NOT_FOUND->value;
 
-                }
-                else {
+                } else {
 
                     foreach ($validationArray as $key => $validationRule) {
                         $value = $this->request->get($key);
@@ -183,8 +185,7 @@ class ApiVoucherSetMerchantTeamApprovalRequestController extends Controller
 
                 }
 
-            }
-            catch (Exception $e) {
+            } catch (Exception $e) {
 
                 $this->responseCode = 500;
                 $this->message      = ApiResponse::RESPONSE_ERROR->value . ': "' . $e->getMessage() . '".';
