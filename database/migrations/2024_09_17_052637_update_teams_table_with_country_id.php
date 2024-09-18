@@ -4,17 +4,16 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
+return new class() extends Migration
 {
     /**
      * Run the migrations.
      */
     public function up(): void
     {
-       Schema::table('teams', function (Blueprint $table) {
-           $table->unsignedSmallInteger('country_id')->after('name')->default(14)->index('t_ci');
-       });
-
+        Schema::table('teams', function (Blueprint $table) {
+            $table->unsignedSmallInteger('country_id')->after('name')->default(14)->index('t_ci');
+        });
 
     }
 
@@ -23,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-       Schema::dropColumns('teams', 'country_id');
+        Schema::dropColumns('teams', 'country_id');
     }
 };
