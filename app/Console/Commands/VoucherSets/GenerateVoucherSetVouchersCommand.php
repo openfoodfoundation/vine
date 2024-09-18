@@ -41,6 +41,9 @@ class GenerateVoucherSetVouchersCommand extends Command
             $voucherSetIsValid = VoucherSetService::validateVoucherSetDenominations($voucherSet);
 
             if (!$voucherSetIsValid) {
+
+                $this->line('Voucher set is invalid.');
+
                 $notifyUser = User::where('email', env('MAIL_DEFAULT_EMAIL'))->first();
 
                 if ($notifyUser) {
@@ -56,7 +59,11 @@ class GenerateVoucherSetVouchersCommand extends Command
              */
             $denominationArray = json_decode($voucherSet->denomination_json, true);
             $numCreated        = 0;
+            $numToBeCreated    = 0;
             foreach ($denominationArray as $denominationListing) {
+
+                $numToBeCreated = $numToBeCreated + $denominationListing['number'];
+
                 for ($i = 1; $i <= $denominationListing['number']; $i++) {
                     $model                               = new Voucher();
                     $model->voucher_set_id               = $voucherSet->id;
@@ -69,7 +76,7 @@ class GenerateVoucherSetVouchersCommand extends Command
 
                     $numCreated++;
 
-                    if (($numCreated % 100) == 0) {
+                    if (($numCreated % $numToBeCreated) == 0) {
                         $this->line($numCreated . ' vouchers generated.');
                     }
                 }
