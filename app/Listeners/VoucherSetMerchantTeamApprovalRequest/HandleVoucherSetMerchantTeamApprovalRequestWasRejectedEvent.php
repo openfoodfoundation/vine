@@ -29,10 +29,9 @@ class HandleVoucherSetMerchantTeamApprovalRequestWasRejectedEvent implements Sho
 
         dispatch(new SendVoucherSetMerchantTeamApprovalRequestEmailRejectionNotificationToStakeholders($event->voucherSetMerchantTeamApprovalRequest));
 
-
         AuditItemService::createAuditItemForEvent(
             model    : $event->voucherSetMerchantTeamApprovalRequest->voucherSet,
-            eventText: $event->voucherSetMerchantTeamApprovalRequest->merchantUser->name . ' rejected team merchant status for voucher set #'.$event->voucherSetMerchantTeamApprovalRequest->voucher_set_id,
+            eventText: $event->voucherSetMerchantTeamApprovalRequest->merchantUser->name . ' rejected team merchant status for voucher set #' . $event->voucherSetMerchantTeamApprovalRequest->voucher_set_id,
             teamId   : $event->voucherSetMerchantTeamApprovalRequest->merchant_team_id
         );
 

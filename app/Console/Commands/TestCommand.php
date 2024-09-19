@@ -3,7 +3,6 @@
 namespace App\Console\Commands;
 
 use App\Models\User;
-use App\Models\VoucherSet;
 use App\Models\VoucherSetMerchantTeamApprovalRequest;
 use App\Notifications\Mail\VoucherSetMerchantTeamApprovalRequest\VoucherSetMerchantTeamApprovalRequestEmailNotification;
 use Illuminate\Console\Command;

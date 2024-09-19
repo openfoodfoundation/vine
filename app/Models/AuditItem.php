@@ -51,7 +51,7 @@ class AuditItem extends Model
                 $url = '/my-team';
                 break;
             case VoucherSet::class:
-                $url = '/voucher-set/'.$this->auditable_id;
+                $url = '/voucher-set/' . $this->auditable_id;
                 break;
         }
 
