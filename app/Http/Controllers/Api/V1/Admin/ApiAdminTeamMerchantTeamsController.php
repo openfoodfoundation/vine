@@ -1,6 +1,7 @@
 <?php
 
 /** @noinspection PhpUndefinedMethodInspection */
+
 /** @noinspection PhpUnusedParameterInspection */
 
 namespace App\Http\Controllers\Api\V1\Admin;
@@ -60,7 +61,7 @@ class ApiAdminTeamMerchantTeamsController extends Controller
          * The validation array.
          */
         $validationArray = [
-            'team_id' => [
+            'team_id'          => [
                 'required',
                 Rule::exists('teams', 'id'),
             ],
@@ -76,30 +77,30 @@ class ApiAdminTeamMerchantTeamsController extends Controller
 
             $this->responseCode = 400;
             $this->message      = $validator->errors()
-                ->first();
+                                            ->first();
 
-        }
-        else {
+        } else {
 
+            $teamId         = $this->request->get('team_id');
+            $merchantTeamId = $this->request->get('merchant_team_id');
             /**
              * Check country
              */
-            $team     = Team::find($this->request->get('team_id'));
-            $merchant = Team::find($this->request->get('merchant_team_id'));
+            $team     = Team::find($teamId);
+            $merchant = Team::find($merchantTeamId);
 
             if ($team->country_id != $merchant->country_id) {
 
-                $this->responseCode = 404;
+                $this->responseCode = 400;
                 $this->message      = ApiResponse::RESPONSE_COUNTRY_MISMATCH->value;
 
-            }
-            else {
+            } else {
 
                 try {
 
-                    $model = TeamMerchantTeam::where('team_id', $this->request->get('team_id'))
-                        ->where('merchant_team_id', $this->request->get('merchant_team_id'))
-                        ->first();
+                    $model = TeamMerchantTeam::where('team_id', $teamId)
+                                             ->where('merchant_team_id', $merchantTeamId)
+                                             ->first();
 
                     if (!$model) {
 
@@ -120,8 +121,7 @@ class ApiAdminTeamMerchantTeamsController extends Controller
 
                     $this->data = $model;
 
-                }
-                catch (Exception $e) {
+                } catch (Exception $e) {
 
                     $this->responseCode = 500;
                     $this->message      = ApiResponse::RESPONSE_ERROR->value . ': "' . $e->getMessage() . '".';
@@ -184,16 +184,14 @@ class ApiAdminTeamMerchantTeamsController extends Controller
                 $this->responseCode = 404;
                 $this->message      = ApiResponse::RESPONSE_NOT_FOUND->value;
 
-            }
-            else {
+            } else {
 
                 $model->delete();
                 $this->message = ApiResponse::RESPONSE_DELETED->value;
 
             }
 
-        }
-        catch (Exception $e) {
+        } catch (Exception $e) {
 
             $this->responseCode = 500;
             $this->message      = ApiResponse::RESPONSE_ERROR->value . ':' . $e->getMessage();
