@@ -91,10 +91,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/my-team-voucher-sets', function () {
         return Inertia::render('App/VoucherSets/MyTeamVoucherSets');
     })->name('my-team-voucher-sets');
-
-    Route::get('/my-vouchers', function () {
-        return Inertia::render('App/MyVouchers');
-    })->name('my-vouchers');
+    
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
