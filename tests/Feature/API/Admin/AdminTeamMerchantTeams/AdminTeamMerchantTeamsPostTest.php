@@ -90,7 +90,7 @@ class AdminTeamMerchantTeamsPostTest extends BaseAPITestCase
         $response    = $this->postJson($this->apiRoot . $this->endpoint, $payload);
         $responseObj = json_decode($response->getContent());
 
-        $response->assertStatus(404);
+        $response->assertStatus(400);
         $this->assertEquals($responseObj->meta->message, ApiResponse::RESPONSE_COUNTRY_MISMATCH->value);
     }
 }
