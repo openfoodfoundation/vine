@@ -12,7 +12,6 @@ class VoucherBeneficiaryDistribution extends Model
     use HasFactory;
     use SoftDeletes;
 
-
     public function voucher(): BelongsTo
     {
         return $this->belongsTo(Voucher::class);
