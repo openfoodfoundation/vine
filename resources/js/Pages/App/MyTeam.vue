@@ -86,21 +86,6 @@ function getMyTeams() {
             </div>
         </div>
 
-        <div class="card">
-            <div class="card-header">
-                Voucher sets Created by my team
-            </div>
-
-            <MyTeamVoucherSetsComponent filter-voucher-sets="-created"></MyTeamVoucherSetsComponent>
-        </div>
-
-        <div class="card">
-            <div class="card-header">
-                Voucher sets allocated to my team
-            </div>
-
-            <MyTeamVoucherSetsComponent filter-voucher-sets="-allocated"></MyTeamVoucherSetsComponent>
-        </div>
 
         <div class="pb-32">
 
