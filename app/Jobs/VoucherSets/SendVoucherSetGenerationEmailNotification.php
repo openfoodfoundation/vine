@@ -6,6 +6,7 @@
 
 namespace App\Jobs\VoucherSets;
 
+use App\Models\TeamUser;
 use App\Models\User;
 use App\Models\VoucherSet;
 use App\Notifications\Mail\VoucherSets\VoucherSetGenerationEmailNotification;
@@ -21,14 +22,22 @@ class SendVoucherSetGenerationEmailNotification implements ShouldQueue
      *
      * @param VoucherSet $voucherSet
      */
-    public function __construct(public VoucherSet $voucherSet) {}
+    public function __construct(public VoucherSet $voucherSet)
+    {
+    }
 
     /**
      * Execute the job.
      */
     public function handle(): void
     {
-        $serviceUsers = User::where('current_team_id', $this->voucherSet->allocated_to_service_team_id)->get();
+        $teamUsers = TeamUser::where('team_id', $this->voucherSet->allocated_to_service_team_id)
+                             ->pluck('team_id')
+                             ->unique()
+                             ->toArray();
+
+        $serviceUsers = User::whereIn('id', $teamUsers)
+                            ->get();
 
         if ($serviceUsers) {
             foreach ($serviceUsers as $user) {
