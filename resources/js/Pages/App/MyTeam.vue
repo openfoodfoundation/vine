@@ -88,7 +88,7 @@ function getMyTeams() {
         </div>
 
         <MyTeamEditorComponent></MyTeamEditorComponent>
-        
+
 
         <div class="pb-32">
 
