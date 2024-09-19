@@ -40,77 +40,78 @@ class ApiMyTeamVoucherSetsController extends Controller
      * @throws DisallowedApiFieldException
      */
     #[Endpoint(
-        title: 'GET /',
-        description: 'Retrieve voucher sets. Automatically filtered to your current team.',
+        title        : 'GET /',
+        description  : 'Retrieve voucher sets. Automatically filtered to your current team.',
         authenticated: true
     )]
     #[Authenticated]
     #[QueryParam(
-        name: 'cached',
-        type: 'bool',
+        name       : 'cached',
+        type       : 'bool',
         description: 'Request the response to be cached. Default: `true`.',
-        required: false,
-        example: true
+        required   : false,
+        example    : true
     )]
     #[QueryParam(
-        name: 'page',
-        type: 'int',
+        name       : 'page',
+        type       : 'int',
         description: 'The pagination page number.',
-        required: false,
-        example: 1
+        required   : false,
+        example    : 1
     )]
     #[QueryParam(
-        name: 'limit',
-        type: 'int',
+        name       : 'limit',
+        type       : 'int',
         description: 'The number of entries returned per pagination page.',
-        required: false,
-        example: 50
+        required   : false,
+        example    : 50
     )]
     #[QueryParam(
-        name: 'fields',
-        type: 'string',
+        name       : 'fields',
+        type       : 'string',
         description: 'Comma-separated list of database fields to return within the object.',
-        required: false,
-        example: 'id,created_at'
+        required   : false,
+        example    : 'id,created_at'
     )]
     #[QueryParam(
-        name: 'orderBy',
-        type: 'comma-separated',
+        name       : 'orderBy',
+        type       : 'comma-separated',
         description: 'Order the data by a given field. Comma-separated string.',
-        required: false,
-        example: 'orderBy=id,desc'
+        required   : false,
+        example    : 'orderBy=id,desc'
     )]
     #[QueryParam(
-        name: 'orderBy[]',
-        type: 'comma-separated',
+        name       : 'orderBy[]',
+        type       : 'comma-separated',
         description: 'Compound `orderBy`. Order the data by a given field. Comma-separated string. Can not be used in conjunction as standard `orderBy`.',
-        required: false,
-        example: 'orderBy[]=id,desc&orderBy[]=created_at,asc'
+        required   : false,
+        example    : 'orderBy[]=id,desc&orderBy[]=created_at,asc'
     )]
     #[QueryParam(
-        name: 'where',
-        type: 'comma-separated',
+        name       : 'where',
+        type       : 'comma-separated',
         description: 'Filter the request on a single field. Key-Value or Key-Operator-Value comma-separated string.',
-        required: false,
-        example: 'where=id,like,*550e*'
+        required   : false,
+        example    : 'where=id,like,*550e*'
     )]
     #[QueryParam(
-        name: 'where[]',
-        type: 'comma-separated',
+        name       : 'where[]',
+        type       : 'comma-separated',
         description: 'Compound `where`. Use when you need to filter on multiple `where`\'s. Note only AND is possible; ORWHERE is not available.',
-        required: false,
-        example: 'where[]=id,like,*550e*&where[]=created_at,>=,2024-01-01'
+        required   : false,
+        example    : 'where[]=id,like,*550e*&where[]=created_at,>=,2024-01-01'
     )]
     #[Response(
-        content: '{"meta":{"responseCode":200,"limit":50,"offset":0,"message":"","cached":false,"availableRelations":[]},"data":{"current_page":1,"data":[{"id": "2e9978b3-130a-3291-bd8f-246215c6d04d","created_by_team_id": 1, "created_at": "2024-01-01 00:00:00"}],"first_page_url": "https:\/\/vine.test\/api\/v1\/my-team-voucher-sets?page=1","from":null,"last_page":1,"last_page_url": "https:\/\/vine.test\/api\/v1\/my-team-voucher-sets?page=1","links":[{"url":null,"label":"&laquo; Previous","active":false},{"https:\/\/vine.test\/api\/v1\/my-team-voucher-sets?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"next_page_url":null,"path": "https:\/\/vine.test\/api\/v1\/my-team-voucher-sets","per_page":1,"prev_page_url":null,"to":null,"total":0}}',
-        status: 200,
+        content    : '{"meta":{"responseCode":200,"limit":50,"offset":0,"message":"","cached":false,"availableRelations":[]},"data":{"current_page":1,"data":[{"id": "2e9978b3-130a-3291-bd8f-246215c6d04d","created_by_team_id": 1, "created_at": "2024-01-01 00:00:00"}],"first_page_url": "https:\/\/vine.test\/api\/v1\/my-team-voucher-sets?page=1","from":null,"last_page":1,"last_page_url": "https:\/\/vine.test\/api\/v1\/my-team-voucher-sets?page=1","links":[{"url":null,"label":"&laquo; Previous","active":false},{"https:\/\/vine.test\/api\/v1\/my-team-voucher-sets?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"next_page_url":null,"path": "https:\/\/vine.test\/api\/v1\/my-team-voucher-sets","per_page":1,"prev_page_url":null,"to":null,"total":0}}',
+        status     : 200,
         description: ''
     )]
     public function index(): JsonResponse
     {
-        $this->query = VoucherSet::where('created_by_team_id', Auth::user()->current_team_id)
-            ->orWhere('allocated_to_service_team_id', Auth::user()->current_team_id)
-            ->with($this->associatedData);
+        $this->query = VoucherSet::where(function ($query) {
+            $query->where('created_by_team_id', Auth::user()->current_team_id)
+                ->orWhere('allocated_to_service_team_id', Auth::user()->current_team_id);
+        })->with($this->associatedData);
 
         $this->query = $this->updateReadQueryBasedOnUrl();
 
@@ -142,33 +143,33 @@ class ApiMyTeamVoucherSetsController extends Controller
      * @throws DisallowedApiFieldException
      */
     #[Endpoint(
-        title: 'GET /{id}',
-        description: 'Retrieve a single voucher set.',
+        title        : 'GET /{id}',
+        description  : 'Retrieve a single voucher set.',
         authenticated: true,
     )]
     #[Authenticated]
     #[UrlParam(
-        name: 'id',
-        type: 'uuid',
+        name       : 'id',
+        type       : 'uuid',
         description: 'Voucher Set ID.',
-        example: '550e8400-e29b-41d4-a716-446655440000'
+        example    : '550e8400-e29b-41d4-a716-446655440000'
     )]
     #[QueryParam(
-        name: 'cached',
-        type: 'bool',
+        name       : 'cached',
+        type       : 'bool',
         description: 'Request the response to be cached. Default: `true`.',
-        required: false,
-        example: 1
+        required   : false,
+        example    : 1
     )]
     #[QueryParam(
-        name: 'fields',
-        type: 'string',
+        name       : 'fields',
+        type       : 'string',
         description: 'Comma-separated list of database fields to return within the object.',
-        required: false,
-        example: 'id,created_at'
+        required   : false,
+        example    : 'id,created_at'
     )]
     #[Response(
-        content: '{
+        content    : '{
   "meta": {
     "responseCode": 200,
     "limit": 50,
@@ -180,15 +181,16 @@ class ApiMyTeamVoucherSetsController extends Controller
   },
   "data": {"id": 1234, "created_at": "2024-01-01 00:00:00"}
 }',
-        status: 200,
+        status     : 200,
         description: ''
     )]
     public function show(string $id)
     {
 
-        $this->query = VoucherSet::where('created_by_team_id', Auth::user()->current_team_id)
-            ->orWhere('allocated_to_service_team_id', Auth::user()->current_team_id)
-            ->with($this->associatedData);
+        $this->query = VoucherSet::where(function ($query) {
+            $query->where('created_by_team_id', Auth::user()->current_team_id)
+                ->orWhere('allocated_to_service_team_id', Auth::user()->current_team_id);
+        })->with($this->associatedData);
 
         $this->query = $this->updateReadQueryBasedOnUrl();
         $this->data  = $this->query->find($id);
