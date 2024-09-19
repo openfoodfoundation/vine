@@ -3,6 +3,9 @@
 namespace App\Jobs\Vouchers;
 
 use App\Models\Voucher;
+use App\Models\VoucherTemplate;
+use App\Services\VoucherTemplateService;
+use Exception;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Queue\Queueable;
 use Illuminate\Support\Facades\Storage;
@@ -22,6 +25,8 @@ class GenerateStorageVoucherQrCode implements ShouldQueue
 
     /**
      * Execute the job.
+     *
+     * @throws Exception
      */
     public function handle(): void
     {
@@ -47,8 +52,11 @@ class GenerateStorageVoucherQrCode implements ShouldQueue
         $path = '/voucher-sets/' . $this->voucher->voucher_set_id . '/vouchers/all/svg/' . $this->voucher->id . '.svg';
         $file = Storage::put($path, $dataSvg);
 
-        //        if (isset($this->voucher->team->voucherTemplate->voucher_template_path)) {
-        //            dispatch(new GenerateStorageBrandedQrTemplate($this->voucher));
-        //        }
+        // Get template for the team - maybe this does not be needed as users select template from frontend
+        $voucherTemplate = VoucherTemplate::where('team_id', $this->voucher->created_by_team_id)->first();
+
+        if ($voucherTemplate) {
+            VoucherTemplateService::generateVoucherTemplate($voucherTemplate, $this->voucher);
+        }
     }
 }

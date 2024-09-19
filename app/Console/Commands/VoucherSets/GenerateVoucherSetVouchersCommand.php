@@ -40,6 +40,7 @@ class GenerateVoucherSetVouchersCommand extends Command
              */
             $voucherSetIsValid = VoucherSetService::validateVoucherSetDenominations($voucherSet);
 
+            // Send Email to the team to notify 'The voucher set denomination was invalid'
             if (!$voucherSetIsValid) {
 
                 $this->line('Voucher set is invalid.');
@@ -47,8 +48,7 @@ class GenerateVoucherSetVouchersCommand extends Command
                 $notifyUser = User::where('email', env('MAIL_DEFAULT_EMAIL'))->first();
 
                 if ($notifyUser) {
-                    // notify that 'The voucher set denomination was invalid'
-                    //                    $notifyUser->notify(new VoucherSetCanNotBeGenerated($voucherSet, 'The voucher set denomination was invalid.'));
+                    //                                        $notifyUser->notify(new VoucherSetCanNotBeGenerated($voucherSet, 'The voucher set denomination was invalid.'));
                 }
 
                 return 0;
@@ -87,20 +87,10 @@ class GenerateVoucherSetVouchersCommand extends Command
 
             $notificationUser = User::find($voucherSet->created_by_user_id);
 
+            // Send Email/Slack to the team to notify 'The voucher set was successfully generated'
             if ($notificationUser) {
-                // notify that 'The voucher set was successfully generated'
                 //                $notificationUser->notify(new VoucherSetWasGeneratedOkay($voucherSet));
             }
-
-            /**
-             * Set the voucher aggregates
-             */
-            //            dispatch(new SetVoucherSetAggregates($voucherSet));
-
-            /**
-             * Set the team / agency budget aggregate data
-             */
-            //            dispatch(new QueueTeamAgencyBudgetAggregates($voucherSet));
 
         }
 
