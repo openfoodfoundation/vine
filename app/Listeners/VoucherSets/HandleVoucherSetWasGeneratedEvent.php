@@ -4,8 +4,9 @@ namespace App\Listeners\VoucherSets;
 
 use App\Events\VoucherSets\VoucherSetWasGenerated;
 use App\Jobs\VoucherSets\SendVoucherSetGenerationEmailNotification;
+use Illuminate\Contracts\Queue\ShouldQueue;
 
-class HandleVoucherSetWasGeneratedEvent
+class HandleVoucherSetWasGeneratedEvent implements ShouldQueue
 {
     /**
      * Create the event listener.
