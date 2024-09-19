@@ -6,6 +6,7 @@ import MyTeamTopNavigation from "@/Components/App/Search/SearchComponent.vue";
 import MyTeamVouchersComponent from "@/Components/App/MyTeamVouchersComponent.vue";
 import MyTeamVoucherSetsComponent from "@/Components/App/MyTeamVoucherSetsComponent.vue";
 import SearchComponent from "@/Components/App/Search/SearchComponent.vue";
+import MyTeamEditorComponent from "@/Components/App/MyTeamEditorComponent.vue";
 
 const myTeam = ref({})
 const myTeams = ref({})
@@ -85,6 +86,8 @@ function getMyTeams() {
                 </div>
             </div>
         </div>
+
+        <MyTeamEditorComponent></MyTeamEditorComponent>
 
 
         <div class="pb-32">
