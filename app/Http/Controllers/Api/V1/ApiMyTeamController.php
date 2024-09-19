@@ -124,6 +124,9 @@ class ApiMyTeamController extends Controller
     public function update(string $id)
     {
         $validationArray = [
+            'name' => [
+                'sometimes',
+            ],
             'country_id' => [
                 'sometimes',
                 'integer',
