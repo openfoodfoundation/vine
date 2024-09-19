@@ -42,13 +42,17 @@ function createNewTeam() {
             team.value = {}
         })
     }).catch(error => {
-        console.log(error)
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops!',
+            text: error.response.data.message,
+        });
     })
 }
 
 
 function getCountries() {
-    axios.get('/countries?limit=250').then(response => {
+    axios.get('/countries?limit=300').then(response => {
         countries.value = response.data.data;
     }).catch(error => {
         console.log(error)

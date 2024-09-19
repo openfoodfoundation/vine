@@ -130,7 +130,7 @@ function getVoucherSet() {
 
         <div class="card">
             <div class="card-header">
-                Allocated to team
+                Allocated To Service Team
             </div>
 
             <div v-if="voucherSet.allocated_to_service_team">
@@ -140,7 +140,7 @@ function getVoucherSet() {
 
         <div class="card">
             <div class="card-header">
-                Redeemable merchants
+                Merchants
             </div>
 
             <div v-if="voucherSet.voucher_set_merchant_teams">
