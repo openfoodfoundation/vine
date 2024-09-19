@@ -22,9 +22,7 @@ class SendVoucherSetGenerationEmailNotification implements ShouldQueue
      *
      * @param VoucherSet $voucherSet
      */
-    public function __construct(public VoucherSet $voucherSet)
-    {
-    }
+    public function __construct(public VoucherSet $voucherSet) {}
 
     /**
      * Execute the job.
@@ -32,12 +30,12 @@ class SendVoucherSetGenerationEmailNotification implements ShouldQueue
     public function handle(): void
     {
         $teamUsers = TeamUser::where('team_id', $this->voucherSet->allocated_to_service_team_id)
-                             ->pluck('team_id')
-                             ->unique()
-                             ->toArray();
+            ->pluck('team_id')
+            ->unique()
+            ->toArray();
 
         $serviceUsers = User::whereIn('id', $teamUsers)
-                            ->get();
+            ->get();
 
         if ($serviceUsers) {
             foreach ($serviceUsers as $user) {
