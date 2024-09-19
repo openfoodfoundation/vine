@@ -162,10 +162,10 @@ function save() {
 
                 <div>
                     <PrimaryButton @click="save()" class="mt-4">
-                        Select
+                        Selected:
                         <span v-if="approved" class="px-2 text-green-500">APPROVED</span>
                         <span v-else class="px-2 text-red-500">REJECTED</span>
-                        & Save
+                        > Click Here To Save
                     </PrimaryButton>
                 </div>
             </div>

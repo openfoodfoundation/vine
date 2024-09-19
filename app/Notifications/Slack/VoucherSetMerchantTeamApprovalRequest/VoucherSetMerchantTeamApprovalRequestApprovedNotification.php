@@ -18,9 +18,9 @@ class VoucherSetMerchantTeamApprovalRequestApprovedNotification extends Notifica
     /**
      * Create a new notification instance.
      *
-     * @param VoucherSetMerchantTeamApprovalRequest $request
+     * @param VoucherSetMerchantTeamApprovalRequest $voucherSetMerchantTeamApprovalRequest
      */
-    public function __construct(public VoucherSetMerchantTeamApprovalRequest $request) {}
+    public function __construct(public VoucherSetMerchantTeamApprovalRequest $voucherSetMerchantTeamApprovalRequest) {}
 
     /**
      * Get the notification's delivery channels.
@@ -43,13 +43,13 @@ class VoucherSetMerchantTeamApprovalRequestApprovedNotification extends Notifica
      */
     public function toSlack(object $notifiable): SlackMessage
     {
-        $approvedUser = User::with('currentTeam')->find($this->request->merchant_user_id);
-        $link         = URL::to('/admin/voucher-set/' . $this->request->voucher_set_id);
+        $approvedUser = User::with('currentTeam')->find($this->voucherSetMerchantTeamApprovalRequest->merchant_user_id);
+        $link         = URL::to('/admin/voucher-set/' . $this->voucherSetMerchantTeamApprovalRequest->voucher_set_id);
 
         return (new SlackMessage())
             ->headerBlock(':ok: Voucher set merchant team approval request has been approved!')
             ->contextBlock(function (ContextBlock $block) use ($approvedUser) {
-                $block->text('Voucher set #' . $this->request->voucher_set_id . ' has been approved by ' . $approvedUser->name . ' (' . $approvedUser->currentTeam->name . ').');
+                $block->text('Voucher set #' . $this->voucherSetMerchantTeamApprovalRequest->voucher_set_id . ' has been approved by ' . $approvedUser->name . ' (' . $approvedUser->currentTeam->name . ').');
             })
             ->actionsBlock(function (ActionsBlock $action) use ($link) {
                 $action->button('Go to voucher set page')->url($link);

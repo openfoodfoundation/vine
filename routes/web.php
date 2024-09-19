@@ -88,9 +88,9 @@ Route::middleware('auth')->group(function () {
 
     })->name('my-voucher-set-merchant-team-approval-request');
 
-    Route::get('/my-voucher-sets', function () {
-        return Inertia::render('App/MyVoucherSets');
-    })->name('my-voucher-sets');
+    Route::get('/my-team-voucher-sets', function () {
+        return Inertia::render('App/VoucherSets/MyTeamVoucherSets');
+    })->name('my-team-voucher-sets');
 
     Route::get('/my-vouchers', function () {
         return Inertia::render('App/MyVouchers');
@@ -218,6 +218,7 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/voucher-set/{voucherSetId}', function ($voucherSetId) {
 
+
         $voucherSet = VoucherSet::find($voucherSetId);
 
         /**
@@ -268,6 +269,7 @@ Route::middleware('auth')->group(function () {
         return Inertia::render('App/Vouchers/VoucherSet', [
             'voucherSetId' => $voucherSetId,
         ]);
+
     })->name('voucher-set');
 
     Route::get('/stop-impersonating', function (Request $request) {

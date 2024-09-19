@@ -11,14 +11,16 @@ use Illuminate\Queue\SerializesModels;
 
 class VoucherSetMerchantTeamApprovalRequestWasCreated
 {
-    use Dispatchable, InteractsWithSockets, SerializesModels;
+    use Dispatchable;
+    use InteractsWithSockets;
+    use SerializesModels;
 
     /**
      * Create a new event instance.
      *
-     * @param VoucherSetMerchantTeamApprovalRequest $request
+     * @param VoucherSetMerchantTeamApprovalRequest $voucherSetMerchantTeamApprovalRequest
      */
-    public function __construct(public VoucherSetMerchantTeamApprovalRequest $request) {}
+    public function __construct(public VoucherSetMerchantTeamApprovalRequest $voucherSetMerchantTeamApprovalRequest) {}
 
     /**
      * Get the channels the event should broadcast on.

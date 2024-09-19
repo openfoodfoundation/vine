@@ -32,16 +32,10 @@ class TestCommand extends Command
     public function handle()
     {
 
-        $me = User::find(2);
-
-        $voucherSet = VoucherSet::factory()->create([
-            'created_by_team_id'           => 1,
-            'allocated_to_service_team_id' => 1,
-            'created_by_user_id'           => 2,
-        ]);
+        $me = User::find(1);
 
         $approvalRequest = VoucherSetMerchantTeamApprovalRequest::factory()->create([
-            'voucher_set_id'   => $voucherSet->id,
+            'voucher_set_id'   => 'e6765b13-0d7a-3c8b-870a-ca8765c27b35',
             'merchant_team_id' => 1,
             'merchant_user_id' => $me->id,
         ]);
