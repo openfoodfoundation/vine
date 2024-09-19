@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Voucher extends Model
@@ -54,5 +55,10 @@ class Voucher extends Model
     public function voucherRedemptions(): HasMany
     {
         return $this->hasMany(VoucherRedemption::class, 'voucher_id', 'id');
+    }
+
+    public function voucherBeneficiaryDistribution(): HasOne
+    {
+        return $this->hasOne(VoucherBeneficiaryDistribution::class, 'voucher_id', 'id');
     }
 }
