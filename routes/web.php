@@ -218,7 +218,6 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/voucher-set/{voucherSetId}', function ($voucherSetId) {
 
-
         $voucherSet = VoucherSet::find($voucherSetId);
 
         /**

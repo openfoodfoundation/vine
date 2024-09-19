@@ -23,10 +23,9 @@ class HandleVoucherSetMerchantTeamApprovalRequestWasCreatedEvent implements Shou
     {
         dispatch(new SendVoucherSetMerchantTeamApprovalRequestEmailNotification($event->voucherSetMerchantTeamApprovalRequest));
 
-
         AuditItemService::createAuditItemForEvent(
             model    : $event->voucherSetMerchantTeamApprovalRequest->voucherSet,
-            eventText: 'Merchant team approval requests were distributed for voucher set #'.$event->voucherSetMerchantTeamApprovalRequest->voucher_set_id,
+            eventText: 'Merchant team approval requests were distributed for voucher set #' . $event->voucherSetMerchantTeamApprovalRequest->voucher_set_id,
             teamId   : $event->voucherSetMerchantTeamApprovalRequest->merchant_team_id
         );
 

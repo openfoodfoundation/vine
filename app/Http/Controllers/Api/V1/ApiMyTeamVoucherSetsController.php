@@ -110,7 +110,7 @@ class ApiMyTeamVoucherSetsController extends Controller
     {
         $this->query = VoucherSet::where(function ($query) {
             $query->where('created_by_team_id', Auth::user()->current_team_id)
-                  ->orWhere('allocated_to_service_team_id', Auth::user()->current_team_id);
+                ->orWhere('allocated_to_service_team_id', Auth::user()->current_team_id);
         })->with($this->associatedData);
 
         $this->query = $this->updateReadQueryBasedOnUrl();
@@ -189,7 +189,7 @@ class ApiMyTeamVoucherSetsController extends Controller
 
         $this->query = VoucherSet::where(function ($query) {
             $query->where('created_by_team_id', Auth::user()->current_team_id)
-                  ->orWhere('allocated_to_service_team_id', Auth::user()->current_team_id);
+                ->orWhere('allocated_to_service_team_id', Auth::user()->current_team_id);
         })->with($this->associatedData);
 
         $this->query = $this->updateReadQueryBasedOnUrl();
