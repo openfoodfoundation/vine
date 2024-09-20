@@ -53,10 +53,10 @@ class GenerateStorageVoucherQrCode implements ShouldQueue
         $file = Storage::put($path, $dataSvg);
 
         // Get template for the team - this may not be needed as users select template from frontend
-//        $voucherTemplate = VoucherTemplate::where('team_id', $this->voucher->created_by_team_id)->first();
-//
-//        if ($voucherTemplate) {
-//            VoucherTemplateService::generateVoucherTemplate($voucherTemplate, $this->voucher);
-//        }
+        //        $voucherTemplate = VoucherTemplate::where('team_id', $this->voucher->created_by_team_id)->first();
+        //
+        //        if ($voucherTemplate) {
+        //            VoucherTemplateService::generateVoucherTemplate($voucherTemplate, $this->voucher);
+        //        }
     }
 }

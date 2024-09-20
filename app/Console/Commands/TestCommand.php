@@ -39,8 +39,7 @@ class TestCommand extends Command
         //        $voucher->num_voucher_redemptions = 0;
         //        $voucher->save();
 
-//        $voucher = Voucher::factory()->create();
-
+        //        $voucher = Voucher::factory()->create();
 
         $me = User::find(2);
 
@@ -72,10 +71,10 @@ class TestCommand extends Command
             'created_by_user_id'           => $me->id,
             'total_set_value'              => 3500,
             'total_set_value_remaining'    => 3500,
-            'num_vouchers' => 0,
-            'num_voucher_redemptions' => 0,
+            'num_vouchers'                 => 0,
+            'num_voucher_redemptions'      => 0,
             'denomination_json'            => $myJSON,
-            'is_denomination_valid' => 1,
+            'is_denomination_valid'        => 1,
         ]);
 
     }
