@@ -39,6 +39,7 @@ class VoucherSetGenerationFailedNotification extends Notification
      * Get the mail representation of the notification.
      *
      * @param object $notifiable
+     *
      * @return SlackMessage
      */
     public function toSlack(object $notifiable): SlackMessage
