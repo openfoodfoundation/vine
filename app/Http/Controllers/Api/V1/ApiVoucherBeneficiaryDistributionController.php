@@ -21,6 +21,7 @@ use Knuckles\Scribe\Attributes\Endpoint;
 use Knuckles\Scribe\Attributes\Group;
 use Knuckles\Scribe\Attributes\Response;
 use Knuckles\Scribe\Attributes\Subgroup;
+use Str;
 
 #[Group('App Endpoints')]
 #[Subgroup('/voucher-beneficiary-distribution', 'API for create voucher beneficiary distributions')]
@@ -83,7 +84,6 @@ class ApiVoucherBeneficiaryDistributionController extends Controller
             ],
             'beneficiary_email' => [
                 'required',
-                'email',
             ],
         ];
 
@@ -102,21 +102,60 @@ class ApiVoucherBeneficiaryDistributionController extends Controller
             $voucherId            = $this->request->get('voucher_id');
             $existingDistribution = VoucherBeneficiaryDistribution::where('voucher_id', $voucherId)->first();
 
+            $beneficiaryEmail = $this->request->get('beneficiary_email');
+
+            /**
+             * This voucher has already been distributed before
+             */
             if ($existingDistribution) {
-                $this->responseCode = 400;
-                $this->message      = 'Voucher has already been distributed to beneficiary.';
+
+                /**
+                 * The incoming email address does not match the email associated with the email
+                 */
+                if (Crypt::decrypt($existingDistribution->beneficiary_email_encrypted) !== Crypt::decrypt($beneficiaryEmail)) {
+                    $this->responseCode = 400;
+                    $this->message      = 'Voucher has already been distributed to different email address. Cannot redistribute.';
+
+                    return $this->respond();
+                }
+
+                $beneficiaryEmail = Crypt::decrypt($existingDistribution->beneficiary_email_encrypted);
+            }
+            else {
+
+                /**
+                 * Validate the email, not done initially as it may have come in encrypted due to being a resend
+                 */
+                $emailValidator = Validator::make(
+                    ['beneficiary_email' => $beneficiaryEmail],
+                    ['beneficiary_email' => ['email:rfc,dns']]
+                );
+
+                if ($emailValidator->fails()) {
+
+                    $this->responseCode = 400;
+                    $this->message      = $emailValidator->errors()->first();
+
+                    return $this->respond();
+                }
+            }
+
+            $voucher = Voucher::where('created_by_team_id', Auth::user()->current_team_id)
+                ->orWhere('allocated_to_service_team_id', Auth::user()->current_team_id)
+                ->find($voucherId);
+
+            if (!$voucher) {
+                $this->responseCode = 404;
+                $this->message      = ApiResponse::RESPONSE_NOT_FOUND->value;
 
                 return $this->respond();
             }
 
-            $voucher          = Voucher::find($voucherId);
-            $beneficiaryEmail = $this->request->get('beneficiary_email');
-
-            $model                     = new VoucherBeneficiaryDistribution();
-            $model->voucher_id         = $voucher->id;
-            $model->voucher_set_id     = $voucher->voucher_set_id;
-            $model->beneficiary_email  = Crypt::encrypt($beneficiaryEmail);
-            $model->created_by_user_id = Auth::id();
+            $model                              = new VoucherBeneficiaryDistribution();
+            $model->voucher_id                  = $voucher->id;
+            $model->voucher_set_id              = $voucher->voucher_set_id;
+            $model->beneficiary_email_encrypted = Crypt::encrypt($beneficiaryEmail);
+            $model->created_by_user_id          = Auth::id();
             $model->save();
 
             $this->data = $model;
