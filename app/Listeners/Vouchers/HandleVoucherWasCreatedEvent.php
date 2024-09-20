@@ -35,7 +35,7 @@ class HandleVoucherWasCreatedEvent implements ShouldQueue
 
         }
 
-        if (env('APP_ENV') != 'testing') {
+        if (config('app.env') != 'testing') {
             dispatch(new GenerateStorageVoucherQrCode($event->voucher));
         }
     }
