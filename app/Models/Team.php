@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Events\Teams\TeamWasCreated;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -46,5 +47,10 @@ class Team extends Model
     public function teamsThisTeamIsServiceFor(): HasMany
     {
         return $this->hasMany(TeamServiceTeam::class, 'service_team_id', 'id');
+    }
+
+    public function country(): BelongsTo
+    {
+        return $this->belongsTo(Country::class, 'country_id', 'id');
     }
 }

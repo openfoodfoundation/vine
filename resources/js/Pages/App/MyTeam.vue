@@ -6,6 +6,7 @@ import MyTeamTopNavigation from "@/Components/App/Search/SearchComponent.vue";
 import MyTeamVouchersComponent from "@/Components/App/MyTeamVouchersComponent.vue";
 import MyTeamVoucherSetsComponent from "@/Components/App/MyTeamVoucherSetsComponent.vue";
 import SearchComponent from "@/Components/App/Search/SearchComponent.vue";
+import MyTeamEditorComponent from "@/Components/App/MyTeamEditorComponent.vue";
 
 const myTeam = ref({})
 const myTeams = ref({})
@@ -86,21 +87,8 @@ function getMyTeams() {
             </div>
         </div>
 
-        <div class="card">
-            <div class="card-header">
-                Voucher sets Created by my team
-            </div>
+        <MyTeamEditorComponent></MyTeamEditorComponent>
 
-            <MyTeamVoucherSetsComponent filter-voucher-sets="-created"></MyTeamVoucherSetsComponent>
-        </div>
-
-        <div class="card">
-            <div class="card-header">
-                Voucher sets allocated to my team
-            </div>
-
-            <MyTeamVoucherSetsComponent filter-voucher-sets="-allocated"></MyTeamVoucherSetsComponent>
-        </div>
 
         <div class="pb-32">
 

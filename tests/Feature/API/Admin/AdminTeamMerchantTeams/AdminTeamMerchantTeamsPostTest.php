@@ -2,6 +2,8 @@
 
 namespace Tests\Feature\API\Admin\AdminTeamMerchantTeams;
 
+use App\Enums\ApiResponse;
+use App\Models\Country;
 use App\Models\Team;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -31,7 +33,7 @@ class AdminTeamMerchantTeamsPostTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function itCanStoreATeamMerchantTeam()
+    public function itCanStoreATeamMerchantTeamIfSameCountry()
     {
         $this->user = $this->createAdminUser();
 
@@ -39,8 +41,14 @@ class AdminTeamMerchantTeamsPostTest extends BaseAPITestCase
             $this->user
         );
 
-        $team         = Team::factory()->create();
-        $merchantTeam = Team::factory()->create();
+        $randomCountryId = rand(0, (Country::count() - 1));
+
+        $team = Team::factory()->create([
+            'country_id' => $randomCountryId,
+        ]);
+        $merchantTeam = Team::factory()->create([
+            'country_id' => $randomCountryId,
+        ]);
 
         $payload = [
             'team_id'          => $team->id,
@@ -53,5 +61,36 @@ class AdminTeamMerchantTeamsPostTest extends BaseAPITestCase
         $response->assertStatus(200);
         $this->assertEquals($payload['team_id'], $responseObj->data->team_id);
         $this->assertEquals($payload['merchant_team_id'], $responseObj->data->merchant_team_id);
+    }
+
+    #[Test]
+    public function itCanNotStoreATeamMerchantTeamIfNotSameCountry()
+    {
+        $this->user = $this->createAdminUser();
+
+        Sanctum::actingAs(
+            $this->user
+        );
+
+        $randomCountryId1 = rand(0, 150);
+        $randomCountryId2 = rand(151, (Country::count() - 1));
+
+        $team = Team::factory()->create([
+            'country_id' => $randomCountryId1,
+        ]);
+        $merchantTeam = Team::factory()->create([
+            'country_id' => $randomCountryId2,
+        ]);
+
+        $payload = [
+            'team_id'          => $team->id,
+            'merchant_team_id' => $merchantTeam->id,
+        ];
+
+        $response    = $this->postJson($this->apiRoot . $this->endpoint, $payload);
+        $responseObj = json_decode($response->getContent());
+
+        $response->assertStatus(400);
+        $this->assertEquals($responseObj->meta->message, ApiResponse::RESPONSE_COUNTRY_MISMATCH->value);
     }
 }

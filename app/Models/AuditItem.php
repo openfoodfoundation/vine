@@ -50,6 +50,9 @@ class AuditItem extends Model
             case TeamUser::class:
                 $url = '/my-team';
                 break;
+            case VoucherSet::class:
+                $url = '/voucher-set/' . $this->auditable_id;
+                break;
         }
 
         return Attribute::make(
@@ -70,10 +73,11 @@ class AuditItem extends Model
                 $url = '/admin/user/' . $this->auditable_id;
                 break;
             case Team::class:
-                $url = '/admin/team/' . $this->auditable_id;
-                break;
             case TeamUser::class:
                 $url = '/admin/team/' . $this->auditable_id;
+                break;
+            case VoucherSet::class:
+                $url = '/admin/voucher-set/' . $this->auditable_id;
                 break;
             case PersonalAccessToken::class:
             case SanctumPersonalAccessToken::class:
