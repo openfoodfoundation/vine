@@ -83,7 +83,7 @@ class VoucherTemplateService
         $qrCodeData = Storage::get('voucher-sets/' . $voucher->voucher_set_id . '/vouchers/all/png/' . $voucher->id . '.png');
 
         $qrCode = Image::read($qrCodeData); // The QR
-        $qrCode->resize($voucherTemplate->voucher_qr_size, $voucherTemplate->voucher_qr_size);
+        $qrCode->resize($voucherTemplate->voucher_qr_size_px, $voucherTemplate->voucher_qr_size_px);
 
         // and insert a watermark for example
         $img->place($qrCode, 'top-left', $voucherTemplate->voucher_qr_x, $voucherTemplate->voucher_qr_y);
@@ -91,9 +91,9 @@ class VoucherTemplateService
         $code = Str::substr($voucher->id, 0, 5);
         $code = strtoupper($code);
 
-        $img->text($voucherTemplate->voucher_code_prefix . ' ' . $code, $voucherTemplate->voucher_id_x, $voucherTemplate->voucher_id_y, function ($font) use ($voucherTemplate) {
+        $img->text($voucherTemplate->voucher_code_prefix . ' ' . $code, $voucherTemplate->voucher_code_x, $voucherTemplate->voucher_code_y, function ($font) use ($voucherTemplate) {
             $font->file(public_path($voucherTemplate->overlay_font_path));
-            $font->size($voucherTemplate->voucher_id_size_px);
+            $font->size($voucherTemplate->voucher_code_size_px);
         });
 
         $expiry = ($voucher->expires_at == null) ? '---' : $voucher->expires_at->format('d-M-Y');

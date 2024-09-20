@@ -5,6 +5,8 @@ namespace App\Console\Commands\VoucherSets;
 use App\Models\User;
 use App\Models\Voucher;
 use App\Models\VoucherSet;
+use App\Notifications\Mail\VoucherSets\VoucherSetGenerationSuccessEmailNotification;
+use App\Notifications\Slack\VoucherSets\VoucherSetGenerationFailedNotification;
 use App\Services\VoucherSetService;
 use Illuminate\Console\Command;
 
@@ -38,18 +40,14 @@ class GenerateVoucherSetVouchersCommand extends Command
             /**
              * Re-validate the denomination JSON
              */
-            $voucherSetIsValid = VoucherSetService::validateVoucherSetDenominations($voucherSet);
+            $voucherSetIsValid = VoucherSetService::validateVoucherSetDenominations(voucherSet: $voucherSet);
 
-            // Send Email to the team to notify 'The voucher set denomination was invalid'
             if (!$voucherSetIsValid) {
 
                 $this->line('Voucher set is invalid.');
 
-                $notifyUser = User::where('email', env('MAIL_DEFAULT_EMAIL'))->first();
-
-                if ($notifyUser) {
-                    //                                        $notifyUser->notify(new VoucherSetCanNotBeGenerated($voucherSet, 'The voucher set denomination was invalid.'));
-                }
+                $user = User::first();
+                $user->notify(new VoucherSetGenerationFailedNotification(voucherSet: $voucherSet, reason: 'The voucher set denomination was invalid.'));
 
                 return 0;
             }
@@ -87,10 +85,7 @@ class GenerateVoucherSetVouchersCommand extends Command
 
             $notificationUser = User::find($voucherSet->created_by_user_id);
 
-            // Send Email/Slack to the team to notify 'The voucher set was successfully generated'
-            if ($notificationUser) {
-                //                $notificationUser->notify(new VoucherSetWasGeneratedOkay($voucherSet));
-            }
+            $notificationUser?->notify(new VoucherSetGenerationSuccessEmailNotification(voucherSet: $voucherSet));
 
         }
 
