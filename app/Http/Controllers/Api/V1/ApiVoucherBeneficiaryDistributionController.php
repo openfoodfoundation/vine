@@ -21,7 +21,6 @@ use Knuckles\Scribe\Attributes\Endpoint;
 use Knuckles\Scribe\Attributes\Group;
 use Knuckles\Scribe\Attributes\Response;
 use Knuckles\Scribe\Attributes\Subgroup;
-use Str;
 
 #[Group('App Endpoints')]
 #[Subgroup('/voucher-beneficiary-distribution', 'API for create voucher beneficiary distributions')]
