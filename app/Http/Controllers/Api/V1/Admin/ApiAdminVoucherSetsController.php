@@ -206,6 +206,8 @@ class ApiAdminVoucherSetsController extends Controller
             ],
             'funded_by_team_id' => [
                 'sometimes',
+                'integer',
+                Rule::exists('teams', 'id'),
             ],
             'total_set_value' => [
                 'required',
