@@ -9,10 +9,13 @@ use App\Models\User;
 use App\Models\Voucher;
 use App\Models\VoucherSet;
 use App\Models\VoucherSetMerchantTeam;
+use App\Models\VoucherSetMerchantTeamApprovalRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\View;
 use Inertia\Inertia;
 
 Route::get('/api-documentation', function () {
@@ -23,23 +26,71 @@ Route::get('/', function () {
     return Redirect::to('/dashboard');
 });
 
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/bounce', function (Request $request) {
+
+    if (!$request->hasValidSignature()) {
+        return Redirect::to('/?issue=bounce:invalidSignature');
+    }
+
+    $hasRedirectPath    = $request->has('redirectPath');
+    $hasEncryptedUserId = $request->has('id');
+
+    if (!$hasRedirectPath) {
+        return Redirect::to('/?issue=bounce:invalidRedirectPath');
+    }
+
+    if (!$hasEncryptedUserId) {
+        return Redirect::to('/?issue=bounce:invalidIdentifier');
+    }
+
+    $redirectPath    = $request->get('redirectPath');
+    $encryptedUserId = $request->get('id');
+    $userId          = Crypt::decrypt($encryptedUserId);
+
+    /**
+     * The request is valid
+     * Ensure the user is valid
+     */
+    $user = User::find($userId);
+    if (!$user) {
+        return Redirect::to('/?issue=bounce:invalidUser');
+    }
+
+    Auth::login($user);
+
+    return Redirect::to($redirectPath);
+
+})->name('bounce');
 
 Route::middleware('auth')->group(function () {
+
+    Route::get('/dashboard', function () {
+        return Inertia::render('Dashboard');
+    })->name('dashboard');
 
     Route::get('/my-team', function () {
         return Inertia::render('App/MyTeam');
     })->name('my-team');
 
-    Route::get('/my-voucher-sets', function () {
-        return Inertia::render('App/MyVoucherSets');
-    })->name('my-voucher-sets');
+    Route::get('/my-voucher-set-merchant-team-approval-request/{approvalRequestId}', function (Request $request, $approvalRequestId) {
 
-    Route::get('/my-vouchers', function () {
-        return Inertia::render('App/MyVouchers');
-    })->name('my-vouchers');
+        $approvalRequest = VoucherSetMerchantTeamApprovalRequest::where('merchant_user_id', Auth::id())
+            ->find($approvalRequestId);
+
+        if (!$approvalRequest) {
+            return Redirect::to('/');
+        }
+
+        return Inertia::render('App/VoucherSets/VoucherSetMerchantTeamApproval', [
+            'approvalRequestId' => $approvalRequestId,
+            'approve'           => $request->selected == 'approve',
+        ]);
+
+    })->name('my-voucher-set-merchant-team-approval-request');
+
+    Route::get('/my-team-voucher-sets', function () {
+        return Inertia::render('App/VoucherSets/MyTeamVoucherSets');
+    })->name('my-team-voucher-sets');
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -213,6 +264,7 @@ Route::middleware('auth')->group(function () {
         return Inertia::render('App/Vouchers/VoucherSet', [
             'voucherSetId' => $voucherSetId,
         ]);
+
     })->name('voucher-set');
 
     Route::get('/stop-impersonating', function (Request $request) {

@@ -93,6 +93,9 @@ const showingNavigationDropdown = ref(false);
                                         <DropdownLink :href="route('my-team')">
                                             My Team
                                         </DropdownLink>
+                                        <DropdownLink :href="route('my-team-voucher-sets')">
+                                            Voucher Sets
+                                        </DropdownLink>
                                         <DropdownLink :href="route('audit-trail')">
                                             Audit Trail
                                         </DropdownLink>

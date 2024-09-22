@@ -9,13 +9,9 @@ import AdminTeamMerchantTeamSelectComponent
     from "@/Components/Admin/TeamMerchantTeams/AdminTeamMerchantTeamSelectComponent.vue";
 
 const $props = defineProps({
-    teamId: {
+    team: {
         required: true,
-        type: Number,
-    },
-    teamName: {
-        required: true,
-        // type: String
+        type: Object
     }
 });
 
@@ -41,7 +37,7 @@ function cancelAddingNewMerchant() {
 }
 
 function getMerchants(page = 1) {
-    axios.get('/admin/team-merchant-teams?cached=false&where[]=team_id,' + $props.teamId + '&page=' + page + '&relations=merchantTeam').then(response => {
+    axios.get('/admin/team-merchant-teams?cached=false&where[]=team_id,' + $props.team.id + '&page=' + page + '&relations=merchantTeam').then(response => {
         merchants.value = response.data.data
     }).catch(error => {
         console.log(error)
@@ -49,7 +45,7 @@ function getMerchants(page = 1) {
 }
 
 function getMerchantTeams(page = 1) {
-    axios.get('/admin/team-merchant-teams?cached=false&where[]=merchant_team_id,' + $props.teamId + '&page=' + page + '&relations=team').then(response => {
+    axios.get('/admin/team-merchant-teams?cached=false&where[]=merchant_team_id,' + $props.team.id + '&page=' + page + '&relations=team').then(response => {
         merchantTeams.value = response.data.data
     }).catch(error => {
         console.log(error)
@@ -83,25 +79,42 @@ function removeMerchantTeams(id) {
 }
 
 function submitTeamMerchant() {
-    let payload = {
-        team_id: $props.teamId,
-        merchant_team_id: teamAddingAsMerchant.value.id
-    }
+    if ($props.team.country_id === teamAddingAsMerchant.value.country_id) {
 
-    axios.post('/admin/team-merchant-teams', payload).then(response => {
+        let payload = {
+            team_id: $props.team.id,
+            merchant_team_id: teamAddingAsMerchant.value.id
+        }
+
+        axios.post('/admin/team-merchant-teams', payload).then(response => {
+            Swal.fire({
+                title: 'Success!',
+                icon: 'success',
+                timer: 1000
+            }).then(() => {
+                teamAddingAsMerchant.value = {}
+                creatingNewTeamMerchant.value = false
+                getMerchants()
+                getMerchantTeams()
+            })
+        }).catch(error => {
+            console.log(error)
+        })
+
+    } else {
+
         Swal.fire({
-            title: 'Success!',
-            icon: 'success',
-            timer: 1000
-        }).then(() => {
+            title: "Country / Currency mismatch",
+            html: "Selected merchant (" + teamAddingAsMerchant.value.name + ") is not sharing same country as the team (" + $props.team.name + "). We cannot add merchant which has different country/currency. Please update.",
+            icon: "warning",
+            confirmButtonColor: "#3085d6",
+            confirmButtonText: "Got it!"
+        }).then((result) => {
             teamAddingAsMerchant.value = {}
             creatingNewTeamMerchant.value = false
-            getMerchants()
-            getMerchantTeams()
-        })
-    }).catch(error => {
-        console.log(error)
-    })
+        });
+
+    }
 }
 
 function teamSelected(team) {
@@ -122,7 +135,7 @@ function teamSelected(team) {
                         Merchant teams
                     </div>
                     <div class="text-xs italic">
-                        These teams may redeem vouchers for {{ teamName }}
+                        These teams may redeem vouchers for {{ team.name }}
                     </div>
                 </div>
 
@@ -145,7 +158,7 @@ function teamSelected(team) {
 
             <div v-if="addingNewMerchant">
                 <div class="py-2">Select merchant team...</div>
-                <AdminTeamMerchantTeamSelectComponent :teamId="teamId"
+                <AdminTeamMerchantTeamSelectComponent :teamId="team.id"
                                                       @teamSelected="teamSelected"></AdminTeamMerchantTeamSelectComponent>
             </div>
 
@@ -188,11 +201,11 @@ function teamSelected(team) {
         <div class="card">
 
             <div class="card-header">
-                <div>
-                    Teams {{ teamName }} is merchant for
+                <div v-if="team.name">
+                    Teams {{ team.name }} is merchant for
                 </div>
                 <div class="text-xs italic">
-                    {{ teamName }} may redeem vouchers for these teams
+                    {{ team.name }} may redeem vouchers for these teams
                 </div>
             </div>
 

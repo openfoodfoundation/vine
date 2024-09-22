@@ -1,6 +1,7 @@
 <?php
 
 /** @noinspection PhpUndefinedMethodInspection */
+
 /** @noinspection PhpUnusedParameterInspection */
 
 namespace App\Http\Controllers\Api\V1\Admin;
@@ -9,6 +10,7 @@ use App\Enums\ApiResponse;
 use App\Exceptions\DisallowedApiFieldException;
 use App\Http\Controllers\Api\HandlesAPIRequests;
 use App\Http\Controllers\Controller;
+use App\Models\Team;
 use App\Models\TeamMerchantTeam;
 use Exception;
 use Illuminate\Http\JsonResponse;
@@ -59,7 +61,7 @@ class ApiAdminTeamMerchantTeamsController extends Controller
          * The validation array.
          */
         $validationArray = [
-            'team_id' => [
+            'team_id'          => [
                 'required',
                 Rule::exists('teams', 'id'),
             ],
@@ -75,42 +77,59 @@ class ApiAdminTeamMerchantTeamsController extends Controller
 
             $this->responseCode = 400;
             $this->message      = $validator->errors()
-                ->first();
+                                            ->first();
 
-        }
-        else {
+        } else {
 
-            try {
+            $teamId         = $this->request->get('team_id');
+            $merchantTeamId = $this->request->get('merchant_team_id');
+            /**
+             * Check country
+             */
+            $team     = Team::find($teamId);
+            $merchant = Team::find($merchantTeamId);
 
-                $model = TeamMerchantTeam::where('team_id', $this->request->get('team_id'))
-                    ->where('merchant_team_id', $this->request->get('merchant_team_id'))
-                    ->first();
+            if ($team->country_id != $merchant->country_id) {
 
-                if (!$model) {
-                    $model = new TeamMerchantTeam();
+                $this->responseCode = 400;
+                $this->message      = ApiResponse::RESPONSE_COUNTRY_MISMATCH->value;
 
-                    foreach ($validationArray as $key => $validationRule) {
-                        $value = $this->request->get($key);
-                        if ((isset($value))) {
-                            $model->$key = $value;
+            } else {
+
+                try {
+
+                    $model = TeamMerchantTeam::where('team_id', $teamId)
+                                             ->where('merchant_team_id', $merchantTeamId)
+                                             ->first();
+
+                    if (!$model) {
+
+                        $model = new TeamMerchantTeam();
+
+                        foreach ($validationArray as $key => $validationRule) {
+                            $value = $this->request->get($key);
+                            if ((isset($value))) {
+                                $model->$key = $value;
+                            }
                         }
+
+                        $model->save();
+
                     }
 
-                    $model->save();
+                    $this->message = ApiResponse::RESPONSE_SAVED->value;
+
+                    $this->data = $model;
+
+                } catch (Exception $e) {
+
+                    $this->responseCode = 500;
+                    $this->message      = ApiResponse::RESPONSE_ERROR->value . ': "' . $e->getMessage() . '".';
 
                 }
 
-                $this->message = ApiResponse::RESPONSE_SAVED->value;
-
-                $this->data = $model;
-
             }
-            catch (Exception $e) {
 
-                $this->responseCode = 500;
-                $this->message      = ApiResponse::RESPONSE_ERROR->value . ': "' . $e->getMessage() . '".';
-
-            }
         }
 
         return $this->respond();
@@ -165,16 +184,14 @@ class ApiAdminTeamMerchantTeamsController extends Controller
                 $this->responseCode = 404;
                 $this->message      = ApiResponse::RESPONSE_NOT_FOUND->value;
 
-            }
-            else {
+            } else {
 
                 $model->delete();
                 $this->message = ApiResponse::RESPONSE_DELETED->value;
 
             }
 
-        }
-        catch (Exception $e) {
+        } catch (Exception $e) {
 
             $this->responseCode = 500;
             $this->message      = ApiResponse::RESPONSE_ERROR->value . ':' . $e->getMessage();

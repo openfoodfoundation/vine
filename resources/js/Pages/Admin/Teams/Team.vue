@@ -314,7 +314,7 @@ function updateTeam() {
 
 
         <div class="container mx-auto">
-            <AdminTeamMerchantTeamsComponent :teamId="$props.id" :teamName="team.name"/>
+            <AdminTeamMerchantTeamsComponent :team="team"/>
         </div>
 
 

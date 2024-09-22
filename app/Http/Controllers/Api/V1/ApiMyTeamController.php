@@ -15,6 +15,7 @@ use Exception;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
 use Knuckles\Scribe\Attributes\Authenticated;
 use Knuckles\Scribe\Attributes\Endpoint;
 use Knuckles\Scribe\Attributes\Group;
@@ -33,6 +34,7 @@ class ApiMyTeamController extends Controller
      */
     public array $availableRelations = [
         'teamUsers.user',
+        'country',
     ];
 
     public static array $searchableFields = [];
@@ -124,7 +126,11 @@ class ApiMyTeamController extends Controller
         $validationArray = [
             'name' => [
                 'sometimes',
-                'string',
+            ],
+            'country_id' => [
+                'sometimes',
+                'integer',
+                Rule::exists('countries', 'id'),
             ],
         ];
 
