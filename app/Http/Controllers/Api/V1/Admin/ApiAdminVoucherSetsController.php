@@ -208,6 +208,7 @@ class ApiAdminVoucherSetsController extends Controller
             ],
             'funded_by_team_id' => [
                 'sometimes',
+                'nullable',
                 'integer',
                 Rule::exists('teams', 'id'),
             ],

@@ -2,7 +2,6 @@
 
 namespace App\Listeners\VoucherSets;
 
-use App\Events\Vouchers\VoucherWasCreated;
 use App\Events\VoucherSets\VoucherSetWasCreated;
 use App\Jobs\VoucherSets\CreateApprovalRequestsForListedMerchantsOnVoucherSet;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -17,7 +16,7 @@ class HandleVoucherSetWasCreatedEvent implements ShouldQueue
     /**
      * Handle the event.
      *
-     * @param VoucherWasCreated $event
+     * @param VoucherSetWasCreated $event
      */
     public function handle(VoucherSetWasCreated $event): void
     {
