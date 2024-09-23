@@ -13,6 +13,7 @@ use App\Events\VoucherSetMerchantTeamApprovalRequest\VoucherSetMerchantTeamAppro
 use App\Exceptions\DisallowedApiFieldException;
 use App\Http\Controllers\Api\HandlesAPIRequests;
 use App\Http\Controllers\Controller;
+use App\Models\VoucherSet;
 use App\Models\VoucherSetMerchantTeamApprovalRequest;
 use Exception;
 use Illuminate\Http\JsonResponse;
@@ -179,13 +180,22 @@ class ApiMyTeamVSMTARController extends Controller
 
                     $answer = $this->request->get('approval_status');
 
+                    $voucherSet = VoucherSet::find($model->voucherSet->id);
+
                     if ($answer == VoucherSetMerchantTeamApprovalRequestStatus::APPROVED->value) {
+
+                        if ($voucherSet) {
+                            $voucherSet->merchant_approval_request_id = $model->id;
+                            $voucherSet->save();
+                        }
+
                         event(new VoucherSetMerchantTeamApprovalRequestWasApproved($model));
                     }
 
                     if ($answer == VoucherSetMerchantTeamApprovalRequestStatus::REJECTED->value) {
                         event(new VoucherSetMerchantTeamApprovalRequestWasRejected($model));
                     }
+
 
                     $this->message = ApiResponse::RESPONSE_UPDATED->value;
                     $this->data    = $model;
