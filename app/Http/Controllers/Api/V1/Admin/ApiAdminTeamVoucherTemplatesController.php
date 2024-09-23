@@ -30,6 +30,7 @@ class ApiAdminTeamVoucherTemplatesController extends Controller
 
     public static array $searchableFields = [
         'team_id',
+        'archived_at'
     ];
 
     /**

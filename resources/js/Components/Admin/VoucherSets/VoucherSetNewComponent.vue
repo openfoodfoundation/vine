@@ -5,7 +5,6 @@ import swal from "sweetalert2";
 import {usePage} from "@inertiajs/vue3";
 import SecondaryButton from "@/Components/SecondaryButton.vue";
 import PrimaryButton from "@/Components/PrimaryButton.vue";
-import InputLabel from "@/Components/InputLabel.vue";
 
 /**
  * Data
@@ -33,11 +32,17 @@ const filteredTeamServiceTeams = ref([]);
 const selectedServiceTeam = ref('');
 const serviceTeamSearchQuery = ref('');
 
+// Voucher templates
+const myTeamVoucherTemplates = ref([]);
+const selectedVoucherTemplate = ref({});
+
+// Voucher set
 const voucherSet = ref({
     is_test: 0,
     allocated_to_service_team_id: '',
     merchant_team_ids: [],
     funded_by_team_id: '',
+    voucher_template_id: '',
     total_set_value: 0,
     denominations: [
         {number: 1, value: 5},
@@ -132,7 +137,7 @@ function getFundingTeams() {
 }
 
 function getMerchantTeamsForSelectedServiceTeam(selectedServiceTeam) {
-    axios.get('/admin/team-merchant-teams?relations=merchantTeam&where[]=team_id,' +selectedServiceTeam.id).then(response => {
+    axios.get('/admin/team-merchant-teams?relations=merchantTeam&where[]=team_id,' + selectedServiceTeam.id).then(response => {
         allTeamMerchantTeams.value = response.data.data.data;
         serviceTeamMerchantTeams.value = response.data.data.data;
     }).catch(error => {
@@ -148,6 +153,18 @@ function getServiceTeams() {
     axios.get('/admin/team-service-teams?relations=serviceTeam&where[]=team_id,' + $props.auth.user.current_team_id).then(response => {
         allTeamServiceTeams.value = response.data.data.data;
         filteredTeamServiceTeams.value = response.data.data.data;
+    }).catch(error => {
+        swal.fire({
+            icon: 'error',
+            title: 'Oops!',
+            text: error.response.data.meta.message,
+        });
+    });
+}
+
+function getMyTeamVoucherTemplates() {
+    axios.get('/admin/team-voucher-templates?cached=false&where[]=team_id,' + $props.auth.user.current_team_id + '&where[]=archived_at,null').then(response => {
+        myTeamVoucherTemplates.value = response.data.data.data;
     }).catch(error => {
         swal.fire({
             icon: 'error',
@@ -179,8 +196,7 @@ function selectMerchantTeam(team) {
      * When they come back and ask for more, remove the below line.
      */
     voucherSet.value.merchant_team_ids = [];
-    if(!voucherSet.value.merchant_team_ids.includes(team.id))
-    {
+    if (!voucherSet.value.merchant_team_ids.includes(team.id)) {
         voucherSet.value.merchant_team_ids.push(team.id);
 
         // TODO: See above TODO, we'll need to remove this too
@@ -199,8 +215,17 @@ function selectServiceTeam(team) {
     getMerchantTeamsForSelectedServiceTeam(team);
 }
 
-function resetSelectedServiceTeam()
-{
+function selectVoucherTemplate(template) {
+    if (voucherSet.value.voucher_template_id === template.id) {
+        voucherSet.value.voucher_template_id = '';
+        selectedVoucherTemplate.value = {};
+    } else {
+        voucherSet.value.voucher_template_id = template.id;
+        selectedVoucherTemplate.value = template;
+    }
+}
+
+function resetSelectedServiceTeam() {
     selectedServiceTeam.value = '';
     voucherSet.value.allocated_to_service_team_id = '';
     filteredTeamServiceTeams.value = Object.assign({}, allTeamServiceTeams.value);
@@ -208,7 +233,6 @@ function resetSelectedServiceTeam()
     allTeamMerchantTeams.value = [];
     voucherSet.value.merchant_team_ids = [];
 }
-
 
 
 function startProcess() {
@@ -237,6 +261,7 @@ function unselectMerchantTeam(index) {
 onMounted(() => {
     getFundingTeams();
     getServiceTeams();
+    getMyTeamVoucherTemplates();
 })
 
 
@@ -845,185 +870,258 @@ watch(serviceTeamSearchQuery, () => {
 
                 </div>
 
-                <div class="card">
+                <div id="voucherTemplateSection" class="card">
 
                     <div class="card-header flex justify-between">
-                        Review
+                        Template
 
-                        <div class="">
+                        <svg v-if="voucherSet.voucher_template_id"
+                             class="size-6 text-green-500 fill-green-100" fill="none" stroke="currentColor"
+                             stroke-width="1.5" viewBox="0 0 24 24"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"/>
+                        </svg>
 
-                            <div v-if="canGenerateVoucherSet"
-                                 class="flex text-green-500 items-center">
+                        <svg v-else
+                             class="size-6 text-orange-500 fill-orange-100" fill="none" stroke="currentColor"
+                             stroke-width="1.5"
+                             viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"/>
+                        </svg>
+                    </div>
 
-                                You have completed all the required sections
-                                <svg
-                                    class="size-6 text-green-500 fill-green-100" fill="none" stroke="currentColor"
-                                    stroke-width="1.5"
-                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-                                          stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                </svg>
+                    <div class="grid gap-4 grid-cols-6 mt-8">
+                        <div v-for="template in myTeamVoucherTemplates">
+                            <div :class="{
+                                'border-green-500': template.id === voucherSet.voucher_template_id,
+                                'opacity-40': voucherSet.voucher_template_id && template.id !== voucherSet.voucher_template_id
+                                }" class="hover:cursor-pointer border-2 rounded"
+                                 @click="selectVoucherTemplate(template)">
+                                <img :src="template.example_template_image_url" alt="" class="border rounded">
                             </div>
 
-
-                            <div v-else class="flex text-red-500 items-center">
-                                You have required sections that still need completing
-                                <svg
-                                    class="size-6 fill-red-100 ml-2" fill="none" stroke="currentColor"
-                                    stroke-width="1.5"
-                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"/>
-                                </svg>
+                            <div v-if="template.id === voucherSet.voucher_template_id"
+                                 class="text-xs italic text-center mt-1 text-green-500">
+                                Selected!
                             </div>
 
                         </div>
                     </div>
 
-                    <div class="my-8">
-                        <div>
-                            Please review the following details for your voucher set.
+
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <div class="card-header flex justify-between">
+                    Review
+
+                    <div class="">
+
+                        <div v-if="canGenerateVoucherSet"
+                             class="flex text-green-500 items-center">
+
+                            You have completed all the required sections
+                            <svg
+                                class="size-6 text-green-500 fill-green-100" fill="none" stroke="currentColor"
+                                stroke-width="1.5"
+                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+
+
+                        <div v-else class="flex text-red-500 items-center">
+                            You have required sections that still need completing
+                            <svg
+                                class="size-6 fill-red-100 ml-2" fill="none" stroke="currentColor"
+                                stroke-width="1.5"
+                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"/>
+                            </svg>
                         </div>
 
                     </div>
-                                        
+                </div>
 
-                    <div class="my-8">
-                        <ul class="list-disc space-y-6 pl-4">
-                            <li>
-                                The voucher is <span class="font-bold">{{
-                                    !voucherSet.is_test ? 'not a test' : 'a test'
+                <div class="my-8">
+                    <div>
+                        Please review the following details for your voucher set.
+                    </div>
+
+                </div>
+
+
+                <div class="my-8">
+                    <ul class="list-disc space-y-6 pl-4">
+                        <li>
+                            The voucher set is <span class="font-bold">{{
+                                !voucherSet.is_test ? 'not a test' : 'a test'
+                            }}</span>
+
+                            <button class="text-xs text-blue-500 ml-2 underline"
+                                    @click="scrollTo('testSection')">
+                                Edit
+                            </button>
+                        </li>
+
+                        <li>
+                            It has {{ selectedServiceTeam ? '' : ' not yet ' }} been allocated to service team
+                            <span
+                                v-if="selectedServiceTeam" class="font-bold">{{
+                                    selectedServiceTeam.name
                                 }}</span>
 
-                                <button class="text-xs text-blue-500 ml-2 underline"
-                                        @click="scrollTo('testSection')">
-                                    Edit
-                                </button>
-                            </li>
+                            <button class="text-xs text-blue-500 ml-2 underline"
+                                    @click="scrollTo('serviceTeamSection')">
+                                Edit
+                            </button>
+                        </li>
 
-                            <li>
-                                It has {{ selectedServiceTeam ? '' : ' not yet ' }} been allocated to service team
-                                <span
-                                    v-if="selectedServiceTeam" class="font-bold">{{
-                                        selectedServiceTeam.name
-                                    }}</span>
+                        <li>
+                            It has {{ selectedMerchantTeams.length ? '' : ' not yet ' }} been assigned to a
+                            merchant team(s)
 
-                                <button class="text-xs text-blue-500 ml-2 underline"
-                                        @click="scrollTo('serviceTeamSection')">
-                                    Edit
-                                </button>
-                            </li>
+                            <button class="text-xs text-blue-500 ml-2 underline"
+                                    @click="scrollTo('merchantTeamSection')">
+                                Edit
+                            </button>
 
-                            <li>
-                                It has {{ selectedMerchantTeams.length ? '' : ' not yet ' }} been assigned to a
-                                merchant team(s)
+                            <div v-for="merchantTeam in selectedMerchantTeams" :key="merchantTeam.id"
+                                 class="my-1 font-bold">
+                                {{ merchantTeam.name }}
+                            </div>
 
-                                <button class="text-xs text-blue-500 ml-2 underline"
-                                        @click="scrollTo('merchantTeamSection')">
-                                    Edit
-                                </button>
+                        </li>
 
-                                <div v-for="merchantTeam in selectedMerchantTeams" :key="merchantTeam.id"
-                                     class="my-1 font-bold">
-                                    {{ merchantTeam.name }}
-                                </div>
-
-                            </li>
-
-                            <li>
-                                It has <span class="font-bold">{{ selectedFundingTeam ? '' : ' not ' }}</span> been
-                                associated to funding team
-                                <span
-                                    v-if="selectedFundingTeam" class="font-bold">{{
-                                        selectedFundingTeam.name
-                                    }}</span>
-
-                                <button class="text-xs text-blue-500 ml-2 underline"
-                                        @click="scrollTo('fundingTeamSection')">
-                                    Edit
-                                </button>
-                            </li>
-
-
-                            <li>
-                                It has a total value of:
-
-                                <span class="font-bold">{{ voucherSet.total_set_value }}</span>
-
-                                <button class="text-xs text-blue-500 ml-2 underline"
-                                        @click="scrollTo('totalValueSection')">
-                                    Edit
-                                </button>
-                            </li>
-
-                            <li>
-                                Divided into denominations of:
-
-                                <button class="text-xs text-blue-500 ml-2 underline"
-                                        @click="scrollTo('denominationsSection')">
-                                    Edit
-                                </button>
-                                <ul>
-                                    <li v-for="denomination in voucherSet.denominations" class="font-bold">
-                                        {{ denomination.number }} {{ denomination.number === 1 ? 'unit' : 'units' }}
-                                        of
-                                        {{ denomination.value }} {{ $props.auth.teamCountry?.currency_code }}
-                                    </li>
-                                </ul>
-                            </li>
-
-
-                            <li>
-                                The voucher <span class="font-bold">{{
-                                    voucherSet.expires_at ? 'expires at ' + voucherSet.expires_at : 'does not expire'
+                        <li>
+                            It has <span class="font-bold">{{ selectedFundingTeam ? '' : ' not ' }}</span> been
+                            associated to funding team
+                            <span
+                                v-if="selectedFundingTeam" class="font-bold">{{
+                                    selectedFundingTeam.name
                                 }}</span>
+
+                            <button class="text-xs text-blue-500 ml-2 underline"
+                                    @click="scrollTo('fundingTeamSection')">
+                                Edit
+                            </button>
+                        </li>
+
+
+                        <li>
+                            It has a total value of:
+
+                            <span class="font-bold">{{ voucherSet.total_set_value }}</span>
+
+                            <button class="text-xs text-blue-500 ml-2 underline"
+                                    @click="scrollTo('totalValueSection')">
+                                Edit
+                            </button>
+                        </li>
+
+                        <li>
+                            Divided into denominations of:
+
+                            <button class="text-xs text-blue-500 ml-2 underline"
+                                    @click="scrollTo('denominationsSection')">
+                                Edit
+                            </button>
+                            <ul>
+                                <li v-for="denomination in voucherSet.denominations" class="font-bold">
+                                    {{ denomination.number }} {{ denomination.number === 1 ? 'unit' : 'units' }}
+                                    of
+                                    {{ denomination.value }} {{ $props.auth.teamCountry?.currency_code }}
+                                </li>
+                            </ul>
+                        </li>
+
+
+                        <li>
+                            The voucher <span class="font-bold">{{
+                                voucherSet.expires_at ? 'expires at ' + voucherSet.expires_at : 'does not expire'
+                            }}</span>
+
+                            <button class="text-xs text-blue-500 ml-2 underline"
+                                    @click="scrollTo('expirationSection')">
+                                Edit
+                            </button>
+                        </li>
+
+
+                        <li class="">
+                            <div v-if="voucherSet.voucher_set_type">
+                                Has a type of <span class="font-bold">{{ voucherSet.voucher_set_type }}</span>
 
                                 <button class="text-xs text-blue-500 ml-2 underline"
                                         @click="scrollTo('expirationSection')">
                                     Edit
                                 </button>
-                            </li>
+                            </div>
+                            <div v-else>
+                                Does <span class="font-bold">not yet have a type</span>
 
 
-                            <li class="">
-                                <div v-if="voucherSet.voucher_set_type">
-                                    Has a type of <span class="font-bold">{{ voucherSet.voucher_set_type }}</span>
+                                <button class="text-xs text-blue-500 ml-2 underline"
+                                        @click="scrollTo('expirationSection')">
+                                    Edit
+                                </button>
+                            </div>
+                        </li>
 
-                                    <button class="text-xs text-blue-500 ml-2 underline"
-                                            @click="scrollTo('expirationSection')">
-                                        Edit
-                                    </button>
+
+                        <li class="">
+                            <div v-if="voucherSet.voucher_template_id">
+                                Is using this voucher template
+
+                                <button class="text-xs text-blue-500 ml-2 underline"
+                                        @click="scrollTo('voucherTemplateSection')">
+                                    Edit
+                                </button>
+
+                                <div class="mt-2">
+                                    <img :src="selectedVoucherTemplate.example_template_image_url" alt=""
+                                         class="border rounded max-h-48">
                                 </div>
-                                <div v-else>
-                                    Does <span class="font-bold">not yet have a type</span>
+                            </div>
+                            <div v-else>
+                                Does <span class="font-bold">not yet have a template</span>
 
 
-                                    <button class="text-xs text-blue-500 ml-2 underline"
-                                            @click="scrollTo('expirationSection')">
-                                        Edit
-                                    </button>
-                                </div>
-                            </li>
+                                <button class="text-xs text-blue-500 ml-2 underline"
+                                        @click="scrollTo('voucherTemplateSection')">
+                                    Edit
+                                </button>
+                            </div>
+                        </li>
 
-                        </ul>
+                    </ul>
 
 
-                    </div>
-
-                    <div class="flex justify-end">
-                        <PrimaryButton v-if="canGenerateVoucherSet"
-                                       @click="createVoucherSet()">
-                            Generate!
-                        </PrimaryButton>
-                    </div>
                 </div>
 
+                <div class="flex justify-end">
+                    <PrimaryButton v-if="canGenerateVoucherSet"
+                                   @click="createVoucherSet()">
+                        Generate!
+                    </PrimaryButton>
+                </div>
             </div>
 
         </div>
+
     </div>
 </template>
 
