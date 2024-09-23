@@ -6,10 +6,17 @@ use App\Enums\ApiResponse;
 use App\Exceptions\DisallowedApiFieldException;
 use App\Http\Controllers\Api\HandlesAPIRequests;
 use App\Http\Controllers\Controller;
+use App\Models\TeamMerchantTeam;
 use App\Models\VoucherSet;
+use App\Models\VoucherSetMerchantTeam;
+use Auth;
 use Exception;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
 use Knuckles\Scribe\Attributes\Authenticated;
+use Knuckles\Scribe\Attributes\BodyParam;
 use Knuckles\Scribe\Attributes\Endpoint;
 use Knuckles\Scribe\Attributes\Group;
 use Knuckles\Scribe\Attributes\QueryParam;
@@ -41,70 +48,70 @@ class ApiAdminVoucherSetsController extends Controller
      * @throws DisallowedApiFieldException
      */
     #[Endpoint(
-        title: 'GET /',
-        description: 'Retrieve vouchers.',
+        title        : 'GET /',
+        description  : 'Retrieve vouchers.',
         authenticated: true
     )]
     #[Authenticated]
     #[QueryParam(
-        name: 'cached',
-        type: 'bool',
+        name       : 'cached',
+        type       : 'bool',
         description: 'Request the response to be cached. Default: `true`.',
-        required: false,
-        example: true
+        required   : false,
+        example    : true
     )]
     #[QueryParam(
-        name: 'page',
-        type: 'int',
+        name       : 'page',
+        type       : 'int',
         description: 'The pagination page number.',
-        required: false,
-        example: 1
+        required   : false,
+        example    : 1
     )]
     #[QueryParam(
-        name: 'limit',
-        type: 'int',
+        name       : 'limit',
+        type       : 'int',
         description: 'The number of entries returned per pagination page.',
-        required: false,
-        example: 50
+        required   : false,
+        example    : 50
     )]
     #[QueryParam(
-        name: 'fields',
-        type: 'string',
+        name       : 'fields',
+        type       : 'string',
         description: 'Comma-separated list of database fields to return within the object.',
-        required: false,
-        example: 'id,created_at'
+        required   : false,
+        example    : 'id,created_at'
     )]
     #[QueryParam(
-        name: 'orderBy',
-        type: 'comma-separated',
+        name       : 'orderBy',
+        type       : 'comma-separated',
         description: 'Order the data by a given field. Comma-separated string.',
-        required: false,
-        example: 'orderBy=id,desc'
+        required   : false,
+        example    : 'orderBy=id,desc'
     )]
     #[QueryParam(
-        name: 'orderBy[]',
-        type: 'comma-separated',
+        name       : 'orderBy[]',
+        type       : 'comma-separated',
         description: 'Compound `orderBy`. Order the data by a given field. Comma-separated string. Can not be used in conjunction as standard `orderBy`.',
-        required: false,
-        example: 'orderBy[]=id,desc&orderBy[]=created_at,asc'
+        required   : false,
+        example    : 'orderBy[]=id,desc&orderBy[]=created_at,asc'
     )]
     #[QueryParam(
-        name: 'where',
-        type: 'comma-separated',
+        name       : 'where',
+        type       : 'comma-separated',
         description: 'Filter the request on a single field. Key-Value or Key-Operator-Value comma-separated string.',
-        required: false,
-        example: 'where=id,like,*550e*'
+        required   : false,
+        example    : 'where=id,like,*550e*'
     )]
     #[QueryParam(
-        name: 'where[]',
-        type: 'comma-separated',
+        name       : 'where[]',
+        type       : 'comma-separated',
         description: 'Compound `where`. Use when you need to filter on multiple `where`\'s. Note only AND is possible; ORWHERE is not available.',
-        required: false,
-        example: 'where[]=id,like,*550e*&where[]=created_at,>=,2024-01-01'
+        required   : false,
+        example    : 'where[]=id,like,*550e*&where[]=created_at,>=,2024-01-01'
     )]
     #[Response(
-        content: '',
-        status: 200,
+        content    : '',
+        status     : 200,
         description: ''
     )]
     public function index(): JsonResponse
@@ -118,14 +125,197 @@ class ApiAdminVoucherSetsController extends Controller
     }
 
     /**
-     * @hideFromAPIDocumentation
-     *
      * @return JsonResponse
      */
+    #[Endpoint(
+        title        : 'POST /',
+        description  : 'Create a new voucher set.',
+        authenticated: true
+    )]
+    #[Authenticated]
+    #[BodyParam(
+        name       : 'is_test',
+        type       : 'boolean',
+        description: 'Whether the voucher set is for testing purposes',
+        required   : true
+    )]
+    #[BodyParam(
+        name       : 'allocated_to_service_team_id',
+        type       : 'integer',
+        description: 'The ID of the service team being allocated to',
+        required   : true
+    )]
+    #[BodyParam(
+        name       : 'merchant_team_ids',
+        type       : 'array',
+        description: 'The IDs of the merchant team(s) being assigned to',
+        required   : true
+    )]
+    #[BodyParam(
+        name       : 'funded_by_team_id',
+        type       : 'array',
+        description: 'The ID of the funding team associated with the voucher set',
+        required   : false
+    )]
+    #[BodyParam(
+        name       : 'total_set_value',
+        type       : 'integer',
+        description: 'The total value of the voucher set',
+        required   : true
+    )]
+    #[BodyParam(
+        name       : 'denominations',
+        type       : 'array',
+        description: 'An array describing the voucher denominations by number and value',
+        required   : true
+    )]
+    #[BodyParam(
+        name       : 'expires_at',
+        type       : 'string',
+        description: 'The expiration date of the voucher set, if one exists',
+        required   : false
+    )]
+    #[BodyParam(
+        name       : 'voucher_set_type',
+        type       : 'string',
+        description: 'The type of the voucher set, must be one of: "food equity" or "promotion"',
+        required   : true
+    )]
+    #[Response(
+        content    : '',
+        status     : 200,
+        description: '',
+    )]
     public function store(): JsonResponse
     {
-        $this->responseCode = 403;
-        $this->message      = ApiResponse::RESPONSE_METHOD_NOT_ALLOWED->value;
+        $validationArray = [
+            'is_test' => [
+                'required',
+                'boolean',
+            ],
+            'allocated_to_service_team_id' => [
+                'required',
+                'integer',
+                Rule::exists('teams', 'id'),
+            ],
+            'merchant_team_ids' => [
+                'required',
+                'array',
+            ],
+            'merchant_team_ids.*' => [
+                'integer',
+                Rule::exists('teams', 'id'),
+            ],
+            'funded_by_team_id' => [
+                'sometimes',
+                'integer',
+                Rule::exists('teams', 'id'),
+            ],
+            'total_set_value' => [
+                'required',
+                'integer',
+            ],
+            'denominations' => [
+                'required',
+                'array',
+            ],
+            'expires_at' => [
+                'sometimes',
+                'string',
+                'nullable',
+            ],
+            'voucher_set_type' => [
+                'required',
+                'string',
+            ],
+        ];
+
+        $validator = Validator::make($this->request->all(), $validationArray);
+
+        if ($validator->fails()) {
+
+            $this->responseCode = 400;
+            $this->message      = $validator->errors()
+                ->first();
+
+            return $this->respond();
+
+        }
+
+        try {
+
+            DB::beginTransaction();
+
+            $merchantTeamIds = $this->request->get('merchant_team_ids');
+            $serviceTeamId   = $this->request->get('allocated_to_service_team_id');
+
+            /**
+             * Get the service team's merchants list as an array of IDs
+             */
+            $teamMerchantTeams = TeamMerchantTeam::where('team_id', $serviceTeamId)
+                ->pluck('merchant_team_id')
+                ->toArray();
+
+            /**
+             * Validate that the merchant ID are all merchants for the service team.
+             */
+            foreach ($merchantTeamIds as $merchantTeamId) {
+                if (!in_array($merchantTeamId, $teamMerchantTeams)) {
+                    $this->message      = ApiResponse::RESPONSE_INVALID_MERCHANT_TEAM_FOR_SERVICE_TEAM->value;
+                    $this->responseCode = 400;
+
+                    return $this->respond();
+                }
+            }
+
+            $model = new VoucherSet();
+            foreach ($validationArray as $key => $validationRule) {
+                $value = $this->request->get($key);
+                if (isset($value)) {
+                    if ($key == 'denominations') {
+                        $model->denomination_json = json_encode($value);
+
+                        continue;
+                    }
+
+                    /**
+                     * Merchant team ids are used
+                     * down below via a linking model
+                     */
+                    if ($key == 'merchant_team_ids') {
+                        continue;
+                    }
+
+                    $model->$key = $value;
+
+                }
+            }
+
+            $model->created_by_user_id = Auth::id();
+            $model->created_by_team_id = Auth::user()->current_team_id;
+            $model->save();
+
+            foreach ($merchantTeamIds as $merchantTeamId) {
+                $voucherSetMerchantTeam                   = new VoucherSetMerchantTeam();
+                $voucherSetMerchantTeam->voucher_set_id   = $model->id;
+                $voucherSetMerchantTeam->merchant_team_id = $merchantTeamId;
+                $voucherSetMerchantTeam->save();
+            }
+
+            $this->message = ApiResponse::RESPONSE_SAVED->value;
+            $this->data    = $model;
+
+            DB::commit();
+
+        }
+        catch (Exception $e) {
+
+            DB::rollBack();
+
+            $this->responseCode = 500;
+            $this->message      = ApiResponse::RESPONSE_ERROR->value . ': "' . $e->getMessage() . '".';
+
+        }
 
         return $this->respond();
     }
@@ -140,33 +330,33 @@ class ApiAdminVoucherSetsController extends Controller
      * @throws DisallowedApiFieldException
      */
     #[Endpoint(
-        title: 'GET /{id}',
-        description: 'Retrieve a single voucher.',
+        title        : 'GET /{id}',
+        description  : 'Retrieve a single voucher.',
         authenticated: true,
     )]
     #[Authenticated]
     #[UrlParam(
-        name: 'id',
-        type: 'uuid',
+        name       : 'id',
+        type       : 'uuid',
         description: 'Voucher Set ID.',
-        example: '550e8400-e29b-41d4-a716-446655440000'
+        example    : '550e8400-e29b-41d4-a716-446655440000'
     )]
     #[QueryParam(
-        name: 'cached',
-        type: 'bool',
+        name       : 'cached',
+        type       : 'bool',
         description: 'Request the response to be cached. Default: `true`.',
-        required: false,
-        example: 1
+        required   : false,
+        example    : 1
     )]
     #[QueryParam(
-        name: 'fields',
-        type: 'string',
+        name       : 'fields',
+        type       : 'string',
         description: 'Comma-separated list of database fields to return within the object.',
-        required: false,
-        example: 'id,created_at'
+        required   : false,
+        example    : 'id,created_at'
     )]
     #[Response(
-        content: '{
+        content    : '{
   "meta": {
     "responseCode": 200,
     "limit": 50,
@@ -178,7 +368,7 @@ class ApiAdminVoucherSetsController extends Controller
   },
   "data": {"id": 1234, "created_at": "2024-01-01 00:00:00"}
 }',
-        status: 200,
+        status     : 200,
         description: ''
     )]
     public function show(string $id)

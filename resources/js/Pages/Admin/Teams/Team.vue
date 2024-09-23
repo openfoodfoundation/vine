@@ -16,7 +16,7 @@ import utc from "dayjs/plugin/utc"
 import TextInput from "@/Components/TextInput.vue";
 import PrimaryButton from "@/Components/PrimaryButton.vue";
 import DangerButton from "@/Components/DangerButton.vue";
-import VoucherSetsComponent from "@/Components/Admin/Vouchers/VoucherSetsComponent.vue";
+import VoucherSetsComponent from "@/Components/Admin/VoucherSets/VoucherSetsComponent.vue";
 import VouchersComponent from "@/Components/Admin/Vouchers/VouchersComponent.vue";
 import AdminTeamVoucherTemplatesList from "@/Components/Admin/Teams/AdminTeamVoucherTemplatesList.vue";
 
