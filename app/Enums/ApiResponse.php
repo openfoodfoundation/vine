@@ -24,6 +24,7 @@ enum ApiResponse: string
     case RESPONSE_AUTHORIZATION_SIGNATURE_INCORRECT_EXPIRED             = 'Token expired.';
     case RESPONSE_COUNTRY_MISMATCH                                      = 'Country mismatch.';
     case RESPONSE_INVALID_MERCHANT_TEAM                                 = 'Invalid merchant team.';
+    case RESPONSE_INVALID_MERCHANT_TEAM_FOR_SERVICE_TEAM                = 'Invalid merchant team for this service team. Ensure merchant team is merchant of service team.';
     case RESPONSE_QUERY_FILTER_DISALLOWED                               = 'Query filter disallowed';
     case RESPONSE_REDEMPTION_FAILED_VOUCHER_ALREADY_FULLY_REDEEMED      = 'This voucher has already been fully redeemed, no redemption made this time.';
     case RESPONSE_REDEMPTION_FAILED_REQUESTED_AMOUNT_TOO_HIGH           = 'Requested amount is greater than voucher value remaining, no redemption made this time.';

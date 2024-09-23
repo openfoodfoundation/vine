@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Enums\VoucherSetType;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -26,6 +27,7 @@ class VoucherSetFactory extends Factory
             'num_vouchers'                 => $this->faker->numberBetween(1, 100),
             'num_voucher_redemptions'      => $this->faker->numberBetween(1, 10),
             'expires_at'                   => now()->addDays(30),
+            'voucher_set_type'             => fake()->randomElement(VoucherSetType::values()),
         ];
     }
 }

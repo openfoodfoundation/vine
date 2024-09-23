@@ -5,6 +5,7 @@ namespace App\Listeners\Vouchers;
 use App\Events\Vouchers\VoucherWasCreated;
 use App\Jobs\Vouchers\AssignUniqueShortCodeToVoucherJob;
 use App\Jobs\Vouchers\CollateVoucherAggregatesJob;
+use App\Jobs\Vouchers\GenerateStorageVoucherQrCode;
 use App\Jobs\VoucherSets\CollateVoucherSetAggregatesJob;
 use App\Models\VoucherSet;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -32,6 +33,10 @@ class HandleVoucherWasCreatedEvent implements ShouldQueue
 
             dispatch(new CollateVoucherSetAggregatesJob($voucherSet));
 
+        }
+
+        if (config('app.env') != 'testing') {
+            dispatch(new GenerateStorageVoucherQrCode($event->voucher));
         }
     }
 }

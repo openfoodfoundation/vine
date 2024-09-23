@@ -2,12 +2,13 @@
 
 namespace App\Console\Commands;
 
+use App\Models\Team;
+use App\Models\TeamMerchantTeam;
 use App\Models\User;
-use App\Models\VoucherSetMerchantTeamApprovalRequest;
-use App\Notifications\Mail\VoucherSetMerchantTeamApprovalRequest\VoucherSetMerchantTeamApprovalRequestEmailNotification;
+use App\Models\Voucher;
+use App\Models\VoucherSet;
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\Crypt;
-use Illuminate\Support\Facades\URL;
+use stdClass;
 
 class TestCommand extends Command
 {
@@ -30,27 +31,64 @@ class TestCommand extends Command
      */
     public function handle()
     {
+        $teams = Team::factory(8)->createQuietly();
 
-        $me = User::find(1);
+        //        $voucher = new Voucher();
+        //        $voucher->voucher_set_id = 'abc123';
+        //        $voucher->created_by_team_id = 1;
+        //        $voucher->allocated_to_service_team_id = 2;
+        //        $voucher->voucher_value_original = 0;
+        //        $voucher->voucher_value_remaining = 0;
+        //        $voucher->num_voucher_redemptions = 0;
+        //        $voucher->save();
 
-        $approvalRequest = VoucherSetMerchantTeamApprovalRequest::factory()->create([
-            'voucher_set_id'   => 'e6765b13-0d7a-3c8b-870a-ca8765c27b35',
-            'merchant_team_id' => 1,
-            'merchant_user_id' => $me->id,
+        //        $voucher = Voucher::factory()->create();
+
+        $me = User::find(2);
+
+        $denomination = [];
+
+        $voucherItem              = new stdClass();
+        $voucherItem->value       = 100;
+        $voucherItem->number      = 5;
+        $voucherItem->dollarValue = 5;
+        $denomination[]           = $voucherItem;
+
+        $voucherItem              = new stdClass();
+        $voucherItem->value       = 500;
+        $voucherItem->number      = 2;
+        $voucherItem->dollarValue = 10;
+        $denomination[]           = $voucherItem;
+
+        $voucherItem              = new stdClass();
+        $voucherItem->value       = 1000;
+        $voucherItem->number      = 2;
+        $voucherItem->dollarValue = 20;
+        $denomination[]           = $voucherItem;
+
+        $myJSON = json_encode($denomination);
+
+        $voucherSet = VoucherSet::factory()->create([
+            'created_by_team_id'           => 1,
+            'allocated_to_service_team_id' => 2,
+            'created_by_user_id'           => $me->id,
+            'total_set_value'              => 3500,
+            'total_set_value_remaining'    => 3500,
+            'num_vouchers'                 => 0,
+            'num_voucher_redemptions'      => 0,
+            'denomination_json'            => $myJSON,
+            'is_denomination_valid'        => 1,
         ]);
 
-        $me->notify(new VoucherSetMerchantTeamApprovalRequestEmailNotification($approvalRequest));
+        foreach ($teams as $team) {
 
-        //        $myUrl = URL::temporarySignedRoute(
-        //            'bounce',
-        //            now()->addDays(2),
-        //            [
-        //                'id'           => Crypt::encrypt($me->id),
-        //                'redirectPath' => '/my-team',
-        //            ]
-        //        );
-        //
-        //        dd($myUrl);
+            TeamMerchantTeam::factory()->createQuietly(
+                [
+                    'merchant_team_id' => $team->id,
+                    'team_id'          => 1,
+                ]
+            );
+        }
 
     }
 }
