@@ -3,9 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Models\Team;
-use App\Models\TeamMerchantTeam;
 use App\Models\TeamServiceTeam;
-use App\Models\User;
 use Illuminate\Console\Command;
 
 class TestCommand extends Command
@@ -32,9 +30,8 @@ class TestCommand extends Command
 
         $team = Team::factory()->createQuietly();
 
-
         TeamServiceTeam::factory()->createQuietly([
-            'team_id' => 1,
+            'team_id'         => 1,
             'service_team_id' => $team->id,
         ]);
     }
