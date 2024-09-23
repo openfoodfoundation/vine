@@ -354,21 +354,25 @@ Route::middleware('auth')->group(function () {
         })->name('admin.voucher');
 
         Route::get('/voucher-sets', function () {
-            return Inertia::render('Admin/Vouchers/VoucherSets');
+            return Inertia::render('Admin/VoucherSets/VoucherSets');
         })->name('admin.voucher-sets');
 
+        Route::get('/voucher-sets/new', function () {
+            return Inertia::render('Admin/VoucherSets/VoucherSetNew');
+        })->name('admin.voucher-sets.new');
+
         Route::get('/voucher-set/{id}', function (string $id) {
-            return Inertia::render('Admin/Vouchers/VoucherSet', [
+            return Inertia::render('Admin/VoucherSets/VoucherSet', [
                 'id' => $id,
             ]);
         })->name('admin.voucher-set');
 
         Route::get('/voucher-redemptions', function () {
-            return Inertia::render('Admin/Vouchers/VoucherRedemptions');
+            return Inertia::render('Admin/VoucherRedemptions/VoucherRedemptions');
         })->name('admin.voucher-redemptions');
 
         Route::get('/voucher-redemption/{id}', function (int $id) {
-            return Inertia::render('Admin/Vouchers/VoucherRedemption', [
+            return Inertia::render('Admin/VoucherRedemptions/VoucherRedemption', [
                 'id' => $id,
             ]);
         })->name('admin.voucher-redemption');

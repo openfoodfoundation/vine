@@ -2,12 +2,10 @@
 
 namespace App\Console\Commands;
 
-use App\Models\User;
-use App\Models\VoucherSetMerchantTeamApprovalRequest;
-use App\Notifications\Mail\VoucherSetMerchantTeamApprovalRequest\VoucherSetMerchantTeamApprovalRequestEmailNotification;
+use App\Models\Team;
+use App\Models\TeamMerchantTeam;
+
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\Crypt;
-use Illuminate\Support\Facades\URL;
 
 class TestCommand extends Command
 {
@@ -30,27 +28,16 @@ class TestCommand extends Command
      */
     public function handle()
     {
+        $teams = Team::factory(8)->createQuietly();
 
-        $me = User::find(1);
+        foreach ($teams as $team) {
 
-        $approvalRequest = VoucherSetMerchantTeamApprovalRequest::factory()->create([
-            'voucher_set_id'   => 'e6765b13-0d7a-3c8b-870a-ca8765c27b35',
-            'merchant_team_id' => 1,
-            'merchant_user_id' => $me->id,
-        ]);
-
-        $me->notify(new VoucherSetMerchantTeamApprovalRequestEmailNotification($approvalRequest));
-
-        //        $myUrl = URL::temporarySignedRoute(
-        //            'bounce',
-        //            now()->addDays(2),
-        //            [
-        //                'id'           => Crypt::encrypt($me->id),
-        //                'redirectPath' => '/my-team',
-        //            ]
-        //        );
-        //
-        //        dd($myUrl);
-
+            TeamMerchantTeam::factory()->createQuietly(
+                [
+                    'merchant_team_id' => $team->id,
+                    'team_id'          => 1,
+                ]
+            );
+        }
     }
 }
