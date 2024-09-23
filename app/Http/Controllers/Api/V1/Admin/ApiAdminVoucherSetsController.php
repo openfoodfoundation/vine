@@ -189,7 +189,7 @@ class ApiAdminVoucherSetsController extends Controller
     public function store(): JsonResponse
     {
         $validationArray = [
-            'is_test'                      => [
+            'is_test' => [
                 'required',
                 'boolean',
             ],
@@ -198,33 +198,33 @@ class ApiAdminVoucherSetsController extends Controller
                 'integer',
                 Rule::exists('teams', 'id'),
             ],
-            'merchant_team_ids'            => [
+            'merchant_team_ids' => [
                 'required',
                 'array',
             ],
-            'merchant_team_ids.*'          => [
+            'merchant_team_ids.*' => [
                 'integer',
                 Rule::exists('teams', 'id'),
             ],
-            'funded_by_team_id'            => [
+            'funded_by_team_id' => [
                 'sometimes',
                 'integer',
                 Rule::exists('teams', 'id'),
             ],
-            'total_set_value'              => [
+            'total_set_value' => [
                 'required',
                 'integer',
             ],
-            'denominations'                => [
+            'denominations' => [
                 'required',
                 'array',
             ],
-            'expires_at'                   => [
+            'expires_at' => [
                 'sometimes',
                 'string',
                 'nullable',
             ],
-            'voucher_set_type'             => [
+            'voucher_set_type' => [
                 'required',
                 'string',
             ],
@@ -236,7 +236,7 @@ class ApiAdminVoucherSetsController extends Controller
 
             $this->responseCode = 400;
             $this->message      = $validator->errors()
-                                            ->first();
+                ->first();
 
             return $this->respond();
 
@@ -253,8 +253,8 @@ class ApiAdminVoucherSetsController extends Controller
              * Get the service team's merchants list as an array of IDs
              */
             $teamMerchantTeams = TeamMerchantTeam::where('team_id', $serviceTeamId)
-                                                 ->pluck('merchant_team_id')
-                                                 ->toArray();
+                ->pluck('merchant_team_id')
+                ->toArray();
 
             /**
              * Validate that the merchant ID are all merchants for the service team.
@@ -263,10 +263,10 @@ class ApiAdminVoucherSetsController extends Controller
                 if (!in_array($merchantTeamId, $teamMerchantTeams)) {
                     $this->message      = ApiResponse::RESPONSE_INVALID_MERCHANT_TEAM_FOR_SERVICE_TEAM->value;
                     $this->responseCode = 400;
+
                     return $this->respond();
                 }
             }
-
 
             $model = new VoucherSet();
             foreach ($validationArray as $key => $validationRule) {
@@ -274,6 +274,7 @@ class ApiAdminVoucherSetsController extends Controller
                 if (isset($value)) {
                     if ($key == 'denominations') {
                         $model->denomination_json = json_encode($value);
+
                         continue;
                     }
 
@@ -284,7 +285,6 @@ class ApiAdminVoucherSetsController extends Controller
                     if ($key == 'merchant_team_ids') {
                         continue;
                     }
-
 
                     $model->$key = $value;
 
@@ -307,7 +307,8 @@ class ApiAdminVoucherSetsController extends Controller
 
             DB::commit();
 
-        } catch (Exception $e) {
+        }
+        catch (Exception $e) {
 
             DB::rollBack();
 
@@ -423,7 +424,8 @@ class ApiAdminVoucherSetsController extends Controller
             $model->delete();
             $this->message = ApiResponse::RESPONSE_DELETED->value;
 
-        } catch (Exception $e) {
+        }
+        catch (Exception $e) {
 
             $this->responseCode = 500;
             $this->message      = ApiResponse::RESPONSE_ERROR->value . ':' . $e->getMessage();

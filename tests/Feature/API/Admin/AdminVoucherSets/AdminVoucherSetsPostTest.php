@@ -54,11 +54,10 @@ class AdminVoucherSetsPostTest extends BaseAPITestCase
 
         $merchantTeams = Team::factory(5)->create();
 
-        foreach($merchantTeams as $merchantTeam)
-        {
+        foreach ($merchantTeams as $merchantTeam) {
             TeamMerchantTeam::factory()->create(
                 [
-                    'team_id' => $serviceTeam->id,
+                    'team_id'          => $serviceTeam->id,
                     'merchant_team_id' => $merchantTeam->id,
                 ]
             );
@@ -79,7 +78,6 @@ class AdminVoucherSetsPostTest extends BaseAPITestCase
         $response->assertStatus(200);
     }
 
-
     #[Test]
     public function itemIsNotSavedIfMerchantTeamDoesNotBelongToServiceTeam()
     {
@@ -90,7 +88,7 @@ class AdminVoucherSetsPostTest extends BaseAPITestCase
         );
 
         $team = Team::factory()
-                    ->create();
+            ->create();
 
         $serviceTeam = Team::factory()->create();
 
