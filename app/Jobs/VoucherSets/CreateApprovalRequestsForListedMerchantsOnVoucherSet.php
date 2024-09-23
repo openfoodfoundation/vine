@@ -20,11 +20,9 @@ class CreateApprovalRequestsForListedMerchantsOnVoucherSet implements ShouldQueu
     /**
      * Create a new job instance.
      *
-     * @param  VoucherSet  $voucherSet
+     * @param VoucherSet $voucherSet
      */
-    public function __construct(public VoucherSet $voucherSet)
-    {
-    }
+    public function __construct(public VoucherSet $voucherSet) {}
 
     /**
      * Execute the job.
