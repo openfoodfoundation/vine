@@ -5,6 +5,7 @@ import swal from "sweetalert2";
 import {usePage} from "@inertiajs/vue3";
 import SecondaryButton from "@/Components/SecondaryButton.vue";
 import PrimaryButton from "@/Components/PrimaryButton.vue";
+import InputLabel from "@/Components/InputLabel.vue";
 
 /**
  * Data
@@ -22,7 +23,7 @@ const selectedFundingTeam = ref('');
 
 // Merchant teams
 const allTeamMerchantTeams = ref([]);
-const filteredTeamMerchantTeams = ref([]);
+const serviceTeamMerchantTeams = ref([]);
 const merchantTeamSearchQuery = ref('');
 const selectedMerchantTeams = ref([]);
 
@@ -94,7 +95,7 @@ function filterFundingTeams() {
     if (fundingTeamSearchQuery.value.length) {
         filteredFundingTeams.value = allFundingTeams.value.filter(team => team.name.toLowerCase().includes(fundingTeamSearchQuery.value));
     } else {
-        filteredFundingTeams.value = [];
+        filteredFundingTeams.value = allFundingTeams.value;
     }
 }
 
@@ -104,9 +105,9 @@ function filterMerchantTeams() {
         const filteredByName = allTeamMerchantTeams.value.filter(team => team.merchant_team?.name.toLowerCase().includes(merchantTeamSearchQuery.value));
 
         // Filters out the already selected teams
-        filteredTeamMerchantTeams.value = filteredByName.filter(team => !selectedMerchantTeams.value.some(selectedTeam => team.merchant_team.id === selectedTeam.id))
+        serviceTeamMerchantTeams.value = filteredByName.filter(team => !selectedMerchantTeams.value.some(selectedTeam => team.merchant_team.id === selectedTeam.id))
     } else {
-        filteredTeamMerchantTeams.value = [];
+        serviceTeamMerchantTeams.value = allTeamMerchantTeams.value;
     }
 }
 
@@ -114,7 +115,7 @@ function filterServiceTeams() {
     if (serviceTeamSearchQuery.value.length) {
         filteredTeamServiceTeams.value = allTeamServiceTeams.value.filter(team => team.service_team?.name.toLowerCase().includes(serviceTeamSearchQuery.value));
     } else {
-        filteredTeamServiceTeams.value = [];
+        filteredTeamServiceTeams.value = allTeamServiceTeams.value;
     }
 }
 
@@ -130,9 +131,10 @@ function getFundingTeams() {
     });
 }
 
-function getMerchantTeams() {
-    axios.get('/admin/team-merchant-teams?relations=merchantTeam&where[]=team_id,' + $props.auth.user.current_team_id).then(response => {
+function getMerchantTeamsForSelectedServiceTeam(selectedServiceTeam) {
+    axios.get('/admin/team-merchant-teams?relations=merchantTeam&where[]=team_id,' +selectedServiceTeam.id).then(response => {
         allTeamMerchantTeams.value = response.data.data.data;
+        serviceTeamMerchantTeams.value = response.data.data.data;
     }).catch(error => {
         swal.fire({
             icon: 'error',
@@ -145,6 +147,7 @@ function getMerchantTeams() {
 function getServiceTeams() {
     axios.get('/admin/team-service-teams?relations=serviceTeam&where[]=team_id,' + $props.auth.user.current_team_id).then(response => {
         allTeamServiceTeams.value = response.data.data.data;
+        filteredTeamServiceTeams.value = response.data.data.data;
     }).catch(error => {
         swal.fire({
             icon: 'error',
@@ -169,8 +172,22 @@ function selectFundingTeam(team) {
 }
 
 function selectMerchantTeam(team) {
-    selectedMerchantTeams.value.push(team)
-    voucherSet.value.merchant_team_ids.push(team.id)
+
+    /**
+     * TODO:
+     * Open Food Network require that we can only select 1 merchant in the pilot.
+     * When they come back and ask for more, remove the below line.
+     */
+    voucherSet.value.merchant_team_ids = [];
+    if(!voucherSet.value.merchant_team_ids.includes(team.id))
+    {
+        voucherSet.value.merchant_team_ids.push(team.id);
+
+        // TODO: See above TODO, we'll need to remove this too
+        selectedMerchantTeams.value = [];
+        selectedMerchantTeams.value.push(team);
+    }
+
 }
 
 function selectServiceTeam(team) {
@@ -178,7 +195,21 @@ function selectServiceTeam(team) {
     voucherSet.value.allocated_to_service_team_id = team.id;
     filteredTeamServiceTeams.value = [];
     serviceTeamSearchQuery.value = '';
+
+    getMerchantTeamsForSelectedServiceTeam(team);
 }
+
+function resetSelectedServiceTeam()
+{
+    selectedServiceTeam.value = '';
+    voucherSet.value.allocated_to_service_team_id = '';
+    filteredTeamServiceTeams.value = Object.assign({}, allTeamServiceTeams.value);
+    selectedMerchantTeams.value = [];
+    allTeamMerchantTeams.value = [];
+    voucherSet.value.merchant_team_ids = [];
+}
+
+
 
 function startProcess() {
     processStarted.value = true;
@@ -205,7 +236,6 @@ function unselectMerchantTeam(index) {
  */
 onMounted(() => {
     getFundingTeams();
-    getMerchantTeams();
     getServiceTeams();
 })
 
@@ -395,9 +425,9 @@ watch(serviceTeamSearchQuery, () => {
 
                     <div v-if="!selectedServiceTeam">
                         <label for="service-team-search">
-                            Search for a service team
                             <input id="service-team-search" v-model="serviceTeamSearchQuery"
                                    class="block w-1/2 md:w-1/3 mt-1"
+                                   placeholder="Filter your service teams.."
                                    type="search"/>
                         </label>
 
@@ -414,7 +444,7 @@ watch(serviceTeamSearchQuery, () => {
 
                         <span v-if="selectedServiceTeam"
                               class="text-red-500 text-xs underline hover:cursor-pointer ml-2"
-                              @click="selectedServiceTeam = ''">
+                              @click="resetSelectedServiceTeam()">
                             Remove
                         </span>
                     </div>
@@ -454,14 +484,15 @@ watch(serviceTeamSearchQuery, () => {
 
                     <div>
                         <label for="service-team-search">
-                            Search for a merchant team
+
                             <input id="merchant-team-search" v-model="merchantTeamSearchQuery"
                                    class="block w-1/2 md:w-1/3 mt-1"
+                                   placeholder="Filter merchant teams.."
                                    type="search"/>
                         </label>
 
                         <div class="my-4 flex flex-wrap gap-2">
-                            <PrimaryButton v-for="teamMerchantTeam in filteredTeamMerchantTeams"
+                            <PrimaryButton v-for="teamMerchantTeam in serviceTeamMerchantTeams"
                                            @click="selectMerchantTeam(teamMerchantTeam.merchant_team)">
                                 {{ teamMerchantTeam.merchant_team.name }}
                             </PrimaryButton>
@@ -858,6 +889,7 @@ watch(serviceTeamSearchQuery, () => {
                         </div>
 
                     </div>
+                                        
 
                     <div class="my-8">
                         <ul class="list-disc space-y-6 pl-4">
