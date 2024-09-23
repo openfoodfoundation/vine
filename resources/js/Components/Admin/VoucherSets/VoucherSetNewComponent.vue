@@ -5,7 +5,6 @@ import swal from "sweetalert2";
 import {usePage} from "@inertiajs/vue3";
 import SecondaryButton from "@/Components/SecondaryButton.vue";
 import PrimaryButton from "@/Components/PrimaryButton.vue";
-import InputLabel from "@/Components/InputLabel.vue";
 
 /**
  * Data
@@ -56,28 +55,41 @@ function allocationRemaining() {
 
 function createVoucherSet() {
 
-    axios.post('/admin/voucher-sets', voucherSet.value).then(response => {
+    swal.fire({
+        title: "Are you sure?",
+        icon: "info",
+        text: "This will not only create a voucher set, but also email all the merchants you selected, asking for their approval to partake in the voucher set. Are you sure you want to do this?",
+        showConfirmButton: true,
+        showCancelButton: true,
+    }).then(resp => {
 
-        swal.fire({
-            title: "Nice!",
-            icon: "success",
-            text: response.data.data.message,
-            showConfirmButton: false,
-            timer: 600
-        }).then(() => {
-            window.location.href = '/admin/voucher-set/' + response.data.data.id;
-        });
+        if (resp.isConfirmed) {
 
-    }).catch(error => {
 
-        swal.fire({
-            title: "Oops!",
-            icon: "error",
-            text: error.response.data.meta.message
-        });
+            axios.post('/admin/voucher-sets', voucherSet.value).then(response => {
 
-        console.log(error);
+                swal.fire({
+                    title: "Nice!",
+                    icon: "success",
+                    text: response.data.data.message,
+                    showConfirmButton: false,
+                    timer: 600
+                }).then(() => {
+                    window.location.href = '/admin/voucher-set/' + response.data.data.id;
+                });
 
+            }).catch(error => {
+
+                swal.fire({
+                    title: "Oops!",
+                    icon: "error",
+                    text: error.response.data.meta.message
+                });
+
+                console.log(error);
+
+            })
+        }
     })
 }
 
@@ -132,7 +144,7 @@ function getFundingTeams() {
 }
 
 function getMerchantTeamsForSelectedServiceTeam(selectedServiceTeam) {
-    axios.get('/admin/team-merchant-teams?relations=merchantTeam&where[]=team_id,' +selectedServiceTeam.id).then(response => {
+    axios.get('/admin/team-merchant-teams?relations=merchantTeam&where[]=team_id,' + selectedServiceTeam.id).then(response => {
         allTeamMerchantTeams.value = response.data.data.data;
         serviceTeamMerchantTeams.value = response.data.data.data;
     }).catch(error => {
@@ -179,8 +191,7 @@ function selectMerchantTeam(team) {
      * When they come back and ask for more, remove the below line.
      */
     voucherSet.value.merchant_team_ids = [];
-    if(!voucherSet.value.merchant_team_ids.includes(team.id))
-    {
+    if (!voucherSet.value.merchant_team_ids.includes(team.id)) {
         voucherSet.value.merchant_team_ids.push(team.id);
 
         // TODO: See above TODO, we'll need to remove this too
@@ -199,8 +210,7 @@ function selectServiceTeam(team) {
     getMerchantTeamsForSelectedServiceTeam(team);
 }
 
-function resetSelectedServiceTeam()
-{
+function resetSelectedServiceTeam() {
     selectedServiceTeam.value = '';
     voucherSet.value.allocated_to_service_team_id = '';
     filteredTeamServiceTeams.value = Object.assign({}, allTeamServiceTeams.value);
@@ -208,7 +218,6 @@ function resetSelectedServiceTeam()
     allTeamMerchantTeams.value = [];
     voucherSet.value.merchant_team_ids = [];
 }
-
 
 
 function startProcess() {
@@ -889,7 +898,7 @@ watch(serviceTeamSearchQuery, () => {
                         </div>
 
                     </div>
-                                        
+
 
                     <div class="my-8">
                         <ul class="list-disc space-y-6 pl-4">
