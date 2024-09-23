@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands\VoucherSets;
 
+use App\Events\VoucherSets\VoucherSetWasGenerated;
 use App\Models\User;
 use App\Models\Voucher;
 use App\Models\VoucherSet;
@@ -87,9 +88,7 @@ class GenerateVoucherSetVouchersCommand extends Command
             $voucherSet->voucher_generation_finished_at = now();
             $voucherSet->save();
 
-            $notificationUser = User::find($voucherSet->created_by_user_id);
-
-            $notificationUser?->notify(new VoucherSetGenerationSuccessEmailNotification(voucherSet: $voucherSet));
+            event(new VoucherSetWasGenerated($voucherSet));
 
         }
 
