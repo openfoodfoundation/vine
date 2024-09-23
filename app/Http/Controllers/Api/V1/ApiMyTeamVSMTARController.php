@@ -196,7 +196,6 @@ class ApiMyTeamVSMTARController extends Controller
                         event(new VoucherSetMerchantTeamApprovalRequestWasRejected($model));
                     }
 
-
                     $this->message = ApiResponse::RESPONSE_UPDATED->value;
                     $this->data    = $model;
 

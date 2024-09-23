@@ -1,11 +1,11 @@
 <?php
 
-use App\Enums\VoucherSetMerchantTeamApprovalRequestStatus;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration {
+return new class() extends Migration
+{
     /**
      * Run the migrations.
      */
@@ -14,11 +14,10 @@ return new class extends Migration {
         Schema::table('voucher_sets', function (Blueprint $table) {
 
             $table->unsignedBigInteger('merchant_approval_request_id')
-                  ->nullable()
-                  ->index('vs_mari')
-                  ->after('is_denomination_valid')
-                  ->comment('ID of the first approval request that has been approved.');
-
+                ->nullable()
+                ->index('vs_mari')
+                ->after('is_denomination_valid')
+                ->comment('ID of the first approval request that has been approved.');
 
             $table->index(
                 [
@@ -26,7 +25,9 @@ return new class extends Migration {
                     'voucher_generation_started_at',
                     'voucher_generation_finished_at',
                     'merchant_approval_request_id',
-                ], 'vs_idvvgsavgfamari');
+                ],
+                'vs_idvvgsavgfamari'
+            );
 
         });
     }

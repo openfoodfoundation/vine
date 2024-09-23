@@ -2,15 +2,13 @@
 
 namespace App\Console\Commands;
 
-
+use App\Models\Team;
+use App\Models\TeamMerchantTeam;
 use App\Models\User;
 use App\Models\Voucher;
 use App\Models\VoucherSet;
 use Illuminate\Console\Command;
 use stdClass;
-use App\Models\Team;
-use App\Models\TeamMerchantTeam;
-
 
 class TestCommand extends Command
 {
@@ -34,7 +32,6 @@ class TestCommand extends Command
     public function handle()
     {
         $teams = Team::factory(8)->createQuietly();
-
 
         //        $voucher = new Voucher();
         //        $voucher->voucher_set_id = 'abc123';
@@ -82,7 +79,6 @@ class TestCommand extends Command
             'denomination_json'            => $myJSON,
             'is_denomination_valid'        => 1,
         ]);
-
 
         foreach ($teams as $team) {
 
