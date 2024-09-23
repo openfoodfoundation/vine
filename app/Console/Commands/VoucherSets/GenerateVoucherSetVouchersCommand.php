@@ -40,7 +40,7 @@ class GenerateVoucherSetVouchersCommand extends Command
 
         if ($voucherSet) {
             $voucherSet->voucher_generation_started_at = now();
-            $voucherSet->save();
+            $voucherSet->saveQuietly();
 
             /**
              * Re-validate the denomination JSON
@@ -52,7 +52,14 @@ class GenerateVoucherSetVouchersCommand extends Command
                 $this->line('Voucher set is invalid.');
 
                 $user = User::first();
-                $user->notify(new VoucherSetGenerationFailedNotification(voucherSet: $voucherSet, reason: 'The voucher set denomination was invalid.'));
+                $user->notify(new VoucherSetGenerationFailedNotification(voucherSet: $voucherSet, reason: 'The voucher set denomination is invalid. Please investigate.'));
+
+                /**
+                 * Re-set this voucher set
+                 */
+                $voucherSet->voucher_generation_started_at  = null;
+                $voucherSet->voucher_generation_finished_at = null;
+                $voucherSet->saveQuietly();
 
                 return 0;
             }
