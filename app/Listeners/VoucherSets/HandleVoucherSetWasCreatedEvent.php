@@ -19,7 +19,8 @@ class HandleVoucherSetWasCreatedEvent implements ShouldQueue
      *
      * @param VoucherWasCreated $event
      */
-    public function handle(VoucherSetWasCreated $event): void {
+    public function handle(VoucherSetWasCreated $event): void
+    {
 
         if (config('app.env') !== 'testing') {
             dispatch(new CreateApprovalRequestsForListedMerchantsOnVoucherSet($event->voucherSet));
