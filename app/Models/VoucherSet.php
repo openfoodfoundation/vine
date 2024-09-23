@@ -29,6 +29,14 @@ class VoucherSet extends Model
     /**
      * @return BelongsTo
      */
+    public function fundedByTeam(): BelongsTo
+    {
+        return $this->belongsTo(Team::class, 'funded_by_team_id', 'id');
+    }
+
+    /**
+     * @return BelongsTo
+     */
     public function allocatedToServiceTeam(): BelongsTo
     {
         return $this->belongsTo(Team::class, 'allocated_to_service_team_id', 'id');
