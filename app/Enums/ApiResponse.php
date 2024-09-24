@@ -7,7 +7,7 @@ namespace App\Enums;
  */
 enum ApiResponse: string
 {
-    case RESPONSE_ALREADY_EXISTS                                       = 'Already exists';
+    case RESPONSE_ALREADY_EXISTS                                        = 'Already exists';
     case RESPONSE_DELETED                                               = 'Deleted';
     case RESPONSE_ERROR                                                 = 'Error';
     case RESPONSE_FILE_TYPE_NOT_ALLOWED                                 = 'File type not allowed';
@@ -23,18 +23,16 @@ enum ApiResponse: string
     case RESPONSE_AUTHORIZATION_SIGNATURE_INCORRECT_IAT_EXPIRED         = 'IAT claim expired.';
     case RESPONSE_AUTHORIZATION_SIGNATURE_INCORRECT_IAT_EXP_TOO_LARGE   = 'IAT and EXP too far apart. Max diff: 1 minute.';
     case RESPONSE_AUTHORIZATION_SIGNATURE_INCORRECT_EXPIRED             = 'Token expired.';
-
-    case RESPONSE_COUNTRY_MISMATCH                                 = 'Country mismatch.';
-    case RESPONSE_INVALID_MERCHANT_TEAM                            = 'Invalid merchant team.';
-    case RESPONSE_INVALID_MERCHANT_TEAM_FOR_SERVICE_TEAM           = 'Invalid merchant team for this service team. Ensure merchant team is merchant of service team.';
-    case RESPONSE_QUERY_FILTER_DISALLOWED                          = 'Query filter disallowed';
-    case RESPONSE_REDEMPTION_FAILED_VOUCHER_ALREADY_FULLY_REDEEMED = 'This voucher has already been fully redeemed, no redemption made this time.';
-    case RESPONSE_REDEMPTION_FAILED_REQUESTED_AMOUNT_TOO_HIGH      = 'Requested amount is greater than voucher value remaining, no redemption made this time.';
-    case RESPONSE_REDEMPTION_FAILED_TOO_MANY_ATTEMPTS              = 'Too many redemption attempts, please wait.';
-    case RESPONSE_REDEMPTION_LIVE_REDEMPTION                       = 'This was a test redemption. Do NOT provide the person with goods or services.';
-    case RESPONSE_REDEMPTION_TEST_REDEMPTION                       = 'Please provide the customer with their goods / services to the value of XXX.';
-    case RESPONSE_REDEMPTION_SUCCESSFUL                            = 'Redemption successful.';
-    case RESPONSE_UPDATED                                          = 'Updated';
-
-    case RESPONSE_VOUCHER_BENEFICIARY_DISTRIBUTION_SENT_ELSEWHERE = 'This voucher has been previously sent to a different beneficiary.';
+    case RESPONSE_COUNTRY_MISMATCH                                      = 'Country mismatch.';
+    case RESPONSE_INVALID_MERCHANT_TEAM                                 = 'Invalid merchant team.';
+    case RESPONSE_INVALID_MERCHANT_TEAM_FOR_SERVICE_TEAM                = 'Invalid merchant team for this service team. Ensure merchant team is merchant of service team.';
+    case RESPONSE_QUERY_FILTER_DISALLOWED                               = 'Query filter disallowed';
+    case RESPONSE_REDEMPTION_FAILED_VOUCHER_ALREADY_FULLY_REDEEMED      = 'This voucher has already been fully redeemed, no redemption made this time.';
+    case RESPONSE_REDEMPTION_FAILED_REQUESTED_AMOUNT_TOO_HIGH           = 'Requested amount is greater than voucher value remaining, no redemption made this time.';
+    case RESPONSE_REDEMPTION_FAILED_TOO_MANY_ATTEMPTS                   = 'Too many redemption attempts, please wait.';
+    case RESPONSE_REDEMPTION_LIVE_REDEMPTION                            = 'This was a test redemption. Do NOT provide the person with goods or services.';
+    case RESPONSE_REDEMPTION_TEST_REDEMPTION                            = 'Please provide the customer with their goods / services to the value of XXX.';
+    case RESPONSE_REDEMPTION_SUCCESSFUL                                 = 'Redemption successful.';
+    case RESPONSE_UPDATED                                               = 'Updated';
+    case RESPONSE_VOUCHER_BENEFICIARY_DISTRIBUTION_SENT_ELSEWHERE       = 'This voucher has been previously sent to a different beneficiary.';
 }
