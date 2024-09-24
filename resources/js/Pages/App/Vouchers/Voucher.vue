@@ -62,18 +62,18 @@ function confirmVoucherDistribution() {
 
 function createVoucherDistribution() {
 
-    let email = beneficiaryEmail.value;
+    let payload = {
+        voucher_id: voucher.value.id,
+        beneficiary_email: beneficiaryEmail.value,
+    };
 
     if (voucher.value.voucher_beneficiary_distributions?.length) {
-        email = voucher.value.voucher_beneficiary_distributions[0].beneficiary_email_encrypted;
+        payload = {
+            resend_beneficiary_distribution_id: voucher.value.voucher_beneficiary_distributions[0].id,
+        }
     }
 
-    axios.post('/voucher-beneficiary-distributions', {
-
-        voucher_id: voucher.value.id,
-        beneficiary_email: email,
-
-    }).then(response => {
+    axios.post('/voucher-beneficiary-distributions', payload).then(response => {
 
         swal.fire({
             title: "Nice!",
