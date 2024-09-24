@@ -61,28 +61,41 @@ function allocationRemaining() {
 
 function createVoucherSet() {
 
-    axios.post('/admin/voucher-sets', voucherSet.value).then(response => {
+    swal.fire({
+        title: "Are you sure?",
+        icon: "info",
+        text: "This will not only create a voucher set, but also email all the merchants you selected, asking for their approval to partake in the voucher set. Are you sure you want to do this?",
+        showConfirmButton: true,
+        showCancelButton: true,
+    }).then(resp => {
 
-        swal.fire({
-            title: "Nice!",
-            icon: "success",
-            text: response.data.data.message,
-            showConfirmButton: false,
-            timer: 600
-        }).then(() => {
-            window.location.href = '/admin/voucher-set/' + response.data.data.id;
-        });
+        if (resp.isConfirmed) {
 
-    }).catch(error => {
 
-        swal.fire({
-            title: "Oops!",
-            icon: "error",
-            text: error.response.data.meta.message
-        });
+            axios.post('/admin/voucher-sets', voucherSet.value).then(response => {
 
-        console.log(error);
+                swal.fire({
+                    title: "Nice!",
+                    icon: "success",
+                    text: response.data.data.message,
+                    showConfirmButton: false,
+                    timer: 600
+                }).then(() => {
+                    window.location.href = '/admin/voucher-set/' + response.data.data.id;
+                });
 
+            }).catch(error => {
+
+                swal.fire({
+                    title: "Oops!",
+                    icon: "error",
+                    text: error.response.data.meta.message
+                });
+
+                console.log(error);
+
+            })
+        }
     })
 }
 
@@ -214,6 +227,7 @@ function selectServiceTeam(team) {
 
     getMerchantTeamsForSelectedServiceTeam(team);
 }
+
 
 function selectVoucherTemplate(template) {
     if (voucherSet.value.voucher_template_id === template.id) {
@@ -955,7 +969,9 @@ watch(serviceTeamSearchQuery, () => {
                         </div>
 
                     </div>
+
                 </div>
+
 
                 <div class="my-8">
                     <div>

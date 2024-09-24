@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Events\VoucherSets\VoucherSetWasCreated;
+use App\Events\VoucherSets\VoucherSetWasUpdated;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -15,8 +17,12 @@ class VoucherSet extends Model
     use HasUuids;
     use SoftDeletes;
 
-    protected $keyType   = 'string';
-    public $incrementing = false;
+    protected $keyType          = 'string';
+    public $incrementing        = false;
+    protected $dispatchesEvents = [
+        'created' => VoucherSetWasCreated::class,
+        'updated' => VoucherSetWasUpdated::class,
+    ];
 
     /**
      * @return BelongsTo
