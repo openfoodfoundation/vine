@@ -7,6 +7,7 @@ namespace App\Enums;
  */
 enum ApiResponse: string
 {
+    case RESPONSE_ALREADY_EXISTS                                        = 'Already exists';
     case RESPONSE_DELETED                                               = 'Deleted';
     case RESPONSE_ERROR                                                 = 'Error';
     case RESPONSE_FILE_TYPE_NOT_ALLOWED                                 = 'File type not allowed';
@@ -34,4 +35,5 @@ enum ApiResponse: string
     case RESPONSE_REDEMPTION_TEST_REDEMPTION                            = 'Please provide the customer with their goods / services to the value of XXX.';
     case RESPONSE_REDEMPTION_SUCCESSFUL                                 = 'Redemption successful.';
     case RESPONSE_UPDATED                                               = 'Updated';
+    case RESPONSE_VOUCHER_BENEFICIARY_DISTRIBUTION_SENT_ELSEWHERE       = 'This voucher has been previously sent to a different beneficiary.';
 }
