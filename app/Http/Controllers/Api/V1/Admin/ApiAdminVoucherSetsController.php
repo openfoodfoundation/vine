@@ -219,7 +219,7 @@ class ApiAdminVoucherSetsController extends Controller
                 Rule::exists('teams', 'id'),
             ],
             'voucher_template_id' => [
-                'sometimes',
+                'required',
                 'integer',
                 Rule::exists('voucher_templates', 'id'),
             ],
