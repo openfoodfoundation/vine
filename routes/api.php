@@ -27,6 +27,7 @@ use App\Http\Controllers\Api\V1\ApiMyTeamVoucherSetsCreatedController;
 use App\Http\Controllers\Api\V1\ApiMyTeamVSMTARController;
 use App\Http\Controllers\Api\V1\ApiShopsController;
 use App\Http\Controllers\Api\V1\ApiSystemStatisticsController;
+use App\Http\Controllers\Api\V1\ApiVoucherBeneficiaryDistributionController;
 use App\Http\Controllers\Api\V1\ApiVoucherRedemptionsController;
 use App\Http\Controllers\Api\V1\ApiVoucherValidationController;
 use App\Http\Middleware\CheckAdminStatus;
@@ -541,6 +542,59 @@ Route::group(['prefix' => 'v1', 'middleware' => VerifyApiTokenSignature::class],
                     ->name('api.v1.voucher-validation.delete');
 
             });
+
+            /**
+             * Voucher Beneficiary Distributions
+             */
+            Route::post('/voucher-beneficiary-distributions', [ApiVoucherBeneficiaryDistributionController::class, 'store'])
+                ->name('api.v1.voucher-beneficiary-distributions.post')
+                ->middleware(
+                    [
+                        'abilities:' .
+                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                        PersonalAccessTokenAbility::VOUCHER_BENEFICIARY_DISTRIBUTION_CREATE->value,
+                    ]
+                );
+
+            Route::get('/voucher-beneficiary-distributions', [ApiVoucherBeneficiaryDistributionController::class, 'index'])
+                ->name('api.v1.voucher-beneficiary-distributions.getMany')
+                ->middleware(
+                    [
+                        'abilities:' .
+                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                        PersonalAccessTokenAbility::VOUCHER_BENEFICIARY_DISTRIBUTION_READ->value,
+                    ]
+                );
+
+            Route::get('/voucher-beneficiary-distributions/{id}', [ApiVoucherBeneficiaryDistributionController::class, 'show'])
+                ->name('api.v1.voucher-beneficiary-distributions.get')
+                ->middleware(
+                    [
+                        'abilities:' .
+                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                        PersonalAccessTokenAbility::VOUCHER_BENEFICIARY_DISTRIBUTION_READ->value,
+                    ]
+                );
+
+            Route::put('/voucher-beneficiary-distributions/{id}', [ApiVoucherBeneficiaryDistributionController::class, 'update'])
+                ->name('api.v1.voucher-beneficiary-distributions.put')
+                ->middleware(
+                    [
+                        'abilities:' .
+                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                        PersonalAccessTokenAbility::VOUCHER_BENEFICIARY_DISTRIBUTION_UPDATE->value,
+                    ]
+                );
+
+            Route::delete('/voucher-beneficiary-distributions/{id}', [ApiVoucherBeneficiaryDistributionController::class, 'destroy'])
+                ->name('api.v1.voucher-beneficiary-distributions.delete')
+                ->middleware(
+                    [
+                        'abilities:' .
+                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                        PersonalAccessTokenAbility::VOUCHER_BENEFICIARY_DISTRIBUTION_DELETE->value,
+                    ]
+                );
 
             /**
              * Voucher Redemptions

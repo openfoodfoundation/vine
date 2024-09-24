@@ -2,10 +2,10 @@
 
 namespace App\Console\Commands\VoucherSets;
 
+use App\Events\VoucherSets\VoucherSetWasGenerated;
 use App\Models\User;
 use App\Models\Voucher;
 use App\Models\VoucherSet;
-use App\Notifications\Mail\VoucherSets\VoucherSetGenerationSuccessEmailNotification;
 use App\Notifications\Slack\VoucherSets\VoucherSetGenerationFailedNotification;
 use App\Services\VoucherSetService;
 use Illuminate\Console\Command;
@@ -31,11 +31,15 @@ class GenerateVoucherSetVouchersCommand extends Command
      */
     public function handle(): int
     {
-        $voucherSet = VoucherSet::where('is_denomination_valid', 1)->whereNull('voucher_generation_started_at')->whereNull('voucher_generation_finished_at')->first();
+        $voucherSet = VoucherSet::where('is_denomination_valid', 1)
+            ->whereNull('voucher_generation_started_at')
+            ->whereNull('voucher_generation_finished_at')
+            ->whereNotNull('merchant_approval_request_id')
+            ->first();
 
         if ($voucherSet) {
             $voucherSet->voucher_generation_started_at = now();
-            $voucherSet->save();
+            $voucherSet->saveQuietly();
 
             /**
              * Re-validate the denomination JSON
@@ -47,7 +51,14 @@ class GenerateVoucherSetVouchersCommand extends Command
                 $this->line('Voucher set is invalid.');
 
                 $user = User::first();
-                $user->notify(new VoucherSetGenerationFailedNotification(voucherSet: $voucherSet, reason: 'The voucher set denomination was invalid.'));
+                $user->notify(new VoucherSetGenerationFailedNotification(voucherSet: $voucherSet, reason: 'The voucher set denomination is invalid. Please investigate.'));
+
+                /**
+                 * Re-set this voucher set
+                 */
+                $voucherSet->voucher_generation_started_at  = null;
+                $voucherSet->voucher_generation_finished_at = null;
+                $voucherSet->saveQuietly();
 
                 return 0;
             }
@@ -83,9 +94,7 @@ class GenerateVoucherSetVouchersCommand extends Command
             $voucherSet->voucher_generation_finished_at = now();
             $voucherSet->save();
 
-            $notificationUser = User::find($voucherSet->created_by_user_id);
-
-            $notificationUser?->notify(new VoucherSetGenerationSuccessEmailNotification(voucherSet: $voucherSet));
+            event(new VoucherSetWasGenerated($voucherSet));
 
         }
 

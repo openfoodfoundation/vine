@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use App\Models\TeamMerchantTeam;
 use App\Models\VoucherSet;
 use App\Models\VoucherSetMerchantTeam;
+use App\Models\VoucherTemplate;
 use Auth;
 use Exception;
 use Illuminate\Http\JsonResponse;
@@ -153,9 +154,15 @@ class ApiAdminVoucherSetsController extends Controller
     )]
     #[BodyParam(
         name       : 'funded_by_team_id',
-        type       : 'array',
+        type       : 'integer',
         description: 'The ID of the funding team associated with the voucher set',
         required   : false
+    )]
+    #[BodyParam(
+        name       : 'voucher_template_id',
+        type       : 'integer',
+        description: 'The ID of the voucher template to be used for the voucher set',
+        required   : true
     )]
     #[BodyParam(
         name       : 'total_set_value',
@@ -212,6 +219,11 @@ class ApiAdminVoucherSetsController extends Controller
                 'integer',
                 Rule::exists('teams', 'id'),
             ],
+            'voucher_template_id' => [
+                'required',
+                'integer',
+                Rule::exists('voucher_templates', 'id'),
+            ],
             'total_set_value' => [
                 'required',
                 'integer',
@@ -263,6 +275,21 @@ class ApiAdminVoucherSetsController extends Controller
             foreach ($merchantTeamIds as $merchantTeamId) {
                 if (!in_array($merchantTeamId, $teamMerchantTeams)) {
                     $this->message      = ApiResponse::RESPONSE_INVALID_MERCHANT_TEAM_FOR_SERVICE_TEAM->value;
+                    $this->responseCode = 400;
+
+                    return $this->respond();
+                }
+            }
+
+            /**
+             * Validate that the current user's team owns the template, if provided
+             */
+            $templateId = $this->request->get('voucher_template_id');
+            if ($templateId) {
+                $template = VoucherTemplate::where('team_id', Auth::user()->current_team_id)->find($templateId);
+
+                if (!$template) {
+                    $this->message      = ApiResponse::RESPONSE_INVALID_VOUCHER_TEMPLATE_FOR_TEAM->value;
                     $this->responseCode = 400;
 
                     return $this->respond();
