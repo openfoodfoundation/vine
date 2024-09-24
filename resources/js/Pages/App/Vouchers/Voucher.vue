@@ -23,7 +23,6 @@ const $props = defineProps({
 
 const beneficiaryEmail = ref('');
 const distributionSectionRef = ref(null);
-const emailIsValid = ref(false);
 const showDistributionSection = ref(false);
 const voucher = ref({})
 
@@ -38,26 +37,26 @@ function cancelDistribution() {
 
 
 function confirmVoucherDistribution() {
-    if (emailIsValid) {
 
-        swal.fire({
-            title: "Are you sure?",
-            icon: "warning",
-            text: "You cannot resend this voucher to a different email address after this. You can resend it to the same one, but not a different one. PLEASE double-check you have the details correct.",
-            showConfirmButton: true,
-            showCancelButton: true,
-            confirmButtonText: "I do, send it!",
-            cancelButtonText: "Go back"
-        }).then(result => {
 
-            if (result.isConfirmed) {
+    swal.fire({
+        title: "Are you sure?",
+        icon: "warning",
+        text: "You cannot resend this voucher to a different email address after this. You can resend it to the same person, but not a different person. Please double-check you have the details correct.",
+        showConfirmButton: true,
+        showCancelButton: true,
+        confirmButtonText: "All good, send it!",
+        cancelButtonText: "Go back"
+    }).then(result => {
 
-                createVoucherDistribution();
+        if (result.isConfirmed) {
 
-            }
+            createVoucherDistribution();
 
-        });
-    }
+        }
+
+    });
+
 }
 
 function createVoucherDistribution() {
@@ -117,37 +116,6 @@ function openDistributionSection() {
         }
     })
 }
-
-function validateEmail() {
-    const parts = beneficiaryEmail.value.toString().split('@');
-
-    // Check that there are exactly two parts, the local and domain parts
-    if (parts.length !== 2) {
-        return false;
-    }
-
-    const localPart = parts[0];
-    const domainPart = parts[1];
-
-    // Ensure the local part has some characters and that the domain contains a period
-    if (localPart.length === 0 || domainPart.length < 3 || !domainPart.includes('.')) {
-        return false;
-    }
-
-    const domainParts = domainPart.split('.');
-
-    // Ensure that the period is not at the start or end of the domain part
-    if (domainParts[0].length === 0 || domainParts[domainParts.length - 1].length === 0) {
-        return false;
-    }
-
-    return true;
-}
-
-watch(beneficiaryEmail, () => {
-    emailIsValid.value = validateEmail()
-})
-
 
 </script>
 
@@ -294,8 +262,12 @@ watch(beneficiaryEmail, () => {
 
         <div class="card">
             <div class="card-header flex justify-between">
-                Beneficiary Distributions
+                <div>
+                    <div>
+                        Beneficiary Distributions
+                    </div>
 
+                </div>
 
                 <div>
                     <PrimaryButton v-if="voucher.voucher_beneficiary_distributions?.length"
@@ -313,9 +285,11 @@ watch(beneficiaryEmail, () => {
             <div class="mt-4">
                 <div v-if="voucher.voucher_beneficiary_distributions?.length">
 
-                    <div v-for="(distribution, i) in voucher.voucher_beneficiary_distributions" class="py-1 border-b border-gray-200 flex justify-between">
+                    <div v-for="(distribution, i) in voucher.voucher_beneficiary_distributions"
+                         class="py-1 border-b border-gray-200 flex justify-between">
                         <div class="font-medium ">
-                            {{ i === 0 ? 'Distributed' : 'Re-distributed' }} {{ dayjs.utc(distribution.created_at).fromNow() }}
+                            {{ i === 0 ? 'Distributed' : 'Re-distributed' }}
+                            {{ dayjs.utc(distribution.created_at).fromNow() }}
                         </div>
 
                         <div class=" italic text-gray-500">
@@ -325,7 +299,7 @@ watch(beneficiaryEmail, () => {
                 </div>
 
                 <div v-else>
-                    This voucher has not been distributed yet!
+                    This voucher has not been distributed yet.
                 </div>
             </div>
         </div>
@@ -334,6 +308,9 @@ watch(beneficiaryEmail, () => {
         <div v-if="showDistributionSection" ref="distributionSectionRef" class="card">
             <div class="card-header">
                 Distribute to beneficiary
+                <div class="text-xs">
+                    You can email this voucher to a beneficiary here.
+                </div>
             </div>
 
             <div class="mt-8">
@@ -344,12 +321,6 @@ watch(beneficiaryEmail, () => {
                     <div class="w-full">
                         <input id="beneficiary-email" v-model="beneficiaryEmail" class="md:w-1/3"
                                placeholder="beneficiary@example.com" type="email">
-                        <div v-if="!emailIsValid" class="mt-1 ml-1 text-xs italic text-red-500">
-                            Invalid email &hyphen; please check
-                        </div>
-                        <div v-else class="mt-1 ml-1 text-xs italic text-gray-500">
-                            Looks good!
-                        </div>
                     </div>
 
                     <div class="flex space-x-4">
@@ -358,7 +329,7 @@ watch(beneficiaryEmail, () => {
                             Cancel
                         </SecondaryButton>
 
-                        <PrimaryButton :disabled="!emailIsValid"
+                        <PrimaryButton :disabled="!beneficiaryEmail"
                                        class="disabled:cursor-not-allowed disabled:opacity-25"
                                        @click="confirmVoucherDistribution">
                             Send
