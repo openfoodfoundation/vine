@@ -18,9 +18,7 @@ class BeneficiaryVoucherDistributionEmail extends Notification
      *
      * @param VoucherBeneficiaryDistribution $voucherBeneficiaryDistribution
      */
-    public function __construct(public VoucherBeneficiaryDistribution $voucherBeneficiaryDistribution)
-    {
-    }
+    public function __construct(public VoucherBeneficiaryDistribution $voucherBeneficiaryDistribution) {}
 
     /**
      * Get the notification's delivery channels.
@@ -56,22 +54,20 @@ class BeneficiaryVoucherDistributionEmail extends Notification
             $this->voucherBeneficiaryDistribution->voucher_id . '/branded/voucher-branded.png';
 
         $brandedVoucherTemplateExists = Storage::exists($voucherTemplateStoragePath);
-        if($brandedVoucherTemplateExists)
-        {
+        if ($brandedVoucherTemplateExists) {
             $brandedVoucherTemplateContents = Storage::get($voucherTemplateStoragePath);
 
             $mailMessage = $mailMessage->line('Please see attached for your VINE voucher. ')
-                                       ->attachData(
-                data   : $brandedVoucherTemplateContents,
-                name   : 'voucher-' . $this->voucherBeneficiaryDistribution->voucher_id . '.png',
-                options: [
-                             'mime' => 'image/png',
-                         ]
-            );
+                ->attachData(
+                    data   : $brandedVoucherTemplateContents,
+                    name   : 'voucher-' . $this->voucherBeneficiaryDistribution->voucher_id . '.png',
+                    options: [
+                        'mime' => 'image/png',
+                    ]
+                );
         }
 
         $mailMessage = $mailMessage->line('Thank you for using our application!');
-
 
         return $mailMessage;
     }
