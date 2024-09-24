@@ -36,14 +36,18 @@ enum PersonalAccessTokenAbility: string
     case SYSTEM_STATISTICS_READ                             = 'system-statistics-read';
     case SYSTEM_STATISTICS_UPDATE                           = 'system-statistics-update';
     case SYSTEM_STATISTICS_DELETE                           = 'system-statistics-delete';
-    case VOUCHER_REDEMPTIONS_CREATE                         = 'voucher-redemptions-create';
-    case VOUCHER_REDEMPTIONS_READ                           = 'voucher-redemptions-read';
-    case VOUCHER_REDEMPTIONS_UPDATE                         = 'voucher-redemptions-update';
-    case VOUCHER_REDEMPTIONS_DELETE                         = 'voucher-redemptions-delete';
+    case VOUCHER_BENEFICIARY_DISTRIBUTION_CREATE            = 'voucher-beneficiary-distributions-create';
+    case VOUCHER_BENEFICIARY_DISTRIBUTION_READ              = 'voucher-beneficiary-distributions-read';
+    case VOUCHER_BENEFICIARY_DISTRIBUTION_UPDATE            = 'voucher-beneficiary-distributions-update';
+    case VOUCHER_BENEFICIARY_DISTRIBUTION_DELETE            = 'voucher-beneficiary-distributions-delete';
     case VOUCHER_SET_MERCHANT_TEAM_APPROVAL_REQUESTS_CREATE = 'voucher-set-merchant-team-approval-requests-create';
     case VOUCHER_SET_MERCHANT_TEAM_APPROVAL_REQUESTS_READ   = 'voucher-set-merchant-team-approval-requests-read';
     case VOUCHER_SET_MERCHANT_TEAM_APPROVAL_REQUESTS_UPDATE = 'voucher-set-merchant-team-approval-requests-update';
     case VOUCHER_SET_MERCHANT_TEAM_APPROVAL_REQUESTS_DELETE = 'voucher-set-merchant-team-approval-requests-delete';
+    case VOUCHER_REDEMPTIONS_CREATE                         = 'voucher-redemptions-create';
+    case VOUCHER_REDEMPTIONS_READ                           = 'voucher-redemptions-read';
+    case VOUCHER_REDEMPTIONS_UPDATE                         = 'voucher-redemptions-update';
+    case VOUCHER_REDEMPTIONS_DELETE                         = 'voucher-redemptions-delete';
     case MY_TEAM_SEARCH_CREATE                              = 'my-team-search-create';
     case MY_TEAM_SEARCH_READ                                = 'my-team-search-read';
     case MY_TEAM_SEARCH_UPDATE                              = 'my-team-search-update';
@@ -94,15 +98,18 @@ enum PersonalAccessTokenAbility: string
             self::SYSTEM_STATISTICS_READ->value                             => 'System Statistics Read',
             self::SYSTEM_STATISTICS_UPDATE->value                           => 'System Statistics Update',
             self::SYSTEM_STATISTICS_DELETE->value                           => 'System Statistics Delete',
-            self::VOUCHER_REDEMPTIONS_CREATE->value                         => 'Voucher Redemptions Create',
-            self::VOUCHER_REDEMPTIONS_READ->value                           => 'Voucher Redemptions Read',
-            self::VOUCHER_REDEMPTIONS_UPDATE->value                         => 'Voucher Redemptions Update',
-            self::VOUCHER_REDEMPTIONS_DELETE->value                         => 'Voucher Redemptions Delete',
+            self::VOUCHER_BENEFICIARY_DISTRIBUTION_CREATE->value            => 'Voucher Beneficiary Distribution Create',
+            self::VOUCHER_BENEFICIARY_DISTRIBUTION_READ->value              => 'Voucher Beneficiary Distribution Read',
+            self::VOUCHER_BENEFICIARY_DISTRIBUTION_UPDATE->value            => 'Voucher Beneficiary Distribution Update',
+            self::VOUCHER_BENEFICIARY_DISTRIBUTION_DELETE->value            => 'Voucher Beneficiary Distribution Delete',
             self::VOUCHER_SET_MERCHANT_TEAM_APPROVAL_REQUESTS_CREATE->value => 'Voucher Set Merchant Team Approval Request Create',
             self::VOUCHER_SET_MERCHANT_TEAM_APPROVAL_REQUESTS_READ->value   => 'Voucher Set Merchant Team Approval Request Read',
             self::VOUCHER_SET_MERCHANT_TEAM_APPROVAL_REQUESTS_UPDATE->value => 'Voucher Set Merchant Team Approval Request Update',
             self::VOUCHER_SET_MERCHANT_TEAM_APPROVAL_REQUESTS_DELETE->value => 'Voucher Set Merchant Team Approval Request Delete',
-
+            self::VOUCHER_REDEMPTIONS_CREATE->value                         => 'Voucher Redemptions Create',
+            self::VOUCHER_REDEMPTIONS_READ->value                           => 'Voucher Redemptions Read',
+            self::VOUCHER_REDEMPTIONS_UPDATE->value                         => 'Voucher Redemptions Update',
+            self::VOUCHER_REDEMPTIONS_DELETE->value                         => 'Voucher Redemptions Delete',
         ];
     }
 

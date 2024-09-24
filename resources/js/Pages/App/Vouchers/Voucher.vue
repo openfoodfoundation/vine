@@ -1,12 +1,17 @@
 <script setup>
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import {Head, Link} from '@inertiajs/vue3';
-import {onMounted, ref} from "vue";
+import {nextTick, onMounted, ref, watch} from "vue";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
+import localizedFormat from "dayjs/plugin/localizedFormat";
 import utc from "dayjs/plugin/utc"
+import PrimaryButton from "@/Components/PrimaryButton.vue";
+import SecondaryButton from "@/Components/SecondaryButton.vue";
+import swal from "sweetalert2";
 
 dayjs.extend(relativeTime);
+dayjs.extend(localizedFormat)
 dayjs.extend(utc);
 
 const $props = defineProps({
@@ -16,17 +21,99 @@ const $props = defineProps({
     },
 });
 
+const beneficiaryEmail = ref('');
+const distributionSectionRef = ref(null);
+const showDistributionSection = ref(false);
 const voucher = ref({})
 
 onMounted(() => {
     getVoucher()
 });
 
+function cancelDistribution() {
+    showDistributionSection.value = false;
+    beneficiaryEmail.value = '';
+}
+
+
+function confirmVoucherDistribution() {
+
+
+    swal.fire({
+        title: "Are you sure?",
+        icon: "warning",
+        text: "You cannot resend this voucher to a different email address after this. You can resend it to the same person, but not a different person. Please double-check you have the details correct.",
+        showConfirmButton: true,
+        showCancelButton: true,
+        confirmButtonText: "All good, send it!",
+        cancelButtonText: "Go back"
+    }).then(result => {
+
+        if (result.isConfirmed) {
+
+            createVoucherDistribution();
+
+        }
+
+    });
+
+}
+
+function createVoucherDistribution() {
+
+    let payload = {
+        voucher_id: voucher.value.id,
+        beneficiary_email: beneficiaryEmail.value,
+    };
+
+    if (voucher.value.voucher_beneficiary_distributions?.length) {
+        payload = {
+            resend_beneficiary_distribution_id: voucher.value.voucher_beneficiary_distributions[0].id,
+        }
+    }
+
+    axios.post('/voucher-beneficiary-distributions', payload).then(response => {
+
+        swal.fire({
+            title: "Nice!",
+            icon: "success",
+            text: response.data.data.message,
+            showConfirmButton: false,
+            timer: 600
+        });
+
+        cancelDistribution();
+        getVoucher();
+
+    }).catch(error => {
+
+        swal.fire({
+            title: "Oops!",
+            icon: "error",
+            text: error.response.data.meta.message
+        });
+
+        console.log(error);
+
+    })
+}
+
 function getVoucher() {
-    axios.get('/my-team-vouchers/' + $props.voucherId + '?cached=false&relations=createdByTeam,allocatedToServiceTeam,voucherRedemptions.redeemedByUser,voucherRedemptions.redeemedByTeam,voucherSet').then(response => {
+    axios.get('/my-team-vouchers/' + $props.voucherId + '?cached=false&relations=createdByTeam,allocatedToServiceTeam,voucherBeneficiaryDistributions,voucherRedemptions.redeemedByUser,voucherRedemptions.redeemedByTeam,voucherSet').then(response => {
         voucher.value = response.data.data
     }).catch(error => {
         console.log(error)
+    })
+}
+
+
+function openDistributionSection() {
+    showDistributionSection.value = true;
+
+    nextTick(() => {
+        if (distributionSectionRef.value) {
+            distributionSectionRef.value.scrollIntoView({behavior: 'smooth'});
+        }
     })
 }
 
@@ -44,11 +131,12 @@ function getVoucher() {
             <div class="card">
                 <div class="card-header">
                     Voucher Details
+
                 </div>
                 <h2 class="opacity-25">
                     ID: {{ voucher.id }}
                 </h2>
-                <div class="mt-4" v-if="voucher.voucher_short_code">
+                <div v-if="voucher.voucher_short_code" class="mt-4">
                     <h2>
                         Short Code: {{ voucher.voucher_short_code }}
                     </h2>
@@ -71,7 +159,7 @@ function getVoucher() {
 
         <div class="card">
             <div class="card-header">
-                Voucher details
+                Usage overview
             </div>
 
             <div class="grid grid-cols-4 gap-y-12 text-center mt-8">
@@ -159,13 +247,97 @@ function getVoucher() {
                         Redeemed amount: <span class="font-bold">${{ redemption.redeemed_amount / 100 }}</span>
                     </div>
                     <div v-if="redemption.redeemed_by_user && redemption.redeemed_by_team">
-                        Redeemed by: <span class="font-bold">{{ redemption.redeemed_by_user.name }} ({{ redemption.redeemed_by_team.name }})</span>
+                        Redeemed by: <span class="font-bold">{{
+                            redemption.redeemed_by_user.name
+                        }} ({{ redemption.redeemed_by_team.name }})</span>
                     </div>
                     <div v-if="redemption.created_at">
-                        Redeemed at: <span class="font-bold">{{ dayjs.utc(redemption.created_at).fromNow() }} ({{ dayjs(redemption.created_at) }})</span>
+                        Redeemed at: <span class="font-bold">{{
+                            dayjs.utc(redemption.created_at).fromNow()
+                        }} ({{ dayjs(redemption.created_at) }})</span>
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header flex justify-between">
+                <div>
+                    <div>
+                        Beneficiary Distributions
+                    </div>
+
+                </div>
+
+                <div>
+                    <PrimaryButton v-if="voucher.voucher_beneficiary_distributions?.length"
+                                   @click="createVoucherDistribution">
+                        Resend
+                    </PrimaryButton>
+
+                    <PrimaryButton v-else @click="openDistributionSection">
+                        Send to beneficiary
+                    </PrimaryButton>
+                </div>
+
+            </div>
+
+            <div class="mt-4">
+                <div v-if="voucher.voucher_beneficiary_distributions?.length">
+
+                    <div v-for="(distribution, i) in voucher.voucher_beneficiary_distributions"
+                         class="py-1 border-b border-gray-200 flex justify-between">
+                        <div class="font-medium ">
+                            {{ i === 0 ? 'Distributed' : 'Re-distributed' }}
+                            {{ dayjs.utc(distribution.created_at).fromNow() }}
+                        </div>
+
+                        <div class=" italic text-gray-500">
+                            {{ dayjs(distribution.created_at).format('llll') }}
+                        </div>
+                    </div>
+                </div>
+
+                <div v-else>
+                    This voucher has not been distributed yet.
+                </div>
+            </div>
+        </div>
+
+
+        <div v-if="showDistributionSection" ref="distributionSectionRef" class="card">
+            <div class="card-header">
+                Distribute to beneficiary
+                <div class="text-xs">
+                    You can email this voucher to a beneficiary here.
+                </div>
+            </div>
+
+            <div class="mt-8">
+                <label for="beneficiary-email">
+                    Please enter the beneficiary's email
+                </label>
+                <div class="mt-2 flex justify-between">
+                    <div class="w-full">
+                        <input id="beneficiary-email" v-model="beneficiaryEmail" class="md:w-1/3"
+                               placeholder="beneficiary@example.com" type="email">
+                    </div>
+
+                    <div class="flex space-x-4">
+
+                        <SecondaryButton @click="cancelDistribution">
+                            Cancel
+                        </SecondaryButton>
+
+                        <PrimaryButton :disabled="!beneficiaryEmail"
+                                       class="disabled:cursor-not-allowed disabled:opacity-25"
+                                       @click="confirmVoucherDistribution">
+                            Send
+                        </PrimaryButton>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
         <div class="pb-32"></div>

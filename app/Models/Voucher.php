@@ -55,4 +55,9 @@ class Voucher extends Model
     {
         return $this->hasMany(VoucherRedemption::class, 'voucher_id', 'id');
     }
+
+    public function voucherBeneficiaryDistributions(): HasMany
+    {
+        return $this->hasMany(VoucherBeneficiaryDistribution::class, 'voucher_id', 'id');
+    }
 }
