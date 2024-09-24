@@ -66,7 +66,7 @@ function createVoucherDistribution() {
         beneficiary_email: beneficiaryEmail.value,
     };
 
-    if (voucher.value.voucher_beneficiary_distributions?.length) {
+    if (voucher.value.voucher_beneficiary_distributions?.length >= 1) {
         payload = {
             resend_beneficiary_distribution_id: voucher.value.voucher_beneficiary_distributions[0].id,
         }

@@ -83,12 +83,12 @@ class ApiVoucherBeneficiaryDistributionController extends Controller
          * The validation array.
          */
         $validationArray = [
-            'voucher_id' => [
+            'voucher_id'                         => [
                 'required_without:resend_beneficiary_distribution_id',
                 'string',
                 Rule::exists('vouchers', 'id'),
             ],
-            'beneficiary_email' => [
+            'beneficiary_email'                  => [
                 'required_without:resend_beneficiary_distribution_id',
                 'email',
             ],
@@ -116,9 +116,11 @@ class ApiVoucherBeneficiaryDistributionController extends Controller
             /**
              * Ensure the authenticated user team owns the voucher
              */
-            $voucher = Voucher::where('created_by_team_id', Auth::user()->current_team_id)
-                ->orWhere('allocated_to_service_team_id', Auth::user()->current_team_id)
-                ->find($voucherId);
+            $voucher = Voucher::where(function ($query) {
+                $query->where('created_by_team_id', Auth::user()->current_team_id)
+                      ->orWhere('allocated_to_service_team_id', Auth::user()->current_team_id);
+            })
+                              ->find($voucherId);
 
             if (!$voucher) {
                 $this->responseCode = 404;
@@ -146,9 +148,11 @@ class ApiVoucherBeneficiaryDistributionController extends Controller
                 /**
                  * Ensure the voucher set belongs to the user's current team
                  */
-                $voucherSet = VoucherSet::where('created_by_team_id', Auth::user()->current_team_id)
-                    ->orWhere('allocated_to_service_team_id', Auth::user()->current_team_id)
-                    ->find($voucherBeneficiaryDistribution->voucher_set_id);
+                $voucherSet = VoucherSet::where(function ($query) {
+                    $query->where('created_by_team_id', Auth::user()->current_team_id)
+                          ->orWhere('allocated_to_service_team_id', Auth::user()->current_team_id);
+            })
+                                        ->find($voucherBeneficiaryDistribution->voucher_set_id);
                 if (!$voucherSet) {
                     $this->responseCode = 404;
                     $this->message      = ApiResponse::RESPONSE_NOT_FOUND->value;
@@ -175,7 +179,7 @@ class ApiVoucherBeneficiaryDistributionController extends Controller
              * Ensure this voucher has not been sent to someone else.
              */
             $numExistingDistributionsForThisVoucher = VoucherBeneficiaryDistribution::where('voucher_id', $voucherId)
-                ->count();
+                                                                                    ->count();
 
             if ($numExistingDistributionsForThisVoucher > 0) {
                 $this->responseCode = 400;
@@ -196,8 +200,7 @@ class ApiVoucherBeneficiaryDistributionController extends Controller
 
             $this->data = $model;
 
-        }
-        catch (Exception $e) {
+        } catch (Exception $e) {
 
             $this->responseCode = 500;
             $this->message      = ApiResponse::RESPONSE_ERROR->value . ': "' . $e->getMessage() . '".';
