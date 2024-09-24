@@ -162,7 +162,7 @@ class ApiAdminVoucherSetsController extends Controller
         name       : 'voucher_template_id',
         type       : 'integer',
         description: 'The ID of the voucher template to be used for the voucher set',
-        required   : false
+        required   : true
     )]
     #[BodyParam(
         name       : 'total_set_value',
