@@ -277,6 +277,7 @@ watch(voucherSet, () => {
     canGenerateVoucherSet.value = (
         voucherSet.value.total_set_value > 0 &&
         voucherSet.value.merchant_team_ids.length > 0 &&
+        voucherSet.value.voucher_template_id &&
         voucherSet.value.allocated_to_service_team_id &&
         voucherSet.value.voucher_set_type &&
         allocationRemaining() >= 0
