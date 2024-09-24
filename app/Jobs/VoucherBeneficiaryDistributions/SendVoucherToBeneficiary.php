@@ -31,9 +31,6 @@ class SendVoucherToBeneficiary implements ShouldQueue
 
             Notification::route('mail', $address)
                 ->notify(new BeneficiaryVoucherDistributionEmail($this->voucherBeneficiaryDistribution));
-
-            $this->voucherBeneficiaryDistribution->email_sent_at = now();
-            $this->voucherBeneficiaryDistribution->saveQuietly();
         }
     }
 }
