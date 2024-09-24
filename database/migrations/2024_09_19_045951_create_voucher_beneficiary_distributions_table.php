@@ -15,8 +15,8 @@ return new class() extends Migration
             $table->id();
             $table->uuid('voucher_id')->index('vbd_vi');
             $table->uuid('voucher_set_id')->index('vbd_vsi');
-            $table->text('beneficiary_email_encrypted');
             $table->unsignedBigInteger('created_by_user_id');
+            $table->text('beneficiary_email_encrypted');
             $table->timestamps();
             $table->softDeletes();
         });
