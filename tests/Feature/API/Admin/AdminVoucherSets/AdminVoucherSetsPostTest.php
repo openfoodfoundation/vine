@@ -74,7 +74,7 @@ class AdminVoucherSetsPostTest extends BaseAPITestCase
             'denominations'                => [
                 ['number' => 1, 'value' => 10],
             ],
-            'voucher_set_type'             => VoucherSetType::FOOD_EQUITY->value,
+            'voucher_set_type' => VoucherSetType::FOOD_EQUITY->value,
         ];
 
         $response = $this->post($this->apiRoot . $this->endpoint, $payload);
@@ -108,7 +108,7 @@ class AdminVoucherSetsPostTest extends BaseAPITestCase
             'denominations'                => [
                 ['number' => 1, 'value' => 10],
             ],
-            'voucher_set_type'             => VoucherSetType::FOOD_EQUITY->value,
+            'voucher_set_type' => VoucherSetType::FOOD_EQUITY->value,
         ];
 
         $response = $this->post($this->apiRoot . $this->endpoint, $payload);
