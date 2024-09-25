@@ -11,6 +11,7 @@ use App\Models\VoucherSet;
 use Crypt;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
+use Illuminate\Support\Facades\Auth;
 use Laravel\Sanctum\Sanctum;
 use PHPUnit\Framework\Attributes\Test;
 use Tests\Feature\API\BaseAPITestCase;
@@ -62,8 +63,13 @@ class VoucherBeneficiaryDistributionsPostTest extends BaseAPITestCase
             PersonalAccessTokenAbility::VOUCHER_BENEFICIARY_DISTRIBUTION_CREATE->value,
         ]);
 
+        $voucherSet = VoucherSet::factory()->create([
+            'allocated_to_service_team_id' => $this->user->current_team_id,
+        ]);
+
         $voucher = Voucher::factory()->create([
-            'created_by_team_id' => $this->team->id,
+            'allocated_to_service_team_id' => $this->user->current_team_id,
+            'voucher_set_id'               => $voucherSet->id,
         ]);
 
         $beneficiaryEmail = fake()->email();
@@ -97,12 +103,12 @@ class VoucherBeneficiaryDistributionsPostTest extends BaseAPITestCase
         ]);
 
         $voucherSet = VoucherSet::factory()->create([
-            'created_by_team_id' => $this->team->id,
+            'allocated_to_service_team_id' => $this->user->current_team_id,
         ]);
 
         $voucher = Voucher::factory()->create([
-            'created_by_team_id' => $this->team->id,
-            'voucher_set_id'     => $voucherSet->id,
+            'allocated_to_service_team_id' => $this->user->current_team_id,
+            'voucher_set_id'               => $voucherSet->id,
         ]);
 
         $encryptedEmail = Crypt::encrypt(fake()->email);
@@ -123,7 +129,6 @@ class VoucherBeneficiaryDistributionsPostTest extends BaseAPITestCase
         ];
 
         $response = $this->postJson($this->apiRoot . $this->endpoint, $payload);
-
         $response->assertStatus(200);
 
         $existingDistributions = VoucherBeneficiaryDistribution::where('voucher_id', $voucher->id)->get();
