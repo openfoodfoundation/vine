@@ -2,10 +2,11 @@
 
 namespace Database\Factories;
 
+use App\Models\VoucherTemplate;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\VoucherTemplate>
+ * @extends Factory<VoucherTemplate>
  */
 class VoucherTemplateFactory extends Factory
 {
@@ -17,7 +18,9 @@ class VoucherTemplateFactory extends Factory
     public function definition(): array
     {
         return [
-
+            'team_id'               => fake()->randomDigitNotNull(),
+            'created_by_user_id'    => fake()->randomDigitNotNull(),
+            'voucher_template_path' => fake()->imageUrl(),
         ];
     }
 }

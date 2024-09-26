@@ -8,6 +8,7 @@ use App\Enums\ApiResponse;
 use App\Enums\VoucherSetType;
 use App\Models\Team;
 use App\Models\TeamMerchantTeam;
+use App\Models\VoucherTemplate;
 use Laravel\Sanctum\Sanctum;
 use PHPUnit\Framework\Attributes\Test;
 use Tests\Feature\API\BaseAPITestCase;
@@ -47,12 +48,13 @@ class AdminVoucherSetsPostTest extends BaseAPITestCase
             $this->user
         );
 
-        $team = Team::factory()
-            ->create();
-
         $serviceTeam = Team::factory()->create();
 
         $merchantTeams = Team::factory(5)->create();
+
+        $template = VoucherTemplate::factory()->create([
+            'team_id' => $this->user->current_team_id,
+        ]);
 
         foreach ($merchantTeams as $merchantTeam) {
             TeamMerchantTeam::factory()->create(
@@ -67,6 +69,7 @@ class AdminVoucherSetsPostTest extends BaseAPITestCase
             'is_test'                      => 1,
             'allocated_to_service_team_id' => $serviceTeam->id,
             'merchant_team_ids'            => $merchantTeams->pluck('id')->toArray(),
+            'voucher_template_id'          => $template->id,
             'total_set_value'              => 10,
             'denominations'                => [
                 ['number' => 1, 'value' => 10],
@@ -94,11 +97,14 @@ class AdminVoucherSetsPostTest extends BaseAPITestCase
 
         $merchantTeams = Team::factory(5)->create();
 
+        $template = VoucherTemplate::factory()->create();
+
         $payload = [
             'is_test'                      => 1,
             'allocated_to_service_team_id' => $serviceTeam->id,
             'merchant_team_ids'            => $merchantTeams->pluck('id')->toArray(),
             'total_set_value'              => 10,
+            'voucher_template_id'          => $template->id,
             'denominations'                => [
                 ['number' => 1, 'value' => 10],
             ],

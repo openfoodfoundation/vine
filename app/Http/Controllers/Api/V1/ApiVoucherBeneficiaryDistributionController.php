@@ -22,6 +22,7 @@ use Knuckles\Scribe\Attributes\Endpoint;
 use Knuckles\Scribe\Attributes\Group;
 use Knuckles\Scribe\Attributes\Response;
 use Knuckles\Scribe\Attributes\Subgroup;
+use Str;
 
 #[Group('App Endpoints')]
 #[Subgroup('/voucher-beneficiary-distribution', 'API for create voucher beneficiary distributions')]
@@ -49,32 +50,32 @@ class ApiVoucherBeneficiaryDistributionController extends Controller
     }
 
     #[Endpoint(
-        title        : 'POST /',
-        description  : 'Create a new beneficiary distribution.',
+        title: 'POST /',
+        description: 'Create a new beneficiary distribution.',
         authenticated: true
     )]
     #[Authenticated]
     #[BodyParam(
-        name       : 'voucher_id',
-        type       : 'uuid',
+        name: 'voucher_id',
+        type: 'uuid',
         description: 'The UUID of the voucher to be distributed. required_without:resend_beneficiary_distribution_id',
-        required   : false
+        required: false
     )]
     #[BodyParam(
-        name       : 'beneficiary_email',
-        type       : 'email',
+        name: 'beneficiary_email',
+        type: 'email',
         description: 'The email for the voucher beneficiary. required_without:resend_beneficiary_distribution_id',
-        required   : false
+        required: false
     )]
     #[BodyParam(
-        name       : 'resend_beneficiary_distribution_id',
-        type       : 'integer',
+        name: 'resend_beneficiary_distribution_id',
+        type: 'integer',
         description: 'The database ID for a beneficiary distribution that you would like to resend. Must belong to your team. required_without:beneficiary_email,voucher_id',
-        required   : false
+        required: false
     )]
     #[Response(
-        content    : '{"meta":{"responseCode":200,"limit":50,"offset":0,"message":"Saved.","cached":false,"availableRelations":[]},"data":{"id": "1234"}}',
-        status     : 200,
+        content: '{"meta":{"responseCode":200,"limit":50,"offset":0,"message":"Saved.","cached":false,"availableRelations":[]},"data":{"id": "1234"}}',
+        status: 200,
         description: '',
     )]
     public function store(): JsonResponse
@@ -114,6 +115,29 @@ class ApiVoucherBeneficiaryDistributionController extends Controller
             $beneficiaryEmail = $this->request->get('beneficiary_email');
 
             /**
+             * The client is re-sending an existing distribution.
+             */
+            if ($this->request->has('resend_beneficiary_distribution_id')) {
+
+                $distributionId = $this->request->get('resend_beneficiary_distribution_id');
+
+                $voucherBeneficiaryDistribution = VoucherBeneficiaryDistribution::find($distributionId);
+
+                if (!$voucherBeneficiaryDistribution) {
+                    $this->responseCode = 404;
+                    $this->message      = ApiResponse::RESPONSE_NOT_FOUND->value;
+
+                    return $this->respond();
+                }
+
+                /**
+                 * Update values based on prior distribution as they will have been null
+                 */
+                $voucherId        = $voucherBeneficiaryDistribution->voucher_id;
+                $beneficiaryEmail = Crypt::decrypt($voucherBeneficiaryDistribution->beneficiary_email_encrypted);
+            }
+
+            /**
              * Ensure the authenticated user team owns the voucher
              */
             $voucher = Voucher::where(function ($query) {
@@ -130,58 +154,31 @@ class ApiVoucherBeneficiaryDistributionController extends Controller
             }
 
             /**
-             * The client is re-sending an existing distribution.
+             * Ensure the voucher set belongs to the user's current team
              */
-            if ($this->request->has('resend_beneficiary_distribution_id')) {
+            $voucherSet = VoucherSet::where(function ($query) {
+                $query->where('created_by_team_id', Auth::user()->current_team_id)
+                    ->orWhere('allocated_to_service_team_id', Auth::user()->current_team_id);
+            })
+                ->find($voucher->voucher_set_id);
 
-                $id = $this->request->get('resend_beneficiary_distribution_id');
-
-                $voucherBeneficiaryDistribution = VoucherBeneficiaryDistribution::find($id);
-
-                if (!$voucherBeneficiaryDistribution) {
-                    $this->responseCode = 404;
-                    $this->message      = ApiResponse::RESPONSE_NOT_FOUND->value;
-
-                    return $this->respond();
-                }
-
-                /**
-                 * Ensure the voucher set belongs to the user's current team
-                 */
-                $voucherSet = VoucherSet::where(function ($query) {
-                    $query->where('created_by_team_id', Auth::user()->current_team_id)
-                        ->orWhere('allocated_to_service_team_id', Auth::user()->current_team_id);
-                })
-                    ->find($voucherBeneficiaryDistribution->voucher_set_id);
-                if (!$voucherSet) {
-                    $this->responseCode = 404;
-                    $this->message      = ApiResponse::RESPONSE_NOT_FOUND->value;
-
-                    return $this->respond();
-                }
-
-                $decryptedEmail = Crypt::decrypt($voucherBeneficiaryDistribution->beneficiary_email_encrypted);
-
-                $model                              = new VoucherBeneficiaryDistribution();
-                $model->voucher_id                  = $voucherBeneficiaryDistribution->voucher_id;
-                $model->voucher_set_id              = $voucherBeneficiaryDistribution->voucher_set_id;
-                $model->beneficiary_email_encrypted = Crypt::encrypt($decryptedEmail);
-                $model->created_by_user_id          = Auth::id();
-                $model->save();
-
-                $this->data = $model;
+            if (!$voucherSet) {
+                $this->responseCode = 404;
+                $this->message      = ApiResponse::RESPONSE_NOT_FOUND->value;
 
                 return $this->respond();
-
             }
 
             /**
              * Ensure this voucher has not been sent to someone else.
              */
-            $numExistingDistributionsForThisVoucher = VoucherBeneficiaryDistribution::where('voucher_id', $voucherId)
-                ->count();
+            $priorDistribution = VoucherBeneficiaryDistribution::where('voucher_id', $voucherId)
+                ->first();
 
-            if ($numExistingDistributionsForThisVoucher > 0) {
+            if (
+                $priorDistribution &&
+                (Crypt::decrypt($priorDistribution->beneficiary_email_encrypted) != Str::trim($beneficiaryEmail))
+            ) {
                 $this->responseCode = 400;
                 $this->message      = ApiResponse::RESPONSE_ALREADY_EXISTS->value;
 
@@ -189,7 +186,7 @@ class ApiVoucherBeneficiaryDistributionController extends Controller
             }
 
             /**
-             * This voucher has not been sent to anybody else.
+             * Create a new instance
              */
             $model                              = new VoucherBeneficiaryDistribution();
             $model->voucher_id                  = $voucher->id;
