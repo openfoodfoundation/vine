@@ -47,12 +47,13 @@ class VoucherSetService
      */
     public static function collateVoucherSetAggregates(VoucherSet $voucherSet): void
     {
-        $voucherSet->is_denomination_valid     = self::validateVoucherSetDenominations($voucherSet);
+
         $voucherSet->num_vouchers              = Voucher::where('voucher_set_id', $voucherSet->id)->count();
         $voucherSet->total_set_value           = Voucher::where('voucher_set_id', $voucherSet->id)->sum('voucher_value_original');
         $voucherSet->num_voucher_redemptions   = VoucherRedemption::where('voucher_set_id', $voucherSet->id)->count();
         $voucherSet->last_redemption_at        = VoucherRedemption::where('voucher_set_id', $voucherSet->id)->max('created_at');
         $voucherSet->total_set_value_remaining = self::calculateVoucherSetValueRemaining($voucherSet);
+        $voucherSet->is_denomination_valid     = self::validateVoucherSetDenominations($voucherSet);
 
         $voucherSet->saveQuietly();
     }
