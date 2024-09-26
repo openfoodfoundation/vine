@@ -102,7 +102,7 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/redeem/{voucherSetId}/{voucherId}', function ($voucherSetId, $voucherId) {
 
-        $voucher = Voucher::with('voucherSet')->where('voucher_set_id', $voucherSetId)->find($voucherId);
+        $voucher = Voucher::with(['voucherSet', 'voucherRedemptions'])->where('voucher_set_id', $voucherSetId)->find($voucherId);
 
         /**
          * Voucher doesn't exist
@@ -153,8 +153,8 @@ Route::middleware('auth')->group(function () {
         }
 
         return Inertia::render('App/Vouchers/VoucherRedeem', [
-            'voucherSetId' => $voucherSetId,
-            'voucherId'    => $voucherId,
+//            'voucherSetId' => $voucherSetId,
+            'voucher'    => $voucher,
         ]);
     })->name('voucher-redeem');
 

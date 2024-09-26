@@ -27,7 +27,7 @@ class VoucherSetService
         if (is_null($denominationArray)) {
             return false;
         }
-        
+
         foreach ($denominationArray as $denominationListing) {
 
             if (

@@ -11,27 +11,23 @@ dayjs.extend(relativeTime);
 dayjs.extend(utc);
 
 const $props = defineProps({
-    voucherSetId: {
-        type: String,
-        required: false,
-    },
-    voucherId: {
-        type: String,
-        required: false,
+    voucher: {
+        type: Object,
+        required: true,
     },
 });
 
-const voucher = ref({})
+
 const redeemingPartial = ref(false)
 const redeemingPartialDollarAmount = ref(0)
 const redeemingPartialDollarAmountIsValid = ref(false)
 
 onMounted(() => {
-    getVoucher()
+
 });
 
 function beginRedeemingPartial() {
-    redeemingPartialDollarAmount.value = (parseInt(voucher.value.voucher_value_remaining) / 100).toFixed(2)
+    redeemingPartialDollarAmount.value = (parseInt($props.voucher.voucher_value_remaining) / 100).toFixed(2)
     redeemingPartial.value = true
 }
 
@@ -39,26 +35,19 @@ function cancelRedeemingPartial() {
     redeemingPartial.value = false
 }
 
-function getVoucher() {
-    axios.get('/my-team-vouchers/' + $props.voucherId + '?cached=false&relations=voucherRedemptions').then(response => {
-        voucher.value = response.data.data
-    }).catch(error => {
-        console.log(error)
-    })
-}
 
 function redeemAll() {
     redeemingPartial.value = false
 
     Swal.fire({
-        title: 'Redeem all $' + (voucher.value.voucher_value_remaining / 100).toFixed(2) + '?',
+        title: 'Redeem all $' + ($props.voucher.voucher_value_remaining / 100).toFixed(2) + '?',
         html: '<p>This will fully redeem this voucher.</p>',
         icon: 'warning',
         showCancelButton: true,
         confirmButtonText: 'Redeem!',
     }).then(result => {
         if (result.value) {
-            redeemVoucher(voucher.value.voucher_value_remaining.toFixed(0))
+            redeemVoucher($props.voucher.voucher_value_remaining.toFixed(0))
         }
     });
 }
@@ -80,8 +69,8 @@ function redeemPartial() {
 
 function redeemVoucher(amount) {
     let payload = {
-        voucher_id: $props.voucherId,
-        voucher_set_id: $props.voucherSetId,
+        voucher_id: $props.voucher.id,
+        voucher_set_id: $props.voucher.voucher_set_id,
         amount: amount
     }
 
@@ -94,7 +83,7 @@ function redeemVoucher(amount) {
         });
 
         redeemingPartial.value = false
-        getVoucher();
+
 
     }).catch(error => {
         Swal.fire({
@@ -108,7 +97,7 @@ function redeemVoucher(amount) {
 watch(redeemingPartialDollarAmount, (val) => {
     redeemingPartialDollarAmountIsValid.value = (val > 0) &&
         (
-            parseInt((val * 100).toFixed(0)) <= parseInt(voucher.value.voucher_value_remaining.toFixed(0))
+            parseInt((val * 100).toFixed(0)) <= parseInt($props.voucher.voucher_value_remaining.toFixed(0))
         )
 })
 </script>
@@ -194,7 +183,7 @@ watch(redeemingPartialDollarAmount, (val) => {
                 </div>
 
                 <div class="mt-8" v-if="!voucher.voucher_redemptions">
-                    <button class="w-full p-2 rounded border" @click="getVoucher()">
+                    <button class="w-full p-2 rounded border">
                         See Redemptions
                     </button>
                 </div>
