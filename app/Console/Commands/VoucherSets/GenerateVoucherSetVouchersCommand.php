@@ -41,12 +41,14 @@ class GenerateVoucherSetVouchersCommand extends Command
             $voucherSet->voucher_generation_started_at = now();
             $voucherSet->saveQuietly();
 
-            /**
-             * Re-validate the denomination JSON
-             */
-            $voucherSetIsValid = VoucherSetService::validateVoucherSetDenominations(voucherSet: $voucherSet);
 
-            if (!$voucherSetIsValid) {
+            VoucherSetService::collateVoucherSetAggregates(voucherSet: $voucherSet);
+
+            $voucherSet->refresh();
+
+            
+
+            if (!$voucherSet->is_denomination_valid) {
 
                 $this->line('Voucher set is invalid.');
 
