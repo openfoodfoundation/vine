@@ -19,15 +19,28 @@ class VoucherSetService
     {
         $denominationArray = json_decode($voucherSet->denomination_json, true);
 
-        $totalValue = 0;
 
-        if (!is_null($denominationArray)) {
-            foreach ($denominationArray as $denominationListing) {
-                $totalValue += ($denominationListing['value'] * $denominationListing['number']);
+        if (count($denominationArray) == 0) {
+            return false;
+        }
+
+        if (is_null($denominationArray)) {
+            return false;
+        }
+        
+        foreach ($denominationArray as $denominationListing) {
+
+            if (
+                !array_key_exists('value', $denominationListing) ||
+                !array_key_exists('number', $denominationListing)
+            )
+            {
+                return false;
             }
         }
 
-        return $totalValue == $voucherSet->total_set_value;
+
+        return true;
     }
 
     /**
