@@ -313,12 +313,12 @@ function updateTeam() {
         </div>
 
 
-        <div class="container mx-auto">
+        <div class="container mx-auto"  v-if="team.id">
             <AdminTeamMerchantTeamsComponent :team="team"/>
         </div>
 
 
-        <div class="container mx-auto">
+        <div class="container mx-auto" v-if="team.id">
             <AdminTeamServiceTeamsComponent :teamId="$props.id" :teamName="team.name"/>
         </div>
 

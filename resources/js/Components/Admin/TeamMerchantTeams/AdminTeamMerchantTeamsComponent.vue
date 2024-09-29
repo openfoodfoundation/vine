@@ -37,6 +37,7 @@ function cancelAddingNewMerchant() {
 }
 
 function getMerchants(page = 1) {
+    console.log($props.team);
     axios.get('/admin/team-merchant-teams?cached=false&where[]=team_id,' + $props.team.id + '&page=' + page + '&relations=merchantTeam').then(response => {
         merchants.value = response.data.data
     }).catch(error => {
