@@ -257,6 +257,18 @@ class ApiAdminVoucherSetsController extends Controller
 
         try {
 
+            /**
+             * Ensure the API user has a country against their current team.
+             */
+            if(!isset(Auth::user()->currentTeam->country_id))
+            {
+                $this->message      = ApiResponse::RESPONSE_INVALID_TEAM->value;
+                $this->responseCode = 400;
+
+                return $this->respond();
+            }
+
+
             DB::beginTransaction();
 
             $merchantTeamIds = $this->request->get('merchant_team_ids');
@@ -321,6 +333,7 @@ class ApiAdminVoucherSetsController extends Controller
 
             $model->created_by_user_id = Auth::id();
             $model->created_by_team_id = Auth::user()->current_team_id;
+            $model->currency_country_id = Auth::user()->currentTeam?->country_id;
             $model->save();
 
             foreach ($merchantTeamIds as $merchantTeamId) {
