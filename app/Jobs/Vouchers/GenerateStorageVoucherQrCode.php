@@ -34,7 +34,7 @@ class GenerateStorageVoucherQrCode implements ShouldQueue
 
         if(!isset($this->voucher->voucher_short_code) || is_null($this->voucher->voucher_short_code))
         {
-            self::dispatch(new GenerateStorageVoucherQrCode($this->voucher))->delay(now()->addMinutes(14));
+            dispatch(new GenerateStorageVoucherQrCode($this->voucher))->delay(now()->addMinutes(14));
             return;
         }
 
