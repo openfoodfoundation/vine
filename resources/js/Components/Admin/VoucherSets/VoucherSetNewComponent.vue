@@ -951,7 +951,7 @@ watch(valueOfSetInCountryCurrency, (value) => {
 
             </div>
 
-            <div class="card">
+            <div class="card" v-if="processStarted">
 
                 <div class="card-header flex justify-between">
                     Review
@@ -1078,7 +1078,7 @@ watch(valueOfSetInCountryCurrency, (value) => {
                                 <li v-for="denomination in voucherSet.denominations" class="font-bold">
                                     {{ denomination.number }} {{ denomination.number === 1 ? 'unit' : 'units' }}
                                     of
-                                    {{ denomination.value }} {{ $props.auth.teamCountry?.currency_code }}
+                                    {{ denomination.colloquialCurrencyUnitValue }} {{ $props.auth.teamCountry?.currency_code }}
                                 </li>
                             </ul>
                         </li>
