@@ -28,6 +28,7 @@ class VoucherSetFactory extends Factory
             'num_voucher_redemptions'      => $this->faker->numberBetween(1, 10),
             'expires_at'                   => now()->addDays(30),
             'voucher_set_type'             => fake()->randomElement(VoucherSetType::values()),
+            'currency_country_id'          => 14,
         ];
     }
 }

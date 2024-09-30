@@ -20,7 +20,7 @@ class VoucherSetService
         $denominationArray = json_decode($voucherSet->denomination_json, true);
 
 
-        if (count($denominationArray) == 0) {
+        if (is_null($denominationArray) || count($denominationArray) == 0) {
             return false;
         }
 
