@@ -29,7 +29,7 @@ class HandleVoucherWasCreatedEvent implements ShouldQueue
             /**
              * Delay this job by 5 minutes so that the image generation comes last.
              */
-            dispatch(new GenerateStorageVoucherQrCode($event->voucher))->delay(now()->addMinutes(10));
+            dispatch(new GenerateStorageVoucherQrCode($event->voucher));
         }
     }
 }

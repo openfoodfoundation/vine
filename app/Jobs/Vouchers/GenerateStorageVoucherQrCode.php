@@ -9,6 +9,7 @@ use App\Services\VoucherTemplateService;
 use Exception;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Queue\Queueable;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\URL;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
@@ -31,13 +32,6 @@ class GenerateStorageVoucherQrCode implements ShouldQueue
      */
     public function handle(): void
     {
-
-        if(!isset($this->voucher->voucher_short_code) || is_null($this->voucher->voucher_short_code))
-        {
-            dispatch(new GenerateStorageVoucherQrCode($this->voucher))->delay(now()->addMinutes(10));
-            return;
-        }
-
 
         $redeemUrl = URL::to('/redeem/' . $this->voucher->voucher_set_id . '/' . $this->voucher->id);
 

@@ -91,6 +91,16 @@ class VoucherTemplateService
          */
         $img->place($qrCode, 'top-left', $voucherTemplate->voucher_qr_x, $voucherTemplate->voucher_qr_y);
 
+
+
+        /**
+         *
+         */
+        if(!isset($voucher->voucher_short_code) || is_null($voucher->voucher_short_code))
+        {
+            Log::error('generateVoucherTemplate: No voucher_short_code exists for voucher #'.$voucher->id);
+        }
+
         /**
          * Place the voucher short code
          */
