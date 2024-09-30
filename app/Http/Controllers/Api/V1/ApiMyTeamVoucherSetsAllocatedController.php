@@ -33,7 +33,9 @@ class ApiMyTeamVoucherSetsAllocatedController extends Controller
         'voucherSetMerchantTeams.merchantTeam',
     ];
 
-    public static array $searchableFields = [];
+    public static array $searchableFields = [
+        'created_at'
+    ];
 
     /**
      * @throws DisallowedApiFieldException
