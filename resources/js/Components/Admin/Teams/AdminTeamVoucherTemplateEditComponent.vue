@@ -144,8 +144,8 @@ function filesWereUploaded(fileDetails) {
 
 <template>
 
-    <div class="grid gap-4 container mx-auto" :class="{'grid-cols-3': item.example_template_image_url}">
-        <div class="card" :class="{'col-span-2': item.example_template_image_url}">
+    <div class="flex flex-wrap justify-between container mx-auto">
+        <div class="card" :class="{'w-full xl:w-2/3': item.example_template_image_url}">
 
             <div class="card-header flex justify-between items-center">
                 <div class="text-lg font-bold flex justify-start items-center">
@@ -270,8 +270,8 @@ function filesWereUploaded(fileDetails) {
                     </div>
 
 
-                    <div class="grid grid-cols-4 gap-4">
-                        <div>
+                    <div class="grid grid-cols-2 lg:grid-cols-4">
+                        <div class="mb-4">
                             <InputLabel>
                                 QR Size
                             </InputLabel>
@@ -280,7 +280,7 @@ function filesWereUploaded(fileDetails) {
                                 v-model.number="item.voucher_qr_size_px"></input>
                         </div>
 
-                        <div>
+                        <div class="mb-4">
                             <InputLabel>
                                 QR Coords: X Position
                             </InputLabel>
@@ -288,7 +288,7 @@ function filesWereUploaded(fileDetails) {
                                 type="number"
                                 v-model.number="item.voucher_qr_x"/>
                         </div>
-                        <div>
+                        <div class="mb-4">
                             <InputLabel>
                                 QR Coords: Y Position
                             </InputLabel>
@@ -297,8 +297,8 @@ function filesWereUploaded(fileDetails) {
                                 v-model.number="item.voucher_qr_y"/>
                         </div>
 
-                        <div></div>
-                        <div>
+                        <div class="hidden lg:inline"></div>
+                        <div class="mb-4">
                             <InputLabel>
                                 Voucher Code: Size (px)
                             </InputLabel>
@@ -306,7 +306,7 @@ function filesWereUploaded(fileDetails) {
                                 type="number"
                                 v-model.number="item.voucher_code_size_px"/>
                         </div>
-                        <div>
+                        <div class="mb-4">
                             <InputLabel>
                                 Code Coords: X Pos
                             </InputLabel>
@@ -314,7 +314,7 @@ function filesWereUploaded(fileDetails) {
                                 type="number"
                                 v-model.number="item.voucher_code_x"/>
                         </div>
-                        <div>
+                        <div class="mb-4">
                             <InputLabel>
                                 Code Coords: Y Pos
                             </InputLabel>
@@ -322,7 +322,7 @@ function filesWereUploaded(fileDetails) {
                                 type="number"
                                 v-model.number="item.voucher_code_y"/>
                         </div>
-                        <div>
+                        <div class="mb-4">
                             <InputLabel>
                                 Code Prefix:
                             </InputLabel>
@@ -330,7 +330,7 @@ function filesWereUploaded(fileDetails) {
                                 type="text"
                                 v-model="item.voucher_code_prefix"/>
                         </div>
-                        <div>
+                        <div class="mb-4">
                             <InputLabel>
                                 Voucher Expiry: Size (px)
                             </InputLabel>
@@ -338,7 +338,7 @@ function filesWereUploaded(fileDetails) {
                                 type="number"
                                 v-model.number="item.voucher_expiry_size_px"/>
                         </div>
-                        <div>
+                        <div class="mb-4">
                             <InputLabel>
                                 Expiry Coords: X Pos
                             </InputLabel>
@@ -346,7 +346,7 @@ function filesWereUploaded(fileDetails) {
                                 type="number"
                                 v-model.number="item.voucher_expiry_x"/>
                         </div>
-                        <div>
+                        <div class="mb-4">
                             <InputLabel>
                                 Expiry Coords: Y Pos
                             </InputLabel>
@@ -354,7 +354,7 @@ function filesWereUploaded(fileDetails) {
                                 type="number"
                                 v-model.number="item.voucher_expiry_y"/>
                         </div>
-                        <div>
+                        <div class="mb-4">
                             <InputLabel>
                                 Expiry Prefix:
                             </InputLabel>
@@ -362,7 +362,7 @@ function filesWereUploaded(fileDetails) {
                                 type="text"
                                 v-model="item.voucher_expiry_prefix"/>
                         </div>
-                        <div>
+                        <div class="mb-4">
                             <InputLabel>
                                 Voucher Value: Size (px)
                             </InputLabel>
@@ -370,7 +370,7 @@ function filesWereUploaded(fileDetails) {
                                 type="number"
                                 v-model.number="item.voucher_value_size_px"/>
                         </div>
-                        <div>
+                        <div class="mb-4">
                             <InputLabel>
                                 Value Coords: X Pos
                             </InputLabel>
@@ -378,7 +378,7 @@ function filesWereUploaded(fileDetails) {
                                 type="number"
                                 v-model.number="item.voucher_value_x"/>
                         </div>
-                        <div>
+                        <div class="mb-4">
                             <InputLabel>
                                 Value Coords: Y Pos
                             </InputLabel>
@@ -386,7 +386,7 @@ function filesWereUploaded(fileDetails) {
                                 type="number"
                                 v-model.number="item.voucher_value_y"/>
                         </div>
-                        <div>
+                        <div class="mb-4">
                             <InputLabel>
                                 Value Prefix:
                             </InputLabel>
@@ -429,14 +429,12 @@ function filesWereUploaded(fileDetails) {
             </div>
 
         </div>
-        <div class="card" v-if="item.example_template_image_url">
-
+        <div class="card w-full xl:w-1/3" v-if="item.example_template_image_url">
             <div class="card-header ">
                 <div class="text-lg font-bold">
                     Preview
                 </div>
             </div>
-
             <img :src="item.example_template_image_url" alt="" class="border rounded w-full">
 
         </div>

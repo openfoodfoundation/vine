@@ -26,7 +26,7 @@ onMounted(() => {
 })
 
 function getVoucherSet() {
-    axios.get('/admin/voucher-sets/' + $props.id + '?cached=false&relations=createdByTeam,allocatedToServiceTeam').then(response => {
+    axios.get('/admin/voucher-sets/' + $props.id + '?cached=false&relations=createdByTeam,allocatedToServiceTeam,voucherSetMerchantTeams.merchantTeam').then(response => {
         voucherSet.value = response.data.data
     }).catch(error => {
         console.log(error)
@@ -137,6 +137,19 @@ function getVoucherSet() {
             </div>
         </div>
 
+
+        <div class="card">
+            <div class="card-header">
+                Merchant teams
+            </div>
+
+            <div v-if="voucherSet.voucher_set_merchant_teams">
+                <div v-for="merchantTeam in voucherSet.voucher_set_merchant_teams">
+                    <Link :href="route('admin.team', {id:merchantTeam.merchant_team_id})">{{ (merchantTeam.merchant_team?.name)?? 'Merchant team' }}</Link>
+                </div>
+
+            </div>
+        </div>
 
 
         <div class="card">

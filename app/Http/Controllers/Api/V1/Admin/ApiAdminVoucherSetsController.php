@@ -37,6 +37,7 @@ class ApiAdminVoucherSetsController extends Controller
     public array $availableRelations = [
         'createdByTeam',
         'allocatedToServiceTeam',
+        'voucherSetMerchantTeams.merchantTeam',
     ];
 
     public static array $searchableFields = [
