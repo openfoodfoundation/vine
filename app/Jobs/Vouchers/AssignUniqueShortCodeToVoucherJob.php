@@ -24,11 +24,11 @@ class AssignUniqueShortCodeToVoucherJob implements ShouldQueue
     public function handle(): void
     {
         $shortCode = VoucherService::generateRandomShortCode();
-        $match     = Voucher::where('voucher_short_code', $shortCode)->first();
+        $match     = Voucher::where('voucher_short_code', $shortCode)->exists();
 
         while ($match) {
             $shortCode = VoucherService::generateRandomShortCode();
-            $match     = Voucher::where('voucher_short_code', $shortCode)->first();
+            $match     = Voucher::where('voucher_short_code', $shortCode)->exists();
         }
 
         $this->voucher->voucher_short_code = $shortCode;
