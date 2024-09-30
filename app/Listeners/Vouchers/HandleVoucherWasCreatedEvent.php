@@ -24,9 +24,6 @@ class HandleVoucherWasCreatedEvent implements ShouldQueue
      */
     public function handle(VoucherWasCreated $event): void
     {
-        dispatch(new AssignUniqueShortCodeToVoucherJob($event->voucher));
-
-        dispatch(new CollateVoucherAggregatesJob($event->voucher));
 
         $voucherSet = VoucherSet::find($event->voucher->voucher_set_id);
         if ($voucherSet) {

@@ -88,7 +88,7 @@ class VoucherService
      *
      * @return string
      */
-    public static function generateRandomShortCode(): string
+    private static function generateRandomShortCode(): string
     {
         $availableLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
@@ -106,5 +106,18 @@ class VoucherService
         $numbers = sprintf('%04d', mt_rand(0, 9999));
 
         return $firstLetter . $secondLetter . $numbers;
+    }
+
+    public static function findUniqueShortCodeForVoucher(): string
+    {
+        $shortCode = self::generateRandomShortCode();
+        $match     = Voucher::where('voucher_short_code', $shortCode)->exists();
+
+        while ($match) {
+            $shortCode = self::generateRandomShortCode();
+            $match     = Voucher::where('voucher_short_code', $shortCode)->exists();
+        }
+
+        return $shortCode;
     }
 }

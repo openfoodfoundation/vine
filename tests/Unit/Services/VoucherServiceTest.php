@@ -16,7 +16,7 @@ class VoucherServiceTest extends TestCase
     {
         for ($iteration = 1; $iteration <= 100; $iteration++) {
 
-            $shortCode = VoucherService::generateRandomShortCode();
+            $shortCode = VoucherService::findUniqueShortCodeForVoucher();
 
             // Always 6 letters long
             self::assertSame(6, strlen($shortCode));
