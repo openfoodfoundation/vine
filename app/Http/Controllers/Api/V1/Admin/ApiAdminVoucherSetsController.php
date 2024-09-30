@@ -268,7 +268,7 @@ class ApiAdminVoucherSetsController extends Controller
             }
 
 
-//            DB::beginTransaction();
+            DB::beginTransaction();
 
             $merchantTeamIds = $this->request->get('merchant_team_ids');
             $serviceTeamId   = $this->request->get('allocated_to_service_team_id');
@@ -344,11 +344,11 @@ class ApiAdminVoucherSetsController extends Controller
             $this->message = ApiResponse::RESPONSE_SAVED->value;
             $this->data    = $model;
 
-//            DB::commit();
+            DB::commit();
 
         } catch (Exception $e) {
 
-//            DB::rollBack();
+            DB::rollBack();
 
             $this->responseCode = 500;
             $this->message      = ApiResponse::RESPONSE_ERROR->value . ': "' . $e->getMessage() . '".';
