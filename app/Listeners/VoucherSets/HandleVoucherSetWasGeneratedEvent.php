@@ -3,6 +3,7 @@
 namespace App\Listeners\VoucherSets;
 
 use App\Events\VoucherSets\VoucherSetWasGenerated;
+use App\Jobs\VoucherSets\CollateVoucherSetAggregatesJob;
 use App\Jobs\VoucherSets\SendVoucherSetGenerationEmailNotification;
 use App\Models\User;
 use App\Notifications\Mail\VoucherSets\VoucherSetGenerationSuccessEmailNotification;
@@ -22,6 +23,8 @@ class HandleVoucherSetWasGeneratedEvent implements ShouldQueue
      */
     public function handle(VoucherSetWasGenerated $event): void
     {
+
+        dispatch(new CollateVoucherSetAggregatesJob($event->voucherSet));
 
         /**
          * Notify the members of the service team

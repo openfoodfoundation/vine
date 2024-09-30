@@ -25,11 +25,6 @@ class HandleVoucherWasCreatedEvent implements ShouldQueue
     public function handle(VoucherWasCreated $event): void
     {
 
-        $voucherSet = VoucherSet::find($event->voucher->voucher_set_id);
-        if ($voucherSet) {
-            dispatch(new CollateVoucherSetAggregatesJob($voucherSet));
-        }
-
         if (config('app.env') != 'testing') {
             /**
              * Delay this job by 5 minutes so that the image generation comes last.
