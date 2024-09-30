@@ -36,6 +36,8 @@ const serviceTeamSearchQuery = ref('');
 const myTeamVoucherTemplates = ref([]);
 const selectedVoucherTemplate = ref({});
 
+const valueOfSetInCountryCurrency = ref(0);
+
 // Voucher set
 const voucherSet = ref({
     is_test: 0,
@@ -45,7 +47,7 @@ const voucherSet = ref({
     voucher_template_id: '',
     total_set_value: 0,
     denominations: [
-        {number: 1, value: 5},
+
     ],
     expires_at: '',
     voucher_set_type: '',
@@ -59,6 +61,7 @@ function allocationRemaining() {
     return voucherSet.value.total_set_value - totalDenominations();
 }
 
+
 function createVoucherSet() {
 
     swal.fire({
@@ -71,6 +74,7 @@ function createVoucherSet() {
 
         if (resp.isConfirmed) {
 
+            let payload = Object.assign({}, voucherSet.value)
 
             axios.post('/admin/voucher-sets', voucherSet.value).then(response => {
 
@@ -100,7 +104,7 @@ function createVoucherSet() {
 }
 
 function denominationAdd() {
-    voucherSet.value.denominations.push({value: 5, number: 1})
+    voucherSet.value.denominations.push({value: 500, colloquialCurrencyUnitValue: 5, number: 1})
 }
 
 function denominationDelete(index) {
@@ -269,6 +273,12 @@ function unselectMerchantTeam(index) {
     }
 }
 
+function denominationValueUpdate(denomination) {
+    denomination.value = denomination.colloquialCurrencyUnitValue * 100
+
+    // this.calculateNumberOfVouchers();
+}
+
 /**
  * On mount
  */
@@ -276,6 +286,7 @@ onMounted(() => {
     getFundingTeams();
     getServiceTeams();
     getMyTeamVoucherTemplates();
+    denominationAdd();
 })
 
 
@@ -309,7 +320,12 @@ watch(merchantTeamSearchQuery, () => {
 
 watch(serviceTeamSearchQuery, () => {
     filterServiceTeams();
-})
+});
+
+watch(valueOfSetInCountryCurrency, (value) => {
+    voucherSet.value.total_set_value = value * 100;
+});
+
 
 
 </script>
@@ -650,7 +666,7 @@ watch(serviceTeamSearchQuery, () => {
                         <label for="voucherSet.total_set_value">
                             What will the total value of the voucher set be, in <span
                             class="font-bold">{{ $props.auth.teamCountry?.currency_code }}</span>?
-                            <input id="voucherSet.total_set_value" v-model="voucherSet.total_set_value"
+                            <input id="voucherSet.total_set_value" v-model="valueOfSetInCountryCurrency"
                                    class="block mt-2"
                                    type="number">
                         </label>
@@ -698,11 +714,11 @@ watch(serviceTeamSearchQuery, () => {
                     <div class="flex justify-between items-center">
                         <div class="mt-4">
                             <div>
-                                Available to assign: {{ voucherSet.total_set_value }}
+                                Available to assign: {{ (voucherSet.total_set_value / 100).toFixed(2) }}
                                 {{ $props.auth.teamCountry?.currency_code }}
                             </div>
                             <div :class="{'text-red': allocationRemaining() < 0}">
-                                Remaining: {{ allocationRemaining() }}
+                                Remaining: {{ (allocationRemaining() / 100 ).toFixed(2) }}
                             </div>
 
                             <div>
@@ -725,7 +741,8 @@ watch(serviceTeamSearchQuery, () => {
                                         </div>
 
                                         <div>
-                                            <input v-model="denomination.value" class="border rounded p-1"
+                                            <input v-model="denomination.colloquialCurrencyUnitValue" class="border rounded p-1"
+                                                   @keyup="denominationValueUpdate(denomination)"
                                                    step="1"
                                                    type="number">
 
@@ -740,6 +757,7 @@ watch(serviceTeamSearchQuery, () => {
                                         </button>
 
                                     </div>
+
                                 </div>
 
 
@@ -761,10 +779,10 @@ watch(serviceTeamSearchQuery, () => {
                             <div
                                 :class="{'text-green-500': allocationRemaining() >= 0, 'text-red-500': allocationRemaining() < 0}"
                                 class="text-3xl mt-4">
-                                {{ totalDenominations() }}
+                                {{ (totalDenominations() / 100).toFixed(2) }}
 
                                 <div class="text-xs">
-                                    out of {{ voucherSet.total_set_value }}
+                                    out of {{ (voucherSet.total_set_value / 100).toFixed(2) }}
                                 </div>
 
                             </div>
@@ -772,7 +790,7 @@ watch(serviceTeamSearchQuery, () => {
                                 - over budget -
                             </div>
                             <div v-else-if="allocationRemaining() > 0" class="text-xs text-green-500 mt-4">
-                                {{ allocationRemaining() }} remaining
+                                {{ (allocationRemaining() / 100 ).toFixed(2) }} remaining
                             </div>
                             <div v-else class="text-xs text-gray-500 mt-4">
                                 Voucher fully allocated
@@ -1041,7 +1059,7 @@ watch(serviceTeamSearchQuery, () => {
                         <li>
                             It has a total value of:
 
-                            <span class="font-bold">{{ voucherSet.total_set_value }}</span>
+                            <span class="font-bold">{{ (voucherSet.total_set_value / 100).toFixed(2) }}</span>
 
                             <button class="text-xs text-blue-500 ml-2 underline"
                                     @click="scrollTo('totalValueSection')">

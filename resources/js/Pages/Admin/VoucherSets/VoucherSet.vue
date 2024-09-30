@@ -55,6 +55,7 @@ function getVoucherSet() {
         <div class="card">
             <div class="card-header">
                 Voucher set details
+                <span v-if="!voucherSet.voucher_generation_finished_at" class="text-red-500 text-xs font-bold">Vouchers not generated yet.</span>
             </div>
 
             <div class="grid grid-cols-4 gap-y-12 text-center mt-8">
