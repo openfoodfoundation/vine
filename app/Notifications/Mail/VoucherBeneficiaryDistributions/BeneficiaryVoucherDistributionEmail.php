@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Notifications\VoucherBeneficiaryDistributions;
+namespace App\Notifications\Mail\VoucherBeneficiaryDistributions;
 
 use App\Models\Voucher;
 use App\Models\VoucherBeneficiaryDistribution;

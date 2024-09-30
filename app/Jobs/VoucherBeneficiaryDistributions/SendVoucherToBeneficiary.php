@@ -3,7 +3,7 @@
 namespace App\Jobs\VoucherBeneficiaryDistributions;
 
 use App\Models\VoucherBeneficiaryDistribution;
-use App\Notifications\VoucherBeneficiaryDistributions\BeneficiaryVoucherDistributionEmail;
+use App\Notifications\Mail\VoucherBeneficiaryDistributions\BeneficiaryVoucherDistributionEmail;
 use Crypt;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Queue\Queueable;

@@ -30,7 +30,7 @@ class SendVoucherSetGenerationEmailNotification implements ShouldQueue
     public function handle(): void
     {
         $teamUsers = TeamUser::where('team_id', $this->voucherSet->allocated_to_service_team_id)
-            ->pluck('team_id')
+            ->pluck('user_id')
             ->unique()
             ->toArray();
 
