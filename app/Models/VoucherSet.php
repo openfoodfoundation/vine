@@ -18,10 +18,14 @@ class VoucherSet extends Model
     use SoftDeletes;
 
     protected $keyType          = 'string';
-    public $incrementing        = false;
+    public    $incrementing     = false;
     protected $dispatchesEvents = [
         'created' => VoucherSetWasCreated::class,
         'updated' => VoucherSetWasUpdated::class,
+    ];
+
+    protected $casts = [
+        'expires_at' => 'datetime',
     ];
 
     /**

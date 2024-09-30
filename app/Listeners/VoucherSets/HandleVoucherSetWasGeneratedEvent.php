@@ -22,6 +22,7 @@ class HandleVoucherSetWasGeneratedEvent implements ShouldQueue
      */
     public function handle(VoucherSetWasGenerated $event): void
     {
+
         /**
          * Notify the members of the service team
          */
@@ -32,5 +33,8 @@ class HandleVoucherSetWasGeneratedEvent implements ShouldQueue
          */
         $notificationUser = User::find($event->voucherSet->created_by_user_id);
         $notificationUser?->notify(new VoucherSetGenerationSuccessEmailNotification(voucherSet: $event->voucherSet));
+
+
+
     }
 }

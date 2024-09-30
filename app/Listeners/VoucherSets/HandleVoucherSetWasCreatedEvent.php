@@ -25,5 +25,14 @@ class HandleVoucherSetWasCreatedEvent implements ShouldQueue
             dispatch(new CreateApprovalRequestsForListedMerchantsOnVoucherSet($event->voucherSet));
         }
 
+        /**
+         * Ensure the expiry is at the very end of the day
+         */
+        if(!is_null($event->voucherSet->expires_at))
+        {
+            $event->voucherSet->expires_at = $event->voucherSet->expires_at->endOfDay();
+            $event->voucherSet->saveQuietly();
+        }
+
     }
 }

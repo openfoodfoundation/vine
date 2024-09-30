@@ -42,7 +42,9 @@ class AdminVoucherSetsPostTest extends BaseAPITestCase
     #[Test]
     public function adminCanSaveData()
     {
-        $this->user = $this->createAdminUser();
+        $this->user = $this->createUserWithTeam();
+        $this->user->is_admin = 1;
+        $this->user->save();
 
         Sanctum::actingAs(
             $this->user
@@ -84,7 +86,9 @@ class AdminVoucherSetsPostTest extends BaseAPITestCase
     #[Test]
     public function itemIsNotSavedIfMerchantTeamDoesNotBelongToServiceTeam()
     {
-        $this->user = $this->createAdminUser();
+        $this->user = $this->createUserWithTeam();
+        $this->user->is_admin = 1;
+        $this->user->save();
 
         Sanctum::actingAs(
             $this->user

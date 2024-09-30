@@ -84,6 +84,9 @@ function redeemVoucher(amount) {
 
         redeemingPartial.value = false
 
+        setTimeout(fn => {
+            window.location.reload();
+        }, 1000)
 
     }).catch(error => {
         Swal.fire({

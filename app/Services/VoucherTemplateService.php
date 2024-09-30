@@ -8,6 +8,7 @@ namespace App\Services;
 
 //use App\Jobs\Vouchers\GenerateStorageBrandedPDF;
 use App\Models\Voucher;
+use App\Models\VoucherSet;
 use App\Models\VoucherTemplate;
 use Exception;
 use Illuminate\Support\Facades\Log;
@@ -85,18 +86,25 @@ class VoucherTemplateService
         $qrCode = Image::read($qrCodeData); // The QR
         $qrCode->resize($voucherTemplate->voucher_qr_size_px, $voucherTemplate->voucher_qr_size_px);
 
-        // and insert a watermark for example
+        /**
+         * Place the QR code
+         */
         $img->place($qrCode, 'top-left', $voucherTemplate->voucher_qr_x, $voucherTemplate->voucher_qr_y);
 
-        $code = Str::substr($voucher->id, 0, 5);
-        $code = strtoupper($code);
-
+        /**
+         * Place the voucher short code
+         */
+        $code = strtoupper($voucher->voucher_short_code);
         $img->text($voucherTemplate->voucher_code_prefix . ' ' . $code, $voucherTemplate->voucher_code_x, $voucherTemplate->voucher_code_y, function ($font) use ($voucherTemplate) {
             $font->file(public_path($voucherTemplate->overlay_font_path));
             $font->size($voucherTemplate->voucher_code_size_px);
         });
 
-        $expiry = ($voucher->expires_at == null) ? '---' : $voucher->expires_at->format('d-M-Y');
+        /**
+         * Place the expiry
+         */
+        $voucherSet = VoucherSet::find($voucher->voucher_set_id);
+        $expiry = ($voucherSet->expires_at == null) ? '---' : $voucherSet->expires_at->format('d-M-Y');
         $img->text(
             $voucherTemplate->voucher_expiry_prefix . ' ' . $expiry,
             $voucherTemplate->voucher_expiry_x,
@@ -106,6 +114,7 @@ class VoucherTemplateService
                 $font->size($voucherTemplate->voucher_expiry_size_px);
             }
         );
+
 
         $value = number_format(($voucher->voucher_value_original / 100), 2);
         $img->text(
