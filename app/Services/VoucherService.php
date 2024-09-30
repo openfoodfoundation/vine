@@ -68,8 +68,11 @@ class VoucherService
             $voucher->voucher_short_code = null;
         }
 
-        $voucher->num_voucher_redemptions = VoucherRedemption::where('voucher_id', $voucher->id)->count();
-        $voucher->last_redemption_at      = VoucherRedemption::where('voucher_id')->max('created_at');
+        if($voucher->voucher_value_remaining != $voucher->voucher_value_original)
+        {
+            $voucher->num_voucher_redemptions = VoucherRedemption::where('voucher_id', $voucher->id)->count();
+            $voucher->last_redemption_at      = VoucherRedemption::where('voucher_id')->max('created_at');
+        }
 
         $voucher->saveQuietly();
     }
