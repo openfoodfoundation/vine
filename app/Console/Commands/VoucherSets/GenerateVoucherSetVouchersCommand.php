@@ -43,10 +43,9 @@ class GenerateVoucherSetVouchersCommand extends Command
 
 
             VoucherSetService::collateVoucherSetAggregates(voucherSet: $voucherSet);
-
             $voucherSet->refresh();
 
-            
+
 
             if (!$voucherSet->is_denomination_valid) {
 

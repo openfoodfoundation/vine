@@ -31,6 +31,14 @@ class GenerateStorageVoucherQrCode implements ShouldQueue
      */
     public function handle(): void
     {
+
+        if(!isset($this->voucher->voucher_short_code) || is_null($this->voucher->voucher_short_code))
+        {
+            self::dispatch(new GenerateStorageVoucherQrCode($this->voucher))->delay(now()->addMinutes(14));
+            return;
+        }
+
+
         $redeemUrl = URL::to('/redeem/' . $this->voucher->voucher_set_id . '/' . $this->voucher->id);
 
         /**

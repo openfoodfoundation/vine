@@ -4,6 +4,8 @@ namespace App\Console\Commands;
 
 use App\Models\Team;
 use App\Models\TeamServiceTeam;
+use App\Models\VoucherSet;
+use App\Services\VoucherSetService;
 use Illuminate\Console\Command;
 
 class TestCommand extends Command
@@ -27,12 +29,10 @@ class TestCommand extends Command
      */
     public function handle()
     {
+        $voucherSet = VoucherSet::find('9d2129f4-befa-4702-950d-7d3342717462');
 
-        $team = Team::factory()->createQuietly();
+        $isValid = VoucherSetService::validateVoucherSetDenominations($voucherSet);
 
-        TeamServiceTeam::factory()->createQuietly([
-            'team_id'         => 1,
-            'service_team_id' => $team->id,
-        ]);
+        dd($isValid);
     }
 }
