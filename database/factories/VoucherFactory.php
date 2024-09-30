@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Services\VoucherService;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -25,6 +26,7 @@ class VoucherFactory extends Factory
             'allocated_to_service_team_id' => $this->faker->numberBetween(1, 10),
             'voucher_value_original'       => $value,
             'voucher_value_remaining'      => $value,
+            'voucher_short_code'           => VoucherService::findUniqueShortCodeForVoucher(),
         ];
     }
 }
