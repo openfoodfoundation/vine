@@ -121,7 +121,7 @@ function save() {
                         Service team name: {{ voucherSetMerchantTeamApprovalRequest.voucher_set.allocated_to_service_team.name }}
                     </div>
                     <div v-if="voucherSetMerchantTeamApprovalRequest.voucher_set" class="pb-4">
-                        Voucher set total value: ${{ voucherSetMerchantTeamApprovalRequest.voucher_set.total_set_value }}
+                        Voucher set total value: ${{ (voucherSetMerchantTeamApprovalRequest.voucher_set.total_set_value / 100).toFixed(2) }}
                     </div>
                 </div>
                 <div class="py-8" v-if="voucherSetMerchantTeamApprovalRequest.merchant_team">

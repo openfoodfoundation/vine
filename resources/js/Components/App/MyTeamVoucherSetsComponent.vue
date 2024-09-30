@@ -30,7 +30,7 @@ function getMyTeamVoucherSets(page = 1) {
         url = url + $props.filterVoucherSets
     }
 
-    axios.get(url  + '?cached=false&page=' + page + '&limit=' + limit.value + '&relations=createdByTeam,allocatedToServiceTeam').then(response => {
+    axios.get(url  + '?cached=false&page=' + page + '&limit=' + limit.value + '&relations=createdByTeam,allocatedToServiceTeam&orderBy=created_at,desc').then(response => {
         myTeamVoucherSets.value = response.data.data
     }).catch(error => {
         console.log(error)
