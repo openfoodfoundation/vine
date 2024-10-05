@@ -2,8 +2,6 @@
 
 namespace App\Console\Commands;
 
-use App\Models\Team;
-use App\Models\TeamServiceTeam;
 use App\Models\VoucherSet;
 use App\Services\VoucherSetService;
 use Illuminate\Console\Command;
