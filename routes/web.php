@@ -153,8 +153,8 @@ Route::middleware('auth')->group(function () {
         }
 
         return Inertia::render('App/Vouchers/VoucherRedeem', [
-//            'voucherSetId' => $voucherSetId,
-            'voucher'    => $voucher,
+            //            'voucherSetId' => $voucherSetId,
+            'voucher' => $voucher,
         ]);
     })->name('voucher-redeem');
 

@@ -20,9 +20,7 @@ class VoucherSetWasGenerated
      *
      * @param VoucherSet $voucherSet
      */
-    public function __construct(public VoucherSet $voucherSet) {
-
-    }
+    public function __construct(public VoucherSet $voucherSet) {}
 
     /**
      * Get the channels the event should broadcast on.

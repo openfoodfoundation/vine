@@ -42,7 +42,7 @@ class AdminVoucherSetsPostTest extends BaseAPITestCase
     #[Test]
     public function adminCanSaveData()
     {
-        $this->user = $this->createUserWithTeam();
+        $this->user           = $this->createUserWithTeam();
         $this->user->is_admin = 1;
         $this->user->save();
 
@@ -86,7 +86,7 @@ class AdminVoucherSetsPostTest extends BaseAPITestCase
     #[Test]
     public function itemIsNotSavedIfMerchantTeamDoesNotBelongToServiceTeam()
     {
-        $this->user = $this->createUserWithTeam();
+        $this->user           = $this->createUserWithTeam();
         $this->user->is_admin = 1;
         $this->user->save();
 

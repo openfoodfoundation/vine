@@ -28,8 +28,7 @@ class HandleVoucherSetWasCreatedEvent implements ShouldQueue
         /**
          * Ensure the expiry is at the very end of the day
          */
-        if(!is_null($event->voucherSet->expires_at))
-        {
+        if (!is_null($event->voucherSet->expires_at)) {
             $event->voucherSet->expires_at = $event->voucherSet->expires_at->endOfDay();
             $event->voucherSet->saveQuietly();
         }

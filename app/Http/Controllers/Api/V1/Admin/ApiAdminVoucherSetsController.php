@@ -197,7 +197,7 @@ class ApiAdminVoucherSetsController extends Controller
     public function store(): JsonResponse
     {
         $validationArray = [
-            'is_test'                      => [
+            'is_test' => [
                 'required',
                 'boolean',
             ],
@@ -206,39 +206,39 @@ class ApiAdminVoucherSetsController extends Controller
                 'integer',
                 Rule::exists('teams', 'id'),
             ],
-            'merchant_team_ids'            => [
+            'merchant_team_ids' => [
                 'required',
                 'array',
             ],
-            'merchant_team_ids.*'          => [
+            'merchant_team_ids.*' => [
                 'integer',
                 Rule::exists('teams', 'id'),
             ],
-            'funded_by_team_id'            => [
+            'funded_by_team_id' => [
                 'sometimes',
                 'nullable',
                 'integer',
                 Rule::exists('teams', 'id'),
             ],
-            'voucher_template_id'          => [
+            'voucher_template_id' => [
                 'required',
                 'integer',
                 Rule::exists('voucher_templates', 'id'),
             ],
-            'total_set_value'              => [
+            'total_set_value' => [
                 'required',
                 'integer',
             ],
-            'denominations'                => [
+            'denominations' => [
                 'required',
                 'array',
             ],
-            'expires_at'                   => [
+            'expires_at' => [
                 'sometimes',
                 'date',
                 'nullable',
             ],
-            'voucher_set_type'             => [
+            'voucher_set_type' => [
                 'required',
                 'string',
             ],
@@ -250,7 +250,7 @@ class ApiAdminVoucherSetsController extends Controller
 
             $this->responseCode = 400;
             $this->message      = $validator->errors()
-                                            ->first();
+                ->first();
 
             return $this->respond();
 
@@ -268,7 +268,6 @@ class ApiAdminVoucherSetsController extends Controller
                 return $this->respond();
             }
 
-
             DB::beginTransaction();
 
             $merchantTeamIds = $this->request->get('merchant_team_ids');
@@ -278,8 +277,8 @@ class ApiAdminVoucherSetsController extends Controller
              * Get the service team's merchants list as an array of IDs
              */
             $teamMerchantTeams = TeamMerchantTeam::where('team_id', $serviceTeamId)
-                                                 ->pluck('merchant_team_id')
-                                                 ->toArray();
+                ->pluck('merchant_team_id')
+                ->toArray();
 
             /**
              * Validate that the merchant ID are all merchants for the service team.
@@ -347,7 +346,8 @@ class ApiAdminVoucherSetsController extends Controller
 
             DB::commit();
 
-        } catch (Exception $e) {
+        }
+        catch (Exception $e) {
 
             DB::rollBack();
 
@@ -463,7 +463,8 @@ class ApiAdminVoucherSetsController extends Controller
             $model->delete();
             $this->message = ApiResponse::RESPONSE_DELETED->value;
 
-        } catch (Exception $e) {
+        }
+        catch (Exception $e) {
 
             $this->responseCode = 500;
             $this->message      = ApiResponse::RESPONSE_ERROR->value . ':' . $e->getMessage();

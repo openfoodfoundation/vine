@@ -13,7 +13,6 @@ use App\Models\VoucherTemplate;
 use Exception;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Str;
 use Imagick;
 use ImagickException;
 use Intervention\Image\Laravel\Facades\Image;
@@ -91,14 +90,8 @@ class VoucherTemplateService
          */
         $img->place($qrCode, 'top-left', $voucherTemplate->voucher_qr_x, $voucherTemplate->voucher_qr_y);
 
-
-
-        /**
-         *
-         */
-        if(!isset($voucher->voucher_short_code) || is_null($voucher->voucher_short_code))
-        {
-            Log::error('generateVoucherTemplate: No voucher_short_code exists for voucher #'.$voucher->id);
+        if (!isset($voucher->voucher_short_code) || is_null($voucher->voucher_short_code)) {
+            Log::error('generateVoucherTemplate: No voucher_short_code exists for voucher #' . $voucher->id);
         }
 
         /**
@@ -114,7 +107,7 @@ class VoucherTemplateService
          * Place the expiry
          */
         $voucherSet = VoucherSet::find($voucher->voucher_set_id);
-        $expiry = ($voucherSet->expires_at == null) ? '---' : $voucherSet->expires_at->format('d-M-Y');
+        $expiry     = ($voucherSet->expires_at == null) ? '---' : $voucherSet->expires_at->format('d-M-Y');
         $img->text(
             $voucherTemplate->voucher_expiry_prefix . ' ' . $expiry,
             $voucherTemplate->voucher_expiry_x,
@@ -124,7 +117,6 @@ class VoucherTemplateService
                 $font->size($voucherTemplate->voucher_expiry_size_px);
             }
         );
-
 
         $value = number_format(($voucher->voucher_value_original / 100), 2);
         $img->text(
