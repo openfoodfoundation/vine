@@ -37,7 +37,5 @@ class HandleVoucherSetWasGeneratedEvent implements ShouldQueue
         $notificationUser = User::find($event->voucherSet->created_by_user_id);
         $notificationUser?->notify(new VoucherSetGenerationSuccessEmailNotification(voucherSet: $event->voucherSet));
 
-
-
     }
 }

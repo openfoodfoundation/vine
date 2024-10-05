@@ -148,7 +148,7 @@ enum PersonalAccessTokenAbility: string
     {
         return [
             [
-                'name'        => 'Super admin abilities',
+                'name'        => 'Super Admin',
                 'description' => 'A group of API abilities that allow an app to perform any / all actions on the API. Be careful assigning this ability!',
                 'abilities'   => [
                     self::SUPER_ADMIN->value => self::abilityLabels()[self::SUPER_ADMIN->value],
@@ -160,9 +160,14 @@ enum PersonalAccessTokenAbility: string
                 'abilities'   => self::platformAppTokenAbilities(),
             ],
             [
-                'name'        => 'Redemptions',
+                'name'        => 'Redemption App',
                 'description' => 'A group of API abilities that allow an app to perform redemptions on the system.',
                 'abilities'   => self::redemptionAppTokenAbilities(),
+            ],
+            [
+                'name'        => 'Build Your Own',
+                'description' => 'Pick from all available API abilities. Be careful here; note also that while an ability for an API verb might exist, the API may still respond with a 403 (forbidden). Please refer to the API documentation.',
+                'abilities'   => self::abilityLabels(),
             ],
         ];
     }

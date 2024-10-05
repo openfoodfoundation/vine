@@ -34,7 +34,7 @@ class ApiMyTeamVoucherSetsAllocatedController extends Controller
     ];
 
     public static array $searchableFields = [
-        'created_at'
+        'created_at',
     ];
 
     /**

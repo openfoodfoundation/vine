@@ -19,7 +19,6 @@ class VoucherSetService
     {
         $denominationArray = json_decode($voucherSet->denomination_json, true);
 
-
         if (is_null($denominationArray) || count($denominationArray) == 0) {
             return false;
         }
@@ -33,12 +32,10 @@ class VoucherSetService
             if (
                 !array_key_exists('value', $denominationListing) ||
                 !array_key_exists('number', $denominationListing)
-            )
-            {
+            ) {
                 return false;
             }
         }
-
 
         return true;
     }
