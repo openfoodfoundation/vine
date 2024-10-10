@@ -11,7 +11,12 @@ use App\Models\Voucher;
 use App\Models\VoucherSet;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Validator;
+use Knuckles\Scribe\Attributes\Endpoint;
+use Knuckles\Scribe\Attributes\Group;
+use Knuckles\Scribe\Attributes\Subgroup;
 
+#[Group('Admin Endpoints')]
+#[Subgroup('/admin/search', 'Search for system objects as an admin.')]
 class ApiAdminSearchController extends Controller
 {
     use HandlesAPIRequests;
@@ -28,6 +33,11 @@ class ApiAdminSearchController extends Controller
      *
      * @return JsonResponse
      */
+    #[Endpoint(
+        title        : 'GET /',
+        description  : 'Perform a search.',
+        authenticated: true
+    )]
     public function index(): JsonResponse
     {
         $validationArray = [
@@ -64,7 +74,7 @@ class ApiAdminSearchController extends Controller
 
     /**
      * POST /
-     *
+     * @hideFromAPIDocumentation
      * @return JsonResponse
      */
     public function store(): JsonResponse
@@ -79,7 +89,7 @@ class ApiAdminSearchController extends Controller
      * GET /{id}
      *
      * @param int $id
-     *
+     * @hideFromAPIDocumentation
      * @return JsonResponse
      */
     public function show(int $id)
@@ -94,7 +104,7 @@ class ApiAdminSearchController extends Controller
      * PUT /{id}
      *
      * @param string $id
-     *
+     * @hideFromAPIDocumentation
      * @return JsonResponse
      */
     public function update(string $id)
@@ -109,7 +119,7 @@ class ApiAdminSearchController extends Controller
      * DELETE / {id}
      *
      * @param string $id
-     *
+     * @hideFromAPIDocumentation
      * @return JsonResponse
      */
     public function destroy(string $id)

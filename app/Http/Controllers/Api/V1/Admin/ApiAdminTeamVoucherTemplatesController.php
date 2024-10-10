@@ -14,7 +14,16 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
+use Knuckles\Scribe\Attributes\Authenticated;
+use Knuckles\Scribe\Attributes\BodyParam;
+use Knuckles\Scribe\Attributes\Endpoint;
+use Knuckles\Scribe\Attributes\Group;
+use Knuckles\Scribe\Attributes\QueryParam;
+use Knuckles\Scribe\Attributes\Response;
+use Knuckles\Scribe\Attributes\Subgroup;
 
+#[Group('Admin Endpoints')]
+#[Subgroup('/admin/team-voucher-templates', 'API for managing a team\'s voucher templates')]
 class ApiAdminTeamVoucherTemplatesController extends Controller
 {
     use HandlesAPIRequests;
@@ -38,6 +47,73 @@ class ApiAdminTeamVoucherTemplatesController extends Controller
      *
      * @throws DisallowedApiFieldException
      */
+    #[Endpoint(
+        title        : 'GET /',
+        description  : 'Retrieve team voucher templates',
+        authenticated: true
+    )]
+    #[Authenticated]
+    #[QueryParam(
+        name       : 'cached',
+        type       : 'bool',
+        description: 'Request the response to be cached. Default: `true`.',
+        required   : false,
+        example    : true
+    )]
+    #[QueryParam(
+        name       : 'page',
+        type       : 'int',
+        description: 'The pagination page number.',
+        required   : false,
+        example    : 1
+    )]
+    #[QueryParam(
+        name       : 'limit',
+        type       : 'int',
+        description: 'The number of entries returned per pagination page.',
+        required   : false,
+        example    : 50
+    )]
+    #[QueryParam(
+        name       : 'fields',
+        type       : 'string',
+        description: 'Comma-separated list of database fields to return within the object.',
+        required   : false,
+        example    : 'id,created_at'
+    )]
+    #[QueryParam(
+        name       : 'orderBy',
+        type       : 'comma-separated',
+        description: 'Order the data by a given field. Comma-separated string.',
+        required   : false,
+        example    : 'orderBy=id,desc'
+    )]
+    #[QueryParam(
+        name       : 'orderBy[]',
+        type       : 'comma-separated',
+        description: 'Compound `orderBy`. Order the data by a given field. Comma-separated string. Can not be used in conjunction as standard `orderBy`.',
+        required   : false,
+        example    : 'orderBy[]=id,desc&orderBy[]=created_at,asc'
+    )]
+    #[QueryParam(
+        name       : 'where',
+        type       : 'comma-separated',
+        description: 'Filter the request on a single field. Key-Value or Key-Operator-Value comma-separated string.',
+        required   : false,
+        example    : 'where=id,like,*550e*'
+    )]
+    #[QueryParam(
+        name       : 'where[]',
+        type       : 'comma-separated',
+        description: 'Compound `where`. Use when you need to filter on multiple `where`\'s. Note only AND is possible; ORWHERE is not available.',
+        required   : false,
+        example    : 'where[]=id,like,*550e*&where[]=created_at,>=,2024-01-01'
+    )]
+    #[Response(
+        content    : '{"meta":{"responseCode":200,"limit":50,"offset":0,"message":"","cached":false,"availableRelations":[]},"data":{"current_page":1,"data":[{"id": "550e8400-e29b-41d4-a716-446655440000", "created_at": "2024-01-01 00:00:00"}],"first_page_url":"https:\/\/open-food-network-vouchers.test\/api\/v1\/admin\/system-statistics?page=1","from":null,"last_page":1,"last_page_url":"https:\/\/open-food-network-vouchers.test\/api\/v1\/admin\/system-statistics?page=1","links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"https:\/\/open-food-network-vouchers.test\/api\/v1\/admin\/system-statistics?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"next_page_url":null,"path":"https:\/\/open-food-network-vouchers.test\/api\/v1\/admin\/system-statistics","per_page":1,"prev_page_url":null,"to":null,"total":0}}',
+        status     : 200,
+        description: ''
+    )]
     public function index(): JsonResponse
     {
         $this->query = VoucherTemplate::with($this->associatedData);
@@ -50,6 +126,103 @@ class ApiAdminTeamVoucherTemplatesController extends Controller
     /**
      * POST /
      */
+    #[Endpoint(
+        title        : 'POST /',
+        description  : 'Add a team voucher template.',
+        authenticated: true
+    )]
+    #[Authenticated]
+    #[BodyParam(
+        name       : 'team_id',
+        type       : 'int',
+        description: 'The database teams.id of the team to add the voucher template to.',
+        required   : true
+    )]
+    #[BodyParam(
+        name       : 'voucher_template_path',
+        type       : 'string',
+        description: 'The path on the cloud storage system to the voucher template',
+        required   : true
+    )]
+    #[BodyParam(
+        name       : 'voucher_qr_size_px',
+        type       : 'int',
+        description: 'The size of the QR code on the template',
+        required   : true
+    )]
+    #[BodyParam(
+        name       : 'voucher_qr_x',
+        type       : 'int',
+        description: 'The X coordinate of the QR code',
+        required   : true
+    )]
+    #[BodyParam(
+        name       : 'voucher_qr_y',
+        type       : 'int',
+        description: 'The Y coordinate of the QR code',
+        required   : true
+    )]
+    #[BodyParam(
+        name       : 'voucher_code_size_px',
+        type       : 'int',
+        description: 'The size of the voucher short code on the template',
+        required   : true
+    )]
+    #[BodyParam(
+        name       : 'voucher_code_x',
+        type       : 'int',
+        description: 'The X coordinate of the voucher short code',
+        required   : true
+    )]
+    #[BodyParam(
+        name       : 'voucher_code_y',
+        type       : 'int',
+        description: 'The Y coordinate of the voucher short code',
+        required   : true
+    )]
+    #[BodyParam(
+        name       : 'voucher_expiry_size_px',
+        type       : 'int',
+        description: 'The size of the voucher expiry text on the template',
+        required   : true
+    )]
+    #[BodyParam(
+        name       : 'voucher_expiry_x',
+        type       : 'int',
+        description: 'The X coordinate of the voucher expiry text',
+        required   : true
+    )]
+    #[BodyParam(
+        name       : 'voucher_expiry_y',
+        type       : 'int',
+        description: 'The Y coordinate of the voucher expiry text',
+        required   : true
+    )]
+    #[BodyParam(
+        name       : 'voucher_value_size_px',
+        type       : 'int',
+        description: 'The size of the voucher value text on the template',
+        required   : true
+    )]
+    #[BodyParam(
+        name       : 'voucher_value_x',
+        type       : 'int',
+        description: 'The X coordinate of the voucher value text',
+        required   : true
+    )]
+    #[BodyParam(
+        name       : 'voucher_value_y',
+        type       : 'int',
+        description: 'The Y coordinate of the voucher value text',
+        required   : true
+    )]
+    #[BodyParam(
+        name       : 'overlay_font_path',
+        type       : 'string',
+        description: 'The path to the font being used in the template',
+        required   : true
+    )]
+
     public function store(): JsonResponse
     {
         $validationArray = [
@@ -174,6 +347,42 @@ class ApiAdminTeamVoucherTemplatesController extends Controller
      *
      * @throws DisallowedApiFieldException
      */
+    #[Endpoint(
+        title        : 'GET /{id}',
+        description  : 'Retrieve a single voucher template by ID.',
+        authenticated: true,
+    )]
+    #[Authenticated]
+    #[QueryParam(
+        name       : 'cached',
+        type       : 'bool',
+        description: 'Request the response to be cached. Default: `true`.',
+        required   : false,
+        example    : 1
+    )]
+    #[QueryParam(
+        name       : 'fields',
+        type       : 'string',
+        description: 'Comma-separated list of database fields to return within the object.',
+        required   : false,
+        example    : 'id,created_at'
+    )]
+    #[Response(
+        content    : '{
+  "meta": {
+    "responseCode": 200,
+    "limit": 50,
+    "offset": 0,
+    "message": "",
+    "cached": true,
+    "cached_at": "2024-08-13 08:58:19",
+    "availableRelations": []
+  },
+  "data": {"id": 1234, "created_at": "2024-01-01 00:00:00"}
+}',
+        status     : 200,
+        description: ''
+    )]
     public function show(int $id): JsonResponse
     {
         $this->query = VoucherTemplate::with($this->associatedData);
@@ -188,6 +397,121 @@ class ApiAdminTeamVoucherTemplatesController extends Controller
      *
      * @param int $id
      */
+    #[Endpoint(
+        title        : 'PUT /{id}',
+        description  : 'Update a team voucher template.',
+        authenticated: true
+    )]
+    #[Authenticated]
+    #[BodyParam(
+        name       : 'voucher_template_path',
+        type       : 'string',
+        description: 'The path on the cloud storage system to the voucher template',
+        required   : false
+    )]
+    #[BodyParam(
+        name       : 'voucher_qr_size_px',
+        type       : 'int',
+        description: 'The size of the QR code on the template',
+        required   : false
+    )]
+    #[BodyParam(
+        name       : 'voucher_qr_x',
+        type       : 'int',
+        description: 'The X coordinate of the QR code',
+        required   : false
+    )]
+    #[BodyParam(
+        name       : 'voucher_qr_y',
+        type       : 'int',
+        description: 'The Y coordinate of the QR code',
+        required   : false
+    )]
+
+    #[BodyParam(
+        name       : 'voucher_code_prefix',
+        type       : 'string',
+        description: 'String to prefix the voucher code by on the template, eg "#"',
+        required   : false
+    )]
+    #[BodyParam(
+        name       : 'voucher_code_size_px',
+        type       : 'int',
+        description: 'The size of the voucher short code on the template',
+        required   : false
+    )]
+    #[BodyParam(
+        name       : 'voucher_code_x',
+        type       : 'int',
+        description: 'The X coordinate of the voucher short code',
+        required   : false
+    )]
+    #[BodyParam(
+        name       : 'voucher_code_y',
+        type       : 'int',
+        description: 'The Y coordinate of the voucher short code',
+        required   : false
+    )]
+    #[BodyParam(
+        name       : 'voucher_expiry_prefix',
+        type       : 'string',
+        description: 'String to prefix the voucher expiry by on the template, eg "@"',
+        required   : false
+    )]
+    #[BodyParam(
+        name       : 'voucher_expiry_size_px',
+        type       : 'int',
+        description: 'The size of the voucher expiry text on the template',
+        required   : false
+    )]
+    #[BodyParam(
+        name       : 'voucher_expiry_x',
+        type       : 'int',
+        description: 'The X coordinate of the voucher expiry text',
+        required   : false
+    )]
+    #[BodyParam(
+        name       : 'voucher_expiry_y',
+        type       : 'int',
+        description: 'The Y coordinate of the voucher expiry text',
+        required   : false
+    )]
+    #[BodyParam(
+        name       : 'voucher_value_prefix',
+        type       : 'string',
+        description: 'String to prefix the voucher value by on the template, eg "$"',
+        required   : false
+    )]
+    #[BodyParam(
+        name       : 'voucher_value_size_px',
+        type       : 'int',
+        description: 'The size of the voucher value text on the template',
+        required   : false
+    )]
+    #[BodyParam(
+        name       : 'voucher_value_x',
+        type       : 'int',
+        description: 'The X coordinate of the voucher value text',
+        required   : false
+    )]
+    #[BodyParam(
+        name       : 'voucher_value_y',
+        type       : 'int',
+        description: 'The Y coordinate of the voucher value text',
+        required   : false
+    )]
+    #[BodyParam(
+        name       : 'overlay_font_path',
+        type       : 'string',
+        description: 'The path to the font being used in the template',
+        required   : false
+    )]
+    #[BodyParam(
+        name       : 'archive',
+        type       : 'boolean',
+        description: 'TArchive the template from future selection in a voucher set.',
+        required   : false
+    )]
     public function update(int $id): JsonResponse
     {
         $validationArray = [
@@ -343,6 +667,11 @@ class ApiAdminTeamVoucherTemplatesController extends Controller
      *
      * @param int $id
      */
+    #[Endpoint(
+        title        : 'Delete /{id}',
+        description  : 'Remove a team voucher template.',
+        authenticated: true
+    )]
     public function destroy(int $id): JsonResponse
     {
         try {

@@ -14,7 +14,7 @@ use App\Http\Controllers\Api\V1\Admin\ApiAdminUsersController;
 use App\Http\Controllers\Api\V1\Admin\ApiAdminVoucherRedemptionsController;
 use App\Http\Controllers\Api\V1\Admin\ApiAdminVouchersController;
 use App\Http\Controllers\Api\V1\Admin\ApiAdminVoucherSetsController;
-use App\Http\Controllers\Api\V1\Admin\ApiFileUploadsController;
+use App\Http\Controllers\Api\V1\Admin\ApiAdminFileUploadsController;
 use App\Http\Controllers\Api\V1\ApiCountriesController;
 use App\Http\Controllers\Api\V1\ApiMyTeamAuditItemsController;
 use App\Http\Controllers\Api\V1\ApiMyTeamController;
@@ -832,7 +832,7 @@ Route::group(['prefix' => 'v1', 'middleware' => VerifyApiTokenSignature::class],
 
                     Route::resource(
                         '/file-uploads',
-                        ApiFileUploadsController::class
+                        ApiAdminFileUploadsController::class
                     )->names('api.v1.admin.file-uploads');
 
                     Route::resource(
@@ -1119,7 +1119,7 @@ Route::group(['prefix' => 'v1', 'middleware' => VerifyApiTokenSignature::class],
 
                     Route::resource(
                         '/file-uploads',
-                        ApiFileUploadsController::class
+                        ApiAdminFileUploadsController::class
                     )->names('api.v1.admin.file-uploads');
 
                     Route::resource(

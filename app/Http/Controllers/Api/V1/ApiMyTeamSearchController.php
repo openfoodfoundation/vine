@@ -12,7 +12,12 @@ use App\Models\VoucherSet;
 use Auth;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Validator;
+use Knuckles\Scribe\Attributes\Endpoint;
+use Knuckles\Scribe\Attributes\Group;
+use Knuckles\Scribe\Attributes\Subgroup;
 
+#[Group('App Endpoints')]
+#[Subgroup('/my-team-search', 'Search for system objects your team owns or is associated to.')]
 class ApiMyTeamSearchController extends Controller
 {
     use HandlesAPIRequests;
@@ -29,6 +34,11 @@ class ApiMyTeamSearchController extends Controller
      *
      * @return JsonResponse
      */
+    #[Endpoint(
+        title        : 'GET /',
+        description  : 'Perform a search.',
+        authenticated: true
+    )]
     public function index(): JsonResponse
     {
         $validationArray = [
@@ -76,9 +86,10 @@ class ApiMyTeamSearchController extends Controller
         return $this->respond();
     }
 
+
     /**
      * POST /
-     *
+     * @hideFromAPIDocumentation
      * @return JsonResponse
      */
     public function store(): JsonResponse
@@ -93,7 +104,7 @@ class ApiMyTeamSearchController extends Controller
      * GET /{id}
      *
      * @param int $id
-     *
+     * @hideFromAPIDocumentation
      * @return JsonResponse
      */
     public function show(int $id)
@@ -108,7 +119,7 @@ class ApiMyTeamSearchController extends Controller
      * PUT /{id}
      *
      * @param string $id
-     *
+     * @hideFromAPIDocumentation
      * @return JsonResponse
      */
     public function update(string $id)
@@ -123,7 +134,7 @@ class ApiMyTeamSearchController extends Controller
      * DELETE / {id}
      *
      * @param string $id
-     *
+     * @hideFromAPIDocumentation
      * @return JsonResponse
      */
     public function destroy(string $id)
