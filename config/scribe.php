@@ -253,6 +253,7 @@ INTRO
                 '/admin/team-users',
                 '/admin/team-voucher-templates',
                 '/admin/user-personal-access-tokens',
+                '/admin/users',
                 '/admin/vouchers',
                 '/admin/voucher-sets',
                 '/admin/voucher-redemptions',
