@@ -365,7 +365,9 @@ class ApiAdminUsersController extends Controller
      * DELETE / {id}
      *
      * @param string $id
+     *
      * @hideFromAPIDocumentation
+     *
      * @return JsonResponse
      */
     public function destroy(string $id)

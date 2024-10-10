@@ -237,7 +237,9 @@ class ApiAdminTeamMerchantTeamsController extends Controller
      * GET /{id}
      *
      * @param string $id
+     *
      * @hideFromAPIDocumentation
+     *
      * @return JsonResponse
      */
     public function show(string $id)
@@ -252,7 +254,9 @@ class ApiAdminTeamMerchantTeamsController extends Controller
      * PUT /{id}
      *
      * @param string $id
+     *
      * @hideFromAPIDocumentation
+     *
      * @return JsonResponse
      */
     public function update(string $id)

@@ -212,7 +212,9 @@ class ApiAdminTeamServiceTeamsController extends Controller
      * GET / {id}
      *
      * @param string $id
+     *
      * @hideFromAPIDocumentation
+     *
      * @return JsonResponse
      */
     public function show(string $id)

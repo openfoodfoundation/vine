@@ -162,15 +162,15 @@ class ApiAdminUserPersonalAccessTokensController extends Controller
          * The validation array.
          */
         $validationArray = [
-            'user_id'           => [
+            'user_id' => [
                 'required',
                 Rule::exists('users', 'id'),
             ],
-            'name'              => [
+            'name' => [
                 'required',
                 'string',
             ],
-            'token_abilities'   => [
+            'token_abilities' => [
                 'required',
                 'array',
             ],
@@ -179,7 +179,7 @@ class ApiAdminUserPersonalAccessTokensController extends Controller
             ],
         ];
 
-        $messages  = [
+        $messages = [
             'token_abilities' => 'Please ensure the token has at least 1 ability associated to it.',
         ];
         $validator = Validator::make($this->request->all(), $validationArray, $messages);
@@ -188,9 +188,10 @@ class ApiAdminUserPersonalAccessTokensController extends Controller
 
             $this->responseCode = 400;
             $this->message      = $validator->errors()
-                                            ->first();
+                ->first();
 
-        } else {
+        }
+        else {
 
             try {
 
@@ -210,7 +211,8 @@ class ApiAdminUserPersonalAccessTokensController extends Controller
 
                 event(new PersonalAccessTokenWasCreated($token->accessToken));
 
-            } catch (Exception $e) {
+            }
+            catch (Exception $e) {
 
                 $this->responseCode = 500;
                 $this->message      = ApiResponse::RESPONSE_ERROR->value . ': "' . $e->getMessage() . '".';
@@ -280,7 +282,9 @@ class ApiAdminUserPersonalAccessTokensController extends Controller
      * PUT/ {id}
      *
      * @param string $id
+     *
      * @hideFromAPIDocumentation
+     *
      * @return JsonResponse
      */
     public function update(string $id)
@@ -314,14 +318,16 @@ class ApiAdminUserPersonalAccessTokensController extends Controller
                 $this->responseCode = 404;
                 $this->message      = ApiResponse::RESPONSE_NOT_FOUND->value;
 
-            } else {
+            }
+            else {
 
                 $model->delete();
                 $this->message = ApiResponse::RESPONSE_DELETED->value;
 
             }
 
-        } catch (Exception $e) {
+        }
+        catch (Exception $e) {
 
             $this->responseCode = 500;
             $this->message      = ApiResponse::RESPONSE_ERROR->value . ':' . $e->getMessage();

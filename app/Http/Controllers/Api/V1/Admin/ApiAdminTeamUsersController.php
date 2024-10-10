@@ -218,7 +218,9 @@ class ApiAdminTeamUsersController extends Controller
 
     /**
      * @param string $id
+     *
      * @hideFromAPIDocumentation
+     *
      * @return JsonResponse
      *                      GET / {id}
      */
