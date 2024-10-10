@@ -2,6 +2,7 @@
 
 use App\Enums\PersonalAccessTokenAbility;
 use App\Http\Controllers\Api\V1\Admin\ApiAdminAuditItemsController;
+use App\Http\Controllers\Api\V1\Admin\ApiAdminFileUploadsController;
 use App\Http\Controllers\Api\V1\Admin\ApiAdminSearchController;
 use App\Http\Controllers\Api\V1\Admin\ApiAdminSystemStatisticsController;
 use App\Http\Controllers\Api\V1\Admin\ApiAdminTeamMerchantTeamsController;
@@ -14,7 +15,6 @@ use App\Http\Controllers\Api\V1\Admin\ApiAdminUsersController;
 use App\Http\Controllers\Api\V1\Admin\ApiAdminVoucherRedemptionsController;
 use App\Http\Controllers\Api\V1\Admin\ApiAdminVouchersController;
 use App\Http\Controllers\Api\V1\Admin\ApiAdminVoucherSetsController;
-use App\Http\Controllers\Api\V1\Admin\ApiAdminFileUploadsController;
 use App\Http\Controllers\Api\V1\ApiCountriesController;
 use App\Http\Controllers\Api\V1\ApiMyTeamAuditItemsController;
 use App\Http\Controllers\Api\V1\ApiMyTeamController;

@@ -86,10 +86,11 @@ class ApiMyTeamSearchController extends Controller
         return $this->respond();
     }
 
-
     /**
      * POST /
+     *
      * @hideFromAPIDocumentation
+     *
      * @return JsonResponse
      */
     public function store(): JsonResponse
@@ -104,7 +105,9 @@ class ApiMyTeamSearchController extends Controller
      * GET /{id}
      *
      * @param int $id
+     *
      * @hideFromAPIDocumentation
+     *
      * @return JsonResponse
      */
     public function show(int $id)
@@ -119,7 +122,9 @@ class ApiMyTeamSearchController extends Controller
      * PUT /{id}
      *
      * @param string $id
+     *
      * @hideFromAPIDocumentation
+     *
      * @return JsonResponse
      */
     public function update(string $id)
@@ -134,7 +139,9 @@ class ApiMyTeamSearchController extends Controller
      * DELETE / {id}
      *
      * @param string $id
+     *
      * @hideFromAPIDocumentation
+     *
      * @return JsonResponse
      */
     public function destroy(string $id)

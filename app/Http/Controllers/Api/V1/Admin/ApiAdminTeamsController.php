@@ -20,7 +20,6 @@ use Knuckles\Scribe\Attributes\Group;
 use Knuckles\Scribe\Attributes\QueryParam;
 use Knuckles\Scribe\Attributes\Response;
 use Knuckles\Scribe\Attributes\Subgroup;
-use Knuckles\Scribe\Attributes\UrlParam;
 
 #[Group('Admin Endpoints')]
 #[Subgroup('/admin/teams', 'API for managing teams')]
