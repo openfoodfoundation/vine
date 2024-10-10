@@ -5,7 +5,7 @@ import {onMounted, ref, watch} from "vue";
 import Swal from "sweetalert2";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
-import utc from "dayjs/plugin/utc"
+import utc from "dayjs/plugin/utc";
 
 dayjs.extend(relativeTime);
 dayjs.extend(utc);
@@ -109,9 +109,6 @@ watch(redeemingPartialDollarAmount, (val) => {
     <Head title="Voucher redeem"/>
 
     <AuthenticatedLayout>
-        <template #header>
-            <h2 class="font-normal text-xl text-gray-800 leading-tight">Voucher Redeem</h2>
-        </template>
 
         <div class="card">
 
@@ -171,7 +168,7 @@ watch(redeemingPartialDollarAmount, (val) => {
                         </div>
 
                     </div>
-                    <div class="grid grid-cols-2 gap-2" v-else>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-2" v-else>
                         <div class="">
                             <button class="w-full p-8 font-bold text-2xl rounded border bg-gray-300" @click="beginRedeemingPartial()">
                                 Redeem PART

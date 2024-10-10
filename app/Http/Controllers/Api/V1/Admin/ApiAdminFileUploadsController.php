@@ -37,6 +37,7 @@ class ApiAdminFileUploadsController extends Controller
 
     /**
      * GET /
+     *
      * @hideFromAPIDocumentation
      */
     public function index(): JsonResponse
@@ -185,8 +186,11 @@ class ApiAdminFileUploadsController extends Controller
 
     /**
      * GET /{id}
+     *
      * @hideFromAPIDocumentation
+     *
      * @param int $id
+     *
      * @return JsonResponse
      */
     public function show(int $id): JsonResponse
@@ -199,8 +203,11 @@ class ApiAdminFileUploadsController extends Controller
 
     /**
      * PUT /{id}
+     *
      * @hideFromAPIDocumentation
+     *
      * @param int $id
+     *
      * @return JsonResponse
      */
     public function update(int $id): JsonResponse
@@ -213,8 +220,11 @@ class ApiAdminFileUploadsController extends Controller
 
     /**
      * DELETE /{id}
+     *
      * @hideFromAPIDocumentation
+     *
      * @param int $id
+     *
      * @return JsonResponse
      */
     public function destroy(int $id): JsonResponse

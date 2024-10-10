@@ -118,7 +118,9 @@ class ApiAdminAuditItemsController extends Controller
 
     /**
      * POST /
+     *
      * @hideFromAPIDocumentation
+     *
      * @return JsonResponse
      */
     public function store(): JsonResponse
@@ -193,7 +195,9 @@ class ApiAdminAuditItemsController extends Controller
      * PUT /{id}
      *
      * @param string $id
+     *
      * @hideFromAPIDocumentation
+     *
      * @return JsonResponse
      */
     public function update(string $id)
@@ -208,7 +212,9 @@ class ApiAdminAuditItemsController extends Controller
      * DELETE / {id}
      *
      * @param string $id
+     *
      * @hideFromAPIDocumentation
+     *
      * @return JsonResponse
      */
     public function destroy(string $id)

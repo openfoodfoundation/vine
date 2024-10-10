@@ -16,7 +16,6 @@ use Knuckles\Scribe\Attributes\Group;
 use Knuckles\Scribe\Attributes\QueryParam;
 use Knuckles\Scribe\Attributes\Response;
 use Knuckles\Scribe\Attributes\Subgroup;
-use Knuckles\Scribe\Attributes\UrlParam;
 
 #[Group('Admin Endpoints')]
 #[Subgroup('/admin/system-statistics', 'Search for system objects as an admin.')]
@@ -117,7 +116,9 @@ class ApiAdminSystemStatisticsController extends Controller
 
     /**
      * POST /
+     *
      * @hideFromAPIDocumentation
+     *
      * @return JsonResponse
      */
     public function store(): JsonResponse
@@ -186,7 +187,9 @@ class ApiAdminSystemStatisticsController extends Controller
      * PUT /{id}
      *
      * @param string $id
+     *
      * @hideFromAPIDocumentation
+     *
      * @return JsonResponse
      */
     public function update(string $id)
@@ -201,7 +204,9 @@ class ApiAdminSystemStatisticsController extends Controller
      * DELETE / {id}
      *
      * @param string $id
+     *
      * @hideFromAPIDocumentation
+     *
      * @return JsonResponse
      */
     public function destroy(string $id)

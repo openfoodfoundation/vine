@@ -222,7 +222,6 @@ class ApiAdminTeamVoucherTemplatesController extends Controller
         description: 'The path to the font being used in the template',
         required   : true
     )]
-
     public function store(): JsonResponse
     {
         $validationArray = [

@@ -74,7 +74,9 @@ class ApiAdminSearchController extends Controller
 
     /**
      * POST /
+     *
      * @hideFromAPIDocumentation
+     *
      * @return JsonResponse
      */
     public function store(): JsonResponse
@@ -89,7 +91,9 @@ class ApiAdminSearchController extends Controller
      * GET /{id}
      *
      * @param int $id
+     *
      * @hideFromAPIDocumentation
+     *
      * @return JsonResponse
      */
     public function show(int $id)
@@ -104,7 +108,9 @@ class ApiAdminSearchController extends Controller
      * PUT /{id}
      *
      * @param string $id
+     *
      * @hideFromAPIDocumentation
+     *
      * @return JsonResponse
      */
     public function update(string $id)
@@ -119,7 +125,9 @@ class ApiAdminSearchController extends Controller
      * DELETE / {id}
      *
      * @param string $id
+     *
      * @hideFromAPIDocumentation
+     *
      * @return JsonResponse
      */
     public function destroy(string $id)
