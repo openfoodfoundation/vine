@@ -2,6 +2,8 @@
 
 namespace App\Console\Commands;
 
+use App\Jobs\Vouchers\GenerateStorageVoucherQrCode;
+use App\Models\Voucher;
 use App\Models\VoucherSet;
 use App\Services\VoucherSetService;
 use Illuminate\Console\Command;
@@ -27,10 +29,11 @@ class TestCommand extends Command
      */
     public function handle()
     {
-        $voucherSet = VoucherSet::find('9d2129f4-befa-4702-950d-7d3342717462');
+        $vouchers = Voucher::all();
 
-        $isValid = VoucherSetService::validateVoucherSetDenominations($voucherSet);
-
-        dd($isValid);
+        foreach($vouchers as $voucher)
+        {
+            dispatch(new GenerateStorageVoucherQrCode($voucher));
+        }
     }
 }

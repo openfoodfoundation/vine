@@ -58,7 +58,7 @@ class GenerateStorageVoucherQrCode implements ShouldQueue
          * If there is a voucher template selected, generate the image based on this.
          */
         $voucherSet      = VoucherSet::find($this->voucher->voucher_set_id);
-        $voucherTemplate = VoucherTemplate::find($voucherSet->voucher_template_id)->first();
+        $voucherTemplate = VoucherTemplate::find($voucherSet->voucher_template_id);
         if ($voucherTemplate) {
             VoucherTemplateService::generateVoucherTemplate(voucherTemplate: $voucherTemplate, voucher: $this->voucher);
         }
