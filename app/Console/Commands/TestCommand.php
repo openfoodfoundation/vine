@@ -4,8 +4,6 @@ namespace App\Console\Commands;
 
 use App\Jobs\Vouchers\GenerateStorageVoucherQrCode;
 use App\Models\Voucher;
-use App\Models\VoucherSet;
-use App\Services\VoucherSetService;
 use Illuminate\Console\Command;
 
 class TestCommand extends Command
@@ -31,8 +29,7 @@ class TestCommand extends Command
     {
         $vouchers = Voucher::all();
 
-        foreach($vouchers as $voucher)
-        {
+        foreach ($vouchers as $voucher) {
             dispatch(new GenerateStorageVoucherQrCode($voucher));
         }
     }

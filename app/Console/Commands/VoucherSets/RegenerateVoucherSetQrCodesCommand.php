@@ -6,6 +6,7 @@ use App\Jobs\Vouchers\GenerateStorageVoucherQrCode;
 use App\Models\Voucher;
 use App\Models\VoucherSet;
 use Illuminate\Console\Command;
+
 use function Laravel\Prompts\text;
 
 class RegenerateVoucherSetQrCodesCommand extends Command
@@ -33,16 +34,14 @@ class RegenerateVoucherSetQrCodesCommand extends Command
 
         $voucherSet = VoucherSet::find($voucherSetId);
 
-        if($voucherSet)
-        {
+        if ($voucherSet) {
             $this->line('Nice one - sending all vouchers up for QR regeneration.');
 
             $vouchers = Voucher::where('voucher_set_id', $voucherSetId)->get();
 
             $progressBar = $this->output->createProgressBar($vouchers->count());
             $progressBar->start();
-            foreach($vouchers as $voucher)
-            {
+            foreach ($vouchers as $voucher) {
                 $progressBar->advance(1);
 
                 dispatch(new GenerateStorageVoucherQrCode($voucher));
