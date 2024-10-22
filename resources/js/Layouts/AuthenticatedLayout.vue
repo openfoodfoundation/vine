@@ -5,7 +5,7 @@ import Dropdown from '@/Components/Dropdown.vue';
 import DropdownLink from '@/Components/DropdownLink.vue';
 import NavLink from '@/Components/NavLink.vue';
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink.vue';
-import {Link} from '@inertiajs/vue3';
+import {Link, usePage} from '@inertiajs/vue3';
 import PrimaryButton from "@/Components/PrimaryButton.vue";
 import SearchComponent from "@/Components/App/Search/SearchComponent.vue";
 
@@ -13,6 +13,8 @@ const showingNavigationDropdown = ref(false);
 </script>
 
 <template>
+
+    <div>{{}}</div>
     <div>
         <div class="min-h-screen bg-gray-100">
             <nav class="bg-white border-b border-gray-100">
@@ -99,6 +101,17 @@ const showingNavigationDropdown = ref(false);
                                         <DropdownLink :href="route('audit-trail')">
                                             Audit Trail
                                         </DropdownLink>
+
+                                        <hr>
+                                        <div class="px-4 opacity-50 text-xs mt-4">
+                                            Switch team
+                                        </div>
+                                        <DropdownLink :href="'/switch-team/' + userTeam.team_id" v-for="userTeam in usePage().props.auth.availableTeams">
+                                            {{ userTeam.team.name }}
+                                        </DropdownLink>
+                                        <hr>
+
+
                                         <DropdownLink :href="route('logout')" method="post" as="button">
                                             Log Out
                                         </DropdownLink>
@@ -166,6 +179,16 @@ const showingNavigationDropdown = ref(false);
 
                         <div class="mt-3 space-y-1">
                             <ResponsiveNavLink :href="route('profile.edit')"> Profile </ResponsiveNavLink>
+
+                            <hr>
+                            <div class="px-4 opacity-50 text-xs mt-4">
+                                Switch team
+                            </div>
+                            <ResponsiveNavLink :href="'/switch-team/' + userTeam.team_id" v-for="userTeam in usePage().props.auth.availableTeams">
+                                {{ userTeam.team.name }}
+                            </ResponsiveNavLink>
+                            <hr>
+
                             <ResponsiveNavLink :href="route('logout')" method="post" as="button">
                                 Log Out
                             </ResponsiveNavLink>

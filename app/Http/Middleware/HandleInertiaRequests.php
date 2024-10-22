@@ -6,6 +6,8 @@ use App\Enums\PersonalAccessTokenAbility;
 use App\Enums\VoucherSetType;
 use App\Models\Country;
 use App\Models\Team;
+use App\Models\TeamUser;
+use Auth;
 use Illuminate\Http\Request;
 use Inertia\Middleware;
 
@@ -41,10 +43,11 @@ class HandleInertiaRequests extends Middleware
 
         return [
             ...parent::share($request),
-            'auth' => [
-                'user'        => $request->user(),
-                'currentTeam' => $team,
-                'teamCountry' => Country::find($team?->country_id),
+            'auth'                         => [
+                'user'           => $request->user(),
+                'currentTeam'    => $team,
+                'availableTeams' => TeamUser::with('team')->where('user_id', Auth::id())->get(),
+                'teamCountry'    => Country::find($team?->country_id),
             ],
             'personalAccessTokenAbilities' => PersonalAccessTokenAbility::groupsAbilityCasesWithDefinitions(),
             'platformAppTokenAbilities'    => PersonalAccessTokenAbility::platformAppTokenAbilities(),
