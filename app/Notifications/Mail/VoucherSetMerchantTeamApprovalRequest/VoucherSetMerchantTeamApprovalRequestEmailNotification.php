@@ -21,7 +21,9 @@ class VoucherSetMerchantTeamApprovalRequestEmailNotification extends Notificatio
      *
      * @param VoucherSetMerchantTeamApprovalRequest $voucherSetMerchantTeamApprovalRequest
      */
-    public function __construct(public VoucherSetMerchantTeamApprovalRequest $voucherSetMerchantTeamApprovalRequest) {}
+    public function __construct(public VoucherSetMerchantTeamApprovalRequest $voucherSetMerchantTeamApprovalRequest)
+    {
+    }
 
     /**
      * Get the notification's delivery channels.
@@ -51,18 +53,26 @@ class VoucherSetMerchantTeamApprovalRequestEmailNotification extends Notificatio
             expiry      : now()->addDays(2),
             redirectPath: '/my-voucher-set-merchant-team-approval-request/' . $this->voucherSetMerchantTeamApprovalRequest->id . '?selected=approve'
         );
-        $urlReject = BounceService::generateSignedUrlForUser(
+        $urlReject  = BounceService::generateSignedUrlForUser(
             user        : $user,
             expiry      : now()->addDays(2),
             redirectPath: '/my-voucher-set-merchant-team-approval-request/' . $this->voucherSetMerchantTeamApprovalRequest->id . '?selected=reject'
         );
 
-        $voucherSet = VoucherSet::with('createdByTeam')->find($this->voucherSetMerchantTeamApprovalRequest->voucher_set_id);
+        $voucherSet = VoucherSet::with(
+            [
+                'createdByTeam',
+                'currencyCountry',
+                'allocatedToServiceTeam',
+                'fundedByTeam',
+            ]
+        )->find($this->voucherSetMerchantTeamApprovalRequest->voucher_set_id);
 
         return (new MailMessage())
             ->subject('A Vine voucher set is about to be been generated that may be redeemed at your shop')
             ->markdown('mail.voucher-set-approval-request', [
                 'voucherSetId' => $this->voucherSetMerchantTeamApprovalRequest->voucher_set_id,
+                'voucherSet'   => $voucherSet,
                 'createdBy'    => $voucherSet->createdByTeam->name,
                 'approve'      => $urlApprove,
                 'reject'       => $urlReject,

@@ -10,6 +10,7 @@ use App\Models\Voucher;
 use App\Models\VoucherSet;
 use App\Models\VoucherSetMerchantTeam;
 use App\Models\VoucherSetMerchantTeamApprovalRequest;
+use App\Notifications\Mail\VoucherSetMerchantTeamApprovalRequest\VoucherSetMerchantTeamApprovalRequestEmailNotification;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Crypt;
@@ -410,6 +411,16 @@ Route::middleware('auth')->group(function () {
                 'id' => $id,
             ]);
         })->name('admin.user');
+
+
+        Route::get('/email-preview', function () {
+
+
+
+            $message = (new VoucherSetMerchantTeamApprovalRequestEmailNotification(VoucherSetMerchantTeamApprovalRequest::first()))->toMail(User::first());
+
+            return $message->render();
+        })->name('admin.email-preview');
 
     });
 
