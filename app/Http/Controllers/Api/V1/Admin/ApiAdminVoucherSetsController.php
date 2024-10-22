@@ -37,6 +37,7 @@ class ApiAdminVoucherSetsController extends Controller
     public array $availableRelations = [
         'createdByTeam',
         'allocatedToServiceTeam',
+        'currencyCountry',
         'voucherSetMerchantTeamApprovalRequests.merchantUser',
         'voucherSetMerchantTeamApprovalRequests.merchantTeam',
         'voucherSetMerchantTeams.merchantTeam',
