@@ -14,11 +14,10 @@ class CreateVoucherSetMerchantTeamApprovalRequests implements ShouldQueue
 
     /**
      * Create a new job instance.
+     *
+     * @param VoucherSetMerchantTeam $voucherSetMerchantTeam
      */
-    public function __construct(public VoucherSetMerchantTeam $voucherSetMerchantTeam)
-    {
-        //
-    }
+    public function __construct(public VoucherSetMerchantTeam $voucherSetMerchantTeam) {}
 
     /**
      * Execute the job.
@@ -30,9 +29,9 @@ class CreateVoucherSetMerchantTeamApprovalRequests implements ShouldQueue
         foreach ($merchantTeamUsers as $merchantTeamUser) {
 
             $approval = VoucherSetMerchantTeamApprovalRequest::where('voucher_set_id', $this->voucherSetMerchantTeam->voucher_set_id)
-                                                             ->where('merchant_team_id', $this->voucherSetMerchantTeam->merchant_team_id)
-                                                             ->where('merchant_user_id', $merchantTeamUser->user_id)
-                                                             ->first();
+                ->where('merchant_team_id', $this->voucherSetMerchantTeam->merchant_team_id)
+                ->where('merchant_user_id', $merchantTeamUser->user_id)
+                ->first();
 
             /**
              * Only create a new approval request if one does not already exist

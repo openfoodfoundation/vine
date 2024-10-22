@@ -21,9 +21,7 @@ class VoucherSetMerchantTeamApprovalRequestEmailNotification extends Notificatio
      *
      * @param VoucherSetMerchantTeamApprovalRequest $voucherSetMerchantTeamApprovalRequest
      */
-    public function __construct(public VoucherSetMerchantTeamApprovalRequest $voucherSetMerchantTeamApprovalRequest)
-    {
-    }
+    public function __construct(public VoucherSetMerchantTeamApprovalRequest $voucherSetMerchantTeamApprovalRequest) {}
 
     /**
      * Get the notification's delivery channels.
@@ -53,7 +51,7 @@ class VoucherSetMerchantTeamApprovalRequestEmailNotification extends Notificatio
             expiry      : now()->addDays(2),
             redirectPath: '/my-voucher-set-merchant-team-approval-request/' . $this->voucherSetMerchantTeamApprovalRequest->id . '?selected=approve'
         );
-        $urlReject  = BounceService::generateSignedUrlForUser(
+        $urlReject = BounceService::generateSignedUrlForUser(
             user        : $user,
             expiry      : now()->addDays(2),
             redirectPath: '/my-voucher-set-merchant-team-approval-request/' . $this->voucherSetMerchantTeamApprovalRequest->id . '?selected=reject'

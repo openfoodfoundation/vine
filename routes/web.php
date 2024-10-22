@@ -412,10 +412,7 @@ Route::middleware('auth')->group(function () {
             ]);
         })->name('admin.user');
 
-
         Route::get('/email-preview', function () {
-
-
 
             $message = (new VoucherSetMerchantTeamApprovalRequestEmailNotification(VoucherSetMerchantTeamApprovalRequest::first()))->toMail(User::first());
 

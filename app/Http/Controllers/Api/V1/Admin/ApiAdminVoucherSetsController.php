@@ -14,7 +14,6 @@ use Auth;
 use Exception;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 use Knuckles\Scribe\Attributes\Authenticated;
@@ -334,7 +333,6 @@ class ApiAdminVoucherSetsController extends Controller
             $model->created_by_team_id  = Auth::user()->current_team_id;
             $model->currency_country_id = Auth::user()->currentTeam->country_id;
             $model->save();
-
 
             foreach ($merchantTeamIds as $merchantTeamId) {
                 $voucherSetMerchantTeam                   = new VoucherSetMerchantTeam();
