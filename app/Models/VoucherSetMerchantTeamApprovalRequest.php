@@ -12,12 +12,10 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class VoucherSetMerchantTeamApprovalRequest extends Model
 {
     use HasFactory;
-    use HasRelativeDates;
     use SoftDeletes;
 
     protected $appends = [
-        'created_at_relative',
-        'created_at_date_time'
+
     ];
 
     protected $dispatchesEvents = [
