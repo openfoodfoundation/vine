@@ -17,9 +17,8 @@ class VoucherSetMerchantTeamApprovalRequest extends Model
 
     protected $appends = [
         'created_at_relative',
-        'created_at_date_time'
+        'created_at_date_time',
     ];
-
     protected $dispatchesEvents = [
         'created' => VoucherSetMerchantTeamApprovalRequestWasCreated::class,
     ];
