@@ -27,6 +27,7 @@ class ApiAdminVouchersController extends Controller
      */
     public array $availableRelations = [
         'voucherSet',
+        'voucherSet.voucherSetMerchantTeams.merchantTeam',
         'createdByTeam',
         'allocatedToServiceTeam',
         'voucherRedemptions.redeemedByUser',
