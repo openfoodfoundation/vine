@@ -5,9 +5,7 @@ namespace App\Events\VoucherSetMerchantTeams;
 use App\Models\VoucherSetMerchantTeam;
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Broadcasting\InteractsWithSockets;
-use Illuminate\Broadcasting\PresenceChannel;
 use Illuminate\Broadcasting\PrivateChannel;
-use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 
@@ -19,11 +17,10 @@ class VoucherSetMerchantTeamWasCreated
 
     /**
      * Create a new event instance.
+     *
+     * @param VoucherSetMerchantTeam $voucherSetMerchantTeam
      */
-    public function __construct(public VoucherSetMerchantTeam $voucherSetMerchantTeam)
-    {
-        //
-    }
+    public function __construct(public VoucherSetMerchantTeam $voucherSetMerchantTeam) {}
 
     /**
      * Get the channels the event should broadcast on.

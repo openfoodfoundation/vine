@@ -14,7 +14,7 @@ class VoucherSetMerchantTeam extends Model
     use SoftDeletes;
 
     protected $dispatchesEvents = [
-        'created' => VoucherSetMerchantTeamWasCreated::class
+        'created' => VoucherSetMerchantTeamWasCreated::class,
     ];
 
     /**
