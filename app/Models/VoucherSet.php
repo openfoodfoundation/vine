@@ -55,4 +55,9 @@ class VoucherSet extends Model
     {
         return $this->hasMany(VoucherSetMerchantTeam::class, 'voucher_set_id', 'id');
     }
+
+    public function currencyCountry(): BelongsTo
+    {
+        return $this->belongsTo(Country::class, 'currency_country_id', 'id');
+    }
 }

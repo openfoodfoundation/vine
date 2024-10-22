@@ -13,6 +13,7 @@ const $props = usePage().props;
 
 const canGenerateVoucherSet = ref(false);
 const processStarted = ref(false);
+const generating = ref(false);
 
 // Funding team
 const allFundingTeams = ref([]);
@@ -74,6 +75,8 @@ function createVoucherSet() {
 
         if (resp.isConfirmed) {
 
+            generating.value = true;
+
             let payload = Object.assign({}, voucherSet.value)
 
             axios.post('/admin/voucher-sets', voucherSet.value).then(response => {
@@ -87,7 +90,7 @@ function createVoucherSet() {
                 }).then(() => {
                     window.location.href = '/admin/voucher-set/' + response.data.data.id;
                 });
-
+                generating.value = false;
             }).catch(error => {
 
                 swal.fire({
@@ -97,7 +100,7 @@ function createVoucherSet() {
                 });
 
                 console.log(error);
-
+                generating.value = false;
             })
         }
     })
@@ -1148,9 +1151,15 @@ watch(valueOfSetInCountryCurrency, (value) => {
                 </div>
 
                 <div class="flex justify-end">
-                    <PrimaryButton v-if="canGenerateVoucherSet"
+                    <PrimaryButton v-if="canGenerateVoucherSet" :disabled="generating"
                                    @click="createVoucherSet()">
-                        Generate!
+
+                        <div v-if="generating">
+                            Generating..
+                        </div>
+                        <div v-else>
+                            Generate!
+                        </div>
                     </PrimaryButton>
                 </div>
             </div>

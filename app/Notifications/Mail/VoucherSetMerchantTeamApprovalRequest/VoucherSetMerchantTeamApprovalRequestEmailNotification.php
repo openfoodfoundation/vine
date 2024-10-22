@@ -57,12 +57,20 @@ class VoucherSetMerchantTeamApprovalRequestEmailNotification extends Notificatio
             redirectPath: '/my-voucher-set-merchant-team-approval-request/' . $this->voucherSetMerchantTeamApprovalRequest->id . '?selected=reject'
         );
 
-        $voucherSet = VoucherSet::with('createdByTeam')->find($this->voucherSetMerchantTeamApprovalRequest->voucher_set_id);
+        $voucherSet = VoucherSet::with(
+            [
+                'createdByTeam',
+                'currencyCountry',
+                'allocatedToServiceTeam',
+                'fundedByTeam',
+            ]
+        )->find($this->voucherSetMerchantTeamApprovalRequest->voucher_set_id);
 
         return (new MailMessage())
             ->subject('A Vine voucher set is about to be been generated that may be redeemed at your shop')
             ->markdown('mail.voucher-set-approval-request', [
                 'voucherSetId' => $this->voucherSetMerchantTeamApprovalRequest->voucher_set_id,
+                'voucherSet'   => $voucherSet,
                 'createdBy'    => $voucherSet->createdByTeam->name,
                 'approve'      => $urlApprove,
                 'reject'       => $urlReject,
