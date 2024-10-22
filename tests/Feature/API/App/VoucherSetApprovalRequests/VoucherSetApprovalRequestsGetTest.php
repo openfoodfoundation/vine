@@ -110,7 +110,7 @@ class VoucherSetApprovalRequestsGetTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function itCanNotGetAllItemsWithAbility()
+    public function itCanGetAllItemsWithAbility()
     {
         Event::fake();
 
@@ -128,7 +128,7 @@ class VoucherSetApprovalRequestsGetTest extends BaseAPITestCase
         ]);
 
         $response = $this->getJson($this->apiRoot . $this->endPoint);
-        $response->assertStatus(403);
+        $response->assertStatus(200);
     }
 
     #[Test]

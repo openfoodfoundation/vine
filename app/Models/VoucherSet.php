@@ -61,6 +61,11 @@ class VoucherSet extends Model
         return $this->hasMany(VoucherSetMerchantTeamApprovalRequest::class, 'voucher_set_id', 'id');
     }
 
+    public function voucherSetMerchantTeamApprovalActionedRecord(): BelongsTo
+    {
+        return $this->belongsTo(VoucherSetMerchantTeamApprovalRequest::class, 'merchant_approval_request_id', 'id');
+    }
+
     public function currencyCountry(): BelongsTo
     {
         return $this->belongsTo(Country::class, 'currency_country_id', 'id');
