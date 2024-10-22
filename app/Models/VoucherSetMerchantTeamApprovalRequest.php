@@ -13,6 +13,9 @@ class VoucherSetMerchantTeamApprovalRequest extends Model
     use HasFactory;
     use SoftDeletes;
 
+    protected $appends = [
+
+    ];
     protected $dispatchesEvents = [
         'created' => VoucherSetMerchantTeamApprovalRequestWasCreated::class,
     ];

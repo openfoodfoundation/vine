@@ -9,6 +9,8 @@ import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import utc from "dayjs/plugin/utc"
 import VouchersComponent from "@/Components/Admin/Vouchers/VouchersComponent.vue";
+import SecondaryButton from "@/Components/SecondaryButton.vue";
+import DangerButton from "@/Components/DangerButton.vue";
 
 dayjs.extend(relativeTime);
 dayjs.extend(utc);
@@ -26,7 +28,7 @@ onMounted(() => {
 })
 
 function getVoucherSet() {
-    axios.get('/admin/voucher-sets/' + $props.id + '?cached=false&relations=createdByTeam,allocatedToServiceTeam,voucherSetMerchantTeams.merchantTeam').then(response => {
+    axios.get('/admin/voucher-sets/' + $props.id + '?cached=false&relations=createdByTeam,allocatedToServiceTeam,voucherSetMerchantTeams.merchantTeam,voucherSetMerchantTeamApprovalRequests.merchantUser,voucherSetMerchantTeamApprovalRequests.merchantTeam').then(response => {
         voucherSet.value = response.data.data
     }).catch(error => {
         console.log(error)
@@ -148,6 +150,68 @@ function getVoucherSet() {
                     <Link :href="route('admin.team', {id:merchantTeam.merchant_team_id})">{{ (merchantTeam.merchant_team?.name)?? 'Merchant team' }}</Link>
                 </div>
 
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <div>
+                    Merchant team approval requests
+                </div>
+
+            </div>
+
+            <div class="text-xs">
+                We only need one user from any merchant team to approve their participation.
+            </div>
+
+            <div v-if="voucherSet.voucher_set_merchant_team_approval_requests?.length">
+                <div v-for="approvalRequest in voucherSet.voucher_set_merchant_team_approval_requests">
+
+                    <div class="flex justify-between items-center py-4">
+
+                        <div>
+                            <div>
+                                <Link class="font-bold" :href="'/admin/team/' +approvalRequest.merchant_team_id ">
+                                    {{approvalRequest.merchant_team?.name}}
+                                </Link>
+                                 |
+                                <Link :href="'/admin/user/' + approvalRequest.merchant_user_id">
+                                    {{ approvalRequest.merchant_user?.name }}
+                                </Link>
+                            </div>
+                            <div class="text-xs">
+                                {{approvalRequest.merchant_user?.email}}
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-x-2">
+
+                            <div class="text-xs text-right">
+                                <div>
+                                    Created: {{ dayjs.utc(approvalRequest.created_at).fromNow() }}
+                                </div>
+                                <div v-if="approvalRequest.approval_status_last_updated_at">
+                                    Last actioned: {{ dayjs.utc(approvalRequest.approval_status_last_updated_at).fromNow() }}
+                                </div>
+                            </div>
+                            <div class="flex justify-end">
+                                <SecondaryButton v-if="approvalRequest.approval_status === 'ready'">
+                                    Ready
+                                </SecondaryButton>
+
+                                <PrimaryButton v-if="approvalRequest.approval_status === 'approved'">
+                                    Approved
+                                </PrimaryButton>
+
+                                <DangerButton v-if="approvalRequest.approval_status === 'rejected'">
+                                    Rejected
+                                </DangerButton>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
 
