@@ -143,9 +143,7 @@ function save() {
                         {{ voucherSetMerchantTeamApprovalRequest.approval_status }} at ({{ dayjs(voucherSetMerchantTeamApprovalRequest.approval_status_last_updated_at) }})
                     </div>
                 </div>
-
-
-                <div>
+                <div v-else>
                     <SecondaryButton @click="approved = false" class="mr-2" :class="{'opacity-50': approved}">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 mr-2 text-red-500">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M18.364 18.364A9 9 0 0 0 5.636 5.636m12.728 12.728A9 9 0 0 1 5.636 5.636m12.728 12.728L5.636 5.636"/>
@@ -158,16 +156,18 @@ function save() {
                         </svg>
                         Approve
                     </SecondaryButton>
+
+                    <div>
+                        <PrimaryButton @click="save()" class="mt-4">
+                            Selected:
+                            <span v-if="approved" class="px-2 text-green-500">APPROVED</span>
+                            <span v-else class="px-2 text-red-500">REJECTED</span>
+                            > Click Here To Save
+                        </PrimaryButton>
+                    </div>
                 </div>
 
-                <div>
-                    <PrimaryButton @click="save()" class="mt-4">
-                        Selected:
-                        <span v-if="approved" class="px-2 text-green-500">APPROVED</span>
-                        <span v-else class="px-2 text-red-500">REJECTED</span>
-                        > Click Here To Save
-                    </PrimaryButton>
-                </div>
+
             </div>
 
         </div>
