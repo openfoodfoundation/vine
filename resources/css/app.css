@@ -7,7 +7,7 @@
 
 body{
     font-family: "Open Sans", sans-serif;
-    @apply text-gray-800 font-light;
+    @apply text-gray-900 font-light;
 }
 
 a {
