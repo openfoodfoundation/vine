@@ -4,6 +4,7 @@
 
 namespace App\Notifications\Mail\VoucherSetMerchantTeamApprovalRequest;
 
+use App\Models\Team;
 use App\Models\User;
 use App\Models\VoucherSet;
 use App\Models\VoucherSetMerchantTeamApprovalRequest;
@@ -66,11 +67,14 @@ class VoucherSetMerchantTeamApprovalRequestEmailNotification extends Notificatio
             ]
         )->find($this->voucherSetMerchantTeamApprovalRequest->voucher_set_id);
 
+        $merchantTeam = Team::find($this->voucherSetMerchantTeamApprovalRequest->merchant_team_id);
+
         return (new MailMessage())
             ->subject('A Vine voucher set is about to be been generated that may be redeemed at your shop')
             ->markdown('mail.voucher-set-approval-request', [
                 'voucherSetId' => $this->voucherSetMerchantTeamApprovalRequest->voucher_set_id,
                 'voucherSet'   => $voucherSet,
+                'merchantTeam' => $merchantTeam,
                 'createdBy'    => $voucherSet->createdByTeam->name,
                 'approve'      => $urlApprove,
                 'reject'       => $urlReject,

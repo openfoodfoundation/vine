@@ -210,17 +210,9 @@ function selectFundingTeam(team) {
 
 function selectMerchantTeam(team) {
 
-    /**
-     * TODO:
-     * Open Food Network require that we can only select 1 merchant in the pilot.
-     * When they come back and ask for more, remove the below line.
-     */
-    voucherSet.value.merchant_team_ids = [];
     if (!voucherSet.value.merchant_team_ids.includes(team.id)) {
         voucherSet.value.merchant_team_ids.push(team.id);
 
-        // TODO: See above TODO, we'll need to remove this too
-        selectedMerchantTeams.value = [];
         selectedMerchantTeams.value.push(team);
     }
 
