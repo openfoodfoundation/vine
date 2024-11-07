@@ -34,7 +34,7 @@ const item = ref({
     voucher_expiry_x: 1000,
     voucher_expiry_y: 1530,
     voucher_expiry_prefix: 'Expiry: ',
-    voucher_value_size_px: 350,
+    voucher_value_size_px: 300,
     voucher_value_x: 2100,
     voucher_value_y: 500,
     voucher_value_prefix: '$',
