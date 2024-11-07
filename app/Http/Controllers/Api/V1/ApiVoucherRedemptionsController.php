@@ -94,7 +94,7 @@ class ApiVoucherRedemptionsController extends Controller
     public function store(): JsonResponse
     {
         $validationArray = [
-            'voucher_id'     => [
+            'voucher_id' => [
                 'required',
                 Rule::exists('vouchers', 'id'),
             ],
@@ -102,7 +102,7 @@ class ApiVoucherRedemptionsController extends Controller
                 'required',
                 Rule::exists('voucher_sets', 'id'),
             ],
-            'amount'         => [
+            'amount' => [
                 'integer',
                 'min:1',
             ],
@@ -139,10 +139,10 @@ class ApiVoucherRedemptionsController extends Controller
              * Ensure the users current team is a merchant for the voucher set.
              */
             $voucherSetMerchantTeamIds = VoucherSetMerchantTeam::where('voucher_set_id', $voucherSetId)
-                                                               ->whereNotNull('voucher_set_merchant_team_approval_request_id')
-                                                               ->pluck('merchant_team_id')
-                                                               ->unique()
-                                                               ->toArray();
+                ->whereNotNull('voucher_set_merchant_team_approval_request_id')
+                ->pluck('merchant_team_id')
+                ->unique()
+                ->toArray();
 
             if (!in_array(Auth::user()->current_team_id, $voucherSetMerchantTeamIds)) {
                 $this->responseCode = 400;
@@ -203,7 +203,8 @@ class ApiVoucherRedemptionsController extends Controller
             $this->message           = ApiResponse::RESPONSE_REDEMPTION_SUCCESSFUL->value . ' ' . $redemptionMessageSuffix;
             $this->data              = $redemption;
 
-        } catch (Exception $e) {
+        }
+        catch (Exception $e) {
             $this->responseCode = 500;
             $this->message      = ApiResponse::RESPONSE_ERROR->value . ':' . $e->getMessage();
         }

@@ -16,9 +16,7 @@ class HandleVoucherSetMerchantTeamApprovalRequestWasApprovedEvent implements Sho
     /**
      * Create the event listener.
      */
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 
     /**
      * Handle the event.
@@ -39,8 +37,7 @@ class HandleVoucherSetMerchantTeamApprovalRequestWasApprovedEvent implements Sho
             operator: $event->voucherSetMerchantTeamApprovalRequest->merchant_team_id
         )->first();
 
-        if($voucherSetMerchantTeam)
-        {
+        if ($voucherSetMerchantTeam) {
             $voucherSetMerchantTeam->voucher_set_merchant_team_approval_request_id = $event->voucherSetMerchantTeamApprovalRequest->id;
             $voucherSetMerchantTeam->save();
         }
