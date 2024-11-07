@@ -61,10 +61,40 @@ class ApiVoucherRedemptionsController extends Controller
         status     : 200,
         description: '',
     )]
+    #[Response(
+        content    : '{"meta":{"responseCode":400,"limit":50,"offset":0,"message":"Invalid merchant team."},"data":{}',
+        status     : 400,
+        description: 'Shown when the team that the redeeming user is not valid for this voucher under redemption. Merchant team might not have approved their involvement yet.',
+    )]
+    #[Response(
+        content    : '{"meta":{"responseCode":400,"limit":50,"offset":0,"message":"This voucher has already been fully redeemed, no redemption made this time."},"data":{}',
+        status     : 400,
+        description: 'Voucher fully redeemed. No redemption takes place',
+    )]
+    #[Response(
+        content    : '{"meta":{"responseCode":400,"limit":50,"offset":0,"message":"Requested amount is greater than voucher value remaining, no redemption made this time."},"data":{}',
+        status     : 400,
+        description: 'Voucher redemption amount too high',
+    )]
+    #[Response(
+        content    : '{"meta":{"responseCode":404,"limit":50,"offset":0,"message":"Not found."},"data":{}',
+        status     : 404,
+        description: '',
+    )]
+    #[Response(
+        content    : '{"meta":{"responseCode":429,"limit":50,"offset":0,"message":"Too many redemption attempts, please wait."},"data":{}',
+        status     : 429,
+        description: 'Too many redemption requests. Only 1 redemption may be made per voucher per minute.',
+    )]
+    #[Response(
+        content    : '{"meta":{"responseCode":500,"limit":50,"offset":0,"message":"Error"},"data":{}',
+        status     : 500,
+        description: 'Server Error',
+    )]
     public function store(): JsonResponse
     {
         $validationArray = [
-            'voucher_id' => [
+            'voucher_id'     => [
                 'required',
                 Rule::exists('vouchers', 'id'),
             ],
@@ -72,7 +102,7 @@ class ApiVoucherRedemptionsController extends Controller
                 'required',
                 Rule::exists('voucher_sets', 'id'),
             ],
-            'amount' => [
+            'amount'         => [
                 'integer',
                 'min:1',
             ],
@@ -109,9 +139,10 @@ class ApiVoucherRedemptionsController extends Controller
              * Ensure the users current team is a merchant for the voucher set.
              */
             $voucherSetMerchantTeamIds = VoucherSetMerchantTeam::where('voucher_set_id', $voucherSetId)
-                ->pluck('merchant_team_id')
-                ->unique()
-                ->toArray();
+                                                               ->whereNotNull('voucher_set_merchant_team_approval_request_id')
+                                                               ->pluck('merchant_team_id')
+                                                               ->unique()
+                                                               ->toArray();
 
             if (!in_array(Auth::user()->current_team_id, $voucherSetMerchantTeamIds)) {
                 $this->responseCode = 400;
@@ -172,8 +203,7 @@ class ApiVoucherRedemptionsController extends Controller
             $this->message           = ApiResponse::RESPONSE_REDEMPTION_SUCCESSFUL->value . ' ' . $redemptionMessageSuffix;
             $this->data              = $redemption;
 
-        }
-        catch (Exception $e) {
+        } catch (Exception $e) {
             $this->responseCode = 500;
             $this->message      = ApiResponse::RESPONSE_ERROR->value . ':' . $e->getMessage();
         }

@@ -4,6 +4,14 @@ Hello!
 
 A Vine voucher set is about to be generated that may be redeemed at your shop.
 
+
+<div style="font-weight: bold">
+   Your Shop
+</div>
+<div>
+    {{$merchantTeam->name ?? '(Unknown team name)'}}
+</div>
+<br>
 <div style="font-weight: bold">
     Voucher Set
 </div>

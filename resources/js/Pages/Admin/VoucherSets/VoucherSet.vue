@@ -162,7 +162,7 @@ function getVoucherSet() {
             </div>
 
             <div class="text-xs">
-                We only need one user from any merchant team to approve their participation.
+                We only need one user from any merchant team member (per team) to approve that team's participation as merchants.
             </div>
 
             <div v-if="voucherSet.voucher_set_merchant_team_approval_requests?.length">
