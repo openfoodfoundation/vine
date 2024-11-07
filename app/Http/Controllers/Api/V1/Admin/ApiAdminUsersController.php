@@ -170,7 +170,7 @@ class ApiAdminUsersController extends Controller
             'email' => [
                 'required',
                 'email',
-                'email:rfc,dns'
+                'email:rfc,dns',
             ],
             'current_team_id' => [
                 'sometimes',
