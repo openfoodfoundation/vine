@@ -142,6 +142,7 @@ Route::middleware('auth')->group(function () {
          */
         $teamMerchantOfVoucherSet = VoucherSetMerchantTeam::where('voucher_set_id', $voucherSetId)
             ->where('merchant_team_id', $team->id)
+            ->whereNotNull('voucher_set_merchant_team_approval_request_id')
             ->first();
 
         if (!$teamMerchant || !$teamMerchantOfVoucherSet) {
