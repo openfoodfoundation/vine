@@ -126,10 +126,7 @@ return [
         'emergency' => [
             'path' => storage_path('logs/laravel.log'),
         ],
-        'flare' => [
-            'driver' => 'flare',
-            'level'  => env('LOG_LEVEL', 'debug'), // The minimum log level to send
-        ],
+
         'sentry' => [
             'driver' => 'sentry',
             'level'  => env('LOG_LEVEL', 'debug'), // The minimum log level to send
