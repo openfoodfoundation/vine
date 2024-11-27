@@ -20,7 +20,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
 
         $usersAndTeams = [
             [
@@ -35,14 +34,9 @@ class DatabaseSeeder extends Seeder
                         'password' => 'paul@ok200.net',
                     ],
                     [
-                        'name'     => 'Manami Saito',
-                        'email'    => 'manami@ok200.net',
-                        'password' => 'manami@ok200.net',
-                    ],
-                    [
-                        'name'     => 'Lyndon Purcell',
-                        'email'    => 'lyndon@ok200.net',
-                        'password' => 'lyndon@ok200.net',
+                        'name'     => 'Eleanor Bignell',
+                        'email'    => 'eleanor@ok200.net',
+                        'password' => 'eleanor@ok200.net',
                     ],
                 ],
             ],
@@ -69,7 +63,6 @@ class DatabaseSeeder extends Seeder
                     ],
                 ],
             ],
-
         ];
 
         foreach ($usersAndTeams as $userAndTeam) {
@@ -96,35 +89,6 @@ class DatabaseSeeder extends Seeder
                         'user_id' => $user->id,
                     ]
                 );
-            }
-
-            $voucherSet = VoucherSet::factory()->createQuietly([
-                'created_by_team_id'           => $team->id,
-                'created_by_user_id'           => $user->id,
-                'allocated_to_service_team_id' => $team->id,
-            ]);
-
-            $vouchers = Voucher::factory(rand(100, 200))->create(
-                [
-                    'voucher_set_id'               => $voucherSet->id,
-                    'created_by_team_id'           => $team->id,
-                    'allocated_to_service_team_id' => $team->id,
-                ]
-            );
-
-            foreach ($vouchers as $voucher) {
-                if (rand(1, 5) === 3) {
-                    VoucherRedemption::factory()->create(
-                        [
-                            'redeemed_amount'     => (rand(1, $voucher->voucher_value_original)),
-                            'redeemed_by_team_id' => $team->id,
-                            'redeemed_by_user_id' => $user->id,
-                            'voucher_set_id'      => $voucher->voucher_set_id,
-                            'voucher_id'          => $voucher->id,
-                        ]
-                    );
-                }
-
             }
 
         }
