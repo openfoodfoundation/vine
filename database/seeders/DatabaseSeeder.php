@@ -69,6 +69,7 @@ class DatabaseSeeder extends Seeder
             $team = Team::factory()->create(
                 [
                     'name' => $userAndTeam['team']['name'],
+                    'country_id' => 14,
                 ]
             );
 
