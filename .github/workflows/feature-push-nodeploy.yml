@@ -2,7 +2,11 @@ name: Features
 
 on:
   push:
-    branches: [ feature/* ]
+    branches: [
+      feature/*,
+      fix/*
+      hotfix/*
+    ]
 
 jobs:
   run-tests:
