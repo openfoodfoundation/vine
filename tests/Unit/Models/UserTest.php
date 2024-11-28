@@ -11,7 +11,7 @@ use Tests\TestCase;
 class UserTest extends TestCase
 {
     #[Test]
-    public function testTeamUserRelation(): void
+    public function test_team_user_relation(): void
     {
         $user = User::factory()->create();
 

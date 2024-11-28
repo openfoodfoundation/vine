@@ -17,7 +17,7 @@ class BounceServiceTest extends TestCase
     use WithFaker;
 
     #[Test]
-    public function testGenerateSignedUrlForUser(): void
+    public function test_generate_signed_url_for_user(): void
     {
         Event::fake();
 

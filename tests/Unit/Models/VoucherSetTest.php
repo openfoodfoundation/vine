@@ -11,7 +11,7 @@ use Tests\TestCase;
 class VoucherSetTest extends TestCase
 {
     #[Test]
-    public function testCreatedByTeamRelation(): void
+    public function test_created_by_team_relation(): void
     {
         $team = Team::factory()->create();
 
@@ -28,7 +28,7 @@ class VoucherSetTest extends TestCase
     }
 
     #[Test]
-    public function testAllocatedToServiceTeamRelation(): void
+    public function test_allocated_to_service_team_relation(): void
     {
         $team = Team::factory()->create();
 
@@ -45,7 +45,7 @@ class VoucherSetTest extends TestCase
     }
 
     #[Test]
-    public function testVoucherSetMerchantTeamRelation(): void
+    public function test_voucher_set_merchant_team_relation(): void
     {
         $team = Team::factory()->create();
 
