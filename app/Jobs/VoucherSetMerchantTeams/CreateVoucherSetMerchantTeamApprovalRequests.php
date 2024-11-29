@@ -7,7 +7,6 @@ use App\Models\VoucherSetMerchantTeam;
 use App\Models\VoucherSetMerchantTeamApprovalRequest;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Queue\Queueable;
-use Illuminate\Support\Facades\Log;
 
 class CreateVoucherSetMerchantTeamApprovalRequests implements ShouldQueue
 {

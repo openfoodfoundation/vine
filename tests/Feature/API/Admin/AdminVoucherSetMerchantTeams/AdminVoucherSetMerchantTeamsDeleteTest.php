@@ -51,7 +51,6 @@ class AdminVoucherSetMerchantTeamsDeleteTest extends BaseAPITestCase
             $this->user
         );
 
-
         $voucherSet = VoucherSet::factory()->create();
         $team       = Team::factory()->create();
         $model      = VoucherSetMerchantTeam::factory()->create(
@@ -66,7 +65,6 @@ class AdminVoucherSetMerchantTeamsDeleteTest extends BaseAPITestCase
         $response->assertStatus(200);
     }
 
-
     #[Test]
     public function itDeletesApprovalRequestsAlso()
     {
@@ -77,7 +75,6 @@ class AdminVoucherSetMerchantTeamsDeleteTest extends BaseAPITestCase
             $this->user
         );
 
-
         $voucherSet = VoucherSet::factory()->create();
         $team       = Team::factory()->create();
         $model      = VoucherSetMerchantTeam::factory()->create(
@@ -87,7 +84,7 @@ class AdminVoucherSetMerchantTeamsDeleteTest extends BaseAPITestCase
             ]
         );
 
-        $requests      = VoucherSetMerchantTeamApprovalRequest::factory()->create(
+        $requests = VoucherSetMerchantTeamApprovalRequest::factory()->create(
             [
                 'voucher_set_id'   => $voucherSet->id,
                 'merchant_team_id' => $team->id,
@@ -107,5 +104,4 @@ class AdminVoucherSetMerchantTeamsDeleteTest extends BaseAPITestCase
         $numRequests1 = VoucherSetMerchantTeamApprovalRequest::count();
         $this->assertEquals(0, $numRequests1);
     }
-
 }

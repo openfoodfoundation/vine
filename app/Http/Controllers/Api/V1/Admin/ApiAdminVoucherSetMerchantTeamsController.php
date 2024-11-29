@@ -151,7 +151,7 @@ class ApiAdminVoucherSetMerchantTeamsController extends Controller
     public function store(): JsonResponse
     {
         $validationArray = [
-            'voucher_set_id'   => [
+            'voucher_set_id' => [
                 'required',
                 'string',
                 Rule::exists('voucher_sets', 'id'),
@@ -169,16 +169,17 @@ class ApiAdminVoucherSetMerchantTeamsController extends Controller
 
             $this->responseCode = 400;
             $this->message      = $validator->errors()
-                                            ->first();
+                ->first();
 
-        } else {
+        }
+        else {
 
             $voucherSetId          = $this->request->get('voucher_set_id');
             $merchantTeamId        = $this->request->get('merchant_team_id');
             $voucherSet            = VoucherSet::find($voucherSetId);
             $voucherSetServiceTeam = Team::find($voucherSet->allocated_to_service_team_id);
             $merchantRelationship  = TeamMerchantTeam::where('team_id', $voucherSetServiceTeam->id)
-                                                     ->where('merchant_team_id', $merchantTeamId)->first();
+                ->where('merchant_team_id', $merchantTeamId)->first();
 
             /**
              * Ensure that the merchant team is a merchant for the service team
@@ -186,6 +187,7 @@ class ApiAdminVoucherSetMerchantTeamsController extends Controller
             if (!$merchantRelationship) {
                 $this->responseCode = 400;
                 $this->message      = ApiResponse::RESPONSE_INVALID_MERCHANT_TEAM_FOR_SERVICE_TEAM->value;
+
                 return $this->respond();
             }
 
@@ -213,7 +215,8 @@ class ApiAdminVoucherSetMerchantTeamsController extends Controller
             $this->message = ApiResponse::RESPONSE_SAVED->value;
             $this->data    = $model;
             try {
-            } catch (Exception $e) {
+            }
+            catch (Exception $e) {
 
                 $this->responseCode = 500;
                 $this->message      = ApiResponse::RESPONSE_ERROR->value . ': "' . $e->getMessage() . '".';
@@ -339,7 +342,8 @@ class ApiAdminVoucherSetMerchantTeamsController extends Controller
             $model->delete();
             $this->message = ApiResponse::RESPONSE_DELETED->value;
 
-        } catch (Exception $e) {
+        }
+        catch (Exception $e) {
 
             $this->responseCode = 500;
             $this->message      = ApiResponse::RESPONSE_ERROR->value . ':' . $e->getMessage();
