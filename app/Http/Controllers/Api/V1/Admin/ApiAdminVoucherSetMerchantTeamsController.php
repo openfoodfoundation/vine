@@ -173,46 +173,48 @@ class ApiAdminVoucherSetMerchantTeamsController extends Controller
 
         } else {
 
-            $voucherSetId          = $this->request->get('voucher_set_id');
-            $merchantTeamId        = $this->request->get('merchant_team_id');
-            $voucherSet            = VoucherSet::find($voucherSetId);
-            $voucherSetServiceTeam = Team::find($voucherSet->allocated_to_service_team_id);
-            $merchantRelationship  = TeamMerchantTeam::where('team_id', $voucherSetServiceTeam->id)
-                                                     ->where('merchant_team_id', $merchantTeamId)->first();
+            try {
 
-            /**
-             * Ensure that the merchant team is a merchant for the service team
-             */
-            if (!$merchantRelationship) {
-                $this->responseCode = 400;
-                $this->message      = ApiResponse::RESPONSE_INVALID_MERCHANT_TEAM_FOR_SERVICE_TEAM->value;
-                return $this->respond();
-            }
+                $voucherSetId          = $this->request->get('voucher_set_id');
+                $merchantTeamId        = $this->request->get('merchant_team_id');
+                $voucherSet            = VoucherSet::find($voucherSetId);
+                $voucherSetServiceTeam = Team::find($voucherSet->allocated_to_service_team_id);
+                $merchantRelationship  = TeamMerchantTeam::where('team_id', $voucherSetServiceTeam->id)
+                                                         ->where('merchant_team_id', $merchantTeamId)->first();
 
-            $model = VoucherSetMerchantTeam::where(
-                'voucher_set_id',
-                $voucherSetId
-            )->where(
-                'merchant_team_id',
-                $merchantTeamId
-            )->first();
-
-            if (!$model) {
-                $model = new VoucherSetMerchantTeam();
-
-                foreach ($validationArray as $key => $validationRule) {
-                    $value = $this->request->get($key);
-                    if (isset($value)) {
-                        $model->$key = $value;
-                    }
+                /**
+                 * Ensure that the merchant team is a merchant for the service team
+                 */
+                if (!$merchantRelationship) {
+                    $this->responseCode = 400;
+                    $this->message      = ApiResponse::RESPONSE_INVALID_MERCHANT_TEAM_FOR_SERVICE_TEAM->value;
+                    return $this->respond();
                 }
 
-                $model->save();
-            }
+                $model = VoucherSetMerchantTeam::where(
+                    'voucher_set_id',
+                    $voucherSetId
+                )->where(
+                    'merchant_team_id',
+                    $merchantTeamId
+                )->first();
 
-            $this->message = ApiResponse::RESPONSE_SAVED->value;
-            $this->data    = $model;
-            try {
+                if (!$model) {
+                    $model = new VoucherSetMerchantTeam();
+
+                    foreach ($validationArray as $key => $validationRule) {
+                        $value = $this->request->get($key);
+                        if (isset($value)) {
+                            $model->$key = $value;
+                        }
+                    }
+
+                    $model->save();
+                }
+
+                $this->message = ApiResponse::RESPONSE_SAVED->value;
+                $this->data    = $model;
+
             } catch (Exception $e) {
 
                 $this->responseCode = 500;
