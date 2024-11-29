@@ -7,6 +7,7 @@ use App\Models\VoucherSetMerchantTeam;
 use App\Models\VoucherSetMerchantTeamApprovalRequest;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Queue\Queueable;
+use Illuminate\Support\Facades\Log;
 
 class CreateVoucherSetMerchantTeamApprovalRequests implements ShouldQueue
 {
@@ -24,6 +25,7 @@ class CreateVoucherSetMerchantTeamApprovalRequests implements ShouldQueue
      */
     public function handle(): void
     {
+
         $merchantTeamUsers = TeamUser::where('team_id', $this->voucherSetMerchantTeam->merchant_team_id)->get();
 
         foreach ($merchantTeamUsers as $merchantTeamUser) {
