@@ -34,7 +34,6 @@ class AdminVoucherSetMerchantTeamsPutTest extends BaseAPITestCase
             ]
         );
 
-
         $payload = [];
 
         $response = $this->putJson($this->apiRoot . $this->endpoint . '/' . $model->id, $payload);

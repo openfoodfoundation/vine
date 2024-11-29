@@ -173,6 +173,7 @@ class ApiAdminVoucherSetMerchantTeamsController extends Controller
 
         } else {
 
+
             try {
 
                 $voucherSetId          = $this->request->get('voucher_set_id');
@@ -181,6 +182,7 @@ class ApiAdminVoucherSetMerchantTeamsController extends Controller
                 $voucherSetServiceTeam = Team::find($voucherSet->allocated_to_service_team_id);
                 $merchantRelationship  = TeamMerchantTeam::where('team_id', $voucherSetServiceTeam->id)
                                                          ->where('merchant_team_id', $merchantTeamId)->first();
+
 
                 /**
                  * Ensure that the merchant team is a merchant for the service team
@@ -215,7 +217,9 @@ class ApiAdminVoucherSetMerchantTeamsController extends Controller
                 $this->message = ApiResponse::RESPONSE_SAVED->value;
                 $this->data    = $model;
 
+
             } catch (Exception $e) {
+
 
                 $this->responseCode = 500;
                 $this->message      = ApiResponse::RESPONSE_ERROR->value . ': "' . $e->getMessage() . '".';

@@ -46,9 +46,9 @@ class AdminVoucherSetMerchantTeamsPostTest extends BaseAPITestCase
             $this->user
         );
 
-        $user                     = User::factory()->create();
-        $serviceTeam              = Team::factory()->create();
-        $voucherSet               = VoucherSet::factory()->create(
+        $user        = User::factory()->create();
+        $serviceTeam = Team::factory()->create();
+        $voucherSet  = VoucherSet::factory()->create(
             [
                 'allocated_to_service_team_id' => $serviceTeam->id,
             ]
@@ -90,8 +90,7 @@ class AdminVoucherSetMerchantTeamsPostTest extends BaseAPITestCase
                 'allocated_to_service_team_id' => $serviceTeam->id,
             ]
         );
-        $team        = Team::factory()->create();
-
+        $team = Team::factory()->create();
 
         $payload = [
             'voucher_set_id'   => $voucherSet->id,
@@ -106,7 +105,6 @@ class AdminVoucherSetMerchantTeamsPostTest extends BaseAPITestCase
         $this->assertEquals($responseObj->meta->message, ApiResponse::RESPONSE_INVALID_MERCHANT_TEAM_FOR_SERVICE_TEAM->value);
     }
 
-
     #[Test]
     public function itCreatesRequests()
     {
@@ -119,9 +117,9 @@ class AdminVoucherSetMerchantTeamsPostTest extends BaseAPITestCase
             $this->user
         );
 
-        $user                     = User::factory()->create();
-        $serviceTeam              = Team::factory()->create();
-        $voucherSet               = VoucherSet::factory()->create(
+        $user        = User::factory()->create();
+        $serviceTeam = Team::factory()->create();
+        $voucherSet  = VoucherSet::factory()->create(
             [
                 'allocated_to_service_team_id' => $serviceTeam->id,
             ]
@@ -133,7 +131,7 @@ class AdminVoucherSetMerchantTeamsPostTest extends BaseAPITestCase
                 'merchant_team_id' => $team->id,
             ]
         );
-        $userTeam                 = TeamUser::factory()->create(
+        $userTeam = TeamUser::factory()->create(
             [
                 'user_id' => $user->id,
                 'team_id' => $team->id,
