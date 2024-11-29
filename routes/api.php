@@ -14,6 +14,7 @@ use App\Http\Controllers\Api\V1\Admin\ApiAdminUserPersonalAccessTokensController
 use App\Http\Controllers\Api\V1\Admin\ApiAdminUsersController;
 use App\Http\Controllers\Api\V1\Admin\ApiAdminVoucherRedemptionsController;
 use App\Http\Controllers\Api\V1\Admin\ApiAdminVouchersController;
+use App\Http\Controllers\Api\V1\Admin\ApiAdminVoucherSetMerchantTeamsController;
 use App\Http\Controllers\Api\V1\Admin\ApiAdminVoucherSetsController;
 use App\Http\Controllers\Api\V1\ApiCountriesController;
 use App\Http\Controllers\Api\V1\ApiMyTeamAuditItemsController;
@@ -1197,6 +1198,24 @@ Route::group(['prefix' => 'v1', 'middleware' => VerifyApiTokenSignature::class],
 
                     Route::delete('/voucher-sets/{id}', [ApiAdminVoucherSetsController::class, 'destroy'])
                         ->name('api.v1.admin-voucher-sets.delete');
+
+                    /**
+                     * Voucher Set Merchant Teams
+                     */
+                    Route::post('/voucher-set-merchant-teams', [ApiAdminVoucherSetMerchantTeamsController::class, 'store'])
+                        ->name('api.v1.admin-voucher-set-mt.post');
+
+                    Route::get('/voucher-set-merchant-teams', [ApiAdminVoucherSetMerchantTeamsController::class, 'index'])
+                        ->name('api.v1.admin-voucher-set-mt.getMany');
+
+                    Route::get('/voucher-set-merchant-teams/{id}', [ApiAdminVoucherSetMerchantTeamsController::class, 'show'])
+                        ->name('api.v1.admin-voucher-set-mt.get');
+
+                    Route::put('/voucher-set-merchant-teams/{id}', [ApiAdminVoucherSetMerchantTeamsController::class, 'update'])
+                        ->name('api.v1.admin-voucher-set-mt.put');
+
+                    Route::delete('/voucher-set-merchant-teams/{id}', [ApiAdminVoucherSetMerchantTeamsController::class, 'destroy'])
+                        ->name('api.v1.admin-voucher-set-mt.delete');
 
                     Route::resource(
                         '/user-personal-access-tokens',

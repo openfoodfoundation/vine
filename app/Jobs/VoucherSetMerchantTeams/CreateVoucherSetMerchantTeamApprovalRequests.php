@@ -24,6 +24,7 @@ class CreateVoucherSetMerchantTeamApprovalRequests implements ShouldQueue
      */
     public function handle(): void
     {
+
         $merchantTeamUsers = TeamUser::where('team_id', $this->voucherSetMerchantTeam->merchant_team_id)->get();
 
         foreach ($merchantTeamUsers as $merchantTeamUser) {

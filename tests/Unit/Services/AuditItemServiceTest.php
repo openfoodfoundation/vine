@@ -18,7 +18,7 @@ class AuditItemServiceTest extends TestCase
     use RefreshDatabase;
 
     #[Test]
-    public function testCreateAuditItemForEvent(): void
+    public function test_create_audit_item_for_event(): void
     {
 
         $num = rand(0, 3);

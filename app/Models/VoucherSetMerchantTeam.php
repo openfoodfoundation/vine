@@ -24,4 +24,9 @@ class VoucherSetMerchantTeam extends Model
     {
         return $this->belongsTo(Team::class, 'merchant_team_id', 'id');
     }
+
+    public function voucherSet(): BelongsTo
+    {
+        return $this->belongsTo(VoucherSet::class, 'voucher_set_id', 'id');
+    }
 }

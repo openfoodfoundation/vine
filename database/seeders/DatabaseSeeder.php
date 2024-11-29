@@ -7,9 +7,6 @@ use App\Models\TeamUser;
 use App\Models\User;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use App\Models\Voucher;
-use App\Models\VoucherRedemption;
-use App\Models\VoucherSet;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Artisan;
 
@@ -68,7 +65,7 @@ class DatabaseSeeder extends Seeder
         foreach ($usersAndTeams as $userAndTeam) {
             $team = Team::factory()->create(
                 [
-                    'name' => $userAndTeam['team']['name'],
+                    'name'       => $userAndTeam['team']['name'],
                     'country_id' => 14,
                 ]
             );
