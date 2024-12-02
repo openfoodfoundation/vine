@@ -143,8 +143,8 @@ $signingKey         = InMemory::plainText(YOUR_API_SECRET);
 $now                = new \DateTimeImmutable();
 $token              = $tokenBuilder
     ->issuedBy(ISSUING_BODY)
-    ->issuedAt(now())
-    ->expiresAt(now()->addMinute(1))
+    ->issuedAt(now()->toDateTimeImmutable())
+    ->expiresAt(now()->addSeconds(30)->toDateTimeImmutable())
     ->getToken($algorithm, $signingKey);
 
 $jwt = $token->toString();
