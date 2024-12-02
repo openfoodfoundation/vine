@@ -12,7 +12,10 @@ VINE is a voucher management platform owned & managed by the Open Food Foundatio
 
 ## Developer initial setup
 
-To run the locally on your development environment, follow these steps:
+Please read our [Contributing Guide](CONTRIBUTING.md) before creating a
+pull request.
+
+Then follow these steps for your local development environment:
 
 1. Clone this repository to your local machine.
 2. Install the required dependencies using [`npm install`]
@@ -23,7 +26,7 @@ To run the locally on your development environment, follow these steps:
 7. Run the development server using the command [`npm run dev`]
 
 
-All pushes to develop and master branches will run the app through GitHub Actions. If the tests pass, the action will send a webhook request to the chosen deployment platform, where it will be deployed.
+All pushes to develop and main branches will run the app through GitHub Actions. If the tests pass, the action will send a webhook request to the chosen deployment platform, where it will be deployed.
 
 
 ### How to build the application and leverage assets
@@ -51,7 +54,7 @@ To run tests locally, do the following:
 
 ### Deployment policies
 
-All pushes to develop and master branches will run the app through GitHub Actions. If the tests pass, the system will deploy the app using the configured deployment tool.
+All pushes to develop and main branches will run the app through GitHub Actions. If the tests pass, the system will deploy the app using the configured deployment tool.
 
 ## API documentation
 
