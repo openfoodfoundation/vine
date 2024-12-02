@@ -35,6 +35,12 @@ class VoucherSet extends Model
         return $this->belongsTo(Team::class, 'created_by_team_id', 'id');
     }
 
+    public function createdByUser(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'created_by_user_id', 'id');
+    }
+
+
     /**
      * @return BelongsTo
      */

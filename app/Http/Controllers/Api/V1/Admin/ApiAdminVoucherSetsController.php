@@ -35,6 +35,7 @@ class ApiAdminVoucherSetsController extends Controller
      * Set the related data the GET request is allowed to ask for
      */
     public array $availableRelations = [
+        'createdByUser',
         'createdByTeam',
         'allocatedToServiceTeam',
         'currencyCountry',
@@ -121,7 +122,6 @@ class ApiAdminVoucherSetsController extends Controller
     )]
     public function index(): JsonResponse
     {
-
         $this->query = VoucherSet::with($this->associatedData);
         $this->query = $this->updateReadQueryBasedOnUrl();
         $this->data  = $this->query->paginate($this->limit);
