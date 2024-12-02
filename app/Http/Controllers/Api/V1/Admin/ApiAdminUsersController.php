@@ -43,6 +43,10 @@ class ApiAdminUsersController extends Controller
         'id',
         'name',
         'email',
+        'is_admin',
+        'current_team_id',
+        'created_at',
+        'updated_at',
     ];
 
     /**
