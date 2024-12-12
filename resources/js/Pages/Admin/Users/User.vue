@@ -22,6 +22,7 @@ const limit = ref(5)
 const newPAT = ref({name: '', token_abilities: []})
 const personalAccessTokenAbilities = usePage().props.personalAccessTokenAbilities;
 const platformAppTokenAbilities = usePage().props.platformAppTokenAbilities;
+const redemptionAppTokenAbilities = usePage().props.redemptionAppTokenAbilities;
 const userTeams = ref({})
 const user = ref({})
 
@@ -93,6 +94,17 @@ function selectPlatformAppType(){
         title: "Platform Apps",
         html: '<div>We have selected the minimum required abilities for an API token for a "Platform" type app.</div>' +
             '<div class="mt-4">Be careful with these abilities, as they can perform additive and destructive actions, like creating teams, users and more API tokens.</div>'
+    })
+}
+
+function selectRedemptionAppType(){
+    newPAT.value.token_abilities = Object.keys(redemptionAppTokenAbilities);
+
+    Swal.fire({
+        icon: "info",
+        title: "Redemption Apps",
+        html: '<div>We have selected the minimum required abilities for an API token for a "Redemption" type app.</div>' +
+            '<div class="mt-4">Be careful with these abilities, as they can redeem vouchers. Ensure the correct rights have been assigned.</div>'
     })
 }
 
@@ -228,6 +240,9 @@ function updateAdminStatus() {
                     </div>
                     <PrimaryButton @click="selectPlatformAppType()">
                         Platform App
+                    </PrimaryButton>
+                    <PrimaryButton @click="selectRedemptionAppType()">
+                        Redemption App
                     </PrimaryButton>
                 </div>
 
