@@ -141,6 +141,7 @@ enum PersonalAccessTokenAbility: string
         return [
             self::VOUCHER_REDEMPTIONS_CREATE->value => self::abilityLabels()[self::VOUCHER_REDEMPTIONS_CREATE->value],
             self::VOUCHER_REDEMPTIONS_READ->value   => self::abilityLabels()[self::VOUCHER_REDEMPTIONS_READ->value],
+            self::MY_TEAM_READ->value   => self::abilityLabels()[self::MY_TEAM_READ->value],
         ];
     }
 

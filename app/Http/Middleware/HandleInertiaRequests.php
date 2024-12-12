@@ -43,7 +43,7 @@ class HandleInertiaRequests extends Middleware
 
         return [
             ...parent::share($request),
-            'auth' => [
+            'auth'                         => [
                 'user'           => $request->user(),
                 'currentTeam'    => $team,
                 'availableTeams' => TeamUser::with('team')->where('user_id', Auth::id())->get(),
@@ -51,6 +51,7 @@ class HandleInertiaRequests extends Middleware
             ],
             'personalAccessTokenAbilities' => PersonalAccessTokenAbility::groupsAbilityCasesWithDefinitions(),
             'platformAppTokenAbilities'    => PersonalAccessTokenAbility::platformAppTokenAbilities(),
+            'redemptionAppTokenAbilities'  => PersonalAccessTokenAbility::redemptionAppTokenAbilities(),
             'isImpersonating'              => session('vine:impersonator'),
             'voucherSetTypes'              => VoucherSetType::values(),
         ];
