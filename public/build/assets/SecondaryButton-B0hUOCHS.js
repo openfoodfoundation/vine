@@ -1,0 +1,1 @@
+import{b as o,c as n,G as s}from"./app-CblTTgyL.js";const r=["type"],p={__name:"SecondaryButton",props:{type:{type:String,default:"button"}},setup(t){return(e,a)=>(o(),n("button",{type:t.type,class:"secondaryButton"},[s(e.$slots,"default")],8,r))}};export{p as _};
