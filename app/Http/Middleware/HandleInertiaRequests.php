@@ -51,6 +51,7 @@ class HandleInertiaRequests extends Middleware
             ],
             'personalAccessTokenAbilities' => PersonalAccessTokenAbility::groupsAbilityCasesWithDefinitions(),
             'platformAppTokenAbilities'    => PersonalAccessTokenAbility::platformAppTokenAbilities(),
+            'redemptionAppTokenAbilities'  => PersonalAccessTokenAbility::redemptionAppTokenAbilities(),
             'isImpersonating'              => session('vine:impersonator'),
             'voucherSetTypes'              => VoucherSetType::values(),
         ];
