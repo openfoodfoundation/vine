@@ -3,14 +3,12 @@
 namespace Tests\Feature\API\App\MyProfile;
 
 use App\Enums\PersonalAccessTokenAbility;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 use Laravel\Sanctum\Sanctum;
 use PHPUnit\Framework\Attributes\Test;
 use Tests\Feature\API\BaseAPITestCase;
 
 class MyProfilePostTest extends BaseAPITestCase
 {
-
     protected string $endPoint = '/my-profile';
 
     #[Test]

@@ -9,7 +9,6 @@ use Tests\Feature\API\BaseAPITestCase;
 
 class MyProfileDeleteTest extends BaseAPITestCase
 {
-
     protected string $endPoint = '/my-profile';
 
     #[Test]

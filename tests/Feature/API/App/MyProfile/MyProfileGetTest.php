@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Tests\Feature\API\App\MyProfile;
 
 use App\Enums\PersonalAccessTokenAbility;
@@ -12,7 +11,6 @@ use Tests\Feature\API\BaseAPITestCase;
 
 class MyProfileGetTest extends BaseAPITestCase
 {
-
     protected string $endPoint = '/my-profile';
 
     #[Test]
@@ -76,6 +74,4 @@ class MyProfileGetTest extends BaseAPITestCase
         $this->assertEquals($responseObj->data->current_team_id, $this->user->current_team_id);
         $this->assertEquals($responseObj->data->name, $this->user->name);
     }
-
-
 }

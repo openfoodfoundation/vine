@@ -93,7 +93,6 @@ class MyProfilePutTest extends BaseAPITestCase
 
     }
 
-
     #[Test]
     public function itCanNotUpdateNoSymbols()
     {
@@ -129,5 +128,4 @@ class MyProfilePutTest extends BaseAPITestCase
         $response->assertStatus(400);
 
     }
-
 }
