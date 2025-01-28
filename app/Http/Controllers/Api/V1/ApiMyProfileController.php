@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rules\Password;
 use Knuckles\Scribe\Attributes\Authenticated;
+use Knuckles\Scribe\Attributes\BodyParam;
 use Knuckles\Scribe\Attributes\Endpoint;
 use Knuckles\Scribe\Attributes\Group;
 use Knuckles\Scribe\Attributes\QueryParam;
@@ -156,14 +157,40 @@ class ApiMyProfileController extends Controller
     }
 
     /**
-     * PUT / {id}
-     *
-     * @hideFromAPIDocumentation
+     * PUT/ {id}
      *
      * @param string $id
      *
      * @return JsonResponse
      */
+    #[Endpoint(
+        title        : 'PUT /{id}',
+        description  : 'Update your profile.',
+        authenticated: true
+    )]
+    #[Authenticated]
+    #[BodyParam(
+        name       : 'password',
+        type       : 'string',
+        description: 'Your new password. Must conform to password validation requirements.',
+        required   : false
+    )]
+    #[Response(
+        content    : '{
+  "meta": {
+    "responseCode": 200,
+    "limit": 50,
+    "offset": 0,
+    "message": "",
+    "cached": true,
+    "cached_at": "2024-08-13 08:58:19",
+    "availableRelations": []
+  },
+  "data": {"id": 1234, "name": "Your name", "email":"you@yourdomain.com", "created_at": "2024-01-01 00:00:00"}
+}',
+        status     : 200,
+        description: ''
+    )]
     public function update(string $id)
     {
         $validationArray = [
