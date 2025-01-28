@@ -81,7 +81,7 @@ onMounted(() => {
 
 
                         <div class="text-xs mt-4">
-                            <span class="font-bold">Password requirements:</span> must have mixed-case letters, numbers, and symbols.
+                            <span class="font-bold">Password requirements:</span> must have minimum 8 characters, with mixed-case letters, numbers, and symbols.
                         </div>
                     </div>
                 </div>
