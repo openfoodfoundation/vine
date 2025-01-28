@@ -19,7 +19,7 @@ h2 {
 }
 
 
-input[type=checkbox], input[type=text], input[type=number], input[type=email], input[type=search], select {
+input[type=checkbox], input[type=text], input[type=number], input[type=email], input[type=search], input[type=password], select {
     @apply rounded border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 shadow-sm;
 }
 

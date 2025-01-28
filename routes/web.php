@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Middleware\CheckAdminStatus;
+use App\Http\Middleware\CheckIfPasswordUpdateRequired;
 use App\Models\Team;
 use App\Models\TeamMerchantTeam;
 use App\Models\TeamUser;
@@ -63,7 +64,7 @@ Route::get('/bounce', function (Request $request) {
 
 })->name('bounce');
 
-Route::middleware('auth')->group(function () {
+Route::middleware(['auth', CheckIfPasswordUpdateRequired::class])->group(function () {
 
     Route::get('/dashboard', function () {
         return Inertia::render('Dashboard');
@@ -76,7 +77,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/my-voucher-set-merchant-team-approval-request/{approvalRequestId}', function (Request $request, $approvalRequestId) {
 
         $approvalRequest = VoucherSetMerchantTeamApprovalRequest::where('merchant_user_id', Auth::id())
-            ->find($approvalRequestId);
+                                                                ->find($approvalRequestId);
 
         if (!$approvalRequest) {
             return Redirect::to('/');
@@ -96,6 +97,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    Route::get('/profile/set-password', function () {
+        return Inertia::render('App/Profile/ResetPasswordPage');
+    })->name('profile.set-password');
 
     Route::get('/audit-trail', function () {
         return Inertia::render('AuditItems');
@@ -134,16 +139,16 @@ Route::middleware('auth')->group(function () {
          * User's team is NOT a merchant of the voucher's service team
          */
         $teamMerchant = TeamMerchantTeam::where('team_id', $voucher->allocated_to_service_team_id)
-            ->where('merchant_team_id', $team->id)
-            ->first();
+                                        ->where('merchant_team_id', $team->id)
+                                        ->first();
 
         /**
          * User's team is NOT a merchant for the voucher set
          */
         $teamMerchantOfVoucherSet = VoucherSetMerchantTeam::where('voucher_set_id', $voucherSetId)
-            ->where('merchant_team_id', $team->id)
-            ->whereNotNull('voucher_set_merchant_team_approval_request_id')
-            ->first();
+                                                          ->where('merchant_team_id', $team->id)
+                                                          ->whereNotNull('voucher_set_merchant_team_approval_request_id')
+                                                          ->first();
 
         if (!$teamMerchant || !$teamMerchantOfVoucherSet) {
             return Inertia::render('App/ErrorMessagePage', [
@@ -191,15 +196,15 @@ Route::middleware('auth')->group(function () {
          * User's team is NOT a merchant of the voucher's service team
          */
         $teamMerchant = TeamMerchantTeam::where('team_id', $voucher->allocated_to_service_team_id)
-            ->where('merchant_team_id', $team->id)
-            ->first();
+                                        ->where('merchant_team_id', $team->id)
+                                        ->first();
 
         /**
          * User's team is NOT a merchant for the voucher set
          */
         $teamMerchantOfVoucherSet = VoucherSetMerchantTeam::where('voucher_set_id', $voucher->voucher_set_id)
-            ->where('merchant_team_id', $team->id)
-            ->first();
+                                                          ->where('merchant_team_id', $team->id)
+                                                          ->first();
 
         if (($voucher->created_by_team_id != $team->id && $voucher->allocated_to_service_team_id != $team->id) && !$teamMerchant && !$teamMerchantOfVoucherSet) {
             return Inertia::render('App/ErrorMessagePage', [
@@ -245,15 +250,15 @@ Route::middleware('auth')->group(function () {
          * User's team is NOT a merchant of the voucher set's service team
          */
         $teamMerchant = TeamMerchantTeam::where('team_id', $voucherSet->allocated_to_service_team_id)
-            ->where('merchant_team_id', $team->id)
-            ->first();
+                                        ->where('merchant_team_id', $team->id)
+                                        ->first();
 
         /**
          * User's team is NOT a merchant for the voucher set
          */
         $teamMerchantOfVoucherSet = VoucherSetMerchantTeam::where('voucher_set_id', $voucherSetId)
-            ->where('merchant_team_id', $team->id)
-            ->first();
+                                                          ->where('merchant_team_id', $team->id)
+                                                          ->first();
 
         if (($voucherSet->created_by_team_id != $team->id && $voucherSet->allocated_to_service_team_id != $team->id) && !$teamMerchant && !$teamMerchantOfVoucherSet) {
             return Inertia::render('App/ErrorMessagePage', [
@@ -296,7 +301,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/switch-team/{id}', function ($id) {
 
         $teamUserForThisTeam = TeamUser::where('user_id', Auth::id())
-            ->where('team_id', $id)->first();
+                                       ->where('team_id', $id)->first();
 
         if ($teamUserForThisTeam) {
             Auth::user()->current_team_id = $id;

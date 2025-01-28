@@ -17,6 +17,7 @@ use App\Http\Controllers\Api\V1\Admin\ApiAdminVouchersController;
 use App\Http\Controllers\Api\V1\Admin\ApiAdminVoucherSetMerchantTeamsController;
 use App\Http\Controllers\Api\V1\Admin\ApiAdminVoucherSetsController;
 use App\Http\Controllers\Api\V1\ApiCountriesController;
+use App\Http\Controllers\Api\V1\ApiMyProfileController;
 use App\Http\Controllers\Api\V1\ApiMyTeamAuditItemsController;
 use App\Http\Controllers\Api\V1\ApiMyTeamController;
 use App\Http\Controllers\Api\V1\ApiMyTeamsController;
@@ -206,56 +207,109 @@ Route::group(['prefix' => 'v1', 'middleware' => VerifyApiTokenSignature::class],
                 );
 
             /**
+             * My Profile
+             */
+            Route::post('/my-profile', [ApiMyProfileController::class, 'store'])
+                ->name('api.v1.my-profile.post')
+                ->middleware(
+                    [
+                        'abilities:' .
+                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                        PersonalAccessTokenAbility::MY_PROFILE_CREATE->value,
+                    ]
+                );
+            Route::get('/my-profile', [ApiMyProfileController::class, 'index'])
+                ->name('api.v1.my-profile.getMany')
+                ->middleware(
+                    [
+                        'abilities:' .
+                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                        PersonalAccessTokenAbility::MY_PROFILE_READ->value,
+                    ]
+                );
+
+            Route::get('/my-profile/{id}', [ApiMyProfileController::class, 'show'])
+                ->name('api.v1.my-profile.get')
+                ->middleware(
+                    [
+                        'abilities:' .
+                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                        PersonalAccessTokenAbility::MY_PROFILE_READ->value,
+                    ]
+                );
+
+            Route::put('/my-profile/{id}', [ApiMyProfileController::class, 'update'])
+                ->name('api.v1.my-profile.put')
+                ->middleware(
+                    [
+                        'abilities:' .
+                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                        PersonalAccessTokenAbility::MY_PROFILE_UPDATE->value,
+                    ]
+                );
+
+            Route::delete('/my-profile/{id}', [ApiMyProfileController::class, 'destroy'])
+                ->name('api.v1.my-profile.delete')
+                ->middleware(
+                    [
+                        'abilities:' .
+                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                        PersonalAccessTokenAbility::MY_PROFILE_DELETE->value,
+                    ]
+                );
+
+
+            /**
              * My Teams
              */
             Route::post('/my-teams', [ApiMyTeamsController::class, 'store'])
-                ->name('api.v1.my-teams.post')
-                ->middleware(
-                    [
-                        'abilities:' .
-                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
-                        PersonalAccessTokenAbility::MY_TEAM_CREATE->value,
-                    ]
-                );
+                 ->name('api.v1.my-teams.post')
+                 ->middleware(
+                     [
+                         'abilities:' .
+                         PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                         PersonalAccessTokenAbility::MY_TEAM_CREATE->value,
+                     ]
+                 );
             Route::get('/my-teams', [ApiMyTeamsController::class, 'index'])
-                ->name('api.v1.my-teams.getMany')
-                ->middleware(
-                    [
-                        'abilities:' .
-                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
-                        PersonalAccessTokenAbility::MY_TEAM_READ->value,
-                    ]
-                );
+                 ->name('api.v1.my-teams.getMany')
+                 ->middleware(
+                     [
+                         'abilities:' .
+                         PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                         PersonalAccessTokenAbility::MY_TEAM_READ->value,
+                     ]
+                 );
 
             Route::get('/my-teams/{id}', [ApiMyTeamsController::class, 'show'])
-                ->name('api.v1.my-teams.get')
-                ->middleware(
-                    [
-                        'abilities:' .
-                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
-                        PersonalAccessTokenAbility::MY_TEAM_READ->value,
-                    ]
-                );
+                 ->name('api.v1.my-teams.get')
+                 ->middleware(
+                     [
+                         'abilities:' .
+                         PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                         PersonalAccessTokenAbility::MY_TEAM_READ->value,
+                     ]
+                 );
 
             Route::put('/my-teams/{id}', [ApiMyTeamsController::class, 'update'])
-                ->name('api.v1.my-teams.put')
-                ->middleware(
-                    [
-                        'abilities:' .
-                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
-                        PersonalAccessTokenAbility::MY_TEAM_UPDATE->value,
-                    ]
-                );
+                 ->name('api.v1.my-teams.put')
+                 ->middleware(
+                     [
+                         'abilities:' .
+                         PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                         PersonalAccessTokenAbility::MY_TEAM_UPDATE->value,
+                     ]
+                 );
 
             Route::delete('/my-teams/{id}', [ApiMyTeamsController::class, 'destroy'])
-                ->name('api.v1.my-teams.delete')
-                ->middleware(
-                    [
-                        'abilities:' .
-                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
-                        PersonalAccessTokenAbility::MY_TEAM_DELETE->value,
-                    ]
-                );
+                 ->name('api.v1.my-teams.delete')
+                 ->middleware(
+                     [
+                         'abilities:' .
+                         PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                         PersonalAccessTokenAbility::MY_TEAM_DELETE->value,
+                     ]
+                 );
 
             /**
              * My Search
