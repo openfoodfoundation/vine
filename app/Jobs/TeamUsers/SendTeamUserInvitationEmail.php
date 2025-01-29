@@ -27,7 +27,8 @@ class SendTeamUserInvitationEmail implements ShouldQueue
         $userToNotify = User::find($this->teamUser->user_id);
 
         if ($userToNotify) {
-            $userToNotify->current_team_id = $this->teamUser->team_id;
+            $userToNotify->requires_password_reset = 1;
+            $userToNotify->current_team_id         = $this->teamUser->team_id;
             $userToNotify->saveQuietly();
 
             $userToNotify->notify(new SendTeamUserInvitationEmailNotification($this->teamUser));

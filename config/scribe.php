@@ -230,6 +230,7 @@ INTRO
         'order' => [
             'App Endpoints' => [
                 '/countries',
+                '/my-profile',
                 '/my-team',
                 '/my-teams',
                 '/my-team-search',

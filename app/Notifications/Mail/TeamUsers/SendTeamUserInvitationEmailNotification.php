@@ -4,6 +4,8 @@ namespace App\Notifications\Mail\TeamUsers;
 
 use App\Models\Team;
 use App\Models\TeamUser;
+use App\Models\User;
+use App\Services\BounceService;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
@@ -41,13 +43,19 @@ class SendTeamUserInvitationEmailNotification extends Notification implements Sh
     {
         $team = Team::find($this->teamUser->team_id);
 
+        $urlToVisit = BounceService::generateSignedUrlForUser(
+            user        : User::find($notifiable->id),
+            expiry      : now()->addDays(2),
+            redirectPath: '/dashboard'
+        );
+
         return (new MailMessage())
             ->subject('You have been invited to join ' . $team->name . ' - ' . config('app.name'))
             ->line('You have been invited to join team "' . $team->name . '" on ' . config('app.name') . '.')
-            ->line('An account has been created for you on the team, but if you have never logged in to use the system, you may need to reset your password in order to log in.')
-            ->line('Please follow the button below to reset your password and log in.')
-            ->action('Reset your password & log in', url('/forgot-password'))
-            ->line('Thank you for using our application!');
+            ->line('An account has been created for you on the team, but if you have never logged in to use the system, you will need to set your password in order to log in.')
+            ->line('This link will expire after 24 hours.')
+            ->line('Please follow the button below.')
+            ->action('Set your password & log in', $urlToVisit);
     }
 
     /**

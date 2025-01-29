@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Middleware\CheckAdminStatus;
+use App\Http\Middleware\CheckIfPasswordUpdateRequired;
 use App\Models\Team;
 use App\Models\TeamMerchantTeam;
 use App\Models\TeamUser;
@@ -63,7 +64,7 @@ Route::get('/bounce', function (Request $request) {
 
 })->name('bounce');
 
-Route::middleware('auth')->group(function () {
+Route::middleware(['auth', CheckIfPasswordUpdateRequired::class])->group(function () {
 
     Route::get('/dashboard', function () {
         return Inertia::render('Dashboard');
@@ -96,6 +97,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    Route::get('/profile/set-password', function () {
+        return Inertia::render('App/Profile/ResetPasswordPage');
+    })->name('profile.set-password');
 
     Route::get('/audit-trail', function () {
         return Inertia::render('AuditItems');

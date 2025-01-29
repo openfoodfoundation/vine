@@ -17,6 +17,7 @@ use App\Http\Controllers\Api\V1\Admin\ApiAdminVouchersController;
 use App\Http\Controllers\Api\V1\Admin\ApiAdminVoucherSetMerchantTeamsController;
 use App\Http\Controllers\Api\V1\Admin\ApiAdminVoucherSetsController;
 use App\Http\Controllers\Api\V1\ApiCountriesController;
+use App\Http\Controllers\Api\V1\ApiMyProfileController;
 use App\Http\Controllers\Api\V1\ApiMyTeamAuditItemsController;
 use App\Http\Controllers\Api\V1\ApiMyTeamController;
 use App\Http\Controllers\Api\V1\ApiMyTeamsController;
@@ -202,6 +203,58 @@ Route::group(['prefix' => 'v1', 'middleware' => VerifyApiTokenSignature::class],
                         'abilities:' .
                         PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
                         PersonalAccessTokenAbility::MY_TEAM_AUDIT_ITEMS_DELETE->value,
+                    ]
+                );
+
+            /**
+             * My Profile
+             */
+            Route::post('/my-profile', [ApiMyProfileController::class, 'store'])
+                ->name('api.v1.my-profile.post')
+                ->middleware(
+                    [
+                        'abilities:' .
+                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                        PersonalAccessTokenAbility::MY_PROFILE_CREATE->value,
+                    ]
+                );
+            Route::get('/my-profile', [ApiMyProfileController::class, 'index'])
+                ->name('api.v1.my-profile.getMany')
+                ->middleware(
+                    [
+                        'abilities:' .
+                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                        PersonalAccessTokenAbility::MY_PROFILE_READ->value,
+                    ]
+                );
+
+            Route::get('/my-profile/{id}', [ApiMyProfileController::class, 'show'])
+                ->name('api.v1.my-profile.get')
+                ->middleware(
+                    [
+                        'abilities:' .
+                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                        PersonalAccessTokenAbility::MY_PROFILE_READ->value,
+                    ]
+                );
+
+            Route::put('/my-profile/{id}', [ApiMyProfileController::class, 'update'])
+                ->name('api.v1.my-profile.put')
+                ->middleware(
+                    [
+                        'abilities:' .
+                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                        PersonalAccessTokenAbility::MY_PROFILE_UPDATE->value,
+                    ]
+                );
+
+            Route::delete('/my-profile/{id}', [ApiMyProfileController::class, 'destroy'])
+                ->name('api.v1.my-profile.delete')
+                ->middleware(
+                    [
+                        'abilities:' .
+                        PersonalAccessTokenAbility::SUPER_ADMIN->value . ',' .
+                        PersonalAccessTokenAbility::MY_PROFILE_DELETE->value,
                     ]
                 );
 
