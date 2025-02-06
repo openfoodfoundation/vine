@@ -81,7 +81,7 @@ function highlightMatchingText(text) {
      *     input: text that was searched
      * }
      */
-    matches.forEach(match => {
+    [...matches].forEach(match => {
         const start = text.slice(0, match.index + offset);
         const end = text.slice(match.index + offset + match[0].length);
         const replacement = '<b class="text-blue-500">' + match[0] + '</b>'
