@@ -2,7 +2,10 @@ name: Hotfix
 
 on:
   push:
-    branches: [ hotfix/* ]
+    branches: [
+      hotfix/*,
+      fix/*
+    ]
 
 jobs:
   run-tests:
