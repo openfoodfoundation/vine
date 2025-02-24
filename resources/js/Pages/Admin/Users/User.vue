@@ -74,7 +74,6 @@ function getUserTeams(page = 1) {
     }).catch(error => {
 
 
-
     })
 }
 
@@ -86,7 +85,7 @@ function textFormat(ability) {
     return ability.replaceAll('-', ' ')
 }
 
-function selectPlatformAppType(){
+function selectPlatformAppType() {
     newPAT.value.token_abilities = Object.keys(platformAppTokenAbilities);
 
     Swal.fire({
@@ -97,7 +96,7 @@ function selectPlatformAppType(){
     })
 }
 
-function selectRedemptionAppType(){
+function selectRedemptionAppType() {
     newPAT.value.token_abilities = Object.keys(redemptionAppTokenAbilities);
 
     Swal.fire({
@@ -108,7 +107,7 @@ function selectRedemptionAppType(){
     })
 }
 
-function clearAbilitiesList(){
+function clearAbilitiesList() {
     newPAT.value.token_abilities = [];
 }
 
@@ -141,7 +140,9 @@ function updateAdminStatus() {
 
                 <div>
                     <div v-if="$page.props.isImpersonating === null">
-                        <PrimaryButton><Link :href="route('admin.impersonate', $props.id)">Impersonate</Link></PrimaryButton>
+                        <PrimaryButton>
+                            <Link :href="route('admin.impersonate', $props.id)">Impersonate</Link>
+                        </PrimaryButton>
                     </div>
                 </div>
             </div>
@@ -189,13 +190,23 @@ function updateAdminStatus() {
                 Admin status
             </div>
 
-            <label for="admin" class="cursor-pointer flex justify-start items-center"
-                :class="{'opacity-30': user.id === usePage().props.auth.user.id}"
+            <label for="admin"
+                   class="cursor-pointer flex justify-start items-center"
+                   :class="{'opacity-30': user.id === usePage().props.auth.user.id}"
             >
-                <input @change="updateAdminStatus()" type="checkbox" id="admin" class="mr-4"
-                       :true-value="1" :false-value="0" v-model="user.is_admin" :disabled="user.id === usePage().props.auth.user.id"> User is System Admin
+                <input @change="updateAdminStatus()"
+                       type="checkbox"
+                       id="admin"
+                       class="mr-4"
+                       :true-value="1"
+                       :false-value="0"
+                       v-model="user.is_admin"
+                       :disabled="user.id === usePage().props.auth.user.id">
+                User is System Admin
             </label>
-            <div v-if="user.id === usePage().props.auth.user.id" class="text-xs mt-2 italic">
+            <div
+                v-if="user.id === usePage().props.auth.user.id"
+                class="text-xs mt-2 italic">
                 You can't change your own user admin status.
             </div>
         </div>
@@ -252,15 +263,14 @@ function updateAdminStatus() {
                 </div>
 
 
-
                 <div class="grid grid-cols-1 md:grid-cols-2 md:gap-2 ">
                     <div v-for="abilityGroup in personalAccessTokenAbilities" class="border rounded-xl p-4">
                         <div>
                             <h2>
-                                {{abilityGroup.name}}
+                                {{ abilityGroup.name }}
                             </h2>
                             <div class="text-xs">
-                                {{abilityGroup.description}}
+                                {{ abilityGroup.description }}
                             </div>
                             <div class="mt-8">
                                 <div v-for="(ability, key) in abilityGroup.abilities">
@@ -288,7 +298,7 @@ function updateAdminStatus() {
                     />
                 </div>
                 <div>
-                    Selected Abilities: {{newPAT.token_abilities.join(', ')}}
+                    Selected Abilities: {{ newPAT.token_abilities.join(', ') }}
                 </div>
 
                 <div class="flex items-center justify-end mt-4">
