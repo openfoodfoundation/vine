@@ -189,10 +189,15 @@ function updateAdminStatus() {
                 Admin status
             </div>
 
-            <label for="admin" class="cursor-pointer flex justify-start items-center">
+            <label for="admin" class="cursor-pointer flex justify-start items-center"
+                :class="{'opacity-30': user.id === usePage().props.auth.user.id}"
+            >
                 <input @change="updateAdminStatus()" type="checkbox" id="admin" class="mr-4"
-                       :true-value="1" :false-value="0" v-model="user.is_admin"> User is System Admin
+                       :true-value="1" :false-value="0" v-model="user.is_admin" :disabled="user.id === usePage().props.auth.user.id"> User is System Admin
             </label>
+            <div v-if="user.id === usePage().props.auth.user.id" class="text-xs mt-2 italic">
+                You can't change your own user admin status.
+            </div>
         </div>
 
         <div class="card">
