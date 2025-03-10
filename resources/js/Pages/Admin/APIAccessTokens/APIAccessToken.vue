@@ -23,7 +23,6 @@ onMounted(() => {
 })
 
 function dateFormat(dateTime) {
-    console.log(dateTime)
     dayjs.extend(relativeTime)
     dayjs.extend(localizedFormat)
 
