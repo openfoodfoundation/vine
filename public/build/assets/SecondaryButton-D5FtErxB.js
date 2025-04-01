@@ -1,0 +1,1 @@
+import{c as o,a as n,H as s}from"./app-F_MX-iEd.js";const a=["type"],p={__name:"SecondaryButton",props:{type:{type:String,default:"button"}},setup(t){return(e,r)=>(n(),o("button",{type:t.type,class:"secondaryButton"},[s(e.$slots,"default")],8,a))}};export{p as _};
