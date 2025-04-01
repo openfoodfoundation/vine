@@ -1,1 +1,0 @@
-import{k as s,G as t,a,c as r,d as c,t as o}from"./app-F_MX-iEd.js";const n={class:"text-sm text-red-600"},l={__name:"InputError",props:{message:{type:String}},setup(e){return(i,m)=>s((a(),r("div",null,[c("p",n,o(e.message),1)],512)),[[t,e.message]])}};export{l as _};
