@@ -87,6 +87,25 @@ function getVoucherSet() {
                     </div>
                     # Redemptions
                 </div>
+                <div>
+                    <div class="font-bold text-3xl">
+                        {{ voucherSet.num_vouchers_fully_redeemed }}
+                    </div>
+                    # Vouchers Fully Redeemed
+                </div>
+                <div>
+                    <div class="font-bold text-3xl">
+                        {{ voucherSet.num_vouchers_partially_redeemed }}
+                    </div>
+                    # Vouchers Partially Redeemed
+                </div>
+
+                <div>
+                    <div class="font-bold text-3xl">
+                        {{ voucherSet.num_vouchers_unredeemed }}
+                    </div>
+                    # Vouchers Unredeemed
+                </div>
 
                 <div v-if="voucherSet.last_redemption_at">
                     <div>

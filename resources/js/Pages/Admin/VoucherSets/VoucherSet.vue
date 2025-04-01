@@ -142,11 +142,12 @@ function forceRemoveMerchant(merchantTeam) {
                     </div>
                     # Vouchers
                 </div>
+
                 <div>
                     <div class="font-bold text-3xl">
-                        {{ voucherSet.num_voucher_redemptions }}
+                        {{ voucherSet.num_vouchers_fully_redeemed }}
                     </div>
-                    # Redemptions
+                    # Vouchers Fully Redeemed
                 </div>
 
 
@@ -174,6 +175,26 @@ function forceRemoveMerchant(merchantTeam) {
                         ({{ dayjs(voucherSet.expires_at) }})
                     </div>
 
+                </div>
+
+                <div>
+                    <div class="font-bold text-3xl">
+                        {{ voucherSet.num_voucher_redemptions }}
+                    </div>
+                    # Redemptions
+                </div>
+                <div>
+                    <div class="font-bold text-3xl">
+                        {{ voucherSet.num_vouchers_partially_redeemed }}
+                    </div>
+                    # Vouchers Partially Redeemed
+                </div>
+
+                <div>
+                    <div class="font-bold text-3xl">
+                        {{ voucherSet.num_vouchers_unredeemed }}
+                    </div>
+                    # Vouchers Unredeemed
                 </div>
 
             </div>

@@ -58,9 +58,23 @@ class VoucherSetService
     public static function collateVoucherSetAggregates(VoucherSet $voucherSet): void
     {
 
-        $voucherSet->num_vouchers              = Voucher::where('voucher_set_id', $voucherSet->id)->count();
-        $voucherSet->total_set_value           = Voucher::where('voucher_set_id', $voucherSet->id)->sum('voucher_value_original');
-        $voucherSet->num_voucher_redemptions   = VoucherRedemption::where('voucher_set_id', $voucherSet->id)->count();
+        $voucherSet->num_vouchers            = Voucher::where('voucher_set_id', $voucherSet->id)->count();
+        $voucherSet->total_set_value         = Voucher::where('voucher_set_id', $voucherSet->id)->sum('voucher_value_original');
+        $voucherSet->num_voucher_redemptions = VoucherRedemption::where('voucher_set_id', $voucherSet->id)->count();
+
+        $voucherSet->num_vouchers_fully_redeemed = Voucher::where('voucher_set_id', $voucherSet->id)
+            ->where('voucher_value_remaining', 0)
+            ->count();
+
+        $voucherSet->num_vouchers_partially_redeemed = Voucher::where('voucher_set_id', $voucherSet->id)
+            ->where('voucher_value_remaining', '>', 0)
+            ->whereColumn('voucher_value_original', '!=', 'voucher_value_remaining')
+            ->count();
+
+        $voucherSet->num_vouchers_unredeemed = Voucher::where('voucher_set_id', $voucherSet->id)
+            ->whereColumn('voucher_value_original', '=', 'voucher_value_remaining')
+            ->count();
+
         $voucherSet->last_redemption_at        = VoucherRedemption::where('voucher_set_id', $voucherSet->id)->max('created_at');
         $voucherSet->total_set_value_remaining = self::calculateVoucherSetValueRemaining($voucherSet);
         $voucherSet->is_denomination_valid     = self::validateVoucherSetDenominations($voucherSet);
