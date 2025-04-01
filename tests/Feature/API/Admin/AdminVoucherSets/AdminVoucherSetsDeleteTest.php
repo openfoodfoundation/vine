@@ -15,7 +15,7 @@ class AdminVoucherSetsDeleteTest extends BaseAPITestCase
     use WithFaker;
 
     #[Test]
-    public function it_fails_if_not_authenticated()
+    public function itFailsIfNotAuthenticated()
     {
         $this->user = $this->createUserWithTeam();
 
@@ -27,7 +27,7 @@ class AdminVoucherSetsDeleteTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function only_admin_can_access()
+    public function onlyAdminCanAccess()
     {
         $this->user = $this->createUserWithTeam();
 
@@ -48,7 +48,7 @@ class AdminVoucherSetsDeleteTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function admin_can_delete_data()
+    public function adminCanDeleteData()
     {
         $this->user = $this->createAdminUser();
 

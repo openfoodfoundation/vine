@@ -19,7 +19,7 @@ class SystemStatisticsDeleteTest extends BaseAPITestCase
     public string $endpoint = '/system-statistics';
 
     #[Test]
-    public function authentication_required()
+    public function authenticationRequired()
     {
         $this->user = $this->createUser();
 
@@ -37,7 +37,7 @@ class SystemStatisticsDeleteTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function it_cannot_update_a_resource_incorrect_abilities()
+    public function itCannotUpdateAResourceIncorrectAbilities()
     {
         $this->user = $this->createUser();
 
@@ -60,7 +60,7 @@ class SystemStatisticsDeleteTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function it_cannot_update_a_resource_method_not_allowed()
+    public function itCannotUpdateAResourceMethodNotAllowed()
     {
         $this->user = $this->createAdminUser();
 

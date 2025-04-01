@@ -19,7 +19,7 @@ class AdminVoucherSetMerchantTeamsGetTest extends BaseAPITestCase
     public string $endpoint = '/admin/voucher-set-merchant-teams';
 
     #[Test]
-    public function only_admin_can_access(): void
+    public function onlyAdminCanAccess(): void
     {
         $this->user = $this->createUser();
 
@@ -31,7 +31,7 @@ class AdminVoucherSetMerchantTeamsGetTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function it_can_get_all_items()
+    public function itCanGetAllItems()
     {
         $this->user = $this->createAdminUser();
 
@@ -58,7 +58,7 @@ class AdminVoucherSetMerchantTeamsGetTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function it_can_get_a_single_item()
+    public function itCanGetASingleItem()
     {
         $this->user = $this->createAdminUser();
 

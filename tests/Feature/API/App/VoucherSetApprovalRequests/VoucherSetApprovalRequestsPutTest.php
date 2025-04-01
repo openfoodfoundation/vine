@@ -23,7 +23,7 @@ class VoucherSetApprovalRequestsPutTest extends BaseAPITestCase
     protected string $endPoint = '/my-team-vsmtar';
 
     #[Test]
-    public function it_fails_if_not_authenticated()
+    public function itFailsIfNotAuthenticated()
     {
         Event::fake();
 
@@ -43,7 +43,7 @@ class VoucherSetApprovalRequestsPutTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function it_fails_update_without_ability()
+    public function itFailsUpdateWithoutAbility()
     {
         Event::fake();
 
@@ -67,7 +67,7 @@ class VoucherSetApprovalRequestsPutTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function it_can_update_with_ability()
+    public function itCanUpdateWithAbility()
     {
         Event::fake();
 

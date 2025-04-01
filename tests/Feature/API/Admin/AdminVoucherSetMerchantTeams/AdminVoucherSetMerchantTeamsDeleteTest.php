@@ -22,7 +22,7 @@ class AdminVoucherSetMerchantTeamsDeleteTest extends BaseAPITestCase
     public string $endpoint = '/admin/voucher-set-merchant-teams';
 
     #[Test]
-    public function only_admin_can_access(): void
+    public function onlyAdminCanAccess(): void
     {
         $this->user = $this->createUser();
 
@@ -43,7 +43,7 @@ class AdminVoucherSetMerchantTeamsDeleteTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function it_can_delete_a_voucher_set_merchant_team()
+    public function itCanDeleteAVoucherSetMerchantTeam()
     {
         $this->user = $this->createAdminUser();
 
@@ -66,7 +66,7 @@ class AdminVoucherSetMerchantTeamsDeleteTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function it_deletes_approval_requests_also()
+    public function itDeletesApprovalRequestsAlso()
     {
         Notification::fake();
         $this->user = $this->createAdminUser();

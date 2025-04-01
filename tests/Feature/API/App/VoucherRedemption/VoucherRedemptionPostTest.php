@@ -22,7 +22,7 @@ class VoucherRedemptionPostTest extends BaseAPITestCase
     protected string $endPoint = '/voucher-redemptions';
 
     #[Test]
-    public function it_fails_if_not_authenticated()
+    public function itFailsIfNotAuthenticated()
     {
         $this->user = $this->createUser();
 
@@ -31,7 +31,7 @@ class VoucherRedemptionPostTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function it_fails_if_user_does_not_have_the_correct_token()
+    public function itFailsIfUserDoesNotHaveTheCorrectToken()
     {
         $this->user = $this->createUserWithTeam();
 
@@ -58,7 +58,7 @@ class VoucherRedemptionPostTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function it_can_redeem_voucher_when_user_is_member_of_merchant_team()
+    public function itCanRedeemVoucherWhenUserIsMemberOfMerchantTeam()
     {
         $this->user = $this->createUserWithTeam();
 
@@ -91,7 +91,7 @@ class VoucherRedemptionPostTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function it_fails_if_user_is_not_member_of_merchant_team()
+    public function itFailsIfUserIsNotMemberOfMerchantTeam()
     {
         $this->user = $this->createUserWithTeam();
 
@@ -121,7 +121,7 @@ class VoucherRedemptionPostTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function it_fails_if_users_current_team_is_not_the_merchant_team()
+    public function itFailsIfUsersCurrentTeamIsNotTheMerchantTeam()
     {
         $this->user = $this->createUserWithTeam();
 
@@ -169,7 +169,7 @@ class VoucherRedemptionPostTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function it_fails_if_last_redemption_occurred_less_than_a_minute_ago()
+    public function itFailsIfLastRedemptionOccurredLessThanAMinuteAgo()
     {
         $this->user = $this->createUserWithTeam();
 
@@ -206,7 +206,7 @@ class VoucherRedemptionPostTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function it_fails_if_voucher_has_no_value_remaining()
+    public function itFailsIfVoucherHasNoValueRemaining()
     {
         $this->user = $this->createUserWithTeam();
 
@@ -252,7 +252,7 @@ class VoucherRedemptionPostTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function it_fails_if_merchant_has_not_approved_their_involvement()
+    public function itFailsIfMerchantHasNotApprovedTheirInvolvement()
     {
         $this->user = $this->createUserWithTeam();
 
@@ -299,7 +299,7 @@ class VoucherRedemptionPostTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function it_fails_if_voucher_set_does_not_exist()
+    public function itFailsIfVoucherSetDoesNotExist()
     {
         $this->user = $this->createUserWithTeam();
 

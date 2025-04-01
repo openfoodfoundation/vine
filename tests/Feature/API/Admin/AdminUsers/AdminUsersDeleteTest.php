@@ -17,7 +17,7 @@ class AdminUsersDeleteTest extends BaseAPITestCase
     public string $endpoint = '/admin/users';
 
     #[Test]
-    public function only_admin_can_access(): void
+    public function onlyAdminCanAccess(): void
     {
         $this->user = $this->createUser();
 
@@ -31,7 +31,7 @@ class AdminUsersDeleteTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function it_cannot_delete_a_user()
+    public function itCannotDeleteAUser()
     {
         $this->user = $this->createAdminUser();
 

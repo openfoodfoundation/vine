@@ -14,7 +14,7 @@ class AdminSearchDeleteTest extends BaseAPITestCase
     private string $endPoint = '/admin/search';
 
     #[Test]
-    public function it_fails_if_not_authenticated()
+    public function itFailsIfNotAuthenticated()
     {
         $this->user = $this->createAdminUser();
 
@@ -23,7 +23,7 @@ class AdminSearchDeleteTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function it_fails_to_delete_every_time()
+    public function itFailsToDeleteEveryTime()
     {
         $this->user = $this->createAdminUser();
 

@@ -19,7 +19,7 @@ class MyTeamSearchGetTest extends BaseAPITestCase
     private string $endPoint = '/my-team-search';
 
     #[Test]
-    public function it_fails_if_not_authenticated()
+    public function itFailsIfNotAuthenticated()
     {
         $this->user = $this->createUser();
 
@@ -28,7 +28,7 @@ class MyTeamSearchGetTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function it_must_have_search_query_of_at_least_length_three()
+    public function itMustHaveSearchQueryOfAtLeastLengthThree()
     {
         $this->user = $this->createUser();
 
@@ -48,7 +48,7 @@ class MyTeamSearchGetTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function it_returns_relevant_voucher_data()
+    public function itReturnsRelevantVoucherData()
     {
         $this->user = $this->createUser();
         $this->user->save();
@@ -77,7 +77,7 @@ class MyTeamSearchGetTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function it_returns_relevant_voucher_set_data()
+    public function itReturnsRelevantVoucherSetData()
     {
         $this->user = $this->createUserWithTeam();
         $this->user->save();
@@ -106,7 +106,7 @@ class MyTeamSearchGetTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function it_returns_not_return_irrelevant_data()
+    public function itReturnsNotReturnIrrelevantData()
     {
         $this->user = $this->createUser();
         $this->user->save();
@@ -137,7 +137,7 @@ class MyTeamSearchGetTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function it_does_not_return_single_data()
+    public function itDoesNotReturnSingleData()
     {
         $this->user = $this->createUser();
 

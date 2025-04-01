@@ -12,7 +12,7 @@ class VoucherServiceTest extends TestCase
     use RefreshDatabase;
 
     #[Test]
-    public function is_returns_correctly_formatted_short_codes(): void
+    public function isReturnsCorrectlyFormattedShortCodes(): void
     {
         for ($iteration = 1; $iteration <= 100; $iteration++) {
 

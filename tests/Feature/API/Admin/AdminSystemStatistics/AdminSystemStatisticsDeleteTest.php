@@ -18,7 +18,7 @@ class AdminSystemStatisticsDeleteTest extends BaseAPITestCase
     public string $endpoint = '/admin/system-statistics';
 
     #[Test]
-    public function only_admin_can_access(): void
+    public function onlyAdminCanAccess(): void
     {
         $this->user = $this->createUser();
 
@@ -32,7 +32,7 @@ class AdminSystemStatisticsDeleteTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function it_cannot_delete()
+    public function itCannotDelete()
     {
         $this->user = $this->createAdminUser();
 

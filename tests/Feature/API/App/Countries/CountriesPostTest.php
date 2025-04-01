@@ -18,7 +18,7 @@ class CountriesPostTest extends BaseAPITestCase
     public string $endpoint = '/countries';
 
     #[Test]
-    public function authentication_required(): void
+    public function authenticationRequired(): void
     {
         $this->user = $this->createUser();
 
@@ -30,7 +30,7 @@ class CountriesPostTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function it_cannot_create_with_incorrect_token()
+    public function itCannotCreateWithIncorrectToken()
     {
         $this->user = $this->createUserWithTeam();
 
@@ -50,7 +50,7 @@ class CountriesPostTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function it_cannot_create_with_correct_token()
+    public function itCannotCreateWithCorrectToken()
     {
         $this->user = $this->createUserWithTeam();
 

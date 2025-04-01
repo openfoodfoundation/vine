@@ -15,7 +15,7 @@ class MyTeamSearchPostTest extends BaseAPITestCase
     private string $endPoint = '/my-team-search';
 
     #[Test]
-    public function it_fails_if_not_authenticated()
+    public function itFailsIfNotAuthenticated()
     {
         $this->user = $this->createUser();
 
@@ -24,7 +24,7 @@ class MyTeamSearchPostTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function it_fails_to_create_every_time()
+    public function itFailsToCreateEveryTime()
     {
         $this->user = $this->createUser();
 

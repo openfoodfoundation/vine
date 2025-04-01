@@ -9,7 +9,7 @@ use Tests\TestCase;
 class PersonalAccessTokenAbilityEnumTest extends TestCase
 {
     #[Test]
-    public function it_returns_all_ability_labels(): void
+    public function itReturnsAllAbilityLabels(): void
     {
         self::assertIsArray(PersonalAccessTokenAbility::abilityLabels());
         self::assertSameSize(PersonalAccessTokenAbility::cases(), PersonalAccessTokenAbility::abilityLabels());
@@ -20,7 +20,7 @@ class PersonalAccessTokenAbilityEnumTest extends TestCase
     }
 
     #[Test]
-    public function it_returns_platform_app_token_abilities(): void
+    public function itReturnsPlatformAppTokenAbilities(): void
     {
         $expectedPlatformAppTokenAbilities = [
             PersonalAccessTokenAbility::SHOPS_READ->value             => PersonalAccessTokenAbility::abilityLabels()[PersonalAccessTokenAbility::SHOPS_READ->value],

@@ -17,7 +17,7 @@ class VoucherValidationDeleteTest extends BaseAPITestCase
      * @return void
      */
     #[Test]
-    public function it_fails_to_delete_every_time()
+    public function itFailsToDeleteEveryTime()
     {
         $this->user = $this->createUser();
 

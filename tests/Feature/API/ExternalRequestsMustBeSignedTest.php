@@ -11,7 +11,7 @@ use PHPUnit\Framework\Attributes\Test;
 class ExternalRequestsMustBeSignedTest extends BaseAPITestCase
 {
     #[Test]
-    public function external_api_requests_fail_if_not_signed(): void
+    public function externalApiRequestsFailIfNotSigned(): void
     {
         /**
          * Remove the Referer header to indicate a request from an external source
@@ -36,7 +36,7 @@ class ExternalRequestsMustBeSignedTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function external_api_requests_pass_if_signed(): void
+    public function externalApiRequestsPassIfSigned(): void
     {
         /**
          * Remove the Referer header to indicate a request from an external source

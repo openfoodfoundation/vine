@@ -16,7 +16,7 @@ class AdminAuditItemPostTest extends BaseAPITestCase
     public string $endpoint = '/admin/audit-items';
 
     #[Test]
-    public function only_admin_can_access(): void
+    public function onlyAdminCanAccess(): void
     {
         $this->user = $this->createUser();
 
@@ -30,7 +30,7 @@ class AdminAuditItemPostTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function it_cannot_store_a_resource()
+    public function itCannotStoreAResource()
     {
         $this->user = $this->createAdminUser();
 

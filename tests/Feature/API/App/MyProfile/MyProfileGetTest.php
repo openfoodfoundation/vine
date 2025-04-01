@@ -14,7 +14,7 @@ class MyProfileGetTest extends BaseAPITestCase
     protected string $endPoint = '/my-profile';
 
     #[Test]
-    public function authentication_required(): void
+    public function authenticationRequired(): void
     {
         $this->user = $this->createUser();
 
@@ -26,7 +26,7 @@ class MyProfileGetTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function standard_user_without_permission_cannot_access()
+    public function standardUserWithoutPermissionCannotAccess()
     {
         $this->user = $this->createUserWithTeam();
 
@@ -40,7 +40,7 @@ class MyProfileGetTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function it_can_get_data()
+    public function itCanGetData()
     {
         $this->user = $this->createUserWithTeam();
 
@@ -58,7 +58,7 @@ class MyProfileGetTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function it_can_get_data_from_id_suffix()
+    public function itCanGetDataFromIdSuffix()
     {
         $this->user = $this->createUserWithTeam();
 

@@ -17,7 +17,7 @@ class VoucherValidationPutTest extends BaseAPITestCase
      * @return void
      */
     #[Test]
-    public function it_fails_to_update_every_time()
+    public function itFailsToUpdateEveryTime()
     {
         $this->user = $this->createUser();
 

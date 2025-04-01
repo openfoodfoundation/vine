@@ -16,7 +16,7 @@ class AdminTokensPutTest extends BaseAPITestCase
     public string $endpoint = '/admin/user-personal-access-tokens';
 
     #[Test]
-    public function only_admin_can_access(): void
+    public function onlyAdminCanAccess(): void
     {
         $this->user = $this->createUser();
 
@@ -30,7 +30,7 @@ class AdminTokensPutTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function it_cannot_update_a_token()
+    public function itCannotUpdateAToken()
     {
         $this->user = $this->createAdminUser();
 

@@ -12,7 +12,7 @@ class AdminVoucherSetsPutTest extends BaseAPITestCase
     private string $endpoint = '/admin/voucher-sets';
 
     #[Test]
-    public function it_fails_if_not_authenticated()
+    public function itFailsIfNotAuthenticated()
     {
         $this->user = $this->createUserWithTeam();
 
@@ -24,7 +24,7 @@ class AdminVoucherSetsPutTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function only_admin_can_access()
+    public function onlyAdminCanAccess()
     {
         $this->user = $this->createUserWithTeam();
 
@@ -40,7 +40,7 @@ class AdminVoucherSetsPutTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function admin_can_not_update_data()
+    public function adminCanNotUpdateData()
     {
         $this->user = $this->createAdminUser();
 

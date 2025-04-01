@@ -17,7 +17,7 @@ class AdminTeamServiceTeamsPostTest extends BaseAPITestCase
     public string $endpoint = '/admin/team-service-teams';
 
     #[Test]
-    public function only_admin_can_access(): void
+    public function onlyAdminCanAccess(): void
     {
         $this->user = $this->createUser();
 
@@ -31,7 +31,7 @@ class AdminTeamServiceTeamsPostTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function it_can_store_a_team_service_team()
+    public function itCanStoreATeamServiceTeam()
     {
         $this->user = $this->createAdminUser();
 

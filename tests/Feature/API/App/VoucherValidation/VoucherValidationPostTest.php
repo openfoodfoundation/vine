@@ -17,7 +17,7 @@ class VoucherValidationPostTest extends BaseAPITestCase
     protected string $endPoint = '/voucher-validation';
 
     #[Test]
-    public function it_fails_if_voucher_identifier_is_wrong()
+    public function itFailsIfVoucherIdentifierIsWrong()
     {
 
         $this->user = $this->createUserWithTeam();
@@ -47,7 +47,7 @@ class VoucherValidationPostTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function it_can_validate_voucher_using_id()
+    public function itCanValidateVoucherUsingId()
     {
 
         $this->user = $this->createUserWithTeam();
@@ -86,7 +86,7 @@ class VoucherValidationPostTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function it_can_validate_voucher_using_short_code()
+    public function itCanValidateVoucherUsingShortCode()
     {
 
         $this->user = $this->createUserWithTeam();
@@ -126,7 +126,7 @@ class VoucherValidationPostTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function it_hides_sensitive_fields_from_validation_response()
+    public function itHidesSensitiveFieldsFromValidationResponse()
     {
 
         $this->user = $this->createUserWithTeam();
@@ -168,7 +168,7 @@ class VoucherValidationPostTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function it_allows_requests_based_on_validation_throttle_rules()
+    public function itAllowsRequestsBasedOnValidationThrottleRules()
     {
         $this->user = $this->createUserWithTeam();
 
@@ -205,7 +205,7 @@ class VoucherValidationPostTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function it_blocks_requests_based_on_validation_throttle_rules()
+    public function itBlocksRequestsBasedOnValidationThrottleRules()
     {
         $this->user = $this->createUserWithTeam();
 
@@ -246,7 +246,7 @@ class VoucherValidationPostTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function it_blocks_requests_based_on_validation_throttle_rules_but_allows_requests_from_different_users()
+    public function itBlocksRequestsBasedOnValidationThrottleRulesButAllowsRequestsFromDifferentUsers()
     {
         $this->user = $this->createUserWithTeam();
 

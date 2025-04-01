@@ -17,7 +17,7 @@ class AdminSystemStatisticsGetTest extends BaseAPITestCase
     public string $endpoint = '/admin/system-statistics';
 
     #[Test]
-    public function only_admin_can_access(): void
+    public function onlyAdminCanAccess(): void
     {
         $this->user = $this->createUser();
 
@@ -29,7 +29,7 @@ class AdminSystemStatisticsGetTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function it_can_get_all_resources()
+    public function itCanGetAllResources()
     {
         $this->user = $this->createAdminUser();
 
@@ -48,7 +48,7 @@ class AdminSystemStatisticsGetTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function it_can_get_a_single_resource()
+    public function itCanGetASingleResource()
     {
         $this->user = $this->createAdminUser();
 

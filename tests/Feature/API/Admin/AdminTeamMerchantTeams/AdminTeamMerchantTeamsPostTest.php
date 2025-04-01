@@ -19,7 +19,7 @@ class AdminTeamMerchantTeamsPostTest extends BaseAPITestCase
     public string $endpoint = '/admin/team-merchant-teams';
 
     #[Test]
-    public function only_admin_can_access(): void
+    public function onlyAdminCanAccess(): void
     {
         $this->user = $this->createUser();
 
@@ -33,7 +33,7 @@ class AdminTeamMerchantTeamsPostTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function it_can_store_a_team_merchant_team_if_same_country()
+    public function itCanStoreATeamMerchantTeamIfSameCountry()
     {
         $this->user = $this->createAdminUser();
 
@@ -64,7 +64,7 @@ class AdminTeamMerchantTeamsPostTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function it_can_not_store_a_team_merchant_team_if_not_same_country()
+    public function itCanNotStoreATeamMerchantTeamIfNotSameCountry()
     {
         $this->user = $this->createAdminUser();
 

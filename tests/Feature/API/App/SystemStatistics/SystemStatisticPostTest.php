@@ -18,7 +18,7 @@ class SystemStatisticPostTest extends BaseAPITestCase
     public string $endpoint = '/system-statistics';
 
     #[Test]
-    public function authentication_required(): void
+    public function authenticationRequired(): void
     {
         $this->user = $this->createUser();
 
@@ -31,7 +31,7 @@ class SystemStatisticPostTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function it_cannot_store_a_resource_method_not_allowed()
+    public function itCannotStoreAResourceMethodNotAllowed()
     {
         $this->user = $this->createUser();
 
@@ -54,7 +54,7 @@ class SystemStatisticPostTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function it_cannot_store_a_resource_incorrect_token_abilities()
+    public function itCannotStoreAResourceIncorrectTokenAbilities()
     {
         $this->user = $this->createUser();
 

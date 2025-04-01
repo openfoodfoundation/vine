@@ -18,7 +18,7 @@ class AdminAuditItemsDeleteTest extends BaseAPITestCase
     public string $endpoint = '/admin/audit-items';
 
     #[Test]
-    public function only_admin_can_access(): void
+    public function onlyAdminCanAccess(): void
     {
         $this->user = $this->createUser();
 
@@ -32,7 +32,7 @@ class AdminAuditItemsDeleteTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function it_cannot_delete()
+    public function itCannotDelete()
     {
         $this->user = $this->createAdminUser();
 

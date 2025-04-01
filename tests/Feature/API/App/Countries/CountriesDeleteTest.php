@@ -18,7 +18,7 @@ class CountriesDeleteTest extends BaseAPITestCase
     public string $endpoint = '/countries';
 
     #[Test]
-    public function authentication_required(): void
+    public function authenticationRequired(): void
     {
         $this->user = $this->createUser();
 
@@ -30,7 +30,7 @@ class CountriesDeleteTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function it_cannot_delete_with_incorrect_token()
+    public function itCannotDeleteWithIncorrectToken()
     {
         $this->user = $this->createUserWithTeam();
 
@@ -50,7 +50,7 @@ class CountriesDeleteTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function it_cannot_delete_with_correct_token()
+    public function itCannotDeleteWithCorrectToken()
     {
         $this->user = $this->createUserWithTeam();
 

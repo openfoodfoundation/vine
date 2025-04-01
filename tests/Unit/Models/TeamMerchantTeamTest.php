@@ -10,7 +10,7 @@ use Tests\TestCase;
 class TeamMerchantTeamTest extends TestCase
 {
     #[Test]
-    public function it_has_a_team(): void
+    public function itHasATeam(): void
     {
         $team             = Team::factory()->create();
         $teamMerchantTeam = TeamMerchantTeam::factory()->create([
@@ -25,7 +25,7 @@ class TeamMerchantTeamTest extends TestCase
     }
 
     #[Test]
-    public function it_has_a_team_merchant_team(): void
+    public function itHasATeamMerchantTeam(): void
     {
         $merchantTeam     = Team::factory()->create();
         $teamMerchantTeam = TeamMerchantTeam::factory()->create([

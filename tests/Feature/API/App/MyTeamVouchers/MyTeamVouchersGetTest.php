@@ -21,7 +21,7 @@ class MyTeamVouchersGetTest extends BaseAPITestCase
     protected string $endPoint = '/my-team-vouchers';
 
     #[Test]
-    public function authentication_required(): void
+    public function authenticationRequired(): void
     {
         $this->user = $this->createUser();
 
@@ -33,7 +33,7 @@ class MyTeamVouchersGetTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function standard_user_without_permission_cannot_access()
+    public function standardUserWithoutPermissionCannotAccess()
     {
         $this->user = $this->createUserWithTeam();
 
@@ -52,7 +52,7 @@ class MyTeamVouchersGetTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function it_can_get_all_items_created_by_user_team()
+    public function itCanGetAllItemsCreatedByUserTeam()
     {
         $this->user = $this->createUserWithTeam();
 
@@ -77,7 +77,7 @@ class MyTeamVouchersGetTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function it_can_get_all_items_allocated_to_user_team()
+    public function itCanGetAllItemsAllocatedToUserTeam()
     {
         $this->user = $this->createUserWithTeam();
 
@@ -102,7 +102,7 @@ class MyTeamVouchersGetTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function it_can_get_only_items_created_by_or_allocated_to_user_team()
+    public function itCanGetOnlyItemsCreatedByOrAllocatedToUserTeam()
     {
         $this->user = $this->createUserWithTeam();
 
@@ -134,7 +134,7 @@ class MyTeamVouchersGetTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function it_can_get_a_single_item_created_by_user_team()
+    public function itCanGetASingleItemCreatedByUserTeam()
     {
         $this->user = $this->createUserWithTeam();
 
@@ -161,7 +161,7 @@ class MyTeamVouchersGetTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function it_can_get_a_single_item_allocated_to_user_team()
+    public function itCanGetASingleItemAllocatedToUserTeam()
     {
         $this->user = $this->createUserWithTeam();
 

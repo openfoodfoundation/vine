@@ -18,7 +18,7 @@ class AdminVoucherSetsPostTest extends BaseAPITestCase
     private string $endpoint = '/admin/voucher-sets';
 
     #[Test]
-    public function it_fails_if_not_authenticated()
+    public function itFailsIfNotAuthenticated()
     {
         $this->user = $this->createUser();
 
@@ -27,7 +27,7 @@ class AdminVoucherSetsPostTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function only_admin_can_access()
+    public function onlyAdminCanAccess()
     {
         $this->user = $this->createUserWithTeam();
 
@@ -40,7 +40,7 @@ class AdminVoucherSetsPostTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function admin_can_save_data()
+    public function adminCanSaveData()
     {
         $this->user           = $this->createUserWithTeam();
         $this->user->is_admin = 1;
@@ -84,7 +84,7 @@ class AdminVoucherSetsPostTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function item_is_not_saved_if_merchant_team_does_not_belong_to_service_team()
+    public function itemIsNotSavedIfMerchantTeamDoesNotBelongToServiceTeam()
     {
         $this->user           = $this->createUserWithTeam();
         $this->user->is_admin = 1;

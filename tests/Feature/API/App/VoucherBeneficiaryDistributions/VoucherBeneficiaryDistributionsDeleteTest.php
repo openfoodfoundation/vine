@@ -18,7 +18,7 @@ class VoucherBeneficiaryDistributionsDeleteTest extends BaseAPITestCase
     public string $endpoint = '/voucher-beneficiary-distributions';
 
     #[Test]
-    public function authentication_required(): void
+    public function authenticationRequired(): void
     {
         $this->user = $this->createUser();
 
@@ -30,7 +30,7 @@ class VoucherBeneficiaryDistributionsDeleteTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function standard_user_without_permission_cannot_delete()
+    public function standardUserWithoutPermissionCannotDelete()
     {
         $this->user = $this->createUser();
 
@@ -49,7 +49,7 @@ class VoucherBeneficiaryDistributionsDeleteTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function it_can_not_delete_a_single_resource()
+    public function itCanNotDeleteASingleResource()
     {
         $this->user = $this->createUser();
 

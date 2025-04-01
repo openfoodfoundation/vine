@@ -15,7 +15,7 @@ class AdminVouchersPostTest extends BaseAPITestCase
     private string $endpoint = '/admin/vouchers';
 
     #[Test]
-    public function it_fails_if_not_authenticated()
+    public function itFailsIfNotAuthenticated()
     {
         $this->user = $this->createUser();
 
@@ -24,7 +24,7 @@ class AdminVouchersPostTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function only_admin_can_access()
+    public function onlyAdminCanAccess()
     {
         $this->user = $this->createUserWithTeam();
 
@@ -37,7 +37,7 @@ class AdminVouchersPostTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function admin_can_not_save_data()
+    public function adminCanNotSaveData()
     {
         $this->user = $this->createAdminUser();
 
