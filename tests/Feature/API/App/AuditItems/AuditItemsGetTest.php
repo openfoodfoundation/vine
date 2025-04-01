@@ -19,7 +19,7 @@ class AuditItemsGetTest extends BaseAPITestCase
     public string $endpoint = '/my-team-audit-items';
 
     #[Test]
-    public function authenticationRequired(): void
+    public function authentication_required(): void
     {
         $this->user = $this->createUser();
 
@@ -31,7 +31,7 @@ class AuditItemsGetTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function standardUserWithoutPermissionCannotAccess()
+    public function standard_user_without_permission_cannot_access()
     {
         $this->user = $this->createUserWithTeam();
 
@@ -54,7 +54,7 @@ class AuditItemsGetTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function itCanGetAllResources()
+    public function it_can_get_all_resources()
     {
         $this->user = $this->createUserWithTeam();
 
@@ -85,7 +85,7 @@ class AuditItemsGetTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function itCanNotGetAllResourcesIncorrectAbility()
+    public function it_can_not_get_all_resources_incorrect_ability()
     {
         $this->user = $this->createUserWithTeam();
 
@@ -110,7 +110,7 @@ class AuditItemsGetTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function itCanGetASingleResource()
+    public function it_can_get_a_single_resource()
     {
         $this->user = $this->createUserWithTeam();
 
@@ -128,7 +128,7 @@ class AuditItemsGetTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function itCanNotGetASingleResourceFromAnotherTeam()
+    public function it_can_not_get_a_single_resource_from_another_team()
     {
         $this->user = $this->createUserWithTeam();
 

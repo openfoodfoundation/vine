@@ -19,7 +19,7 @@ class AuditItemsDeleteTest extends BaseAPITestCase
     public string $endpoint = '/my-team-audit-items';
 
     #[Test]
-    public function authenticationRequired(): void
+    public function authentication_required(): void
     {
         $this->user = $this->createUser();
 
@@ -33,7 +33,7 @@ class AuditItemsDeleteTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function itCannotDeleteWithIncorrectToken()
+    public function it_cannot_delete_with_incorrect_token()
     {
         $this->user = $this->createUserWithTeam();
 
@@ -57,7 +57,7 @@ class AuditItemsDeleteTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function itCannotDeleteWithCorrectToken()
+    public function it_cannot_delete_with_correct_token()
     {
         $this->user = $this->createUserWithTeam();
 

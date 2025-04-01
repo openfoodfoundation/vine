@@ -17,7 +17,7 @@ class VoucherValidationGetTest extends BaseAPITestCase
      * @return void
      */
     #[Test]
-    public function itFailsToGetIndividualItemEveryTime()
+    public function it_fails_to_get_individual_item_every_time()
     {
         $this->user = $this->createUser();
 
@@ -32,7 +32,7 @@ class VoucherValidationGetTest extends BaseAPITestCase
      * @return void
      */
     #[Test]
-    public function itFailsToGetAllItemsEveryTime()
+    public function it_fails_to_get_all_items_every_time()
     {
         $this->user = $this->createUser();
 

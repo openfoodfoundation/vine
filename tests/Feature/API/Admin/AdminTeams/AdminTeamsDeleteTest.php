@@ -17,7 +17,7 @@ class AdminTeamsDeleteTest extends BaseAPITestCase
     public string $endpoint = '/admin/teams';
 
     #[Test]
-    public function onlyAdminCanAccess(): void
+    public function only_admin_can_access(): void
     {
         $this->user = $this->createUser();
 
@@ -31,7 +31,7 @@ class AdminTeamsDeleteTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function itCanDeleteATeam()
+    public function it_can_delete_a_team()
     {
         $this->user = $this->createAdminUser();
 

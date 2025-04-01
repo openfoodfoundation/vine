@@ -18,7 +18,7 @@ class VoucherBeneficiaryDistributionsGetTest extends BaseAPITestCase
     public string $endpoint = '/voucher-beneficiary-distributions';
 
     #[Test]
-    public function authenticationRequired(): void
+    public function authentication_required(): void
     {
         $this->user = $this->createUser();
 
@@ -30,7 +30,7 @@ class VoucherBeneficiaryDistributionsGetTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function standardUserWithoutPermissionCannotAccess()
+    public function standard_user_without_permission_cannot_access()
     {
         $this->user = $this->createUser();
 
@@ -49,7 +49,7 @@ class VoucherBeneficiaryDistributionsGetTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function itCanNotGetAllResources()
+    public function it_can_not_get_all_resources()
     {
         $this->user = $this->createUser();
 
@@ -64,7 +64,7 @@ class VoucherBeneficiaryDistributionsGetTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function itCanNotGetASingleResource()
+    public function it_can_not_get_a_single_resource()
     {
         $this->user = $this->createUser();
 

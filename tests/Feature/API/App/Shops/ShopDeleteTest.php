@@ -18,7 +18,7 @@ class ShopDeleteTest extends BaseAPITestCase
     public string $endpoint = '/shops';
 
     #[Test]
-    public function authenticationRequired(): void
+    public function authentication_required(): void
     {
         $this->user = $this->createUser();
 
@@ -30,7 +30,7 @@ class ShopDeleteTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function standardUserWithoutPermissionCannotDelete()
+    public function standard_user_without_permission_cannot_delete()
     {
         $this->user = $this->createUser();
 
@@ -49,7 +49,7 @@ class ShopDeleteTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function itCanNotDeleteASingleResource()
+    public function it_can_not_delete_a_single_resource()
     {
         $this->user = $this->createUser();
 

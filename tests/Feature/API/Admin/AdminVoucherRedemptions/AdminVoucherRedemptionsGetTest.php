@@ -18,7 +18,7 @@ class AdminVoucherRedemptionsGetTest extends BaseAPITestCase
     private string $endpoint = '/admin/voucher-redemptions';
 
     #[Test]
-    public function itFailsIfNotAuthenticated()
+    public function it_fails_if_not_authenticated()
     {
         $this->user = $this->createUserWithTeam();
 
@@ -27,7 +27,7 @@ class AdminVoucherRedemptionsGetTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function onlyAdminCanAccess()
+    public function only_admin_can_access()
     {
         $this->user = $this->createUserWithTeam();
 
@@ -40,7 +40,7 @@ class AdminVoucherRedemptionsGetTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function itReturnsData()
+    public function it_returns_data()
     {
         $this->user = $this->createAdminUser();
 
@@ -70,7 +70,7 @@ class AdminVoucherRedemptionsGetTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function itReturnsSingleData()
+    public function it_returns_single_data()
     {
         $this->user = $this->createAdminUser();
 

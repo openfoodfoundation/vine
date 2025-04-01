@@ -19,7 +19,7 @@ class AuditItemPutTest extends BaseAPITestCase
     public string $endpoint = '/my-team-audit-items';
 
     #[Test]
-    public function authenticationRequired(): void
+    public function authentication_required(): void
     {
         $this->user = $this->createUser();
 
@@ -33,7 +33,7 @@ class AuditItemPutTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function itCannotUpdateWithIncorrectToken()
+    public function it_cannot_update_with_incorrect_token()
     {
         $this->user = $this->createUserWithTeam();
 
@@ -57,7 +57,7 @@ class AuditItemPutTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function itCannotUpdateWithCorrectToken()
+    public function it_cannot_update_with_correct_token()
     {
         $this->user = $this->createUserWithTeam();
 

@@ -22,7 +22,7 @@ class VoucherRedemptionPutTest extends BaseAPITestCase
      * @return void
      */
     #[Test]
-    public function itFailsToUpdateEveryTime()
+    public function it_fails_to_update_every_time()
     {
         $this->user = $this->createUser();
 

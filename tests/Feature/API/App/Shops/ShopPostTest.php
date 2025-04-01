@@ -19,7 +19,7 @@ class ShopPostTest extends BaseAPITestCase
     public string $endpoint = '/shops';
 
     #[Test]
-    public function authenticationRequired(): void
+    public function authentication_required(): void
     {
         $this->user = $this->createUser();
 
@@ -31,7 +31,7 @@ class ShopPostTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function standardUserWithoutPermissionCannotCreate()
+    public function standard_user_without_permission_cannot_create()
     {
         $this->user = $this->createUser();
 
@@ -50,7 +50,7 @@ class ShopPostTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function userWithPermissionCanCreate()
+    public function user_with_permission_can_create()
     {
         $this->user = $this->createUserWithTeam();
 

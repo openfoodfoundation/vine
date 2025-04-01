@@ -20,7 +20,7 @@ class VoucherSetApprovalRequestsDeleteTest extends BaseAPITestCase
     protected string $endPoint = '/my-team-vsmtar';
 
     #[Test]
-    public function itFailsIfNotAuthenticated()
+    public function it_fails_if_not_authenticated()
     {
         Event::fake();
 
@@ -40,7 +40,7 @@ class VoucherSetApprovalRequestsDeleteTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function itFailsToDeleteEveryTime()
+    public function it_fails_to_delete_every_time()
     {
         Event::fake();
 
@@ -64,7 +64,7 @@ class VoucherSetApprovalRequestsDeleteTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function itCanNotDelete()
+    public function it_can_not_delete()
     {
         Event::fake();
 

@@ -19,7 +19,7 @@ class SystemStatisticsGetTest extends BaseAPITestCase
     public string $endpoint = '/system-statistics';
 
     #[Test]
-    public function authenticationRequired(): void
+    public function authentication_required(): void
     {
         $this->user = $this->createUser();
 
@@ -33,7 +33,7 @@ class SystemStatisticsGetTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function standardUserWithoutPermissionCannotAccess()
+    public function standard_user_without_permission_cannot_access()
     {
         $this->user = $this->createUser();
 
@@ -56,7 +56,7 @@ class SystemStatisticsGetTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function itCanGetAllResources()
+    public function it_can_get_all_resources()
     {
         $this->user = $this->createUser();
 
@@ -75,7 +75,7 @@ class SystemStatisticsGetTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function itCanNotGetAllResourcesIncorrectAbility()
+    public function it_can_not_get_all_resources_incorrect_ability()
     {
         $this->user = $this->createUser();
 
@@ -100,7 +100,7 @@ class SystemStatisticsGetTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function itCanGetASingleResource()
+    public function it_can_get_a_single_resource()
     {
         $this->user = $this->createUser();
 

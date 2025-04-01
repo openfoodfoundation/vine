@@ -19,7 +19,7 @@ class MyTeamVouchersPutTest extends BaseAPITestCase
     protected string $endPoint = '/my-team-vouchers';
 
     #[Test]
-    public function authenticationRequired(): void
+    public function authentication_required(): void
     {
         $this->user = $this->createUser();
 
@@ -33,7 +33,7 @@ class MyTeamVouchersPutTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function standardUserWithoutPermissionCannotAccess()
+    public function standard_user_without_permission_cannot_access()
     {
         $this->user = $this->createUserWithTeam();
 
@@ -52,7 +52,7 @@ class MyTeamVouchersPutTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function itCannotUpdate()
+    public function it_cannot_update()
     {
         $this->user = $this->createUserWithTeam();
 

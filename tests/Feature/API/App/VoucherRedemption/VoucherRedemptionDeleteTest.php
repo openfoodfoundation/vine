@@ -20,7 +20,7 @@ class VoucherRedemptionDeleteTest extends BaseAPITestCase
      * @return void
      */
     #[Test]
-    public function itFailsToDeleteEveryTime()
+    public function it_fails_to_delete_every_time()
     {
         $this->user = $this->createUser();
 

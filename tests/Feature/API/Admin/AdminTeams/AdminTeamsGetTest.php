@@ -17,7 +17,7 @@ class AdminTeamsGetTest extends BaseAPITestCase
     public string $endpoint = '/admin/teams';
 
     #[Test]
-    public function onlyAdminCanAccess(): void
+    public function only_admin_can_access(): void
     {
         $this->user = $this->createUser();
 
@@ -29,7 +29,7 @@ class AdminTeamsGetTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function itCanGetAllTeams()
+    public function it_can_get_all_teams()
     {
         $this->user = $this->createAdminUser();
 
@@ -46,7 +46,7 @@ class AdminTeamsGetTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function itCanGetASingleTeam()
+    public function it_can_get_a_single_team()
     {
         $this->user = $this->createAdminUser();
 

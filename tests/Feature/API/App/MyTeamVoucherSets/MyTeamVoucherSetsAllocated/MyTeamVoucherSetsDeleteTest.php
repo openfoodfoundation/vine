@@ -18,7 +18,7 @@ class MyTeamVoucherSetsDeleteTest extends BaseAPITestCase
     protected string $endPoint = '/my-team-voucher-sets-allocated';
 
     #[Test]
-    public function authenticationRequired(): void
+    public function authentication_required(): void
     {
         $this->user = $this->createUser();
 
@@ -32,7 +32,7 @@ class MyTeamVoucherSetsDeleteTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function standardUserWithoutPermissionCannotAccess()
+    public function standard_user_without_permission_cannot_access()
     {
         $this->user = $this->createUserWithTeam();
 
@@ -46,7 +46,7 @@ class MyTeamVoucherSetsDeleteTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function itCannotDelete()
+    public function it_cannot_delete()
     {
         $this->user = $this->createUserWithTeam();
 

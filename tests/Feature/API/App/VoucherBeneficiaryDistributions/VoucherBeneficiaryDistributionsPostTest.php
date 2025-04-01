@@ -23,7 +23,7 @@ class VoucherBeneficiaryDistributionsPostTest extends BaseAPITestCase
     public string $endpoint = '/voucher-beneficiary-distributions';
 
     #[Test]
-    public function authenticationRequired(): void
+    public function authentication_required(): void
     {
         $this->user = $this->createUser();
 
@@ -35,7 +35,7 @@ class VoucherBeneficiaryDistributionsPostTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function standardUserWithoutPermissionCannotCreate()
+    public function standard_user_without_permission_cannot_create()
     {
         $this->user = $this->createUser();
 
@@ -54,7 +54,7 @@ class VoucherBeneficiaryDistributionsPostTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function userWithPermissionCanCreateForFirstTime()
+    public function user_with_permission_can_create_for_first_time()
     {
         $this->user = $this->createUserWithTeam();
 
@@ -93,7 +93,7 @@ class VoucherBeneficiaryDistributionsPostTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function userWithPermissionAndCorrectDistributionIdCanResend()
+    public function user_with_permission_and_correct_distribution_id_can_resend()
     {
         $this->user = $this->createUserWithTeam();
 

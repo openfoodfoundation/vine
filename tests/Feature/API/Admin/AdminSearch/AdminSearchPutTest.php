@@ -14,7 +14,7 @@ class AdminSearchPutTest extends BaseAPITestCase
     private string $endPoint = '/admin/search';
 
     #[Test]
-    public function itFailsIfNotAuthenticated()
+    public function it_fails_if_not_authenticated()
     {
         $this->user = $this->createAdminUser();
 
@@ -23,7 +23,7 @@ class AdminSearchPutTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function itFailsToUpdateEveryTime()
+    public function it_fails_to_update_every_time()
     {
         $this->user = $this->createAdminUser();
 

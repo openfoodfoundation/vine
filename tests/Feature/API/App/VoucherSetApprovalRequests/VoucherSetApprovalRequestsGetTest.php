@@ -22,7 +22,7 @@ class VoucherSetApprovalRequestsGetTest extends BaseAPITestCase
     protected string $endPoint = '/my-team-vsmtar';
 
     #[Test]
-    public function itFailsIfNotAuthenticated()
+    public function it_fails_if_not_authenticated()
     {
         Event::fake();
 
@@ -42,7 +42,7 @@ class VoucherSetApprovalRequestsGetTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function itFailsToGetASingleItemIfNotAuthenticated()
+    public function it_fails_to_get_a_single_item_if_not_authenticated()
     {
         Event::fake();
 
@@ -62,7 +62,7 @@ class VoucherSetApprovalRequestsGetTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function itFailsToGetWithoutAbility()
+    public function it_fails_to_get_without_ability()
     {
         Event::fake();
 
@@ -86,7 +86,7 @@ class VoucherSetApprovalRequestsGetTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function itFailsToGetASingleItemWithoutAbility()
+    public function it_fails_to_get_a_single_item_without_ability()
     {
         Event::fake();
 
@@ -110,7 +110,7 @@ class VoucherSetApprovalRequestsGetTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function itCanGetAllItemsWithAbility()
+    public function it_can_get_all_items_with_ability()
     {
         Event::fake();
 
@@ -132,7 +132,7 @@ class VoucherSetApprovalRequestsGetTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function itCanGetASingleItemWithAbility()
+    public function it_can_get_a_single_item_with_ability()
     {
         Event::fake();
 

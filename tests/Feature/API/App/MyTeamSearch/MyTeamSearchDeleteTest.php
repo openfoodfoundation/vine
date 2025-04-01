@@ -15,7 +15,7 @@ class MyTeamSearchDeleteTest extends BaseAPITestCase
     private string $endPoint = '/my-team-search';
 
     #[Test]
-    public function itFailsIfNotAuthenticated()
+    public function it_fails_if_not_authenticated()
     {
         $this->user = $this->createUser();
 
@@ -24,7 +24,7 @@ class MyTeamSearchDeleteTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function itFailsToDeleteEveryTime()
+    public function it_fails_to_delete_every_time()
     {
         $this->user = $this->createUser();
 

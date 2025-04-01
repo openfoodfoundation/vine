@@ -24,7 +24,7 @@ class AdminVoucherSetMerchantTeamsPostTest extends BaseAPITestCase
     public string $endpoint = '/admin/voucher-set-merchant-teams';
 
     #[Test]
-    public function onlyAdminCanAccess(): void
+    public function only_admin_can_access(): void
     {
         $this->user = $this->createUser();
 
@@ -38,7 +38,7 @@ class AdminVoucherSetMerchantTeamsPostTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function itCanStoreAnItem()
+    public function it_can_store_an_item()
     {
         $this->user = $this->createAdminUser();
 
@@ -75,7 +75,7 @@ class AdminVoucherSetMerchantTeamsPostTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function itRequiresTheMerchantTeamToBeAMerchantOfTheVOucherSetServiceTeam()
+    public function it_requires_the_merchant_team_to_be_a_merchant_of_the_v_oucher_set_service_team()
     {
         $this->user = $this->createAdminUser();
 
@@ -106,7 +106,7 @@ class AdminVoucherSetMerchantTeamsPostTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function itCreatesRequests()
+    public function it_creates_requests()
     {
         Notification::fake();
         VoucherSetMerchantTeamApprovalRequest::where('id', '>=', 1)->delete();

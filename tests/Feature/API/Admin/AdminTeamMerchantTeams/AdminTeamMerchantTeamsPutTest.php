@@ -17,7 +17,7 @@ class AdminTeamMerchantTeamsPutTest extends BaseAPITestCase
     public string $endpoint = '/admin/team-merchant-teams';
 
     #[Test]
-    public function onlyAdminCanAccess(): void
+    public function only_admin_can_access(): void
     {
         $this->user = $this->createUser();
 
@@ -31,7 +31,7 @@ class AdminTeamMerchantTeamsPutTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function itCannotUpdateATeamMerchantTeam()
+    public function it_cannot_update_a_team_merchant_team()
     {
         $this->user = $this->createAdminUser();
 

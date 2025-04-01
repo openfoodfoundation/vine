@@ -17,7 +17,7 @@ class AdminAuditItemPutTest extends BaseAPITestCase
     public string $endpoint = '/admin/audit-items';
 
     #[Test]
-    public function onlyAdminCanAccess(): void
+    public function only_admin_can_access(): void
     {
         $this->user = $this->createUser();
 
@@ -31,7 +31,7 @@ class AdminAuditItemPutTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function itCannotUpdateAResource()
+    public function it_cannot_update_a_resource()
     {
         $this->user = $this->createAdminUser();
 

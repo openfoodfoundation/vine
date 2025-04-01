@@ -11,7 +11,7 @@ use Tests\TestCase;
 class CheckAdminStatusMiddlewareTest extends TestCase
 {
     #[Test]
-    public function adminCanSeeAdminPages(): void
+    public function admin_can_see_admin_pages(): void
     {
         $adminUser = User::factory()->create([
             'is_admin' => 1,
@@ -24,7 +24,7 @@ class CheckAdminStatusMiddlewareTest extends TestCase
     }
 
     #[Test]
-    public function itRedirectsIfNotAdmin(): void
+    public function it_redirects_if_not_admin(): void
     {
         $nonAdminUser = User::factory()->create([
             'is_admin' => 0,
@@ -36,7 +36,7 @@ class CheckAdminStatusMiddlewareTest extends TestCase
     }
 
     #[Test]
-    public function itReturnsJsonMessageIfNotAdmin(): void
+    public function it_returns_json_message_if_not_admin(): void
     {
         $nonAdminUser = User::factory()->create([
             'is_admin' => 0,

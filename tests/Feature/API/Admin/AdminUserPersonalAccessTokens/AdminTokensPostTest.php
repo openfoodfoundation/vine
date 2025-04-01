@@ -18,7 +18,7 @@ class AdminTokensPostTest extends BaseAPITestCase
     public string $endpoint = '/admin/user-personal-access-tokens';
 
     #[Test]
-    public function onlyAdminCanAccess(): void
+    public function only_admin_can_access(): void
     {
         $this->user = $this->createUser();
 
@@ -32,7 +32,7 @@ class AdminTokensPostTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function itCanStoreAToken()
+    public function it_can_store_a_token()
     {
         $this->user = $this->createAdminUser();
 
@@ -59,7 +59,7 @@ class AdminTokensPostTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function itCanNotStoreATokenIfTokenNotExist()
+    public function it_can_not_store_a_token_if_token_not_exist()
     {
         $this->user = $this->createAdminUser();
 

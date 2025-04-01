@@ -13,7 +13,7 @@ class MyProfilePutTest extends BaseAPITestCase
     protected string $endPoint = '/my-profile';
 
     #[Test]
-    public function authenticationRequired(): void
+    public function authentication_required(): void
     {
         $this->user = $this->createUser();
 
@@ -26,7 +26,7 @@ class MyProfilePutTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function standardUserWithoutPermissionCannotAccess()
+    public function standard_user_without_permission_cannot_access()
     {
         $this->user = $this->createUserWithTeam();
 
@@ -40,7 +40,7 @@ class MyProfilePutTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function itCanUpdate()
+    public function it_can_update()
     {
         $this->user = $this->createUserWithTeam();
 
@@ -58,7 +58,7 @@ class MyProfilePutTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function itCanNotUpdateNoLetters()
+    public function it_can_not_update_no_letters()
     {
         $this->user = $this->createUserWithTeam();
 
@@ -76,7 +76,7 @@ class MyProfilePutTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function itCanNotUpdateNoNumbers()
+    public function it_can_not_update_no_numbers()
     {
         $this->user = $this->createUserWithTeam();
 
@@ -94,7 +94,7 @@ class MyProfilePutTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function itCanNotUpdateNoSymbols()
+    public function it_can_not_update_no_symbols()
     {
         $this->user = $this->createUserWithTeam();
 
@@ -112,7 +112,7 @@ class MyProfilePutTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function itCanNotUpdateNoStEnoughCharacters()
+    public function it_can_not_update_no_st_enough_characters()
     {
         $this->user = $this->createUserWithTeam();
 

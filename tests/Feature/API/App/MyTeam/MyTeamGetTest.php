@@ -18,7 +18,7 @@ class MyTeamGetTest extends BaseAPITestCase
     protected string $endPoint = '/my-team';
 
     #[Test]
-    public function authenticationRequired(): void
+    public function authentication_required(): void
     {
         $this->user = $this->createUser();
 
@@ -30,7 +30,7 @@ class MyTeamGetTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function standardUserWithoutPermissionCannotAccess()
+    public function standard_user_without_permission_cannot_access()
     {
         $this->user = $this->createUserWithTeam();
 
@@ -44,7 +44,7 @@ class MyTeamGetTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function itCanGetData()
+    public function it_can_get_data()
     {
         $this->user = $this->createUserWithTeam();
 
@@ -60,7 +60,7 @@ class MyTeamGetTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function itCanNotGetATeam()
+    public function it_can_not_get_a_team()
     {
         $this->user = $this->createUserWithTeam();
 

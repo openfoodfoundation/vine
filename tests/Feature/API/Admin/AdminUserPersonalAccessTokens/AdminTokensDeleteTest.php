@@ -19,7 +19,7 @@ class AdminTokensDeleteTest extends BaseAPITestCase
     public string $endpoint = '/admin/user-personal-access-tokens';
 
     #[Test]
-    public function onlyAdminCanAccess(): void
+    public function only_admin_can_access(): void
     {
         $this->user = $this->createUser();
 
@@ -33,7 +33,7 @@ class AdminTokensDeleteTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function itCanDeleteAToken()
+    public function it_can_delete_a_token()
     {
         $this->user = $this->createAdminUser();
 

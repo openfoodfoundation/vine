@@ -17,7 +17,7 @@ class VoucherSetApprovalRequestsPostTest extends BaseAPITestCase
     protected string $endPoint = '/my-team-vsmtar';
 
     #[Test]
-    public function itFailsIfNotAuthenticated()
+    public function it_fails_if_not_authenticated()
     {
         $this->user = $this->createUser();
 
@@ -26,7 +26,7 @@ class VoucherSetApprovalRequestsPostTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function itFailsIfUserDoesNotHaveTheCorrectToken()
+    public function it_fails_if_user_does_not_have_the_correct_token()
     {
         $this->user = $this->createUserWithTeam();
 
@@ -37,7 +37,7 @@ class VoucherSetApprovalRequestsPostTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function itCanNotCreate()
+    public function it_can_not_create()
     {
         $this->user = $this->createUserWithTeam();
 

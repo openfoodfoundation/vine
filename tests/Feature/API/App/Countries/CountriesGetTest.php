@@ -19,7 +19,7 @@ class CountriesGetTest extends BaseAPITestCase
     public string $endpoint = '/countries';
 
     #[Test]
-    public function authenticationRequired(): void
+    public function authentication_required(): void
     {
         $this->user = $this->createUser();
 
@@ -31,7 +31,7 @@ class CountriesGetTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function itCanNotGetAllResourcesIncorrectAbility()
+    public function it_can_not_get_all_resources_incorrect_ability()
     {
         $this->user = $this->createUserWithTeam();
 
@@ -52,7 +52,7 @@ class CountriesGetTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function itCanGetAllResources()
+    public function it_can_get_all_resources()
     {
         $this->user = $this->createUserWithTeam();
 

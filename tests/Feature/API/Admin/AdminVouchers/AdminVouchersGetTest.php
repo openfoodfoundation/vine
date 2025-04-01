@@ -14,7 +14,7 @@ class AdminVouchersGetTest extends BaseAPITestCase
     private string $endpoint = '/admin/vouchers';
 
     #[Test]
-    public function itFailsIfNotAuthenticated()
+    public function it_fails_if_not_authenticated()
     {
         $this->user = $this->createUserWithTeam();
 
@@ -23,7 +23,7 @@ class AdminVouchersGetTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function onlyAdminCanAccess()
+    public function only_admin_can_access()
     {
         $this->user = $this->createUserWithTeam();
 
@@ -36,7 +36,7 @@ class AdminVouchersGetTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function itReturnsData()
+    public function it_returns_data()
     {
         $this->user = $this->createAdminUser();
 
@@ -55,7 +55,7 @@ class AdminVouchersGetTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function itReturnsSingleData()
+    public function it_returns_single_data()
     {
         $this->user = $this->createAdminUser();
 

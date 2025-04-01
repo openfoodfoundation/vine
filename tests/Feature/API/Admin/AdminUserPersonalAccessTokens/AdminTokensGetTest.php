@@ -17,7 +17,7 @@ class AdminTokensGetTest extends BaseAPITestCase
     public string $endpoint = '/admin/user-personal-access-tokens';
 
     #[Test]
-    public function onlyAdminCanAccess(): void
+    public function only_admin_can_access(): void
     {
         $this->user = $this->createUser();
 
@@ -29,7 +29,7 @@ class AdminTokensGetTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function itCanGetAllTokens()
+    public function it_can_get_all_tokens()
     {
         $this->user = $this->createAdminUser();
 
@@ -54,7 +54,7 @@ class AdminTokensGetTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function itCanGetASingleToken()
+    public function it_can_get_a_single_token()
     {
         $this->user = $this->createAdminUser();
 

@@ -17,7 +17,7 @@ class AdminSearchGetTest extends BaseAPITestCase
     private string $endPoint = '/admin/search';
 
     #[Test]
-    public function itFailsIfNotAuthenticated()
+    public function it_fails_if_not_authenticated()
     {
         $this->user = $this->createAdminUser();
 
@@ -26,7 +26,7 @@ class AdminSearchGetTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function itMustHaveSearchQueryOfAtLeastLengthThree()
+    public function it_must_have_search_query_of_at_least_length_three()
     {
         $this->user = $this->createAdminUser();
 
@@ -43,7 +43,7 @@ class AdminSearchGetTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function itReturnsRelevantVoucherData()
+    public function it_returns_relevant_voucher_data()
     {
         $this->user           = $this->createUserWithTeam();
         $this->user->is_admin = 1;
@@ -70,7 +70,7 @@ class AdminSearchGetTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function itReturnsRelevantVoucherSetData()
+    public function it_returns_relevant_voucher_set_data()
     {
         $this->user           = $this->createUserWithTeam();
         $this->user->is_admin = 1;
@@ -97,7 +97,7 @@ class AdminSearchGetTest extends BaseAPITestCase
     }
 
     #[Test]
-    public function itDoesNotReturnSingleData()
+    public function it_does_not_return_single_data()
     {
         $this->user = $this->createAdminUser();
 
