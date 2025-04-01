@@ -2,9 +2,7 @@
 
 namespace App\Console\Commands;
 
-use App\Jobs\Vouchers\GenerateStorageVoucherQrCode;
 use App\Jobs\VoucherSets\CollateVoucherSetAggregatesJob;
-use App\Models\Voucher;
 use App\Models\VoucherSet;
 use Illuminate\Console\Command;
 
