@@ -26,7 +26,7 @@ function dateFormat(dateTime) {
     dayjs.extend(relativeTime)
     dayjs.extend(localizedFormat)
 
-    return dayjs(dateTime).fromNow() + ' (' + dayjs(dateTime).format('LLL') + ')'
+    return dayjs(dateTime).fromNow() + ' (' + dayjs(dateTime).format('LLLL') + ')'
 }
 
 function getApiAccessToken() {
@@ -75,7 +75,6 @@ function revokeApiAccessToken() {
             </h2>
 
         </div>
-
         <div class="card">
             <div class="card-header">
                 API Access Token details
@@ -97,10 +96,11 @@ function revokeApiAccessToken() {
                     {{ apiAccessToken.user?.name }}
                 </Link>
             </div>
-            <div class="my-1">
+            <div class="my-1" v-if="apiAccessToken.created_at">
                  <span class="font-bold">
                     Created:
                 </span>
+
                 {{ dateFormat(apiAccessToken.created_at) }}
             </div>
             <div v-if="apiAccessToken.last_used_at" class="my-1">
@@ -110,11 +110,11 @@ function revokeApiAccessToken() {
                 </span>
                 {{ dateFormat(apiAccessToken.last_used_at) }}
             </div>
-            <div v-if="apiAccessToken.expires_at" class="my-1">
+            <div class="my-1">
                 <span class="font-bold">
                     Expires:
                 </span>
-                {{ dateFormat(apiAccessToken.expires_at) }}
+                {{ apiAccessToken.expires_at ? dateFormat(apiAccessToken.expires_at) : '(No expiry)' }}
             </div>
         </div>
 

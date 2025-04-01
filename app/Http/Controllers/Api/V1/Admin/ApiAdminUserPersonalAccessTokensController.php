@@ -120,7 +120,19 @@ class ApiAdminUserPersonalAccessTokensController extends Controller
     )]
     public function index(): JsonResponse
     {
-        $this->query = PersonalAccessToken::with($this->associatedData)->select(['id', 'tokenable_id', 'name', 'last_used_at', 'expires_at']);
+        $this->query = PersonalAccessToken::with($this->associatedData)
+            ->select(
+                [
+                    'id',
+                    'tokenable_type',
+                    'tokenable_id',
+                    'name',
+                    'abilities',
+                    'last_used_at',
+                    'expires_at',
+                    'created_at',
+                ]
+            );
         $this->query = $this->updateReadQueryBasedOnUrl();
         $this->data  = $this->query->paginate($this->limit);
 
@@ -271,7 +283,19 @@ class ApiAdminUserPersonalAccessTokensController extends Controller
     )]
     public function show(string $id)
     {
-        $this->query = PersonalAccessToken::with($this->associatedData)->select(['id', 'tokenable_type', 'tokenable_id', 'name', 'abilities', 'last_used_at', 'expires_at']);
+        $this->query = PersonalAccessToken::with($this->associatedData)
+            ->select(
+                [
+                    'id',
+                    'tokenable_type',
+                    'tokenable_id',
+                    'name',
+                    'abilities',
+                    'last_used_at',
+                    'expires_at',
+                    'created_at',
+                ]
+            );
         $this->query = $this->updateReadQueryBasedOnUrl();
         $this->data  = $this->query->find($id);
 
