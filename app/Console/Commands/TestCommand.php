@@ -2,8 +2,8 @@
 
 namespace App\Console\Commands;
 
-use App\Jobs\Vouchers\GenerateStorageVoucherQrCode;
-use App\Models\Voucher;
+use App\Jobs\VoucherSets\CollateVoucherSetAggregatesJob;
+use App\Models\VoucherSet;
 use Illuminate\Console\Command;
 
 class TestCommand extends Command
@@ -20,17 +20,17 @@ class TestCommand extends Command
      *
      * @var string
      */
-    protected $description = 'Test command. Do not run in production.';
+    protected $description = 'Test command. Do not run in production unless you know what you are doing.';
 
     /**
      * Execute the console command.
      */
-    public function handle()
+    public function handle(): void
     {
-        $vouchers = Voucher::all();
+        $voucherSets = VoucherSet::all();
 
-        foreach ($vouchers as $voucher) {
-            dispatch(new GenerateStorageVoucherQrCode($voucher));
+        foreach ($voucherSets as $voucherSet) {
+            dispatch(new CollateVoucherSetAggregatesJob($voucherSet));
         }
     }
 }

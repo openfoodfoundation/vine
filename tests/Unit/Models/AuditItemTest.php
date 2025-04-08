@@ -13,7 +13,7 @@ use Tests\TestCase;
 class AuditItemTest extends TestCase
 {
     #[Test]
-    public function test_user_relation(): void
+    public function testUserRelation(): void
     {
         $user = User::factory()->create();
 
@@ -31,7 +31,7 @@ class AuditItemTest extends TestCase
     }
 
     #[Test]
-    public function test_team_relation(): void
+    public function testTeamRelation(): void
     {
         $team = Team::factory()->create();
 
@@ -49,7 +49,7 @@ class AuditItemTest extends TestCase
     }
 
     #[Test]
-    public function test_voucher_relation(): void
+    public function testVoucherRelation(): void
     {
         $voucher = Voucher::factory()->create();
 
@@ -67,7 +67,7 @@ class AuditItemTest extends TestCase
     }
 
     #[Test]
-    public function test_voucher_set_relation(): void
+    public function testVoucherSetRelation(): void
     {
         $voucherSet = VoucherSet::factory()->create();
 

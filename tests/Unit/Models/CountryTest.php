@@ -13,7 +13,7 @@ class CountryTest extends TestCase
     use RefreshDatabase;
 
     #[Test]
-    public function test_seeds_all_countries_exactly_once(): void
+    public function testSeedsAllCountriesExactlyOnce(): void
     {
         $countries = Country::all();
 

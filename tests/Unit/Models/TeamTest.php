@@ -12,7 +12,7 @@ use Tests\TestCase;
 class TeamTest extends TestCase
 {
     #[Test]
-    public function test_team_user_relation(): void
+    public function testTeamUserRelation(): void
     {
         $team = Team::factory()->create();
 
@@ -40,7 +40,7 @@ class TeamTest extends TestCase
     }
 
     #[Test]
-    public function test_user_relation(): void
+    public function testUserRelation(): void
     {
         $team = Team::factory()->create();
 
@@ -67,7 +67,7 @@ class TeamTest extends TestCase
     }
 
     #[Test]
-    public function test_audit_items_relation(): void
+    public function testAuditItemsRelation(): void
     {
         $team = Team::factory()->create();
 
