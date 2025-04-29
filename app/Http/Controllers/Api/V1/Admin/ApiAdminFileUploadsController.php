@@ -20,7 +20,10 @@ use Knuckles\Scribe\Attributes\Group;
 use Knuckles\Scribe\Attributes\Subgroup;
 
 #[Group('Admin Endpoints')]
-#[Subgroup('/admin/file-uploads', 'RPerform file uploads to the configured cloud storage system.')]
+#[Subgroup('/admin/file-uploads', 'Perform file uploads to the configured cloud storage system.')]
+/**
+ * @hideFromAPIDocumentation
+ */
 class ApiAdminFileUploadsController extends Controller
 {
     /**
