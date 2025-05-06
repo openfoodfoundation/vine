@@ -38,75 +38,91 @@ function cancelRedeemingPartial() {
     redeemingPartial.value = false
 }
 
-
 function redeemAll() {
-    redeeming.value = true
-    redeemingPartial.value = false
+    redeeming.value = true;
+    redeemingPartial.value = false;
 
     Swal.fire({
         title: 'Redeem all $' + ($props.voucher.voucher_value_remaining / 100).toFixed(2) + '?',
-        html: '<p>This will fully redeem this voucher. Note: Please only confirm your action with a SINGLE click - do not double click.</p>',
+        html: '<p>This will fully redeem this voucher.</p>',
         icon: 'warning',
         showCancelButton: true,
         confirmButtonText: 'Redeem!',
+        showLoaderOnConfirm: true,
+        allowOutsideClick: () => !Swal.isLoading(),
+        preConfirm: () => {
+            return redeemVoucher($props.voucher.voucher_value_remaining.toFixed(0))
+                .catch(error => {
+                    redeeming.value = false;
+                    Swal.showValidationMessage(
+                        error?.response?.data?.meta?.message || 'Redemption failed.'
+                    );
+                });
+        }
     }).then(result => {
-        if (result.value) {
-            redeemVoucher($props.voucher.voucher_value_remaining.toFixed(0))
+        if (result.isConfirmed) {
+            Swal.fire({
+                title: 'Success!',
+                text: 'Your redemption was completed.',
+                icon: 'success',
+                showConfirmButton: false,
+                allowOutsideClick: false,
+            });
+
+            setTimeout(() => window.location.reload(), 2000);
         }
     });
 }
 
 function redeemPartial() {
-    redeeming.value = true
+    redeeming.value = true;
+
     Swal.fire({
         title: 'Redeem $' + redeemingPartialDollarAmount.value + '?',
-        html: '<p>This will partially redeem this voucher. NOTE: Please only confirm your action with a SINGLE click - do not double click.</p>',
+        html: '<p>This will partially redeem this voucher.</p>',
         icon: 'warning',
         showCancelButton: true,
         confirmButtonText: 'Redeem!',
+        showLoaderOnConfirm: true,
+        allowOutsideClick: () => !Swal.isLoading(),
+        preConfirm: () => {
+            return redeemVoucher((redeemingPartialDollarAmount.value * 100).toFixed(0))
+                .catch(error => {
+                    redeeming.value = false;
+                    Swal.showValidationMessage(error?.response?.data?.meta?.message || 'Unknown error');
+                });
+        }
     }).then(result => {
-        if (result.value) {
-            redeemVoucher((redeemingPartialDollarAmount.value * 100).toFixed(0))
-        } else {
-            redeeming.value = false;
+        if (result.isConfirmed) {
+            Swal.fire({
+                title: 'Success!',
+                text: 'Your redemption was completed.',
+                icon: 'success',
+                showConfirmButton: false,
+                allowOutsideClick: false,
+            });
+
+            setTimeout(() => window.location.reload(), 2000);
         }
     });
-
 }
 
-function redeemVoucher(amount) {
+
+async function redeemVoucher(amount) {
 
     redeeming.value = true;
 
-    let payload = {
+    const payload = {
         voucher_id: $props.voucher.id,
         voucher_set_id: $props.voucher.voucher_set_id,
         amount: amount
-    }
+    };
 
-    axios.post('/voucher-redemptions', payload).then(response => {
+    const response = await axios.post('/voucher-redemptions', payload);
 
-        Swal.fire({
-            icon: 'success',
-            title: 'Redeemed.',
-            text: response.data.meta.message,
-        });
-
-        redeemingPartial.value = false
-
-
-        setTimeout(fn => {
-            window.location.reload();
-        }, 1000)
-
-    }).catch(error => {
-        Swal.fire({
-            icon: 'error',
-            title: 'Oops!',
-            text: error.response.data.meta.message,
-        });
-        redeeming.value = false;
-    })
+    // Don't show Swal here — do it in the `.then()` block if needed
+    redeemingPartial.value = false;
+    return response;
 }
 
 watch(redeemingPartialDollarAmount, (val) => {

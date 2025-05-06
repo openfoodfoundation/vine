@@ -12,6 +12,7 @@ use App\Services\VoucherService;
 use Exception;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 use Knuckles\Scribe\Attributes\Authenticated;
@@ -19,6 +20,7 @@ use Knuckles\Scribe\Attributes\Endpoint;
 use Knuckles\Scribe\Attributes\Group;
 use Knuckles\Scribe\Attributes\Response;
 use Knuckles\Scribe\Attributes\Subgroup;
+use Throwable;
 
 #[Group('App Endpoints')]
 #[Subgroup('/voucher-redemptions', 'API for creating voucher redemptions. You must be a member of a team that is configured to be a merchant.')]
@@ -119,6 +121,8 @@ class ApiVoucherRedemptionsController extends Controller
 
         try {
 
+            DB::beginTransaction();
+
             $voucherId    = $this->request->get('voucher_id');
             $voucherSetId = $this->request->get('voucher_set_id');
             $amount       = $this->request->get('amount');
@@ -126,7 +130,9 @@ class ApiVoucherRedemptionsController extends Controller
             /**
              * Ensure the voucher exists with the set
              */
-            $voucher = Voucher::where('voucher_set_id', $voucherSetId)->find($voucherId);
+            $voucher = Voucher::where('voucher_set_id', $voucherSetId)
+                ->lockForUpdate()
+                ->find($voucherId);
 
             if (!$voucher) {
                 $this->responseCode = 404;
@@ -203,8 +209,16 @@ class ApiVoucherRedemptionsController extends Controller
             $this->message           = ApiResponse::RESPONSE_REDEMPTION_SUCCESSFUL->value . ' ' . $redemptionMessageSuffix;
             $this->data              = $redemption;
 
+            DB::commit();
+
         }
         catch (Exception $e) {
+            DB::rollBack();
+            $this->responseCode = 500;
+            $this->message      = ApiResponse::RESPONSE_ERROR->value . ':' . $e->getMessage();
+        }
+        catch (Throwable $e) {
+            DB::rollBack();
             $this->responseCode = 500;
             $this->message      = ApiResponse::RESPONSE_ERROR->value . ':' . $e->getMessage();
         }
