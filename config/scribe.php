@@ -310,7 +310,7 @@ INTRO
             Strategies\Headers\GetFromHeaderAttribute::class,
             Strategies\Headers\GetFromHeaderTag::class,
             [
-                'override',
+                'static_data',
                 [
                     'Content-Type'    => 'application/json',
                     'Accept'          => 'application/json',

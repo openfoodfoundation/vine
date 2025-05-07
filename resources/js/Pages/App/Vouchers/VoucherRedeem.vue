@@ -18,6 +18,7 @@ const $props = defineProps({
 });
 
 
+const redeeming = ref(false)
 const redeemingPartial = ref(false)
 const redeemingPartialDollarAmount = ref(0)
 const redeemingPartialDollarAmountIsValid = ref(false)
@@ -28,16 +29,18 @@ onMounted(() => {
 
 function beginRedeemingPartial() {
     redeemingPartialDollarAmount.value = (parseInt($props.voucher.voucher_value_remaining) / 100).toFixed(2)
+    redeeming.value = true
     redeemingPartial.value = true
 }
 
 function cancelRedeemingPartial() {
+    redeeming.value = false
     redeemingPartial.value = false
 }
 
-
 function redeemAll() {
-    redeemingPartial.value = false
+    redeeming.value = true;
+    redeemingPartial.value = false;
 
     Swal.fire({
         title: 'Redeem all $' + ($props.voucher.voucher_value_remaining / 100).toFixed(2) + '?',
@@ -45,56 +48,81 @@ function redeemAll() {
         icon: 'warning',
         showCancelButton: true,
         confirmButtonText: 'Redeem!',
+        showLoaderOnConfirm: true,
+        allowOutsideClick: () => !Swal.isLoading(),
+        preConfirm: () => {
+            return redeemVoucher($props.voucher.voucher_value_remaining.toFixed(0))
+                .catch(error => {
+                    redeeming.value = false;
+                    Swal.showValidationMessage(
+                        error?.response?.data?.meta?.message || 'Redemption failed.'
+                    );
+                });
+        }
     }).then(result => {
-        if (result.value) {
-            redeemVoucher($props.voucher.voucher_value_remaining.toFixed(0))
+        if (result.isConfirmed) {
+            Swal.fire({
+                title: 'Success!',
+                text: 'Your redemption was completed.',
+                icon: 'success',
+                showConfirmButton: false,
+                allowOutsideClick: false,
+            });
+
+            setTimeout(() => window.location.reload(), 2000);
         }
     });
 }
 
 function redeemPartial() {
+    redeeming.value = true;
+
     Swal.fire({
         title: 'Redeem $' + redeemingPartialDollarAmount.value + '?',
         html: '<p>This will partially redeem this voucher.</p>',
         icon: 'warning',
         showCancelButton: true,
         confirmButtonText: 'Redeem!',
+        showLoaderOnConfirm: true,
+        allowOutsideClick: () => !Swal.isLoading(),
+        preConfirm: () => {
+            return redeemVoucher((redeemingPartialDollarAmount.value * 100).toFixed(0))
+                .catch(error => {
+                    redeeming.value = false;
+                    Swal.showValidationMessage(error?.response?.data?.meta?.message || 'Unknown error');
+                });
+        }
     }).then(result => {
-        if (result.value) {
-            redeemVoucher((redeemingPartialDollarAmount.value * 100).toFixed(0))
+        if (result.isConfirmed) {
+            Swal.fire({
+                title: 'Success!',
+                text: 'Your redemption was completed.',
+                icon: 'success',
+                showConfirmButton: false,
+                allowOutsideClick: false,
+            });
+
+            setTimeout(() => window.location.reload(), 2000);
         }
     });
-
 }
 
-function redeemVoucher(amount) {
-    let payload = {
+
+async function redeemVoucher(amount) {
+
+    redeeming.value = true;
+
+    const payload = {
         voucher_id: $props.voucher.id,
         voucher_set_id: $props.voucher.voucher_set_id,
         amount: amount
-    }
+    };
 
-    axios.post('/voucher-redemptions', payload).then(response => {
+    const response = await axios.post('/voucher-redemptions', payload);
 
-        Swal.fire({
-            icon: 'success',
-            title: 'Redeemed.',
-            text: response.data.meta.message,
-        });
-
-        redeemingPartial.value = false
-
-        setTimeout(fn => {
-            window.location.reload();
-        }, 1000)
-
-    }).catch(error => {
-        Swal.fire({
-            icon: 'error',
-            title: 'Oops!',
-            text: error.response.data.meta.message,
-        });
-    })
+    // Don't show Swal here — do it in the `.then()` block if needed
+    redeemingPartial.value = false;
+    return response;
 }
 
 watch(redeemingPartialDollarAmount, (val) => {
@@ -118,7 +146,9 @@ watch(redeemingPartialDollarAmount, (val) => {
 
             <div class="my-4">
 
-                <div class="title text-green text-xl text-green-500" v-if="voucher.voucher_value_remaining > 0">Voucher is Valid</div>
+                <div class="title text-green text-xl text-green-500" v-if="voucher.voucher_value_remaining > 0">Voucher
+                    is Valid
+                </div>
                 <div class="title" v-else>Voucher is Fully Redeemed!</div>
 
                 <div class="title text-red text-lg text-red-500" v-if="voucher.is_test">
@@ -143,7 +173,8 @@ watch(redeemingPartialDollarAmount, (val) => {
 
                             How much should be redeemed?
 
-                            <input inputmode="decimal" pattern="[0-9]*" type="text" step="0.01" v-model.number="redeemingPartialDollarAmount"
+                            <input inputmode="decimal" pattern="[0-9]*" type="text" step="0.01"
+                                   v-model.number="redeemingPartialDollarAmount"
                                    class="w-full text-center text-xl rounded p-8 border-2 focus:outline-none" min="0.01"
                                    :class="{'border-green-500': redeemingPartialDollarAmountIsValid, 'border-red-500': !redeemingPartialDollarAmountIsValid}"
                             >
@@ -156,12 +187,14 @@ watch(redeemingPartialDollarAmount, (val) => {
 
                         <div class="flex justify-between items-center" v-if="redeemingPartialDollarAmountIsValid">
                             <div class="w-1/2 pr-2">
-                                <button class="w-full p-8 font-bold text-2xl rounded border bg-gray-300" @click="cancelRedeemingPartial()">
+                                <button class="w-full p-8 font-bold text-2xl rounded border bg-gray-300"
+                                        @click="cancelRedeemingPartial()">
                                     Cancel
                                 </button>
                             </div>
                             <div class="w-1/2 pl-2">
-                                <button class="w-full p-8 font-bold text-2xl rounded border bg-gray-300" @click="redeemPartial()">
+                                <button class="w-full p-8 font-bold text-2xl rounded border bg-gray-300"
+                                        @click="redeemPartial()">
                                     Redeem
                                 </button>
                             </div>
@@ -170,12 +203,16 @@ watch(redeemingPartialDollarAmount, (val) => {
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-2" v-else>
                         <div class="">
-                            <button class="w-full p-8 font-bold text-2xl rounded border bg-gray-300" @click="beginRedeemingPartial()">
+                            <button class="w-full p-8 font-bold text-2xl rounded border bg-gray-300"
+                                    :disabled="redeeming"
+                                    @click.once="beginRedeemingPartial()">
                                 Redeem PART
                             </button>
                         </div>
                         <div class="">
-                            <button class="w-full p-8 font-bold text-2xl rounded border bg-gray-300" @click="redeemAll()">
+                            <button class="w-full p-8 font-bold text-2xl rounded border bg-gray-300"
+                                    :disabled="redeeming"
+                                    @click.once="redeemAll()">
                                 Redeem ALL
                             </button>
                         </div>
@@ -194,7 +231,8 @@ watch(redeemingPartialDollarAmount, (val) => {
                     </div>
 
                     <div>
-                        <div v-for="redemption in voucher.voucher_redemptions" class="flex justify-between items-center py-2 border-b">
+                        <div v-for="redemption in voucher.voucher_redemptions"
+                             class="flex justify-between items-center py-2 border-b">
                             <div>
                                 <div class="text-lg">
                                     ${{ (redemption.redeemed_amount / 100).toFixed(2) }}
