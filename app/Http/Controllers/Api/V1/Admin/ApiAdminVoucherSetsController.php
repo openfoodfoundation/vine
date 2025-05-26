@@ -139,6 +139,12 @@ class ApiAdminVoucherSetsController extends Controller
     )]
     #[Authenticated]
     #[BodyParam(
+        name       : 'name',
+        type       : 'string',
+        description: 'The name of the voucher set. If not set, one will be auto-generated.',
+        required   : false
+    )]
+    #[BodyParam(
         name       : 'is_test',
         type       : 'boolean',
         description: 'Whether the voucher set is for testing purposes',
@@ -182,7 +188,7 @@ class ApiAdminVoucherSetsController extends Controller
     )]
     #[BodyParam(
         name       : 'expires_at',
-        type       : 'string',
+        type       : 'date',
         description: 'The expiration date of the voucher set, if one exists',
         required   : false
     )]
@@ -203,6 +209,10 @@ class ApiAdminVoucherSetsController extends Controller
             'is_test' => [
                 'required',
                 'boolean',
+            ],
+            'name' => [
+                'sometimes',
+                'nullable',
             ],
             'allocated_to_service_team_id' => [
                 'required',

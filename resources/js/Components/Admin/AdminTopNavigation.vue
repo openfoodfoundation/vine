@@ -198,8 +198,9 @@ function highlightMatchingText(text) {
                             <a :href="'/admin/voucher-set/' + voucherSet.id"
                                class="flex justify-between w-full py-2 border-b"
                                tabindex="0">
-                                <div class="flex">
+                                <div class="">
                                     <div v-html="highlightMatchingText(voucherSet.id)"></div>
+                                    <div v-html="highlightMatchingText(voucherSet.name)" class="font-normal"></div>
                                 </div>
                                 <i class="fa fa-chevron-right flex items-center"></i>
                             </a>

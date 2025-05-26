@@ -3,6 +3,7 @@
 namespace App\Listeners\VoucherSets;
 
 use App\Events\VoucherSets\VoucherSetWasCreated;
+use App\Jobs\VoucherSets\PopulateVoucherSetName;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
 class HandleVoucherSetWasCreatedEvent implements ShouldQueue

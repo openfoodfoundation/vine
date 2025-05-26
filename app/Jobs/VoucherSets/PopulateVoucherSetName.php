@@ -4,11 +4,10 @@ namespace App\Jobs\VoucherSets;
 
 use App\Models\VoucherSet;
 use App\Services\VoucherSetService;
-use Exception;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Queue\Queueable;
 
-class CollateVoucherSetAggregatesJob implements ShouldQueue
+class PopulateVoucherSetName implements ShouldQueue
 {
     use Queueable;
 
@@ -20,17 +19,13 @@ class CollateVoucherSetAggregatesJob implements ShouldQueue
     public function __construct(public VoucherSet $voucherSet) {}
 
     /**
-     * Execute the job.
-     *
-     * @throws Exception
+     * Execute the job. Populate the voucher set name but only if it is null.
      */
     public function handle(): void
     {
-        VoucherSetService::collateVoucherSetAggregates($this->voucherSet);
-
-        /**
-         * If null, generate a name for the set.
-         */
-        dispatch(new PopulateVoucherSetName($this->voucherSet));
+        if (is_null($this->voucherSet->name)) {
+            $this->voucherSet->name = VoucherSetService::generateDefaultVoucherSetName($this->voucherSet);
+            $this->voucherSet->saveQuietly();
+        }
     }
 }

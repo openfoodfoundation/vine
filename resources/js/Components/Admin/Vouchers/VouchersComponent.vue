@@ -59,6 +59,7 @@ function getVouchers(page = 1) {
             <tr>
                 <td class="p-2">ID</td>
                 <td>Test?</td>
+                <td>Voucher Set</td>
                 <td>Created By</td>
                 <td>Allocated To</td>
 
@@ -78,6 +79,9 @@ function getVouchers(page = 1) {
                 </td>
                 <td>
                     {{voucher.is_test ? 'Yes' : ''}}
+                </td>
+                <td>
+                    {{voucher.voucher_set?.name ?? '(Voucher set name not generated yet)' }}
                 </td>
                 <td>
                     <Link :href="'/admin/team/' + voucher.created_by_team_id">

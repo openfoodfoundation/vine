@@ -3,10 +3,11 @@
 namespace Database\Factories;
 
 use App\Enums\VoucherSetType;
+use App\Models\VoucherSet;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\VoucherSet>
+ * @extends Factory<VoucherSet>
  */
 class VoucherSetFactory extends Factory
 {
@@ -19,6 +20,7 @@ class VoucherSetFactory extends Factory
     {
         return [
             'id'                           => $this->faker->uuid(),
+            'name'                         => null,
             'created_by_team_id'           => $this->faker->numberBetween(1, 10),
             'allocated_to_service_team_id' => $this->faker->numberBetween(1, 10),
             'created_by_user_id'           => $this->faker->numberBetween(1, 10),
