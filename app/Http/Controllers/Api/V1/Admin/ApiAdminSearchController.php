@@ -57,18 +57,18 @@ class ApiAdminSearchController extends Controller
             return $this->respond();
         }
 
-        $searchTerm                = $this->request->get('query');
-        $search                    = '%' . $searchTerm . '%';
-        $this->data['users']       = User::where('name', 'LIKE', $search)
-                                         ->orWhere('email', 'LIKE', $search)
-                                         ->get();
-        $this->data['teams']       = Team::where('name', 'LIKE', $search)
-                                         ->get();
-        $this->data['vouchers']    = Voucher::where('id', 'LIKE', $search)->orWhere('voucher_short_code', 'LIKE', $search)
-                                            ->get();
+        $searchTerm          = $this->request->get('query');
+        $search              = '%' . $searchTerm . '%';
+        $this->data['users'] = User::where('name', 'LIKE', $search)
+            ->orWhere('email', 'LIKE', $search)
+            ->get();
+        $this->data['teams'] = Team::where('name', 'LIKE', $search)
+            ->get();
+        $this->data['vouchers'] = Voucher::where('id', 'LIKE', $search)->orWhere('voucher_short_code', 'LIKE', $search)
+            ->get();
         $this->data['voucherSets'] = VoucherSet::where('id', 'LIKE', $search)
-                                               ->orWhere('name', 'LIKE', $search)
-                                               ->get();
+            ->orWhere('name', 'LIKE', $search)
+            ->get();
 
         return $this->respond();
     }

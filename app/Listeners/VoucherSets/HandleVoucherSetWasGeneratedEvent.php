@@ -4,7 +4,6 @@ namespace App\Listeners\VoucherSets;
 
 use App\Events\VoucherSets\VoucherSetWasGenerated;
 use App\Jobs\VoucherSets\CollateVoucherSetAggregatesJob;
-use App\Jobs\VoucherSets\PopulateVoucherSetName;
 use App\Jobs\VoucherSets\SendVoucherSetGenerationEmailNotification;
 use App\Models\User;
 use App\Notifications\Mail\VoucherSets\VoucherSetGenerationSuccessEmailNotification;
@@ -37,8 +36,6 @@ class HandleVoucherSetWasGeneratedEvent implements ShouldQueue
          */
         $notificationUser = User::find($event->voucherSet->created_by_user_id);
         $notificationUser?->notify(new VoucherSetGenerationSuccessEmailNotification(voucherSet: $event->voucherSet));
-
-
 
     }
 }
