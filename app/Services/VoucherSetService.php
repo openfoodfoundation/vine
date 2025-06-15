@@ -5,6 +5,7 @@ namespace App\Services;
 use App\Models\Voucher;
 use App\Models\VoucherRedemption;
 use App\Models\VoucherSet;
+use App\Models\VoucherSetMerchantTeam;
 
 class VoucherSetService
 {
@@ -80,5 +81,36 @@ class VoucherSetService
         $voucherSet->is_denomination_valid     = self::validateVoucherSetDenominations($voucherSet);
 
         $voucherSet->saveQuietly();
+    }
+
+    public static function generateDefaultVoucherSetName(VoucherSet $voucherSet): string
+    {
+        $voucherSetName = '';
+
+        /**
+         * Get the merchant teams initials
+         */
+        $merchantTeams               = VoucherSetMerchantTeam::with('merchantTeam')->where('voucher_set_id', $voucherSet->id)->get();
+        $voucherSetTeamInitialsArray = [];
+        foreach ($merchantTeams as $merchantTeam) {
+            $voucherSetTeamInitialsArray[] = TeamService::generateTeamInitials($merchantTeam->merchantTeam);
+        }
+
+        $voucherSetName .= implode(' - ', $voucherSetTeamInitialsArray);
+
+        /**
+         * Append the service team name
+         * Append the funding team name
+         */
+        $voucherSetName .= isset($voucherSet->allocatedToServiceTeam?->name) ? ' - ' . $voucherSet->allocatedToServiceTeam->name : ' - (No Service Team)';
+        $voucherSetName .= isset($voucherSet->fundedByTeam?->name) ? ' - ' . $voucherSet->fundedByTeam->name : ' - (No Funding Team)';
+
+        /**
+         * Append the total set value in dollars
+         */
+        $voucherSetName .= ' - $' . number_format(($voucherSet->total_set_value / 100), 0, '.', '');
+        $voucherSetName .= ' - ' . $voucherSet->created_at->format('d/m/Y');
+
+        return $voucherSetName;
     }
 }

@@ -27,5 +27,10 @@ class CollateVoucherSetAggregatesJob implements ShouldQueue
     public function handle(): void
     {
         VoucherSetService::collateVoucherSetAggregates($this->voucherSet);
+
+        /**
+         * If null, generate a name for the set.
+         */
+        dispatch(new PopulateVoucherSetName($this->voucherSet));
     }
 }

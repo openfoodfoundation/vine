@@ -41,11 +41,13 @@ function getVoucherSet() {
         <template #header>
             <h2 class="font-normal text-xl text-gray-800 leading-tight">Voucher Set</h2>
         </template>
-
         <div class="card">
             <h2>
-                {{ voucherSet.id }}
+                {{ voucherSet.name }}
             </h2>
+            <div class="text-xs">
+                ID: {{ voucherSet.id }}
+            </div>
             <div v-if="voucherSet.is_test" class="font-bold text-red-500 text-sm">
                 Test voucher set
             </div>

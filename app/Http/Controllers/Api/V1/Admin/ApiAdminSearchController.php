@@ -67,6 +67,7 @@ class ApiAdminSearchController extends Controller
         $this->data['vouchers'] = Voucher::where('id', 'LIKE', $search)->orWhere('voucher_short_code', 'LIKE', $search)
             ->get();
         $this->data['voucherSets'] = VoucherSet::where('id', 'LIKE', $search)
+            ->orWhere('name', 'LIKE', $search)
             ->get();
 
         return $this->respond();

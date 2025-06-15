@@ -2,7 +2,7 @@
 
 namespace App\Console\Commands;
 
-use App\Jobs\VoucherSets\CollateVoucherSetAggregatesJob;
+use App\Jobs\VoucherSets\PopulateVoucherSetName;
 use App\Models\VoucherSet;
 use Illuminate\Console\Command;
 
@@ -30,7 +30,11 @@ class TestCommand extends Command
         $voucherSets = VoucherSet::all();
 
         foreach ($voucherSets as $voucherSet) {
-            dispatch(new CollateVoucherSetAggregatesJob($voucherSet));
+            $voucherSet->name = null;
+            $voucherSet->saveQuietly();
+
+            dispatch(new PopulateVoucherSetName($voucherSet));
         }
+
     }
 }

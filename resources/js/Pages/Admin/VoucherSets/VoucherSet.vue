@@ -110,8 +110,11 @@ function forceRemoveMerchant(merchantTeam) {
 
         <div class="card">
             <h2>
-                {{ $props.id }}
+                {{ voucherSet.name }}
             </h2>
+            <div class="text-xs">
+                # {{ $props.id }}
+            </div>
             <div v-if="voucherSet.is_test" class="font-bold text-red-500 text-sm">
                 Test voucher set
             </div>

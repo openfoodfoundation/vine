@@ -69,7 +69,15 @@ function getVoucher() {
                 </div>
 
                 <div v-if="voucher.voucher_set_id">
-                    <Link :href="route('admin.voucher-set', {id:voucher.voucher_set_id})">{{ voucher.voucher_set_id }}</Link>
+                    <div class="font-bold">
+                        {{voucher.voucher_set?.name ?? '(Voucher set name not generated yet)' }}
+                    </div>
+                    <Link :href="route('admin.voucher-set', {id:voucher.voucher_set_id})"
+                        class="text-blue-500 underline"
+                    >
+                        {{ voucher.voucher_set_id }}
+                    </Link>
+
                 </div>
             </div>
         </div>
