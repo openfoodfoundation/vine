@@ -17,9 +17,9 @@ class Voucher extends Model
     use HasUuids;
     use SoftDeletes;
 
-    protected $keyType   = 'string';
-    public $incrementing = false;
-    protected $casts     = [
+    protected $keyType          = 'string';
+    public    $incrementing     = false;
+    protected $casts            = [
         'expires_at' => 'datetime',
     ];
     protected $dispatchesEvents = [

@@ -2,8 +2,7 @@
 
 namespace App\Console\Commands;
 
-use App\Jobs\VoucherSets\PopulateVoucherSetName;
-use App\Models\VoucherSet;
+use App\Models\Voucher;
 use Illuminate\Console\Command;
 
 class TestCommand extends Command
@@ -27,13 +26,13 @@ class TestCommand extends Command
      */
     public function handle(): void
     {
-        $voucherSets = VoucherSet::all();
+        $vouchers = Voucher::with('voucherSet')->get();
 
-        foreach ($voucherSets as $voucherSet) {
-            $voucherSet->name = null;
-            $voucherSet->saveQuietly();
-
-            dispatch(new PopulateVoucherSetName($voucherSet));
+        foreach ($vouchers as $voucher) {
+            if (isset($voucher->voucherSet->expires_at)) {
+                $voucher->expires_at = $voucher->voucherSet->expires_at;
+                $voucher->save();
+            }
         }
 
     }
