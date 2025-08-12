@@ -33,10 +33,10 @@ class GenerateVoucherSetVouchersCommand extends Command
     public function handle(): int
     {
         $voucherSet = VoucherSet::where('is_denomination_valid', 1)
-                                ->whereNull('voucher_generation_started_at')
-                                ->whereNull('voucher_generation_finished_at')
-                                ->whereNotNull('merchant_approval_request_id')
-                                ->first();
+            ->whereNull('voucher_generation_started_at')
+            ->whereNull('voucher_generation_finished_at')
+            ->whereNotNull('merchant_approval_request_id')
+            ->first();
 
         if ($voucherSet) {
             $voucherSet->voucher_generation_started_at = now();
@@ -81,7 +81,7 @@ class GenerateVoucherSetVouchersCommand extends Command
                     $model->voucher_value_remaining      = $denominationListing['value'];
                     $model->is_test                      = $voucherSet->is_test;
                     $model->voucher_short_code           = VoucherService::findUniqueShortCodeForVoucher();
-                    $model->expires_at                   = $voucherSet->expires_at; 
+                    $model->expires_at                   = $voucherSet->expires_at;
                     $model->save();
 
                     $numCreated++;
