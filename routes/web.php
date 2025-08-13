@@ -123,7 +123,8 @@ Route::middleware(['auth', CheckIfPasswordUpdateRequired::class])->group(functio
         }
 
         if (!is_null($voucher->expires_at)) {
-            if ($voucher->expires_at < now()) {
+            if ($voucher->expires_at <= now()) {
+
                 return Inertia::render('App/ErrorMessagePage', [
                     'voucherSetId' => $voucherSetId,
                     'voucherId'    => $voucherId,
