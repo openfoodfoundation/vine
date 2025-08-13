@@ -27,6 +27,7 @@ class VoucherFactory extends Factory
             'voucher_value_original'       => $value,
             'voucher_value_remaining'      => $value,
             'voucher_short_code'           => VoucherService::findUniqueShortCodeForVoucher(),
+            'expires_at'                   => null,
         ];
     }
 }

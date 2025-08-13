@@ -81,6 +81,7 @@ class GenerateVoucherSetVouchersCommand extends Command
                     $model->voucher_value_remaining      = $denominationListing['value'];
                     $model->is_test                      = $voucherSet->is_test;
                     $model->voucher_short_code           = VoucherService::findUniqueShortCodeForVoucher();
+                    $model->expires_at                   = $voucherSet->expires_at;
                     $model->save();
 
                     $numCreated++;

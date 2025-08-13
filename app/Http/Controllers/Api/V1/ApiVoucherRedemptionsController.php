@@ -163,6 +163,15 @@ class ApiVoucherRedemptionsController extends Controller
             VoucherService::updateVoucherAmountRemaining($voucher);
             $voucher->refresh();
 
+            if (!is_null($voucher->expires_at)) {
+                if ($voucher->expires_at <= now()) {
+                    $this->responseCode = 400;
+                    $this->message      = ApiResponse::RESPONSE_REDEMPTION_FAILED_VOUCHER_EXPIRED->value;
+
+                    return $this->respond();
+                }
+            }
+
             if ($voucher->last_redemption_at > now()->subMinute()) {
 
                 $this->responseCode = 429;
