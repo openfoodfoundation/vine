@@ -258,7 +258,7 @@ function updateTeam() {
             <div v-if="teamUsers.data && teamUsers.data.length > 0">
                 <div v-for="teamUser in teamUsers.data" class="flex justify-between items-center  hover:opacity-75">
                     <Link :href="route('admin.user', teamUser.user_id)"
-                          class="border-b p-2 mr-2 flex-grow flex justify-between items-center hover:no-underline">
+                          class="border-b p-2 mr-2 grow flex justify-between items-center hover:no-underline">
 
 
                         <div>{{ teamUser.user?.name }}</div>

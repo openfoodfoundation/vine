@@ -211,7 +211,7 @@ function filesWereUploaded(fileDetails) {
                            {{ selectedTeam?.name }}
                        </Link>
 
-                        <DangerButton class="ml-2 !p-1 !px-2" @click.prevent="item.team_id = ''">
+                        <DangerButton class="ml-2 p-1! px-2!" @click.prevent="item.team_id = ''">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                  stroke="currentColor" class="h-4">
                                 <path stroke-linecap="round" stroke-linejoin="round"
@@ -244,7 +244,7 @@ function filesWereUploaded(fileDetails) {
                             <div class="flex justify-start items-center ">
 
                                 {{ item?.voucher_template_path }}
-                                <DangerButton class="ml-2 !p-1 !px-2" @click.prevent="item.voucher_template_path = ''">
+                                <DangerButton class="ml-2 p-1! px-2!" @click.prevent="item.voucher_template_path = ''">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                          stroke-width="1.5" stroke="currentColor" class="h-4">
                                         <path stroke-linecap="round" stroke-linejoin="round"
