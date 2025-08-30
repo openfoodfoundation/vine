@@ -78,7 +78,7 @@ function searchCountry() {
 
         <div v-if="updatingCountry">
             <div class="flex justify-between items-center">
-                <div class="flex-grow mr-2">
+                <div class="grow mr-2">
                     <TextInput
                         id="country"
                         type="text"
@@ -101,7 +101,7 @@ function searchCountry() {
         </div>
 
         <div v-else class="flex justify-between items-center">
-            <div @click="updatingCountry = true" class="cursor-pointer flex-grow mr-2">
+            <div @click="updatingCountry = true" class="cursor-pointer grow mr-2">
                 {{ newCountry.name }} ({{ newCountry.currency_code }})
             </div>
             <div class="ml-2">

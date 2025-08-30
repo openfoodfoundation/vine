@@ -199,7 +199,7 @@ const showingNavigationDropdown = ref(false);
             <!-- Page Heading -->
             <header class="bg-white" v-if="$slots.header">
                 <div class="container mx-auto py-6 px-4 flex justify-between items-center">
-                    <div class="w-full flex-grow font-bold text-lg">
+                    <div class="w-full grow font-bold text-lg">
                         <slot name="header" />
                     </div>
                     <div class="md:w-1/2" v-if="!$page.url.startsWith('/admin')">
