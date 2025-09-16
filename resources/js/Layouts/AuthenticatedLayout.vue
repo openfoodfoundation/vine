@@ -101,14 +101,14 @@ const showingNavigationDropdown = ref(false);
                                             Audit Trail
                                         </DropdownLink>
 
-                                        <hr>
+                                        <hr class="text-gray-200">
                                         <div class="px-4 opacity-50 text-xs mt-4">
                                             Switch team
                                         </div>
                                         <DropdownLink :href="'/switch-team/' + userTeam.team_id" v-for="userTeam in usePage().props.auth.availableTeams">
                                             {{ userTeam.team.name }}
                                         </DropdownLink>
-                                        <hr>
+                                        <hr class="text-gray-200">
 
 
                                         <DropdownLink :href="route('logout')" method="post" as="button">

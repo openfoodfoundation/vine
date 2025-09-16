@@ -11,9 +11,16 @@ export default {
     ],
 
     theme: {
+        borderColor: {
+            DEFAULT: '#e5e7eb', // Tailwind gray.200
+        },
         extend: {
             fontFamily: {
                 sans: ['Oswald', ...defaultTheme.fontFamily.sans],
+            },
+
+            colors: {
+                transparent: "transparent",
             },
         },
     },
