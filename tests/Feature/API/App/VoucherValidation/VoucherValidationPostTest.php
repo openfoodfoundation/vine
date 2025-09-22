@@ -206,7 +206,7 @@ class VoucherValidationPostTest extends BaseAPITestCase
          * Assert status code & message are expected
          */
         $response->assertStatus(409);
-        $this->assertEquals($responseObject->meta->message, ApiResponse::RESPONSE_REDEMPTION_FAILED_VOUCHER_EXPIRED->value);
+        $this->assertEquals($responseObject->meta->message, ApiResponse::RESPONSE_VOUCHER_EXPIRED->value);
     }
 
     #[Test]

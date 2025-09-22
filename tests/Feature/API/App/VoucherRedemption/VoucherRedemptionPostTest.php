@@ -375,6 +375,6 @@ class VoucherRedemptionPostTest extends BaseAPITestCase
         $response->assertStatus(400);
 
         $responseObject = json_decode($response->getContent(), false);
-        $this->assertSame(ApiResponse::RESPONSE_REDEMPTION_FAILED_VOUCHER_EXPIRED->value, $responseObject->meta->message);
+        $this->assertSame(ApiResponse::RESPONSE_VOUCHER_EXPIRED->value, $responseObject->meta->message);
     }
 }
