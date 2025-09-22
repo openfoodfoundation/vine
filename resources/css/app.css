@@ -1,5 +1,21 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@200..700&display=swap');
 @import "tailwindcss";
+
+@layer base {
+    input[type='text'],
+    input[type='email'],
+    input[type='password'],
+    select,
+    textarea {
+        @apply px-3 py-2 rounded-md border border-gray-300;
+    }
+
+    *, ::before, ::after {
+        @apply border-gray-200;
+    }
+}
+
 
 body{
     font-family: "Open Sans", sans-serif;
@@ -7,7 +23,7 @@ body{
 }
 
 a {
-    @apply hover:underline ;
+    @apply hover:underline;
 }
 
 h2 {
