@@ -145,6 +145,15 @@ class ApiVoucherValidationController extends Controller
                 ]
             );
 
+            if (!is_null($voucher->expires_at)) {
+                if ($voucher->expires_at <= now()) {
+                    $this->responseCode = 409;
+                    $this->message      = ApiResponse::RESPONSE_REDEMPTION_FAILED_VOUCHER_EXPIRED->value;
+
+                    return $this->respond();
+                }
+            }
+
             /**
              * At this point everything checks out, we can return the voucher details
              */
