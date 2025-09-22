@@ -1,0 +1,1 @@
+import{c as o,a as n,I as s}from"./app-DmpzTF29.js";const a=["type"],p={__name:"SecondaryButton",props:{type:{type:String,default:"button"}},setup(t){return(e,r)=>(n(),o("button",{type:t.type,class:"secondaryButton"},[s(e.$slots,"default")],8,a))}};export{p as _};
