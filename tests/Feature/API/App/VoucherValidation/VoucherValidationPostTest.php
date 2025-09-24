@@ -2,6 +2,7 @@
 
 namespace Tests\Feature\API\App\VoucherValidation;
 
+use App\Enums\ApiResponse;
 use App\Models\Voucher;
 use App\Models\VoucherSet;
 use App\Models\VoucherSetMerchantTeam;
@@ -15,36 +16,6 @@ class VoucherValidationPostTest extends BaseAPITestCase
     use RefreshDatabase;
 
     protected string $endPoint = '/voucher-validation';
-
-    #[Test]
-    public function itFailsIfVoucherIdentifierIsWrong()
-    {
-
-        $this->user = $this->createUserWithTeam();
-
-        Sanctum::actingAs(
-            $this->user
-        );
-
-        $voucherSet         = VoucherSet::factory()->createQuietly();
-        $voucherSetMerchant = VoucherSetMerchantTeam::factory()->createQuietly(
-            [
-                'voucher_set_id'   => $voucherSet->id,
-                'merchant_team_id' => $this->user->current_team_id,
-            ]
-        );
-
-        $payload = [
-            'type'  => 'voucher_id',
-            'value' => 'INCORRECT VALUE',
-        ];
-
-        $data = json_encode($payload);
-
-        $response = $this->postJson($this->apiRoot . $this->endPoint, $payload);
-
-        $response->assertStatus(404);
-    }
 
     #[Test]
     public function itCanValidateVoucherUsingId()
@@ -165,6 +136,77 @@ class VoucherValidationPostTest extends BaseAPITestCase
         $this->assertEquals($voucher->id, $responseObj->data->id);
         $this->assertObjectNotHasProperty(propertyName: 'created_by_team_id', object: $responseObj->data);
         $this->assertObjectNotHasProperty(propertyName: 'allocated_to_service_team_id', object: $responseObj->data);
+    }
+
+    #[Test]
+    public function itFailsIfVoucherIdentifierIsWrong()
+    {
+
+        $this->user = $this->createUserWithTeam();
+
+        Sanctum::actingAs(
+            $this->user
+        );
+
+        $voucherSet         = VoucherSet::factory()->createQuietly();
+        $voucherSetMerchant = VoucherSetMerchantTeam::factory()->createQuietly(
+            [
+                'voucher_set_id'   => $voucherSet->id,
+                'merchant_team_id' => $this->user->current_team_id,
+            ]
+        );
+
+        $payload = [
+            'type'  => 'voucher_id',
+            'value' => 'INCORRECT VALUE',
+        ];
+
+        $data = json_encode($payload);
+
+        $response = $this->postJson($this->apiRoot . $this->endPoint, $payload);
+
+        $response->assertStatus(404);
+    }
+
+    #[Test]
+    public function itFailsIfVoucherIsExpired()
+    {
+
+        $this->user = $this->createUserWithTeam();
+
+        Sanctum::actingAs(
+            $this->user
+        );
+
+        $voucherSet         = VoucherSet::factory()->createQuietly();
+        $voucherSetMerchant = VoucherSetMerchantTeam::factory()->createQuietly(
+            [
+                'voucher_set_id'   => $voucherSet->id,
+                'merchant_team_id' => $this->user->current_team_id,
+            ]
+        );
+
+        $voucher = Voucher::factory()->create(
+            [
+                'voucher_set_id' => $voucherSet->id,
+                'expires_at'     => now()->subMonth(),
+            ]
+        );
+
+        $payload = [
+            'type'  => 'voucher_id',
+            'value' => $voucher->id,
+        ];
+
+        $response = $this->postJson($this->apiRoot . $this->endPoint, $payload);
+
+        $responseObject = json_decode($response->getContent());
+
+        /**
+         * Assert status code & message are expected
+         */
+        $response->assertStatus(409);
+        $this->assertEquals($responseObject->meta->message, ApiResponse::RESPONSE_VOUCHER_EXPIRED->value);
     }
 
     #[Test]
