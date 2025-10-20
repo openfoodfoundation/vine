@@ -2,7 +2,7 @@
 
 namespace App\Services;
 
-use App\Jobs\Vouchers\AssignUniqueShortCodeToVoucherJob;
+
 use App\Models\Voucher;
 use App\Models\VoucherRedemption;
 use Exception;
@@ -82,8 +82,6 @@ class VoucherService
      *
      * This function is not for ASSIGNING the short code, it only GENERATES it.
      * The functionality is isolated for testing purposes. The assignment occurs in the following job.
-     *
-     * @see AssignUniqueShortCodeToVoucherJob
      *
      * @return string
      */
