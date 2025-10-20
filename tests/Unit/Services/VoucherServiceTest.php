@@ -5,6 +5,7 @@ namespace Tests\Unit\Services;
 use App\Models\Voucher;
 use App\Models\VoucherRedemption;
 use App\Services\VoucherService;
+use Exception;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
@@ -74,7 +75,7 @@ class VoucherServiceTest extends TestCase
 
         // Generate 50 short codes
         for ($i = 0; $i < 50; $i++) {
-            $shortCode = VoucherService::findUniqueShortCodeForVoucher();
+            $shortCode    = VoucherService::findUniqueShortCodeForVoucher();
             $shortCodes[] = $shortCode;
 
             // Create a voucher with this code so the next iteration must generate a different one
@@ -109,7 +110,7 @@ class VoucherServiceTest extends TestCase
         $voucher = Voucher::factory()->create();
 
         VoucherRedemption::factory()->create([
-            'voucher_id' => $voucher->id,
+            'voucher_id'      => $voucher->id,
             'redeemed_amount' => 100,
         ]);
 
@@ -127,17 +128,17 @@ class VoucherServiceTest extends TestCase
         $voucher = Voucher::factory()->create();
 
         VoucherRedemption::factory()->create([
-            'voucher_id' => $voucher->id,
+            'voucher_id'      => $voucher->id,
             'redeemed_amount' => 100,
         ]);
 
         VoucherRedemption::factory()->create([
-            'voucher_id' => $voucher->id,
+            'voucher_id'      => $voucher->id,
             'redeemed_amount' => 250,
         ]);
 
         VoucherRedemption::factory()->create([
-            'voucher_id' => $voucher->id,
+            'voucher_id'      => $voucher->id,
             'redeemed_amount' => 75,
         ]);
 
@@ -156,17 +157,17 @@ class VoucherServiceTest extends TestCase
         $voucher2 = Voucher::factory()->create();
 
         VoucherRedemption::factory()->create([
-            'voucher_id' => $voucher1->id,
+            'voucher_id'      => $voucher1->id,
             'redeemed_amount' => 100,
         ]);
 
         VoucherRedemption::factory()->create([
-            'voucher_id' => $voucher1->id,
+            'voucher_id'      => $voucher1->id,
             'redeemed_amount' => 200,
         ]);
 
         VoucherRedemption::factory()->create([
-            'voucher_id' => $voucher2->id,
+            'voucher_id'      => $voucher2->id,
             'redeemed_amount' => 500,
         ]);
 
@@ -201,7 +202,7 @@ class VoucherServiceTest extends TestCase
         ]);
 
         VoucherRedemption::factory()->create([
-            'voucher_id' => $voucher->id,
+            'voucher_id'      => $voucher->id,
             'redeemed_amount' => 300,
         ]);
 
@@ -221,17 +222,17 @@ class VoucherServiceTest extends TestCase
         ]);
 
         VoucherRedemption::factory()->create([
-            'voucher_id' => $voucher->id,
+            'voucher_id'      => $voucher->id,
             'redeemed_amount' => 250,
         ]);
 
         VoucherRedemption::factory()->create([
-            'voucher_id' => $voucher->id,
+            'voucher_id'      => $voucher->id,
             'redeemed_amount' => 100,
         ]);
 
         VoucherRedemption::factory()->create([
-            'voucher_id' => $voucher->id,
+            'voucher_id'      => $voucher->id,
             'redeemed_amount' => 150,
         ]);
 
@@ -251,12 +252,12 @@ class VoucherServiceTest extends TestCase
         ]);
 
         VoucherRedemption::factory()->create([
-            'voucher_id' => $voucher->id,
+            'voucher_id'      => $voucher->id,
             'redeemed_amount' => 600,
         ]);
 
         VoucherRedemption::factory()->create([
-            'voucher_id' => $voucher->id,
+            'voucher_id'      => $voucher->id,
             'redeemed_amount' => 400,
         ]);
 
@@ -278,12 +279,12 @@ class VoucherServiceTest extends TestCase
         // Disable events to prevent CollateVoucherAggregatesJob from throwing exception on over-redemption
         VoucherRedemption::withoutEvents(function () use ($voucher) {
             VoucherRedemption::factory()->create([
-                'voucher_id' => $voucher->id,
+                'voucher_id'      => $voucher->id,
                 'redeemed_amount' => 700,
             ]);
 
             VoucherRedemption::factory()->create([
-                'voucher_id' => $voucher->id,
+                'voucher_id'      => $voucher->id,
                 'redeemed_amount' => 500,
             ]);
         });
@@ -300,13 +301,13 @@ class VoucherServiceTest extends TestCase
     public function updateVoucherAmountRemainingUpdatesVoucherSuccessfully(): void
     {
         $voucher = Voucher::factory()->create([
-            'voucher_value_original' => 1000,
+            'voucher_value_original'  => 1000,
             'voucher_value_remaining' => 1000,
         ]);
 
         VoucherRedemption::withoutEvents(function () use ($voucher) {
             VoucherRedemption::factory()->create([
-                'voucher_id' => $voucher->id,
+                'voucher_id'      => $voucher->id,
                 'redeemed_amount' => 300,
             ]);
         });
@@ -323,17 +324,17 @@ class VoucherServiceTest extends TestCase
     #[Test]
     public function updateVoucherAmountRemainingThrowsExceptionWhenOverRedeemed(): void
     {
-        $this->expectException(\Exception::class);
+        $this->expectException(Exception::class);
         $this->expectExceptionMessageMatches('/has had too many redemptions/');
 
         $voucher = Voucher::factory()->create([
-            'voucher_value_original' => 1000,
+            'voucher_value_original'  => 1000,
             'voucher_value_remaining' => 1000,
         ]);
 
         VoucherRedemption::withoutEvents(function () use ($voucher) {
             VoucherRedemption::factory()->create([
-                'voucher_id' => $voucher->id,
+                'voucher_id'      => $voucher->id,
                 'redeemed_amount' => 1200,
             ]);
         });
@@ -348,20 +349,21 @@ class VoucherServiceTest extends TestCase
     public function updateVoucherAmountRemainingDoesNotUpdateWhenNegative(): void
     {
         $voucher = Voucher::factory()->create([
-            'voucher_value_original' => 1000,
+            'voucher_value_original'  => 1000,
             'voucher_value_remaining' => 1000,
         ]);
 
         VoucherRedemption::withoutEvents(function () use ($voucher) {
             VoucherRedemption::factory()->create([
-                'voucher_id' => $voucher->id,
+                'voucher_id'      => $voucher->id,
                 'redeemed_amount' => 1500,
             ]);
         });
 
         try {
             VoucherService::updateVoucherAmountRemaining($voucher);
-        } catch (\Exception $e) {
+        }
+        catch (Exception $e) {
             // Exception expected
         }
 
@@ -376,21 +378,21 @@ class VoucherServiceTest extends TestCase
     public function collateVoucherAggregatesUpdatesAllFieldsCorrectly(): void
     {
         $voucher = Voucher::factory()->create([
-            'voucher_value_original' => 1000,
+            'voucher_value_original'  => 1000,
             'voucher_value_remaining' => 1000,
-            'voucher_short_code' => 'AB1234',
+            'voucher_short_code'      => 'AB1234',
             'num_voucher_redemptions' => 0,
-            'last_redemption_at' => null,
+            'last_redemption_at'      => null,
         ]);
 
         VoucherRedemption::withoutEvents(function () use ($voucher) {
             VoucherRedemption::factory()->create([
-                'voucher_id' => $voucher->id,
+                'voucher_id'      => $voucher->id,
                 'redeemed_amount' => 300,
             ]);
 
             VoucherRedemption::factory()->create([
-                'voucher_id' => $voucher->id,
+                'voucher_id'      => $voucher->id,
                 'redeemed_amount' => 200,
             ]);
         });
@@ -411,14 +413,14 @@ class VoucherServiceTest extends TestCase
     public function collateVoucherAggregatesRemovesShortCodeWhenFullyRedeemed(): void
     {
         $voucher = Voucher::factory()->create([
-            'voucher_value_original' => 1000,
+            'voucher_value_original'  => 1000,
             'voucher_value_remaining' => 1000,
-            'voucher_short_code' => 'AB1234',
+            'voucher_short_code'      => 'AB1234',
         ]);
 
         VoucherRedemption::withoutEvents(function () use ($voucher) {
             VoucherRedemption::factory()->create([
-                'voucher_id' => $voucher->id,
+                'voucher_id'      => $voucher->id,
                 'redeemed_amount' => 1000,
             ]);
         });
@@ -437,10 +439,10 @@ class VoucherServiceTest extends TestCase
     public function collateVoucherAggregatesDoesNotUpdateRedemptionFieldsWhenNoRedemptions(): void
     {
         $voucher = Voucher::factory()->create([
-            'voucher_value_original' => 1000,
+            'voucher_value_original'  => 1000,
             'voucher_value_remaining' => 1000,
             'num_voucher_redemptions' => 0,
-            'last_redemption_at' => null,
+            'last_redemption_at'      => null,
         ]);
 
         VoucherService::collateVoucherAggregates($voucher);
@@ -457,17 +459,17 @@ class VoucherServiceTest extends TestCase
     #[Test]
     public function collateVoucherAggregatesThrowsExceptionWhenOverRedeemed(): void
     {
-        $this->expectException(\Exception::class);
+        $this->expectException(Exception::class);
         $this->expectExceptionMessageMatches('/has had too many redemptions/');
 
         $voucher = Voucher::factory()->create([
-            'voucher_value_original' => 1000,
+            'voucher_value_original'  => 1000,
             'voucher_value_remaining' => 1000,
         ]);
 
         VoucherRedemption::withoutEvents(function () use ($voucher) {
             VoucherRedemption::factory()->create([
-                'voucher_id' => $voucher->id,
+                'voucher_id'      => $voucher->id,
                 'redeemed_amount' => 1500,
             ]);
         });

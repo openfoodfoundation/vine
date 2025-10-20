@@ -2,7 +2,6 @@
 
 namespace App\Services;
 
-
 use App\Models\Voucher;
 use App\Models\VoucherRedemption;
 use Exception;
