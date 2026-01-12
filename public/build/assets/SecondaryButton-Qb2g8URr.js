@@ -1,0 +1,1 @@
+import{c as o,I as n,f as s}from"./app-Cj2xMCKC.js";const r=["type"],p={__name:"SecondaryButton",props:{type:{type:String,default:"button"}},setup(t){return(e,a)=>(s(),o("button",{type:t.type,class:"secondaryButton"},[n(e.$slots,"default")],8,r))}};export{p as _};

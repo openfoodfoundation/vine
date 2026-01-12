@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>Open Food Network VINE - API Documentation</title>
+    <title> - API Documentation</title>
 
     <link href="https://fonts.googleapis.com/css?family=PT+Sans&display=swap" rel="stylesheet">
 
@@ -143,7 +143,7 @@
      style="width: calc((100% - 1800px) / 2 + 300px); padding-left: calc((100% - 1800px) / 2); min-width: 300px; max-height: 100vh">
     <div class="sl-flex sl-items-center sl-mb-5 sl-ml-4">
                 <h4 class="sl-text-paragraph sl-leading-snug sl-font-prose sl-font-semibold sl-text-heading">
-            Open Food Network VINE - API Documentation
+             - API Documentation
         </h4>
     </div>
 
@@ -354,36 +354,6 @@
                                                                             </div>
                                                                     <div class="expandable">
                                         <div class="sl-flex sl-items-center sl-h-md sl-pr-4 sl-pl-8 sl-bg-canvas-100 hover:sl-bg-canvas-200 sl-cursor-pointer sl-select-none"
-                                             id="toc-item-app-endpoints-my-team-search">
-                                            <div class="sl-flex-1 sl-items-center sl-truncate sl-mr-1.5 sl-p-0" title="/my-team-search">
-                                                <a class="ElementsTableOfContentsItem sl-block sl-no-underline"
-                                                   href="#app-endpoints-my-team-search">
-                                                    /my-team-search
-                                                </a>
-                                            </div>
-                                                                                            <div class="sl-flex sl-items-center sl-text-xs expansion-chevrons">
-                                                    <svg aria-hidden="true" focusable="false" data-prefix="fas"
-                                                         data-icon="chevron-right"
-                                                         class="svg-inline--fa fa-chevron-right fa-fw sl-icon sl-text-muted"
-                                                         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
-                                                        <path fill="currentColor"
-                                                              d="M96 480c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L242.8 256L73.38 86.63c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l192 192c12.5 12.5 12.5 32.75 0 45.25l-192 192C112.4 476.9 104.2 480 96 480z"></path>
-                                                    </svg>
-                                                </div>
-                                                                                    </div>
-
-                                                                                    <div class="children" style="display: none;">
-                                                                                                    <a class="ElementsTableOfContentsItem sl-block sl-no-underline"
-                                                       href="#app-endpoints-GETapi-v1-my-team-search">
-                                                        <div title="GET /" id="toc-item-app-endpoints-GETapi-v1-my-team-search"
-                                                             class="sl-flex sl-items-center sl-h-md sl-pr-4 sl-pl-12 sl-bg-canvas-100 hover:sl-bg-canvas-200 sl-cursor-pointer sl-select-none">
-                                                            GET /
-                                                        </div>
-                                                    </a>
-                                                                                            </div>
-                                                                            </div>
-                                                                    <div class="expandable">
-                                        <div class="sl-flex sl-items-center sl-h-md sl-pr-4 sl-pl-8 sl-bg-canvas-100 hover:sl-bg-canvas-200 sl-cursor-pointer sl-select-none"
                                              id="toc-item-app-endpoints-my-team-audit-items">
                                             <div class="sl-flex-1 sl-items-center sl-truncate sl-mr-1.5 sl-p-0" title="/my-team-audit-items">
                                                 <a class="ElementsTableOfContentsItem sl-block sl-no-underline"
@@ -408,13 +378,6 @@
                                                         <div title="GET /" id="toc-item-app-endpoints-GETapi-v1-my-team-audit-items"
                                                              class="sl-flex sl-items-center sl-h-md sl-pr-4 sl-pl-12 sl-bg-canvas-100 hover:sl-bg-canvas-200 sl-cursor-pointer sl-select-none">
                                                             GET /
-                                                        </div>
-                                                    </a>
-                                                                                                    <a class="ElementsTableOfContentsItem sl-block sl-no-underline"
-                                                       href="#app-endpoints-GETapi-v1-my-team-audit-items--id-">
-                                                        <div title="GET /{id}" id="toc-item-app-endpoints-GETapi-v1-my-team-audit-items--id-"
-                                                             class="sl-flex sl-items-center sl-h-md sl-pr-4 sl-pl-12 sl-bg-canvas-100 hover:sl-bg-canvas-200 sl-cursor-pointer sl-select-none">
-                                                            GET /{id}
                                                         </div>
                                                     </a>
                                                                                             </div>
@@ -462,24 +425,10 @@
                                                         </div>
                                                     </a>
                                                                                                     <a class="ElementsTableOfContentsItem sl-block sl-no-underline"
-                                                       href="#app-endpoints-GETapi-v1-my-team-voucher-sets-created--id-">
-                                                        <div title="GET /{id}" id="toc-item-app-endpoints-GETapi-v1-my-team-voucher-sets-created--id-"
-                                                             class="sl-flex sl-items-center sl-h-md sl-pr-4 sl-pl-12 sl-bg-canvas-100 hover:sl-bg-canvas-200 sl-cursor-pointer sl-select-none">
-                                                            GET /{id}
-                                                        </div>
-                                                    </a>
-                                                                                                    <a class="ElementsTableOfContentsItem sl-block sl-no-underline"
                                                        href="#app-endpoints-GETapi-v1-my-team-voucher-sets-allocated">
                                                         <div title="GET /" id="toc-item-app-endpoints-GETapi-v1-my-team-voucher-sets-allocated"
                                                              class="sl-flex sl-items-center sl-h-md sl-pr-4 sl-pl-12 sl-bg-canvas-100 hover:sl-bg-canvas-200 sl-cursor-pointer sl-select-none">
                                                             GET /
-                                                        </div>
-                                                    </a>
-                                                                                                    <a class="ElementsTableOfContentsItem sl-block sl-no-underline"
-                                                       href="#app-endpoints-GETapi-v1-my-team-voucher-sets-allocated--id-">
-                                                        <div title="GET /{id}" id="toc-item-app-endpoints-GETapi-v1-my-team-voucher-sets-allocated--id-"
-                                                             class="sl-flex sl-items-center sl-h-md sl-pr-4 sl-pl-12 sl-bg-canvas-100 hover:sl-bg-canvas-200 sl-cursor-pointer sl-select-none">
-                                                            GET /{id}
                                                         </div>
                                                     </a>
                                                                                             </div>
@@ -760,36 +709,6 @@
                                                         <div title="GET /{id}" id="toc-item-admin-endpoints-GETapi-v1-admin-audit-items--id-"
                                                              class="sl-flex sl-items-center sl-h-md sl-pr-4 sl-pl-12 sl-bg-canvas-100 hover:sl-bg-canvas-200 sl-cursor-pointer sl-select-none">
                                                             GET /{id}
-                                                        </div>
-                                                    </a>
-                                                                                            </div>
-                                                                            </div>
-                                                                    <div class="expandable">
-                                        <div class="sl-flex sl-items-center sl-h-md sl-pr-4 sl-pl-8 sl-bg-canvas-100 hover:sl-bg-canvas-200 sl-cursor-pointer sl-select-none"
-                                             id="toc-item-admin-endpoints-adminsearch">
-                                            <div class="sl-flex-1 sl-items-center sl-truncate sl-mr-1.5 sl-p-0" title="/admin/search">
-                                                <a class="ElementsTableOfContentsItem sl-block sl-no-underline"
-                                                   href="#admin-endpoints-adminsearch">
-                                                    /admin/search
-                                                </a>
-                                            </div>
-                                                                                            <div class="sl-flex sl-items-center sl-text-xs expansion-chevrons">
-                                                    <svg aria-hidden="true" focusable="false" data-prefix="fas"
-                                                         data-icon="chevron-right"
-                                                         class="svg-inline--fa fa-chevron-right fa-fw sl-icon sl-text-muted"
-                                                         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
-                                                        <path fill="currentColor"
-                                                              d="M96 480c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L242.8 256L73.38 86.63c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l192 192c12.5 12.5 12.5 32.75 0 45.25l-192 192C112.4 476.9 104.2 480 96 480z"></path>
-                                                    </svg>
-                                                </div>
-                                                                                    </div>
-
-                                                                                    <div class="children" style="display: none;">
-                                                                                                    <a class="ElementsTableOfContentsItem sl-block sl-no-underline"
-                                                       href="#admin-endpoints-GETapi-v1-admin-search">
-                                                        <div title="GET /" id="toc-item-admin-endpoints-GETapi-v1-admin-search"
-                                                             class="sl-flex sl-items-center sl-h-md sl-pr-4 sl-pl-12 sl-bg-canvas-100 hover:sl-bg-canvas-200 sl-cursor-pointer sl-select-none">
-                                                            GET /
                                                         </div>
                                                     </a>
                                                                                             </div>
@@ -1384,7 +1303,7 @@
 
         </div>
         <div class="sl-flex sl-items-center sl-px-4 sl-py-3 sl-border-t">
-            Last updated: October 20, 2025
+            Last updated: January 12, 2026
         </div>
 
         <div class="sl-flex sl-items-center sl-px-4 sl-py-3 sl-border-t">
@@ -1398,7 +1317,7 @@
         <div class="sl-mb-10">
             <div class="sl-mb-4">
                 <h1 class="sl-text-5xl sl-leading-tight sl-font-prose sl-font-semibold sl-text-heading">
-                    Open Food Network VINE - API Documentation
+                     - API Documentation
                 </h1>
                                     <a title="Download Postman collection" class="sl-mx-1"
                        href="{{ route("scribe.postman") }}" target="_blank">
@@ -1412,9 +1331,9 @@
 
             <div class="sl-prose sl-markdown-viewer sl-my-4">
                 <h1 id="introduction">Introduction</h1>
-<p>The API documentation for Open Food Network VINE.</p>
+<p>The API documentation for .</p>
 <aside>
-    <strong>Base URL</strong>: <code>https://vine.openfoodnetwork.org.au</code>
+    <strong>Base URL</strong>: <code>http://localhost</code>
 </aside>
 <p>This documentation aims to provide all the information you need to work with our API.</p>
 <aside>As you scroll, you'll see code examples for working with the API in different programming languages in the dark area to the right (or as part of the content on mobile).
@@ -1504,7 +1423,7 @@ puts "Generated JWT: #{token}"</code></pre>
         </div>
 
         <div class="sl-relative">
-            <div title="https://vine.openfoodnetwork.org.au/api/v1/countries"
+            <div title="http://localhost/api/v1/countries"
                      class="sl-stack sl-stack--horizontal sl-stack--3 sl-inline-flex sl-flex-row sl-items-center sl-max-w-full sl-font-mono sl-py-2 sl-pr-4 sl-bg-canvas-50 sl-rounded-lg"
                 >
                                             <div class="sl-text-lg sl-font-semibold sl-px-2.5 sl-py-1 sl-text-on-primary sl-rounded-lg"
@@ -1514,7 +1433,7 @@ puts "Generated JWT: #{token}"</code></pre>
                         </div>
                                         <div class="sl-flex sl-overflow-x-hidden sl-text-lg sl-select-all">
                         <div dir="rtl"
-                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">https://vine.openfoodnetwork.org.au</div>
+                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">http://localhost</div>
                         <div class="sl-flex-1 sl-font-semibold">/api/v1/countries</div>
                     </div>
 
@@ -1522,7 +1441,7 @@ puts "Generated JWT: #{token}"</code></pre>
                                  style="background-color: darkred"
                             >requires authentication
                             </div>
-                                                            </div>
+                                                                                    </div>
         </div>
 
         <p>Retrieve the countries list.</p>
@@ -1543,7 +1462,7 @@ puts "Generated JWT: #{token}"</code></pre>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Authorization</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -1561,7 +1480,7 @@ puts "Generated JWT: #{token}"</code></pre>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Content-Type</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -1579,7 +1498,7 @@ puts "Generated JWT: #{token}"</code></pre>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Accept</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -1597,7 +1516,7 @@ puts "Generated JWT: #{token}"</code></pre>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">X-Authorisation</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -1625,7 +1544,7 @@ puts "Generated JWT: #{token}"</code></pre>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">cached</div>
                                             <span class="sl-truncate sl-text-muted">boolean</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Request the response to be cached. Default: <code>true</code>.</p>
         </div>
@@ -1647,7 +1566,7 @@ puts "Generated JWT: #{token}"</code></pre>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">fields</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Comma-separated list of database fields to return within the object.</p>
         </div>
@@ -1694,7 +1613,7 @@ puts "Generated JWT: #{token}"</code></pre>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request GET \
-    --get "https://vine.openfoodnetwork.org.au/api/v1/countries?cached=1&amp;fields=id%2Ccreated_at" \
+    --get "http://localhost/api/v1/countries?cached=1&amp;fields=id%2Ccreated_at" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -1706,7 +1625,7 @@ puts "Generated JWT: #{token}"</code></pre>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/countries"
+    "http://localhost/api/v1/countries"
 );
 
 const params = {
@@ -1734,7 +1653,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/countries';
+$url = 'http://localhost/api/v1/countries';
 $response = $client-&gt;get(
     $url,
     [
@@ -1761,7 +1680,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/countries'
+url = 'http://localhost/api/v1/countries'
 params = {
   'cached': '1',
   'fields': 'id,created_at',
@@ -2451,7 +2370,7 @@ response.json()</code></pre>                                        </div>
         </div>
 
         <div class="sl-relative">
-            <div title="https://vine.openfoodnetwork.org.au/api/v1/my-profile"
+            <div title="http://localhost/api/v1/my-profile"
                      class="sl-stack sl-stack--horizontal sl-stack--3 sl-inline-flex sl-flex-row sl-items-center sl-max-w-full sl-font-mono sl-py-2 sl-pr-4 sl-bg-canvas-50 sl-rounded-lg"
                 >
                                             <div class="sl-text-lg sl-font-semibold sl-px-2.5 sl-py-1 sl-text-on-primary sl-rounded-lg"
@@ -2461,7 +2380,7 @@ response.json()</code></pre>                                        </div>
                         </div>
                                         <div class="sl-flex sl-overflow-x-hidden sl-text-lg sl-select-all">
                         <div dir="rtl"
-                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">https://vine.openfoodnetwork.org.au</div>
+                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">http://localhost</div>
                         <div class="sl-flex-1 sl-font-semibold">/api/v1/my-profile</div>
                     </div>
 
@@ -2469,7 +2388,7 @@ response.json()</code></pre>                                        </div>
                                  style="background-color: darkred"
                             >requires authentication
                             </div>
-                                                            </div>
+                                                                                    </div>
         </div>
 
         <p>Retrieve your user profile.</p>
@@ -2490,7 +2409,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Authorization</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -2508,7 +2427,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Content-Type</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -2526,7 +2445,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Accept</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -2544,7 +2463,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">X-Authorisation</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -2572,7 +2491,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">cached</div>
                                             <span class="sl-truncate sl-text-muted">boolean</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Request the response to be cached. Default: <code>true</code>.</p>
         </div>
@@ -2594,7 +2513,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">fields</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Comma-separated list of database fields to return within the object.</p>
         </div>
@@ -2641,7 +2560,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request GET \
-    --get "https://vine.openfoodnetwork.org.au/api/v1/my-profile?cached=1&amp;fields=id%2Ccreated_at" \
+    --get "http://localhost/api/v1/my-profile?cached=1&amp;fields=id%2Ccreated_at" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -2653,7 +2572,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/my-profile"
+    "http://localhost/api/v1/my-profile"
 );
 
 const params = {
@@ -2681,7 +2600,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/my-profile';
+$url = 'http://localhost/api/v1/my-profile';
 $response = $client-&gt;get(
     $url,
     [
@@ -2708,7 +2627,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/my-profile'
+url = 'http://localhost/api/v1/my-profile'
 params = {
   'cached': '1',
   'fields': 'id,created_at',
@@ -2795,7 +2714,7 @@ response.json()</code></pre>                                        </div>
         </div>
 
         <div class="sl-relative">
-            <div title="https://vine.openfoodnetwork.org.au/api/v1/my-profile/{id}"
+            <div title="http://localhost/api/v1/my-profile/{id}"
                      class="sl-stack sl-stack--horizontal sl-stack--3 sl-inline-flex sl-flex-row sl-items-center sl-max-w-full sl-font-mono sl-py-2 sl-pr-4 sl-bg-canvas-50 sl-rounded-lg"
                 >
                                             <div class="sl-text-lg sl-font-semibold sl-px-2.5 sl-py-1 sl-text-on-primary sl-rounded-lg"
@@ -2805,7 +2724,7 @@ response.json()</code></pre>                                        </div>
                         </div>
                                         <div class="sl-flex sl-overflow-x-hidden sl-text-lg sl-select-all">
                         <div dir="rtl"
-                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">https://vine.openfoodnetwork.org.au</div>
+                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">http://localhost</div>
                         <div class="sl-flex-1 sl-font-semibold">/api/v1/my-profile/{id}</div>
                     </div>
 
@@ -2813,7 +2732,7 @@ response.json()</code></pre>                                        </div>
                                  style="background-color: darkred"
                             >requires authentication
                             </div>
-                                                            </div>
+                                                                                    </div>
         </div>
 
         <p>Retrieve your profile. Alias of GET /</p>
@@ -2834,7 +2753,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Authorization</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -2852,7 +2771,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Content-Type</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -2870,7 +2789,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Accept</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -2888,7 +2807,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">X-Authorisation</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -2914,9 +2833,11 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">id</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
+                                            <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                        <div class="sl-flex sl-items-center">
+                                                            <span class="sl-ml-2 sl-text-warning">required</span>
+                                                                                </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The ID of the my profile.</p>
         </div>
@@ -2924,7 +2845,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        magnam
+                        quae
                     </div>
                 </div>
             </div>
@@ -2946,7 +2867,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">cached</div>
                                             <span class="sl-truncate sl-text-muted">boolean</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Request the response to be cached. Default: <code>true</code>.</p>
         </div>
@@ -2968,7 +2889,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">fields</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Comma-separated list of database fields to return within the object.</p>
         </div>
@@ -3015,7 +2936,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request GET \
-    --get "https://vine.openfoodnetwork.org.au/api/v1/my-profile/magnam?cached=1&amp;fields=id%2Ccreated_at" \
+    --get "http://localhost/api/v1/my-profile/quae?cached=1&amp;fields=id%2Ccreated_at" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -3027,7 +2948,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/my-profile/magnam"
+    "http://localhost/api/v1/my-profile/quae"
 );
 
 const params = {
@@ -3055,7 +2976,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/my-profile/magnam';
+$url = 'http://localhost/api/v1/my-profile/quae';
 $response = $client-&gt;get(
     $url,
     [
@@ -3082,7 +3003,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/my-profile/magnam'
+url = 'http://localhost/api/v1/my-profile/quae'
 params = {
   'cached': '1',
   'fields': 'id,created_at',
@@ -3169,7 +3090,7 @@ response.json()</code></pre>                                        </div>
         </div>
 
         <div class="sl-relative">
-            <div title="https://vine.openfoodnetwork.org.au/api/v1/my-profile/{id}"
+            <div title="http://localhost/api/v1/my-profile/{id}"
                      class="sl-stack sl-stack--horizontal sl-stack--3 sl-inline-flex sl-flex-row sl-items-center sl-max-w-full sl-font-mono sl-py-2 sl-pr-4 sl-bg-canvas-50 sl-rounded-lg"
                 >
                                             <div class="sl-text-lg sl-font-semibold sl-px-2.5 sl-py-1 sl-text-on-primary sl-rounded-lg"
@@ -3179,7 +3100,7 @@ response.json()</code></pre>                                        </div>
                         </div>
                                         <div class="sl-flex sl-overflow-x-hidden sl-text-lg sl-select-all">
                         <div dir="rtl"
-                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">https://vine.openfoodnetwork.org.au</div>
+                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">http://localhost</div>
                         <div class="sl-flex-1 sl-font-semibold">/api/v1/my-profile/{id}</div>
                     </div>
 
@@ -3187,7 +3108,7 @@ response.json()</code></pre>                                        </div>
                                  style="background-color: darkred"
                             >requires authentication
                             </div>
-                                                            </div>
+                                                                                    </div>
         </div>
 
         <p>Update your profile.</p>
@@ -3208,7 +3129,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Authorization</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -3226,7 +3147,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Content-Type</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -3244,7 +3165,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Accept</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -3262,7 +3183,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">X-Authorisation</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -3288,9 +3209,11 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">id</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
+                                            <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                        <div class="sl-flex sl-items-center">
+                                                            <span class="sl-ml-2 sl-text-warning">required</span>
+                                                                                </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The ID of the my profile.</p>
         </div>
@@ -3298,7 +3221,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        quo
+                        non
                     </div>
                 </div>
             </div>
@@ -3322,7 +3245,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">password</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Your new password. Must conform to password validation requirements.</p>
         </div>
@@ -3330,7 +3253,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        x/DiiR
+                        usK5OS/#.bDNB
                     </div>
                 </div>
             </div>
@@ -3370,13 +3293,13 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request PUT \
-    "https://vine.openfoodnetwork.org.au/api/v1/my-profile/quo" \
+    "http://localhost/api/v1/my-profile/non" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "X-Authorisation: JWT eyJ0eXAiOiJKV..." \
     --data "{
-    \"password\": \"x\\/DiiR\"
+    \"password\": \"usK5OS\\/#.bDNB\"
 }"
 </code></pre>                                        </div>
                                     </div>
@@ -3386,7 +3309,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/my-profile/quo"
+    "http://localhost/api/v1/my-profile/non"
 );
 
 const headers = {
@@ -3397,7 +3320,7 @@ const headers = {
 };
 
 let body = {
-    "password": "x\/DiiR"
+    "password": "usK5OS\/#.bDNB"
 };
 
 fetch(url, {
@@ -3412,7 +3335,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/my-profile/quo';
+$url = 'http://localhost/api/v1/my-profile/non';
 $response = $client-&gt;put(
     $url,
     [
@@ -3423,7 +3346,7 @@ $response = $client-&gt;put(
             'X-Authorisation' =&gt; 'JWT eyJ0eXAiOiJKV...',
         ],
         'json' =&gt; [
-            'password' =&gt; 'x/DiiR',
+            'password' =&gt; 'usK5OS/#.bDNB',
         ],
     ]
 );
@@ -3438,9 +3361,9 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/my-profile/quo'
+url = 'http://localhost/api/v1/my-profile/non'
 payload = {
-    "password": "x\/DiiR"
+    "password": "usK5OS\/#.bDNB"
 }
 headers = {
   'Authorization': 'Bearer {YOUR_API_TOKEN}',
@@ -3531,7 +3454,7 @@ response.json()</code></pre>                                        </div>
         </div>
 
         <div class="sl-relative">
-            <div title="https://vine.openfoodnetwork.org.au/api/v1/my-team"
+            <div title="http://localhost/api/v1/my-team"
                      class="sl-stack sl-stack--horizontal sl-stack--3 sl-inline-flex sl-flex-row sl-items-center sl-max-w-full sl-font-mono sl-py-2 sl-pr-4 sl-bg-canvas-50 sl-rounded-lg"
                 >
                                             <div class="sl-text-lg sl-font-semibold sl-px-2.5 sl-py-1 sl-text-on-primary sl-rounded-lg"
@@ -3541,7 +3464,7 @@ response.json()</code></pre>                                        </div>
                         </div>
                                         <div class="sl-flex sl-overflow-x-hidden sl-text-lg sl-select-all">
                         <div dir="rtl"
-                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">https://vine.openfoodnetwork.org.au</div>
+                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">http://localhost</div>
                         <div class="sl-flex-1 sl-font-semibold">/api/v1/my-team</div>
                     </div>
 
@@ -3549,7 +3472,7 @@ response.json()</code></pre>                                        </div>
                                  style="background-color: darkred"
                             >requires authentication
                             </div>
-                                                            </div>
+                                                                                    </div>
         </div>
 
         <p>Retrieve your team. Automatically filtered to your current team.</p>
@@ -3570,7 +3493,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Authorization</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -3588,7 +3511,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Content-Type</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -3606,7 +3529,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Accept</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -3624,7 +3547,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">X-Authorisation</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -3652,7 +3575,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">cached</div>
                                             <span class="sl-truncate sl-text-muted">boolean</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Request the response to be cached. Default: <code>true</code>.</p>
         </div>
@@ -3674,7 +3597,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">fields</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Comma-separated list of database fields to return within the object.</p>
         </div>
@@ -3721,7 +3644,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request GET \
-    --get "https://vine.openfoodnetwork.org.au/api/v1/my-team?cached=1&amp;fields=id%2Ccreated_at" \
+    --get "http://localhost/api/v1/my-team?cached=1&amp;fields=id%2Ccreated_at" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -3733,7 +3656,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/my-team"
+    "http://localhost/api/v1/my-team"
 );
 
 const params = {
@@ -3761,7 +3684,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/my-team';
+$url = 'http://localhost/api/v1/my-team';
 $response = $client-&gt;get(
     $url,
     [
@@ -3788,7 +3711,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/my-team'
+url = 'http://localhost/api/v1/my-team'
 params = {
   'cached': '1',
   'fields': 'id,created_at',
@@ -3866,7 +3789,7 @@ response.json()</code></pre>                                        </div>
         </div>
 
         <div class="sl-relative">
-            <div title="https://vine.openfoodnetwork.org.au/api/v1/my-teams"
+            <div title="http://localhost/api/v1/my-teams"
                      class="sl-stack sl-stack--horizontal sl-stack--3 sl-inline-flex sl-flex-row sl-items-center sl-max-w-full sl-font-mono sl-py-2 sl-pr-4 sl-bg-canvas-50 sl-rounded-lg"
                 >
                                             <div class="sl-text-lg sl-font-semibold sl-px-2.5 sl-py-1 sl-text-on-primary sl-rounded-lg"
@@ -3876,7 +3799,7 @@ response.json()</code></pre>                                        </div>
                         </div>
                                         <div class="sl-flex sl-overflow-x-hidden sl-text-lg sl-select-all">
                         <div dir="rtl"
-                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">https://vine.openfoodnetwork.org.au</div>
+                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">http://localhost</div>
                         <div class="sl-flex-1 sl-font-semibold">/api/v1/my-teams</div>
                     </div>
 
@@ -3884,7 +3807,7 @@ response.json()</code></pre>                                        </div>
                                  style="background-color: darkred"
                             >requires authentication
                             </div>
-                                                            </div>
+                                                                                    </div>
         </div>
 
         <p>Retrieve your teams. Automatically filtered to your profile.</p>
@@ -3905,7 +3828,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Authorization</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -3923,7 +3846,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Content-Type</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -3941,7 +3864,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Accept</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -3959,7 +3882,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">X-Authorisation</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -3987,7 +3910,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">cached</div>
                                             <span class="sl-truncate sl-text-muted">boolean</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Request the response to be cached. Default: <code>true</code>.</p>
         </div>
@@ -4009,7 +3932,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">page</div>
                                             <span class="sl-truncate sl-text-muted">integer</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The pagination page number.</p>
         </div>
@@ -4031,7 +3954,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">limit</div>
                                             <span class="sl-truncate sl-text-muted">integer</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The number of entries returned per pagination page.</p>
         </div>
@@ -4053,7 +3976,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">fields</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Comma-separated list of database fields to return within the object.</p>
         </div>
@@ -4075,7 +3998,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">orderBy</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Order the data by a given field. Comma-separated string.</p>
         </div>
@@ -4097,7 +4020,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">orderBy[]</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Compound <code>orderBy</code>. Order the data by a given field. Comma-separated string. Can not be used in conjunction as standard <code>orderBy</code>.</p>
         </div>
@@ -4119,7 +4042,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">where</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Filter the request on a single field. Key-Value or Key-Operator-Value comma-separated string.</p>
         </div>
@@ -4141,7 +4064,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">where[]</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Compound <code>where</code>. Use when you need to filter on multiple <code>where</code>'s. Note only AND is possible; ORWHERE is not available.</p>
         </div>
@@ -4188,7 +4111,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request GET \
-    --get "https://vine.openfoodnetwork.org.au/api/v1/my-teams?cached=1&amp;page=1&amp;limit=50&amp;fields=id%2Ccreated_at&amp;orderBy=orderBy%3Did%2Cdesc&amp;orderBy%5B%5D=orderBy%5B%5D%3Did%2Cdesc%26orderBy%5B%5D%3Dcreated_at%2Casc&amp;where=where%3Did%2Clike%2C%2A550e%2A&amp;where%5B%5D=where%5B%5D%3Did%2Clike%2C%2A550e%2A%26where%5B%5D%3Dcreated_at%2C%3E%3D%2C2024-01-01" \
+    --get "http://localhost/api/v1/my-teams?cached=1&amp;page=1&amp;limit=50&amp;fields=id%2Ccreated_at&amp;orderBy=orderBy%3Did%2Cdesc&amp;orderBy%5B%5D=orderBy%5B%5D%3Did%2Cdesc%26orderBy%5B%5D%3Dcreated_at%2Casc&amp;where=where%3Did%2Clike%2C%2A550e%2A&amp;where%5B%5D=where%5B%5D%3Did%2Clike%2C%2A550e%2A%26where%5B%5D%3Dcreated_at%2C%3E%3D%2C2024-01-01" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -4200,7 +4123,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/my-teams"
+    "http://localhost/api/v1/my-teams"
 );
 
 const params = {
@@ -4234,7 +4157,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/my-teams';
+$url = 'http://localhost/api/v1/my-teams';
 $response = $client-&gt;get(
     $url,
     [
@@ -4267,7 +4190,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/my-teams'
+url = 'http://localhost/api/v1/my-teams'
 params = {
   'cached': '1',
   'page': '1',
@@ -4387,350 +4310,6 @@ response.json()</code></pre>                                        </div>
     </div>
 </div>
 
-                                <h2 id="app-endpoints-my-team-search"
-                class="sl-text-3xl sl-leading-tight sl-font-prose sl-text-heading sl-mt-5 sl-mb-3"
-            >
-                /my-team-search
-            </h2>
-                                        <p>Search for system objects your team owns or is associated to.</p>
-                        <br>
-                            <div class="sl-stack sl-stack--vertical sl-stack--8 HttpOperation sl-flex sl-flex-col sl-items-stretch sl-w-full">
-    <div class="sl-stack sl-stack--vertical sl-stack--5 sl-flex sl-flex-col sl-items-stretch">
-        <div class="sl-relative">
-            <div class="sl-stack sl-stack--horizontal sl-stack--5 sl-flex sl-flex-row sl-items-center">
-                <h2 class="sl-text-3xl sl-leading-tight sl-font-prose sl-text-heading sl-mt-5 sl-mb-1"
-                    id="app-endpoints-GETapi-v1-my-team-search">
-                    GET /
-                </h2>
-            </div>
-        </div>
-
-        <div class="sl-relative">
-            <div title="https://vine.openfoodnetwork.org.au/api/v1/my-team-search"
-                     class="sl-stack sl-stack--horizontal sl-stack--3 sl-inline-flex sl-flex-row sl-items-center sl-max-w-full sl-font-mono sl-py-2 sl-pr-4 sl-bg-canvas-50 sl-rounded-lg"
-                >
-                                            <div class="sl-text-lg sl-font-semibold sl-px-2.5 sl-py-1 sl-text-on-primary sl-rounded-lg"
-                             style="background-color: green;"
-                        >
-                            GET
-                        </div>
-                                        <div class="sl-flex sl-overflow-x-hidden sl-text-lg sl-select-all">
-                        <div dir="rtl"
-                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">https://vine.openfoodnetwork.org.au</div>
-                        <div class="sl-flex-1 sl-font-semibold">/api/v1/my-team-search</div>
-                    </div>
-
-                                                    <div class="sl-font-prose sl-font-semibold sl-px-1.5 sl-py-0.5 sl-text-on-primary sl-rounded-lg"
-                                 style="background-color: darkred"
-                            >requires authentication
-                            </div>
-                                                            </div>
-        </div>
-
-        <p>Perform a search.</p>
-    </div>
-    <div class="sl-flex">
-        <div data-testid="two-column-left" class="sl-flex-1 sl-w-0">
-            <div class="sl-stack sl-stack--vertical sl-stack--10 sl-flex sl-flex-col sl-items-stretch">
-                <div class="sl-stack sl-stack--vertical sl-stack--8 sl-flex sl-flex-col sl-items-stretch">
-                                            <div class="sl-stack sl-stack--vertical sl-stack--5 sl-flex sl-flex-col sl-items-stretch">
-                            <h3 class="sl-text-2xl sl-leading-snug sl-font-prose">
-                                Headers
-                            </h3>
-                            <div class="sl-text-sm">
-                                                                    <div class="sl-flex sl-relative sl-max-w-full sl-py-2 sl-pl-3">
-    <div class="sl-w-1 sl-mt-2 sl-mr-3 sl--ml-3 sl-border-t"></div>
-    <div class="sl-stack sl-stack--vertical sl-stack--1 sl-flex sl-flex-1 sl-flex-col sl-items-stretch sl-max-w-full sl-ml-2 ">
-        <div class="sl-flex sl-items-center sl-max-w-full">
-                                        <div class="sl-flex sl-items-baseline sl-text-base">
-                    <div class="sl-font-mono sl-font-semibold sl-mr-2">Authorization</div>
-                                    </div>
-                                    </div>
-                                            <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
-                <span>Example:</span> <!-- <span> important for spacing -->
-                <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
-                    <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        Bearer {YOUR_API_TOKEN}
-                    </div>
-                </div>
-            </div>
-            </div>
-</div>
-                                                                    <div class="sl-flex sl-relative sl-max-w-full sl-py-2 sl-pl-3">
-    <div class="sl-w-1 sl-mt-2 sl-mr-3 sl--ml-3 sl-border-t"></div>
-    <div class="sl-stack sl-stack--vertical sl-stack--1 sl-flex sl-flex-1 sl-flex-col sl-items-stretch sl-max-w-full sl-ml-2 ">
-        <div class="sl-flex sl-items-center sl-max-w-full">
-                                        <div class="sl-flex sl-items-baseline sl-text-base">
-                    <div class="sl-font-mono sl-font-semibold sl-mr-2">Content-Type</div>
-                                    </div>
-                                    </div>
-                                            <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
-                <span>Example:</span> <!-- <span> important for spacing -->
-                <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
-                    <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        application/json
-                    </div>
-                </div>
-            </div>
-            </div>
-</div>
-                                                                    <div class="sl-flex sl-relative sl-max-w-full sl-py-2 sl-pl-3">
-    <div class="sl-w-1 sl-mt-2 sl-mr-3 sl--ml-3 sl-border-t"></div>
-    <div class="sl-stack sl-stack--vertical sl-stack--1 sl-flex sl-flex-1 sl-flex-col sl-items-stretch sl-max-w-full sl-ml-2 ">
-        <div class="sl-flex sl-items-center sl-max-w-full">
-                                        <div class="sl-flex sl-items-baseline sl-text-base">
-                    <div class="sl-font-mono sl-font-semibold sl-mr-2">Accept</div>
-                                    </div>
-                                    </div>
-                                            <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
-                <span>Example:</span> <!-- <span> important for spacing -->
-                <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
-                    <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        application/json
-                    </div>
-                </div>
-            </div>
-            </div>
-</div>
-                                                                    <div class="sl-flex sl-relative sl-max-w-full sl-py-2 sl-pl-3">
-    <div class="sl-w-1 sl-mt-2 sl-mr-3 sl--ml-3 sl-border-t"></div>
-    <div class="sl-stack sl-stack--vertical sl-stack--1 sl-flex sl-flex-1 sl-flex-col sl-items-stretch sl-max-w-full sl-ml-2 ">
-        <div class="sl-flex sl-items-center sl-max-w-full">
-                                        <div class="sl-flex sl-items-baseline sl-text-base">
-                    <div class="sl-font-mono sl-font-semibold sl-mr-2">X-Authorisation</div>
-                                    </div>
-                                    </div>
-                                            <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
-                <span>Example:</span> <!-- <span> important for spacing -->
-                <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
-                    <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        JWT eyJ0eXAiOiJKV...
-                    </div>
-                </div>
-            </div>
-            </div>
-</div>
-                                                            </div>
-                        </div>
-                    
-                    
-
-                    
-                                            <div class="sl-stack sl-stack--vertical sl-stack--6 sl-flex sl-flex-col sl-items-stretch">
-                            <h3 class="sl-text-2xl sl-leading-snug sl-font-prose">Body Parameters</h3>
-
-                                <div class="sl-text-sm">
-                                    <div class="expandable sl-text-sm sl-border-l sl-ml-px">
-        <div class="sl-flex sl-relative sl-max-w-full sl-py-2 sl-pl-3">
-    <div class="sl-w-1 sl-mt-2 sl-mr-3 sl--ml-3 sl-border-t"></div>
-    <div class="sl-stack sl-stack--vertical sl-stack--1 sl-flex sl-flex-1 sl-flex-col sl-items-stretch sl-max-w-full sl-ml-2 ">
-        <div class="sl-flex sl-items-center sl-max-w-full">
-                                        <div class="sl-flex sl-items-baseline sl-text-base">
-                    <div class="sl-font-mono sl-font-semibold sl-mr-2">query</div>
-                                            <span class="sl-truncate sl-text-muted">string</span>
-                                    </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
-                <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
-            <p>Must be at least 3 characters.</p>
-        </div>
-                                            <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
-                <span>Example:</span> <!-- <span> important for spacing -->
-                <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
-                    <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        lkevenjiqwsrjlarjolkykoamdmusw
-                    </div>
-                </div>
-            </div>
-            </div>
-</div>
-
-            </div>
-                            </div>
-                        </div>
-                    
-                                    </div>
-            </div>
-        </div>
-
-        <div data-testid="two-column-right" class="sl-relative sl-w-2/5 sl-ml-16" style="max-width: 500px;">
-            <div class="sl-stack sl-stack--vertical sl-stack--6 sl-flex sl-flex-col sl-items-stretch">
-
-                
-                                            <div class="sl-panel sl-outline-none sl-w-full sl-rounded-lg">
-                            <div class="sl-panel__titlebar sl-flex sl-items-center sl-relative focus:sl-z-10 sl-text-base sl-leading-none sl-pr-3 sl-pl-4 sl-bg-canvas-200 sl-text-body sl-border-input focus:sl-border-primary sl-select-none">
-                                <div class="sl-flex sl-flex-1 sl-items-center sl-h-lg">
-                                    <div class="sl--ml-2">
-                                        Example request:
-                                        <select class="example-request-lang-toggle sl-text-base"
-                                                aria-label="Request Sample Language"
-                                                onchange="switchExampleLanguage(event.target.value);">
-                                                                                            <option>bash</option>
-                                                                                            <option>javascript</option>
-                                                                                            <option>php</option>
-                                                                                            <option>python</option>
-                                                                                    </select>
-                                    </div>
-                                </div>
-                            </div>
-                                                            <div class="sl-bg-canvas-100 example-request example-request-bash"
-                                     style="">
-                                    <div class="sl-px-0 sl-py-1">
-                                        <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
-                                            <pre><code class="language-bash">curl --request GET \
-    --get "https://vine.openfoodnetwork.org.au/api/v1/my-team-search" \
-    --header "Authorization: Bearer {YOUR_API_TOKEN}" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json" \
-    --header "X-Authorisation: JWT eyJ0eXAiOiJKV..." \
-    --data "{
-    \"query\": \"lkevenjiqwsrjlarjolkykoamdmusw\"
-}"
-</code></pre>                                        </div>
-                                    </div>
-                                </div>
-                                                            <div class="sl-bg-canvas-100 example-request example-request-javascript"
-                                     style="display: none;">
-                                    <div class="sl-px-0 sl-py-1">
-                                        <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
-                                            <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/my-team-search"
-);
-
-const headers = {
-    "Authorization": "Bearer {YOUR_API_TOKEN}",
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-    "X-Authorisation": "JWT eyJ0eXAiOiJKV...",
-};
-
-let body = {
-    "query": "lkevenjiqwsrjlarjolkykoamdmusw"
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-    body: JSON.stringify(body),
-}).then(response =&gt; response.json());</code></pre>                                        </div>
-                                    </div>
-                                </div>
-                                                            <div class="sl-bg-canvas-100 example-request example-request-php"
-                                     style="display: none;">
-                                    <div class="sl-px-0 sl-py-1">
-                                        <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
-                                            <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/my-team-search';
-$response = $client-&gt;get(
-    $url,
-    [
-        'headers' =&gt; [
-            'Authorization' =&gt; 'Bearer {YOUR_API_TOKEN}',
-            'Content-Type' =&gt; 'application/json',
-            'Accept' =&gt; 'application/json',
-            'X-Authorisation' =&gt; 'JWT eyJ0eXAiOiJKV...',
-        ],
-        'json' =&gt; [
-            'query' =&gt; 'lkevenjiqwsrjlarjolkykoamdmusw',
-        ],
-    ]
-);
-$body = $response-&gt;getBody();
-print_r(json_decode((string) $body));</code></pre>                                        </div>
-                                    </div>
-                                </div>
-                                                            <div class="sl-bg-canvas-100 example-request example-request-python"
-                                     style="display: none;">
-                                    <div class="sl-px-0 sl-py-1">
-                                        <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
-                                            <pre><code class="language-python">import requests
-import json
-
-url = 'https://vine.openfoodnetwork.org.au/api/v1/my-team-search'
-payload = {
-    "query": "lkevenjiqwsrjlarjolkykoamdmusw"
-}
-headers = {
-  'Authorization': 'Bearer {YOUR_API_TOKEN}',
-  'Content-Type': 'application/json',
-  'Accept': 'application/json',
-  'X-Authorisation': 'JWT eyJ0eXAiOiJKV...'
-}
-
-response = requests.request('GET', url, headers=headers, json=payload)
-response.json()</code></pre>                                        </div>
-                                    </div>
-                                </div>
-                                                    </div>
-                    
-                                            <div class="sl-panel sl-outline-none sl-w-full sl-rounded-lg">
-                            <div class="sl-panel__titlebar sl-flex sl-items-center sl-relative focus:sl-z-10 sl-text-base sl-leading-none sl-pr-3 sl-pl-4 sl-bg-canvas-200 sl-text-body sl-border-input focus:sl-border-primary sl-select-none">
-                                <div class="sl-flex sl-flex-1 sl-items-center sl-py-2">
-                                    <div class="sl--ml-2">
-                                        <div class="sl-h-sm sl-text-base sl-font-medium sl-px-1.5 sl-text-muted sl-rounded sl-border-transparent sl-border">
-                                            <div class="sl-mb-2 sl-inline-block">Example response:</div>
-                                            <div class="sl-mb-2 sl-inline-block">
-                                                <select
-                                                        class="example-response-GETapi-v1-my-team-search-toggle sl-text-base"
-                                                        aria-label="Response sample"
-                                                        onchange="switchExampleResponse('GETapi-v1-my-team-search', event.target.value);">
-                                                                                                            <option value="0">401</option>
-                                                                                                    </select></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <button type="button"
-                                        class="sl-button sl-h-sm sl-text-base sl-font-medium sl-px-1.5 hover:sl-bg-canvas-50 active:sl-bg-canvas-100 sl-text-muted hover:sl-text-body focus:sl-text-body sl-rounded sl-border-transparent sl-border disabled:sl-opacity-70">
-                                    <div class="sl-mx-0">
-                                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="copy"
-                                             class="svg-inline--fa fa-copy fa-fw fa-sm sl-icon" role="img"
-                                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                                            <path fill="currentColor"
-                                                  d="M384 96L384 0h-112c-26.51 0-48 21.49-48 48v288c0 26.51 21.49 48 48 48H464c26.51 0 48-21.49 48-48V128h-95.1C398.4 128 384 113.6 384 96zM416 0v96h96L416 0zM192 352V128h-144c-26.51 0-48 21.49-48 48v288c0 26.51 21.49 48 48 48h192c26.51 0 48-21.49 48-48L288 416h-32C220.7 416 192 387.3 192 352z"></path>
-                                        </svg>
-                                    </div>
-                                </button>
-                            </div>
-                                                            <div class="sl-panel__content-wrapper sl-bg-canvas-100 example-response-GETapi-v1-my-team-search example-response-GETapi-v1-my-team-search-0"
-                                     style=" "
-                                >
-                                    <div class="sl-panel__content sl-p-0">                                            <details class="sl-pl-2">
-                                                <summary style="cursor: pointer; list-style: none;">
-                                                    <small>
-                                                        <span class="expansion-chevrons">
-
-    <svg aria-hidden="true" focusable="false" data-prefix="fas"
-         data-icon="chevron-right"
-         class="svg-inline--fa fa-chevron-right fa-fw sl-icon sl-text-muted"
-         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
-        <path fill="currentColor"
-              d="M96 480c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L242.8 256L73.38 86.63c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l192 192c12.5 12.5 12.5 32.75 0 45.25l-192 192C112.4 476.9 104.2 480 96 480z"></path>
-    </svg>
-                                                            </span>
-                                                        Headers
-                                                    </small>
-                                                </summary>
-                                                <pre><code class="language-http">                                                            cache-control
-                                                            : no-cache, private
-                                                                                                                    content-type
-                                                            : application/json
-                                                                                                                    access-control-allow-origin
-                                                            : *
-                                                         </code></pre>
-                                            </details>
-                                                                                                                                                                        
-                                            <pre><code style="max-height: 300px;"
-                                                       class="language-json sl-overflow-x-auto sl-overflow-y-auto">{
-    &quot;message&quot;: &quot;Unauthenticated.&quot;
-}</code></pre>
-                                                                            </div>
-                                </div>
-                                                    </div>
-                            </div>
-    </div>
-</div>
-
                                 <h2 id="app-endpoints-my-team-audit-items"
                 class="sl-text-3xl sl-leading-tight sl-font-prose sl-text-heading sl-mt-5 sl-mb-3"
             >
@@ -4750,7 +4329,7 @@ response.json()</code></pre>                                        </div>
         </div>
 
         <div class="sl-relative">
-            <div title="https://vine.openfoodnetwork.org.au/api/v1/my-team-audit-items"
+            <div title="http://localhost/api/v1/my-team-audit-items"
                      class="sl-stack sl-stack--horizontal sl-stack--3 sl-inline-flex sl-flex-row sl-items-center sl-max-w-full sl-font-mono sl-py-2 sl-pr-4 sl-bg-canvas-50 sl-rounded-lg"
                 >
                                             <div class="sl-text-lg sl-font-semibold sl-px-2.5 sl-py-1 sl-text-on-primary sl-rounded-lg"
@@ -4760,7 +4339,7 @@ response.json()</code></pre>                                        </div>
                         </div>
                                         <div class="sl-flex sl-overflow-x-hidden sl-text-lg sl-select-all">
                         <div dir="rtl"
-                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">https://vine.openfoodnetwork.org.au</div>
+                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">http://localhost</div>
                         <div class="sl-flex-1 sl-font-semibold">/api/v1/my-team-audit-items</div>
                     </div>
 
@@ -4768,7 +4347,7 @@ response.json()</code></pre>                                        </div>
                                  style="background-color: darkred"
                             >requires authentication
                             </div>
-                                                            </div>
+                                                                                    </div>
         </div>
 
         <p>Retrieve your audit items. Automatically filtered to your current team.</p>
@@ -4789,7 +4368,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Authorization</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -4807,7 +4386,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Content-Type</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -4825,7 +4404,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Accept</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -4843,7 +4422,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">X-Authorisation</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -4871,7 +4450,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">cached</div>
                                             <span class="sl-truncate sl-text-muted">boolean</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Request the response to be cached. Default: <code>true</code>.</p>
         </div>
@@ -4893,7 +4472,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">fields</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Comma-separated list of database fields to return within the object.</p>
         </div>
@@ -4940,7 +4519,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request GET \
-    --get "https://vine.openfoodnetwork.org.au/api/v1/my-team-audit-items?cached=1&amp;fields=id%2Ccreated_at" \
+    --get "http://localhost/api/v1/my-team-audit-items?cached=1&amp;fields=id%2Ccreated_at" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -4952,7 +4531,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/my-team-audit-items"
+    "http://localhost/api/v1/my-team-audit-items"
 );
 
 const params = {
@@ -4980,7 +4559,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/my-team-audit-items';
+$url = 'http://localhost/api/v1/my-team-audit-items';
 $response = $client-&gt;get(
     $url,
     [
@@ -5007,7 +4586,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/my-team-audit-items'
+url = 'http://localhost/api/v1/my-team-audit-items'
 params = {
   'cached': '1',
   'fields': 'id,created_at',
@@ -5066,390 +4645,6 @@ response.json()</code></pre>                                        </div>
     </div>
 </div>
 
-                    <div class="sl-stack sl-stack--vertical sl-stack--8 HttpOperation sl-flex sl-flex-col sl-items-stretch sl-w-full">
-    <div class="sl-stack sl-stack--vertical sl-stack--5 sl-flex sl-flex-col sl-items-stretch">
-        <div class="sl-relative">
-            <div class="sl-stack sl-stack--horizontal sl-stack--5 sl-flex sl-flex-row sl-items-center">
-                <h2 class="sl-text-3xl sl-leading-tight sl-font-prose sl-text-heading sl-mt-5 sl-mb-1"
-                    id="app-endpoints-GETapi-v1-my-team-audit-items--id-">
-                    GET /{id}
-                </h2>
-            </div>
-        </div>
-
-        <div class="sl-relative">
-            <div title="https://vine.openfoodnetwork.org.au/api/v1/my-team-audit-items/{id}"
-                     class="sl-stack sl-stack--horizontal sl-stack--3 sl-inline-flex sl-flex-row sl-items-center sl-max-w-full sl-font-mono sl-py-2 sl-pr-4 sl-bg-canvas-50 sl-rounded-lg"
-                >
-                                            <div class="sl-text-lg sl-font-semibold sl-px-2.5 sl-py-1 sl-text-on-primary sl-rounded-lg"
-                             style="background-color: green;"
-                        >
-                            GET
-                        </div>
-                                        <div class="sl-flex sl-overflow-x-hidden sl-text-lg sl-select-all">
-                        <div dir="rtl"
-                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">https://vine.openfoodnetwork.org.au</div>
-                        <div class="sl-flex-1 sl-font-semibold">/api/v1/my-team-audit-items/{id}</div>
-                    </div>
-
-                                                    <div class="sl-font-prose sl-font-semibold sl-px-1.5 sl-py-0.5 sl-text-on-primary sl-rounded-lg"
-                                 style="background-color: darkred"
-                            >requires authentication
-                            </div>
-                                                            </div>
-        </div>
-
-        <p>Retrieve a single audit item for your team.</p>
-    </div>
-    <div class="sl-flex">
-        <div data-testid="two-column-left" class="sl-flex-1 sl-w-0">
-            <div class="sl-stack sl-stack--vertical sl-stack--10 sl-flex sl-flex-col sl-items-stretch">
-                <div class="sl-stack sl-stack--vertical sl-stack--8 sl-flex sl-flex-col sl-items-stretch">
-                                            <div class="sl-stack sl-stack--vertical sl-stack--5 sl-flex sl-flex-col sl-items-stretch">
-                            <h3 class="sl-text-2xl sl-leading-snug sl-font-prose">
-                                Headers
-                            </h3>
-                            <div class="sl-text-sm">
-                                                                    <div class="sl-flex sl-relative sl-max-w-full sl-py-2 sl-pl-3">
-    <div class="sl-w-1 sl-mt-2 sl-mr-3 sl--ml-3 sl-border-t"></div>
-    <div class="sl-stack sl-stack--vertical sl-stack--1 sl-flex sl-flex-1 sl-flex-col sl-items-stretch sl-max-w-full sl-ml-2 ">
-        <div class="sl-flex sl-items-center sl-max-w-full">
-                                        <div class="sl-flex sl-items-baseline sl-text-base">
-                    <div class="sl-font-mono sl-font-semibold sl-mr-2">Authorization</div>
-                                    </div>
-                                    </div>
-                                            <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
-                <span>Example:</span> <!-- <span> important for spacing -->
-                <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
-                    <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        Bearer {YOUR_API_TOKEN}
-                    </div>
-                </div>
-            </div>
-            </div>
-</div>
-                                                                    <div class="sl-flex sl-relative sl-max-w-full sl-py-2 sl-pl-3">
-    <div class="sl-w-1 sl-mt-2 sl-mr-3 sl--ml-3 sl-border-t"></div>
-    <div class="sl-stack sl-stack--vertical sl-stack--1 sl-flex sl-flex-1 sl-flex-col sl-items-stretch sl-max-w-full sl-ml-2 ">
-        <div class="sl-flex sl-items-center sl-max-w-full">
-                                        <div class="sl-flex sl-items-baseline sl-text-base">
-                    <div class="sl-font-mono sl-font-semibold sl-mr-2">Content-Type</div>
-                                    </div>
-                                    </div>
-                                            <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
-                <span>Example:</span> <!-- <span> important for spacing -->
-                <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
-                    <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        application/json
-                    </div>
-                </div>
-            </div>
-            </div>
-</div>
-                                                                    <div class="sl-flex sl-relative sl-max-w-full sl-py-2 sl-pl-3">
-    <div class="sl-w-1 sl-mt-2 sl-mr-3 sl--ml-3 sl-border-t"></div>
-    <div class="sl-stack sl-stack--vertical sl-stack--1 sl-flex sl-flex-1 sl-flex-col sl-items-stretch sl-max-w-full sl-ml-2 ">
-        <div class="sl-flex sl-items-center sl-max-w-full">
-                                        <div class="sl-flex sl-items-baseline sl-text-base">
-                    <div class="sl-font-mono sl-font-semibold sl-mr-2">Accept</div>
-                                    </div>
-                                    </div>
-                                            <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
-                <span>Example:</span> <!-- <span> important for spacing -->
-                <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
-                    <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        application/json
-                    </div>
-                </div>
-            </div>
-            </div>
-</div>
-                                                                    <div class="sl-flex sl-relative sl-max-w-full sl-py-2 sl-pl-3">
-    <div class="sl-w-1 sl-mt-2 sl-mr-3 sl--ml-3 sl-border-t"></div>
-    <div class="sl-stack sl-stack--vertical sl-stack--1 sl-flex sl-flex-1 sl-flex-col sl-items-stretch sl-max-w-full sl-ml-2 ">
-        <div class="sl-flex sl-items-center sl-max-w-full">
-                                        <div class="sl-flex sl-items-baseline sl-text-base">
-                    <div class="sl-font-mono sl-font-semibold sl-mr-2">X-Authorisation</div>
-                                    </div>
-                                    </div>
-                                            <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
-                <span>Example:</span> <!-- <span> important for spacing -->
-                <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
-                    <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        JWT eyJ0eXAiOiJKV...
-                    </div>
-                </div>
-            </div>
-            </div>
-</div>
-                                                            </div>
-                        </div>
-                    
-                                            <div class="sl-stack sl-stack--vertical sl-stack--6 sl-flex sl-flex-col sl-items-stretch">
-                            <h3 class="sl-text-2xl sl-leading-snug sl-font-prose">URL Parameters</h3>
-
-                            <div class="sl-text-sm">
-                                                                    <div class="sl-flex sl-relative sl-max-w-full sl-py-2 sl-pl-3">
-    <div class="sl-w-1 sl-mt-2 sl-mr-3 sl--ml-3 sl-border-t"></div>
-    <div class="sl-stack sl-stack--vertical sl-stack--1 sl-flex sl-flex-1 sl-flex-col sl-items-stretch sl-max-w-full sl-ml-2 ">
-        <div class="sl-flex sl-items-center sl-max-w-full">
-                                        <div class="sl-flex sl-items-baseline sl-text-base">
-                    <div class="sl-font-mono sl-font-semibold sl-mr-2">id</div>
-                                            <span class="sl-truncate sl-text-muted">integer</span>
-                                    </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
-                <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
-            <p>ID.</p>
-        </div>
-                                            <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
-                <span>Example:</span> <!-- <span> important for spacing -->
-                <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
-                    <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        1234
-                    </div>
-                </div>
-            </div>
-            </div>
-</div>
-                                                            </div>
-                        </div>
-                    
-
-                                                <div class="sl-stack sl-stack--vertical sl-stack--6 sl-flex sl-flex-col sl-items-stretch">
-                                <h3 class="sl-text-2xl sl-leading-snug sl-font-prose">Query Parameters</h3>
-
-                                <div class="sl-text-sm">
-                                                                            <div class="sl-flex sl-relative sl-max-w-full sl-py-2 sl-pl-3">
-    <div class="sl-w-1 sl-mt-2 sl-mr-3 sl--ml-3 sl-border-t"></div>
-    <div class="sl-stack sl-stack--vertical sl-stack--1 sl-flex sl-flex-1 sl-flex-col sl-items-stretch sl-max-w-full sl-ml-2 ">
-        <div class="sl-flex sl-items-center sl-max-w-full">
-                                        <div class="sl-flex sl-items-baseline sl-text-base">
-                    <div class="sl-font-mono sl-font-semibold sl-mr-2">cached</div>
-                                            <span class="sl-truncate sl-text-muted">boolean</span>
-                                    </div>
-                                    </div>
-                <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
-            <p>Request the response to be cached. Default: <code>true</code>.</p>
-        </div>
-                                            <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
-                <span>Example:</span> <!-- <span> important for spacing -->
-                <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
-                    <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        1
-                    </div>
-                </div>
-            </div>
-            </div>
-</div>
-                                                                            <div class="sl-flex sl-relative sl-max-w-full sl-py-2 sl-pl-3">
-    <div class="sl-w-1 sl-mt-2 sl-mr-3 sl--ml-3 sl-border-t"></div>
-    <div class="sl-stack sl-stack--vertical sl-stack--1 sl-flex sl-flex-1 sl-flex-col sl-items-stretch sl-max-w-full sl-ml-2 ">
-        <div class="sl-flex sl-items-center sl-max-w-full">
-                                        <div class="sl-flex sl-items-baseline sl-text-base">
-                    <div class="sl-font-mono sl-font-semibold sl-mr-2">fields</div>
-                                            <span class="sl-truncate sl-text-muted">string</span>
-                                    </div>
-                                    </div>
-                <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
-            <p>Comma-separated list of database fields to return within the object.</p>
-        </div>
-                                            <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
-                <span>Example:</span> <!-- <span> important for spacing -->
-                <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
-                    <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        id,created_at
-                    </div>
-                </div>
-            </div>
-            </div>
-</div>
-                                                                </div>
-                        </div>
-                    
-                    
-                                    </div>
-            </div>
-        </div>
-
-        <div data-testid="two-column-right" class="sl-relative sl-w-2/5 sl-ml-16" style="max-width: 500px;">
-            <div class="sl-stack sl-stack--vertical sl-stack--6 sl-flex sl-flex-col sl-items-stretch">
-
-                
-                                            <div class="sl-panel sl-outline-none sl-w-full sl-rounded-lg">
-                            <div class="sl-panel__titlebar sl-flex sl-items-center sl-relative focus:sl-z-10 sl-text-base sl-leading-none sl-pr-3 sl-pl-4 sl-bg-canvas-200 sl-text-body sl-border-input focus:sl-border-primary sl-select-none">
-                                <div class="sl-flex sl-flex-1 sl-items-center sl-h-lg">
-                                    <div class="sl--ml-2">
-                                        Example request:
-                                        <select class="example-request-lang-toggle sl-text-base"
-                                                aria-label="Request Sample Language"
-                                                onchange="switchExampleLanguage(event.target.value);">
-                                                                                            <option>bash</option>
-                                                                                            <option>javascript</option>
-                                                                                            <option>php</option>
-                                                                                            <option>python</option>
-                                                                                    </select>
-                                    </div>
-                                </div>
-                            </div>
-                                                            <div class="sl-bg-canvas-100 example-request example-request-bash"
-                                     style="">
-                                    <div class="sl-px-0 sl-py-1">
-                                        <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
-                                            <pre><code class="language-bash">curl --request GET \
-    --get "https://vine.openfoodnetwork.org.au/api/v1/my-team-audit-items/1234?cached=1&amp;fields=id%2Ccreated_at" \
-    --header "Authorization: Bearer {YOUR_API_TOKEN}" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json" \
-    --header "X-Authorisation: JWT eyJ0eXAiOiJKV..."</code></pre>                                        </div>
-                                    </div>
-                                </div>
-                                                            <div class="sl-bg-canvas-100 example-request example-request-javascript"
-                                     style="display: none;">
-                                    <div class="sl-px-0 sl-py-1">
-                                        <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
-                                            <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/my-team-audit-items/1234"
-);
-
-const params = {
-    "cached": "1",
-    "fields": "id,created_at",
-};
-Object.keys(params)
-    .forEach(key =&gt; url.searchParams.append(key, params[key]));
-
-const headers = {
-    "Authorization": "Bearer {YOUR_API_TOKEN}",
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-    "X-Authorisation": "JWT eyJ0eXAiOiJKV...",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre>                                        </div>
-                                    </div>
-                                </div>
-                                                            <div class="sl-bg-canvas-100 example-request example-request-php"
-                                     style="display: none;">
-                                    <div class="sl-px-0 sl-py-1">
-                                        <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
-                                            <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/my-team-audit-items/1234';
-$response = $client-&gt;get(
-    $url,
-    [
-        'headers' =&gt; [
-            'Authorization' =&gt; 'Bearer {YOUR_API_TOKEN}',
-            'Content-Type' =&gt; 'application/json',
-            'Accept' =&gt; 'application/json',
-            'X-Authorisation' =&gt; 'JWT eyJ0eXAiOiJKV...',
-        ],
-        'query' =&gt; [
-            'cached' =&gt; '1',
-            'fields' =&gt; 'id,created_at',
-        ],
-    ]
-);
-$body = $response-&gt;getBody();
-print_r(json_decode((string) $body));</code></pre>                                        </div>
-                                    </div>
-                                </div>
-                                                            <div class="sl-bg-canvas-100 example-request example-request-python"
-                                     style="display: none;">
-                                    <div class="sl-px-0 sl-py-1">
-                                        <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
-                                            <pre><code class="language-python">import requests
-import json
-
-url = 'https://vine.openfoodnetwork.org.au/api/v1/my-team-audit-items/1234'
-params = {
-  'cached': '1',
-  'fields': 'id,created_at',
-}
-headers = {
-  'Authorization': 'Bearer {YOUR_API_TOKEN}',
-  'Content-Type': 'application/json',
-  'Accept': 'application/json',
-  'X-Authorisation': 'JWT eyJ0eXAiOiJKV...'
-}
-
-response = requests.request('GET', url, headers=headers, params=params)
-response.json()</code></pre>                                        </div>
-                                    </div>
-                                </div>
-                                                    </div>
-                    
-                                            <div class="sl-panel sl-outline-none sl-w-full sl-rounded-lg">
-                            <div class="sl-panel__titlebar sl-flex sl-items-center sl-relative focus:sl-z-10 sl-text-base sl-leading-none sl-pr-3 sl-pl-4 sl-bg-canvas-200 sl-text-body sl-border-input focus:sl-border-primary sl-select-none">
-                                <div class="sl-flex sl-flex-1 sl-items-center sl-py-2">
-                                    <div class="sl--ml-2">
-                                        <div class="sl-h-sm sl-text-base sl-font-medium sl-px-1.5 sl-text-muted sl-rounded sl-border-transparent sl-border">
-                                            <div class="sl-mb-2 sl-inline-block">Example response:</div>
-                                            <div class="sl-mb-2 sl-inline-block">
-                                                <select
-                                                        class="example-response-GETapi-v1-my-team-audit-items--id--toggle sl-text-base"
-                                                        aria-label="Response sample"
-                                                        onchange="switchExampleResponse('GETapi-v1-my-team-audit-items--id-', event.target.value);">
-                                                                                                            <option value="0">401</option>
-                                                                                                    </select></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <button type="button"
-                                        class="sl-button sl-h-sm sl-text-base sl-font-medium sl-px-1.5 hover:sl-bg-canvas-50 active:sl-bg-canvas-100 sl-text-muted hover:sl-text-body focus:sl-text-body sl-rounded sl-border-transparent sl-border disabled:sl-opacity-70">
-                                    <div class="sl-mx-0">
-                                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="copy"
-                                             class="svg-inline--fa fa-copy fa-fw fa-sm sl-icon" role="img"
-                                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                                            <path fill="currentColor"
-                                                  d="M384 96L384 0h-112c-26.51 0-48 21.49-48 48v288c0 26.51 21.49 48 48 48H464c26.51 0 48-21.49 48-48V128h-95.1C398.4 128 384 113.6 384 96zM416 0v96h96L416 0zM192 352V128h-144c-26.51 0-48 21.49-48 48v288c0 26.51 21.49 48 48 48h192c26.51 0 48-21.49 48-48L288 416h-32C220.7 416 192 387.3 192 352z"></path>
-                                        </svg>
-                                    </div>
-                                </button>
-                            </div>
-                                                            <div class="sl-panel__content-wrapper sl-bg-canvas-100 example-response-GETapi-v1-my-team-audit-items--id- example-response-GETapi-v1-my-team-audit-items--id--0"
-                                     style=" "
-                                >
-                                    <div class="sl-panel__content sl-p-0">                                            <details class="sl-pl-2">
-                                                <summary style="cursor: pointer; list-style: none;">
-                                                    <small>
-                                                        <span class="expansion-chevrons">
-
-    <svg aria-hidden="true" focusable="false" data-prefix="fas"
-         data-icon="chevron-right"
-         class="svg-inline--fa fa-chevron-right fa-fw sl-icon sl-text-muted"
-         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
-        <path fill="currentColor"
-              d="M96 480c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L242.8 256L73.38 86.63c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l192 192c12.5 12.5 12.5 32.75 0 45.25l-192 192C112.4 476.9 104.2 480 96 480z"></path>
-    </svg>
-                                                            </span>
-                                                        Headers
-                                                    </small>
-                                                </summary>
-                                                <pre><code class="language-http">                                                            cache-control
-                                                            : no-cache, private
-                                                                                                                    content-type
-                                                            : application/json
-                                                                                                                    access-control-allow-origin
-                                                            : *
-                                                         </code></pre>
-                                            </details>
-                                                                                                                                                                        
-                                            <pre><code style="max-height: 300px;"
-                                                       class="language-json sl-overflow-x-auto sl-overflow-y-auto">{
-    &quot;message&quot;: &quot;Unauthenticated.&quot;
-}</code></pre>
-                                                                            </div>
-                                </div>
-                                                    </div>
-                            </div>
-    </div>
-</div>
-
                                 <h2 id="app-endpoints-my-team-voucher-sets"
                 class="sl-text-3xl sl-leading-tight sl-font-prose sl-text-heading sl-mt-5 sl-mb-3"
             >
@@ -5469,7 +4664,7 @@ response.json()</code></pre>                                        </div>
         </div>
 
         <div class="sl-relative">
-            <div title="https://vine.openfoodnetwork.org.au/api/v1/my-team-voucher-sets"
+            <div title="http://localhost/api/v1/my-team-voucher-sets"
                      class="sl-stack sl-stack--horizontal sl-stack--3 sl-inline-flex sl-flex-row sl-items-center sl-max-w-full sl-font-mono sl-py-2 sl-pr-4 sl-bg-canvas-50 sl-rounded-lg"
                 >
                                             <div class="sl-text-lg sl-font-semibold sl-px-2.5 sl-py-1 sl-text-on-primary sl-rounded-lg"
@@ -5479,7 +4674,7 @@ response.json()</code></pre>                                        </div>
                         </div>
                                         <div class="sl-flex sl-overflow-x-hidden sl-text-lg sl-select-all">
                         <div dir="rtl"
-                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">https://vine.openfoodnetwork.org.au</div>
+                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">http://localhost</div>
                         <div class="sl-flex-1 sl-font-semibold">/api/v1/my-team-voucher-sets</div>
                     </div>
 
@@ -5487,7 +4682,7 @@ response.json()</code></pre>                                        </div>
                                  style="background-color: darkred"
                             >requires authentication
                             </div>
-                                                            </div>
+                                                                                    </div>
         </div>
 
         <p>Retrieve voucher sets. Automatically filtered to your current team.</p>
@@ -5508,7 +4703,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Authorization</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -5526,7 +4721,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Content-Type</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -5544,7 +4739,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Accept</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -5562,7 +4757,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">X-Authorisation</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -5590,7 +4785,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">cached</div>
                                             <span class="sl-truncate sl-text-muted">boolean</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Request the response to be cached. Default: <code>true</code>.</p>
         </div>
@@ -5612,7 +4807,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">page</div>
                                             <span class="sl-truncate sl-text-muted">integer</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The pagination page number.</p>
         </div>
@@ -5634,7 +4829,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">limit</div>
                                             <span class="sl-truncate sl-text-muted">integer</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The number of entries returned per pagination page.</p>
         </div>
@@ -5656,7 +4851,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">fields</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Comma-separated list of database fields to return within the object.</p>
         </div>
@@ -5678,7 +4873,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">orderBy</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Order the data by a given field. Comma-separated string.</p>
         </div>
@@ -5700,7 +4895,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">orderBy[]</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Compound <code>orderBy</code>. Order the data by a given field. Comma-separated string. Can not be used in conjunction as standard <code>orderBy</code>.</p>
         </div>
@@ -5722,7 +4917,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">where</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Filter the request on a single field. Key-Value or Key-Operator-Value comma-separated string.</p>
         </div>
@@ -5744,7 +4939,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">where[]</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Compound <code>where</code>. Use when you need to filter on multiple <code>where</code>'s. Note only AND is possible; ORWHERE is not available.</p>
         </div>
@@ -5791,7 +4986,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request GET \
-    --get "https://vine.openfoodnetwork.org.au/api/v1/my-team-voucher-sets?cached=1&amp;page=1&amp;limit=50&amp;fields=id%2Ccreated_at&amp;orderBy=orderBy%3Did%2Cdesc&amp;orderBy%5B%5D=orderBy%5B%5D%3Did%2Cdesc%26orderBy%5B%5D%3Dcreated_at%2Casc&amp;where=where%3Did%2Clike%2C%2A550e%2A&amp;where%5B%5D=where%5B%5D%3Did%2Clike%2C%2A550e%2A%26where%5B%5D%3Dcreated_at%2C%3E%3D%2C2024-01-01" \
+    --get "http://localhost/api/v1/my-team-voucher-sets?cached=1&amp;page=1&amp;limit=50&amp;fields=id%2Ccreated_at&amp;orderBy=orderBy%3Did%2Cdesc&amp;orderBy%5B%5D=orderBy%5B%5D%3Did%2Cdesc%26orderBy%5B%5D%3Dcreated_at%2Casc&amp;where=where%3Did%2Clike%2C%2A550e%2A&amp;where%5B%5D=where%5B%5D%3Did%2Clike%2C%2A550e%2A%26where%5B%5D%3Dcreated_at%2C%3E%3D%2C2024-01-01" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -5803,7 +4998,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/my-team-voucher-sets"
+    "http://localhost/api/v1/my-team-voucher-sets"
 );
 
 const params = {
@@ -5837,7 +5032,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/my-team-voucher-sets';
+$url = 'http://localhost/api/v1/my-team-voucher-sets';
 $response = $client-&gt;get(
     $url,
     [
@@ -5870,7 +5065,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/my-team-voucher-sets'
+url = 'http://localhost/api/v1/my-team-voucher-sets'
 params = {
   'cached': '1',
   'page': '1',
@@ -5947,7 +5142,7 @@ response.json()</code></pre>                                        </div>
         </div>
 
         <div class="sl-relative">
-            <div title="https://vine.openfoodnetwork.org.au/api/v1/my-team-voucher-sets/{id}"
+            <div title="http://localhost/api/v1/my-team-voucher-sets/{id}"
                      class="sl-stack sl-stack--horizontal sl-stack--3 sl-inline-flex sl-flex-row sl-items-center sl-max-w-full sl-font-mono sl-py-2 sl-pr-4 sl-bg-canvas-50 sl-rounded-lg"
                 >
                                             <div class="sl-text-lg sl-font-semibold sl-px-2.5 sl-py-1 sl-text-on-primary sl-rounded-lg"
@@ -5957,7 +5152,7 @@ response.json()</code></pre>                                        </div>
                         </div>
                                         <div class="sl-flex sl-overflow-x-hidden sl-text-lg sl-select-all">
                         <div dir="rtl"
-                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">https://vine.openfoodnetwork.org.au</div>
+                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">http://localhost</div>
                         <div class="sl-flex-1 sl-font-semibold">/api/v1/my-team-voucher-sets/{id}</div>
                     </div>
 
@@ -5965,7 +5160,7 @@ response.json()</code></pre>                                        </div>
                                  style="background-color: darkred"
                             >requires authentication
                             </div>
-                                                            </div>
+                                                                                    </div>
         </div>
 
         <p>Retrieve a single voucher set.</p>
@@ -5986,7 +5181,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Authorization</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -6004,7 +5199,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Content-Type</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -6022,7 +5217,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Accept</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -6040,7 +5235,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">X-Authorisation</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -6066,9 +5261,11 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">id</div>
                                             <span class="sl-truncate sl-text-muted">uuid</span>
                                     </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
+                                            <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                        <div class="sl-flex sl-items-center">
+                                                            <span class="sl-ml-2 sl-text-warning">required</span>
+                                                                                </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Voucher Set ID.</p>
         </div>
@@ -6098,7 +5295,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">cached</div>
                                             <span class="sl-truncate sl-text-muted">boolean</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Request the response to be cached. Default: <code>true</code>.</p>
         </div>
@@ -6120,7 +5317,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">fields</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Comma-separated list of database fields to return within the object.</p>
         </div>
@@ -6167,7 +5364,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request GET \
-    --get "https://vine.openfoodnetwork.org.au/api/v1/my-team-voucher-sets/550e8400-e29b-41d4-a716-446655440000?cached=1&amp;fields=id%2Ccreated_at" \
+    --get "http://localhost/api/v1/my-team-voucher-sets/550e8400-e29b-41d4-a716-446655440000?cached=1&amp;fields=id%2Ccreated_at" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -6179,7 +5376,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/my-team-voucher-sets/550e8400-e29b-41d4-a716-446655440000"
+    "http://localhost/api/v1/my-team-voucher-sets/550e8400-e29b-41d4-a716-446655440000"
 );
 
 const params = {
@@ -6207,7 +5404,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/my-team-voucher-sets/550e8400-e29b-41d4-a716-446655440000';
+$url = 'http://localhost/api/v1/my-team-voucher-sets/550e8400-e29b-41d4-a716-446655440000';
 $response = $client-&gt;get(
     $url,
     [
@@ -6234,7 +5431,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/my-team-voucher-sets/550e8400-e29b-41d4-a716-446655440000'
+url = 'http://localhost/api/v1/my-team-voucher-sets/550e8400-e29b-41d4-a716-446655440000'
 params = {
   'cached': '1',
   'fields': 'id,created_at',
@@ -6319,7 +5516,7 @@ response.json()</code></pre>                                        </div>
         </div>
 
         <div class="sl-relative">
-            <div title="https://vine.openfoodnetwork.org.au/api/v1/my-team-voucher-sets-created"
+            <div title="http://localhost/api/v1/my-team-voucher-sets-created"
                      class="sl-stack sl-stack--horizontal sl-stack--3 sl-inline-flex sl-flex-row sl-items-center sl-max-w-full sl-font-mono sl-py-2 sl-pr-4 sl-bg-canvas-50 sl-rounded-lg"
                 >
                                             <div class="sl-text-lg sl-font-semibold sl-px-2.5 sl-py-1 sl-text-on-primary sl-rounded-lg"
@@ -6329,7 +5526,7 @@ response.json()</code></pre>                                        </div>
                         </div>
                                         <div class="sl-flex sl-overflow-x-hidden sl-text-lg sl-select-all">
                         <div dir="rtl"
-                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">https://vine.openfoodnetwork.org.au</div>
+                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">http://localhost</div>
                         <div class="sl-flex-1 sl-font-semibold">/api/v1/my-team-voucher-sets-created</div>
                     </div>
 
@@ -6337,7 +5534,7 @@ response.json()</code></pre>                                        </div>
                                  style="background-color: darkred"
                             >requires authentication
                             </div>
-                                                            </div>
+                                                                                    </div>
         </div>
 
         <p>Retrieve voucher sets. Automatically filtered to your current team.</p>
@@ -6358,7 +5555,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Authorization</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -6376,7 +5573,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Content-Type</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -6394,7 +5591,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Accept</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -6412,7 +5609,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">X-Authorisation</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -6440,7 +5637,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">cached</div>
                                             <span class="sl-truncate sl-text-muted">boolean</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Request the response to be cached. Default: <code>true</code>.</p>
         </div>
@@ -6462,7 +5659,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">page</div>
                                             <span class="sl-truncate sl-text-muted">integer</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The pagination page number.</p>
         </div>
@@ -6484,7 +5681,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">limit</div>
                                             <span class="sl-truncate sl-text-muted">integer</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The number of entries returned per pagination page.</p>
         </div>
@@ -6506,7 +5703,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">fields</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Comma-separated list of database fields to return within the object.</p>
         </div>
@@ -6528,7 +5725,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">orderBy</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Order the data by a given field. Comma-separated string.</p>
         </div>
@@ -6550,7 +5747,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">orderBy[]</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Compound <code>orderBy</code>. Order the data by a given field. Comma-separated string. Can not be used in conjunction as standard <code>orderBy</code>.</p>
         </div>
@@ -6572,7 +5769,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">where</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Filter the request on a single field. Key-Value or Key-Operator-Value comma-separated string.</p>
         </div>
@@ -6594,7 +5791,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">where[]</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Compound <code>where</code>. Use when you need to filter on multiple <code>where</code>'s. Note only AND is possible; ORWHERE is not available.</p>
         </div>
@@ -6641,7 +5838,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request GET \
-    --get "https://vine.openfoodnetwork.org.au/api/v1/my-team-voucher-sets-created?cached=1&amp;page=1&amp;limit=50&amp;fields=id%2Ccreated_at&amp;orderBy=orderBy%3Did%2Cdesc&amp;orderBy%5B%5D=orderBy%5B%5D%3Did%2Cdesc%26orderBy%5B%5D%3Dcreated_at%2Casc&amp;where=where%3Did%2Clike%2C%2A550e%2A&amp;where%5B%5D=where%5B%5D%3Did%2Clike%2C%2A550e%2A%26where%5B%5D%3Dcreated_at%2C%3E%3D%2C2024-01-01" \
+    --get "http://localhost/api/v1/my-team-voucher-sets-created?cached=1&amp;page=1&amp;limit=50&amp;fields=id%2Ccreated_at&amp;orderBy=orderBy%3Did%2Cdesc&amp;orderBy%5B%5D=orderBy%5B%5D%3Did%2Cdesc%26orderBy%5B%5D%3Dcreated_at%2Casc&amp;where=where%3Did%2Clike%2C%2A550e%2A&amp;where%5B%5D=where%5B%5D%3Did%2Clike%2C%2A550e%2A%26where%5B%5D%3Dcreated_at%2C%3E%3D%2C2024-01-01" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -6653,7 +5850,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/my-team-voucher-sets-created"
+    "http://localhost/api/v1/my-team-voucher-sets-created"
 );
 
 const params = {
@@ -6687,7 +5884,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/my-team-voucher-sets-created';
+$url = 'http://localhost/api/v1/my-team-voucher-sets-created';
 $response = $client-&gt;get(
     $url,
     [
@@ -6720,7 +5917,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/my-team-voucher-sets-created'
+url = 'http://localhost/api/v1/my-team-voucher-sets-created'
 params = {
   'cached': '1',
   'page': '1',
@@ -6790,325 +5987,6 @@ response.json()</code></pre>                                        </div>
         <div class="sl-relative">
             <div class="sl-stack sl-stack--horizontal sl-stack--5 sl-flex sl-flex-row sl-items-center">
                 <h2 class="sl-text-3xl sl-leading-tight sl-font-prose sl-text-heading sl-mt-5 sl-mb-1"
-                    id="app-endpoints-GETapi-v1-my-team-voucher-sets-created--id-">
-                    GET /{id}
-                </h2>
-            </div>
-        </div>
-
-        <div class="sl-relative">
-            <div title="https://vine.openfoodnetwork.org.au/api/v1/my-team-voucher-sets-created/{id}"
-                     class="sl-stack sl-stack--horizontal sl-stack--3 sl-inline-flex sl-flex-row sl-items-center sl-max-w-full sl-font-mono sl-py-2 sl-pr-4 sl-bg-canvas-50 sl-rounded-lg"
-                >
-                                            <div class="sl-text-lg sl-font-semibold sl-px-2.5 sl-py-1 sl-text-on-primary sl-rounded-lg"
-                             style="background-color: green;"
-                        >
-                            GET
-                        </div>
-                                        <div class="sl-flex sl-overflow-x-hidden sl-text-lg sl-select-all">
-                        <div dir="rtl"
-                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">https://vine.openfoodnetwork.org.au</div>
-                        <div class="sl-flex-1 sl-font-semibold">/api/v1/my-team-voucher-sets-created/{id}</div>
-                    </div>
-
-                                                    <div class="sl-font-prose sl-font-semibold sl-px-1.5 sl-py-0.5 sl-text-on-primary sl-rounded-lg"
-                                 style="background-color: darkred"
-                            >requires authentication
-                            </div>
-                                                            </div>
-        </div>
-
-        
-    </div>
-    <div class="sl-flex">
-        <div data-testid="two-column-left" class="sl-flex-1 sl-w-0">
-            <div class="sl-stack sl-stack--vertical sl-stack--10 sl-flex sl-flex-col sl-items-stretch">
-                <div class="sl-stack sl-stack--vertical sl-stack--8 sl-flex sl-flex-col sl-items-stretch">
-                                            <div class="sl-stack sl-stack--vertical sl-stack--5 sl-flex sl-flex-col sl-items-stretch">
-                            <h3 class="sl-text-2xl sl-leading-snug sl-font-prose">
-                                Headers
-                            </h3>
-                            <div class="sl-text-sm">
-                                                                    <div class="sl-flex sl-relative sl-max-w-full sl-py-2 sl-pl-3">
-    <div class="sl-w-1 sl-mt-2 sl-mr-3 sl--ml-3 sl-border-t"></div>
-    <div class="sl-stack sl-stack--vertical sl-stack--1 sl-flex sl-flex-1 sl-flex-col sl-items-stretch sl-max-w-full sl-ml-2 ">
-        <div class="sl-flex sl-items-center sl-max-w-full">
-                                        <div class="sl-flex sl-items-baseline sl-text-base">
-                    <div class="sl-font-mono sl-font-semibold sl-mr-2">Authorization</div>
-                                    </div>
-                                    </div>
-                                            <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
-                <span>Example:</span> <!-- <span> important for spacing -->
-                <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
-                    <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        Bearer {YOUR_API_TOKEN}
-                    </div>
-                </div>
-            </div>
-            </div>
-</div>
-                                                                    <div class="sl-flex sl-relative sl-max-w-full sl-py-2 sl-pl-3">
-    <div class="sl-w-1 sl-mt-2 sl-mr-3 sl--ml-3 sl-border-t"></div>
-    <div class="sl-stack sl-stack--vertical sl-stack--1 sl-flex sl-flex-1 sl-flex-col sl-items-stretch sl-max-w-full sl-ml-2 ">
-        <div class="sl-flex sl-items-center sl-max-w-full">
-                                        <div class="sl-flex sl-items-baseline sl-text-base">
-                    <div class="sl-font-mono sl-font-semibold sl-mr-2">Content-Type</div>
-                                    </div>
-                                    </div>
-                                            <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
-                <span>Example:</span> <!-- <span> important for spacing -->
-                <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
-                    <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        application/json
-                    </div>
-                </div>
-            </div>
-            </div>
-</div>
-                                                                    <div class="sl-flex sl-relative sl-max-w-full sl-py-2 sl-pl-3">
-    <div class="sl-w-1 sl-mt-2 sl-mr-3 sl--ml-3 sl-border-t"></div>
-    <div class="sl-stack sl-stack--vertical sl-stack--1 sl-flex sl-flex-1 sl-flex-col sl-items-stretch sl-max-w-full sl-ml-2 ">
-        <div class="sl-flex sl-items-center sl-max-w-full">
-                                        <div class="sl-flex sl-items-baseline sl-text-base">
-                    <div class="sl-font-mono sl-font-semibold sl-mr-2">Accept</div>
-                                    </div>
-                                    </div>
-                                            <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
-                <span>Example:</span> <!-- <span> important for spacing -->
-                <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
-                    <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        application/json
-                    </div>
-                </div>
-            </div>
-            </div>
-</div>
-                                                                    <div class="sl-flex sl-relative sl-max-w-full sl-py-2 sl-pl-3">
-    <div class="sl-w-1 sl-mt-2 sl-mr-3 sl--ml-3 sl-border-t"></div>
-    <div class="sl-stack sl-stack--vertical sl-stack--1 sl-flex sl-flex-1 sl-flex-col sl-items-stretch sl-max-w-full sl-ml-2 ">
-        <div class="sl-flex sl-items-center sl-max-w-full">
-                                        <div class="sl-flex sl-items-baseline sl-text-base">
-                    <div class="sl-font-mono sl-font-semibold sl-mr-2">X-Authorisation</div>
-                                    </div>
-                                    </div>
-                                            <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
-                <span>Example:</span> <!-- <span> important for spacing -->
-                <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
-                    <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        JWT eyJ0eXAiOiJKV...
-                    </div>
-                </div>
-            </div>
-            </div>
-</div>
-                                                            </div>
-                        </div>
-                    
-                                            <div class="sl-stack sl-stack--vertical sl-stack--6 sl-flex sl-flex-col sl-items-stretch">
-                            <h3 class="sl-text-2xl sl-leading-snug sl-font-prose">URL Parameters</h3>
-
-                            <div class="sl-text-sm">
-                                                                    <div class="sl-flex sl-relative sl-max-w-full sl-py-2 sl-pl-3">
-    <div class="sl-w-1 sl-mt-2 sl-mr-3 sl--ml-3 sl-border-t"></div>
-    <div class="sl-stack sl-stack--vertical sl-stack--1 sl-flex sl-flex-1 sl-flex-col sl-items-stretch sl-max-w-full sl-ml-2 ">
-        <div class="sl-flex sl-items-center sl-max-w-full">
-                                        <div class="sl-flex sl-items-baseline sl-text-base">
-                    <div class="sl-font-mono sl-font-semibold sl-mr-2">id</div>
-                                            <span class="sl-truncate sl-text-muted">string</span>
-                                    </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
-                <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
-            <p>The ID of the my team voucher sets created.</p>
-        </div>
-                                            <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
-                <span>Example:</span> <!-- <span> important for spacing -->
-                <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
-                    <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        amet
-                    </div>
-                </div>
-            </div>
-            </div>
-</div>
-                                                            </div>
-                        </div>
-                    
-
-                    
-                    
-                                    </div>
-            </div>
-        </div>
-
-        <div data-testid="two-column-right" class="sl-relative sl-w-2/5 sl-ml-16" style="max-width: 500px;">
-            <div class="sl-stack sl-stack--vertical sl-stack--6 sl-flex sl-flex-col sl-items-stretch">
-
-                
-                                            <div class="sl-panel sl-outline-none sl-w-full sl-rounded-lg">
-                            <div class="sl-panel__titlebar sl-flex sl-items-center sl-relative focus:sl-z-10 sl-text-base sl-leading-none sl-pr-3 sl-pl-4 sl-bg-canvas-200 sl-text-body sl-border-input focus:sl-border-primary sl-select-none">
-                                <div class="sl-flex sl-flex-1 sl-items-center sl-h-lg">
-                                    <div class="sl--ml-2">
-                                        Example request:
-                                        <select class="example-request-lang-toggle sl-text-base"
-                                                aria-label="Request Sample Language"
-                                                onchange="switchExampleLanguage(event.target.value);">
-                                                                                            <option>bash</option>
-                                                                                            <option>javascript</option>
-                                                                                            <option>php</option>
-                                                                                            <option>python</option>
-                                                                                    </select>
-                                    </div>
-                                </div>
-                            </div>
-                                                            <div class="sl-bg-canvas-100 example-request example-request-bash"
-                                     style="">
-                                    <div class="sl-px-0 sl-py-1">
-                                        <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
-                                            <pre><code class="language-bash">curl --request GET \
-    --get "https://vine.openfoodnetwork.org.au/api/v1/my-team-voucher-sets-created/amet" \
-    --header "Authorization: Bearer {YOUR_API_TOKEN}" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json" \
-    --header "X-Authorisation: JWT eyJ0eXAiOiJKV..."</code></pre>                                        </div>
-                                    </div>
-                                </div>
-                                                            <div class="sl-bg-canvas-100 example-request example-request-javascript"
-                                     style="display: none;">
-                                    <div class="sl-px-0 sl-py-1">
-                                        <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
-                                            <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/my-team-voucher-sets-created/amet"
-);
-
-const headers = {
-    "Authorization": "Bearer {YOUR_API_TOKEN}",
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-    "X-Authorisation": "JWT eyJ0eXAiOiJKV...",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre>                                        </div>
-                                    </div>
-                                </div>
-                                                            <div class="sl-bg-canvas-100 example-request example-request-php"
-                                     style="display: none;">
-                                    <div class="sl-px-0 sl-py-1">
-                                        <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
-                                            <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/my-team-voucher-sets-created/amet';
-$response = $client-&gt;get(
-    $url,
-    [
-        'headers' =&gt; [
-            'Authorization' =&gt; 'Bearer {YOUR_API_TOKEN}',
-            'Content-Type' =&gt; 'application/json',
-            'Accept' =&gt; 'application/json',
-            'X-Authorisation' =&gt; 'JWT eyJ0eXAiOiJKV...',
-        ],
-    ]
-);
-$body = $response-&gt;getBody();
-print_r(json_decode((string) $body));</code></pre>                                        </div>
-                                    </div>
-                                </div>
-                                                            <div class="sl-bg-canvas-100 example-request example-request-python"
-                                     style="display: none;">
-                                    <div class="sl-px-0 sl-py-1">
-                                        <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
-                                            <pre><code class="language-python">import requests
-import json
-
-url = 'https://vine.openfoodnetwork.org.au/api/v1/my-team-voucher-sets-created/amet'
-headers = {
-  'Authorization': 'Bearer {YOUR_API_TOKEN}',
-  'Content-Type': 'application/json',
-  'Accept': 'application/json',
-  'X-Authorisation': 'JWT eyJ0eXAiOiJKV...'
-}
-
-response = requests.request('GET', url, headers=headers)
-response.json()</code></pre>                                        </div>
-                                    </div>
-                                </div>
-                                                    </div>
-                    
-                                            <div class="sl-panel sl-outline-none sl-w-full sl-rounded-lg">
-                            <div class="sl-panel__titlebar sl-flex sl-items-center sl-relative focus:sl-z-10 sl-text-base sl-leading-none sl-pr-3 sl-pl-4 sl-bg-canvas-200 sl-text-body sl-border-input focus:sl-border-primary sl-select-none">
-                                <div class="sl-flex sl-flex-1 sl-items-center sl-py-2">
-                                    <div class="sl--ml-2">
-                                        <div class="sl-h-sm sl-text-base sl-font-medium sl-px-1.5 sl-text-muted sl-rounded sl-border-transparent sl-border">
-                                            <div class="sl-mb-2 sl-inline-block">Example response:</div>
-                                            <div class="sl-mb-2 sl-inline-block">
-                                                <select
-                                                        class="example-response-GETapi-v1-my-team-voucher-sets-created--id--toggle sl-text-base"
-                                                        aria-label="Response sample"
-                                                        onchange="switchExampleResponse('GETapi-v1-my-team-voucher-sets-created--id-', event.target.value);">
-                                                                                                            <option value="0">401</option>
-                                                                                                    </select></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <button type="button"
-                                        class="sl-button sl-h-sm sl-text-base sl-font-medium sl-px-1.5 hover:sl-bg-canvas-50 active:sl-bg-canvas-100 sl-text-muted hover:sl-text-body focus:sl-text-body sl-rounded sl-border-transparent sl-border disabled:sl-opacity-70">
-                                    <div class="sl-mx-0">
-                                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="copy"
-                                             class="svg-inline--fa fa-copy fa-fw fa-sm sl-icon" role="img"
-                                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                                            <path fill="currentColor"
-                                                  d="M384 96L384 0h-112c-26.51 0-48 21.49-48 48v288c0 26.51 21.49 48 48 48H464c26.51 0 48-21.49 48-48V128h-95.1C398.4 128 384 113.6 384 96zM416 0v96h96L416 0zM192 352V128h-144c-26.51 0-48 21.49-48 48v288c0 26.51 21.49 48 48 48h192c26.51 0 48-21.49 48-48L288 416h-32C220.7 416 192 387.3 192 352z"></path>
-                                        </svg>
-                                    </div>
-                                </button>
-                            </div>
-                                                            <div class="sl-panel__content-wrapper sl-bg-canvas-100 example-response-GETapi-v1-my-team-voucher-sets-created--id- example-response-GETapi-v1-my-team-voucher-sets-created--id--0"
-                                     style=" "
-                                >
-                                    <div class="sl-panel__content sl-p-0">                                            <details class="sl-pl-2">
-                                                <summary style="cursor: pointer; list-style: none;">
-                                                    <small>
-                                                        <span class="expansion-chevrons">
-
-    <svg aria-hidden="true" focusable="false" data-prefix="fas"
-         data-icon="chevron-right"
-         class="svg-inline--fa fa-chevron-right fa-fw sl-icon sl-text-muted"
-         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
-        <path fill="currentColor"
-              d="M96 480c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L242.8 256L73.38 86.63c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l192 192c12.5 12.5 12.5 32.75 0 45.25l-192 192C112.4 476.9 104.2 480 96 480z"></path>
-    </svg>
-                                                            </span>
-                                                        Headers
-                                                    </small>
-                                                </summary>
-                                                <pre><code class="language-http">                                                            cache-control
-                                                            : no-cache, private
-                                                                                                                    content-type
-                                                            : application/json
-                                                                                                                    access-control-allow-origin
-                                                            : *
-                                                         </code></pre>
-                                            </details>
-                                                                                                                                                                        
-                                            <pre><code style="max-height: 300px;"
-                                                       class="language-json sl-overflow-x-auto sl-overflow-y-auto">{
-    &quot;message&quot;: &quot;Unauthenticated.&quot;
-}</code></pre>
-                                                                            </div>
-                                </div>
-                                                    </div>
-                            </div>
-    </div>
-</div>
-
-                    <div class="sl-stack sl-stack--vertical sl-stack--8 HttpOperation sl-flex sl-flex-col sl-items-stretch sl-w-full">
-    <div class="sl-stack sl-stack--vertical sl-stack--5 sl-flex sl-flex-col sl-items-stretch">
-        <div class="sl-relative">
-            <div class="sl-stack sl-stack--horizontal sl-stack--5 sl-flex sl-flex-row sl-items-center">
-                <h2 class="sl-text-3xl sl-leading-tight sl-font-prose sl-text-heading sl-mt-5 sl-mb-1"
                     id="app-endpoints-GETapi-v1-my-team-voucher-sets-allocated">
                     GET /
                 </h2>
@@ -7116,7 +5994,7 @@ response.json()</code></pre>                                        </div>
         </div>
 
         <div class="sl-relative">
-            <div title="https://vine.openfoodnetwork.org.au/api/v1/my-team-voucher-sets-allocated"
+            <div title="http://localhost/api/v1/my-team-voucher-sets-allocated"
                      class="sl-stack sl-stack--horizontal sl-stack--3 sl-inline-flex sl-flex-row sl-items-center sl-max-w-full sl-font-mono sl-py-2 sl-pr-4 sl-bg-canvas-50 sl-rounded-lg"
                 >
                                             <div class="sl-text-lg sl-font-semibold sl-px-2.5 sl-py-1 sl-text-on-primary sl-rounded-lg"
@@ -7126,7 +6004,7 @@ response.json()</code></pre>                                        </div>
                         </div>
                                         <div class="sl-flex sl-overflow-x-hidden sl-text-lg sl-select-all">
                         <div dir="rtl"
-                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">https://vine.openfoodnetwork.org.au</div>
+                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">http://localhost</div>
                         <div class="sl-flex-1 sl-font-semibold">/api/v1/my-team-voucher-sets-allocated</div>
                     </div>
 
@@ -7134,7 +6012,7 @@ response.json()</code></pre>                                        </div>
                                  style="background-color: darkred"
                             >requires authentication
                             </div>
-                                                            </div>
+                                                                                    </div>
         </div>
 
         <p>Retrieve voucher sets. Automatically filtered to your current team.</p>
@@ -7155,7 +6033,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Authorization</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -7173,7 +6051,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Content-Type</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -7191,7 +6069,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Accept</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -7209,7 +6087,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">X-Authorisation</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -7237,7 +6115,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">cached</div>
                                             <span class="sl-truncate sl-text-muted">boolean</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Request the response to be cached. Default: <code>true</code>.</p>
         </div>
@@ -7259,7 +6137,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">page</div>
                                             <span class="sl-truncate sl-text-muted">integer</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The pagination page number.</p>
         </div>
@@ -7281,7 +6159,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">limit</div>
                                             <span class="sl-truncate sl-text-muted">integer</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The number of entries returned per pagination page.</p>
         </div>
@@ -7303,7 +6181,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">fields</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Comma-separated list of database fields to return within the object.</p>
         </div>
@@ -7325,7 +6203,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">orderBy</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Order the data by a given field. Comma-separated string.</p>
         </div>
@@ -7347,7 +6225,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">orderBy[]</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Compound <code>orderBy</code>. Order the data by a given field. Comma-separated string. Can not be used in conjunction as standard <code>orderBy</code>.</p>
         </div>
@@ -7369,7 +6247,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">where</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Filter the request on a single field. Key-Value or Key-Operator-Value comma-separated string.</p>
         </div>
@@ -7391,7 +6269,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">where[]</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Compound <code>where</code>. Use when you need to filter on multiple <code>where</code>'s. Note only AND is possible; ORWHERE is not available.</p>
         </div>
@@ -7438,7 +6316,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request GET \
-    --get "https://vine.openfoodnetwork.org.au/api/v1/my-team-voucher-sets-allocated?cached=1&amp;page=1&amp;limit=50&amp;fields=id%2Ccreated_at&amp;orderBy=orderBy%3Did%2Cdesc&amp;orderBy%5B%5D=orderBy%5B%5D%3Did%2Cdesc%26orderBy%5B%5D%3Dcreated_at%2Casc&amp;where=where%3Did%2Clike%2C%2A550e%2A&amp;where%5B%5D=where%5B%5D%3Did%2Clike%2C%2A550e%2A%26where%5B%5D%3Dcreated_at%2C%3E%3D%2C2024-01-01" \
+    --get "http://localhost/api/v1/my-team-voucher-sets-allocated?cached=1&amp;page=1&amp;limit=50&amp;fields=id%2Ccreated_at&amp;orderBy=orderBy%3Did%2Cdesc&amp;orderBy%5B%5D=orderBy%5B%5D%3Did%2Cdesc%26orderBy%5B%5D%3Dcreated_at%2Casc&amp;where=where%3Did%2Clike%2C%2A550e%2A&amp;where%5B%5D=where%5B%5D%3Did%2Clike%2C%2A550e%2A%26where%5B%5D%3Dcreated_at%2C%3E%3D%2C2024-01-01" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -7450,7 +6328,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/my-team-voucher-sets-allocated"
+    "http://localhost/api/v1/my-team-voucher-sets-allocated"
 );
 
 const params = {
@@ -7484,7 +6362,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/my-team-voucher-sets-allocated';
+$url = 'http://localhost/api/v1/my-team-voucher-sets-allocated';
 $response = $client-&gt;get(
     $url,
     [
@@ -7517,7 +6395,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/my-team-voucher-sets-allocated'
+url = 'http://localhost/api/v1/my-team-voucher-sets-allocated'
 params = {
   'cached': '1',
   'page': '1',
@@ -7582,325 +6460,6 @@ response.json()</code></pre>                                        </div>
     </div>
 </div>
 
-                    <div class="sl-stack sl-stack--vertical sl-stack--8 HttpOperation sl-flex sl-flex-col sl-items-stretch sl-w-full">
-    <div class="sl-stack sl-stack--vertical sl-stack--5 sl-flex sl-flex-col sl-items-stretch">
-        <div class="sl-relative">
-            <div class="sl-stack sl-stack--horizontal sl-stack--5 sl-flex sl-flex-row sl-items-center">
-                <h2 class="sl-text-3xl sl-leading-tight sl-font-prose sl-text-heading sl-mt-5 sl-mb-1"
-                    id="app-endpoints-GETapi-v1-my-team-voucher-sets-allocated--id-">
-                    GET /{id}
-                </h2>
-            </div>
-        </div>
-
-        <div class="sl-relative">
-            <div title="https://vine.openfoodnetwork.org.au/api/v1/my-team-voucher-sets-allocated/{id}"
-                     class="sl-stack sl-stack--horizontal sl-stack--3 sl-inline-flex sl-flex-row sl-items-center sl-max-w-full sl-font-mono sl-py-2 sl-pr-4 sl-bg-canvas-50 sl-rounded-lg"
-                >
-                                            <div class="sl-text-lg sl-font-semibold sl-px-2.5 sl-py-1 sl-text-on-primary sl-rounded-lg"
-                             style="background-color: green;"
-                        >
-                            GET
-                        </div>
-                                        <div class="sl-flex sl-overflow-x-hidden sl-text-lg sl-select-all">
-                        <div dir="rtl"
-                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">https://vine.openfoodnetwork.org.au</div>
-                        <div class="sl-flex-1 sl-font-semibold">/api/v1/my-team-voucher-sets-allocated/{id}</div>
-                    </div>
-
-                                                    <div class="sl-font-prose sl-font-semibold sl-px-1.5 sl-py-0.5 sl-text-on-primary sl-rounded-lg"
-                                 style="background-color: darkred"
-                            >requires authentication
-                            </div>
-                                                            </div>
-        </div>
-
-        
-    </div>
-    <div class="sl-flex">
-        <div data-testid="two-column-left" class="sl-flex-1 sl-w-0">
-            <div class="sl-stack sl-stack--vertical sl-stack--10 sl-flex sl-flex-col sl-items-stretch">
-                <div class="sl-stack sl-stack--vertical sl-stack--8 sl-flex sl-flex-col sl-items-stretch">
-                                            <div class="sl-stack sl-stack--vertical sl-stack--5 sl-flex sl-flex-col sl-items-stretch">
-                            <h3 class="sl-text-2xl sl-leading-snug sl-font-prose">
-                                Headers
-                            </h3>
-                            <div class="sl-text-sm">
-                                                                    <div class="sl-flex sl-relative sl-max-w-full sl-py-2 sl-pl-3">
-    <div class="sl-w-1 sl-mt-2 sl-mr-3 sl--ml-3 sl-border-t"></div>
-    <div class="sl-stack sl-stack--vertical sl-stack--1 sl-flex sl-flex-1 sl-flex-col sl-items-stretch sl-max-w-full sl-ml-2 ">
-        <div class="sl-flex sl-items-center sl-max-w-full">
-                                        <div class="sl-flex sl-items-baseline sl-text-base">
-                    <div class="sl-font-mono sl-font-semibold sl-mr-2">Authorization</div>
-                                    </div>
-                                    </div>
-                                            <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
-                <span>Example:</span> <!-- <span> important for spacing -->
-                <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
-                    <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        Bearer {YOUR_API_TOKEN}
-                    </div>
-                </div>
-            </div>
-            </div>
-</div>
-                                                                    <div class="sl-flex sl-relative sl-max-w-full sl-py-2 sl-pl-3">
-    <div class="sl-w-1 sl-mt-2 sl-mr-3 sl--ml-3 sl-border-t"></div>
-    <div class="sl-stack sl-stack--vertical sl-stack--1 sl-flex sl-flex-1 sl-flex-col sl-items-stretch sl-max-w-full sl-ml-2 ">
-        <div class="sl-flex sl-items-center sl-max-w-full">
-                                        <div class="sl-flex sl-items-baseline sl-text-base">
-                    <div class="sl-font-mono sl-font-semibold sl-mr-2">Content-Type</div>
-                                    </div>
-                                    </div>
-                                            <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
-                <span>Example:</span> <!-- <span> important for spacing -->
-                <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
-                    <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        application/json
-                    </div>
-                </div>
-            </div>
-            </div>
-</div>
-                                                                    <div class="sl-flex sl-relative sl-max-w-full sl-py-2 sl-pl-3">
-    <div class="sl-w-1 sl-mt-2 sl-mr-3 sl--ml-3 sl-border-t"></div>
-    <div class="sl-stack sl-stack--vertical sl-stack--1 sl-flex sl-flex-1 sl-flex-col sl-items-stretch sl-max-w-full sl-ml-2 ">
-        <div class="sl-flex sl-items-center sl-max-w-full">
-                                        <div class="sl-flex sl-items-baseline sl-text-base">
-                    <div class="sl-font-mono sl-font-semibold sl-mr-2">Accept</div>
-                                    </div>
-                                    </div>
-                                            <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
-                <span>Example:</span> <!-- <span> important for spacing -->
-                <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
-                    <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        application/json
-                    </div>
-                </div>
-            </div>
-            </div>
-</div>
-                                                                    <div class="sl-flex sl-relative sl-max-w-full sl-py-2 sl-pl-3">
-    <div class="sl-w-1 sl-mt-2 sl-mr-3 sl--ml-3 sl-border-t"></div>
-    <div class="sl-stack sl-stack--vertical sl-stack--1 sl-flex sl-flex-1 sl-flex-col sl-items-stretch sl-max-w-full sl-ml-2 ">
-        <div class="sl-flex sl-items-center sl-max-w-full">
-                                        <div class="sl-flex sl-items-baseline sl-text-base">
-                    <div class="sl-font-mono sl-font-semibold sl-mr-2">X-Authorisation</div>
-                                    </div>
-                                    </div>
-                                            <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
-                <span>Example:</span> <!-- <span> important for spacing -->
-                <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
-                    <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        JWT eyJ0eXAiOiJKV...
-                    </div>
-                </div>
-            </div>
-            </div>
-</div>
-                                                            </div>
-                        </div>
-                    
-                                            <div class="sl-stack sl-stack--vertical sl-stack--6 sl-flex sl-flex-col sl-items-stretch">
-                            <h3 class="sl-text-2xl sl-leading-snug sl-font-prose">URL Parameters</h3>
-
-                            <div class="sl-text-sm">
-                                                                    <div class="sl-flex sl-relative sl-max-w-full sl-py-2 sl-pl-3">
-    <div class="sl-w-1 sl-mt-2 sl-mr-3 sl--ml-3 sl-border-t"></div>
-    <div class="sl-stack sl-stack--vertical sl-stack--1 sl-flex sl-flex-1 sl-flex-col sl-items-stretch sl-max-w-full sl-ml-2 ">
-        <div class="sl-flex sl-items-center sl-max-w-full">
-                                        <div class="sl-flex sl-items-baseline sl-text-base">
-                    <div class="sl-font-mono sl-font-semibold sl-mr-2">id</div>
-                                            <span class="sl-truncate sl-text-muted">string</span>
-                                    </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
-                <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
-            <p>The ID of the my team voucher sets allocated.</p>
-        </div>
-                                            <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
-                <span>Example:</span> <!-- <span> important for spacing -->
-                <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
-                    <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        dolores
-                    </div>
-                </div>
-            </div>
-            </div>
-</div>
-                                                            </div>
-                        </div>
-                    
-
-                    
-                    
-                                    </div>
-            </div>
-        </div>
-
-        <div data-testid="two-column-right" class="sl-relative sl-w-2/5 sl-ml-16" style="max-width: 500px;">
-            <div class="sl-stack sl-stack--vertical sl-stack--6 sl-flex sl-flex-col sl-items-stretch">
-
-                
-                                            <div class="sl-panel sl-outline-none sl-w-full sl-rounded-lg">
-                            <div class="sl-panel__titlebar sl-flex sl-items-center sl-relative focus:sl-z-10 sl-text-base sl-leading-none sl-pr-3 sl-pl-4 sl-bg-canvas-200 sl-text-body sl-border-input focus:sl-border-primary sl-select-none">
-                                <div class="sl-flex sl-flex-1 sl-items-center sl-h-lg">
-                                    <div class="sl--ml-2">
-                                        Example request:
-                                        <select class="example-request-lang-toggle sl-text-base"
-                                                aria-label="Request Sample Language"
-                                                onchange="switchExampleLanguage(event.target.value);">
-                                                                                            <option>bash</option>
-                                                                                            <option>javascript</option>
-                                                                                            <option>php</option>
-                                                                                            <option>python</option>
-                                                                                    </select>
-                                    </div>
-                                </div>
-                            </div>
-                                                            <div class="sl-bg-canvas-100 example-request example-request-bash"
-                                     style="">
-                                    <div class="sl-px-0 sl-py-1">
-                                        <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
-                                            <pre><code class="language-bash">curl --request GET \
-    --get "https://vine.openfoodnetwork.org.au/api/v1/my-team-voucher-sets-allocated/dolores" \
-    --header "Authorization: Bearer {YOUR_API_TOKEN}" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json" \
-    --header "X-Authorisation: JWT eyJ0eXAiOiJKV..."</code></pre>                                        </div>
-                                    </div>
-                                </div>
-                                                            <div class="sl-bg-canvas-100 example-request example-request-javascript"
-                                     style="display: none;">
-                                    <div class="sl-px-0 sl-py-1">
-                                        <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
-                                            <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/my-team-voucher-sets-allocated/dolores"
-);
-
-const headers = {
-    "Authorization": "Bearer {YOUR_API_TOKEN}",
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-    "X-Authorisation": "JWT eyJ0eXAiOiJKV...",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre>                                        </div>
-                                    </div>
-                                </div>
-                                                            <div class="sl-bg-canvas-100 example-request example-request-php"
-                                     style="display: none;">
-                                    <div class="sl-px-0 sl-py-1">
-                                        <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
-                                            <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/my-team-voucher-sets-allocated/dolores';
-$response = $client-&gt;get(
-    $url,
-    [
-        'headers' =&gt; [
-            'Authorization' =&gt; 'Bearer {YOUR_API_TOKEN}',
-            'Content-Type' =&gt; 'application/json',
-            'Accept' =&gt; 'application/json',
-            'X-Authorisation' =&gt; 'JWT eyJ0eXAiOiJKV...',
-        ],
-    ]
-);
-$body = $response-&gt;getBody();
-print_r(json_decode((string) $body));</code></pre>                                        </div>
-                                    </div>
-                                </div>
-                                                            <div class="sl-bg-canvas-100 example-request example-request-python"
-                                     style="display: none;">
-                                    <div class="sl-px-0 sl-py-1">
-                                        <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
-                                            <pre><code class="language-python">import requests
-import json
-
-url = 'https://vine.openfoodnetwork.org.au/api/v1/my-team-voucher-sets-allocated/dolores'
-headers = {
-  'Authorization': 'Bearer {YOUR_API_TOKEN}',
-  'Content-Type': 'application/json',
-  'Accept': 'application/json',
-  'X-Authorisation': 'JWT eyJ0eXAiOiJKV...'
-}
-
-response = requests.request('GET', url, headers=headers)
-response.json()</code></pre>                                        </div>
-                                    </div>
-                                </div>
-                                                    </div>
-                    
-                                            <div class="sl-panel sl-outline-none sl-w-full sl-rounded-lg">
-                            <div class="sl-panel__titlebar sl-flex sl-items-center sl-relative focus:sl-z-10 sl-text-base sl-leading-none sl-pr-3 sl-pl-4 sl-bg-canvas-200 sl-text-body sl-border-input focus:sl-border-primary sl-select-none">
-                                <div class="sl-flex sl-flex-1 sl-items-center sl-py-2">
-                                    <div class="sl--ml-2">
-                                        <div class="sl-h-sm sl-text-base sl-font-medium sl-px-1.5 sl-text-muted sl-rounded sl-border-transparent sl-border">
-                                            <div class="sl-mb-2 sl-inline-block">Example response:</div>
-                                            <div class="sl-mb-2 sl-inline-block">
-                                                <select
-                                                        class="example-response-GETapi-v1-my-team-voucher-sets-allocated--id--toggle sl-text-base"
-                                                        aria-label="Response sample"
-                                                        onchange="switchExampleResponse('GETapi-v1-my-team-voucher-sets-allocated--id-', event.target.value);">
-                                                                                                            <option value="0">401</option>
-                                                                                                    </select></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <button type="button"
-                                        class="sl-button sl-h-sm sl-text-base sl-font-medium sl-px-1.5 hover:sl-bg-canvas-50 active:sl-bg-canvas-100 sl-text-muted hover:sl-text-body focus:sl-text-body sl-rounded sl-border-transparent sl-border disabled:sl-opacity-70">
-                                    <div class="sl-mx-0">
-                                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="copy"
-                                             class="svg-inline--fa fa-copy fa-fw fa-sm sl-icon" role="img"
-                                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                                            <path fill="currentColor"
-                                                  d="M384 96L384 0h-112c-26.51 0-48 21.49-48 48v288c0 26.51 21.49 48 48 48H464c26.51 0 48-21.49 48-48V128h-95.1C398.4 128 384 113.6 384 96zM416 0v96h96L416 0zM192 352V128h-144c-26.51 0-48 21.49-48 48v288c0 26.51 21.49 48 48 48h192c26.51 0 48-21.49 48-48L288 416h-32C220.7 416 192 387.3 192 352z"></path>
-                                        </svg>
-                                    </div>
-                                </button>
-                            </div>
-                                                            <div class="sl-panel__content-wrapper sl-bg-canvas-100 example-response-GETapi-v1-my-team-voucher-sets-allocated--id- example-response-GETapi-v1-my-team-voucher-sets-allocated--id--0"
-                                     style=" "
-                                >
-                                    <div class="sl-panel__content sl-p-0">                                            <details class="sl-pl-2">
-                                                <summary style="cursor: pointer; list-style: none;">
-                                                    <small>
-                                                        <span class="expansion-chevrons">
-
-    <svg aria-hidden="true" focusable="false" data-prefix="fas"
-         data-icon="chevron-right"
-         class="svg-inline--fa fa-chevron-right fa-fw sl-icon sl-text-muted"
-         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
-        <path fill="currentColor"
-              d="M96 480c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L242.8 256L73.38 86.63c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l192 192c12.5 12.5 12.5 32.75 0 45.25l-192 192C112.4 476.9 104.2 480 96 480z"></path>
-    </svg>
-                                                            </span>
-                                                        Headers
-                                                    </small>
-                                                </summary>
-                                                <pre><code class="language-http">                                                            cache-control
-                                                            : no-cache, private
-                                                                                                                    content-type
-                                                            : application/json
-                                                                                                                    access-control-allow-origin
-                                                            : *
-                                                         </code></pre>
-                                            </details>
-                                                                                                                                                                        
-                                            <pre><code style="max-height: 300px;"
-                                                       class="language-json sl-overflow-x-auto sl-overflow-y-auto">{
-    &quot;message&quot;: &quot;Unauthenticated.&quot;
-}</code></pre>
-                                                                            </div>
-                                </div>
-                                                    </div>
-                            </div>
-    </div>
-</div>
-
                                 <h2 id="app-endpoints-my-team-vouchers"
                 class="sl-text-3xl sl-leading-tight sl-font-prose sl-text-heading sl-mt-5 sl-mb-3"
             >
@@ -7920,7 +6479,7 @@ response.json()</code></pre>                                        </div>
         </div>
 
         <div class="sl-relative">
-            <div title="https://vine.openfoodnetwork.org.au/api/v1/my-team-vouchers"
+            <div title="http://localhost/api/v1/my-team-vouchers"
                      class="sl-stack sl-stack--horizontal sl-stack--3 sl-inline-flex sl-flex-row sl-items-center sl-max-w-full sl-font-mono sl-py-2 sl-pr-4 sl-bg-canvas-50 sl-rounded-lg"
                 >
                                             <div class="sl-text-lg sl-font-semibold sl-px-2.5 sl-py-1 sl-text-on-primary sl-rounded-lg"
@@ -7930,7 +6489,7 @@ response.json()</code></pre>                                        </div>
                         </div>
                                         <div class="sl-flex sl-overflow-x-hidden sl-text-lg sl-select-all">
                         <div dir="rtl"
-                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">https://vine.openfoodnetwork.org.au</div>
+                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">http://localhost</div>
                         <div class="sl-flex-1 sl-font-semibold">/api/v1/my-team-vouchers</div>
                     </div>
 
@@ -7938,7 +6497,7 @@ response.json()</code></pre>                                        </div>
                                  style="background-color: darkred"
                             >requires authentication
                             </div>
-                                                            </div>
+                                                                                    </div>
         </div>
 
         <p>Retrieve vouchers. Automatically filtered to your current team.</p>
@@ -7959,7 +6518,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Authorization</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -7977,7 +6536,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Content-Type</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -7995,7 +6554,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Accept</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -8013,7 +6572,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">X-Authorisation</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -8041,7 +6600,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">cached</div>
                                             <span class="sl-truncate sl-text-muted">boolean</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Request the response to be cached. Default: <code>true</code>.</p>
         </div>
@@ -8063,7 +6622,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">page</div>
                                             <span class="sl-truncate sl-text-muted">integer</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The pagination page number.</p>
         </div>
@@ -8085,7 +6644,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">limit</div>
                                             <span class="sl-truncate sl-text-muted">integer</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The number of entries returned per pagination page.</p>
         </div>
@@ -8107,7 +6666,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">fields</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Comma-separated list of database fields to return within the object.</p>
         </div>
@@ -8129,7 +6688,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">orderBy</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Order the data by a given field. Comma-separated string.</p>
         </div>
@@ -8151,7 +6710,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">orderBy[]</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Compound <code>orderBy</code>. Order the data by a given field. Comma-separated string. Can not be used in conjunction as standard <code>orderBy</code>.</p>
         </div>
@@ -8173,7 +6732,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">where</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Filter the request on a single field. Key-Value or Key-Operator-Value comma-separated string.</p>
         </div>
@@ -8195,7 +6754,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">where[]</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Compound <code>where</code>. Use when you need to filter on multiple <code>where</code>'s. Note only AND is possible; ORWHERE is not available.</p>
         </div>
@@ -8242,7 +6801,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request GET \
-    --get "https://vine.openfoodnetwork.org.au/api/v1/my-team-vouchers?cached=1&amp;page=1&amp;limit=50&amp;fields=id%2Ccreated_at&amp;orderBy=orderBy%3Did%2Cdesc&amp;orderBy%5B%5D=orderBy%5B%5D%3Did%2Cdesc%26orderBy%5B%5D%3Dcreated_at%2Casc&amp;where=where%3Did%2Clike%2C%2A550e%2A&amp;where%5B%5D=where%5B%5D%3Did%2Clike%2C%2A550e%2A%26where%5B%5D%3Dcreated_at%2C%3E%3D%2C2024-01-01" \
+    --get "http://localhost/api/v1/my-team-vouchers?cached=1&amp;page=1&amp;limit=50&amp;fields=id%2Ccreated_at&amp;orderBy=orderBy%3Did%2Cdesc&amp;orderBy%5B%5D=orderBy%5B%5D%3Did%2Cdesc%26orderBy%5B%5D%3Dcreated_at%2Casc&amp;where=where%3Did%2Clike%2C%2A550e%2A&amp;where%5B%5D=where%5B%5D%3Did%2Clike%2C%2A550e%2A%26where%5B%5D%3Dcreated_at%2C%3E%3D%2C2024-01-01" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -8254,7 +6813,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/my-team-vouchers"
+    "http://localhost/api/v1/my-team-vouchers"
 );
 
 const params = {
@@ -8288,7 +6847,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/my-team-vouchers';
+$url = 'http://localhost/api/v1/my-team-vouchers';
 $response = $client-&gt;get(
     $url,
     [
@@ -8321,7 +6880,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/my-team-vouchers'
+url = 'http://localhost/api/v1/my-team-vouchers'
 params = {
   'cached': '1',
   'page': '1',
@@ -8443,7 +7002,7 @@ response.json()</code></pre>                                        </div>
         </div>
 
         <div class="sl-relative">
-            <div title="https://vine.openfoodnetwork.org.au/api/v1/my-team-vouchers/{id}"
+            <div title="http://localhost/api/v1/my-team-vouchers/{id}"
                      class="sl-stack sl-stack--horizontal sl-stack--3 sl-inline-flex sl-flex-row sl-items-center sl-max-w-full sl-font-mono sl-py-2 sl-pr-4 sl-bg-canvas-50 sl-rounded-lg"
                 >
                                             <div class="sl-text-lg sl-font-semibold sl-px-2.5 sl-py-1 sl-text-on-primary sl-rounded-lg"
@@ -8453,7 +7012,7 @@ response.json()</code></pre>                                        </div>
                         </div>
                                         <div class="sl-flex sl-overflow-x-hidden sl-text-lg sl-select-all">
                         <div dir="rtl"
-                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">https://vine.openfoodnetwork.org.au</div>
+                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">http://localhost</div>
                         <div class="sl-flex-1 sl-font-semibold">/api/v1/my-team-vouchers/{id}</div>
                     </div>
 
@@ -8461,7 +7020,7 @@ response.json()</code></pre>                                        </div>
                                  style="background-color: darkred"
                             >requires authentication
                             </div>
-                                                            </div>
+                                                                                    </div>
         </div>
 
         <p>Retrieve a single voucher.</p>
@@ -8482,7 +7041,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Authorization</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -8500,7 +7059,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Content-Type</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -8518,7 +7077,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Accept</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -8536,7 +7095,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">X-Authorisation</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -8562,9 +7121,11 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">id</div>
                                             <span class="sl-truncate sl-text-muted">uuid</span>
                                     </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
+                                            <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                        <div class="sl-flex sl-items-center">
+                                                            <span class="sl-ml-2 sl-text-warning">required</span>
+                                                                                </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Voucher ID.</p>
         </div>
@@ -8594,7 +7155,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">cached</div>
                                             <span class="sl-truncate sl-text-muted">boolean</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Request the response to be cached. Default: <code>true</code>.</p>
         </div>
@@ -8616,7 +7177,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">fields</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Comma-separated list of database fields to return within the object.</p>
         </div>
@@ -8663,7 +7224,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request GET \
-    --get "https://vine.openfoodnetwork.org.au/api/v1/my-team-vouchers/550e8400-e29b-41d4-a716-446655440000?cached=1&amp;fields=id%2Ccreated_at" \
+    --get "http://localhost/api/v1/my-team-vouchers/550e8400-e29b-41d4-a716-446655440000?cached=1&amp;fields=id%2Ccreated_at" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -8675,7 +7236,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/my-team-vouchers/550e8400-e29b-41d4-a716-446655440000"
+    "http://localhost/api/v1/my-team-vouchers/550e8400-e29b-41d4-a716-446655440000"
 );
 
 const params = {
@@ -8703,7 +7264,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/my-team-vouchers/550e8400-e29b-41d4-a716-446655440000';
+$url = 'http://localhost/api/v1/my-team-vouchers/550e8400-e29b-41d4-a716-446655440000';
 $response = $client-&gt;get(
     $url,
     [
@@ -8730,7 +7291,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/my-team-vouchers/550e8400-e29b-41d4-a716-446655440000'
+url = 'http://localhost/api/v1/my-team-vouchers/550e8400-e29b-41d4-a716-446655440000'
 params = {
   'cached': '1',
   'fields': 'id,created_at',
@@ -8822,7 +7383,7 @@ response.json()</code></pre>                                        </div>
         </div>
 
         <div class="sl-relative">
-            <div title="https://vine.openfoodnetwork.org.au/api/v1/shops"
+            <div title="http://localhost/api/v1/shops"
                      class="sl-stack sl-stack--horizontal sl-stack--3 sl-inline-flex sl-flex-row sl-items-center sl-max-w-full sl-font-mono sl-py-2 sl-pr-4 sl-bg-canvas-50 sl-rounded-lg"
                 >
                                             <div class="sl-text-lg sl-font-semibold sl-px-2.5 sl-py-1 sl-text-on-primary sl-rounded-lg"
@@ -8832,7 +7393,7 @@ response.json()</code></pre>                                        </div>
                         </div>
                                         <div class="sl-flex sl-overflow-x-hidden sl-text-lg sl-select-all">
                         <div dir="rtl"
-                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">https://vine.openfoodnetwork.org.au</div>
+                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">http://localhost</div>
                         <div class="sl-flex-1 sl-font-semibold">/api/v1/shops</div>
                     </div>
 
@@ -8840,7 +7401,7 @@ response.json()</code></pre>                                        </div>
                                  style="background-color: darkred"
                             >requires authentication
                             </div>
-                                                            </div>
+                                                                                    </div>
         </div>
 
         <p>Create a new shop.</p>
@@ -8861,7 +7422,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Authorization</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -8879,7 +7440,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Content-Type</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -8897,7 +7458,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Accept</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -8915,7 +7476,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">X-Authorisation</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -8945,9 +7506,11 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">shop_name</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
+                                            <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                        <div class="sl-flex sl-items-center">
+                                                            <span class="sl-ml-2 sl-text-warning">required</span>
+                                                                                </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The name of the shop.</p>
         </div>
@@ -8955,7 +7518,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        odit
+                        et
                     </div>
                 </div>
             </div>
@@ -8972,9 +7535,11 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">user_email</div>
                                             <span class="sl-truncate sl-text-muted">email</span>
                                     </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
+                                            <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                        <div class="sl-flex sl-items-center">
+                                                            <span class="sl-ml-2 sl-text-warning">required</span>
+                                                                                </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The email for the shop merchant user.</p>
         </div>
@@ -8982,7 +7547,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        niko.fay@example.org
+                        lisa54@example.com
                     </div>
                 </div>
             </div>
@@ -8999,9 +7564,11 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">user_name</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
+                                            <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                        <div class="sl-flex sl-items-center">
+                                                            <span class="sl-ml-2 sl-text-warning">required</span>
+                                                                                </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The name of the user.</p>
         </div>
@@ -9009,7 +7576,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        est
+                        veniam
                     </div>
                 </div>
             </div>
@@ -9049,15 +7616,15 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request POST \
-    "https://vine.openfoodnetwork.org.au/api/v1/shops" \
+    "http://localhost/api/v1/shops" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "X-Authorisation: JWT eyJ0eXAiOiJKV..." \
     --data "{
-    \"shop_name\": \"odit\",
-    \"user_email\": \"niko.fay@example.org\",
-    \"user_name\": \"est\"
+    \"shop_name\": \"et\",
+    \"user_email\": \"lisa54@example.com\",
+    \"user_name\": \"veniam\"
 }"
 </code></pre>                                        </div>
                                     </div>
@@ -9067,7 +7634,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/shops"
+    "http://localhost/api/v1/shops"
 );
 
 const headers = {
@@ -9078,9 +7645,9 @@ const headers = {
 };
 
 let body = {
-    "shop_name": "odit",
-    "user_email": "niko.fay@example.org",
-    "user_name": "est"
+    "shop_name": "et",
+    "user_email": "lisa54@example.com",
+    "user_name": "veniam"
 };
 
 fetch(url, {
@@ -9095,7 +7662,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/shops';
+$url = 'http://localhost/api/v1/shops';
 $response = $client-&gt;post(
     $url,
     [
@@ -9106,9 +7673,9 @@ $response = $client-&gt;post(
             'X-Authorisation' =&gt; 'JWT eyJ0eXAiOiJKV...',
         ],
         'json' =&gt; [
-            'shop_name' =&gt; 'odit',
-            'user_email' =&gt; 'niko.fay@example.org',
-            'user_name' =&gt; 'est',
+            'shop_name' =&gt; 'et',
+            'user_email' =&gt; 'lisa54@example.com',
+            'user_name' =&gt; 'veniam',
         ],
     ]
 );
@@ -9123,11 +7690,11 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/shops'
+url = 'http://localhost/api/v1/shops'
 payload = {
-    "shop_name": "odit",
-    "user_email": "niko.fay@example.org",
-    "user_name": "est"
+    "shop_name": "et",
+    "user_email": "lisa54@example.com",
+    "user_name": "veniam"
 }
 headers = {
   'Authorization': 'Bearer {YOUR_API_TOKEN}',
@@ -9214,7 +7781,7 @@ response.json()</code></pre>                                        </div>
         </div>
 
         <div class="sl-relative">
-            <div title="https://vine.openfoodnetwork.org.au/api/v1/system-statistics"
+            <div title="http://localhost/api/v1/system-statistics"
                      class="sl-stack sl-stack--horizontal sl-stack--3 sl-inline-flex sl-flex-row sl-items-center sl-max-w-full sl-font-mono sl-py-2 sl-pr-4 sl-bg-canvas-50 sl-rounded-lg"
                 >
                                             <div class="sl-text-lg sl-font-semibold sl-px-2.5 sl-py-1 sl-text-on-primary sl-rounded-lg"
@@ -9224,7 +7791,7 @@ response.json()</code></pre>                                        </div>
                         </div>
                                         <div class="sl-flex sl-overflow-x-hidden sl-text-lg sl-select-all">
                         <div dir="rtl"
-                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">https://vine.openfoodnetwork.org.au</div>
+                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">http://localhost</div>
                         <div class="sl-flex-1 sl-font-semibold">/api/v1/system-statistics</div>
                     </div>
 
@@ -9232,7 +7799,7 @@ response.json()</code></pre>                                        </div>
                                  style="background-color: darkred"
                             >requires authentication
                             </div>
-                                                            </div>
+                                                                                    </div>
         </div>
 
         <p>Retrieve system statistics.</p>
@@ -9253,7 +7820,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Authorization</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -9271,7 +7838,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Content-Type</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -9289,7 +7856,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Accept</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -9307,7 +7874,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">X-Authorisation</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -9335,7 +7902,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">cached</div>
                                             <span class="sl-truncate sl-text-muted">boolean</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Request the response to be cached. Default: <code>true</code>.</p>
         </div>
@@ -9357,7 +7924,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">page</div>
                                             <span class="sl-truncate sl-text-muted">integer</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The pagination page number.</p>
         </div>
@@ -9379,7 +7946,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">limit</div>
                                             <span class="sl-truncate sl-text-muted">integer</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The number of entries returned per pagination page.</p>
         </div>
@@ -9401,7 +7968,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">fields</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Comma-separated list of database fields to return within the object.</p>
         </div>
@@ -9423,7 +7990,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">orderBy</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Order the data by a given field. Comma-separated string.</p>
         </div>
@@ -9445,7 +8012,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">orderBy[]</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Compound <code>orderBy</code>. Order the data by a given field. Comma-separated string. Can not be used in conjunction as standard <code>orderBy</code>.</p>
         </div>
@@ -9467,7 +8034,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">where</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Filter the request on a single field. Key-Value or Key-Operator-Value comma-separated string.</p>
         </div>
@@ -9489,7 +8056,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">where[]</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Compound <code>where</code>. Use when you need to filter on multiple <code>where</code>'s. Note only AND is possible; ORWHERE is not available.</p>
         </div>
@@ -9536,7 +8103,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request GET \
-    --get "https://vine.openfoodnetwork.org.au/api/v1/system-statistics?cached=1&amp;page=1&amp;limit=50&amp;fields=id%2Csum_voucher_value_total&amp;orderBy=orderBy%3Dsum_voucher_value_total%2Cdesc&amp;orderBy%5B%5D=orderBy%5B%5D%3Did%2Cdesc%26orderBy%5B%5D%3Dcreated_at%2Casc&amp;where=where%3Did%2C%3E%2C123&amp;where%5B%5D=where%5B%5D%3Did%2Clike%2C%2A550e%2A%26where%5B%5D%3Dcreated_at%2C%3E%3D%2C2024-01-01" \
+    --get "http://localhost/api/v1/system-statistics?cached=1&amp;page=1&amp;limit=50&amp;fields=id%2Csum_voucher_value_total&amp;orderBy=orderBy%3Dsum_voucher_value_total%2Cdesc&amp;orderBy%5B%5D=orderBy%5B%5D%3Did%2Cdesc%26orderBy%5B%5D%3Dcreated_at%2Casc&amp;where=where%3Did%2C%3E%2C123&amp;where%5B%5D=where%5B%5D%3Did%2Clike%2C%2A550e%2A%26where%5B%5D%3Dcreated_at%2C%3E%3D%2C2024-01-01" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -9548,7 +8115,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/system-statistics"
+    "http://localhost/api/v1/system-statistics"
 );
 
 const params = {
@@ -9582,7 +8149,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/system-statistics';
+$url = 'http://localhost/api/v1/system-statistics';
 $response = $client-&gt;get(
     $url,
     [
@@ -9615,7 +8182,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/system-statistics'
+url = 'http://localhost/api/v1/system-statistics'
 params = {
   'cached': '1',
   'page': '1',
@@ -9737,7 +8304,7 @@ response.json()</code></pre>                                        </div>
         </div>
 
         <div class="sl-relative">
-            <div title="https://vine.openfoodnetwork.org.au/api/v1/system-statistics/{id}"
+            <div title="http://localhost/api/v1/system-statistics/{id}"
                      class="sl-stack sl-stack--horizontal sl-stack--3 sl-inline-flex sl-flex-row sl-items-center sl-max-w-full sl-font-mono sl-py-2 sl-pr-4 sl-bg-canvas-50 sl-rounded-lg"
                 >
                                             <div class="sl-text-lg sl-font-semibold sl-px-2.5 sl-py-1 sl-text-on-primary sl-rounded-lg"
@@ -9747,7 +8314,7 @@ response.json()</code></pre>                                        </div>
                         </div>
                                         <div class="sl-flex sl-overflow-x-hidden sl-text-lg sl-select-all">
                         <div dir="rtl"
-                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">https://vine.openfoodnetwork.org.au</div>
+                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">http://localhost</div>
                         <div class="sl-flex-1 sl-font-semibold">/api/v1/system-statistics/{id}</div>
                     </div>
 
@@ -9755,7 +8322,7 @@ response.json()</code></pre>                                        </div>
                                  style="background-color: darkred"
                             >requires authentication
                             </div>
-                                                            </div>
+                                                                                    </div>
         </div>
 
         <p>Retrieve a single system statistic based on ID.</p>
@@ -9776,7 +8343,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Authorization</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -9794,7 +8361,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Content-Type</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -9812,7 +8379,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Accept</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -9830,7 +8397,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">X-Authorisation</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -9856,9 +8423,11 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">id</div>
                                             <span class="sl-truncate sl-text-muted">integer</span>
                                     </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
+                                            <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                        <div class="sl-flex sl-items-center">
+                                                            <span class="sl-ml-2 sl-text-warning">required</span>
+                                                                                </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>ID.</p>
         </div>
@@ -9866,7 +8435,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        17
+                        12
                     </div>
                 </div>
             </div>
@@ -9888,7 +8457,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">cached</div>
                                             <span class="sl-truncate sl-text-muted">boolean</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Request the response to be cached. Default: <code>true</code>.</p>
         </div>
@@ -9910,7 +8479,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">fields</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Comma-separated list of database fields to return within the object.</p>
         </div>
@@ -9957,7 +8526,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request GET \
-    --get "https://vine.openfoodnetwork.org.au/api/v1/system-statistics/17?cached=1&amp;fields=id%2Cnum_users" \
+    --get "http://localhost/api/v1/system-statistics/12?cached=1&amp;fields=id%2Cnum_users" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -9969,7 +8538,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/system-statistics/17"
+    "http://localhost/api/v1/system-statistics/12"
 );
 
 const params = {
@@ -9997,7 +8566,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/system-statistics/17';
+$url = 'http://localhost/api/v1/system-statistics/12';
 $response = $client-&gt;get(
     $url,
     [
@@ -10024,7 +8593,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/system-statistics/17'
+url = 'http://localhost/api/v1/system-statistics/12'
 params = {
   'cached': '1',
   'fields': 'id,num_users',
@@ -10125,7 +8694,7 @@ response.json()</code></pre>                                        </div>
         </div>
 
         <div class="sl-relative">
-            <div title="https://vine.openfoodnetwork.org.au/api/v1/voucher-beneficiary-distributions"
+            <div title="http://localhost/api/v1/voucher-beneficiary-distributions"
                      class="sl-stack sl-stack--horizontal sl-stack--3 sl-inline-flex sl-flex-row sl-items-center sl-max-w-full sl-font-mono sl-py-2 sl-pr-4 sl-bg-canvas-50 sl-rounded-lg"
                 >
                                             <div class="sl-text-lg sl-font-semibold sl-px-2.5 sl-py-1 sl-text-on-primary sl-rounded-lg"
@@ -10135,7 +8704,7 @@ response.json()</code></pre>                                        </div>
                         </div>
                                         <div class="sl-flex sl-overflow-x-hidden sl-text-lg sl-select-all">
                         <div dir="rtl"
-                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">https://vine.openfoodnetwork.org.au</div>
+                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">http://localhost</div>
                         <div class="sl-flex-1 sl-font-semibold">/api/v1/voucher-beneficiary-distributions</div>
                     </div>
 
@@ -10143,7 +8712,7 @@ response.json()</code></pre>                                        </div>
                                  style="background-color: darkred"
                             >requires authentication
                             </div>
-                                                            </div>
+                                                                                    </div>
         </div>
 
         <p>Create a new beneficiary distribution.</p>
@@ -10164,7 +8733,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Authorization</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -10182,7 +8751,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Content-Type</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -10200,7 +8769,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Accept</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -10218,7 +8787,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">X-Authorisation</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -10248,7 +8817,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">voucher_id</div>
                                             <span class="sl-truncate sl-text-muted">uuid</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The UUID of the voucher to be distributed. required_without:resend_beneficiary_distribution_id</p>
         </div>
@@ -10256,7 +8825,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        laborum
+                        possimus
                     </div>
                 </div>
             </div>
@@ -10273,7 +8842,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">beneficiary_email</div>
                                             <span class="sl-truncate sl-text-muted">email</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The email for the voucher beneficiary. required_without:resend_beneficiary_distribution_id</p>
         </div>
@@ -10281,7 +8850,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        carlos89@example.org
+                        merl.brakus@example.net
                     </div>
                 </div>
             </div>
@@ -10298,7 +8867,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">resend_beneficiary_distribution_id</div>
                                             <span class="sl-truncate sl-text-muted">integer</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The database ID for a beneficiary distribution that you would like to resend. Must belong to your team. required_without:beneficiary_email,voucher_id</p>
         </div>
@@ -10306,7 +8875,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        16
+                        17
                     </div>
                 </div>
             </div>
@@ -10346,15 +8915,15 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request POST \
-    "https://vine.openfoodnetwork.org.au/api/v1/voucher-beneficiary-distributions" \
+    "http://localhost/api/v1/voucher-beneficiary-distributions" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "X-Authorisation: JWT eyJ0eXAiOiJKV..." \
     --data "{
-    \"voucher_id\": \"laborum\",
-    \"beneficiary_email\": \"carlos89@example.org\",
-    \"resend_beneficiary_distribution_id\": 16
+    \"voucher_id\": \"possimus\",
+    \"beneficiary_email\": \"merl.brakus@example.net\",
+    \"resend_beneficiary_distribution_id\": 17
 }"
 </code></pre>                                        </div>
                                     </div>
@@ -10364,7 +8933,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/voucher-beneficiary-distributions"
+    "http://localhost/api/v1/voucher-beneficiary-distributions"
 );
 
 const headers = {
@@ -10375,9 +8944,9 @@ const headers = {
 };
 
 let body = {
-    "voucher_id": "laborum",
-    "beneficiary_email": "carlos89@example.org",
-    "resend_beneficiary_distribution_id": 16
+    "voucher_id": "possimus",
+    "beneficiary_email": "merl.brakus@example.net",
+    "resend_beneficiary_distribution_id": 17
 };
 
 fetch(url, {
@@ -10392,7 +8961,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/voucher-beneficiary-distributions';
+$url = 'http://localhost/api/v1/voucher-beneficiary-distributions';
 $response = $client-&gt;post(
     $url,
     [
@@ -10403,9 +8972,9 @@ $response = $client-&gt;post(
             'X-Authorisation' =&gt; 'JWT eyJ0eXAiOiJKV...',
         ],
         'json' =&gt; [
-            'voucher_id' =&gt; 'laborum',
-            'beneficiary_email' =&gt; 'carlos89@example.org',
-            'resend_beneficiary_distribution_id' =&gt; 16,
+            'voucher_id' =&gt; 'possimus',
+            'beneficiary_email' =&gt; 'merl.brakus@example.net',
+            'resend_beneficiary_distribution_id' =&gt; 17,
         ],
     ]
 );
@@ -10420,11 +8989,11 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/voucher-beneficiary-distributions'
+url = 'http://localhost/api/v1/voucher-beneficiary-distributions'
 payload = {
-    "voucher_id": "laborum",
-    "beneficiary_email": "carlos89@example.org",
-    "resend_beneficiary_distribution_id": 16
+    "voucher_id": "possimus",
+    "beneficiary_email": "merl.brakus@example.net",
+    "resend_beneficiary_distribution_id": 17
 }
 headers = {
   'Authorization': 'Bearer {YOUR_API_TOKEN}',
@@ -10511,7 +9080,7 @@ response.json()</code></pre>                                        </div>
         </div>
 
         <div class="sl-relative">
-            <div title="https://vine.openfoodnetwork.org.au/api/v1/voucher-validation"
+            <div title="http://localhost/api/v1/voucher-validation"
                      class="sl-stack sl-stack--horizontal sl-stack--3 sl-inline-flex sl-flex-row sl-items-center sl-max-w-full sl-font-mono sl-py-2 sl-pr-4 sl-bg-canvas-50 sl-rounded-lg"
                 >
                                             <div class="sl-text-lg sl-font-semibold sl-px-2.5 sl-py-1 sl-text-on-primary sl-rounded-lg"
@@ -10521,7 +9090,7 @@ response.json()</code></pre>                                        </div>
                         </div>
                                         <div class="sl-flex sl-overflow-x-hidden sl-text-lg sl-select-all">
                         <div dir="rtl"
-                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">https://vine.openfoodnetwork.org.au</div>
+                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">http://localhost</div>
                         <div class="sl-flex-1 sl-font-semibold">/api/v1/voucher-validation</div>
                     </div>
 
@@ -10529,7 +9098,7 @@ response.json()</code></pre>                                        </div>
                                  style="background-color: darkred"
                             >requires authentication
                             </div>
-                                                            </div>
+                                                                                    </div>
         </div>
 
         <p>Verify the validity of a voucher. Throttled by VALIDATION_THROTTLE_MAX_PER_MINUTE configuration (default 60 requests per minute per API token)</p>
@@ -10550,7 +9119,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Authorization</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -10568,7 +9137,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Content-Type</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -10586,7 +9155,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Accept</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -10604,7 +9173,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">X-Authorisation</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -10634,9 +9203,11 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">type</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
+                                            <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                        <div class="sl-flex sl-items-center">
+                                                            <span class="sl-ml-2 sl-text-warning">required</span>
+                                                                                </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The validation type. Must be one of: voucher_code,voucher_id</p>
         </div>
@@ -10644,7 +9215,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        quia
+                        accusamus
                     </div>
                 </div>
             </div>
@@ -10661,9 +9232,11 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">value</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
+                                            <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                        <div class="sl-flex sl-items-center">
+                                                            <span class="sl-ml-2 sl-text-warning">required</span>
+                                                                                </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The validation value.</p>
         </div>
@@ -10671,7 +9244,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        vero
+                        aut
                     </div>
                 </div>
             </div>
@@ -10711,14 +9284,14 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request POST \
-    "https://vine.openfoodnetwork.org.au/api/v1/voucher-validation" \
+    "http://localhost/api/v1/voucher-validation" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "X-Authorisation: JWT eyJ0eXAiOiJKV..." \
     --data "{
-    \"type\": \"quia\",
-    \"value\": \"vero\"
+    \"type\": \"accusamus\",
+    \"value\": \"aut\"
 }"
 </code></pre>                                        </div>
                                     </div>
@@ -10728,7 +9301,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/voucher-validation"
+    "http://localhost/api/v1/voucher-validation"
 );
 
 const headers = {
@@ -10739,8 +9312,8 @@ const headers = {
 };
 
 let body = {
-    "type": "quia",
-    "value": "vero"
+    "type": "accusamus",
+    "value": "aut"
 };
 
 fetch(url, {
@@ -10755,7 +9328,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/voucher-validation';
+$url = 'http://localhost/api/v1/voucher-validation';
 $response = $client-&gt;post(
     $url,
     [
@@ -10766,8 +9339,8 @@ $response = $client-&gt;post(
             'X-Authorisation' =&gt; 'JWT eyJ0eXAiOiJKV...',
         ],
         'json' =&gt; [
-            'type' =&gt; 'quia',
-            'value' =&gt; 'vero',
+            'type' =&gt; 'accusamus',
+            'value' =&gt; 'aut',
         ],
     ]
 );
@@ -10782,10 +9355,10 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/voucher-validation'
+url = 'http://localhost/api/v1/voucher-validation'
 payload = {
-    "type": "quia",
-    "value": "vero"
+    "type": "accusamus",
+    "value": "aut"
 }
 headers = {
   'Authorization': 'Bearer {YOUR_API_TOKEN}',
@@ -10860,7 +9433,7 @@ response.json()</code></pre>                                        </div>
         </div>
 
         <div class="sl-relative">
-            <div title="https://vine.openfoodnetwork.org.au/api/v1/voucher-redemptions"
+            <div title="http://localhost/api/v1/voucher-redemptions"
                      class="sl-stack sl-stack--horizontal sl-stack--3 sl-inline-flex sl-flex-row sl-items-center sl-max-w-full sl-font-mono sl-py-2 sl-pr-4 sl-bg-canvas-50 sl-rounded-lg"
                 >
                                             <div class="sl-text-lg sl-font-semibold sl-px-2.5 sl-py-1 sl-text-on-primary sl-rounded-lg"
@@ -10870,7 +9443,7 @@ response.json()</code></pre>                                        </div>
                         </div>
                                         <div class="sl-flex sl-overflow-x-hidden sl-text-lg sl-select-all">
                         <div dir="rtl"
-                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">https://vine.openfoodnetwork.org.au</div>
+                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">http://localhost</div>
                         <div class="sl-flex-1 sl-font-semibold">/api/v1/voucher-redemptions</div>
                     </div>
 
@@ -10878,7 +9451,7 @@ response.json()</code></pre>                                        </div>
                                  style="background-color: darkred"
                             >requires authentication
                             </div>
-                                                            </div>
+                                                                                    </div>
         </div>
 
         <p>Create a new voucher redemption.</p>
@@ -10899,7 +9472,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Authorization</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -10917,7 +9490,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Content-Type</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -10935,7 +9508,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Accept</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -10953,7 +9526,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">X-Authorisation</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -10983,14 +9556,16 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">voucher_id</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
+                                            <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                        <div class="sl-flex sl-items-center">
+                                                            <span class="sl-ml-2 sl-text-warning">required</span>
+                                                                                </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        aperiam
+                        omnis
                     </div>
                 </div>
             </div>
@@ -11007,14 +9582,16 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">voucher_set_id</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
+                                            <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                        <div class="sl-flex sl-items-center">
+                                                            <span class="sl-ml-2 sl-text-warning">required</span>
+                                                                                </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        quia
+                        omnis
                     </div>
                 </div>
             </div>
@@ -11031,7 +9608,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">amount</div>
                                             <span class="sl-truncate sl-text-muted">integer</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Must be at least 1.</p>
         </div>
@@ -11039,7 +9616,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        59
+                        43
                     </div>
                 </div>
             </div>
@@ -11079,15 +9656,15 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request POST \
-    "https://vine.openfoodnetwork.org.au/api/v1/voucher-redemptions" \
+    "http://localhost/api/v1/voucher-redemptions" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "X-Authorisation: JWT eyJ0eXAiOiJKV..." \
     --data "{
-    \"voucher_id\": \"aperiam\",
-    \"voucher_set_id\": \"quia\",
-    \"amount\": 59
+    \"voucher_id\": \"omnis\",
+    \"voucher_set_id\": \"omnis\",
+    \"amount\": 43
 }"
 </code></pre>                                        </div>
                                     </div>
@@ -11097,7 +9674,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/voucher-redemptions"
+    "http://localhost/api/v1/voucher-redemptions"
 );
 
 const headers = {
@@ -11108,9 +9685,9 @@ const headers = {
 };
 
 let body = {
-    "voucher_id": "aperiam",
-    "voucher_set_id": "quia",
-    "amount": 59
+    "voucher_id": "omnis",
+    "voucher_set_id": "omnis",
+    "amount": 43
 };
 
 fetch(url, {
@@ -11125,7 +9702,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/voucher-redemptions';
+$url = 'http://localhost/api/v1/voucher-redemptions';
 $response = $client-&gt;post(
     $url,
     [
@@ -11136,9 +9713,9 @@ $response = $client-&gt;post(
             'X-Authorisation' =&gt; 'JWT eyJ0eXAiOiJKV...',
         ],
         'json' =&gt; [
-            'voucher_id' =&gt; 'aperiam',
-            'voucher_set_id' =&gt; 'quia',
-            'amount' =&gt; 59,
+            'voucher_id' =&gt; 'omnis',
+            'voucher_set_id' =&gt; 'omnis',
+            'amount' =&gt; 43,
         ],
     ]
 );
@@ -11153,11 +9730,11 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/voucher-redemptions'
+url = 'http://localhost/api/v1/voucher-redemptions'
 payload = {
-    "voucher_id": "aperiam",
-    "voucher_set_id": "quia",
-    "amount": 59
+    "voucher_id": "omnis",
+    "voucher_set_id": "omnis",
+    "amount": 43
 }
 headers = {
   'Authorization': 'Bearer {YOUR_API_TOKEN}',
@@ -11304,7 +9881,7 @@ response.json()</code></pre>                                        </div>
         </div>
 
         <div class="sl-relative">
-            <div title="https://vine.openfoodnetwork.org.au/api/v1/my-team-vsmtar"
+            <div title="http://localhost/api/v1/my-team-vsmtar"
                      class="sl-stack sl-stack--horizontal sl-stack--3 sl-inline-flex sl-flex-row sl-items-center sl-max-w-full sl-font-mono sl-py-2 sl-pr-4 sl-bg-canvas-50 sl-rounded-lg"
                 >
                                             <div class="sl-text-lg sl-font-semibold sl-px-2.5 sl-py-1 sl-text-on-primary sl-rounded-lg"
@@ -11314,7 +9891,7 @@ response.json()</code></pre>                                        </div>
                         </div>
                                         <div class="sl-flex sl-overflow-x-hidden sl-text-lg sl-select-all">
                         <div dir="rtl"
-                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">https://vine.openfoodnetwork.org.au</div>
+                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">http://localhost</div>
                         <div class="sl-flex-1 sl-font-semibold">/api/v1/my-team-vsmtar</div>
                     </div>
 
@@ -11322,7 +9899,7 @@ response.json()</code></pre>                                        </div>
                                  style="background-color: darkred"
                             >requires authentication
                             </div>
-                                                            </div>
+                                                                                    </div>
         </div>
 
         <p>Retrieve my voucher set merchant approval requests. Automatically filtered to you and your current team.</p>
@@ -11343,7 +9920,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Authorization</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -11361,7 +9938,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Content-Type</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -11379,7 +9956,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Accept</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -11397,7 +9974,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">X-Authorisation</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -11425,7 +10002,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">cached</div>
                                             <span class="sl-truncate sl-text-muted">boolean</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Request the response to be cached. Default: <code>true</code>.</p>
         </div>
@@ -11447,7 +10024,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">page</div>
                                             <span class="sl-truncate sl-text-muted">integer</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The pagination page number.</p>
         </div>
@@ -11469,7 +10046,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">limit</div>
                                             <span class="sl-truncate sl-text-muted">integer</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The number of entries returned per pagination page.</p>
         </div>
@@ -11491,7 +10068,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">fields</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Comma-separated list of database fields to return within the object.</p>
         </div>
@@ -11513,7 +10090,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">orderBy</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Order the data by a given field. Comma-separated string.</p>
         </div>
@@ -11535,7 +10112,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">orderBy[]</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Compound <code>orderBy</code>. Order the data by a given field. Comma-separated string. Can not be used in conjunction as standard <code>orderBy</code>.</p>
         </div>
@@ -11557,7 +10134,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">where</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Filter the request on a single field. Key-Value or Key-Operator-Value comma-separated string.</p>
         </div>
@@ -11579,7 +10156,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">where[]</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Compound <code>where</code>. Use when you need to filter on multiple <code>where</code>'s. Note only AND is possible; ORWHERE is not available.</p>
         </div>
@@ -11626,7 +10203,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request GET \
-    --get "https://vine.openfoodnetwork.org.au/api/v1/my-team-vsmtar?cached=1&amp;page=1&amp;limit=50&amp;fields=id%2Ccreated_at&amp;orderBy=orderBy%3Did%2Cdesc&amp;orderBy%5B%5D=orderBy%5B%5D%3Did%2Cdesc%26orderBy%5B%5D%3Dcreated_at%2Casc&amp;where=where%3Did%2Clike%2C%2A550e%2A&amp;where%5B%5D=where%5B%5D%3Did%2Clike%2C%2A550e%2A%26where%5B%5D%3Dcreated_at%2C%3E%3D%2C2024-01-01" \
+    --get "http://localhost/api/v1/my-team-vsmtar?cached=1&amp;page=1&amp;limit=50&amp;fields=id%2Ccreated_at&amp;orderBy=orderBy%3Did%2Cdesc&amp;orderBy%5B%5D=orderBy%5B%5D%3Did%2Cdesc%26orderBy%5B%5D%3Dcreated_at%2Casc&amp;where=where%3Did%2Clike%2C%2A550e%2A&amp;where%5B%5D=where%5B%5D%3Did%2Clike%2C%2A550e%2A%26where%5B%5D%3Dcreated_at%2C%3E%3D%2C2024-01-01" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -11638,7 +10215,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/my-team-vsmtar"
+    "http://localhost/api/v1/my-team-vsmtar"
 );
 
 const params = {
@@ -11672,7 +10249,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/my-team-vsmtar';
+$url = 'http://localhost/api/v1/my-team-vsmtar';
 $response = $client-&gt;get(
     $url,
     [
@@ -11705,7 +10282,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/my-team-vsmtar'
+url = 'http://localhost/api/v1/my-team-vsmtar'
 params = {
   'cached': '1',
   'page': '1',
@@ -11797,7 +10374,7 @@ response.json()</code></pre>                                        </div>
         </div>
 
         <div class="sl-relative">
-            <div title="https://vine.openfoodnetwork.org.au/api/v1/admin/audit-items"
+            <div title="http://localhost/api/v1/admin/audit-items"
                      class="sl-stack sl-stack--horizontal sl-stack--3 sl-inline-flex sl-flex-row sl-items-center sl-max-w-full sl-font-mono sl-py-2 sl-pr-4 sl-bg-canvas-50 sl-rounded-lg"
                 >
                                             <div class="sl-text-lg sl-font-semibold sl-px-2.5 sl-py-1 sl-text-on-primary sl-rounded-lg"
@@ -11807,7 +10384,7 @@ response.json()</code></pre>                                        </div>
                         </div>
                                         <div class="sl-flex sl-overflow-x-hidden sl-text-lg sl-select-all">
                         <div dir="rtl"
-                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">https://vine.openfoodnetwork.org.au</div>
+                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">http://localhost</div>
                         <div class="sl-flex-1 sl-font-semibold">/api/v1/admin/audit-items</div>
                     </div>
 
@@ -11815,7 +10392,7 @@ response.json()</code></pre>                                        </div>
                                  style="background-color: darkred"
                             >requires authentication
                             </div>
-                                                            </div>
+                                                                                    </div>
         </div>
 
         <p>Retrieve audit items.</p>
@@ -11836,7 +10413,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Authorization</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -11854,7 +10431,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Content-Type</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -11872,7 +10449,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Accept</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -11890,7 +10467,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">X-Authorisation</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -11918,7 +10495,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">cached</div>
                                             <span class="sl-truncate sl-text-muted">boolean</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Request the response to be cached. Default: <code>true</code>.</p>
         </div>
@@ -11940,7 +10517,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">page</div>
                                             <span class="sl-truncate sl-text-muted">integer</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The pagination page number.</p>
         </div>
@@ -11962,7 +10539,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">limit</div>
                                             <span class="sl-truncate sl-text-muted">integer</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The number of entries returned per pagination page.</p>
         </div>
@@ -11984,7 +10561,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">fields</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Comma-separated list of database fields to return within the object.</p>
         </div>
@@ -12006,7 +10583,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">orderBy</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Order the data by a given field. Comma-separated string.</p>
         </div>
@@ -12028,7 +10605,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">orderBy[]</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Compound <code>orderBy</code>. Order the data by a given field. Comma-separated string. Can not be used in conjunction as standard <code>orderBy</code>.</p>
         </div>
@@ -12050,7 +10627,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">where</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Filter the request on a single field. Key-Value or Key-Operator-Value comma-separated string.</p>
         </div>
@@ -12072,7 +10649,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">where[]</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Compound <code>where</code>. Use when you need to filter on multiple <code>where</code>'s. Note only AND is possible; ORWHERE is not available.</p>
         </div>
@@ -12119,7 +10696,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request GET \
-    --get "https://vine.openfoodnetwork.org.au/api/v1/admin/audit-items?cached=1&amp;page=1&amp;limit=50&amp;fields=id%2Ccreated_at&amp;orderBy=orderBy%3Did%2Cdesc&amp;orderBy%5B%5D=orderBy%5B%5D%3Did%2Cdesc%26orderBy%5B%5D%3Dcreated_at%2Casc&amp;where=where%3Did%2Clike%2C%2A550e%2A&amp;where%5B%5D=where%5B%5D%3Did%2Clike%2C%2A550e%2A%26where%5B%5D%3Dcreated_at%2C%3E%3D%2C2024-01-01" \
+    --get "http://localhost/api/v1/admin/audit-items?cached=1&amp;page=1&amp;limit=50&amp;fields=id%2Ccreated_at&amp;orderBy=orderBy%3Did%2Cdesc&amp;orderBy%5B%5D=orderBy%5B%5D%3Did%2Cdesc%26orderBy%5B%5D%3Dcreated_at%2Casc&amp;where=where%3Did%2Clike%2C%2A550e%2A&amp;where%5B%5D=where%5B%5D%3Did%2Clike%2C%2A550e%2A%26where%5B%5D%3Dcreated_at%2C%3E%3D%2C2024-01-01" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -12131,7 +10708,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/audit-items"
+    "http://localhost/api/v1/admin/audit-items"
 );
 
 const params = {
@@ -12165,7 +10742,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/audit-items';
+$url = 'http://localhost/api/v1/admin/audit-items';
 $response = $client-&gt;get(
     $url,
     [
@@ -12198,7 +10775,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/audit-items'
+url = 'http://localhost/api/v1/admin/audit-items'
 params = {
   'cached': '1',
   'page': '1',
@@ -12320,7 +10897,7 @@ response.json()</code></pre>                                        </div>
         </div>
 
         <div class="sl-relative">
-            <div title="https://vine.openfoodnetwork.org.au/api/v1/admin/audit-items/{id}"
+            <div title="http://localhost/api/v1/admin/audit-items/{id}"
                      class="sl-stack sl-stack--horizontal sl-stack--3 sl-inline-flex sl-flex-row sl-items-center sl-max-w-full sl-font-mono sl-py-2 sl-pr-4 sl-bg-canvas-50 sl-rounded-lg"
                 >
                                             <div class="sl-text-lg sl-font-semibold sl-px-2.5 sl-py-1 sl-text-on-primary sl-rounded-lg"
@@ -12330,7 +10907,7 @@ response.json()</code></pre>                                        </div>
                         </div>
                                         <div class="sl-flex sl-overflow-x-hidden sl-text-lg sl-select-all">
                         <div dir="rtl"
-                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">https://vine.openfoodnetwork.org.au</div>
+                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">http://localhost</div>
                         <div class="sl-flex-1 sl-font-semibold">/api/v1/admin/audit-items/{id}</div>
                     </div>
 
@@ -12338,7 +10915,7 @@ response.json()</code></pre>                                        </div>
                                  style="background-color: darkred"
                             >requires authentication
                             </div>
-                                                            </div>
+                                                                                    </div>
         </div>
 
         <p>Retrieve a single audit item.</p>
@@ -12359,7 +10936,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Authorization</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -12377,7 +10954,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Content-Type</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -12395,7 +10972,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Accept</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -12413,7 +10990,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">X-Authorisation</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -12439,9 +11016,11 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">id</div>
                                             <span class="sl-truncate sl-text-muted">uuid</span>
                                     </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
+                                            <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                        <div class="sl-flex sl-items-center">
+                                                            <span class="sl-ml-2 sl-text-warning">required</span>
+                                                                                </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Voucher ID.</p>
         </div>
@@ -12471,7 +11050,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">cached</div>
                                             <span class="sl-truncate sl-text-muted">boolean</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Request the response to be cached. Default: <code>true</code>.</p>
         </div>
@@ -12493,7 +11072,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">fields</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Comma-separated list of database fields to return within the object.</p>
         </div>
@@ -12540,7 +11119,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request GET \
-    --get "https://vine.openfoodnetwork.org.au/api/v1/admin/audit-items/550e8400-e29b-41d4-a716-446655440000?cached=1&amp;fields=id%2Ccreated_at" \
+    --get "http://localhost/api/v1/admin/audit-items/550e8400-e29b-41d4-a716-446655440000?cached=1&amp;fields=id%2Ccreated_at" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -12552,7 +11131,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/audit-items/550e8400-e29b-41d4-a716-446655440000"
+    "http://localhost/api/v1/admin/audit-items/550e8400-e29b-41d4-a716-446655440000"
 );
 
 const params = {
@@ -12580,7 +11159,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/audit-items/550e8400-e29b-41d4-a716-446655440000';
+$url = 'http://localhost/api/v1/admin/audit-items/550e8400-e29b-41d4-a716-446655440000';
 $response = $client-&gt;get(
     $url,
     [
@@ -12607,7 +11186,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/audit-items/550e8400-e29b-41d4-a716-446655440000'
+url = 'http://localhost/api/v1/admin/audit-items/550e8400-e29b-41d4-a716-446655440000'
 params = {
   'cached': '1',
   'fields': 'id,created_at',
@@ -12680,350 +11259,6 @@ response.json()</code></pre>                                        </div>
     </div>
 </div>
 
-                                <h2 id="admin-endpoints-adminsearch"
-                class="sl-text-3xl sl-leading-tight sl-font-prose sl-text-heading sl-mt-5 sl-mb-3"
-            >
-                /admin/search
-            </h2>
-                                        <p>Search for system objects as an admin.</p>
-                        <br>
-                            <div class="sl-stack sl-stack--vertical sl-stack--8 HttpOperation sl-flex sl-flex-col sl-items-stretch sl-w-full">
-    <div class="sl-stack sl-stack--vertical sl-stack--5 sl-flex sl-flex-col sl-items-stretch">
-        <div class="sl-relative">
-            <div class="sl-stack sl-stack--horizontal sl-stack--5 sl-flex sl-flex-row sl-items-center">
-                <h2 class="sl-text-3xl sl-leading-tight sl-font-prose sl-text-heading sl-mt-5 sl-mb-1"
-                    id="admin-endpoints-GETapi-v1-admin-search">
-                    GET /
-                </h2>
-            </div>
-        </div>
-
-        <div class="sl-relative">
-            <div title="https://vine.openfoodnetwork.org.au/api/v1/admin/search"
-                     class="sl-stack sl-stack--horizontal sl-stack--3 sl-inline-flex sl-flex-row sl-items-center sl-max-w-full sl-font-mono sl-py-2 sl-pr-4 sl-bg-canvas-50 sl-rounded-lg"
-                >
-                                            <div class="sl-text-lg sl-font-semibold sl-px-2.5 sl-py-1 sl-text-on-primary sl-rounded-lg"
-                             style="background-color: green;"
-                        >
-                            GET
-                        </div>
-                                        <div class="sl-flex sl-overflow-x-hidden sl-text-lg sl-select-all">
-                        <div dir="rtl"
-                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">https://vine.openfoodnetwork.org.au</div>
-                        <div class="sl-flex-1 sl-font-semibold">/api/v1/admin/search</div>
-                    </div>
-
-                                                    <div class="sl-font-prose sl-font-semibold sl-px-1.5 sl-py-0.5 sl-text-on-primary sl-rounded-lg"
-                                 style="background-color: darkred"
-                            >requires authentication
-                            </div>
-                                                            </div>
-        </div>
-
-        <p>Perform a search.</p>
-    </div>
-    <div class="sl-flex">
-        <div data-testid="two-column-left" class="sl-flex-1 sl-w-0">
-            <div class="sl-stack sl-stack--vertical sl-stack--10 sl-flex sl-flex-col sl-items-stretch">
-                <div class="sl-stack sl-stack--vertical sl-stack--8 sl-flex sl-flex-col sl-items-stretch">
-                                            <div class="sl-stack sl-stack--vertical sl-stack--5 sl-flex sl-flex-col sl-items-stretch">
-                            <h3 class="sl-text-2xl sl-leading-snug sl-font-prose">
-                                Headers
-                            </h3>
-                            <div class="sl-text-sm">
-                                                                    <div class="sl-flex sl-relative sl-max-w-full sl-py-2 sl-pl-3">
-    <div class="sl-w-1 sl-mt-2 sl-mr-3 sl--ml-3 sl-border-t"></div>
-    <div class="sl-stack sl-stack--vertical sl-stack--1 sl-flex sl-flex-1 sl-flex-col sl-items-stretch sl-max-w-full sl-ml-2 ">
-        <div class="sl-flex sl-items-center sl-max-w-full">
-                                        <div class="sl-flex sl-items-baseline sl-text-base">
-                    <div class="sl-font-mono sl-font-semibold sl-mr-2">Authorization</div>
-                                    </div>
-                                    </div>
-                                            <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
-                <span>Example:</span> <!-- <span> important for spacing -->
-                <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
-                    <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        Bearer {YOUR_API_TOKEN}
-                    </div>
-                </div>
-            </div>
-            </div>
-</div>
-                                                                    <div class="sl-flex sl-relative sl-max-w-full sl-py-2 sl-pl-3">
-    <div class="sl-w-1 sl-mt-2 sl-mr-3 sl--ml-3 sl-border-t"></div>
-    <div class="sl-stack sl-stack--vertical sl-stack--1 sl-flex sl-flex-1 sl-flex-col sl-items-stretch sl-max-w-full sl-ml-2 ">
-        <div class="sl-flex sl-items-center sl-max-w-full">
-                                        <div class="sl-flex sl-items-baseline sl-text-base">
-                    <div class="sl-font-mono sl-font-semibold sl-mr-2">Content-Type</div>
-                                    </div>
-                                    </div>
-                                            <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
-                <span>Example:</span> <!-- <span> important for spacing -->
-                <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
-                    <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        application/json
-                    </div>
-                </div>
-            </div>
-            </div>
-</div>
-                                                                    <div class="sl-flex sl-relative sl-max-w-full sl-py-2 sl-pl-3">
-    <div class="sl-w-1 sl-mt-2 sl-mr-3 sl--ml-3 sl-border-t"></div>
-    <div class="sl-stack sl-stack--vertical sl-stack--1 sl-flex sl-flex-1 sl-flex-col sl-items-stretch sl-max-w-full sl-ml-2 ">
-        <div class="sl-flex sl-items-center sl-max-w-full">
-                                        <div class="sl-flex sl-items-baseline sl-text-base">
-                    <div class="sl-font-mono sl-font-semibold sl-mr-2">Accept</div>
-                                    </div>
-                                    </div>
-                                            <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
-                <span>Example:</span> <!-- <span> important for spacing -->
-                <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
-                    <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        application/json
-                    </div>
-                </div>
-            </div>
-            </div>
-</div>
-                                                                    <div class="sl-flex sl-relative sl-max-w-full sl-py-2 sl-pl-3">
-    <div class="sl-w-1 sl-mt-2 sl-mr-3 sl--ml-3 sl-border-t"></div>
-    <div class="sl-stack sl-stack--vertical sl-stack--1 sl-flex sl-flex-1 sl-flex-col sl-items-stretch sl-max-w-full sl-ml-2 ">
-        <div class="sl-flex sl-items-center sl-max-w-full">
-                                        <div class="sl-flex sl-items-baseline sl-text-base">
-                    <div class="sl-font-mono sl-font-semibold sl-mr-2">X-Authorisation</div>
-                                    </div>
-                                    </div>
-                                            <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
-                <span>Example:</span> <!-- <span> important for spacing -->
-                <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
-                    <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        JWT eyJ0eXAiOiJKV...
-                    </div>
-                </div>
-            </div>
-            </div>
-</div>
-                                                            </div>
-                        </div>
-                    
-                    
-
-                    
-                                            <div class="sl-stack sl-stack--vertical sl-stack--6 sl-flex sl-flex-col sl-items-stretch">
-                            <h3 class="sl-text-2xl sl-leading-snug sl-font-prose">Body Parameters</h3>
-
-                                <div class="sl-text-sm">
-                                    <div class="expandable sl-text-sm sl-border-l sl-ml-px">
-        <div class="sl-flex sl-relative sl-max-w-full sl-py-2 sl-pl-3">
-    <div class="sl-w-1 sl-mt-2 sl-mr-3 sl--ml-3 sl-border-t"></div>
-    <div class="sl-stack sl-stack--vertical sl-stack--1 sl-flex sl-flex-1 sl-flex-col sl-items-stretch sl-max-w-full sl-ml-2 ">
-        <div class="sl-flex sl-items-center sl-max-w-full">
-                                        <div class="sl-flex sl-items-baseline sl-text-base">
-                    <div class="sl-font-mono sl-font-semibold sl-mr-2">query</div>
-                                            <span class="sl-truncate sl-text-muted">string</span>
-                                    </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
-                <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
-            <p>Must be at least 3 characters.</p>
-        </div>
-                                            <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
-                <span>Example:</span> <!-- <span> important for spacing -->
-                <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
-                    <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        kljfiyzxfyappdertoucadgltoqaupfwzijziwkwzxgpmiqxgjasnacjazwimgzbnnwyiygtzffdu
-                    </div>
-                </div>
-            </div>
-            </div>
-</div>
-
-            </div>
-                            </div>
-                        </div>
-                    
-                                    </div>
-            </div>
-        </div>
-
-        <div data-testid="two-column-right" class="sl-relative sl-w-2/5 sl-ml-16" style="max-width: 500px;">
-            <div class="sl-stack sl-stack--vertical sl-stack--6 sl-flex sl-flex-col sl-items-stretch">
-
-                
-                                            <div class="sl-panel sl-outline-none sl-w-full sl-rounded-lg">
-                            <div class="sl-panel__titlebar sl-flex sl-items-center sl-relative focus:sl-z-10 sl-text-base sl-leading-none sl-pr-3 sl-pl-4 sl-bg-canvas-200 sl-text-body sl-border-input focus:sl-border-primary sl-select-none">
-                                <div class="sl-flex sl-flex-1 sl-items-center sl-h-lg">
-                                    <div class="sl--ml-2">
-                                        Example request:
-                                        <select class="example-request-lang-toggle sl-text-base"
-                                                aria-label="Request Sample Language"
-                                                onchange="switchExampleLanguage(event.target.value);">
-                                                                                            <option>bash</option>
-                                                                                            <option>javascript</option>
-                                                                                            <option>php</option>
-                                                                                            <option>python</option>
-                                                                                    </select>
-                                    </div>
-                                </div>
-                            </div>
-                                                            <div class="sl-bg-canvas-100 example-request example-request-bash"
-                                     style="">
-                                    <div class="sl-px-0 sl-py-1">
-                                        <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
-                                            <pre><code class="language-bash">curl --request GET \
-    --get "https://vine.openfoodnetwork.org.au/api/v1/admin/search" \
-    --header "Authorization: Bearer {YOUR_API_TOKEN}" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json" \
-    --header "X-Authorisation: JWT eyJ0eXAiOiJKV..." \
-    --data "{
-    \"query\": \"kljfiyzxfyappdertoucadgltoqaupfwzijziwkwzxgpmiqxgjasnacjazwimgzbnnwyiygtzffdu\"
-}"
-</code></pre>                                        </div>
-                                    </div>
-                                </div>
-                                                            <div class="sl-bg-canvas-100 example-request example-request-javascript"
-                                     style="display: none;">
-                                    <div class="sl-px-0 sl-py-1">
-                                        <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
-                                            <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/search"
-);
-
-const headers = {
-    "Authorization": "Bearer {YOUR_API_TOKEN}",
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-    "X-Authorisation": "JWT eyJ0eXAiOiJKV...",
-};
-
-let body = {
-    "query": "kljfiyzxfyappdertoucadgltoqaupfwzijziwkwzxgpmiqxgjasnacjazwimgzbnnwyiygtzffdu"
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-    body: JSON.stringify(body),
-}).then(response =&gt; response.json());</code></pre>                                        </div>
-                                    </div>
-                                </div>
-                                                            <div class="sl-bg-canvas-100 example-request example-request-php"
-                                     style="display: none;">
-                                    <div class="sl-px-0 sl-py-1">
-                                        <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
-                                            <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/search';
-$response = $client-&gt;get(
-    $url,
-    [
-        'headers' =&gt; [
-            'Authorization' =&gt; 'Bearer {YOUR_API_TOKEN}',
-            'Content-Type' =&gt; 'application/json',
-            'Accept' =&gt; 'application/json',
-            'X-Authorisation' =&gt; 'JWT eyJ0eXAiOiJKV...',
-        ],
-        'json' =&gt; [
-            'query' =&gt; 'kljfiyzxfyappdertoucadgltoqaupfwzijziwkwzxgpmiqxgjasnacjazwimgzbnnwyiygtzffdu',
-        ],
-    ]
-);
-$body = $response-&gt;getBody();
-print_r(json_decode((string) $body));</code></pre>                                        </div>
-                                    </div>
-                                </div>
-                                                            <div class="sl-bg-canvas-100 example-request example-request-python"
-                                     style="display: none;">
-                                    <div class="sl-px-0 sl-py-1">
-                                        <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
-                                            <pre><code class="language-python">import requests
-import json
-
-url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/search'
-payload = {
-    "query": "kljfiyzxfyappdertoucadgltoqaupfwzijziwkwzxgpmiqxgjasnacjazwimgzbnnwyiygtzffdu"
-}
-headers = {
-  'Authorization': 'Bearer {YOUR_API_TOKEN}',
-  'Content-Type': 'application/json',
-  'Accept': 'application/json',
-  'X-Authorisation': 'JWT eyJ0eXAiOiJKV...'
-}
-
-response = requests.request('GET', url, headers=headers, json=payload)
-response.json()</code></pre>                                        </div>
-                                    </div>
-                                </div>
-                                                    </div>
-                    
-                                            <div class="sl-panel sl-outline-none sl-w-full sl-rounded-lg">
-                            <div class="sl-panel__titlebar sl-flex sl-items-center sl-relative focus:sl-z-10 sl-text-base sl-leading-none sl-pr-3 sl-pl-4 sl-bg-canvas-200 sl-text-body sl-border-input focus:sl-border-primary sl-select-none">
-                                <div class="sl-flex sl-flex-1 sl-items-center sl-py-2">
-                                    <div class="sl--ml-2">
-                                        <div class="sl-h-sm sl-text-base sl-font-medium sl-px-1.5 sl-text-muted sl-rounded sl-border-transparent sl-border">
-                                            <div class="sl-mb-2 sl-inline-block">Example response:</div>
-                                            <div class="sl-mb-2 sl-inline-block">
-                                                <select
-                                                        class="example-response-GETapi-v1-admin-search-toggle sl-text-base"
-                                                        aria-label="Response sample"
-                                                        onchange="switchExampleResponse('GETapi-v1-admin-search', event.target.value);">
-                                                                                                            <option value="0">401</option>
-                                                                                                    </select></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <button type="button"
-                                        class="sl-button sl-h-sm sl-text-base sl-font-medium sl-px-1.5 hover:sl-bg-canvas-50 active:sl-bg-canvas-100 sl-text-muted hover:sl-text-body focus:sl-text-body sl-rounded sl-border-transparent sl-border disabled:sl-opacity-70">
-                                    <div class="sl-mx-0">
-                                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="copy"
-                                             class="svg-inline--fa fa-copy fa-fw fa-sm sl-icon" role="img"
-                                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                                            <path fill="currentColor"
-                                                  d="M384 96L384 0h-112c-26.51 0-48 21.49-48 48v288c0 26.51 21.49 48 48 48H464c26.51 0 48-21.49 48-48V128h-95.1C398.4 128 384 113.6 384 96zM416 0v96h96L416 0zM192 352V128h-144c-26.51 0-48 21.49-48 48v288c0 26.51 21.49 48 48 48h192c26.51 0 48-21.49 48-48L288 416h-32C220.7 416 192 387.3 192 352z"></path>
-                                        </svg>
-                                    </div>
-                                </button>
-                            </div>
-                                                            <div class="sl-panel__content-wrapper sl-bg-canvas-100 example-response-GETapi-v1-admin-search example-response-GETapi-v1-admin-search-0"
-                                     style=" "
-                                >
-                                    <div class="sl-panel__content sl-p-0">                                            <details class="sl-pl-2">
-                                                <summary style="cursor: pointer; list-style: none;">
-                                                    <small>
-                                                        <span class="expansion-chevrons">
-
-    <svg aria-hidden="true" focusable="false" data-prefix="fas"
-         data-icon="chevron-right"
-         class="svg-inline--fa fa-chevron-right fa-fw sl-icon sl-text-muted"
-         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
-        <path fill="currentColor"
-              d="M96 480c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L242.8 256L73.38 86.63c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l192 192c12.5 12.5 12.5 32.75 0 45.25l-192 192C112.4 476.9 104.2 480 96 480z"></path>
-    </svg>
-                                                            </span>
-                                                        Headers
-                                                    </small>
-                                                </summary>
-                                                <pre><code class="language-http">                                                            cache-control
-                                                            : no-cache, private
-                                                                                                                    content-type
-                                                            : application/json
-                                                                                                                    access-control-allow-origin
-                                                            : *
-                                                         </code></pre>
-                                            </details>
-                                                                                                                                                                        
-                                            <pre><code style="max-height: 300px;"
-                                                       class="language-json sl-overflow-x-auto sl-overflow-y-auto">{
-    &quot;message&quot;: &quot;Unauthenticated.&quot;
-}</code></pre>
-                                                                            </div>
-                                </div>
-                                                    </div>
-                            </div>
-    </div>
-</div>
-
                                 <h2 id="admin-endpoints-adminsystem-statistics"
                 class="sl-text-3xl sl-leading-tight sl-font-prose sl-text-heading sl-mt-5 sl-mb-3"
             >
@@ -13043,7 +11278,7 @@ response.json()</code></pre>                                        </div>
         </div>
 
         <div class="sl-relative">
-            <div title="https://vine.openfoodnetwork.org.au/api/v1/admin/system-statistics"
+            <div title="http://localhost/api/v1/admin/system-statistics"
                      class="sl-stack sl-stack--horizontal sl-stack--3 sl-inline-flex sl-flex-row sl-items-center sl-max-w-full sl-font-mono sl-py-2 sl-pr-4 sl-bg-canvas-50 sl-rounded-lg"
                 >
                                             <div class="sl-text-lg sl-font-semibold sl-px-2.5 sl-py-1 sl-text-on-primary sl-rounded-lg"
@@ -13053,7 +11288,7 @@ response.json()</code></pre>                                        </div>
                         </div>
                                         <div class="sl-flex sl-overflow-x-hidden sl-text-lg sl-select-all">
                         <div dir="rtl"
-                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">https://vine.openfoodnetwork.org.au</div>
+                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">http://localhost</div>
                         <div class="sl-flex-1 sl-font-semibold">/api/v1/admin/system-statistics</div>
                     </div>
 
@@ -13061,7 +11296,7 @@ response.json()</code></pre>                                        </div>
                                  style="background-color: darkred"
                             >requires authentication
                             </div>
-                                                            </div>
+                                                                                    </div>
         </div>
 
         <p>Get a list of system stats.</p>
@@ -13082,7 +11317,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Authorization</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -13100,7 +11335,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Content-Type</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -13118,7 +11353,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Accept</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -13136,7 +11371,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">X-Authorisation</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -13164,7 +11399,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">cached</div>
                                             <span class="sl-truncate sl-text-muted">boolean</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Request the response to be cached. Default: <code>true</code>.</p>
         </div>
@@ -13186,7 +11421,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">page</div>
                                             <span class="sl-truncate sl-text-muted">integer</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The pagination page number.</p>
         </div>
@@ -13208,7 +11443,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">limit</div>
                                             <span class="sl-truncate sl-text-muted">integer</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The number of entries returned per pagination page.</p>
         </div>
@@ -13230,7 +11465,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">fields</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Comma-separated list of database fields to return within the object.</p>
         </div>
@@ -13252,7 +11487,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">orderBy</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Order the data by a given field. Comma-separated string.</p>
         </div>
@@ -13274,7 +11509,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">orderBy[]</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Compound <code>orderBy</code>. Order the data by a given field. Comma-separated string. Can not be used in conjunction as standard <code>orderBy</code>.</p>
         </div>
@@ -13296,7 +11531,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">where</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Filter the request on a single field. Key-Value or Key-Operator-Value comma-separated string.</p>
         </div>
@@ -13318,7 +11553,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">where[]</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Compound <code>where</code>. Use when you need to filter on multiple <code>where</code>'s. Note only AND is possible; ORWHERE is not available.</p>
         </div>
@@ -13365,7 +11600,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request GET \
-    --get "https://vine.openfoodnetwork.org.au/api/v1/admin/system-statistics?cached=1&amp;page=1&amp;limit=50&amp;fields=id%2Ccreated_at&amp;orderBy=orderBy%3Did%2Cdesc&amp;orderBy%5B%5D=orderBy%5B%5D%3Did%2Cdesc%26orderBy%5B%5D%3Dcreated_at%2Casc&amp;where=where%3Did%2Clike%2C%2A550e%2A&amp;where%5B%5D=where%5B%5D%3Did%2Clike%2C%2A550e%2A%26where%5B%5D%3Dcreated_at%2C%3E%3D%2C2024-01-01" \
+    --get "http://localhost/api/v1/admin/system-statistics?cached=1&amp;page=1&amp;limit=50&amp;fields=id%2Ccreated_at&amp;orderBy=orderBy%3Did%2Cdesc&amp;orderBy%5B%5D=orderBy%5B%5D%3Did%2Cdesc%26orderBy%5B%5D%3Dcreated_at%2Casc&amp;where=where%3Did%2Clike%2C%2A550e%2A&amp;where%5B%5D=where%5B%5D%3Did%2Clike%2C%2A550e%2A%26where%5B%5D%3Dcreated_at%2C%3E%3D%2C2024-01-01" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -13377,7 +11612,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/system-statistics"
+    "http://localhost/api/v1/admin/system-statistics"
 );
 
 const params = {
@@ -13411,7 +11646,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/system-statistics';
+$url = 'http://localhost/api/v1/admin/system-statistics';
 $response = $client-&gt;get(
     $url,
     [
@@ -13444,7 +11679,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/system-statistics'
+url = 'http://localhost/api/v1/admin/system-statistics'
 params = {
   'cached': '1',
   'page': '1',
@@ -13566,7 +11801,7 @@ response.json()</code></pre>                                        </div>
         </div>
 
         <div class="sl-relative">
-            <div title="https://vine.openfoodnetwork.org.au/api/v1/admin/system-statistics/{id}"
+            <div title="http://localhost/api/v1/admin/system-statistics/{id}"
                      class="sl-stack sl-stack--horizontal sl-stack--3 sl-inline-flex sl-flex-row sl-items-center sl-max-w-full sl-font-mono sl-py-2 sl-pr-4 sl-bg-canvas-50 sl-rounded-lg"
                 >
                                             <div class="sl-text-lg sl-font-semibold sl-px-2.5 sl-py-1 sl-text-on-primary sl-rounded-lg"
@@ -13576,7 +11811,7 @@ response.json()</code></pre>                                        </div>
                         </div>
                                         <div class="sl-flex sl-overflow-x-hidden sl-text-lg sl-select-all">
                         <div dir="rtl"
-                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">https://vine.openfoodnetwork.org.au</div>
+                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">http://localhost</div>
                         <div class="sl-flex-1 sl-font-semibold">/api/v1/admin/system-statistics/{id}</div>
                     </div>
 
@@ -13584,7 +11819,7 @@ response.json()</code></pre>                                        </div>
                                  style="background-color: darkred"
                             >requires authentication
                             </div>
-                                                            </div>
+                                                                                    </div>
         </div>
 
         <p>Retrieve a single item.</p>
@@ -13605,7 +11840,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Authorization</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -13623,7 +11858,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Content-Type</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -13641,7 +11876,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Accept</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -13659,7 +11894,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">X-Authorisation</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -13685,9 +11920,11 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">id</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
+                                            <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                        <div class="sl-flex sl-items-center">
+                                                            <span class="sl-ml-2 sl-text-warning">required</span>
+                                                                                </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The ID of the system statistic.</p>
         </div>
@@ -13695,7 +11932,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        praesentium
+                        dolor
                     </div>
                 </div>
             </div>
@@ -13717,7 +11954,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">cached</div>
                                             <span class="sl-truncate sl-text-muted">boolean</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Request the response to be cached. Default: <code>true</code>.</p>
         </div>
@@ -13739,7 +11976,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">fields</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Comma-separated list of database fields to return within the object.</p>
         </div>
@@ -13786,7 +12023,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request GET \
-    --get "https://vine.openfoodnetwork.org.au/api/v1/admin/system-statistics/praesentium?cached=1&amp;fields=id%2Ccreated_at" \
+    --get "http://localhost/api/v1/admin/system-statistics/dolor?cached=1&amp;fields=id%2Ccreated_at" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -13798,7 +12035,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/system-statistics/praesentium"
+    "http://localhost/api/v1/admin/system-statistics/dolor"
 );
 
 const params = {
@@ -13826,7 +12063,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/system-statistics/praesentium';
+$url = 'http://localhost/api/v1/admin/system-statistics/dolor';
 $response = $client-&gt;get(
     $url,
     [
@@ -13853,7 +12090,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/system-statistics/praesentium'
+url = 'http://localhost/api/v1/admin/system-statistics/dolor'
 params = {
   'cached': '1',
   'fields': 'id,created_at',
@@ -13945,7 +12182,7 @@ response.json()</code></pre>                                        </div>
         </div>
 
         <div class="sl-relative">
-            <div title="https://vine.openfoodnetwork.org.au/api/v1/admin/teams"
+            <div title="http://localhost/api/v1/admin/teams"
                      class="sl-stack sl-stack--horizontal sl-stack--3 sl-inline-flex sl-flex-row sl-items-center sl-max-w-full sl-font-mono sl-py-2 sl-pr-4 sl-bg-canvas-50 sl-rounded-lg"
                 >
                                             <div class="sl-text-lg sl-font-semibold sl-px-2.5 sl-py-1 sl-text-on-primary sl-rounded-lg"
@@ -13955,7 +12192,7 @@ response.json()</code></pre>                                        </div>
                         </div>
                                         <div class="sl-flex sl-overflow-x-hidden sl-text-lg sl-select-all">
                         <div dir="rtl"
-                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">https://vine.openfoodnetwork.org.au</div>
+                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">http://localhost</div>
                         <div class="sl-flex-1 sl-font-semibold">/api/v1/admin/teams</div>
                     </div>
 
@@ -13963,7 +12200,7 @@ response.json()</code></pre>                                        </div>
                                  style="background-color: darkred"
                             >requires authentication
                             </div>
-                                                            </div>
+                                                                                    </div>
         </div>
 
         <p>Retrieve teams.</p>
@@ -13984,7 +12221,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Authorization</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -14002,7 +12239,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Content-Type</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -14020,7 +12257,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Accept</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -14038,7 +12275,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">X-Authorisation</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -14066,7 +12303,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">cached</div>
                                             <span class="sl-truncate sl-text-muted">boolean</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Request the response to be cached. Default: <code>true</code>.</p>
         </div>
@@ -14088,7 +12325,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">page</div>
                                             <span class="sl-truncate sl-text-muted">integer</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The pagination page number.</p>
         </div>
@@ -14110,7 +12347,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">limit</div>
                                             <span class="sl-truncate sl-text-muted">integer</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The number of entries returned per pagination page.</p>
         </div>
@@ -14132,7 +12369,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">fields</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Comma-separated list of database fields to return within the object.</p>
         </div>
@@ -14154,7 +12391,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">orderBy</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Order the data by a given field. Comma-separated string.</p>
         </div>
@@ -14176,7 +12413,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">orderBy[]</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Compound <code>orderBy</code>. Order the data by a given field. Comma-separated string. Can not be used in conjunction as standard <code>orderBy</code>.</p>
         </div>
@@ -14198,7 +12435,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">where</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Filter the request on a single field. Key-Value or Key-Operator-Value comma-separated string.</p>
         </div>
@@ -14220,7 +12457,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">where[]</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Compound <code>where</code>. Use when you need to filter on multiple <code>where</code>'s. Note only AND is possible; ORWHERE is not available.</p>
         </div>
@@ -14267,7 +12504,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request GET \
-    --get "https://vine.openfoodnetwork.org.au/api/v1/admin/teams?cached=1&amp;page=1&amp;limit=50&amp;fields=id%2Ccreated_at&amp;orderBy=orderBy%3Did%2Cdesc&amp;orderBy%5B%5D=orderBy%5B%5D%3Did%2Cdesc%26orderBy%5B%5D%3Dcreated_at%2Casc&amp;where=where%3Did%2Clike%2C%2A550e%2A&amp;where%5B%5D=where%5B%5D%3Did%2Clike%2C%2A550e%2A%26where%5B%5D%3Dcreated_at%2C%3E%3D%2C2024-01-01" \
+    --get "http://localhost/api/v1/admin/teams?cached=1&amp;page=1&amp;limit=50&amp;fields=id%2Ccreated_at&amp;orderBy=orderBy%3Did%2Cdesc&amp;orderBy%5B%5D=orderBy%5B%5D%3Did%2Cdesc%26orderBy%5B%5D%3Dcreated_at%2Casc&amp;where=where%3Did%2Clike%2C%2A550e%2A&amp;where%5B%5D=where%5B%5D%3Did%2Clike%2C%2A550e%2A%26where%5B%5D%3Dcreated_at%2C%3E%3D%2C2024-01-01" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -14279,7 +12516,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/teams"
+    "http://localhost/api/v1/admin/teams"
 );
 
 const params = {
@@ -14313,7 +12550,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/teams';
+$url = 'http://localhost/api/v1/admin/teams';
 $response = $client-&gt;get(
     $url,
     [
@@ -14346,7 +12583,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/teams'
+url = 'http://localhost/api/v1/admin/teams'
 params = {
   'cached': '1',
   'page': '1',
@@ -14468,7 +12705,7 @@ response.json()</code></pre>                                        </div>
         </div>
 
         <div class="sl-relative">
-            <div title="https://vine.openfoodnetwork.org.au/api/v1/admin/teams"
+            <div title="http://localhost/api/v1/admin/teams"
                      class="sl-stack sl-stack--horizontal sl-stack--3 sl-inline-flex sl-flex-row sl-items-center sl-max-w-full sl-font-mono sl-py-2 sl-pr-4 sl-bg-canvas-50 sl-rounded-lg"
                 >
                                             <div class="sl-text-lg sl-font-semibold sl-px-2.5 sl-py-1 sl-text-on-primary sl-rounded-lg"
@@ -14478,7 +12715,7 @@ response.json()</code></pre>                                        </div>
                         </div>
                                         <div class="sl-flex sl-overflow-x-hidden sl-text-lg sl-select-all">
                         <div dir="rtl"
-                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">https://vine.openfoodnetwork.org.au</div>
+                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">http://localhost</div>
                         <div class="sl-flex-1 sl-font-semibold">/api/v1/admin/teams</div>
                     </div>
 
@@ -14486,7 +12723,7 @@ response.json()</code></pre>                                        </div>
                                  style="background-color: darkred"
                             >requires authentication
                             </div>
-                                                            </div>
+                                                                                    </div>
         </div>
 
         <p>Create a team.</p>
@@ -14507,7 +12744,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Authorization</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -14525,7 +12762,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Content-Type</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -14543,7 +12780,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Accept</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -14561,7 +12798,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">X-Authorisation</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -14591,9 +12828,11 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">name</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
+                                            <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                        <div class="sl-flex sl-items-center">
+                                                            <span class="sl-ml-2 sl-text-warning">required</span>
+                                                                                </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The team name.</p>
         </div>
@@ -14601,7 +12840,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        soluta
+                        ad
                     </div>
                 </div>
             </div>
@@ -14618,9 +12857,11 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">country_id</div>
                                             <span class="sl-truncate sl-text-muted">integer</span>
                                     </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
+                                            <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                        <div class="sl-flex sl-items-center">
+                                                            <span class="sl-ml-2 sl-text-warning">required</span>
+                                                                                </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The database countries.id of the team you are adding.</p>
         </div>
@@ -14628,7 +12869,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        4
+                        5
                     </div>
                 </div>
             </div>
@@ -14668,14 +12909,14 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request POST \
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/teams" \
+    "http://localhost/api/v1/admin/teams" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "X-Authorisation: JWT eyJ0eXAiOiJKV..." \
     --data "{
-    \"name\": \"soluta\",
-    \"country_id\": 4
+    \"name\": \"ad\",
+    \"country_id\": 5
 }"
 </code></pre>                                        </div>
                                     </div>
@@ -14685,7 +12926,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/teams"
+    "http://localhost/api/v1/admin/teams"
 );
 
 const headers = {
@@ -14696,8 +12937,8 @@ const headers = {
 };
 
 let body = {
-    "name": "soluta",
-    "country_id": 4
+    "name": "ad",
+    "country_id": 5
 };
 
 fetch(url, {
@@ -14712,7 +12953,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/teams';
+$url = 'http://localhost/api/v1/admin/teams';
 $response = $client-&gt;post(
     $url,
     [
@@ -14723,8 +12964,8 @@ $response = $client-&gt;post(
             'X-Authorisation' =&gt; 'JWT eyJ0eXAiOiJKV...',
         ],
         'json' =&gt; [
-            'name' =&gt; 'soluta',
-            'country_id' =&gt; 4,
+            'name' =&gt; 'ad',
+            'country_id' =&gt; 5,
         ],
     ]
 );
@@ -14739,10 +12980,10 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/teams'
+url = 'http://localhost/api/v1/admin/teams'
 payload = {
-    "name": "soluta",
-    "country_id": 4
+    "name": "ad",
+    "country_id": 5
 }
 headers = {
   'Authorization': 'Bearer {YOUR_API_TOKEN}',
@@ -14773,7 +13014,7 @@ response.json()</code></pre>                                        </div>
         </div>
 
         <div class="sl-relative">
-            <div title="https://vine.openfoodnetwork.org.au/api/v1/admin/teams/{id}"
+            <div title="http://localhost/api/v1/admin/teams/{id}"
                      class="sl-stack sl-stack--horizontal sl-stack--3 sl-inline-flex sl-flex-row sl-items-center sl-max-w-full sl-font-mono sl-py-2 sl-pr-4 sl-bg-canvas-50 sl-rounded-lg"
                 >
                                             <div class="sl-text-lg sl-font-semibold sl-px-2.5 sl-py-1 sl-text-on-primary sl-rounded-lg"
@@ -14783,7 +13024,7 @@ response.json()</code></pre>                                        </div>
                         </div>
                                         <div class="sl-flex sl-overflow-x-hidden sl-text-lg sl-select-all">
                         <div dir="rtl"
-                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">https://vine.openfoodnetwork.org.au</div>
+                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">http://localhost</div>
                         <div class="sl-flex-1 sl-font-semibold">/api/v1/admin/teams/{id}</div>
                     </div>
 
@@ -14791,7 +13032,7 @@ response.json()</code></pre>                                        </div>
                                  style="background-color: darkred"
                             >requires authentication
                             </div>
-                                                            </div>
+                                                                                    </div>
         </div>
 
         <p>Retrieve a single team by ID.</p>
@@ -14812,7 +13053,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Authorization</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -14830,7 +13071,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Content-Type</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -14848,7 +13089,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Accept</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -14866,7 +13107,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">X-Authorisation</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -14892,9 +13133,11 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">id</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
+                                            <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                        <div class="sl-flex sl-items-center">
+                                                            <span class="sl-ml-2 sl-text-warning">required</span>
+                                                                                </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The ID of the team.</p>
         </div>
@@ -14902,7 +13145,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        quos
+                        repellendus
                     </div>
                 </div>
             </div>
@@ -14924,7 +13167,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">cached</div>
                                             <span class="sl-truncate sl-text-muted">boolean</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Request the response to be cached. Default: <code>true</code>.</p>
         </div>
@@ -14946,7 +13189,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">fields</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Comma-separated list of database fields to return within the object.</p>
         </div>
@@ -14993,7 +13236,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request GET \
-    --get "https://vine.openfoodnetwork.org.au/api/v1/admin/teams/quos?cached=1&amp;fields=id%2Ccreated_at" \
+    --get "http://localhost/api/v1/admin/teams/repellendus?cached=1&amp;fields=id%2Ccreated_at" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -15005,7 +13248,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/teams/quos"
+    "http://localhost/api/v1/admin/teams/repellendus"
 );
 
 const params = {
@@ -15033,7 +13276,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/teams/quos';
+$url = 'http://localhost/api/v1/admin/teams/repellendus';
 $response = $client-&gt;get(
     $url,
     [
@@ -15060,7 +13303,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/teams/quos'
+url = 'http://localhost/api/v1/admin/teams/repellendus'
 params = {
   'cached': '1',
   'fields': 'id,created_at',
@@ -15145,7 +13388,7 @@ response.json()</code></pre>                                        </div>
         </div>
 
         <div class="sl-relative">
-            <div title="https://vine.openfoodnetwork.org.au/api/v1/admin/teams/{id}"
+            <div title="http://localhost/api/v1/admin/teams/{id}"
                      class="sl-stack sl-stack--horizontal sl-stack--3 sl-inline-flex sl-flex-row sl-items-center sl-max-w-full sl-font-mono sl-py-2 sl-pr-4 sl-bg-canvas-50 sl-rounded-lg"
                 >
                                             <div class="sl-text-lg sl-font-semibold sl-px-2.5 sl-py-1 sl-text-on-primary sl-rounded-lg"
@@ -15160,7 +13403,7 @@ response.json()</code></pre>                                        </div>
                         </div>
                                         <div class="sl-flex sl-overflow-x-hidden sl-text-lg sl-select-all">
                         <div dir="rtl"
-                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">https://vine.openfoodnetwork.org.au</div>
+                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">http://localhost</div>
                         <div class="sl-flex-1 sl-font-semibold">/api/v1/admin/teams/{id}</div>
                     </div>
 
@@ -15168,7 +13411,7 @@ response.json()</code></pre>                                        </div>
                                  style="background-color: darkred"
                             >requires authentication
                             </div>
-                                                            </div>
+                                                                                    </div>
         </div>
 
         <p>Update a team.</p>
@@ -15189,7 +13432,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Authorization</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -15207,7 +13450,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Content-Type</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -15225,7 +13468,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Accept</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -15243,7 +13486,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">X-Authorisation</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -15269,9 +13512,11 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">id</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
+                                            <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                        <div class="sl-flex sl-items-center">
+                                                            <span class="sl-ml-2 sl-text-warning">required</span>
+                                                                                </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The ID of the team.</p>
         </div>
@@ -15279,7 +13524,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        in
+                        magni
                     </div>
                 </div>
             </div>
@@ -15303,7 +13548,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">name</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The updated team name.</p>
         </div>
@@ -15311,7 +13556,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        qui
+                        aut
                     </div>
                 </div>
             </div>
@@ -15328,7 +13573,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">country_id</div>
                                             <span class="sl-truncate sl-text-muted">integer</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The updated team country_id.</p>
         </div>
@@ -15336,7 +13581,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        11
+                        19
                     </div>
                 </div>
             </div>
@@ -15376,14 +13621,14 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request PUT \
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/teams/in" \
+    "http://localhost/api/v1/admin/teams/magni" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "X-Authorisation: JWT eyJ0eXAiOiJKV..." \
     --data "{
-    \"name\": \"qui\",
-    \"country_id\": 11
+    \"name\": \"aut\",
+    \"country_id\": 19
 }"
 </code></pre>                                        </div>
                                     </div>
@@ -15393,7 +13638,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/teams/in"
+    "http://localhost/api/v1/admin/teams/magni"
 );
 
 const headers = {
@@ -15404,8 +13649,8 @@ const headers = {
 };
 
 let body = {
-    "name": "qui",
-    "country_id": 11
+    "name": "aut",
+    "country_id": 19
 };
 
 fetch(url, {
@@ -15420,7 +13665,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/teams/in';
+$url = 'http://localhost/api/v1/admin/teams/magni';
 $response = $client-&gt;put(
     $url,
     [
@@ -15431,8 +13676,8 @@ $response = $client-&gt;put(
             'X-Authorisation' =&gt; 'JWT eyJ0eXAiOiJKV...',
         ],
         'json' =&gt; [
-            'name' =&gt; 'qui',
-            'country_id' =&gt; 11,
+            'name' =&gt; 'aut',
+            'country_id' =&gt; 19,
         ],
     ]
 );
@@ -15447,10 +13692,10 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/teams/in'
+url = 'http://localhost/api/v1/admin/teams/magni'
 payload = {
-    "name": "qui",
-    "country_id": 11
+    "name": "aut",
+    "country_id": 19
 }
 headers = {
   'Authorization': 'Bearer {YOUR_API_TOKEN}',
@@ -15481,7 +13726,7 @@ response.json()</code></pre>                                        </div>
         </div>
 
         <div class="sl-relative">
-            <div title="https://vine.openfoodnetwork.org.au/api/v1/admin/teams/{id}"
+            <div title="http://localhost/api/v1/admin/teams/{id}"
                      class="sl-stack sl-stack--horizontal sl-stack--3 sl-inline-flex sl-flex-row sl-items-center sl-max-w-full sl-font-mono sl-py-2 sl-pr-4 sl-bg-canvas-50 sl-rounded-lg"
                 >
                                             <div class="sl-text-lg sl-font-semibold sl-px-2.5 sl-py-1 sl-text-on-primary sl-rounded-lg"
@@ -15491,7 +13736,7 @@ response.json()</code></pre>                                        </div>
                         </div>
                                         <div class="sl-flex sl-overflow-x-hidden sl-text-lg sl-select-all">
                         <div dir="rtl"
-                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">https://vine.openfoodnetwork.org.au</div>
+                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">http://localhost</div>
                         <div class="sl-flex-1 sl-font-semibold">/api/v1/admin/teams/{id}</div>
                     </div>
 
@@ -15499,7 +13744,7 @@ response.json()</code></pre>                                        </div>
                                  style="background-color: darkred"
                             >requires authentication
                             </div>
-                                                            </div>
+                                                                                    </div>
         </div>
 
         <p>Remove a team. WARNING: May have unintended side effects or cause data integrity issues.</p>
@@ -15520,7 +13765,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Authorization</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -15538,7 +13783,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Content-Type</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -15556,7 +13801,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Accept</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -15574,7 +13819,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">X-Authorisation</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -15600,9 +13845,11 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">id</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
+                                            <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                        <div class="sl-flex sl-items-center">
+                                                            <span class="sl-ml-2 sl-text-warning">required</span>
+                                                                                </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The ID of the team.</p>
         </div>
@@ -15610,7 +13857,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        quasi
+                        eos
                     </div>
                 </div>
             </div>
@@ -15651,7 +13898,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request DELETE \
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/teams/quasi" \
+    "http://localhost/api/v1/admin/teams/eos" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -15663,7 +13910,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/teams/quasi"
+    "http://localhost/api/v1/admin/teams/eos"
 );
 
 const headers = {
@@ -15684,7 +13931,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/teams/quasi';
+$url = 'http://localhost/api/v1/admin/teams/eos';
 $response = $client-&gt;delete(
     $url,
     [
@@ -15707,7 +13954,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/teams/quasi'
+url = 'http://localhost/api/v1/admin/teams/eos'
 headers = {
   'Authorization': 'Bearer {YOUR_API_TOKEN}',
   'Content-Type': 'application/json',
@@ -15744,7 +13991,7 @@ response.json()</code></pre>                                        </div>
         </div>
 
         <div class="sl-relative">
-            <div title="https://vine.openfoodnetwork.org.au/api/v1/admin/team-merchant-teams"
+            <div title="http://localhost/api/v1/admin/team-merchant-teams"
                      class="sl-stack sl-stack--horizontal sl-stack--3 sl-inline-flex sl-flex-row sl-items-center sl-max-w-full sl-font-mono sl-py-2 sl-pr-4 sl-bg-canvas-50 sl-rounded-lg"
                 >
                                             <div class="sl-text-lg sl-font-semibold sl-px-2.5 sl-py-1 sl-text-on-primary sl-rounded-lg"
@@ -15754,7 +14001,7 @@ response.json()</code></pre>                                        </div>
                         </div>
                                         <div class="sl-flex sl-overflow-x-hidden sl-text-lg sl-select-all">
                         <div dir="rtl"
-                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">https://vine.openfoodnetwork.org.au</div>
+                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">http://localhost</div>
                         <div class="sl-flex-1 sl-font-semibold">/api/v1/admin/team-merchant-teams</div>
                     </div>
 
@@ -15762,7 +14009,7 @@ response.json()</code></pre>                                        </div>
                                  style="background-color: darkred"
                             >requires authentication
                             </div>
-                                                            </div>
+                                                                                    </div>
         </div>
 
         <p>Retrieve team merchant team associations.</p>
@@ -15783,7 +14030,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Authorization</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -15801,7 +14048,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Content-Type</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -15819,7 +14066,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Accept</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -15837,7 +14084,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">X-Authorisation</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -15865,7 +14112,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">cached</div>
                                             <span class="sl-truncate sl-text-muted">boolean</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Request the response to be cached. Default: <code>true</code>.</p>
         </div>
@@ -15887,7 +14134,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">page</div>
                                             <span class="sl-truncate sl-text-muted">integer</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The pagination page number.</p>
         </div>
@@ -15909,7 +14156,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">limit</div>
                                             <span class="sl-truncate sl-text-muted">integer</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The number of entries returned per pagination page.</p>
         </div>
@@ -15931,7 +14178,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">fields</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Comma-separated list of database fields to return within the object.</p>
         </div>
@@ -15953,7 +14200,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">orderBy</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Order the data by a given field. Comma-separated string.</p>
         </div>
@@ -15975,7 +14222,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">orderBy[]</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Compound <code>orderBy</code>. Order the data by a given field. Comma-separated string. Can not be used in conjunction as standard <code>orderBy</code>.</p>
         </div>
@@ -15997,7 +14244,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">where</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Filter the request on a single field. Key-Value or Key-Operator-Value comma-separated string.</p>
         </div>
@@ -16019,7 +14266,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">where[]</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Compound <code>where</code>. Use when you need to filter on multiple <code>where</code>'s. Note only AND is possible; ORWHERE is not available.</p>
         </div>
@@ -16066,7 +14313,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request GET \
-    --get "https://vine.openfoodnetwork.org.au/api/v1/admin/team-merchant-teams?cached=1&amp;page=1&amp;limit=50&amp;fields=id%2Ccreated_at&amp;orderBy=orderBy%3Did%2Cdesc&amp;orderBy%5B%5D=orderBy%5B%5D%3Did%2Cdesc%26orderBy%5B%5D%3Dcreated_at%2Casc&amp;where=where%3Did%2Clike%2C%2A550e%2A&amp;where%5B%5D=where%5B%5D%3Did%2Clike%2C%2A550e%2A%26where%5B%5D%3Dcreated_at%2C%3E%3D%2C2024-01-01" \
+    --get "http://localhost/api/v1/admin/team-merchant-teams?cached=1&amp;page=1&amp;limit=50&amp;fields=id%2Ccreated_at&amp;orderBy=orderBy%3Did%2Cdesc&amp;orderBy%5B%5D=orderBy%5B%5D%3Did%2Cdesc%26orderBy%5B%5D%3Dcreated_at%2Casc&amp;where=where%3Did%2Clike%2C%2A550e%2A&amp;where%5B%5D=where%5B%5D%3Did%2Clike%2C%2A550e%2A%26where%5B%5D%3Dcreated_at%2C%3E%3D%2C2024-01-01" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -16078,7 +14325,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/team-merchant-teams"
+    "http://localhost/api/v1/admin/team-merchant-teams"
 );
 
 const params = {
@@ -16112,7 +14359,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/team-merchant-teams';
+$url = 'http://localhost/api/v1/admin/team-merchant-teams';
 $response = $client-&gt;get(
     $url,
     [
@@ -16145,7 +14392,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/team-merchant-teams'
+url = 'http://localhost/api/v1/admin/team-merchant-teams'
 params = {
   'cached': '1',
   'page': '1',
@@ -16267,7 +14514,7 @@ response.json()</code></pre>                                        </div>
         </div>
 
         <div class="sl-relative">
-            <div title="https://vine.openfoodnetwork.org.au/api/v1/admin/team-merchant-teams"
+            <div title="http://localhost/api/v1/admin/team-merchant-teams"
                      class="sl-stack sl-stack--horizontal sl-stack--3 sl-inline-flex sl-flex-row sl-items-center sl-max-w-full sl-font-mono sl-py-2 sl-pr-4 sl-bg-canvas-50 sl-rounded-lg"
                 >
                                             <div class="sl-text-lg sl-font-semibold sl-px-2.5 sl-py-1 sl-text-on-primary sl-rounded-lg"
@@ -16277,7 +14524,7 @@ response.json()</code></pre>                                        </div>
                         </div>
                                         <div class="sl-flex sl-overflow-x-hidden sl-text-lg sl-select-all">
                         <div dir="rtl"
-                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">https://vine.openfoodnetwork.org.au</div>
+                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">http://localhost</div>
                         <div class="sl-flex-1 sl-font-semibold">/api/v1/admin/team-merchant-teams</div>
                     </div>
 
@@ -16285,7 +14532,7 @@ response.json()</code></pre>                                        </div>
                                  style="background-color: darkred"
                             >requires authentication
                             </div>
-                                                            </div>
+                                                                                    </div>
         </div>
 
         <p>Create a new merchant team merchant association for a team.</p>
@@ -16306,7 +14553,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Authorization</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -16324,7 +14571,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Content-Type</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -16342,7 +14589,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Accept</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -16360,7 +14607,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">X-Authorisation</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -16390,9 +14637,11 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">team_id</div>
                                             <span class="sl-truncate sl-text-muted">integer</span>
                                     </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
+                                            <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                        <div class="sl-flex sl-items-center">
+                                                            <span class="sl-ml-2 sl-text-warning">required</span>
+                                                                                </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The database teams.id of the team you wish to associate a merchant team for.</p>
         </div>
@@ -16400,7 +14649,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        16
+                        20
                     </div>
                 </div>
             </div>
@@ -16417,9 +14666,11 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">merchant_team_id</div>
                                             <span class="sl-truncate sl-text-muted">integer</span>
                                     </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
+                                            <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                        <div class="sl-flex sl-items-center">
+                                                            <span class="sl-ml-2 sl-text-warning">required</span>
+                                                                                </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The database teams.id of the merchant team you wish to associate to a team.</p>
         </div>
@@ -16427,7 +14678,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        20
+                        12
                     </div>
                 </div>
             </div>
@@ -16467,14 +14718,14 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request POST \
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/team-merchant-teams" \
+    "http://localhost/api/v1/admin/team-merchant-teams" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "X-Authorisation: JWT eyJ0eXAiOiJKV..." \
     --data "{
-    \"team_id\": 16,
-    \"merchant_team_id\": 20
+    \"team_id\": 20,
+    \"merchant_team_id\": 12
 }"
 </code></pre>                                        </div>
                                     </div>
@@ -16484,7 +14735,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/team-merchant-teams"
+    "http://localhost/api/v1/admin/team-merchant-teams"
 );
 
 const headers = {
@@ -16495,8 +14746,8 @@ const headers = {
 };
 
 let body = {
-    "team_id": 16,
-    "merchant_team_id": 20
+    "team_id": 20,
+    "merchant_team_id": 12
 };
 
 fetch(url, {
@@ -16511,7 +14762,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/team-merchant-teams';
+$url = 'http://localhost/api/v1/admin/team-merchant-teams';
 $response = $client-&gt;post(
     $url,
     [
@@ -16522,8 +14773,8 @@ $response = $client-&gt;post(
             'X-Authorisation' =&gt; 'JWT eyJ0eXAiOiJKV...',
         ],
         'json' =&gt; [
-            'team_id' =&gt; 16,
-            'merchant_team_id' =&gt; 20,
+            'team_id' =&gt; 20,
+            'merchant_team_id' =&gt; 12,
         ],
     ]
 );
@@ -16538,10 +14789,10 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/team-merchant-teams'
+url = 'http://localhost/api/v1/admin/team-merchant-teams'
 payload = {
-    "team_id": 16,
-    "merchant_team_id": 20
+    "team_id": 20,
+    "merchant_team_id": 12
 }
 headers = {
   'Authorization': 'Bearer {YOUR_API_TOKEN}',
@@ -16572,7 +14823,7 @@ response.json()</code></pre>                                        </div>
         </div>
 
         <div class="sl-relative">
-            <div title="https://vine.openfoodnetwork.org.au/api/v1/admin/team-merchant-teams/{id}"
+            <div title="http://localhost/api/v1/admin/team-merchant-teams/{id}"
                      class="sl-stack sl-stack--horizontal sl-stack--3 sl-inline-flex sl-flex-row sl-items-center sl-max-w-full sl-font-mono sl-py-2 sl-pr-4 sl-bg-canvas-50 sl-rounded-lg"
                 >
                                             <div class="sl-text-lg sl-font-semibold sl-px-2.5 sl-py-1 sl-text-on-primary sl-rounded-lg"
@@ -16582,7 +14833,7 @@ response.json()</code></pre>                                        </div>
                         </div>
                                         <div class="sl-flex sl-overflow-x-hidden sl-text-lg sl-select-all">
                         <div dir="rtl"
-                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">https://vine.openfoodnetwork.org.au</div>
+                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">http://localhost</div>
                         <div class="sl-flex-1 sl-font-semibold">/api/v1/admin/team-merchant-teams/{id}</div>
                     </div>
 
@@ -16590,7 +14841,7 @@ response.json()</code></pre>                                        </div>
                                  style="background-color: darkred"
                             >requires authentication
                             </div>
-                                                            </div>
+                                                                                    </div>
         </div>
 
         <p>Remove a team's merchant association. {id} is the DB resource for the association</p>
@@ -16611,7 +14862,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Authorization</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -16629,7 +14880,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Content-Type</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -16647,7 +14898,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Accept</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -16665,7 +14916,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">X-Authorisation</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -16691,9 +14942,11 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">id</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
+                                            <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                        <div class="sl-flex sl-items-center">
+                                                            <span class="sl-ml-2 sl-text-warning">required</span>
+                                                                                </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The ID of the team merchant team.</p>
         </div>
@@ -16701,7 +14954,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        placeat
+                        autem
                     </div>
                 </div>
             </div>
@@ -16742,7 +14995,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request DELETE \
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/team-merchant-teams/placeat" \
+    "http://localhost/api/v1/admin/team-merchant-teams/autem" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -16754,7 +15007,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/team-merchant-teams/placeat"
+    "http://localhost/api/v1/admin/team-merchant-teams/autem"
 );
 
 const headers = {
@@ -16775,7 +15028,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/team-merchant-teams/placeat';
+$url = 'http://localhost/api/v1/admin/team-merchant-teams/autem';
 $response = $client-&gt;delete(
     $url,
     [
@@ -16798,7 +15051,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/team-merchant-teams/placeat'
+url = 'http://localhost/api/v1/admin/team-merchant-teams/autem'
 headers = {
   'Authorization': 'Bearer {YOUR_API_TOKEN}',
   'Content-Type': 'application/json',
@@ -16835,7 +15088,7 @@ response.json()</code></pre>                                        </div>
         </div>
 
         <div class="sl-relative">
-            <div title="https://vine.openfoodnetwork.org.au/api/v1/admin/team-service-teams"
+            <div title="http://localhost/api/v1/admin/team-service-teams"
                      class="sl-stack sl-stack--horizontal sl-stack--3 sl-inline-flex sl-flex-row sl-items-center sl-max-w-full sl-font-mono sl-py-2 sl-pr-4 sl-bg-canvas-50 sl-rounded-lg"
                 >
                                             <div class="sl-text-lg sl-font-semibold sl-px-2.5 sl-py-1 sl-text-on-primary sl-rounded-lg"
@@ -16845,7 +15098,7 @@ response.json()</code></pre>                                        </div>
                         </div>
                                         <div class="sl-flex sl-overflow-x-hidden sl-text-lg sl-select-all">
                         <div dir="rtl"
-                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">https://vine.openfoodnetwork.org.au</div>
+                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">http://localhost</div>
                         <div class="sl-flex-1 sl-font-semibold">/api/v1/admin/team-service-teams</div>
                     </div>
 
@@ -16853,7 +15106,7 @@ response.json()</code></pre>                                        </div>
                                  style="background-color: darkred"
                             >requires authentication
                             </div>
-                                                            </div>
+                                                                                    </div>
         </div>
 
         <p>Retrieve team service team associations.</p>
@@ -16874,7 +15127,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Authorization</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -16892,7 +15145,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Content-Type</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -16910,7 +15163,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Accept</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -16928,7 +15181,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">X-Authorisation</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -16956,7 +15209,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">cached</div>
                                             <span class="sl-truncate sl-text-muted">boolean</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Request the response to be cached. Default: <code>true</code>.</p>
         </div>
@@ -16978,7 +15231,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">page</div>
                                             <span class="sl-truncate sl-text-muted">integer</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The pagination page number.</p>
         </div>
@@ -17000,7 +15253,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">limit</div>
                                             <span class="sl-truncate sl-text-muted">integer</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The number of entries returned per pagination page.</p>
         </div>
@@ -17022,7 +15275,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">fields</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Comma-separated list of database fields to return within the object.</p>
         </div>
@@ -17044,7 +15297,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">orderBy</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Order the data by a given field. Comma-separated string.</p>
         </div>
@@ -17066,7 +15319,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">orderBy[]</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Compound <code>orderBy</code>. Order the data by a given field. Comma-separated string. Can not be used in conjunction as standard <code>orderBy</code>.</p>
         </div>
@@ -17088,7 +15341,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">where</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Filter the request on a single field. Key-Value or Key-Operator-Value comma-separated string.</p>
         </div>
@@ -17110,7 +15363,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">where[]</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Compound <code>where</code>. Use when you need to filter on multiple <code>where</code>'s. Note only AND is possible; ORWHERE is not available.</p>
         </div>
@@ -17157,7 +15410,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request GET \
-    --get "https://vine.openfoodnetwork.org.au/api/v1/admin/team-service-teams?cached=1&amp;page=1&amp;limit=50&amp;fields=id%2Ccreated_at&amp;orderBy=orderBy%3Did%2Cdesc&amp;orderBy%5B%5D=orderBy%5B%5D%3Did%2Cdesc%26orderBy%5B%5D%3Dcreated_at%2Casc&amp;where=where%3Did%2Clike%2C%2A550e%2A&amp;where%5B%5D=where%5B%5D%3Did%2Clike%2C%2A550e%2A%26where%5B%5D%3Dcreated_at%2C%3E%3D%2C2024-01-01" \
+    --get "http://localhost/api/v1/admin/team-service-teams?cached=1&amp;page=1&amp;limit=50&amp;fields=id%2Ccreated_at&amp;orderBy=orderBy%3Did%2Cdesc&amp;orderBy%5B%5D=orderBy%5B%5D%3Did%2Cdesc%26orderBy%5B%5D%3Dcreated_at%2Casc&amp;where=where%3Did%2Clike%2C%2A550e%2A&amp;where%5B%5D=where%5B%5D%3Did%2Clike%2C%2A550e%2A%26where%5B%5D%3Dcreated_at%2C%3E%3D%2C2024-01-01" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -17169,7 +15422,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/team-service-teams"
+    "http://localhost/api/v1/admin/team-service-teams"
 );
 
 const params = {
@@ -17203,7 +15456,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/team-service-teams';
+$url = 'http://localhost/api/v1/admin/team-service-teams';
 $response = $client-&gt;get(
     $url,
     [
@@ -17236,7 +15489,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/team-service-teams'
+url = 'http://localhost/api/v1/admin/team-service-teams'
 params = {
   'cached': '1',
   'page': '1',
@@ -17358,7 +15611,7 @@ response.json()</code></pre>                                        </div>
         </div>
 
         <div class="sl-relative">
-            <div title="https://vine.openfoodnetwork.org.au/api/v1/admin/team-service-teams"
+            <div title="http://localhost/api/v1/admin/team-service-teams"
                      class="sl-stack sl-stack--horizontal sl-stack--3 sl-inline-flex sl-flex-row sl-items-center sl-max-w-full sl-font-mono sl-py-2 sl-pr-4 sl-bg-canvas-50 sl-rounded-lg"
                 >
                                             <div class="sl-text-lg sl-font-semibold sl-px-2.5 sl-py-1 sl-text-on-primary sl-rounded-lg"
@@ -17368,7 +15621,7 @@ response.json()</code></pre>                                        </div>
                         </div>
                                         <div class="sl-flex sl-overflow-x-hidden sl-text-lg sl-select-all">
                         <div dir="rtl"
-                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">https://vine.openfoodnetwork.org.au</div>
+                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">http://localhost</div>
                         <div class="sl-flex-1 sl-font-semibold">/api/v1/admin/team-service-teams</div>
                     </div>
 
@@ -17376,7 +15629,7 @@ response.json()</code></pre>                                        </div>
                                  style="background-color: darkred"
                             >requires authentication
                             </div>
-                                                            </div>
+                                                                                    </div>
         </div>
 
         <p>Create a new service team association for a team.</p>
@@ -17397,7 +15650,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Authorization</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -17415,7 +15668,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Content-Type</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -17433,7 +15686,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Accept</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -17451,7 +15704,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">X-Authorisation</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -17481,9 +15734,11 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">team_id</div>
                                             <span class="sl-truncate sl-text-muted">integer</span>
                                     </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
+                                            <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                        <div class="sl-flex sl-items-center">
+                                                            <span class="sl-ml-2 sl-text-warning">required</span>
+                                                                                </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The database teams.id of the team you wish to associate a service team for.</p>
         </div>
@@ -17491,7 +15746,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        10
+                        4
                     </div>
                 </div>
             </div>
@@ -17508,9 +15763,11 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">service_team_id</div>
                                             <span class="sl-truncate sl-text-muted">integer</span>
                                     </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
+                                            <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                        <div class="sl-flex sl-items-center">
+                                                            <span class="sl-ml-2 sl-text-warning">required</span>
+                                                                                </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The database teams.id of the service team you wish to associate to a team.</p>
         </div>
@@ -17518,7 +15775,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        11
+                        8
                     </div>
                 </div>
             </div>
@@ -17558,14 +15815,14 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request POST \
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/team-service-teams" \
+    "http://localhost/api/v1/admin/team-service-teams" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "X-Authorisation: JWT eyJ0eXAiOiJKV..." \
     --data "{
-    \"team_id\": 10,
-    \"service_team_id\": 11
+    \"team_id\": 4,
+    \"service_team_id\": 8
 }"
 </code></pre>                                        </div>
                                     </div>
@@ -17575,7 +15832,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/team-service-teams"
+    "http://localhost/api/v1/admin/team-service-teams"
 );
 
 const headers = {
@@ -17586,8 +15843,8 @@ const headers = {
 };
 
 let body = {
-    "team_id": 10,
-    "service_team_id": 11
+    "team_id": 4,
+    "service_team_id": 8
 };
 
 fetch(url, {
@@ -17602,7 +15859,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/team-service-teams';
+$url = 'http://localhost/api/v1/admin/team-service-teams';
 $response = $client-&gt;post(
     $url,
     [
@@ -17613,8 +15870,8 @@ $response = $client-&gt;post(
             'X-Authorisation' =&gt; 'JWT eyJ0eXAiOiJKV...',
         ],
         'json' =&gt; [
-            'team_id' =&gt; 10,
-            'service_team_id' =&gt; 11,
+            'team_id' =&gt; 4,
+            'service_team_id' =&gt; 8,
         ],
     ]
 );
@@ -17629,10 +15886,10 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/team-service-teams'
+url = 'http://localhost/api/v1/admin/team-service-teams'
 payload = {
-    "team_id": 10,
-    "service_team_id": 11
+    "team_id": 4,
+    "service_team_id": 8
 }
 headers = {
   'Authorization': 'Bearer {YOUR_API_TOKEN}',
@@ -17663,7 +15920,7 @@ response.json()</code></pre>                                        </div>
         </div>
 
         <div class="sl-relative">
-            <div title="https://vine.openfoodnetwork.org.au/api/v1/admin/team-service-teams/{id}"
+            <div title="http://localhost/api/v1/admin/team-service-teams/{id}"
                      class="sl-stack sl-stack--horizontal sl-stack--3 sl-inline-flex sl-flex-row sl-items-center sl-max-w-full sl-font-mono sl-py-2 sl-pr-4 sl-bg-canvas-50 sl-rounded-lg"
                 >
                                             <div class="sl-text-lg sl-font-semibold sl-px-2.5 sl-py-1 sl-text-on-primary sl-rounded-lg"
@@ -17678,7 +15935,7 @@ response.json()</code></pre>                                        </div>
                         </div>
                                         <div class="sl-flex sl-overflow-x-hidden sl-text-lg sl-select-all">
                         <div dir="rtl"
-                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">https://vine.openfoodnetwork.org.au</div>
+                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">http://localhost</div>
                         <div class="sl-flex-1 sl-font-semibold">/api/v1/admin/team-service-teams/{id}</div>
                     </div>
 
@@ -17686,7 +15943,7 @@ response.json()</code></pre>                                        </div>
                                  style="background-color: darkred"
                             >requires authentication
                             </div>
-                                                            </div>
+                                                                                    </div>
         </div>
 
         
@@ -17707,7 +15964,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Authorization</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -17725,7 +15982,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Content-Type</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -17743,7 +16000,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Accept</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -17761,7 +16018,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">X-Authorisation</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -17787,9 +16044,11 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">id</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
+                                            <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                        <div class="sl-flex sl-items-center">
+                                                            <span class="sl-ml-2 sl-text-warning">required</span>
+                                                                                </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The ID of the team service team.</p>
         </div>
@@ -17797,7 +16056,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        et
+                        eaque
                     </div>
                 </div>
             </div>
@@ -17838,7 +16097,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request PUT \
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/team-service-teams/et" \
+    "http://localhost/api/v1/admin/team-service-teams/eaque" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -17850,7 +16109,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/team-service-teams/et"
+    "http://localhost/api/v1/admin/team-service-teams/eaque"
 );
 
 const headers = {
@@ -17871,7 +16130,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/team-service-teams/et';
+$url = 'http://localhost/api/v1/admin/team-service-teams/eaque';
 $response = $client-&gt;put(
     $url,
     [
@@ -17894,7 +16153,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/team-service-teams/et'
+url = 'http://localhost/api/v1/admin/team-service-teams/eaque'
 headers = {
   'Authorization': 'Bearer {YOUR_API_TOKEN}',
   'Content-Type': 'application/json',
@@ -17924,7 +16183,7 @@ response.json()</code></pre>                                        </div>
         </div>
 
         <div class="sl-relative">
-            <div title="https://vine.openfoodnetwork.org.au/api/v1/admin/team-service-teams/{id}"
+            <div title="http://localhost/api/v1/admin/team-service-teams/{id}"
                      class="sl-stack sl-stack--horizontal sl-stack--3 sl-inline-flex sl-flex-row sl-items-center sl-max-w-full sl-font-mono sl-py-2 sl-pr-4 sl-bg-canvas-50 sl-rounded-lg"
                 >
                                             <div class="sl-text-lg sl-font-semibold sl-px-2.5 sl-py-1 sl-text-on-primary sl-rounded-lg"
@@ -17934,7 +16193,7 @@ response.json()</code></pre>                                        </div>
                         </div>
                                         <div class="sl-flex sl-overflow-x-hidden sl-text-lg sl-select-all">
                         <div dir="rtl"
-                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">https://vine.openfoodnetwork.org.au</div>
+                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">http://localhost</div>
                         <div class="sl-flex-1 sl-font-semibold">/api/v1/admin/team-service-teams/{id}</div>
                     </div>
 
@@ -17942,7 +16201,7 @@ response.json()</code></pre>                                        </div>
                                  style="background-color: darkred"
                             >requires authentication
                             </div>
-                                                            </div>
+                                                                                    </div>
         </div>
 
         <p>Remove a team's service association. {id} is the DB resource for the association</p>
@@ -17963,7 +16222,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Authorization</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -17981,7 +16240,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Content-Type</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -17999,7 +16258,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Accept</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -18017,7 +16276,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">X-Authorisation</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -18043,9 +16302,11 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">id</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
+                                            <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                        <div class="sl-flex sl-items-center">
+                                                            <span class="sl-ml-2 sl-text-warning">required</span>
+                                                                                </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The ID of the team service team.</p>
         </div>
@@ -18053,7 +16314,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        consequatur
+                        ut
                     </div>
                 </div>
             </div>
@@ -18094,7 +16355,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request DELETE \
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/team-service-teams/consequatur" \
+    "http://localhost/api/v1/admin/team-service-teams/ut" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -18106,7 +16367,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/team-service-teams/consequatur"
+    "http://localhost/api/v1/admin/team-service-teams/ut"
 );
 
 const headers = {
@@ -18127,7 +16388,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/team-service-teams/consequatur';
+$url = 'http://localhost/api/v1/admin/team-service-teams/ut';
 $response = $client-&gt;delete(
     $url,
     [
@@ -18150,7 +16411,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/team-service-teams/consequatur'
+url = 'http://localhost/api/v1/admin/team-service-teams/ut'
 headers = {
   'Authorization': 'Bearer {YOUR_API_TOKEN}',
   'Content-Type': 'application/json',
@@ -18187,7 +16448,7 @@ response.json()</code></pre>                                        </div>
         </div>
 
         <div class="sl-relative">
-            <div title="https://vine.openfoodnetwork.org.au/api/v1/admin/team-users"
+            <div title="http://localhost/api/v1/admin/team-users"
                      class="sl-stack sl-stack--horizontal sl-stack--3 sl-inline-flex sl-flex-row sl-items-center sl-max-w-full sl-font-mono sl-py-2 sl-pr-4 sl-bg-canvas-50 sl-rounded-lg"
                 >
                                             <div class="sl-text-lg sl-font-semibold sl-px-2.5 sl-py-1 sl-text-on-primary sl-rounded-lg"
@@ -18197,7 +16458,7 @@ response.json()</code></pre>                                        </div>
                         </div>
                                         <div class="sl-flex sl-overflow-x-hidden sl-text-lg sl-select-all">
                         <div dir="rtl"
-                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">https://vine.openfoodnetwork.org.au</div>
+                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">http://localhost</div>
                         <div class="sl-flex-1 sl-font-semibold">/api/v1/admin/team-users</div>
                     </div>
 
@@ -18205,7 +16466,7 @@ response.json()</code></pre>                                        </div>
                                  style="background-color: darkred"
                             >requires authentication
                             </div>
-                                                            </div>
+                                                                                    </div>
         </div>
 
         <p>Retrieve team user associations.</p>
@@ -18226,7 +16487,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Authorization</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -18244,7 +16505,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Content-Type</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -18262,7 +16523,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Accept</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -18280,7 +16541,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">X-Authorisation</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -18308,7 +16569,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">cached</div>
                                             <span class="sl-truncate sl-text-muted">boolean</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Request the response to be cached. Default: <code>true</code>.</p>
         </div>
@@ -18330,7 +16591,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">page</div>
                                             <span class="sl-truncate sl-text-muted">integer</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The pagination page number.</p>
         </div>
@@ -18352,7 +16613,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">limit</div>
                                             <span class="sl-truncate sl-text-muted">integer</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The number of entries returned per pagination page.</p>
         </div>
@@ -18374,7 +16635,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">fields</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Comma-separated list of database fields to return within the object.</p>
         </div>
@@ -18396,7 +16657,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">orderBy</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Order the data by a given field. Comma-separated string.</p>
         </div>
@@ -18418,7 +16679,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">orderBy[]</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Compound <code>orderBy</code>. Order the data by a given field. Comma-separated string. Can not be used in conjunction as standard <code>orderBy</code>.</p>
         </div>
@@ -18440,7 +16701,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">where</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Filter the request on a single field. Key-Value or Key-Operator-Value comma-separated string.</p>
         </div>
@@ -18462,7 +16723,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">where[]</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Compound <code>where</code>. Use when you need to filter on multiple <code>where</code>'s. Note only AND is possible; ORWHERE is not available.</p>
         </div>
@@ -18509,7 +16770,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request GET \
-    --get "https://vine.openfoodnetwork.org.au/api/v1/admin/team-users?cached=1&amp;page=1&amp;limit=50&amp;fields=id%2Ccreated_at&amp;orderBy=orderBy%3Did%2Cdesc&amp;orderBy%5B%5D=orderBy%5B%5D%3Did%2Cdesc%26orderBy%5B%5D%3Dcreated_at%2Casc&amp;where=where%3Did%2Clike%2C%2A550e%2A&amp;where%5B%5D=where%5B%5D%3Did%2Clike%2C%2A550e%2A%26where%5B%5D%3Dcreated_at%2C%3E%3D%2C2024-01-01" \
+    --get "http://localhost/api/v1/admin/team-users?cached=1&amp;page=1&amp;limit=50&amp;fields=id%2Ccreated_at&amp;orderBy=orderBy%3Did%2Cdesc&amp;orderBy%5B%5D=orderBy%5B%5D%3Did%2Cdesc%26orderBy%5B%5D%3Dcreated_at%2Casc&amp;where=where%3Did%2Clike%2C%2A550e%2A&amp;where%5B%5D=where%5B%5D%3Did%2Clike%2C%2A550e%2A%26where%5B%5D%3Dcreated_at%2C%3E%3D%2C2024-01-01" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -18521,7 +16782,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/team-users"
+    "http://localhost/api/v1/admin/team-users"
 );
 
 const params = {
@@ -18555,7 +16816,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/team-users';
+$url = 'http://localhost/api/v1/admin/team-users';
 $response = $client-&gt;get(
     $url,
     [
@@ -18588,7 +16849,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/team-users'
+url = 'http://localhost/api/v1/admin/team-users'
 params = {
   'cached': '1',
   'page': '1',
@@ -18710,7 +16971,7 @@ response.json()</code></pre>                                        </div>
         </div>
 
         <div class="sl-relative">
-            <div title="https://vine.openfoodnetwork.org.au/api/v1/admin/team-users"
+            <div title="http://localhost/api/v1/admin/team-users"
                      class="sl-stack sl-stack--horizontal sl-stack--3 sl-inline-flex sl-flex-row sl-items-center sl-max-w-full sl-font-mono sl-py-2 sl-pr-4 sl-bg-canvas-50 sl-rounded-lg"
                 >
                                             <div class="sl-text-lg sl-font-semibold sl-px-2.5 sl-py-1 sl-text-on-primary sl-rounded-lg"
@@ -18720,7 +16981,7 @@ response.json()</code></pre>                                        </div>
                         </div>
                                         <div class="sl-flex sl-overflow-x-hidden sl-text-lg sl-select-all">
                         <div dir="rtl"
-                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">https://vine.openfoodnetwork.org.au</div>
+                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">http://localhost</div>
                         <div class="sl-flex-1 sl-font-semibold">/api/v1/admin/team-users</div>
                     </div>
 
@@ -18728,7 +16989,7 @@ response.json()</code></pre>                                        </div>
                                  style="background-color: darkred"
                             >requires authentication
                             </div>
-                                                            </div>
+                                                                                    </div>
         </div>
 
         <p>Add a user to a team.</p>
@@ -18749,7 +17010,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Authorization</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -18767,7 +17028,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Content-Type</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -18785,7 +17046,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Accept</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -18803,7 +17064,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">X-Authorisation</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -18833,9 +17094,11 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">team_id</div>
                                             <span class="sl-truncate sl-text-muted">integer</span>
                                     </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
+                                            <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                        <div class="sl-flex sl-items-center">
+                                                            <span class="sl-ml-2 sl-text-warning">required</span>
+                                                                                </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The database teams.id of the team to add the user to.</p>
         </div>
@@ -18843,7 +17106,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        4
+                        15
                     </div>
                 </div>
             </div>
@@ -18860,9 +17123,11 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">user_id</div>
                                             <span class="sl-truncate sl-text-muted">integer</span>
                                     </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
+                                            <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                        <div class="sl-flex sl-items-center">
+                                                            <span class="sl-ml-2 sl-text-warning">required</span>
+                                                                                </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The database users.id of the user you are adding.</p>
         </div>
@@ -18870,7 +17135,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        3
+                        13
                     </div>
                 </div>
             </div>
@@ -18910,14 +17175,14 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request POST \
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/team-users" \
+    "http://localhost/api/v1/admin/team-users" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "X-Authorisation: JWT eyJ0eXAiOiJKV..." \
     --data "{
-    \"team_id\": 4,
-    \"user_id\": 3
+    \"team_id\": 15,
+    \"user_id\": 13
 }"
 </code></pre>                                        </div>
                                     </div>
@@ -18927,7 +17192,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/team-users"
+    "http://localhost/api/v1/admin/team-users"
 );
 
 const headers = {
@@ -18938,8 +17203,8 @@ const headers = {
 };
 
 let body = {
-    "team_id": 4,
-    "user_id": 3
+    "team_id": 15,
+    "user_id": 13
 };
 
 fetch(url, {
@@ -18954,7 +17219,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/team-users';
+$url = 'http://localhost/api/v1/admin/team-users';
 $response = $client-&gt;post(
     $url,
     [
@@ -18965,8 +17230,8 @@ $response = $client-&gt;post(
             'X-Authorisation' =&gt; 'JWT eyJ0eXAiOiJKV...',
         ],
         'json' =&gt; [
-            'team_id' =&gt; 4,
-            'user_id' =&gt; 3,
+            'team_id' =&gt; 15,
+            'user_id' =&gt; 13,
         ],
     ]
 );
@@ -18981,10 +17246,10 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/team-users'
+url = 'http://localhost/api/v1/admin/team-users'
 payload = {
-    "team_id": 4,
-    "user_id": 3
+    "team_id": 15,
+    "user_id": 13
 }
 headers = {
   'Authorization': 'Bearer {YOUR_API_TOKEN}',
@@ -19015,7 +17280,7 @@ response.json()</code></pre>                                        </div>
         </div>
 
         <div class="sl-relative">
-            <div title="https://vine.openfoodnetwork.org.au/api/v1/admin/team-users/{id}"
+            <div title="http://localhost/api/v1/admin/team-users/{id}"
                      class="sl-stack sl-stack--horizontal sl-stack--3 sl-inline-flex sl-flex-row sl-items-center sl-max-w-full sl-font-mono sl-py-2 sl-pr-4 sl-bg-canvas-50 sl-rounded-lg"
                 >
                                             <div class="sl-text-lg sl-font-semibold sl-px-2.5 sl-py-1 sl-text-on-primary sl-rounded-lg"
@@ -19030,7 +17295,7 @@ response.json()</code></pre>                                        </div>
                         </div>
                                         <div class="sl-flex sl-overflow-x-hidden sl-text-lg sl-select-all">
                         <div dir="rtl"
-                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">https://vine.openfoodnetwork.org.au</div>
+                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">http://localhost</div>
                         <div class="sl-flex-1 sl-font-semibold">/api/v1/admin/team-users/{id}</div>
                     </div>
 
@@ -19038,7 +17303,7 @@ response.json()</code></pre>                                        </div>
                                  style="background-color: darkred"
                             >requires authentication
                             </div>
-                                                            </div>
+                                                                                    </div>
         </div>
 
         <p>Update a team user.</p>
@@ -19059,7 +17324,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Authorization</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -19077,7 +17342,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Content-Type</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -19095,7 +17360,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Accept</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -19113,7 +17378,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">X-Authorisation</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -19139,9 +17404,11 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">id</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
+                                            <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                        <div class="sl-flex sl-items-center">
+                                                            <span class="sl-ml-2 sl-text-warning">required</span>
+                                                                                </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The ID of the team user.</p>
         </div>
@@ -19149,7 +17416,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        est
+                        asperiores
                     </div>
                 </div>
             </div>
@@ -19173,9 +17440,11 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">send_invite_email</div>
                                             <span class="sl-truncate sl-text-muted">boolean</span>
                                     </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
+                                            <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                        <div class="sl-flex sl-items-center">
+                                                            <span class="sl-ml-2 sl-text-warning">required</span>
+                                                                                </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Request that the user is (re)sent their invite email to the team.</p>
         </div>
@@ -19183,7 +17452,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        kendrick16@example.com
+                        nfahey@example.com
                     </div>
                 </div>
             </div>
@@ -19223,13 +17492,13 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request PUT \
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/team-users/est" \
+    "http://localhost/api/v1/admin/team-users/asperiores" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "X-Authorisation: JWT eyJ0eXAiOiJKV..." \
     --data "{
-    \"send_invite_email\": \"kendrick16@example.com\"
+    \"send_invite_email\": \"nfahey@example.com\"
 }"
 </code></pre>                                        </div>
                                     </div>
@@ -19239,7 +17508,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/team-users/est"
+    "http://localhost/api/v1/admin/team-users/asperiores"
 );
 
 const headers = {
@@ -19250,7 +17519,7 @@ const headers = {
 };
 
 let body = {
-    "send_invite_email": "kendrick16@example.com"
+    "send_invite_email": "nfahey@example.com"
 };
 
 fetch(url, {
@@ -19265,7 +17534,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/team-users/est';
+$url = 'http://localhost/api/v1/admin/team-users/asperiores';
 $response = $client-&gt;put(
     $url,
     [
@@ -19276,7 +17545,7 @@ $response = $client-&gt;put(
             'X-Authorisation' =&gt; 'JWT eyJ0eXAiOiJKV...',
         ],
         'json' =&gt; [
-            'send_invite_email' =&gt; 'kendrick16@example.com',
+            'send_invite_email' =&gt; 'nfahey@example.com',
         ],
     ]
 );
@@ -19291,9 +17560,9 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/team-users/est'
+url = 'http://localhost/api/v1/admin/team-users/asperiores'
 payload = {
-    "send_invite_email": "kendrick16@example.com"
+    "send_invite_email": "nfahey@example.com"
 }
 headers = {
   'Authorization': 'Bearer {YOUR_API_TOKEN}',
@@ -19324,7 +17593,7 @@ response.json()</code></pre>                                        </div>
         </div>
 
         <div class="sl-relative">
-            <div title="https://vine.openfoodnetwork.org.au/api/v1/admin/team-users/{id}"
+            <div title="http://localhost/api/v1/admin/team-users/{id}"
                      class="sl-stack sl-stack--horizontal sl-stack--3 sl-inline-flex sl-flex-row sl-items-center sl-max-w-full sl-font-mono sl-py-2 sl-pr-4 sl-bg-canvas-50 sl-rounded-lg"
                 >
                                             <div class="sl-text-lg sl-font-semibold sl-px-2.5 sl-py-1 sl-text-on-primary sl-rounded-lg"
@@ -19334,7 +17603,7 @@ response.json()</code></pre>                                        </div>
                         </div>
                                         <div class="sl-flex sl-overflow-x-hidden sl-text-lg sl-select-all">
                         <div dir="rtl"
-                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">https://vine.openfoodnetwork.org.au</div>
+                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">http://localhost</div>
                         <div class="sl-flex-1 sl-font-semibold">/api/v1/admin/team-users/{id}</div>
                     </div>
 
@@ -19342,7 +17611,7 @@ response.json()</code></pre>                                        </div>
                                  style="background-color: darkred"
                             >requires authentication
                             </div>
-                                                            </div>
+                                                                                    </div>
         </div>
 
         <p>Remove a user's team association. {id} is the DB resource for the association</p>
@@ -19363,7 +17632,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Authorization</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -19381,7 +17650,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Content-Type</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -19399,7 +17668,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Accept</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -19417,7 +17686,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">X-Authorisation</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -19443,9 +17712,11 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">id</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
+                                            <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                        <div class="sl-flex sl-items-center">
+                                                            <span class="sl-ml-2 sl-text-warning">required</span>
+                                                                                </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The ID of the team user.</p>
         </div>
@@ -19453,7 +17724,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        et
+                        aperiam
                     </div>
                 </div>
             </div>
@@ -19494,7 +17765,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request DELETE \
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/team-users/et" \
+    "http://localhost/api/v1/admin/team-users/aperiam" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -19506,7 +17777,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/team-users/et"
+    "http://localhost/api/v1/admin/team-users/aperiam"
 );
 
 const headers = {
@@ -19527,7 +17798,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/team-users/et';
+$url = 'http://localhost/api/v1/admin/team-users/aperiam';
 $response = $client-&gt;delete(
     $url,
     [
@@ -19550,7 +17821,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/team-users/et'
+url = 'http://localhost/api/v1/admin/team-users/aperiam'
 headers = {
   'Authorization': 'Bearer {YOUR_API_TOKEN}',
   'Content-Type': 'application/json',
@@ -19587,7 +17858,7 @@ response.json()</code></pre>                                        </div>
         </div>
 
         <div class="sl-relative">
-            <div title="https://vine.openfoodnetwork.org.au/api/v1/admin/team-voucher-templates"
+            <div title="http://localhost/api/v1/admin/team-voucher-templates"
                      class="sl-stack sl-stack--horizontal sl-stack--3 sl-inline-flex sl-flex-row sl-items-center sl-max-w-full sl-font-mono sl-py-2 sl-pr-4 sl-bg-canvas-50 sl-rounded-lg"
                 >
                                             <div class="sl-text-lg sl-font-semibold sl-px-2.5 sl-py-1 sl-text-on-primary sl-rounded-lg"
@@ -19597,7 +17868,7 @@ response.json()</code></pre>                                        </div>
                         </div>
                                         <div class="sl-flex sl-overflow-x-hidden sl-text-lg sl-select-all">
                         <div dir="rtl"
-                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">https://vine.openfoodnetwork.org.au</div>
+                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">http://localhost</div>
                         <div class="sl-flex-1 sl-font-semibold">/api/v1/admin/team-voucher-templates</div>
                     </div>
 
@@ -19605,7 +17876,7 @@ response.json()</code></pre>                                        </div>
                                  style="background-color: darkred"
                             >requires authentication
                             </div>
-                                                            </div>
+                                                                                    </div>
         </div>
 
         <p>Retrieve team voucher templates</p>
@@ -19626,7 +17897,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Authorization</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -19644,7 +17915,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Content-Type</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -19662,7 +17933,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Accept</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -19680,7 +17951,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">X-Authorisation</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -19708,7 +17979,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">cached</div>
                                             <span class="sl-truncate sl-text-muted">boolean</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Request the response to be cached. Default: <code>true</code>.</p>
         </div>
@@ -19730,7 +18001,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">page</div>
                                             <span class="sl-truncate sl-text-muted">integer</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The pagination page number.</p>
         </div>
@@ -19752,7 +18023,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">limit</div>
                                             <span class="sl-truncate sl-text-muted">integer</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The number of entries returned per pagination page.</p>
         </div>
@@ -19774,7 +18045,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">fields</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Comma-separated list of database fields to return within the object.</p>
         </div>
@@ -19796,7 +18067,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">orderBy</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Order the data by a given field. Comma-separated string.</p>
         </div>
@@ -19818,7 +18089,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">orderBy[]</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Compound <code>orderBy</code>. Order the data by a given field. Comma-separated string. Can not be used in conjunction as standard <code>orderBy</code>.</p>
         </div>
@@ -19840,7 +18111,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">where</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Filter the request on a single field. Key-Value or Key-Operator-Value comma-separated string.</p>
         </div>
@@ -19862,7 +18133,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">where[]</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Compound <code>where</code>. Use when you need to filter on multiple <code>where</code>'s. Note only AND is possible; ORWHERE is not available.</p>
         </div>
@@ -19909,7 +18180,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request GET \
-    --get "https://vine.openfoodnetwork.org.au/api/v1/admin/team-voucher-templates?cached=1&amp;page=1&amp;limit=50&amp;fields=id%2Ccreated_at&amp;orderBy=orderBy%3Did%2Cdesc&amp;orderBy%5B%5D=orderBy%5B%5D%3Did%2Cdesc%26orderBy%5B%5D%3Dcreated_at%2Casc&amp;where=where%3Did%2Clike%2C%2A550e%2A&amp;where%5B%5D=where%5B%5D%3Did%2Clike%2C%2A550e%2A%26where%5B%5D%3Dcreated_at%2C%3E%3D%2C2024-01-01" \
+    --get "http://localhost/api/v1/admin/team-voucher-templates?cached=1&amp;page=1&amp;limit=50&amp;fields=id%2Ccreated_at&amp;orderBy=orderBy%3Did%2Cdesc&amp;orderBy%5B%5D=orderBy%5B%5D%3Did%2Cdesc%26orderBy%5B%5D%3Dcreated_at%2Casc&amp;where=where%3Did%2Clike%2C%2A550e%2A&amp;where%5B%5D=where%5B%5D%3Did%2Clike%2C%2A550e%2A%26where%5B%5D%3Dcreated_at%2C%3E%3D%2C2024-01-01" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -19921,7 +18192,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/team-voucher-templates"
+    "http://localhost/api/v1/admin/team-voucher-templates"
 );
 
 const params = {
@@ -19955,7 +18226,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/team-voucher-templates';
+$url = 'http://localhost/api/v1/admin/team-voucher-templates';
 $response = $client-&gt;get(
     $url,
     [
@@ -19988,7 +18259,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/team-voucher-templates'
+url = 'http://localhost/api/v1/admin/team-voucher-templates'
 params = {
   'cached': '1',
   'page': '1',
@@ -20110,7 +18381,7 @@ response.json()</code></pre>                                        </div>
         </div>
 
         <div class="sl-relative">
-            <div title="https://vine.openfoodnetwork.org.au/api/v1/admin/team-voucher-templates"
+            <div title="http://localhost/api/v1/admin/team-voucher-templates"
                      class="sl-stack sl-stack--horizontal sl-stack--3 sl-inline-flex sl-flex-row sl-items-center sl-max-w-full sl-font-mono sl-py-2 sl-pr-4 sl-bg-canvas-50 sl-rounded-lg"
                 >
                                             <div class="sl-text-lg sl-font-semibold sl-px-2.5 sl-py-1 sl-text-on-primary sl-rounded-lg"
@@ -20120,7 +18391,7 @@ response.json()</code></pre>                                        </div>
                         </div>
                                         <div class="sl-flex sl-overflow-x-hidden sl-text-lg sl-select-all">
                         <div dir="rtl"
-                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">https://vine.openfoodnetwork.org.au</div>
+                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">http://localhost</div>
                         <div class="sl-flex-1 sl-font-semibold">/api/v1/admin/team-voucher-templates</div>
                     </div>
 
@@ -20128,7 +18399,7 @@ response.json()</code></pre>                                        </div>
                                  style="background-color: darkred"
                             >requires authentication
                             </div>
-                                                            </div>
+                                                                                    </div>
         </div>
 
         <p>Add a team voucher template.</p>
@@ -20149,7 +18420,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Authorization</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -20167,7 +18438,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Content-Type</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -20185,7 +18456,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Accept</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -20203,7 +18474,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">X-Authorisation</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -20233,9 +18504,11 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">team_id</div>
                                             <span class="sl-truncate sl-text-muted">integer</span>
                                     </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
+                                            <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                        <div class="sl-flex sl-items-center">
+                                                            <span class="sl-ml-2 sl-text-warning">required</span>
+                                                                                </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The database teams.id of the team to add the voucher template to.</p>
         </div>
@@ -20243,7 +18516,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        13
+                        1
                     </div>
                 </div>
             </div>
@@ -20260,9 +18533,11 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">voucher_template_path</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
+                                            <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                        <div class="sl-flex sl-items-center">
+                                                            <span class="sl-ml-2 sl-text-warning">required</span>
+                                                                                </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The path on the cloud storage system to the voucher template</p>
         </div>
@@ -20270,7 +18545,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        quod
+                        consequatur
                     </div>
                 </div>
             </div>
@@ -20287,11 +18562,129 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">voucher_qr_size_px</div>
                                             <span class="sl-truncate sl-text-muted">integer</span>
                                     </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
+                                            <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                        <div class="sl-flex sl-items-center">
+                                                            <span class="sl-ml-2 sl-text-warning">required</span>
+                                                                                </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The size of the QR code on the template</p>
+        </div>
+                                            <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
+                <span>Example:</span> <!-- <span> important for spacing -->
+                <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
+                    <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
+                        6
+                    </div>
+                </div>
+            </div>
+            </div>
+</div>
+
+            </div>
+    <div class="expandable sl-text-sm sl-border-l sl-ml-px">
+        <div class="sl-flex sl-relative sl-max-w-full sl-py-2 sl-pl-3">
+    <div class="sl-w-1 sl-mt-2 sl-mr-3 sl--ml-3 sl-border-t"></div>
+    <div class="sl-stack sl-stack--vertical sl-stack--1 sl-flex sl-flex-1 sl-flex-col sl-items-stretch sl-max-w-full sl-ml-2 ">
+        <div class="sl-flex sl-items-center sl-max-w-full">
+                                        <div class="sl-flex sl-items-baseline sl-text-base">
+                    <div class="sl-font-mono sl-font-semibold sl-mr-2">voucher_qr_x</div>
+                                            <span class="sl-truncate sl-text-muted">integer</span>
+                                    </div>
+                                            <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                        <div class="sl-flex sl-items-center">
+                                                            <span class="sl-ml-2 sl-text-warning">required</span>
+                                                                                </div>
+                                        </div>
+                <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
+            <p>The X coordinate of the QR code</p>
+        </div>
+                                            <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
+                <span>Example:</span> <!-- <span> important for spacing -->
+                <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
+                    <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
+                        4
+                    </div>
+                </div>
+            </div>
+            </div>
+</div>
+
+            </div>
+    <div class="expandable sl-text-sm sl-border-l sl-ml-px">
+        <div class="sl-flex sl-relative sl-max-w-full sl-py-2 sl-pl-3">
+    <div class="sl-w-1 sl-mt-2 sl-mr-3 sl--ml-3 sl-border-t"></div>
+    <div class="sl-stack sl-stack--vertical sl-stack--1 sl-flex sl-flex-1 sl-flex-col sl-items-stretch sl-max-w-full sl-ml-2 ">
+        <div class="sl-flex sl-items-center sl-max-w-full">
+                                        <div class="sl-flex sl-items-baseline sl-text-base">
+                    <div class="sl-font-mono sl-font-semibold sl-mr-2">voucher_qr_y</div>
+                                            <span class="sl-truncate sl-text-muted">integer</span>
+                                    </div>
+                                            <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                        <div class="sl-flex sl-items-center">
+                                                            <span class="sl-ml-2 sl-text-warning">required</span>
+                                                                                </div>
+                                        </div>
+                <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
+            <p>The Y coordinate of the QR code</p>
+        </div>
+                                            <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
+                <span>Example:</span> <!-- <span> important for spacing -->
+                <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
+                    <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
+                        4
+                    </div>
+                </div>
+            </div>
+            </div>
+</div>
+
+            </div>
+    <div class="expandable sl-text-sm sl-border-l sl-ml-px">
+        <div class="sl-flex sl-relative sl-max-w-full sl-py-2 sl-pl-3">
+    <div class="sl-w-1 sl-mt-2 sl-mr-3 sl--ml-3 sl-border-t"></div>
+    <div class="sl-stack sl-stack--vertical sl-stack--1 sl-flex sl-flex-1 sl-flex-col sl-items-stretch sl-max-w-full sl-ml-2 ">
+        <div class="sl-flex sl-items-center sl-max-w-full">
+                                        <div class="sl-flex sl-items-baseline sl-text-base">
+                    <div class="sl-font-mono sl-font-semibold sl-mr-2">voucher_code_size_px</div>
+                                            <span class="sl-truncate sl-text-muted">integer</span>
+                                    </div>
+                                            <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                        <div class="sl-flex sl-items-center">
+                                                            <span class="sl-ml-2 sl-text-warning">required</span>
+                                                                                </div>
+                                        </div>
+                <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
+            <p>The size of the voucher short code on the template</p>
+        </div>
+                                            <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
+                <span>Example:</span> <!-- <span> important for spacing -->
+                <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
+                    <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
+                        11
+                    </div>
+                </div>
+            </div>
+            </div>
+</div>
+
+            </div>
+    <div class="expandable sl-text-sm sl-border-l sl-ml-px">
+        <div class="sl-flex sl-relative sl-max-w-full sl-py-2 sl-pl-3">
+    <div class="sl-w-1 sl-mt-2 sl-mr-3 sl--ml-3 sl-border-t"></div>
+    <div class="sl-stack sl-stack--vertical sl-stack--1 sl-flex sl-flex-1 sl-flex-col sl-items-stretch sl-max-w-full sl-ml-2 ">
+        <div class="sl-flex sl-items-center sl-max-w-full">
+                                        <div class="sl-flex sl-items-baseline sl-text-base">
+                    <div class="sl-font-mono sl-font-semibold sl-mr-2">voucher_code_x</div>
+                                            <span class="sl-truncate sl-text-muted">integer</span>
+                                    </div>
+                                            <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                        <div class="sl-flex sl-items-center">
+                                                            <span class="sl-ml-2 sl-text-warning">required</span>
+                                                                                </div>
+                                        </div>
+                <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
+            <p>The X coordinate of the voucher short code</p>
         </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
@@ -20311,68 +18704,16 @@ response.json()</code></pre>                                        </div>
     <div class="sl-stack sl-stack--vertical sl-stack--1 sl-flex sl-flex-1 sl-flex-col sl-items-stretch sl-max-w-full sl-ml-2 ">
         <div class="sl-flex sl-items-center sl-max-w-full">
                                         <div class="sl-flex sl-items-baseline sl-text-base">
-                    <div class="sl-font-mono sl-font-semibold sl-mr-2">voucher_qr_x</div>
+                    <div class="sl-font-mono sl-font-semibold sl-mr-2">voucher_code_y</div>
                                             <span class="sl-truncate sl-text-muted">integer</span>
                                     </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
+                                            <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                        <div class="sl-flex sl-items-center">
+                                                            <span class="sl-ml-2 sl-text-warning">required</span>
+                                                                                </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
-            <p>The X coordinate of the QR code</p>
-        </div>
-                                            <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
-                <span>Example:</span> <!-- <span> important for spacing -->
-                <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
-                    <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        8
-                    </div>
-                </div>
-            </div>
-            </div>
-</div>
-
-            </div>
-    <div class="expandable sl-text-sm sl-border-l sl-ml-px">
-        <div class="sl-flex sl-relative sl-max-w-full sl-py-2 sl-pl-3">
-    <div class="sl-w-1 sl-mt-2 sl-mr-3 sl--ml-3 sl-border-t"></div>
-    <div class="sl-stack sl-stack--vertical sl-stack--1 sl-flex sl-flex-1 sl-flex-col sl-items-stretch sl-max-w-full sl-ml-2 ">
-        <div class="sl-flex sl-items-center sl-max-w-full">
-                                        <div class="sl-flex sl-items-baseline sl-text-base">
-                    <div class="sl-font-mono sl-font-semibold sl-mr-2">voucher_qr_y</div>
-                                            <span class="sl-truncate sl-text-muted">integer</span>
-                                    </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
-                <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
-            <p>The Y coordinate of the QR code</p>
-        </div>
-                                            <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
-                <span>Example:</span> <!-- <span> important for spacing -->
-                <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
-                    <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        8
-                    </div>
-                </div>
-            </div>
-            </div>
-</div>
-
-            </div>
-    <div class="expandable sl-text-sm sl-border-l sl-ml-px">
-        <div class="sl-flex sl-relative sl-max-w-full sl-py-2 sl-pl-3">
-    <div class="sl-w-1 sl-mt-2 sl-mr-3 sl--ml-3 sl-border-t"></div>
-    <div class="sl-stack sl-stack--vertical sl-stack--1 sl-flex sl-flex-1 sl-flex-col sl-items-stretch sl-max-w-full sl-ml-2 ">
-        <div class="sl-flex sl-items-center sl-max-w-full">
-                                        <div class="sl-flex sl-items-baseline sl-text-base">
-                    <div class="sl-font-mono sl-font-semibold sl-mr-2">voucher_code_size_px</div>
-                                            <span class="sl-truncate sl-text-muted">integer</span>
-                                    </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
-                <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
-            <p>The size of the voucher short code on the template</p>
+            <p>The Y coordinate of the voucher short code</p>
         </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
@@ -20392,66 +18733,14 @@ response.json()</code></pre>                                        </div>
     <div class="sl-stack sl-stack--vertical sl-stack--1 sl-flex sl-flex-1 sl-flex-col sl-items-stretch sl-max-w-full sl-ml-2 ">
         <div class="sl-flex sl-items-center sl-max-w-full">
                                         <div class="sl-flex sl-items-baseline sl-text-base">
-                    <div class="sl-font-mono sl-font-semibold sl-mr-2">voucher_code_x</div>
-                                            <span class="sl-truncate sl-text-muted">integer</span>
-                                    </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
-                <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
-            <p>The X coordinate of the voucher short code</p>
-        </div>
-                                            <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
-                <span>Example:</span> <!-- <span> important for spacing -->
-                <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
-                    <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        20
-                    </div>
-                </div>
-            </div>
-            </div>
-</div>
-
-            </div>
-    <div class="expandable sl-text-sm sl-border-l sl-ml-px">
-        <div class="sl-flex sl-relative sl-max-w-full sl-py-2 sl-pl-3">
-    <div class="sl-w-1 sl-mt-2 sl-mr-3 sl--ml-3 sl-border-t"></div>
-    <div class="sl-stack sl-stack--vertical sl-stack--1 sl-flex sl-flex-1 sl-flex-col sl-items-stretch sl-max-w-full sl-ml-2 ">
-        <div class="sl-flex sl-items-center sl-max-w-full">
-                                        <div class="sl-flex sl-items-baseline sl-text-base">
-                    <div class="sl-font-mono sl-font-semibold sl-mr-2">voucher_code_y</div>
-                                            <span class="sl-truncate sl-text-muted">integer</span>
-                                    </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
-                <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
-            <p>The Y coordinate of the voucher short code</p>
-        </div>
-                                            <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
-                <span>Example:</span> <!-- <span> important for spacing -->
-                <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
-                    <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        16
-                    </div>
-                </div>
-            </div>
-            </div>
-</div>
-
-            </div>
-    <div class="expandable sl-text-sm sl-border-l sl-ml-px">
-        <div class="sl-flex sl-relative sl-max-w-full sl-py-2 sl-pl-3">
-    <div class="sl-w-1 sl-mt-2 sl-mr-3 sl--ml-3 sl-border-t"></div>
-    <div class="sl-stack sl-stack--vertical sl-stack--1 sl-flex sl-flex-1 sl-flex-col sl-items-stretch sl-max-w-full sl-ml-2 ">
-        <div class="sl-flex sl-items-center sl-max-w-full">
-                                        <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">voucher_expiry_size_px</div>
                                             <span class="sl-truncate sl-text-muted">integer</span>
                                     </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
+                                            <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                        <div class="sl-flex sl-items-center">
+                                                            <span class="sl-ml-2 sl-text-warning">required</span>
+                                                                                </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The size of the voucher expiry text on the template</p>
         </div>
@@ -20459,7 +18748,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        17
+                        1
                     </div>
                 </div>
             </div>
@@ -20476,92 +18765,13 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">voucher_expiry_x</div>
                                             <span class="sl-truncate sl-text-muted">integer</span>
                                     </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
+                                            <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                        <div class="sl-flex sl-items-center">
+                                                            <span class="sl-ml-2 sl-text-warning">required</span>
+                                                                                </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The X coordinate of the voucher expiry text</p>
-        </div>
-                                            <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
-                <span>Example:</span> <!-- <span> important for spacing -->
-                <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
-                    <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        10
-                    </div>
-                </div>
-            </div>
-            </div>
-</div>
-
-            </div>
-    <div class="expandable sl-text-sm sl-border-l sl-ml-px">
-        <div class="sl-flex sl-relative sl-max-w-full sl-py-2 sl-pl-3">
-    <div class="sl-w-1 sl-mt-2 sl-mr-3 sl--ml-3 sl-border-t"></div>
-    <div class="sl-stack sl-stack--vertical sl-stack--1 sl-flex sl-flex-1 sl-flex-col sl-items-stretch sl-max-w-full sl-ml-2 ">
-        <div class="sl-flex sl-items-center sl-max-w-full">
-                                        <div class="sl-flex sl-items-baseline sl-text-base">
-                    <div class="sl-font-mono sl-font-semibold sl-mr-2">voucher_expiry_y</div>
-                                            <span class="sl-truncate sl-text-muted">integer</span>
-                                    </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
-                <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
-            <p>The Y coordinate of the voucher expiry text</p>
-        </div>
-                                            <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
-                <span>Example:</span> <!-- <span> important for spacing -->
-                <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
-                    <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        14
-                    </div>
-                </div>
-            </div>
-            </div>
-</div>
-
-            </div>
-    <div class="expandable sl-text-sm sl-border-l sl-ml-px">
-        <div class="sl-flex sl-relative sl-max-w-full sl-py-2 sl-pl-3">
-    <div class="sl-w-1 sl-mt-2 sl-mr-3 sl--ml-3 sl-border-t"></div>
-    <div class="sl-stack sl-stack--vertical sl-stack--1 sl-flex sl-flex-1 sl-flex-col sl-items-stretch sl-max-w-full sl-ml-2 ">
-        <div class="sl-flex sl-items-center sl-max-w-full">
-                                        <div class="sl-flex sl-items-baseline sl-text-base">
-                    <div class="sl-font-mono sl-font-semibold sl-mr-2">voucher_value_size_px</div>
-                                            <span class="sl-truncate sl-text-muted">integer</span>
-                                    </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
-                <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
-            <p>The size of the voucher value text on the template</p>
-        </div>
-                                            <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
-                <span>Example:</span> <!-- <span> important for spacing -->
-                <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
-                    <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        16
-                    </div>
-                </div>
-            </div>
-            </div>
-</div>
-
-            </div>
-    <div class="expandable sl-text-sm sl-border-l sl-ml-px">
-        <div class="sl-flex sl-relative sl-max-w-full sl-py-2 sl-pl-3">
-    <div class="sl-w-1 sl-mt-2 sl-mr-3 sl--ml-3 sl-border-t"></div>
-    <div class="sl-stack sl-stack--vertical sl-stack--1 sl-flex sl-flex-1 sl-flex-col sl-items-stretch sl-max-w-full sl-ml-2 ">
-        <div class="sl-flex sl-items-center sl-max-w-full">
-                                        <div class="sl-flex sl-items-baseline sl-text-base">
-                    <div class="sl-font-mono sl-font-semibold sl-mr-2">voucher_value_x</div>
-                                            <span class="sl-truncate sl-text-muted">integer</span>
-                                    </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
-                <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
-            <p>The X coordinate of the voucher value text</p>
         </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
@@ -20581,12 +18791,101 @@ response.json()</code></pre>                                        </div>
     <div class="sl-stack sl-stack--vertical sl-stack--1 sl-flex sl-flex-1 sl-flex-col sl-items-stretch sl-max-w-full sl-ml-2 ">
         <div class="sl-flex sl-items-center sl-max-w-full">
                                         <div class="sl-flex sl-items-baseline sl-text-base">
+                    <div class="sl-font-mono sl-font-semibold sl-mr-2">voucher_expiry_y</div>
+                                            <span class="sl-truncate sl-text-muted">integer</span>
+                                    </div>
+                                            <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                        <div class="sl-flex sl-items-center">
+                                                            <span class="sl-ml-2 sl-text-warning">required</span>
+                                                                                </div>
+                                        </div>
+                <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
+            <p>The Y coordinate of the voucher expiry text</p>
+        </div>
+                                            <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
+                <span>Example:</span> <!-- <span> important for spacing -->
+                <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
+                    <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
+                        4
+                    </div>
+                </div>
+            </div>
+            </div>
+</div>
+
+            </div>
+    <div class="expandable sl-text-sm sl-border-l sl-ml-px">
+        <div class="sl-flex sl-relative sl-max-w-full sl-py-2 sl-pl-3">
+    <div class="sl-w-1 sl-mt-2 sl-mr-3 sl--ml-3 sl-border-t"></div>
+    <div class="sl-stack sl-stack--vertical sl-stack--1 sl-flex sl-flex-1 sl-flex-col sl-items-stretch sl-max-w-full sl-ml-2 ">
+        <div class="sl-flex sl-items-center sl-max-w-full">
+                                        <div class="sl-flex sl-items-baseline sl-text-base">
+                    <div class="sl-font-mono sl-font-semibold sl-mr-2">voucher_value_size_px</div>
+                                            <span class="sl-truncate sl-text-muted">integer</span>
+                                    </div>
+                                            <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                        <div class="sl-flex sl-items-center">
+                                                            <span class="sl-ml-2 sl-text-warning">required</span>
+                                                                                </div>
+                                        </div>
+                <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
+            <p>The size of the voucher value text on the template</p>
+        </div>
+                                            <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
+                <span>Example:</span> <!-- <span> important for spacing -->
+                <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
+                    <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
+                        11
+                    </div>
+                </div>
+            </div>
+            </div>
+</div>
+
+            </div>
+    <div class="expandable sl-text-sm sl-border-l sl-ml-px">
+        <div class="sl-flex sl-relative sl-max-w-full sl-py-2 sl-pl-3">
+    <div class="sl-w-1 sl-mt-2 sl-mr-3 sl--ml-3 sl-border-t"></div>
+    <div class="sl-stack sl-stack--vertical sl-stack--1 sl-flex sl-flex-1 sl-flex-col sl-items-stretch sl-max-w-full sl-ml-2 ">
+        <div class="sl-flex sl-items-center sl-max-w-full">
+                                        <div class="sl-flex sl-items-baseline sl-text-base">
+                    <div class="sl-font-mono sl-font-semibold sl-mr-2">voucher_value_x</div>
+                                            <span class="sl-truncate sl-text-muted">integer</span>
+                                    </div>
+                                            <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                        <div class="sl-flex sl-items-center">
+                                                            <span class="sl-ml-2 sl-text-warning">required</span>
+                                                                                </div>
+                                        </div>
+                <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
+            <p>The X coordinate of the voucher value text</p>
+        </div>
+                                            <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
+                <span>Example:</span> <!-- <span> important for spacing -->
+                <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
+                    <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
+                        18
+                    </div>
+                </div>
+            </div>
+            </div>
+</div>
+
+            </div>
+    <div class="expandable sl-text-sm sl-border-l sl-ml-px">
+        <div class="sl-flex sl-relative sl-max-w-full sl-py-2 sl-pl-3">
+    <div class="sl-w-1 sl-mt-2 sl-mr-3 sl--ml-3 sl-border-t"></div>
+    <div class="sl-stack sl-stack--vertical sl-stack--1 sl-flex sl-flex-1 sl-flex-col sl-items-stretch sl-max-w-full sl-ml-2 ">
+        <div class="sl-flex sl-items-center sl-max-w-full">
+                                        <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">voucher_value_y</div>
                                             <span class="sl-truncate sl-text-muted">integer</span>
                                     </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
+                                            <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                        <div class="sl-flex sl-items-center">
+                                                            <span class="sl-ml-2 sl-text-warning">required</span>
+                                                                                </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The Y coordinate of the voucher value text</p>
         </div>
@@ -20594,7 +18893,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        2
+                        7
                     </div>
                 </div>
             </div>
@@ -20611,9 +18910,11 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">overlay_font_path</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
+                                            <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                        <div class="sl-flex sl-items-center">
+                                                            <span class="sl-ml-2 sl-text-warning">required</span>
+                                                                                </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The path to the font being used in the template</p>
         </div>
@@ -20621,7 +18922,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        autem
+                        ullam
                     </div>
                 </div>
             </div>
@@ -20661,27 +18962,27 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request POST \
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/team-voucher-templates" \
+    "http://localhost/api/v1/admin/team-voucher-templates" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "X-Authorisation: JWT eyJ0eXAiOiJKV..." \
     --data "{
-    \"team_id\": 13,
-    \"voucher_template_path\": \"quod\",
-    \"voucher_qr_size_px\": 7,
-    \"voucher_qr_x\": 8,
-    \"voucher_qr_y\": 8,
-    \"voucher_code_size_px\": 3,
-    \"voucher_code_x\": 20,
-    \"voucher_code_y\": 16,
-    \"voucher_expiry_size_px\": 17,
-    \"voucher_expiry_x\": 10,
-    \"voucher_expiry_y\": 14,
-    \"voucher_value_size_px\": 16,
-    \"voucher_value_x\": 7,
-    \"voucher_value_y\": 2,
-    \"overlay_font_path\": \"autem\"
+    \"team_id\": 1,
+    \"voucher_template_path\": \"consequatur\",
+    \"voucher_qr_size_px\": 6,
+    \"voucher_qr_x\": 4,
+    \"voucher_qr_y\": 4,
+    \"voucher_code_size_px\": 11,
+    \"voucher_code_x\": 7,
+    \"voucher_code_y\": 3,
+    \"voucher_expiry_size_px\": 1,
+    \"voucher_expiry_x\": 7,
+    \"voucher_expiry_y\": 4,
+    \"voucher_value_size_px\": 11,
+    \"voucher_value_x\": 18,
+    \"voucher_value_y\": 7,
+    \"overlay_font_path\": \"ullam\"
 }"
 </code></pre>                                        </div>
                                     </div>
@@ -20691,7 +18992,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/team-voucher-templates"
+    "http://localhost/api/v1/admin/team-voucher-templates"
 );
 
 const headers = {
@@ -20702,21 +19003,21 @@ const headers = {
 };
 
 let body = {
-    "team_id": 13,
-    "voucher_template_path": "quod",
-    "voucher_qr_size_px": 7,
-    "voucher_qr_x": 8,
-    "voucher_qr_y": 8,
-    "voucher_code_size_px": 3,
-    "voucher_code_x": 20,
-    "voucher_code_y": 16,
-    "voucher_expiry_size_px": 17,
-    "voucher_expiry_x": 10,
-    "voucher_expiry_y": 14,
-    "voucher_value_size_px": 16,
-    "voucher_value_x": 7,
-    "voucher_value_y": 2,
-    "overlay_font_path": "autem"
+    "team_id": 1,
+    "voucher_template_path": "consequatur",
+    "voucher_qr_size_px": 6,
+    "voucher_qr_x": 4,
+    "voucher_qr_y": 4,
+    "voucher_code_size_px": 11,
+    "voucher_code_x": 7,
+    "voucher_code_y": 3,
+    "voucher_expiry_size_px": 1,
+    "voucher_expiry_x": 7,
+    "voucher_expiry_y": 4,
+    "voucher_value_size_px": 11,
+    "voucher_value_x": 18,
+    "voucher_value_y": 7,
+    "overlay_font_path": "ullam"
 };
 
 fetch(url, {
@@ -20731,7 +19032,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/team-voucher-templates';
+$url = 'http://localhost/api/v1/admin/team-voucher-templates';
 $response = $client-&gt;post(
     $url,
     [
@@ -20742,21 +19043,21 @@ $response = $client-&gt;post(
             'X-Authorisation' =&gt; 'JWT eyJ0eXAiOiJKV...',
         ],
         'json' =&gt; [
-            'team_id' =&gt; 13,
-            'voucher_template_path' =&gt; 'quod',
-            'voucher_qr_size_px' =&gt; 7,
-            'voucher_qr_x' =&gt; 8,
-            'voucher_qr_y' =&gt; 8,
-            'voucher_code_size_px' =&gt; 3,
-            'voucher_code_x' =&gt; 20,
-            'voucher_code_y' =&gt; 16,
-            'voucher_expiry_size_px' =&gt; 17,
-            'voucher_expiry_x' =&gt; 10,
-            'voucher_expiry_y' =&gt; 14,
-            'voucher_value_size_px' =&gt; 16,
-            'voucher_value_x' =&gt; 7,
-            'voucher_value_y' =&gt; 2,
-            'overlay_font_path' =&gt; 'autem',
+            'team_id' =&gt; 1,
+            'voucher_template_path' =&gt; 'consequatur',
+            'voucher_qr_size_px' =&gt; 6,
+            'voucher_qr_x' =&gt; 4,
+            'voucher_qr_y' =&gt; 4,
+            'voucher_code_size_px' =&gt; 11,
+            'voucher_code_x' =&gt; 7,
+            'voucher_code_y' =&gt; 3,
+            'voucher_expiry_size_px' =&gt; 1,
+            'voucher_expiry_x' =&gt; 7,
+            'voucher_expiry_y' =&gt; 4,
+            'voucher_value_size_px' =&gt; 11,
+            'voucher_value_x' =&gt; 18,
+            'voucher_value_y' =&gt; 7,
+            'overlay_font_path' =&gt; 'ullam',
         ],
     ]
 );
@@ -20771,23 +19072,23 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/team-voucher-templates'
+url = 'http://localhost/api/v1/admin/team-voucher-templates'
 payload = {
-    "team_id": 13,
-    "voucher_template_path": "quod",
-    "voucher_qr_size_px": 7,
-    "voucher_qr_x": 8,
-    "voucher_qr_y": 8,
-    "voucher_code_size_px": 3,
-    "voucher_code_x": 20,
-    "voucher_code_y": 16,
-    "voucher_expiry_size_px": 17,
-    "voucher_expiry_x": 10,
-    "voucher_expiry_y": 14,
-    "voucher_value_size_px": 16,
-    "voucher_value_x": 7,
-    "voucher_value_y": 2,
-    "overlay_font_path": "autem"
+    "team_id": 1,
+    "voucher_template_path": "consequatur",
+    "voucher_qr_size_px": 6,
+    "voucher_qr_x": 4,
+    "voucher_qr_y": 4,
+    "voucher_code_size_px": 11,
+    "voucher_code_x": 7,
+    "voucher_code_y": 3,
+    "voucher_expiry_size_px": 1,
+    "voucher_expiry_x": 7,
+    "voucher_expiry_y": 4,
+    "voucher_value_size_px": 11,
+    "voucher_value_x": 18,
+    "voucher_value_y": 7,
+    "overlay_font_path": "ullam"
 }
 headers = {
   'Authorization': 'Bearer {YOUR_API_TOKEN}',
@@ -20818,7 +19119,7 @@ response.json()</code></pre>                                        </div>
         </div>
 
         <div class="sl-relative">
-            <div title="https://vine.openfoodnetwork.org.au/api/v1/admin/team-voucher-templates/{id}"
+            <div title="http://localhost/api/v1/admin/team-voucher-templates/{id}"
                      class="sl-stack sl-stack--horizontal sl-stack--3 sl-inline-flex sl-flex-row sl-items-center sl-max-w-full sl-font-mono sl-py-2 sl-pr-4 sl-bg-canvas-50 sl-rounded-lg"
                 >
                                             <div class="sl-text-lg sl-font-semibold sl-px-2.5 sl-py-1 sl-text-on-primary sl-rounded-lg"
@@ -20828,7 +19129,7 @@ response.json()</code></pre>                                        </div>
                         </div>
                                         <div class="sl-flex sl-overflow-x-hidden sl-text-lg sl-select-all">
                         <div dir="rtl"
-                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">https://vine.openfoodnetwork.org.au</div>
+                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">http://localhost</div>
                         <div class="sl-flex-1 sl-font-semibold">/api/v1/admin/team-voucher-templates/{id}</div>
                     </div>
 
@@ -20836,7 +19137,7 @@ response.json()</code></pre>                                        </div>
                                  style="background-color: darkred"
                             >requires authentication
                             </div>
-                                                            </div>
+                                                                                    </div>
         </div>
 
         <p>Retrieve a single voucher template by ID.</p>
@@ -20857,7 +19158,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Authorization</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -20875,7 +19176,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Content-Type</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -20893,7 +19194,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Accept</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -20911,7 +19212,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">X-Authorisation</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -20937,9 +19238,11 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">id</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
+                                            <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                        <div class="sl-flex sl-items-center">
+                                                            <span class="sl-ml-2 sl-text-warning">required</span>
+                                                                                </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The ID of the team voucher template.</p>
         </div>
@@ -20947,7 +19250,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        eum
+                        quo
                     </div>
                 </div>
             </div>
@@ -20969,7 +19272,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">cached</div>
                                             <span class="sl-truncate sl-text-muted">boolean</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Request the response to be cached. Default: <code>true</code>.</p>
         </div>
@@ -20991,7 +19294,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">fields</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Comma-separated list of database fields to return within the object.</p>
         </div>
@@ -21038,7 +19341,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request GET \
-    --get "https://vine.openfoodnetwork.org.au/api/v1/admin/team-voucher-templates/eum?cached=1&amp;fields=id%2Ccreated_at" \
+    --get "http://localhost/api/v1/admin/team-voucher-templates/quo?cached=1&amp;fields=id%2Ccreated_at" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -21050,7 +19353,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/team-voucher-templates/eum"
+    "http://localhost/api/v1/admin/team-voucher-templates/quo"
 );
 
 const params = {
@@ -21078,7 +19381,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/team-voucher-templates/eum';
+$url = 'http://localhost/api/v1/admin/team-voucher-templates/quo';
 $response = $client-&gt;get(
     $url,
     [
@@ -21105,7 +19408,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/team-voucher-templates/eum'
+url = 'http://localhost/api/v1/admin/team-voucher-templates/quo'
 params = {
   'cached': '1',
   'fields': 'id,created_at',
@@ -21190,7 +19493,7 @@ response.json()</code></pre>                                        </div>
         </div>
 
         <div class="sl-relative">
-            <div title="https://vine.openfoodnetwork.org.au/api/v1/admin/team-voucher-templates/{id}"
+            <div title="http://localhost/api/v1/admin/team-voucher-templates/{id}"
                      class="sl-stack sl-stack--horizontal sl-stack--3 sl-inline-flex sl-flex-row sl-items-center sl-max-w-full sl-font-mono sl-py-2 sl-pr-4 sl-bg-canvas-50 sl-rounded-lg"
                 >
                                             <div class="sl-text-lg sl-font-semibold sl-px-2.5 sl-py-1 sl-text-on-primary sl-rounded-lg"
@@ -21205,7 +19508,7 @@ response.json()</code></pre>                                        </div>
                         </div>
                                         <div class="sl-flex sl-overflow-x-hidden sl-text-lg sl-select-all">
                         <div dir="rtl"
-                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">https://vine.openfoodnetwork.org.au</div>
+                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">http://localhost</div>
                         <div class="sl-flex-1 sl-font-semibold">/api/v1/admin/team-voucher-templates/{id}</div>
                     </div>
 
@@ -21213,7 +19516,7 @@ response.json()</code></pre>                                        </div>
                                  style="background-color: darkred"
                             >requires authentication
                             </div>
-                                                            </div>
+                                                                                    </div>
         </div>
 
         <p>Update a team voucher template.</p>
@@ -21234,7 +19537,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Authorization</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -21252,7 +19555,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Content-Type</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -21270,7 +19573,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Accept</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -21288,7 +19591,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">X-Authorisation</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -21314,9 +19617,11 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">id</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
+                                            <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                        <div class="sl-flex sl-items-center">
+                                                            <span class="sl-ml-2 sl-text-warning">required</span>
+                                                                                </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The ID of the team voucher template.</p>
         </div>
@@ -21324,7 +19629,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        quia
+                        pariatur
                     </div>
                 </div>
             </div>
@@ -21348,7 +19653,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">voucher_template_path</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The path on the cloud storage system to the voucher template</p>
         </div>
@@ -21356,7 +19661,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        officia
+                        tempore
                     </div>
                 </div>
             </div>
@@ -21373,7 +19678,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">voucher_qr_size_px</div>
                                             <span class="sl-truncate sl-text-muted">integer</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The size of the QR code on the template</p>
         </div>
@@ -21381,7 +19686,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        7
+                        8
                     </div>
                 </div>
             </div>
@@ -21398,34 +19703,9 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">voucher_qr_x</div>
                                             <span class="sl-truncate sl-text-muted">integer</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The X coordinate of the QR code</p>
-        </div>
-                                            <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
-                <span>Example:</span> <!-- <span> important for spacing -->
-                <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
-                    <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        16
-                    </div>
-                </div>
-            </div>
-            </div>
-</div>
-
-            </div>
-    <div class="expandable sl-text-sm sl-border-l sl-ml-px">
-        <div class="sl-flex sl-relative sl-max-w-full sl-py-2 sl-pl-3">
-    <div class="sl-w-1 sl-mt-2 sl-mr-3 sl--ml-3 sl-border-t"></div>
-    <div class="sl-stack sl-stack--vertical sl-stack--1 sl-flex sl-flex-1 sl-flex-col sl-items-stretch sl-max-w-full sl-ml-2 ">
-        <div class="sl-flex sl-items-center sl-max-w-full">
-                                        <div class="sl-flex sl-items-baseline sl-text-base">
-                    <div class="sl-font-mono sl-font-semibold sl-mr-2">voucher_qr_y</div>
-                                            <span class="sl-truncate sl-text-muted">integer</span>
-                                    </div>
-                                    </div>
-                <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
-            <p>The Y coordinate of the QR code</p>
         </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
@@ -21445,10 +19725,35 @@ response.json()</code></pre>                                        </div>
     <div class="sl-stack sl-stack--vertical sl-stack--1 sl-flex sl-flex-1 sl-flex-col sl-items-stretch sl-max-w-full sl-ml-2 ">
         <div class="sl-flex sl-items-center sl-max-w-full">
                                         <div class="sl-flex sl-items-baseline sl-text-base">
+                    <div class="sl-font-mono sl-font-semibold sl-mr-2">voucher_qr_y</div>
+                                            <span class="sl-truncate sl-text-muted">integer</span>
+                                    </div>
+                                        </div>
+                <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
+            <p>The Y coordinate of the QR code</p>
+        </div>
+                                            <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
+                <span>Example:</span> <!-- <span> important for spacing -->
+                <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
+                    <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
+                        10
+                    </div>
+                </div>
+            </div>
+            </div>
+</div>
+
+            </div>
+    <div class="expandable sl-text-sm sl-border-l sl-ml-px">
+        <div class="sl-flex sl-relative sl-max-w-full sl-py-2 sl-pl-3">
+    <div class="sl-w-1 sl-mt-2 sl-mr-3 sl--ml-3 sl-border-t"></div>
+    <div class="sl-stack sl-stack--vertical sl-stack--1 sl-flex sl-flex-1 sl-flex-col sl-items-stretch sl-max-w-full sl-ml-2 ">
+        <div class="sl-flex sl-items-center sl-max-w-full">
+                                        <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">voucher_code_size_px</div>
                                             <span class="sl-truncate sl-text-muted">integer</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The size of the voucher short code on the template</p>
         </div>
@@ -21473,7 +19778,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">voucher_code_x</div>
                                             <span class="sl-truncate sl-text-muted">integer</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The X coordinate of the voucher short code</p>
         </div>
@@ -21481,7 +19786,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        20
+                        14
                     </div>
                 </div>
             </div>
@@ -21498,7 +19803,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">voucher_code_y</div>
                                             <span class="sl-truncate sl-text-muted">integer</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The Y coordinate of the voucher short code</p>
         </div>
@@ -21506,7 +19811,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        2
+                        18
                     </div>
                 </div>
             </div>
@@ -21523,7 +19828,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">voucher_code_prefix</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>String to prefix the voucher code by on the template, eg &quot;#&quot;</p>
         </div>
@@ -21531,7 +19836,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        ea
+                        aut
                     </div>
                 </div>
             </div>
@@ -21548,7 +19853,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">voucher_expiry_size_px</div>
                                             <span class="sl-truncate sl-text-muted">integer</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The size of the voucher expiry text on the template</p>
         </div>
@@ -21556,7 +19861,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        9
+                        4
                     </div>
                 </div>
             </div>
@@ -21573,7 +19878,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">voucher_expiry_x</div>
                                             <span class="sl-truncate sl-text-muted">integer</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The X coordinate of the voucher expiry text</p>
         </div>
@@ -21581,7 +19886,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        19
+                        3
                     </div>
                 </div>
             </div>
@@ -21598,7 +19903,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">voucher_expiry_y</div>
                                             <span class="sl-truncate sl-text-muted">integer</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The Y coordinate of the voucher expiry text</p>
         </div>
@@ -21606,7 +19911,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        2
+                        1
                     </div>
                 </div>
             </div>
@@ -21623,7 +19928,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">voucher_expiry_prefix</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>String to prefix the voucher expiry by on the template, eg &quot;@&quot;</p>
         </div>
@@ -21631,7 +19936,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        quibusdam
+                        reprehenderit
                     </div>
                 </div>
             </div>
@@ -21648,7 +19953,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">voucher_value_size_px</div>
                                             <span class="sl-truncate sl-text-muted">integer</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The size of the voucher value text on the template</p>
         </div>
@@ -21656,7 +19961,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        15
+                        3
                     </div>
                 </div>
             </div>
@@ -21673,7 +19978,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">voucher_value_x</div>
                                             <span class="sl-truncate sl-text-muted">integer</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The X coordinate of the voucher value text</p>
         </div>
@@ -21681,7 +19986,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        12
+                        16
                     </div>
                 </div>
             </div>
@@ -21698,7 +20003,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">voucher_value_y</div>
                                             <span class="sl-truncate sl-text-muted">integer</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The Y coordinate of the voucher value text</p>
         </div>
@@ -21706,7 +20011,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        2
+                        3
                     </div>
                 </div>
             </div>
@@ -21723,7 +20028,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">voucher_value_prefix</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>String to prefix the voucher value by on the template, eg &quot;$&quot;</p>
         </div>
@@ -21731,7 +20036,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        voluptatem
+                        et
                     </div>
                 </div>
             </div>
@@ -21748,7 +20053,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">overlay_font_path</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The path to the font being used in the template</p>
         </div>
@@ -21756,7 +20061,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        illum
+                        corporis
                     </div>
                 </div>
             </div>
@@ -21773,7 +20078,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">archive</div>
                                             <span class="sl-truncate sl-text-muted">boolean</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>TArchive the template from future selection in a voucher set.</p>
         </div>
@@ -21781,7 +20086,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        true
+                        false
                     </div>
                 </div>
             </div>
@@ -21821,30 +20126,30 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request PUT \
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/team-voucher-templates/quia" \
+    "http://localhost/api/v1/admin/team-voucher-templates/pariatur" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "X-Authorisation: JWT eyJ0eXAiOiJKV..." \
     --data "{
-    \"voucher_template_path\": \"officia\",
-    \"voucher_qr_size_px\": 7,
-    \"voucher_qr_x\": 16,
-    \"voucher_qr_y\": 12,
+    \"voucher_template_path\": \"tempore\",
+    \"voucher_qr_size_px\": 8,
+    \"voucher_qr_x\": 12,
+    \"voucher_qr_y\": 10,
     \"voucher_code_size_px\": 9,
-    \"voucher_code_x\": 20,
-    \"voucher_code_y\": 2,
-    \"voucher_code_prefix\": \"ea\",
-    \"voucher_expiry_size_px\": 9,
-    \"voucher_expiry_x\": 19,
-    \"voucher_expiry_y\": 2,
-    \"voucher_expiry_prefix\": \"quibusdam\",
-    \"voucher_value_size_px\": 15,
-    \"voucher_value_x\": 12,
-    \"voucher_value_y\": 2,
-    \"voucher_value_prefix\": \"voluptatem\",
-    \"overlay_font_path\": \"illum\",
-    \"archive\": true
+    \"voucher_code_x\": 14,
+    \"voucher_code_y\": 18,
+    \"voucher_code_prefix\": \"aut\",
+    \"voucher_expiry_size_px\": 4,
+    \"voucher_expiry_x\": 3,
+    \"voucher_expiry_y\": 1,
+    \"voucher_expiry_prefix\": \"reprehenderit\",
+    \"voucher_value_size_px\": 3,
+    \"voucher_value_x\": 16,
+    \"voucher_value_y\": 3,
+    \"voucher_value_prefix\": \"et\",
+    \"overlay_font_path\": \"corporis\",
+    \"archive\": false
 }"
 </code></pre>                                        </div>
                                     </div>
@@ -21854,7 +20159,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/team-voucher-templates/quia"
+    "http://localhost/api/v1/admin/team-voucher-templates/pariatur"
 );
 
 const headers = {
@@ -21865,24 +20170,24 @@ const headers = {
 };
 
 let body = {
-    "voucher_template_path": "officia",
-    "voucher_qr_size_px": 7,
-    "voucher_qr_x": 16,
-    "voucher_qr_y": 12,
+    "voucher_template_path": "tempore",
+    "voucher_qr_size_px": 8,
+    "voucher_qr_x": 12,
+    "voucher_qr_y": 10,
     "voucher_code_size_px": 9,
-    "voucher_code_x": 20,
-    "voucher_code_y": 2,
-    "voucher_code_prefix": "ea",
-    "voucher_expiry_size_px": 9,
-    "voucher_expiry_x": 19,
-    "voucher_expiry_y": 2,
-    "voucher_expiry_prefix": "quibusdam",
-    "voucher_value_size_px": 15,
-    "voucher_value_x": 12,
-    "voucher_value_y": 2,
-    "voucher_value_prefix": "voluptatem",
-    "overlay_font_path": "illum",
-    "archive": true
+    "voucher_code_x": 14,
+    "voucher_code_y": 18,
+    "voucher_code_prefix": "aut",
+    "voucher_expiry_size_px": 4,
+    "voucher_expiry_x": 3,
+    "voucher_expiry_y": 1,
+    "voucher_expiry_prefix": "reprehenderit",
+    "voucher_value_size_px": 3,
+    "voucher_value_x": 16,
+    "voucher_value_y": 3,
+    "voucher_value_prefix": "et",
+    "overlay_font_path": "corporis",
+    "archive": false
 };
 
 fetch(url, {
@@ -21897,7 +20202,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/team-voucher-templates/quia';
+$url = 'http://localhost/api/v1/admin/team-voucher-templates/pariatur';
 $response = $client-&gt;put(
     $url,
     [
@@ -21908,24 +20213,24 @@ $response = $client-&gt;put(
             'X-Authorisation' =&gt; 'JWT eyJ0eXAiOiJKV...',
         ],
         'json' =&gt; [
-            'voucher_template_path' =&gt; 'officia',
-            'voucher_qr_size_px' =&gt; 7,
-            'voucher_qr_x' =&gt; 16,
-            'voucher_qr_y' =&gt; 12,
+            'voucher_template_path' =&gt; 'tempore',
+            'voucher_qr_size_px' =&gt; 8,
+            'voucher_qr_x' =&gt; 12,
+            'voucher_qr_y' =&gt; 10,
             'voucher_code_size_px' =&gt; 9,
-            'voucher_code_x' =&gt; 20,
-            'voucher_code_y' =&gt; 2,
-            'voucher_code_prefix' =&gt; 'ea',
-            'voucher_expiry_size_px' =&gt; 9,
-            'voucher_expiry_x' =&gt; 19,
-            'voucher_expiry_y' =&gt; 2,
-            'voucher_expiry_prefix' =&gt; 'quibusdam',
-            'voucher_value_size_px' =&gt; 15,
-            'voucher_value_x' =&gt; 12,
-            'voucher_value_y' =&gt; 2,
-            'voucher_value_prefix' =&gt; 'voluptatem',
-            'overlay_font_path' =&gt; 'illum',
-            'archive' =&gt; true,
+            'voucher_code_x' =&gt; 14,
+            'voucher_code_y' =&gt; 18,
+            'voucher_code_prefix' =&gt; 'aut',
+            'voucher_expiry_size_px' =&gt; 4,
+            'voucher_expiry_x' =&gt; 3,
+            'voucher_expiry_y' =&gt; 1,
+            'voucher_expiry_prefix' =&gt; 'reprehenderit',
+            'voucher_value_size_px' =&gt; 3,
+            'voucher_value_x' =&gt; 16,
+            'voucher_value_y' =&gt; 3,
+            'voucher_value_prefix' =&gt; 'et',
+            'overlay_font_path' =&gt; 'corporis',
+            'archive' =&gt; false,
         ],
     ]
 );
@@ -21940,26 +20245,26 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/team-voucher-templates/quia'
+url = 'http://localhost/api/v1/admin/team-voucher-templates/pariatur'
 payload = {
-    "voucher_template_path": "officia",
-    "voucher_qr_size_px": 7,
-    "voucher_qr_x": 16,
-    "voucher_qr_y": 12,
+    "voucher_template_path": "tempore",
+    "voucher_qr_size_px": 8,
+    "voucher_qr_x": 12,
+    "voucher_qr_y": 10,
     "voucher_code_size_px": 9,
-    "voucher_code_x": 20,
-    "voucher_code_y": 2,
-    "voucher_code_prefix": "ea",
-    "voucher_expiry_size_px": 9,
-    "voucher_expiry_x": 19,
-    "voucher_expiry_y": 2,
-    "voucher_expiry_prefix": "quibusdam",
-    "voucher_value_size_px": 15,
-    "voucher_value_x": 12,
-    "voucher_value_y": 2,
-    "voucher_value_prefix": "voluptatem",
-    "overlay_font_path": "illum",
-    "archive": true
+    "voucher_code_x": 14,
+    "voucher_code_y": 18,
+    "voucher_code_prefix": "aut",
+    "voucher_expiry_size_px": 4,
+    "voucher_expiry_x": 3,
+    "voucher_expiry_y": 1,
+    "voucher_expiry_prefix": "reprehenderit",
+    "voucher_value_size_px": 3,
+    "voucher_value_x": 16,
+    "voucher_value_y": 3,
+    "voucher_value_prefix": "et",
+    "overlay_font_path": "corporis",
+    "archive": false
 }
 headers = {
   'Authorization': 'Bearer {YOUR_API_TOKEN}',
@@ -21990,7 +20295,7 @@ response.json()</code></pre>                                        </div>
         </div>
 
         <div class="sl-relative">
-            <div title="https://vine.openfoodnetwork.org.au/api/v1/admin/team-voucher-templates/{id}"
+            <div title="http://localhost/api/v1/admin/team-voucher-templates/{id}"
                      class="sl-stack sl-stack--horizontal sl-stack--3 sl-inline-flex sl-flex-row sl-items-center sl-max-w-full sl-font-mono sl-py-2 sl-pr-4 sl-bg-canvas-50 sl-rounded-lg"
                 >
                                             <div class="sl-text-lg sl-font-semibold sl-px-2.5 sl-py-1 sl-text-on-primary sl-rounded-lg"
@@ -22000,7 +20305,7 @@ response.json()</code></pre>                                        </div>
                         </div>
                                         <div class="sl-flex sl-overflow-x-hidden sl-text-lg sl-select-all">
                         <div dir="rtl"
-                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">https://vine.openfoodnetwork.org.au</div>
+                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">http://localhost</div>
                         <div class="sl-flex-1 sl-font-semibold">/api/v1/admin/team-voucher-templates/{id}</div>
                     </div>
 
@@ -22008,7 +20313,7 @@ response.json()</code></pre>                                        </div>
                                  style="background-color: darkred"
                             >requires authentication
                             </div>
-                                                            </div>
+                                                                                    </div>
         </div>
 
         <p>Remove a team voucher template.</p>
@@ -22029,7 +20334,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Authorization</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -22047,7 +20352,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Content-Type</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -22065,7 +20370,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Accept</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -22083,7 +20388,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">X-Authorisation</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -22109,9 +20414,11 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">id</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
+                                            <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                        <div class="sl-flex sl-items-center">
+                                                            <span class="sl-ml-2 sl-text-warning">required</span>
+                                                                                </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The ID of the team voucher template.</p>
         </div>
@@ -22119,7 +20426,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        porro
+                        et
                     </div>
                 </div>
             </div>
@@ -22160,7 +20467,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request DELETE \
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/team-voucher-templates/porro" \
+    "http://localhost/api/v1/admin/team-voucher-templates/et" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -22172,7 +20479,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/team-voucher-templates/porro"
+    "http://localhost/api/v1/admin/team-voucher-templates/et"
 );
 
 const headers = {
@@ -22193,7 +20500,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/team-voucher-templates/porro';
+$url = 'http://localhost/api/v1/admin/team-voucher-templates/et';
 $response = $client-&gt;delete(
     $url,
     [
@@ -22216,7 +20523,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/team-voucher-templates/porro'
+url = 'http://localhost/api/v1/admin/team-voucher-templates/et'
 headers = {
   'Authorization': 'Bearer {YOUR_API_TOKEN}',
   'Content-Type': 'application/json',
@@ -22253,7 +20560,7 @@ response.json()</code></pre>                                        </div>
         </div>
 
         <div class="sl-relative">
-            <div title="https://vine.openfoodnetwork.org.au/api/v1/admin/user-personal-access-tokens"
+            <div title="http://localhost/api/v1/admin/user-personal-access-tokens"
                      class="sl-stack sl-stack--horizontal sl-stack--3 sl-inline-flex sl-flex-row sl-items-center sl-max-w-full sl-font-mono sl-py-2 sl-pr-4 sl-bg-canvas-50 sl-rounded-lg"
                 >
                                             <div class="sl-text-lg sl-font-semibold sl-px-2.5 sl-py-1 sl-text-on-primary sl-rounded-lg"
@@ -22263,7 +20570,7 @@ response.json()</code></pre>                                        </div>
                         </div>
                                         <div class="sl-flex sl-overflow-x-hidden sl-text-lg sl-select-all">
                         <div dir="rtl"
-                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">https://vine.openfoodnetwork.org.au</div>
+                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">http://localhost</div>
                         <div class="sl-flex-1 sl-font-semibold">/api/v1/admin/user-personal-access-tokens</div>
                     </div>
 
@@ -22271,7 +20578,7 @@ response.json()</code></pre>                                        </div>
                                  style="background-color: darkred"
                             >requires authentication
                             </div>
-                                                            </div>
+                                                                                    </div>
         </div>
 
         <p>Retrieve personal access tokens (PATs).</p>
@@ -22292,7 +20599,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Authorization</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -22310,7 +20617,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Content-Type</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -22328,7 +20635,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Accept</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -22346,7 +20653,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">X-Authorisation</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -22374,7 +20681,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">cached</div>
                                             <span class="sl-truncate sl-text-muted">boolean</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Request the response to be cached. Default: <code>true</code>.</p>
         </div>
@@ -22396,7 +20703,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">page</div>
                                             <span class="sl-truncate sl-text-muted">integer</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The pagination page number.</p>
         </div>
@@ -22418,7 +20725,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">limit</div>
                                             <span class="sl-truncate sl-text-muted">integer</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The number of entries returned per pagination page.</p>
         </div>
@@ -22440,7 +20747,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">fields</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Comma-separated list of database fields to return within the object.</p>
         </div>
@@ -22462,7 +20769,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">orderBy</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Order the data by a given field. Comma-separated string.</p>
         </div>
@@ -22484,7 +20791,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">orderBy[]</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Compound <code>orderBy</code>. Order the data by a given field. Comma-separated string. Can not be used in conjunction as standard <code>orderBy</code>.</p>
         </div>
@@ -22506,7 +20813,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">where</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Filter the request on a single field. Key-Value or Key-Operator-Value comma-separated string.</p>
         </div>
@@ -22528,7 +20835,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">where[]</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Compound <code>where</code>. Use when you need to filter on multiple <code>where</code>'s. Note only AND is possible; ORWHERE is not available.</p>
         </div>
@@ -22575,7 +20882,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request GET \
-    --get "https://vine.openfoodnetwork.org.au/api/v1/admin/user-personal-access-tokens?cached=1&amp;page=1&amp;limit=50&amp;fields=id%2Ccreated_at&amp;orderBy=orderBy%3Did%2Cdesc&amp;orderBy%5B%5D=orderBy%5B%5D%3Did%2Cdesc%26orderBy%5B%5D%3Dcreated_at%2Casc&amp;where=where%3Did%2Clike%2C%2A550e%2A&amp;where%5B%5D=where%5B%5D%3Did%2Clike%2C%2A550e%2A%26where%5B%5D%3Dcreated_at%2C%3E%3D%2C2024-01-01" \
+    --get "http://localhost/api/v1/admin/user-personal-access-tokens?cached=1&amp;page=1&amp;limit=50&amp;fields=id%2Ccreated_at&amp;orderBy=orderBy%3Did%2Cdesc&amp;orderBy%5B%5D=orderBy%5B%5D%3Did%2Cdesc%26orderBy%5B%5D%3Dcreated_at%2Casc&amp;where=where%3Did%2Clike%2C%2A550e%2A&amp;where%5B%5D=where%5B%5D%3Did%2Clike%2C%2A550e%2A%26where%5B%5D%3Dcreated_at%2C%3E%3D%2C2024-01-01" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -22587,7 +20894,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/user-personal-access-tokens"
+    "http://localhost/api/v1/admin/user-personal-access-tokens"
 );
 
 const params = {
@@ -22621,7 +20928,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/user-personal-access-tokens';
+$url = 'http://localhost/api/v1/admin/user-personal-access-tokens';
 $response = $client-&gt;get(
     $url,
     [
@@ -22654,7 +20961,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/user-personal-access-tokens'
+url = 'http://localhost/api/v1/admin/user-personal-access-tokens'
 params = {
   'cached': '1',
   'page': '1',
@@ -22776,7 +21083,7 @@ response.json()</code></pre>                                        </div>
         </div>
 
         <div class="sl-relative">
-            <div title="https://vine.openfoodnetwork.org.au/api/v1/admin/user-personal-access-tokens"
+            <div title="http://localhost/api/v1/admin/user-personal-access-tokens"
                      class="sl-stack sl-stack--horizontal sl-stack--3 sl-inline-flex sl-flex-row sl-items-center sl-max-w-full sl-font-mono sl-py-2 sl-pr-4 sl-bg-canvas-50 sl-rounded-lg"
                 >
                                             <div class="sl-text-lg sl-font-semibold sl-px-2.5 sl-py-1 sl-text-on-primary sl-rounded-lg"
@@ -22786,7 +21093,7 @@ response.json()</code></pre>                                        </div>
                         </div>
                                         <div class="sl-flex sl-overflow-x-hidden sl-text-lg sl-select-all">
                         <div dir="rtl"
-                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">https://vine.openfoodnetwork.org.au</div>
+                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">http://localhost</div>
                         <div class="sl-flex-1 sl-font-semibold">/api/v1/admin/user-personal-access-tokens</div>
                     </div>
 
@@ -22794,7 +21101,7 @@ response.json()</code></pre>                                        </div>
                                  style="background-color: darkred"
                             >requires authentication
                             </div>
-                                                            </div>
+                                                                                    </div>
         </div>
 
         <p>Add a PAT.</p>
@@ -22815,7 +21122,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Authorization</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -22833,7 +21140,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Content-Type</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -22851,7 +21158,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Accept</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -22869,7 +21176,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">X-Authorisation</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -22899,9 +21206,11 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">user_id</div>
                                             <span class="sl-truncate sl-text-muted">integer</span>
                                     </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
+                                            <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                        <div class="sl-flex sl-items-center">
+                                                            <span class="sl-ml-2 sl-text-warning">required</span>
+                                                                                </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The database users.id of the users to add the PAT to.</p>
         </div>
@@ -22909,7 +21218,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        10
+                        12
                     </div>
                 </div>
             </div>
@@ -22926,9 +21235,11 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">name</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
+                                            <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                        <div class="sl-flex sl-items-center">
+                                                            <span class="sl-ml-2 sl-text-warning">required</span>
+                                                                                </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The PAT name.</p>
         </div>
@@ -22936,7 +21247,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        nemo
+                        dolore
                     </div>
                 </div>
             </div>
@@ -22953,9 +21264,11 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">token_abilities</div>
                                             <span class="sl-truncate sl-text-muted">string[]</span>
                                     </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
+                                            <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                        <div class="sl-flex sl-items-center">
+                                                            <span class="sl-ml-2 sl-text-warning">required</span>
+                                                                                </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>An array of token abilities</p>
         </div>
@@ -22963,7 +21276,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        [&quot;id&quot;]
+                        [&quot;quia&quot;]
                     </div>
                 </div>
             </div>
@@ -23003,16 +21316,16 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request POST \
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/user-personal-access-tokens" \
+    "http://localhost/api/v1/admin/user-personal-access-tokens" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "X-Authorisation: JWT eyJ0eXAiOiJKV..." \
     --data "{
-    \"user_id\": 10,
-    \"name\": \"nemo\",
+    \"user_id\": 12,
+    \"name\": \"dolore\",
     \"token_abilities\": [
-        \"id\"
+        \"quia\"
     ]
 }"
 </code></pre>                                        </div>
@@ -23023,7 +21336,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/user-personal-access-tokens"
+    "http://localhost/api/v1/admin/user-personal-access-tokens"
 );
 
 const headers = {
@@ -23034,10 +21347,10 @@ const headers = {
 };
 
 let body = {
-    "user_id": 10,
-    "name": "nemo",
+    "user_id": 12,
+    "name": "dolore",
     "token_abilities": [
-        "id"
+        "quia"
     ]
 };
 
@@ -23053,7 +21366,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/user-personal-access-tokens';
+$url = 'http://localhost/api/v1/admin/user-personal-access-tokens';
 $response = $client-&gt;post(
     $url,
     [
@@ -23064,10 +21377,10 @@ $response = $client-&gt;post(
             'X-Authorisation' =&gt; 'JWT eyJ0eXAiOiJKV...',
         ],
         'json' =&gt; [
-            'user_id' =&gt; 10,
-            'name' =&gt; 'nemo',
+            'user_id' =&gt; 12,
+            'name' =&gt; 'dolore',
             'token_abilities' =&gt; [
-                'id',
+                'quia',
             ],
         ],
     ]
@@ -23083,12 +21396,12 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/user-personal-access-tokens'
+url = 'http://localhost/api/v1/admin/user-personal-access-tokens'
 payload = {
-    "user_id": 10,
-    "name": "nemo",
+    "user_id": 12,
+    "name": "dolore",
     "token_abilities": [
-        "id"
+        "quia"
     ]
 }
 headers = {
@@ -23120,7 +21433,7 @@ response.json()</code></pre>                                        </div>
         </div>
 
         <div class="sl-relative">
-            <div title="https://vine.openfoodnetwork.org.au/api/v1/admin/user-personal-access-tokens/{user_personal_access_token}"
+            <div title="http://localhost/api/v1/admin/user-personal-access-tokens/{user_personal_access_token}"
                      class="sl-stack sl-stack--horizontal sl-stack--3 sl-inline-flex sl-flex-row sl-items-center sl-max-w-full sl-font-mono sl-py-2 sl-pr-4 sl-bg-canvas-50 sl-rounded-lg"
                 >
                                             <div class="sl-text-lg sl-font-semibold sl-px-2.5 sl-py-1 sl-text-on-primary sl-rounded-lg"
@@ -23130,7 +21443,7 @@ response.json()</code></pre>                                        </div>
                         </div>
                                         <div class="sl-flex sl-overflow-x-hidden sl-text-lg sl-select-all">
                         <div dir="rtl"
-                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">https://vine.openfoodnetwork.org.au</div>
+                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">http://localhost</div>
                         <div class="sl-flex-1 sl-font-semibold">/api/v1/admin/user-personal-access-tokens/{user_personal_access_token}</div>
                     </div>
 
@@ -23138,7 +21451,7 @@ response.json()</code></pre>                                        </div>
                                  style="background-color: darkred"
                             >requires authentication
                             </div>
-                                                            </div>
+                                                                                    </div>
         </div>
 
         <p>Retrieve a single PAT by ID.</p>
@@ -23159,7 +21472,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Authorization</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -23177,7 +21490,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Content-Type</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -23195,7 +21508,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Accept</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -23213,7 +21526,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">X-Authorisation</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -23239,14 +21552,16 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">user_personal_access_token</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
+                                            <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                        <div class="sl-flex sl-items-center">
+                                                            <span class="sl-ml-2 sl-text-warning">required</span>
+                                                                                </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        est
+                        laboriosam
                     </div>
                 </div>
             </div>
@@ -23268,7 +21583,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">cached</div>
                                             <span class="sl-truncate sl-text-muted">boolean</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Request the response to be cached. Default: <code>true</code>.</p>
         </div>
@@ -23290,7 +21605,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">fields</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Comma-separated list of database fields to return within the object.</p>
         </div>
@@ -23337,7 +21652,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request GET \
-    --get "https://vine.openfoodnetwork.org.au/api/v1/admin/user-personal-access-tokens/est?cached=1&amp;fields=id%2Ccreated_at" \
+    --get "http://localhost/api/v1/admin/user-personal-access-tokens/laboriosam?cached=1&amp;fields=id%2Ccreated_at" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -23349,7 +21664,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/user-personal-access-tokens/est"
+    "http://localhost/api/v1/admin/user-personal-access-tokens/laboriosam"
 );
 
 const params = {
@@ -23377,7 +21692,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/user-personal-access-tokens/est';
+$url = 'http://localhost/api/v1/admin/user-personal-access-tokens/laboriosam';
 $response = $client-&gt;get(
     $url,
     [
@@ -23404,7 +21719,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/user-personal-access-tokens/est'
+url = 'http://localhost/api/v1/admin/user-personal-access-tokens/laboriosam'
 params = {
   'cached': '1',
   'fields': 'id,created_at',
@@ -23489,7 +21804,7 @@ response.json()</code></pre>                                        </div>
         </div>
 
         <div class="sl-relative">
-            <div title="https://vine.openfoodnetwork.org.au/api/v1/admin/user-personal-access-tokens/{user_personal_access_token}"
+            <div title="http://localhost/api/v1/admin/user-personal-access-tokens/{user_personal_access_token}"
                      class="sl-stack sl-stack--horizontal sl-stack--3 sl-inline-flex sl-flex-row sl-items-center sl-max-w-full sl-font-mono sl-py-2 sl-pr-4 sl-bg-canvas-50 sl-rounded-lg"
                 >
                                             <div class="sl-text-lg sl-font-semibold sl-px-2.5 sl-py-1 sl-text-on-primary sl-rounded-lg"
@@ -23499,7 +21814,7 @@ response.json()</code></pre>                                        </div>
                         </div>
                                         <div class="sl-flex sl-overflow-x-hidden sl-text-lg sl-select-all">
                         <div dir="rtl"
-                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">https://vine.openfoodnetwork.org.au</div>
+                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">http://localhost</div>
                         <div class="sl-flex-1 sl-font-semibold">/api/v1/admin/user-personal-access-tokens/{user_personal_access_token}</div>
                     </div>
 
@@ -23507,7 +21822,7 @@ response.json()</code></pre>                                        </div>
                                  style="background-color: darkred"
                             >requires authentication
                             </div>
-                                                            </div>
+                                                                                    </div>
         </div>
 
         <p>Remove a PAT. The API access for the PAT will be revoked.</p>
@@ -23528,7 +21843,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Authorization</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -23546,7 +21861,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Content-Type</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -23564,7 +21879,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Accept</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -23582,7 +21897,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">X-Authorisation</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -23608,14 +21923,16 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">user_personal_access_token</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
+                                            <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                        <div class="sl-flex sl-items-center">
+                                                            <span class="sl-ml-2 sl-text-warning">required</span>
+                                                                                </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        eaque
+                        sed
                     </div>
                 </div>
             </div>
@@ -23656,7 +21973,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request DELETE \
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/user-personal-access-tokens/eaque" \
+    "http://localhost/api/v1/admin/user-personal-access-tokens/sed" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -23668,7 +21985,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/user-personal-access-tokens/eaque"
+    "http://localhost/api/v1/admin/user-personal-access-tokens/sed"
 );
 
 const headers = {
@@ -23689,7 +22006,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/user-personal-access-tokens/eaque';
+$url = 'http://localhost/api/v1/admin/user-personal-access-tokens/sed';
 $response = $client-&gt;delete(
     $url,
     [
@@ -23712,7 +22029,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/user-personal-access-tokens/eaque'
+url = 'http://localhost/api/v1/admin/user-personal-access-tokens/sed'
 headers = {
   'Authorization': 'Bearer {YOUR_API_TOKEN}',
   'Content-Type': 'application/json',
@@ -23749,7 +22066,7 @@ response.json()</code></pre>                                        </div>
         </div>
 
         <div class="sl-relative">
-            <div title="https://vine.openfoodnetwork.org.au/api/v1/admin/users"
+            <div title="http://localhost/api/v1/admin/users"
                      class="sl-stack sl-stack--horizontal sl-stack--3 sl-inline-flex sl-flex-row sl-items-center sl-max-w-full sl-font-mono sl-py-2 sl-pr-4 sl-bg-canvas-50 sl-rounded-lg"
                 >
                                             <div class="sl-text-lg sl-font-semibold sl-px-2.5 sl-py-1 sl-text-on-primary sl-rounded-lg"
@@ -23759,7 +22076,7 @@ response.json()</code></pre>                                        </div>
                         </div>
                                         <div class="sl-flex sl-overflow-x-hidden sl-text-lg sl-select-all">
                         <div dir="rtl"
-                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">https://vine.openfoodnetwork.org.au</div>
+                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">http://localhost</div>
                         <div class="sl-flex-1 sl-font-semibold">/api/v1/admin/users</div>
                     </div>
 
@@ -23767,7 +22084,7 @@ response.json()</code></pre>                                        </div>
                                  style="background-color: darkred"
                             >requires authentication
                             </div>
-                                                            </div>
+                                                                                    </div>
         </div>
 
         <p>Create a user.</p>
@@ -23788,7 +22105,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Authorization</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -23806,7 +22123,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Content-Type</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -23824,7 +22141,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Accept</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -23842,7 +22159,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">X-Authorisation</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -23872,9 +22189,11 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">name</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
+                                            <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                        <div class="sl-flex sl-items-center">
+                                                            <span class="sl-ml-2 sl-text-warning">required</span>
+                                                                                </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The user name.</p>
         </div>
@@ -23882,7 +22201,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        aut
+                        voluptate
                     </div>
                 </div>
             </div>
@@ -23899,9 +22218,11 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">email</div>
                                             <span class="sl-truncate sl-text-muted">email</span>
                                     </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
+                                            <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                        <div class="sl-flex sl-items-center">
+                                                            <span class="sl-ml-2 sl-text-warning">required</span>
+                                                                                </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The user email</p>
         </div>
@@ -23909,7 +22230,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        cabernathy@example.net
+                        marjolaine07@example.net
                     </div>
                 </div>
             </div>
@@ -23926,9 +22247,11 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">current_team_id</div>
                                             <span class="sl-truncate sl-text-muted">integer</span>
                                     </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
+                                            <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                        <div class="sl-flex sl-items-center">
+                                                            <span class="sl-ml-2 sl-text-warning">required</span>
+                                                                                </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The teams.id of the team to place the user</p>
         </div>
@@ -23936,7 +22259,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        9
+                        19
                     </div>
                 </div>
             </div>
@@ -23976,15 +22299,15 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request POST \
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/users" \
+    "http://localhost/api/v1/admin/users" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "X-Authorisation: JWT eyJ0eXAiOiJKV..." \
     --data "{
-    \"name\": \"aut\",
-    \"email\": \"cabernathy@example.net\",
-    \"current_team_id\": 9
+    \"name\": \"voluptate\",
+    \"email\": \"marjolaine07@example.net\",
+    \"current_team_id\": 19
 }"
 </code></pre>                                        </div>
                                     </div>
@@ -23994,7 +22317,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/users"
+    "http://localhost/api/v1/admin/users"
 );
 
 const headers = {
@@ -24005,9 +22328,9 @@ const headers = {
 };
 
 let body = {
-    "name": "aut",
-    "email": "cabernathy@example.net",
-    "current_team_id": 9
+    "name": "voluptate",
+    "email": "marjolaine07@example.net",
+    "current_team_id": 19
 };
 
 fetch(url, {
@@ -24022,7 +22345,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/users';
+$url = 'http://localhost/api/v1/admin/users';
 $response = $client-&gt;post(
     $url,
     [
@@ -24033,9 +22356,9 @@ $response = $client-&gt;post(
             'X-Authorisation' =&gt; 'JWT eyJ0eXAiOiJKV...',
         ],
         'json' =&gt; [
-            'name' =&gt; 'aut',
-            'email' =&gt; 'cabernathy@example.net',
-            'current_team_id' =&gt; 9,
+            'name' =&gt; 'voluptate',
+            'email' =&gt; 'marjolaine07@example.net',
+            'current_team_id' =&gt; 19,
         ],
     ]
 );
@@ -24050,11 +22373,11 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/users'
+url = 'http://localhost/api/v1/admin/users'
 payload = {
-    "name": "aut",
-    "email": "cabernathy@example.net",
-    "current_team_id": 9
+    "name": "voluptate",
+    "email": "marjolaine07@example.net",
+    "current_team_id": 19
 }
 headers = {
   'Authorization': 'Bearer {YOUR_API_TOKEN}',
@@ -24085,7 +22408,7 @@ response.json()</code></pre>                                        </div>
         </div>
 
         <div class="sl-relative">
-            <div title="https://vine.openfoodnetwork.org.au/api/v1/admin/users"
+            <div title="http://localhost/api/v1/admin/users"
                      class="sl-stack sl-stack--horizontal sl-stack--3 sl-inline-flex sl-flex-row sl-items-center sl-max-w-full sl-font-mono sl-py-2 sl-pr-4 sl-bg-canvas-50 sl-rounded-lg"
                 >
                                             <div class="sl-text-lg sl-font-semibold sl-px-2.5 sl-py-1 sl-text-on-primary sl-rounded-lg"
@@ -24095,7 +22418,7 @@ response.json()</code></pre>                                        </div>
                         </div>
                                         <div class="sl-flex sl-overflow-x-hidden sl-text-lg sl-select-all">
                         <div dir="rtl"
-                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">https://vine.openfoodnetwork.org.au</div>
+                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">http://localhost</div>
                         <div class="sl-flex-1 sl-font-semibold">/api/v1/admin/users</div>
                     </div>
 
@@ -24103,7 +22426,7 @@ response.json()</code></pre>                                        </div>
                                  style="background-color: darkred"
                             >requires authentication
                             </div>
-                                                            </div>
+                                                                                    </div>
         </div>
 
         <p>Retrieve users.</p>
@@ -24124,7 +22447,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Authorization</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -24142,7 +22465,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Content-Type</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -24160,7 +22483,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Accept</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -24178,7 +22501,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">X-Authorisation</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -24206,7 +22529,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">cached</div>
                                             <span class="sl-truncate sl-text-muted">boolean</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Request the response to be cached. Default: <code>true</code>.</p>
         </div>
@@ -24228,7 +22551,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">page</div>
                                             <span class="sl-truncate sl-text-muted">integer</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The pagination page number.</p>
         </div>
@@ -24250,7 +22573,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">limit</div>
                                             <span class="sl-truncate sl-text-muted">integer</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The number of entries returned per pagination page.</p>
         </div>
@@ -24272,7 +22595,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">fields</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Comma-separated list of database fields to return within the object.</p>
         </div>
@@ -24294,7 +22617,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">orderBy</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Order the data by a given field. Comma-separated string.</p>
         </div>
@@ -24316,7 +22639,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">orderBy[]</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Compound <code>orderBy</code>. Order the data by a given field. Comma-separated string. Can not be used in conjunction as standard <code>orderBy</code>.</p>
         </div>
@@ -24338,7 +22661,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">where</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Filter the request on a single field. Key-Value or Key-Operator-Value comma-separated string.</p>
         </div>
@@ -24360,7 +22683,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">where[]</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Compound <code>where</code>. Use when you need to filter on multiple <code>where</code>'s. Note only AND is possible; ORWHERE is not available.</p>
         </div>
@@ -24407,7 +22730,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request GET \
-    --get "https://vine.openfoodnetwork.org.au/api/v1/admin/users?cached=1&amp;page=1&amp;limit=50&amp;fields=id%2Ccreated_at&amp;orderBy=orderBy%3Did%2Cdesc&amp;orderBy%5B%5D=orderBy%5B%5D%3Did%2Cdesc%26orderBy%5B%5D%3Dcreated_at%2Casc&amp;where=where%3Did%2Clike%2C%2A550e%2A&amp;where%5B%5D=where%5B%5D%3Did%2Clike%2C%2A550e%2A%26where%5B%5D%3Dcreated_at%2C%3E%3D%2C2024-01-01" \
+    --get "http://localhost/api/v1/admin/users?cached=1&amp;page=1&amp;limit=50&amp;fields=id%2Ccreated_at&amp;orderBy=orderBy%3Did%2Cdesc&amp;orderBy%5B%5D=orderBy%5B%5D%3Did%2Cdesc%26orderBy%5B%5D%3Dcreated_at%2Casc&amp;where=where%3Did%2Clike%2C%2A550e%2A&amp;where%5B%5D=where%5B%5D%3Did%2Clike%2C%2A550e%2A%26where%5B%5D%3Dcreated_at%2C%3E%3D%2C2024-01-01" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -24419,7 +22742,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/users"
+    "http://localhost/api/v1/admin/users"
 );
 
 const params = {
@@ -24453,7 +22776,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/users';
+$url = 'http://localhost/api/v1/admin/users';
 $response = $client-&gt;get(
     $url,
     [
@@ -24486,7 +22809,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/users'
+url = 'http://localhost/api/v1/admin/users'
 params = {
   'cached': '1',
   'page': '1',
@@ -24608,7 +22931,7 @@ response.json()</code></pre>                                        </div>
         </div>
 
         <div class="sl-relative">
-            <div title="https://vine.openfoodnetwork.org.au/api/v1/admin/users/{id}"
+            <div title="http://localhost/api/v1/admin/users/{id}"
                      class="sl-stack sl-stack--horizontal sl-stack--3 sl-inline-flex sl-flex-row sl-items-center sl-max-w-full sl-font-mono sl-py-2 sl-pr-4 sl-bg-canvas-50 sl-rounded-lg"
                 >
                                             <div class="sl-text-lg sl-font-semibold sl-px-2.5 sl-py-1 sl-text-on-primary sl-rounded-lg"
@@ -24618,7 +22941,7 @@ response.json()</code></pre>                                        </div>
                         </div>
                                         <div class="sl-flex sl-overflow-x-hidden sl-text-lg sl-select-all">
                         <div dir="rtl"
-                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">https://vine.openfoodnetwork.org.au</div>
+                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">http://localhost</div>
                         <div class="sl-flex-1 sl-font-semibold">/api/v1/admin/users/{id}</div>
                     </div>
 
@@ -24626,7 +22949,7 @@ response.json()</code></pre>                                        </div>
                                  style="background-color: darkred"
                             >requires authentication
                             </div>
-                                                            </div>
+                                                                                    </div>
         </div>
 
         <p>Retrieve a single user by ID.</p>
@@ -24647,7 +22970,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Authorization</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -24665,7 +22988,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Content-Type</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -24683,7 +23006,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Accept</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -24701,7 +23024,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">X-Authorisation</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -24727,9 +23050,11 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">id</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
+                                            <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                        <div class="sl-flex sl-items-center">
+                                                            <span class="sl-ml-2 sl-text-warning">required</span>
+                                                                                </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The ID of the user.</p>
         </div>
@@ -24737,7 +23062,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        illum
+                        quaerat
                     </div>
                 </div>
             </div>
@@ -24759,7 +23084,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">cached</div>
                                             <span class="sl-truncate sl-text-muted">boolean</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Request the response to be cached. Default: <code>true</code>.</p>
         </div>
@@ -24781,7 +23106,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">fields</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Comma-separated list of database fields to return within the object.</p>
         </div>
@@ -24828,7 +23153,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request GET \
-    --get "https://vine.openfoodnetwork.org.au/api/v1/admin/users/illum?cached=1&amp;fields=id%2Ccreated_at" \
+    --get "http://localhost/api/v1/admin/users/quaerat?cached=1&amp;fields=id%2Ccreated_at" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -24840,7 +23165,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/users/illum"
+    "http://localhost/api/v1/admin/users/quaerat"
 );
 
 const params = {
@@ -24868,7 +23193,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/users/illum';
+$url = 'http://localhost/api/v1/admin/users/quaerat';
 $response = $client-&gt;get(
     $url,
     [
@@ -24895,7 +23220,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/users/illum'
+url = 'http://localhost/api/v1/admin/users/quaerat'
 params = {
   'cached': '1',
   'fields': 'id,created_at',
@@ -24980,7 +23305,7 @@ response.json()</code></pre>                                        </div>
         </div>
 
         <div class="sl-relative">
-            <div title="https://vine.openfoodnetwork.org.au/api/v1/admin/users/{id}"
+            <div title="http://localhost/api/v1/admin/users/{id}"
                      class="sl-stack sl-stack--horizontal sl-stack--3 sl-inline-flex sl-flex-row sl-items-center sl-max-w-full sl-font-mono sl-py-2 sl-pr-4 sl-bg-canvas-50 sl-rounded-lg"
                 >
                                             <div class="sl-text-lg sl-font-semibold sl-px-2.5 sl-py-1 sl-text-on-primary sl-rounded-lg"
@@ -24990,7 +23315,7 @@ response.json()</code></pre>                                        </div>
                         </div>
                                         <div class="sl-flex sl-overflow-x-hidden sl-text-lg sl-select-all">
                         <div dir="rtl"
-                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">https://vine.openfoodnetwork.org.au</div>
+                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">http://localhost</div>
                         <div class="sl-flex-1 sl-font-semibold">/api/v1/admin/users/{id}</div>
                     </div>
 
@@ -24998,7 +23323,7 @@ response.json()</code></pre>                                        </div>
                                  style="background-color: darkred"
                             >requires authentication
                             </div>
-                                                            </div>
+                                                                                    </div>
         </div>
 
         <p>Update a user.</p>
@@ -25019,7 +23344,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Authorization</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -25037,7 +23362,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Content-Type</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -25055,7 +23380,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Accept</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -25073,7 +23398,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">X-Authorisation</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -25099,9 +23424,11 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">id</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
+                                            <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                        <div class="sl-flex sl-items-center">
+                                                            <span class="sl-ml-2 sl-text-warning">required</span>
+                                                                                </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The ID of the user.</p>
         </div>
@@ -25109,7 +23436,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        consequatur
+                        nemo
                     </div>
                 </div>
             </div>
@@ -25133,7 +23460,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">is_admin</div>
                                             <span class="sl-truncate sl-text-muted">boolean</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Toggle a user's admin status. NOTE: Be careful here.</p>
         </div>
@@ -25181,7 +23508,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request PUT \
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/users/consequatur" \
+    "http://localhost/api/v1/admin/users/nemo" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -25197,7 +23524,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/users/consequatur"
+    "http://localhost/api/v1/admin/users/nemo"
 );
 
 const headers = {
@@ -25223,7 +23550,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/users/consequatur';
+$url = 'http://localhost/api/v1/admin/users/nemo';
 $response = $client-&gt;put(
     $url,
     [
@@ -25249,7 +23576,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/users/consequatur'
+url = 'http://localhost/api/v1/admin/users/nemo'
 payload = {
     "is_admin": false
 }
@@ -25282,7 +23609,7 @@ response.json()</code></pre>                                        </div>
         </div>
 
         <div class="sl-relative">
-            <div title="https://vine.openfoodnetwork.org.au/api/v1/admin/users/{id}"
+            <div title="http://localhost/api/v1/admin/users/{id}"
                      class="sl-stack sl-stack--horizontal sl-stack--3 sl-inline-flex sl-flex-row sl-items-center sl-max-w-full sl-font-mono sl-py-2 sl-pr-4 sl-bg-canvas-50 sl-rounded-lg"
                 >
                                             <div class="sl-text-lg sl-font-semibold sl-px-2.5 sl-py-1 sl-text-on-primary sl-rounded-lg"
@@ -25292,7 +23619,7 @@ response.json()</code></pre>                                        </div>
                         </div>
                                         <div class="sl-flex sl-overflow-x-hidden sl-text-lg sl-select-all">
                         <div dir="rtl"
-                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">https://vine.openfoodnetwork.org.au</div>
+                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">http://localhost</div>
                         <div class="sl-flex-1 sl-font-semibold">/api/v1/admin/users/{id}</div>
                     </div>
 
@@ -25300,7 +23627,7 @@ response.json()</code></pre>                                        </div>
                                  style="background-color: darkred"
                             >requires authentication
                             </div>
-                                                            </div>
+                                                                                    </div>
         </div>
 
         <p>Retrieve a single user by ID.</p>
@@ -25321,7 +23648,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Authorization</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -25339,7 +23666,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Content-Type</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -25357,7 +23684,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Accept</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -25375,7 +23702,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">X-Authorisation</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -25401,9 +23728,11 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">id</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
+                                            <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                        <div class="sl-flex sl-items-center">
+                                                            <span class="sl-ml-2 sl-text-warning">required</span>
+                                                                                </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The ID of the user.</p>
         </div>
@@ -25411,7 +23740,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        deleniti
+                        delectus
                     </div>
                 </div>
             </div>
@@ -25433,7 +23762,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">cached</div>
                                             <span class="sl-truncate sl-text-muted">boolean</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Request the response to be cached. Default: <code>true</code>.</p>
         </div>
@@ -25455,7 +23784,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">fields</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Comma-separated list of database fields to return within the object.</p>
         </div>
@@ -25502,7 +23831,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request GET \
-    --get "https://vine.openfoodnetwork.org.au/api/v1/admin/users/deleniti?cached=1&amp;fields=id%2Ccreated_at" \
+    --get "http://localhost/api/v1/admin/users/delectus?cached=1&amp;fields=id%2Ccreated_at" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -25514,7 +23843,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/users/deleniti"
+    "http://localhost/api/v1/admin/users/delectus"
 );
 
 const params = {
@@ -25542,7 +23871,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/users/deleniti';
+$url = 'http://localhost/api/v1/admin/users/delectus';
 $response = $client-&gt;get(
     $url,
     [
@@ -25569,7 +23898,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/users/deleniti'
+url = 'http://localhost/api/v1/admin/users/delectus'
 params = {
   'cached': '1',
   'fields': 'id,created_at',
@@ -25654,7 +23983,7 @@ response.json()</code></pre>                                        </div>
         </div>
 
         <div class="sl-relative">
-            <div title="https://vine.openfoodnetwork.org.au/api/v1/admin/users/{id}"
+            <div title="http://localhost/api/v1/admin/users/{id}"
                      class="sl-stack sl-stack--horizontal sl-stack--3 sl-inline-flex sl-flex-row sl-items-center sl-max-w-full sl-font-mono sl-py-2 sl-pr-4 sl-bg-canvas-50 sl-rounded-lg"
                 >
                                             <div class="sl-text-lg sl-font-semibold sl-px-2.5 sl-py-1 sl-text-on-primary sl-rounded-lg"
@@ -25669,7 +23998,7 @@ response.json()</code></pre>                                        </div>
                         </div>
                                         <div class="sl-flex sl-overflow-x-hidden sl-text-lg sl-select-all">
                         <div dir="rtl"
-                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">https://vine.openfoodnetwork.org.au</div>
+                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">http://localhost</div>
                         <div class="sl-flex-1 sl-font-semibold">/api/v1/admin/users/{id}</div>
                     </div>
 
@@ -25677,7 +24006,7 @@ response.json()</code></pre>                                        </div>
                                  style="background-color: darkred"
                             >requires authentication
                             </div>
-                                                            </div>
+                                                                                    </div>
         </div>
 
         <p>Update a user.</p>
@@ -25698,7 +24027,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Authorization</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -25716,7 +24045,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Content-Type</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -25734,7 +24063,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Accept</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -25752,7 +24081,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">X-Authorisation</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -25778,9 +24107,11 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">id</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
+                                            <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                        <div class="sl-flex sl-items-center">
+                                                            <span class="sl-ml-2 sl-text-warning">required</span>
+                                                                                </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The ID of the user.</p>
         </div>
@@ -25788,7 +24119,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        placeat
+                        totam
                     </div>
                 </div>
             </div>
@@ -25812,7 +24143,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">is_admin</div>
                                             <span class="sl-truncate sl-text-muted">boolean</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Toggle a user's admin status. NOTE: Be careful here.</p>
         </div>
@@ -25860,7 +24191,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request PUT \
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/users/placeat" \
+    "http://localhost/api/v1/admin/users/totam" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -25876,7 +24207,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/users/placeat"
+    "http://localhost/api/v1/admin/users/totam"
 );
 
 const headers = {
@@ -25902,7 +24233,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/users/placeat';
+$url = 'http://localhost/api/v1/admin/users/totam';
 $response = $client-&gt;put(
     $url,
     [
@@ -25928,7 +24259,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/users/placeat'
+url = 'http://localhost/api/v1/admin/users/totam'
 payload = {
     "is_admin": false
 }
@@ -25968,7 +24299,7 @@ response.json()</code></pre>                                        </div>
         </div>
 
         <div class="sl-relative">
-            <div title="https://vine.openfoodnetwork.org.au/api/v1/admin/vouchers"
+            <div title="http://localhost/api/v1/admin/vouchers"
                      class="sl-stack sl-stack--horizontal sl-stack--3 sl-inline-flex sl-flex-row sl-items-center sl-max-w-full sl-font-mono sl-py-2 sl-pr-4 sl-bg-canvas-50 sl-rounded-lg"
                 >
                                             <div class="sl-text-lg sl-font-semibold sl-px-2.5 sl-py-1 sl-text-on-primary sl-rounded-lg"
@@ -25978,7 +24309,7 @@ response.json()</code></pre>                                        </div>
                         </div>
                                         <div class="sl-flex sl-overflow-x-hidden sl-text-lg sl-select-all">
                         <div dir="rtl"
-                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">https://vine.openfoodnetwork.org.au</div>
+                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">http://localhost</div>
                         <div class="sl-flex-1 sl-font-semibold">/api/v1/admin/vouchers</div>
                     </div>
 
@@ -25986,7 +24317,7 @@ response.json()</code></pre>                                        </div>
                                  style="background-color: darkred"
                             >requires authentication
                             </div>
-                                                            </div>
+                                                                                    </div>
         </div>
 
         <p>Retrieve voucher sets.</p>
@@ -26007,7 +24338,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Authorization</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -26025,7 +24356,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Content-Type</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -26043,7 +24374,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Accept</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -26061,7 +24392,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">X-Authorisation</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -26089,7 +24420,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">cached</div>
                                             <span class="sl-truncate sl-text-muted">boolean</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Request the response to be cached. Default: <code>true</code>.</p>
         </div>
@@ -26111,7 +24442,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">page</div>
                                             <span class="sl-truncate sl-text-muted">integer</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The pagination page number.</p>
         </div>
@@ -26133,7 +24464,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">limit</div>
                                             <span class="sl-truncate sl-text-muted">integer</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The number of entries returned per pagination page.</p>
         </div>
@@ -26155,7 +24486,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">fields</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Comma-separated list of database fields to return within the object.</p>
         </div>
@@ -26177,7 +24508,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">orderBy</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Order the data by a given field. Comma-separated string.</p>
         </div>
@@ -26199,7 +24530,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">orderBy[]</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Compound <code>orderBy</code>. Order the data by a given field. Comma-separated string. Can not be used in conjunction as standard <code>orderBy</code>.</p>
         </div>
@@ -26221,7 +24552,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">where</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Filter the request on a single field. Key-Value or Key-Operator-Value comma-separated string.</p>
         </div>
@@ -26243,7 +24574,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">where[]</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Compound <code>where</code>. Use when you need to filter on multiple <code>where</code>'s. Note only AND is possible; ORWHERE is not available.</p>
         </div>
@@ -26290,7 +24621,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request GET \
-    --get "https://vine.openfoodnetwork.org.au/api/v1/admin/vouchers?cached=1&amp;page=1&amp;limit=50&amp;fields=id%2Ccreated_at&amp;orderBy=orderBy%3Did%2Cdesc&amp;orderBy%5B%5D=orderBy%5B%5D%3Did%2Cdesc%26orderBy%5B%5D%3Dcreated_at%2Casc&amp;where=where%3Did%2Clike%2C%2A550e%2A&amp;where%5B%5D=where%5B%5D%3Did%2Clike%2C%2A550e%2A%26where%5B%5D%3Dcreated_at%2C%3E%3D%2C2024-01-01" \
+    --get "http://localhost/api/v1/admin/vouchers?cached=1&amp;page=1&amp;limit=50&amp;fields=id%2Ccreated_at&amp;orderBy=orderBy%3Did%2Cdesc&amp;orderBy%5B%5D=orderBy%5B%5D%3Did%2Cdesc%26orderBy%5B%5D%3Dcreated_at%2Casc&amp;where=where%3Did%2Clike%2C%2A550e%2A&amp;where%5B%5D=where%5B%5D%3Did%2Clike%2C%2A550e%2A%26where%5B%5D%3Dcreated_at%2C%3E%3D%2C2024-01-01" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -26302,7 +24633,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/vouchers"
+    "http://localhost/api/v1/admin/vouchers"
 );
 
 const params = {
@@ -26336,7 +24667,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/vouchers';
+$url = 'http://localhost/api/v1/admin/vouchers';
 $response = $client-&gt;get(
     $url,
     [
@@ -26369,7 +24700,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/vouchers'
+url = 'http://localhost/api/v1/admin/vouchers'
 params = {
   'cached': '1',
   'page': '1',
@@ -26446,7 +24777,7 @@ response.json()</code></pre>                                        </div>
         </div>
 
         <div class="sl-relative">
-            <div title="https://vine.openfoodnetwork.org.au/api/v1/admin/vouchers/{id}"
+            <div title="http://localhost/api/v1/admin/vouchers/{id}"
                      class="sl-stack sl-stack--horizontal sl-stack--3 sl-inline-flex sl-flex-row sl-items-center sl-max-w-full sl-font-mono sl-py-2 sl-pr-4 sl-bg-canvas-50 sl-rounded-lg"
                 >
                                             <div class="sl-text-lg sl-font-semibold sl-px-2.5 sl-py-1 sl-text-on-primary sl-rounded-lg"
@@ -26456,7 +24787,7 @@ response.json()</code></pre>                                        </div>
                         </div>
                                         <div class="sl-flex sl-overflow-x-hidden sl-text-lg sl-select-all">
                         <div dir="rtl"
-                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">https://vine.openfoodnetwork.org.au</div>
+                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">http://localhost</div>
                         <div class="sl-flex-1 sl-font-semibold">/api/v1/admin/vouchers/{id}</div>
                     </div>
 
@@ -26464,7 +24795,7 @@ response.json()</code></pre>                                        </div>
                                  style="background-color: darkred"
                             >requires authentication
                             </div>
-                                                            </div>
+                                                                                    </div>
         </div>
 
         <p>Retrieve a single voucher set.</p>
@@ -26485,7 +24816,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Authorization</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -26503,7 +24834,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Content-Type</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -26521,7 +24852,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Accept</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -26539,7 +24870,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">X-Authorisation</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -26565,9 +24896,11 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">id</div>
                                             <span class="sl-truncate sl-text-muted">uuid</span>
                                     </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
+                                            <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                        <div class="sl-flex sl-items-center">
+                                                            <span class="sl-ml-2 sl-text-warning">required</span>
+                                                                                </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Voucher Set ID.</p>
         </div>
@@ -26597,7 +24930,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">cached</div>
                                             <span class="sl-truncate sl-text-muted">boolean</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Request the response to be cached. Default: <code>true</code>.</p>
         </div>
@@ -26619,7 +24952,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">fields</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Comma-separated list of database fields to return within the object.</p>
         </div>
@@ -26666,7 +24999,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request GET \
-    --get "https://vine.openfoodnetwork.org.au/api/v1/admin/vouchers/550e8400-e29b-41d4-a716-446655440000?cached=1&amp;fields=id%2Ccreated_at" \
+    --get "http://localhost/api/v1/admin/vouchers/550e8400-e29b-41d4-a716-446655440000?cached=1&amp;fields=id%2Ccreated_at" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -26678,7 +25011,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/vouchers/550e8400-e29b-41d4-a716-446655440000"
+    "http://localhost/api/v1/admin/vouchers/550e8400-e29b-41d4-a716-446655440000"
 );
 
 const params = {
@@ -26706,7 +25039,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/vouchers/550e8400-e29b-41d4-a716-446655440000';
+$url = 'http://localhost/api/v1/admin/vouchers/550e8400-e29b-41d4-a716-446655440000';
 $response = $client-&gt;get(
     $url,
     [
@@ -26733,7 +25066,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/vouchers/550e8400-e29b-41d4-a716-446655440000'
+url = 'http://localhost/api/v1/admin/vouchers/550e8400-e29b-41d4-a716-446655440000'
 params = {
   'cached': '1',
   'fields': 'id,created_at',
@@ -26825,7 +25158,7 @@ response.json()</code></pre>                                        </div>
         </div>
 
         <div class="sl-relative">
-            <div title="https://vine.openfoodnetwork.org.au/api/v1/admin/voucher-sets"
+            <div title="http://localhost/api/v1/admin/voucher-sets"
                      class="sl-stack sl-stack--horizontal sl-stack--3 sl-inline-flex sl-flex-row sl-items-center sl-max-w-full sl-font-mono sl-py-2 sl-pr-4 sl-bg-canvas-50 sl-rounded-lg"
                 >
                                             <div class="sl-text-lg sl-font-semibold sl-px-2.5 sl-py-1 sl-text-on-primary sl-rounded-lg"
@@ -26835,7 +25168,7 @@ response.json()</code></pre>                                        </div>
                         </div>
                                         <div class="sl-flex sl-overflow-x-hidden sl-text-lg sl-select-all">
                         <div dir="rtl"
-                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">https://vine.openfoodnetwork.org.au</div>
+                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">http://localhost</div>
                         <div class="sl-flex-1 sl-font-semibold">/api/v1/admin/voucher-sets</div>
                     </div>
 
@@ -26843,7 +25176,7 @@ response.json()</code></pre>                                        </div>
                                  style="background-color: darkred"
                             >requires authentication
                             </div>
-                                                            </div>
+                                                                                    </div>
         </div>
 
         <p>Create a new voucher set.</p>
@@ -26864,7 +25197,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Authorization</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -26882,7 +25215,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Content-Type</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -26900,7 +25233,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Accept</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -26918,7 +25251,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">X-Authorisation</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -26948,9 +25281,11 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">is_test</div>
                                             <span class="sl-truncate sl-text-muted">boolean</span>
                                     </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
+                                            <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                        <div class="sl-flex sl-items-center">
+                                                            <span class="sl-ml-2 sl-text-warning">required</span>
+                                                                                </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Whether the voucher set is for testing purposes</p>
         </div>
@@ -26975,7 +25310,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">name</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The name of the voucher set. If not set, one will be auto-generated.</p>
         </div>
@@ -26983,7 +25318,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        quae
+                        omnis
                     </div>
                 </div>
             </div>
@@ -27000,9 +25335,11 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">allocated_to_service_team_id</div>
                                             <span class="sl-truncate sl-text-muted">integer</span>
                                     </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
+                                            <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                        <div class="sl-flex sl-items-center">
+                                                            <span class="sl-ml-2 sl-text-warning">required</span>
+                                                                                </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The ID of the service team being allocated to</p>
         </div>
@@ -27010,7 +25347,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        9
+                        2
                     </div>
                 </div>
             </div>
@@ -27027,9 +25364,11 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">merchant_team_ids</div>
                                             <span class="sl-truncate sl-text-muted">string[]</span>
                                     </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
+                                            <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                        <div class="sl-flex sl-items-center">
+                                                            <span class="sl-ml-2 sl-text-warning">required</span>
+                                                                                </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The IDs of the merchant team(s) being assigned to</p>
         </div>
@@ -27037,7 +25376,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        [&quot;labore&quot;]
+                        [&quot;iure&quot;]
                     </div>
                 </div>
             </div>
@@ -27054,7 +25393,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">funded_by_team_id</div>
                                             <span class="sl-truncate sl-text-muted">integer</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The ID of the funding team associated with the voucher set</p>
         </div>
@@ -27062,7 +25401,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        13
+                        20
                     </div>
                 </div>
             </div>
@@ -27079,9 +25418,11 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">voucher_template_id</div>
                                             <span class="sl-truncate sl-text-muted">integer</span>
                                     </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
+                                            <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                        <div class="sl-flex sl-items-center">
+                                                            <span class="sl-ml-2 sl-text-warning">required</span>
+                                                                                </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The ID of the voucher template to be used for the voucher set</p>
         </div>
@@ -27089,7 +25430,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        1
+                        8
                     </div>
                 </div>
             </div>
@@ -27106,9 +25447,11 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">total_set_value</div>
                                             <span class="sl-truncate sl-text-muted">integer</span>
                                     </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
+                                            <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                        <div class="sl-flex sl-items-center">
+                                                            <span class="sl-ml-2 sl-text-warning">required</span>
+                                                                                </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The total value of the voucher set</p>
         </div>
@@ -27116,7 +25459,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        11
+                        14
                     </div>
                 </div>
             </div>
@@ -27133,9 +25476,11 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">denominations</div>
                                             <span class="sl-truncate sl-text-muted">string[]</span>
                                     </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
+                                            <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                        <div class="sl-flex sl-items-center">
+                                                            <span class="sl-ml-2 sl-text-warning">required</span>
+                                                                                </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>An array describing the voucher denominations by number and value</p>
         </div>
@@ -27143,7 +25488,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        [&quot;voluptatum&quot;]
+                        [&quot;ut&quot;]
                     </div>
                 </div>
             </div>
@@ -27160,7 +25505,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">expires_at</div>
                                             <span class="sl-truncate sl-text-muted">date</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The expiration date of the voucher set, if one exists</p>
         </div>
@@ -27168,7 +25513,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        culpa
+                        unde
                     </div>
                 </div>
             </div>
@@ -27185,9 +25530,11 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">voucher_set_type</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
+                                            <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                        <div class="sl-flex sl-items-center">
+                                                            <span class="sl-ml-2 sl-text-warning">required</span>
+                                                                                </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The type of the voucher set, must be one of: &quot;food equity&quot; or &quot;promotion&quot;</p>
         </div>
@@ -27195,7 +25542,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        beatae
+                        deserunt
                     </div>
                 </div>
             </div>
@@ -27235,26 +25582,26 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request POST \
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/voucher-sets" \
+    "http://localhost/api/v1/admin/voucher-sets" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "X-Authorisation: JWT eyJ0eXAiOiJKV..." \
     --data "{
     \"is_test\": false,
-    \"name\": \"quae\",
-    \"allocated_to_service_team_id\": 9,
+    \"name\": \"omnis\",
+    \"allocated_to_service_team_id\": 2,
     \"merchant_team_ids\": [
-        \"labore\"
+        \"iure\"
     ],
-    \"funded_by_team_id\": 13,
-    \"voucher_template_id\": 1,
-    \"total_set_value\": 11,
+    \"funded_by_team_id\": 20,
+    \"voucher_template_id\": 8,
+    \"total_set_value\": 14,
     \"denominations\": [
-        \"voluptatum\"
+        \"ut\"
     ],
-    \"expires_at\": \"culpa\",
-    \"voucher_set_type\": \"beatae\"
+    \"expires_at\": \"unde\",
+    \"voucher_set_type\": \"deserunt\"
 }"
 </code></pre>                                        </div>
                                     </div>
@@ -27264,7 +25611,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/voucher-sets"
+    "http://localhost/api/v1/admin/voucher-sets"
 );
 
 const headers = {
@@ -27276,19 +25623,19 @@ const headers = {
 
 let body = {
     "is_test": false,
-    "name": "quae",
-    "allocated_to_service_team_id": 9,
+    "name": "omnis",
+    "allocated_to_service_team_id": 2,
     "merchant_team_ids": [
-        "labore"
+        "iure"
     ],
-    "funded_by_team_id": 13,
-    "voucher_template_id": 1,
-    "total_set_value": 11,
+    "funded_by_team_id": 20,
+    "voucher_template_id": 8,
+    "total_set_value": 14,
     "denominations": [
-        "voluptatum"
+        "ut"
     ],
-    "expires_at": "culpa",
-    "voucher_set_type": "beatae"
+    "expires_at": "unde",
+    "voucher_set_type": "deserunt"
 };
 
 fetch(url, {
@@ -27303,7 +25650,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/voucher-sets';
+$url = 'http://localhost/api/v1/admin/voucher-sets';
 $response = $client-&gt;post(
     $url,
     [
@@ -27315,19 +25662,19 @@ $response = $client-&gt;post(
         ],
         'json' =&gt; [
             'is_test' =&gt; false,
-            'name' =&gt; 'quae',
-            'allocated_to_service_team_id' =&gt; 9,
+            'name' =&gt; 'omnis',
+            'allocated_to_service_team_id' =&gt; 2,
             'merchant_team_ids' =&gt; [
-                'labore',
+                'iure',
             ],
-            'funded_by_team_id' =&gt; 13,
-            'voucher_template_id' =&gt; 1,
-            'total_set_value' =&gt; 11,
+            'funded_by_team_id' =&gt; 20,
+            'voucher_template_id' =&gt; 8,
+            'total_set_value' =&gt; 14,
             'denominations' =&gt; [
-                'voluptatum',
+                'ut',
             ],
-            'expires_at' =&gt; 'culpa',
-            'voucher_set_type' =&gt; 'beatae',
+            'expires_at' =&gt; 'unde',
+            'voucher_set_type' =&gt; 'deserunt',
         ],
     ]
 );
@@ -27342,22 +25689,22 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/voucher-sets'
+url = 'http://localhost/api/v1/admin/voucher-sets'
 payload = {
     "is_test": false,
-    "name": "quae",
-    "allocated_to_service_team_id": 9,
+    "name": "omnis",
+    "allocated_to_service_team_id": 2,
     "merchant_team_ids": [
-        "labore"
+        "iure"
     ],
-    "funded_by_team_id": 13,
-    "voucher_template_id": 1,
-    "total_set_value": 11,
+    "funded_by_team_id": 20,
+    "voucher_template_id": 8,
+    "total_set_value": 14,
     "denominations": [
-        "voluptatum"
+        "ut"
     ],
-    "expires_at": "culpa",
-    "voucher_set_type": "beatae"
+    "expires_at": "unde",
+    "voucher_set_type": "deserunt"
 }
 headers = {
   'Authorization': 'Bearer {YOUR_API_TOKEN}',
@@ -27425,7 +25772,7 @@ response.json()</code></pre>                                        </div>
         </div>
 
         <div class="sl-relative">
-            <div title="https://vine.openfoodnetwork.org.au/api/v1/admin/voucher-sets"
+            <div title="http://localhost/api/v1/admin/voucher-sets"
                      class="sl-stack sl-stack--horizontal sl-stack--3 sl-inline-flex sl-flex-row sl-items-center sl-max-w-full sl-font-mono sl-py-2 sl-pr-4 sl-bg-canvas-50 sl-rounded-lg"
                 >
                                             <div class="sl-text-lg sl-font-semibold sl-px-2.5 sl-py-1 sl-text-on-primary sl-rounded-lg"
@@ -27435,7 +25782,7 @@ response.json()</code></pre>                                        </div>
                         </div>
                                         <div class="sl-flex sl-overflow-x-hidden sl-text-lg sl-select-all">
                         <div dir="rtl"
-                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">https://vine.openfoodnetwork.org.au</div>
+                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">http://localhost</div>
                         <div class="sl-flex-1 sl-font-semibold">/api/v1/admin/voucher-sets</div>
                     </div>
 
@@ -27443,7 +25790,7 @@ response.json()</code></pre>                                        </div>
                                  style="background-color: darkred"
                             >requires authentication
                             </div>
-                                                            </div>
+                                                                                    </div>
         </div>
 
         <p>Retrieve vouchers.</p>
@@ -27464,7 +25811,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Authorization</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -27482,7 +25829,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Content-Type</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -27500,7 +25847,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Accept</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -27518,7 +25865,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">X-Authorisation</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -27546,7 +25893,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">cached</div>
                                             <span class="sl-truncate sl-text-muted">boolean</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Request the response to be cached. Default: <code>true</code>.</p>
         </div>
@@ -27568,7 +25915,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">page</div>
                                             <span class="sl-truncate sl-text-muted">integer</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The pagination page number.</p>
         </div>
@@ -27590,7 +25937,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">limit</div>
                                             <span class="sl-truncate sl-text-muted">integer</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The number of entries returned per pagination page.</p>
         </div>
@@ -27612,7 +25959,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">fields</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Comma-separated list of database fields to return within the object.</p>
         </div>
@@ -27634,7 +25981,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">orderBy</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Order the data by a given field. Comma-separated string.</p>
         </div>
@@ -27656,7 +26003,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">orderBy[]</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Compound <code>orderBy</code>. Order the data by a given field. Comma-separated string. Can not be used in conjunction as standard <code>orderBy</code>.</p>
         </div>
@@ -27678,7 +26025,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">where</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Filter the request on a single field. Key-Value or Key-Operator-Value comma-separated string.</p>
         </div>
@@ -27700,7 +26047,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">where[]</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Compound <code>where</code>. Use when you need to filter on multiple <code>where</code>'s. Note only AND is possible; ORWHERE is not available.</p>
         </div>
@@ -27747,7 +26094,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request GET \
-    --get "https://vine.openfoodnetwork.org.au/api/v1/admin/voucher-sets?cached=1&amp;page=1&amp;limit=50&amp;fields=id%2Ccreated_at&amp;orderBy=orderBy%3Did%2Cdesc&amp;orderBy%5B%5D=orderBy%5B%5D%3Did%2Cdesc%26orderBy%5B%5D%3Dcreated_at%2Casc&amp;where=where%3Did%2Clike%2C%2A550e%2A&amp;where%5B%5D=where%5B%5D%3Did%2Clike%2C%2A550e%2A%26where%5B%5D%3Dcreated_at%2C%3E%3D%2C2024-01-01" \
+    --get "http://localhost/api/v1/admin/voucher-sets?cached=1&amp;page=1&amp;limit=50&amp;fields=id%2Ccreated_at&amp;orderBy=orderBy%3Did%2Cdesc&amp;orderBy%5B%5D=orderBy%5B%5D%3Did%2Cdesc%26orderBy%5B%5D%3Dcreated_at%2Casc&amp;where=where%3Did%2Clike%2C%2A550e%2A&amp;where%5B%5D=where%5B%5D%3Did%2Clike%2C%2A550e%2A%26where%5B%5D%3Dcreated_at%2C%3E%3D%2C2024-01-01" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -27759,7 +26106,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/voucher-sets"
+    "http://localhost/api/v1/admin/voucher-sets"
 );
 
 const params = {
@@ -27793,7 +26140,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/voucher-sets';
+$url = 'http://localhost/api/v1/admin/voucher-sets';
 $response = $client-&gt;get(
     $url,
     [
@@ -27826,7 +26173,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/voucher-sets'
+url = 'http://localhost/api/v1/admin/voucher-sets'
 params = {
   'cached': '1',
   'page': '1',
@@ -27903,7 +26250,7 @@ response.json()</code></pre>                                        </div>
         </div>
 
         <div class="sl-relative">
-            <div title="https://vine.openfoodnetwork.org.au/api/v1/admin/voucher-sets/{id}"
+            <div title="http://localhost/api/v1/admin/voucher-sets/{id}"
                      class="sl-stack sl-stack--horizontal sl-stack--3 sl-inline-flex sl-flex-row sl-items-center sl-max-w-full sl-font-mono sl-py-2 sl-pr-4 sl-bg-canvas-50 sl-rounded-lg"
                 >
                                             <div class="sl-text-lg sl-font-semibold sl-px-2.5 sl-py-1 sl-text-on-primary sl-rounded-lg"
@@ -27913,7 +26260,7 @@ response.json()</code></pre>                                        </div>
                         </div>
                                         <div class="sl-flex sl-overflow-x-hidden sl-text-lg sl-select-all">
                         <div dir="rtl"
-                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">https://vine.openfoodnetwork.org.au</div>
+                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">http://localhost</div>
                         <div class="sl-flex-1 sl-font-semibold">/api/v1/admin/voucher-sets/{id}</div>
                     </div>
 
@@ -27921,7 +26268,7 @@ response.json()</code></pre>                                        </div>
                                  style="background-color: darkred"
                             >requires authentication
                             </div>
-                                                            </div>
+                                                                                    </div>
         </div>
 
         <p>Retrieve a single voucher.</p>
@@ -27942,7 +26289,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Authorization</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -27960,7 +26307,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Content-Type</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -27978,7 +26325,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Accept</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -27996,7 +26343,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">X-Authorisation</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -28022,9 +26369,11 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">id</div>
                                             <span class="sl-truncate sl-text-muted">uuid</span>
                                     </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
+                                            <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                        <div class="sl-flex sl-items-center">
+                                                            <span class="sl-ml-2 sl-text-warning">required</span>
+                                                                                </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Voucher Set ID.</p>
         </div>
@@ -28054,7 +26403,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">cached</div>
                                             <span class="sl-truncate sl-text-muted">boolean</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Request the response to be cached. Default: <code>true</code>.</p>
         </div>
@@ -28076,7 +26425,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">fields</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Comma-separated list of database fields to return within the object.</p>
         </div>
@@ -28123,7 +26472,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request GET \
-    --get "https://vine.openfoodnetwork.org.au/api/v1/admin/voucher-sets/550e8400-e29b-41d4-a716-446655440000?cached=1&amp;fields=id%2Ccreated_at" \
+    --get "http://localhost/api/v1/admin/voucher-sets/550e8400-e29b-41d4-a716-446655440000?cached=1&amp;fields=id%2Ccreated_at" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -28135,7 +26484,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/voucher-sets/550e8400-e29b-41d4-a716-446655440000"
+    "http://localhost/api/v1/admin/voucher-sets/550e8400-e29b-41d4-a716-446655440000"
 );
 
 const params = {
@@ -28163,7 +26512,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/voucher-sets/550e8400-e29b-41d4-a716-446655440000';
+$url = 'http://localhost/api/v1/admin/voucher-sets/550e8400-e29b-41d4-a716-446655440000';
 $response = $client-&gt;get(
     $url,
     [
@@ -28190,7 +26539,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/voucher-sets/550e8400-e29b-41d4-a716-446655440000'
+url = 'http://localhost/api/v1/admin/voucher-sets/550e8400-e29b-41d4-a716-446655440000'
 params = {
   'cached': '1',
   'fields': 'id,created_at',
@@ -28282,7 +26631,7 @@ response.json()</code></pre>                                        </div>
         </div>
 
         <div class="sl-relative">
-            <div title="https://vine.openfoodnetwork.org.au/api/v1/admin/voucher-redemptions"
+            <div title="http://localhost/api/v1/admin/voucher-redemptions"
                      class="sl-stack sl-stack--horizontal sl-stack--3 sl-inline-flex sl-flex-row sl-items-center sl-max-w-full sl-font-mono sl-py-2 sl-pr-4 sl-bg-canvas-50 sl-rounded-lg"
                 >
                                             <div class="sl-text-lg sl-font-semibold sl-px-2.5 sl-py-1 sl-text-on-primary sl-rounded-lg"
@@ -28292,7 +26641,7 @@ response.json()</code></pre>                                        </div>
                         </div>
                                         <div class="sl-flex sl-overflow-x-hidden sl-text-lg sl-select-all">
                         <div dir="rtl"
-                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">https://vine.openfoodnetwork.org.au</div>
+                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">http://localhost</div>
                         <div class="sl-flex-1 sl-font-semibold">/api/v1/admin/voucher-redemptions</div>
                     </div>
 
@@ -28300,7 +26649,7 @@ response.json()</code></pre>                                        </div>
                                  style="background-color: darkred"
                             >requires authentication
                             </div>
-                                                            </div>
+                                                                                    </div>
         </div>
 
         <p>Retrieve voucher redemptions.</p>
@@ -28321,7 +26670,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Authorization</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -28339,7 +26688,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Content-Type</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -28357,7 +26706,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Accept</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -28375,7 +26724,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">X-Authorisation</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -28403,7 +26752,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">cached</div>
                                             <span class="sl-truncate sl-text-muted">boolean</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Request the response to be cached. Default: <code>true</code>.</p>
         </div>
@@ -28425,7 +26774,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">page</div>
                                             <span class="sl-truncate sl-text-muted">integer</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The pagination page number.</p>
         </div>
@@ -28447,7 +26796,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">limit</div>
                                             <span class="sl-truncate sl-text-muted">integer</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The number of entries returned per pagination page.</p>
         </div>
@@ -28469,7 +26818,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">fields</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Comma-separated list of database fields to return within the object.</p>
         </div>
@@ -28491,7 +26840,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">orderBy</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Order the data by a given field. Comma-separated string.</p>
         </div>
@@ -28513,7 +26862,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">orderBy[]</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Compound <code>orderBy</code>. Order the data by a given field. Comma-separated string. Can not be used in conjunction as standard <code>orderBy</code>.</p>
         </div>
@@ -28535,7 +26884,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">where</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Filter the request on a single field. Key-Value or Key-Operator-Value comma-separated string.</p>
         </div>
@@ -28557,7 +26906,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">where[]</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Compound <code>where</code>. Use when you need to filter on multiple <code>where</code>'s. Note only AND is possible; ORWHERE is not available.</p>
         </div>
@@ -28604,7 +26953,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request GET \
-    --get "https://vine.openfoodnetwork.org.au/api/v1/admin/voucher-redemptions?cached=1&amp;page=1&amp;limit=50&amp;fields=id%2Ccreated_at&amp;orderBy=orderBy%3Did%2Cdesc&amp;orderBy%5B%5D=orderBy%5B%5D%3Did%2Cdesc%26orderBy%5B%5D%3Dcreated_at%2Casc&amp;where=where%3Did%2Clike%2C%2A550e%2A&amp;where%5B%5D=where%5B%5D%3Did%2Clike%2C%2A550e%2A%26where%5B%5D%3Dcreated_at%2C%3E%3D%2C2024-01-01" \
+    --get "http://localhost/api/v1/admin/voucher-redemptions?cached=1&amp;page=1&amp;limit=50&amp;fields=id%2Ccreated_at&amp;orderBy=orderBy%3Did%2Cdesc&amp;orderBy%5B%5D=orderBy%5B%5D%3Did%2Cdesc%26orderBy%5B%5D%3Dcreated_at%2Casc&amp;where=where%3Did%2Clike%2C%2A550e%2A&amp;where%5B%5D=where%5B%5D%3Did%2Clike%2C%2A550e%2A%26where%5B%5D%3Dcreated_at%2C%3E%3D%2C2024-01-01" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -28616,7 +26965,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/voucher-redemptions"
+    "http://localhost/api/v1/admin/voucher-redemptions"
 );
 
 const params = {
@@ -28650,7 +26999,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/voucher-redemptions';
+$url = 'http://localhost/api/v1/admin/voucher-redemptions';
 $response = $client-&gt;get(
     $url,
     [
@@ -28683,7 +27032,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/voucher-redemptions'
+url = 'http://localhost/api/v1/admin/voucher-redemptions'
 params = {
   'cached': '1',
   'page': '1',
@@ -28760,7 +27109,7 @@ response.json()</code></pre>                                        </div>
         </div>
 
         <div class="sl-relative">
-            <div title="https://vine.openfoodnetwork.org.au/api/v1/admin/voucher-redemptions/{id}"
+            <div title="http://localhost/api/v1/admin/voucher-redemptions/{id}"
                      class="sl-stack sl-stack--horizontal sl-stack--3 sl-inline-flex sl-flex-row sl-items-center sl-max-w-full sl-font-mono sl-py-2 sl-pr-4 sl-bg-canvas-50 sl-rounded-lg"
                 >
                                             <div class="sl-text-lg sl-font-semibold sl-px-2.5 sl-py-1 sl-text-on-primary sl-rounded-lg"
@@ -28770,7 +27119,7 @@ response.json()</code></pre>                                        </div>
                         </div>
                                         <div class="sl-flex sl-overflow-x-hidden sl-text-lg sl-select-all">
                         <div dir="rtl"
-                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">https://vine.openfoodnetwork.org.au</div>
+                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">http://localhost</div>
                         <div class="sl-flex-1 sl-font-semibold">/api/v1/admin/voucher-redemptions/{id}</div>
                     </div>
 
@@ -28778,7 +27127,7 @@ response.json()</code></pre>                                        </div>
                                  style="background-color: darkred"
                             >requires authentication
                             </div>
-                                                            </div>
+                                                                                    </div>
         </div>
 
         <p>Retrieve a single voucher redemption.</p>
@@ -28799,7 +27148,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Authorization</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -28817,7 +27166,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Content-Type</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -28835,7 +27184,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Accept</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -28853,7 +27202,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">X-Authorisation</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -28879,9 +27228,11 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">id</div>
                                             <span class="sl-truncate sl-text-muted">uuid</span>
                                     </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
+                                            <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                        <div class="sl-flex sl-items-center">
+                                                            <span class="sl-ml-2 sl-text-warning">required</span>
+                                                                                </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Voucher Set ID.</p>
         </div>
@@ -28911,7 +27262,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">cached</div>
                                             <span class="sl-truncate sl-text-muted">boolean</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Request the response to be cached. Default: <code>true</code>.</p>
         </div>
@@ -28933,7 +27284,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">fields</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Comma-separated list of database fields to return within the object.</p>
         </div>
@@ -28980,7 +27331,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request GET \
-    --get "https://vine.openfoodnetwork.org.au/api/v1/admin/voucher-redemptions/550e8400-e29b-41d4-a716-446655440000?cached=1&amp;fields=id%2Ccreated_at" \
+    --get "http://localhost/api/v1/admin/voucher-redemptions/550e8400-e29b-41d4-a716-446655440000?cached=1&amp;fields=id%2Ccreated_at" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -28992,7 +27343,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/voucher-redemptions/550e8400-e29b-41d4-a716-446655440000"
+    "http://localhost/api/v1/admin/voucher-redemptions/550e8400-e29b-41d4-a716-446655440000"
 );
 
 const params = {
@@ -29020,7 +27371,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/voucher-redemptions/550e8400-e29b-41d4-a716-446655440000';
+$url = 'http://localhost/api/v1/admin/voucher-redemptions/550e8400-e29b-41d4-a716-446655440000';
 $response = $client-&gt;get(
     $url,
     [
@@ -29047,7 +27398,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/voucher-redemptions/550e8400-e29b-41d4-a716-446655440000'
+url = 'http://localhost/api/v1/admin/voucher-redemptions/550e8400-e29b-41d4-a716-446655440000'
 params = {
   'cached': '1',
   'fields': 'id,created_at',
@@ -29139,7 +27490,7 @@ response.json()</code></pre>                                        </div>
         </div>
 
         <div class="sl-relative">
-            <div title="https://vine.openfoodnetwork.org.au/api/v1/admin/voucher-set-merchant-teams"
+            <div title="http://localhost/api/v1/admin/voucher-set-merchant-teams"
                      class="sl-stack sl-stack--horizontal sl-stack--3 sl-inline-flex sl-flex-row sl-items-center sl-max-w-full sl-font-mono sl-py-2 sl-pr-4 sl-bg-canvas-50 sl-rounded-lg"
                 >
                                             <div class="sl-text-lg sl-font-semibold sl-px-2.5 sl-py-1 sl-text-on-primary sl-rounded-lg"
@@ -29149,7 +27500,7 @@ response.json()</code></pre>                                        </div>
                         </div>
                                         <div class="sl-flex sl-overflow-x-hidden sl-text-lg sl-select-all">
                         <div dir="rtl"
-                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">https://vine.openfoodnetwork.org.au</div>
+                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">http://localhost</div>
                         <div class="sl-flex-1 sl-font-semibold">/api/v1/admin/voucher-set-merchant-teams</div>
                     </div>
 
@@ -29157,7 +27508,7 @@ response.json()</code></pre>                                        </div>
                                  style="background-color: darkred"
                             >requires authentication
                             </div>
-                                                            </div>
+                                                                                    </div>
         </div>
 
         <p>Create a new voucher set merchant team. Sends an email to team members to request involvement.</p>
@@ -29178,7 +27529,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Authorization</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -29196,7 +27547,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Content-Type</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -29214,7 +27565,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Accept</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -29232,7 +27583,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">X-Authorisation</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -29262,9 +27613,11 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">voucher_set_id</div>
                                             <span class="sl-truncate sl-text-muted">uuid</span>
                                     </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
+                                            <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                        <div class="sl-flex sl-items-center">
+                                                            <span class="sl-ml-2 sl-text-warning">required</span>
+                                                                                </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The ID of the voucher set being associated with the merchant team</p>
         </div>
@@ -29272,7 +27625,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        cum
+                        voluptas
                     </div>
                 </div>
             </div>
@@ -29289,9 +27642,11 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">merchant_team_id</div>
                                             <span class="sl-truncate sl-text-muted">integer</span>
                                     </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
+                                            <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                        <div class="sl-flex sl-items-center">
+                                                            <span class="sl-ml-2 sl-text-warning">required</span>
+                                                                                </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The IDs of the merchant team(s) being associated to the voucher set</p>
         </div>
@@ -29299,7 +27654,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        10
+                        12
                     </div>
                 </div>
             </div>
@@ -29339,14 +27694,14 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request POST \
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/voucher-set-merchant-teams" \
+    "http://localhost/api/v1/admin/voucher-set-merchant-teams" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "X-Authorisation: JWT eyJ0eXAiOiJKV..." \
     --data "{
-    \"voucher_set_id\": \"cum\",
-    \"merchant_team_id\": 10
+    \"voucher_set_id\": \"voluptas\",
+    \"merchant_team_id\": 12
 }"
 </code></pre>                                        </div>
                                     </div>
@@ -29356,7 +27711,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/voucher-set-merchant-teams"
+    "http://localhost/api/v1/admin/voucher-set-merchant-teams"
 );
 
 const headers = {
@@ -29367,8 +27722,8 @@ const headers = {
 };
 
 let body = {
-    "voucher_set_id": "cum",
-    "merchant_team_id": 10
+    "voucher_set_id": "voluptas",
+    "merchant_team_id": 12
 };
 
 fetch(url, {
@@ -29383,7 +27738,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/voucher-set-merchant-teams';
+$url = 'http://localhost/api/v1/admin/voucher-set-merchant-teams';
 $response = $client-&gt;post(
     $url,
     [
@@ -29394,8 +27749,8 @@ $response = $client-&gt;post(
             'X-Authorisation' =&gt; 'JWT eyJ0eXAiOiJKV...',
         ],
         'json' =&gt; [
-            'voucher_set_id' =&gt; 'cum',
-            'merchant_team_id' =&gt; 10,
+            'voucher_set_id' =&gt; 'voluptas',
+            'merchant_team_id' =&gt; 12,
         ],
     ]
 );
@@ -29410,10 +27765,10 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/voucher-set-merchant-teams'
+url = 'http://localhost/api/v1/admin/voucher-set-merchant-teams'
 payload = {
-    "voucher_set_id": "cum",
-    "merchant_team_id": 10
+    "voucher_set_id": "voluptas",
+    "merchant_team_id": 12
 }
 headers = {
   'Authorization': 'Bearer {YOUR_API_TOKEN}',
@@ -29481,7 +27836,7 @@ response.json()</code></pre>                                        </div>
         </div>
 
         <div class="sl-relative">
-            <div title="https://vine.openfoodnetwork.org.au/api/v1/admin/voucher-set-merchant-teams"
+            <div title="http://localhost/api/v1/admin/voucher-set-merchant-teams"
                      class="sl-stack sl-stack--horizontal sl-stack--3 sl-inline-flex sl-flex-row sl-items-center sl-max-w-full sl-font-mono sl-py-2 sl-pr-4 sl-bg-canvas-50 sl-rounded-lg"
                 >
                                             <div class="sl-text-lg sl-font-semibold sl-px-2.5 sl-py-1 sl-text-on-primary sl-rounded-lg"
@@ -29491,7 +27846,7 @@ response.json()</code></pre>                                        </div>
                         </div>
                                         <div class="sl-flex sl-overflow-x-hidden sl-text-lg sl-select-all">
                         <div dir="rtl"
-                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">https://vine.openfoodnetwork.org.au</div>
+                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">http://localhost</div>
                         <div class="sl-flex-1 sl-font-semibold">/api/v1/admin/voucher-set-merchant-teams</div>
                     </div>
 
@@ -29499,7 +27854,7 @@ response.json()</code></pre>                                        </div>
                                  style="background-color: darkred"
                             >requires authentication
                             </div>
-                                                            </div>
+                                                                                    </div>
         </div>
 
         <p>Retrieve voucher set merchant teams.</p>
@@ -29520,7 +27875,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Authorization</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -29538,7 +27893,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Content-Type</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -29556,7 +27911,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Accept</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -29574,7 +27929,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">X-Authorisation</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -29602,7 +27957,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">cached</div>
                                             <span class="sl-truncate sl-text-muted">boolean</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Request the response to be cached. Default: <code>true</code>.</p>
         </div>
@@ -29624,7 +27979,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">page</div>
                                             <span class="sl-truncate sl-text-muted">integer</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The pagination page number.</p>
         </div>
@@ -29646,7 +28001,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">limit</div>
                                             <span class="sl-truncate sl-text-muted">integer</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The number of entries returned per pagination page.</p>
         </div>
@@ -29668,7 +28023,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">fields</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Comma-separated list of database fields to return within the object.</p>
         </div>
@@ -29690,7 +28045,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">orderBy</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Order the data by a given field. Comma-separated string.</p>
         </div>
@@ -29712,7 +28067,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">orderBy[]</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Compound <code>orderBy</code>. Order the data by a given field. Comma-separated string. Can not be used in conjunction as standard <code>orderBy</code>.</p>
         </div>
@@ -29734,7 +28089,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">where</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Filter the request on a single field. Key-Value or Key-Operator-Value comma-separated string.</p>
         </div>
@@ -29756,7 +28111,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">where[]</div>
                                             <span class="sl-truncate sl-text-muted">comma-separated</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Compound <code>where</code>. Use when you need to filter on multiple <code>where</code>'s. Note only AND is possible; ORWHERE is not available.</p>
         </div>
@@ -29803,7 +28158,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request GET \
-    --get "https://vine.openfoodnetwork.org.au/api/v1/admin/voucher-set-merchant-teams?cached=1&amp;page=1&amp;limit=50&amp;fields=id%2Ccreated_at&amp;orderBy=orderBy%3Did%2Cdesc&amp;orderBy%5B%5D=orderBy%5B%5D%3Did%2Cdesc%26orderBy%5B%5D%3Dcreated_at%2Casc&amp;where=where%3Did%2Clike%2C%2A550e%2A&amp;where%5B%5D=where%5B%5D%3Did%2Clike%2C%2A550e%2A%26where%5B%5D%3Dcreated_at%2C%3E%3D%2C2024-01-01" \
+    --get "http://localhost/api/v1/admin/voucher-set-merchant-teams?cached=1&amp;page=1&amp;limit=50&amp;fields=id%2Ccreated_at&amp;orderBy=orderBy%3Did%2Cdesc&amp;orderBy%5B%5D=orderBy%5B%5D%3Did%2Cdesc%26orderBy%5B%5D%3Dcreated_at%2Casc&amp;where=where%3Did%2Clike%2C%2A550e%2A&amp;where%5B%5D=where%5B%5D%3Did%2Clike%2C%2A550e%2A%26where%5B%5D%3Dcreated_at%2C%3E%3D%2C2024-01-01" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -29815,7 +28170,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/voucher-set-merchant-teams"
+    "http://localhost/api/v1/admin/voucher-set-merchant-teams"
 );
 
 const params = {
@@ -29849,7 +28204,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/voucher-set-merchant-teams';
+$url = 'http://localhost/api/v1/admin/voucher-set-merchant-teams';
 $response = $client-&gt;get(
     $url,
     [
@@ -29882,7 +28237,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/voucher-set-merchant-teams'
+url = 'http://localhost/api/v1/admin/voucher-set-merchant-teams'
 params = {
   'cached': '1',
   'page': '1',
@@ -29959,7 +28314,7 @@ response.json()</code></pre>                                        </div>
         </div>
 
         <div class="sl-relative">
-            <div title="https://vine.openfoodnetwork.org.au/api/v1/admin/voucher-set-merchant-teams/{id}"
+            <div title="http://localhost/api/v1/admin/voucher-set-merchant-teams/{id}"
                      class="sl-stack sl-stack--horizontal sl-stack--3 sl-inline-flex sl-flex-row sl-items-center sl-max-w-full sl-font-mono sl-py-2 sl-pr-4 sl-bg-canvas-50 sl-rounded-lg"
                 >
                                             <div class="sl-text-lg sl-font-semibold sl-px-2.5 sl-py-1 sl-text-on-primary sl-rounded-lg"
@@ -29969,7 +28324,7 @@ response.json()</code></pre>                                        </div>
                         </div>
                                         <div class="sl-flex sl-overflow-x-hidden sl-text-lg sl-select-all">
                         <div dir="rtl"
-                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">https://vine.openfoodnetwork.org.au</div>
+                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">http://localhost</div>
                         <div class="sl-flex-1 sl-font-semibold">/api/v1/admin/voucher-set-merchant-teams/{id}</div>
                     </div>
 
@@ -29977,7 +28332,7 @@ response.json()</code></pre>                                        </div>
                                  style="background-color: darkred"
                             >requires authentication
                             </div>
-                                                            </div>
+                                                                                    </div>
         </div>
 
         <p>Retrieve a single resource.</p>
@@ -29998,7 +28353,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Authorization</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -30016,7 +28371,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Content-Type</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -30034,7 +28389,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Accept</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -30052,7 +28407,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">X-Authorisation</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -30078,9 +28433,11 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">id</div>
                                             <span class="sl-truncate sl-text-muted">integer</span>
                                     </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
+                                            <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                        <div class="sl-flex sl-items-center">
+                                                            <span class="sl-ml-2 sl-text-warning">required</span>
+                                                                                </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>ID of the resource.</p>
         </div>
@@ -30110,7 +28467,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">cached</div>
                                             <span class="sl-truncate sl-text-muted">boolean</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Request the response to be cached. Default: <code>true</code>.</p>
         </div>
@@ -30132,7 +28489,7 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">fields</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>Comma-separated list of database fields to return within the object.</p>
         </div>
@@ -30179,7 +28536,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request GET \
-    --get "https://vine.openfoodnetwork.org.au/api/v1/admin/voucher-set-merchant-teams/1234?cached=1&amp;fields=id%2Ccreated_at" \
+    --get "http://localhost/api/v1/admin/voucher-set-merchant-teams/1234?cached=1&amp;fields=id%2Ccreated_at" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -30191,7 +28548,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/voucher-set-merchant-teams/1234"
+    "http://localhost/api/v1/admin/voucher-set-merchant-teams/1234"
 );
 
 const params = {
@@ -30219,7 +28576,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/voucher-set-merchant-teams/1234';
+$url = 'http://localhost/api/v1/admin/voucher-set-merchant-teams/1234';
 $response = $client-&gt;get(
     $url,
     [
@@ -30246,7 +28603,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/voucher-set-merchant-teams/1234'
+url = 'http://localhost/api/v1/admin/voucher-set-merchant-teams/1234'
 params = {
   'cached': '1',
   'fields': 'id,created_at',
@@ -30331,7 +28688,7 @@ response.json()</code></pre>                                        </div>
         </div>
 
         <div class="sl-relative">
-            <div title="https://vine.openfoodnetwork.org.au/api/v1/admin/voucher-set-merchant-teams/{id}"
+            <div title="http://localhost/api/v1/admin/voucher-set-merchant-teams/{id}"
                      class="sl-stack sl-stack--horizontal sl-stack--3 sl-inline-flex sl-flex-row sl-items-center sl-max-w-full sl-font-mono sl-py-2 sl-pr-4 sl-bg-canvas-50 sl-rounded-lg"
                 >
                                             <div class="sl-text-lg sl-font-semibold sl-px-2.5 sl-py-1 sl-text-on-primary sl-rounded-lg"
@@ -30341,7 +28698,7 @@ response.json()</code></pre>                                        </div>
                         </div>
                                         <div class="sl-flex sl-overflow-x-hidden sl-text-lg sl-select-all">
                         <div dir="rtl"
-                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">https://vine.openfoodnetwork.org.au</div>
+                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">http://localhost</div>
                         <div class="sl-flex-1 sl-font-semibold">/api/v1/admin/voucher-set-merchant-teams/{id}</div>
                     </div>
 
@@ -30349,7 +28706,7 @@ response.json()</code></pre>                                        </div>
                                  style="background-color: darkred"
                             >requires authentication
                             </div>
-                                                            </div>
+                                                                                    </div>
         </div>
 
         <p>Remove a voucher set team merchant association. {id} is the DB resource for the association.</p>
@@ -30370,7 +28727,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Authorization</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -30388,7 +28745,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Content-Type</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -30406,7 +28763,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">Accept</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -30424,7 +28781,7 @@ response.json()</code></pre>                                        </div>
                                         <div class="sl-flex sl-items-baseline sl-text-base">
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">X-Authorisation</div>
                                     </div>
-                                    </div>
+                                        </div>
                                             <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
@@ -30450,9 +28807,11 @@ response.json()</code></pre>                                        </div>
                     <div class="sl-font-mono sl-font-semibold sl-mr-2">id</div>
                                             <span class="sl-truncate sl-text-muted">string</span>
                                     </div>
-                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
-                    <span class="sl-ml-2 sl-text-warning">required</span>
-                                    </div>
+                                            <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                        <div class="sl-flex sl-items-center">
+                                                            <span class="sl-ml-2 sl-text-warning">required</span>
+                                                                                </div>
+                                        </div>
                 <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
             <p>The ID of the voucher set merchant team.</p>
         </div>
@@ -30460,7 +28819,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        ea
+                        quis
                     </div>
                 </div>
             </div>
@@ -30501,7 +28860,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request DELETE \
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/voucher-set-merchant-teams/ea" \
+    "http://localhost/api/v1/admin/voucher-set-merchant-teams/quis" \
     --header "Authorization: Bearer {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -30513,7 +28872,7 @@ response.json()</code></pre>                                        </div>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "https://vine.openfoodnetwork.org.au/api/v1/admin/voucher-set-merchant-teams/ea"
+    "http://localhost/api/v1/admin/voucher-set-merchant-teams/quis"
 );
 
 const headers = {
@@ -30534,7 +28893,7 @@ fetch(url, {
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/voucher-set-merchant-teams/ea';
+$url = 'http://localhost/api/v1/admin/voucher-set-merchant-teams/quis';
 $response = $client-&gt;delete(
     $url,
     [
@@ -30557,7 +28916,7 @@ print_r(json_decode((string) $body));</code></pre>                              
                                             <pre><code class="language-python">import requests
 import json
 
-url = 'https://vine.openfoodnetwork.org.au/api/v1/admin/voucher-set-merchant-teams/ea'
+url = 'http://localhost/api/v1/admin/voucher-set-merchant-teams/quis'
 headers = {
   'Authorization': 'Bearer {YOUR_API_TOKEN}',
   'Content-Type': 'application/json',
