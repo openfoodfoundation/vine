@@ -62,16 +62,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.369.10",
+            "version": "3.369.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "e179090bf2d658be7be37afc146111966ba6f41b"
+                "reference": "014c521eae8eeb1f9562cb512523b17cd6c1bec7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/e179090bf2d658be7be37afc146111966ba6f41b",
-                "reference": "e179090bf2d658be7be37afc146111966ba6f41b",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/014c521eae8eeb1f9562cb512523b17cd6c1bec7",
+                "reference": "014c521eae8eeb1f9562cb512523b17cd6c1bec7",
                 "shasum": ""
             },
             "require": {
@@ -153,9 +153,9 @@
             "support": {
                 "forum": "https://github.com/aws/aws-sdk-php/discussions",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.369.10"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.369.11"
             },
-            "time": "2026-01-09T19:08:12+00:00"
+            "time": "2026-01-12T19:14:19+00:00"
         },
         {
             "name": "bacon/bacon-qr-code",
@@ -5288,16 +5288,16 @@
         },
         {
             "name": "spatie/flare-client-php",
-            "version": "2.9.0",
+            "version": "2.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/flare-client-php.git",
-                "reference": "0853600a2c1a82d9739a9f3281d9f4ae67ebd956"
+                "reference": "fbc91dd304edc65ba381404821ce38794d98af3b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/flare-client-php/zipball/0853600a2c1a82d9739a9f3281d9f4ae67ebd956",
-                "reference": "0853600a2c1a82d9739a9f3281d9f4ae67ebd956",
+                "url": "https://api.github.com/repos/spatie/flare-client-php/zipball/fbc91dd304edc65ba381404821ce38794d98af3b",
+                "reference": "fbc91dd304edc65ba381404821ce38794d98af3b",
                 "shasum": ""
             },
             "require": {
@@ -5345,7 +5345,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/flare-client-php/issues",
-                "source": "https://github.com/spatie/flare-client-php/tree/2.9.0"
+                "source": "https://github.com/spatie/flare-client-php/tree/2.10.0"
             },
             "funding": [
                 {
@@ -5353,7 +5353,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-01-08T11:51:56+00:00"
+            "time": "2026-01-12T15:59:08+00:00"
         },
         {
             "name": "spatie/laravel-error-share",
@@ -10955,5 +10955,5 @@
         "ext-imagick": "*"
     },
     "platform-dev": {},
-    "plugin-api-version": "2.9.0"
+    "plugin-api-version": "2.6.0"
 }
