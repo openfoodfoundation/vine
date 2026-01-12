@@ -52,9 +52,28 @@ To run tests locally, do the following:
 - `./vendor/bin/phpunit` or
 - `php artisan test`
 
+### Contributing policies
+
+Create a PR for your feature branch to be merged into `develop`. 
+To increase the chances that your pull request is swiftly accepted please have a look at our guide to [making a great pull request](https://github.com/openfoodfoundation/openfoodnetwork/wiki/Making-a-great-pull-request) (note that this guide is for a ruby project, but most principles should still apply. 
+
+TL;DR:
+* Write tests
+* Make sure the whole test suite is passing
+* Keep your PR small, with a single focus
+* Maintain a clean commit history
+* Use a style consistent with the rest of the codebase
+* Before submitting, rebase your work on the current develop branch
+* After submitting, be sure to check the CI test results. Click on a ❌ result to view the logged results and investigate.
+
+From here, your pull request will progress through the Review, Test, Merge & Deploy process.
+
 ### Deployment policies
 
-All pushes to develop and main branches will run the app through GitHub Actions. If the tests pass, the system will deploy the app using the configured deployment tool.
+All pushes to `develop` and `main` branches will run the app through GitHub Actions. If the tests pass, the system will deploy the app using the configured deployment tool, [envoyer](https://envoyer.io/).
+* `develop` -> staging
+* `main` -> production
+
 
 ## API documentation
 
@@ -78,11 +97,6 @@ Our goal is to create a welcoming and inclusive environment for everyone who par
 ### Acknowledgement
 
 By participating in this project, you agree to adhere to this code of conduct.
-
-## Contributing policies
-
-TODO 
-
 
 ## Release note collation
 
