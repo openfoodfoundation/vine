@@ -8,7 +8,7 @@
 
 # Open Food Foundation VINE: Vouchers Integration Engine
 
-VINE is a voucher management platform owned & managed by the Open Food Foundation. It is a Laravel application, leveraging the power of Vue3 and TailwindCSS.
+VINE is a voucher management platform owned & managed by the Open Food Foundation. It is a Laravel application, leveraging the power of Vue3 and TailwindCSS
 
 ## Developer initial setup
 
