@@ -20,8 +20,8 @@
         "sentry/sentry-laravel": "^4.7",
         "simplesoftwareio/simple-qrcode": "*",
         "spatie/laravel-flare": "^2.0.3",
-        "symfony/http-client": "^7.1",
-        "symfony/mailgun-mailer": "^7.1",
+        "symfony/http-client": "^8.0.5",
+        "symfony/mailgun-mailer": "^v8.0.0",
         "tightenco/ziggy": "^2.0"
     },
     "require-dev": {
@@ -31,7 +31,7 @@
         "laravel/sail": "^1.26",
         "mockery/mockery": "^1.6",
         "nunomaduro/collision": "^8.0",
-        "phpunit/phpunit": "^12.3.6"
+        "phpunit/phpunit": "^12.5.11"
     },
     "autoload": {
         "psr-4": {
