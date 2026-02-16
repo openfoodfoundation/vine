@@ -15,7 +15,7 @@ class VoucherServiceTest extends TestCase
     use RefreshDatabase;
 
     /**
-     * @see \App\Services\VoucherService::findUniqueShortCodeForVoucher()
+     * @see VoucherService::findUniqueShortCodeForVoucher()
      */
     #[Test]
     public function findUniqueShortCodeForVoucherReturnsCorrectlyFormattedShortCodes(): void
@@ -36,7 +36,7 @@ class VoucherServiceTest extends TestCase
     }
 
     /**
-     * @see \App\Services\VoucherService::findUniqueShortCodeForVoucher()
+     * @see VoucherService::findUniqueShortCodeForVoucher()
      */
     #[Test]
     public function findUniqueShortCodeForVoucherReturnsUniqueCode(): void
@@ -48,7 +48,7 @@ class VoucherServiceTest extends TestCase
     }
 
     /**
-     * @see \App\Services\VoucherService::findUniqueShortCodeForVoucher()
+     * @see VoucherService::findUniqueShortCodeForVoucher()
      */
     #[Test]
     public function findUniqueShortCodeForVoucherAvoidsExistingCodes(): void
@@ -66,7 +66,7 @@ class VoucherServiceTest extends TestCase
     }
 
     /**
-     * @see \App\Services\VoucherService::findUniqueShortCodeForVoucher()
+     * @see VoucherService::findUniqueShortCodeForVoucher()
      */
     #[Test]
     public function findUniqueShortCodeForVoucherGeneratesMultipleUniqueCodes(): void
@@ -89,7 +89,7 @@ class VoucherServiceTest extends TestCase
     }
 
     /**
-     * @see \App\Services\VoucherService::calculateVoucherAmountRedeemed()
+     * @see VoucherService::calculateVoucherAmountRedeemed()
      */
     #[Test]
     public function calculateVoucherAmountRedeemedReturnsZeroWhenNoRedemptions(): void
@@ -102,7 +102,7 @@ class VoucherServiceTest extends TestCase
     }
 
     /**
-     * @see \App\Services\VoucherService::calculateVoucherAmountRedeemed()
+     * @see VoucherService::calculateVoucherAmountRedeemed()
      */
     #[Test]
     public function calculateVoucherAmountRedeemedReturnsSumOfSingleRedemption(): void
@@ -120,7 +120,7 @@ class VoucherServiceTest extends TestCase
     }
 
     /**
-     * @see \App\Services\VoucherService::calculateVoucherAmountRedeemed()
+     * @see VoucherService::calculateVoucherAmountRedeemed()
      */
     #[Test]
     public function calculateVoucherAmountRedeemedReturnsSumOfMultipleRedemptions(): void
@@ -148,7 +148,7 @@ class VoucherServiceTest extends TestCase
     }
 
     /**
-     * @see \App\Services\VoucherService::calculateVoucherAmountRedeemed()
+     * @see VoucherService::calculateVoucherAmountRedeemed()
      */
     #[Test]
     public function calculateVoucherAmountRedeemedOnlyIncludesRedemptionsForSpecificVoucher(): void
@@ -177,7 +177,7 @@ class VoucherServiceTest extends TestCase
     }
 
     /**
-     * @see \App\Services\VoucherService::calculateVoucherAmountRemaining()
+     * @see VoucherService::calculateVoucherAmountRemaining()
      */
     #[Test]
     public function calculateVoucherAmountRemainingReturnsFullValueWhenNoRedemptions(): void
@@ -192,7 +192,7 @@ class VoucherServiceTest extends TestCase
     }
 
     /**
-     * @see \App\Services\VoucherService::calculateVoucherAmountRemaining()
+     * @see VoucherService::calculateVoucherAmountRemaining()
      */
     #[Test]
     public function calculateVoucherAmountRemainingReturnsCorrectAmountWithSingleRedemption(): void
@@ -212,7 +212,7 @@ class VoucherServiceTest extends TestCase
     }
 
     /**
-     * @see \App\Services\VoucherService::calculateVoucherAmountRemaining()
+     * @see VoucherService::calculateVoucherAmountRemaining()
      */
     #[Test]
     public function calculateVoucherAmountRemainingReturnsCorrectAmountWithMultipleRedemptions(): void
@@ -242,7 +242,7 @@ class VoucherServiceTest extends TestCase
     }
 
     /**
-     * @see \App\Services\VoucherService::calculateVoucherAmountRemaining()
+     * @see VoucherService::calculateVoucherAmountRemaining()
      */
     #[Test]
     public function calculateVoucherAmountRemainingReturnsZeroWhenFullyRedeemed(): void
@@ -267,7 +267,7 @@ class VoucherServiceTest extends TestCase
     }
 
     /**
-     * @see \App\Services\VoucherService::calculateVoucherAmountRemaining()
+     * @see VoucherService::calculateVoucherAmountRemaining()
      */
     #[Test]
     public function calculateVoucherAmountRemainingReturnsNegativeWhenOverRedeemed(): void
@@ -295,7 +295,7 @@ class VoucherServiceTest extends TestCase
     }
 
     /**
-     * @see \App\Services\VoucherService::updateVoucherAmountRemaining()
+     * @see VoucherService::updateVoucherAmountRemaining()
      */
     #[Test]
     public function updateVoucherAmountRemainingUpdatesVoucherSuccessfully(): void
@@ -319,7 +319,7 @@ class VoucherServiceTest extends TestCase
     }
 
     /**
-     * @see \App\Services\VoucherService::updateVoucherAmountRemaining()
+     * @see VoucherService::updateVoucherAmountRemaining()
      */
     #[Test]
     public function updateVoucherAmountRemainingThrowsExceptionWhenOverRedeemed(): void
@@ -343,7 +343,7 @@ class VoucherServiceTest extends TestCase
     }
 
     /**
-     * @see \App\Services\VoucherService::updateVoucherAmountRemaining()
+     * @see VoucherService::updateVoucherAmountRemaining()
      */
     #[Test]
     public function updateVoucherAmountRemainingDoesNotUpdateWhenNegative(): void
@@ -372,7 +372,7 @@ class VoucherServiceTest extends TestCase
     }
 
     /**
-     * @see \App\Services\VoucherService::collateVoucherAggregates()
+     * @see VoucherService::collateVoucherAggregates()
      */
     #[Test]
     public function collateVoucherAggregatesUpdatesAllFieldsCorrectly(): void
@@ -407,7 +407,7 @@ class VoucherServiceTest extends TestCase
     }
 
     /**
-     * @see \App\Services\VoucherService::collateVoucherAggregates()
+     * @see VoucherService::collateVoucherAggregates()
      */
     #[Test]
     public function collateVoucherAggregatesRemovesShortCodeWhenFullyRedeemed(): void
@@ -433,7 +433,7 @@ class VoucherServiceTest extends TestCase
     }
 
     /**
-     * @see \App\Services\VoucherService::collateVoucherAggregates()
+     * @see VoucherService::collateVoucherAggregates()
      */
     #[Test]
     public function collateVoucherAggregatesDoesNotUpdateRedemptionFieldsWhenNoRedemptions(): void
@@ -454,7 +454,7 @@ class VoucherServiceTest extends TestCase
     }
 
     /**
-     * @see \App\Services\VoucherService::collateVoucherAggregates()
+     * @see VoucherService::collateVoucherAggregates()
      */
     #[Test]
     public function collateVoucherAggregatesThrowsExceptionWhenOverRedeemed(): void
