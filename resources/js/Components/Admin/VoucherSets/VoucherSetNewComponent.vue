@@ -16,7 +16,6 @@ const processStarted = ref(false);
 const generating = ref(false);
 
 // Funding team
-const allFundingTeams = ref([]);
 const filteredFundingTeams = ref([]);
 const fundingTeamSearchQuery = ref('');
 const selectedFundingTeam = ref('');
@@ -47,9 +46,7 @@ const voucherSet = ref({
     funded_by_team_id: '',
     voucher_template_id: '',
     total_set_value: 0,
-    denominations: [
-
-    ],
+    denominations: [],
     expires_at: '',
     voucher_set_type: '',
 });
@@ -116,14 +113,6 @@ function denominationDelete(index) {
     }
 }
 
-function filterFundingTeams() {
-    if (fundingTeamSearchQuery.value.length) {
-        filteredFundingTeams.value = allFundingTeams.value.filter(team => team.name.toLowerCase().includes(fundingTeamSearchQuery.value));
-    } else {
-        filteredFundingTeams.value = allFundingTeams.value;
-    }
-}
-
 function filterMerchantTeams() {
     if (merchantTeamSearchQuery.value.length) {
         // Filters by name via search query
@@ -144,17 +133,30 @@ function filterServiceTeams() {
     }
 }
 
-function getFundingTeams() {
-    axios.get('/admin/teams').then(response => {
-        allFundingTeams.value = response.data.data.data;
-    }).catch(error => {
-        swal.fire({
-            icon: 'error',
-            title: 'Oops!',
-            text: error.response.data.meta.message,
+
+let fundingTeamSearchTimeout = null;
+
+function searchFundingTeams() {
+    clearTimeout(fundingTeamSearchTimeout);
+
+    if (!fundingTeamSearchQuery.value.length) {
+        filteredFundingTeams.value = [];
+        return;
+    }
+
+    fundingTeamSearchTimeout = setTimeout(() => {
+        axios.get('/admin/teams?cached=false&where[]=name,like,*' + fundingTeamSearchQuery.value + '*').then(response => {
+            filteredFundingTeams.value = response.data.data.data;
+        }).catch(error => {
+            swal.fire({
+                icon: 'error',
+                title: 'Oops!',
+                text: error.response.data.meta.message,
+            });
         });
-    });
+    }, 300);
 }
+
 
 function getMerchantTeamsForSelectedServiceTeam(selectedServiceTeam) {
     axios.get('/admin/team-merchant-teams?relations=merchantTeam&where[]=team_id,' + selectedServiceTeam.id).then(response => {
@@ -264,7 +266,13 @@ function totalDenominations() {
 
 function unselectMerchantTeam(index) {
     if (index > -1) {
+        const team = selectedMerchantTeams.value[index];
         selectedMerchantTeams.value.splice(index, 1);
+
+        const idIndex = voucherSet.value.merchant_team_ids.indexOf(team.id);
+        if (idIndex > -1) {
+            voucherSet.value.merchant_team_ids.splice(idIndex, 1);
+        }
     }
 }
 
@@ -278,7 +286,6 @@ function denominationValueUpdate(denomination) {
  * On mount
  */
 onMounted(() => {
-    getFundingTeams();
     getServiceTeams();
     getMyTeamVoucherTemplates();
     denominationAdd();
@@ -306,7 +313,7 @@ watch(voucherSet, () => {
 }, {deep: true})
 
 watch(fundingTeamSearchQuery, () => {
-    filterFundingTeams();
+    searchFundingTeams();
 })
 
 watch(merchantTeamSearchQuery, () => {
@@ -320,7 +327,6 @@ watch(serviceTeamSearchQuery, () => {
 watch(valueOfSetInCountryCurrency, (value) => {
     voucherSet.value.total_set_value = value * 100;
 });
-
 
 
 </script>
@@ -601,10 +607,11 @@ watch(valueOfSetInCountryCurrency, (value) => {
 
 
                     <div v-if="!selectedFundingTeam">
-                        <label for="service-team-search">
+                        <label for="funding-team-search">
                             Search for a funding team
-                            <input id="merchant-team-search" v-model="fundingTeamSearchQuery"
+                            <input id="funding-team-search" v-model="fundingTeamSearchQuery"
                                    class="block w-1/2 md:w-1/3"
+                                   placeholder="Filter funding teams.."
                                    type="search"/>
                         </label>
 
@@ -713,7 +720,7 @@ watch(valueOfSetInCountryCurrency, (value) => {
                                 {{ $props.auth.teamCountry?.currency_code }}
                             </div>
                             <div :class="{'text-red': allocationRemaining() < 0}">
-                                Remaining: {{ (allocationRemaining() / 100 ).toFixed(2) }}
+                                Remaining: {{ (allocationRemaining() / 100).toFixed(2) }}
                             </div>
 
                             <div>
@@ -736,7 +743,8 @@ watch(valueOfSetInCountryCurrency, (value) => {
                                         </div>
 
                                         <div>
-                                            <input v-model="denomination.colloquialCurrencyUnitValue" class="border rounded p-1"
+                                            <input v-model="denomination.colloquialCurrencyUnitValue"
+                                                   class="border rounded p-1"
                                                    @keyup="denominationValueUpdate(denomination)"
                                                    step="1"
                                                    type="number">
@@ -785,7 +793,7 @@ watch(valueOfSetInCountryCurrency, (value) => {
                                 - over budget -
                             </div>
                             <div v-else-if="allocationRemaining() > 0" class="text-xs text-green-500 mt-4">
-                                {{ (allocationRemaining() / 100 ).toFixed(2) }} remaining
+                                {{ (allocationRemaining() / 100).toFixed(2) }} remaining
                             </div>
                             <div v-else class="text-xs text-gray-500 mt-4">
                                 Voucher fully allocated
@@ -1073,7 +1081,8 @@ watch(valueOfSetInCountryCurrency, (value) => {
                                 <li v-for="denomination in voucherSet.denominations" class="font-bold">
                                     {{ denomination.number }} {{ denomination.number === 1 ? 'unit' : 'units' }}
                                     of
-                                    {{ denomination.colloquialCurrencyUnitValue }} {{ $props.auth.teamCountry?.currency_code }}
+                                    {{ denomination.colloquialCurrencyUnitValue }}
+                                    {{ $props.auth.teamCountry?.currency_code }}
                                 </li>
                             </ul>
                         </li>
