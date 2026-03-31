@@ -1,0 +1,1 @@
+import{B as e,E as t,N as n,h as r,l as i,v as a}from"./app-B32-iGYb.js";var o={class:`text-sm text-red-600`},s={__name:`InputError`,props:{message:{type:String}},setup(s){return(c,l)=>n((t(),a(`div`,null,[r(`p`,o,e(s.message),1)],512)),[[i,s.message]])}};export{s as t};
