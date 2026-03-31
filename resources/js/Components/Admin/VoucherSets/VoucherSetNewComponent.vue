@@ -145,7 +145,7 @@ function searchFundingTeams() {
     }
 
     fundingTeamSearchTimeout = setTimeout(() => {
-        axios.get('/admin/teams?cached=false&where[]=name,like,*' + fundingTeamSearchQuery.value + '*').then(response => {
+        axios.get('/admin/teams?cached=false&where[]=is_funder,1&where[]=name,like,*' + fundingTeamSearchQuery.value + '*').then(response => {
             filteredFundingTeams.value = response.data.data.data;
         }).catch(error => {
             swal.fire({

@@ -34,10 +34,12 @@ const invitingTeamUser = ref(false)
 const limit = ref(10)
 const newTeamName = ref('')
 const selectedCountryId = ref('')
+const isFunder = ref(false)
 const countries = ref({})
 const team = ref({
     name: '',
-    country_id: ''
+    country_id: '',
+    is_funder: false
 
 })
 const teamUsers = ref({})
@@ -80,6 +82,7 @@ function getTeam() {
         team.value = response.data.data
 
         selectedCountryId.value = team.value.country_id
+        isFunder.value = team.value.is_funder
 
         newTeamName.value = team.value.name
     }).catch(error => {
@@ -146,7 +149,8 @@ function updateTeam() {
 
     let payload = {
         name: newTeamName.value,
-        country_id: selectedCountryId.value
+        country_id: selectedCountryId.value,
+        is_funder: isFunder.value
     }
 
     if (team.value.country_id !== selectedCountryId.value) {
@@ -244,7 +248,17 @@ function updateTeam() {
                     </select>
                 </label>
             </div>
-            <div v-if="newTeamName !== team.name || selectedCountryId !== team.country_id" class="mt-8 flex justify-end">
+            <div class="flex justify-start items-center mt-4">
+                <label for="is_funder" class="w-full font-bold flex items-center gap-2">
+                    <input
+                        id="is_funder"
+                        type="checkbox"
+                        class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500"
+                        v-model="isFunder"/>
+                    Is Funder
+                </label>
+            </div>
+            <div v-if="newTeamName !== team.name || selectedCountryId !== team.country_id || isFunder !== team.is_funder" class="mt-8 flex justify-end">
                 <primary-button @click="updateTeam()">Update</primary-button>
             </div>
         </div>

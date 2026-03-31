@@ -13,7 +13,8 @@ const $props = defineProps({
 const countries = ref({})
 const team = ref({
     name: '',
-    country_id: ''
+    country_id: '',
+    is_funder: false
 })
 
 const emit = defineEmits([
@@ -84,6 +85,17 @@ function getCountries() {
                             {{ country.name }}
                         </option>
                     </select>
+                </label>
+            </div>
+
+            <div class="flex justify-start items-center mt-4">
+                <label class="w-full font-bold flex items-center gap-2" for="is_funder">
+                    <input
+                        id="is_funder"
+                        type="checkbox"
+                        class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500"
+                        v-model="team.is_funder"/>
+                    Is Funder
                 </label>
             </div>
         </div>

@@ -19,6 +19,7 @@ class TeamFactory extends Factory
         return [
             'name'       => fake()->company(),
             'country_id' => fake()->randomDigitNotNull(),
+            'is_funder'  => false,
         ];
     }
 }
