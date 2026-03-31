@@ -18,7 +18,6 @@ class Team extends Model
     protected $casts = [
         'is_funder' => 'boolean',
     ];
-
     protected $dispatchesEvents = [
         'created' => TeamWasCreated::class,
     ];
