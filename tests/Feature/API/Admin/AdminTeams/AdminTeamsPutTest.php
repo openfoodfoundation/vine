@@ -53,4 +53,26 @@ class AdminTeamsPutTest extends BaseAPITestCase
         $response->assertStatus(200);
         $this->assertEquals($payload['name'], $responseObj->data->name);
     }
+
+    #[Test]
+    public function itCanUpdateATeamIsFunder()
+    {
+        $this->user = $this->createAdminUser();
+
+        Sanctum::actingAs(
+            $this->user
+        );
+
+        $model = Team::factory()->create();
+
+        $payload = [
+            'is_funder' => true,
+        ];
+
+        $response    = $this->putJson($this->apiRoot . $this->endpoint . '/' . $model->id, $payload);
+        $responseObj = json_decode($response->getContent());
+
+        $response->assertStatus(200);
+        $this->assertTrue($responseObj->data->is_funder);
+    }
 }

@@ -15,6 +15,10 @@ class Team extends Model
     use HasFactory;
     use SoftDeletes;
 
+    protected $casts = [
+        'is_funder' => 'boolean',
+    ];
+
     protected $dispatchesEvents = [
         'created' => TeamWasCreated::class,
     ];

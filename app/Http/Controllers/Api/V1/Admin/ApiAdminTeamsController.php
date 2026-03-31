@@ -38,7 +38,7 @@ class ApiAdminTeamsController extends Controller
     public static array $searchableFields = [
         'id',
         'name',
-
+        'is_funder',
     ];
 
     /**
@@ -147,6 +147,12 @@ class ApiAdminTeamsController extends Controller
         description: 'The database countries.id of the team you are adding.',
         required   : true
     )]
+    #[BodyParam(
+        name       : 'is_funder',
+        type       : 'boolean',
+        description: 'Whether the team is a voucher set funder.',
+        required   : false
+    )]
     public function store(): JsonResponse
     {
         /**
@@ -162,7 +168,10 @@ class ApiAdminTeamsController extends Controller
                 'integer',
                 Rule::exists('countries', 'id'),
             ],
-
+            'is_funder' => [
+                'sometimes',
+                'boolean',
+            ],
         ];
 
         $validator = Validator::make($this->request->all(), $validationArray);
@@ -284,6 +293,12 @@ class ApiAdminTeamsController extends Controller
         description: 'The updated team country_id.',
         required   : false
     )]
+    #[BodyParam(
+        name       : 'is_funder',
+        type       : 'boolean',
+        description: 'Whether the team is a voucher set funder.',
+        required   : false
+    )]
     public function update(string $id)
     {
         /**
@@ -297,6 +312,10 @@ class ApiAdminTeamsController extends Controller
                 'sometimes',
                 'integer',
                 Rule::exists('countries', 'id'),
+            ],
+            'is_funder' => [
+                'sometimes',
+                'boolean',
             ],
         ];
 

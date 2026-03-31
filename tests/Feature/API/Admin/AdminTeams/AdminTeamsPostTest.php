@@ -49,4 +49,27 @@ class AdminTeamsPostTest extends BaseAPITestCase
         $response->assertStatus(200);
         $this->assertEquals($payload['name'], $responseObj->data->name);
     }
+
+    #[Test]
+    public function itCanStoreATeamWithIsFunder()
+    {
+        $this->user = $this->createAdminUser();
+
+        Sanctum::actingAs(
+            $this->user
+        );
+
+        $payload = [
+            'name'       => $this->faker->name(),
+            'country_id' => $this->faker->numberBetween(1, 200),
+            'is_funder'  => true,
+        ];
+
+        $response    = $this->postJson($this->apiRoot . $this->endpoint, $payload);
+        $responseObj = json_decode($response->getContent());
+
+        $response->assertStatus(200);
+        $this->assertEquals($payload['name'], $responseObj->data->name);
+        $this->assertTrue($responseObj->data->is_funder);
+    }
 }

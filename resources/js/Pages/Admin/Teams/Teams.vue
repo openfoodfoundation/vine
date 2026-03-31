@@ -54,6 +54,7 @@ function setDataPage(page) {
                                   #{{ team.id }}
                                 </span>
                                 {{ team.name }}
+                                <span v-if="team.is_funder" class="ml-2 text-xs font-medium bg-green-100 text-green-800 px-2 py-0.5 rounded-full">Funder</span>
                             </div>
                         </div>
                         <div >
