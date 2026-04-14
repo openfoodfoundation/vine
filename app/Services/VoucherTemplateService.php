@@ -23,7 +23,7 @@ class VoucherTemplateService
 
     public static function generateWorkingVoucherTemplate(VoucherTemplate $voucherTemplate): void
     {
-        $img1 = Image::read(public_path('img/example-qr.png')); // The QR
+        $img1 = Image::decode(public_path('img/example-qr.png')); // The QR
 
         $img1->resize($voucherTemplate->voucher_qr_size_px, $voucherTemplate->voucher_qr_size_px);
 
@@ -34,10 +34,10 @@ class VoucherTemplateService
 
         // open an image file
 
-        $img = Image::read($img);
+        $img = Image::decode($img);
 
         // and insert the QR code
-        $img->place($img1, 'top-left', $voucherTemplate->voucher_qr_x, $voucherTemplate->voucher_qr_y);
+        $img->insert($img1, $voucherTemplate->voucher_qr_x, $voucherTemplate->voucher_qr_y);
 
         $code = 'AB1234';
 
@@ -78,17 +78,17 @@ class VoucherTemplateService
         $img = Storage::get($voucherTemplate->voucher_template_path);
 
         // open an image file
-        $img = Image::read($img);
+        $img = Image::decode($img);
 
         $qrCodeData = Storage::get('voucher-sets/' . $voucher->voucher_set_id . '/vouchers/all/png/' . $voucher->id . '.png');
 
-        $qrCode = Image::read($qrCodeData); // The QR
+        $qrCode = Image::decode($qrCodeData); // The QR
         $qrCode->resize($voucherTemplate->voucher_qr_size_px, $voucherTemplate->voucher_qr_size_px);
 
         /**
          * Place the QR code
          */
-        $img->place($qrCode, 'top-left', $voucherTemplate->voucher_qr_x, $voucherTemplate->voucher_qr_y);
+        $img->insert($qrCode, $voucherTemplate->voucher_qr_x, $voucherTemplate->voucher_qr_y);
 
         if (!isset($voucher->voucher_short_code) || is_null($voucher->voucher_short_code)) {
             Log::error('generateVoucherTemplate: No voucher_short_code exists for voucher #' . $voucher->id);
@@ -255,7 +255,6 @@ class VoucherTemplateService
          * Clean up
          */
         $image->clear();
-        $image->destroy();
 
         /**
          * Ensure the PDF is generated
