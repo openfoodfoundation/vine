@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(php artisan test --filter=calculateVoucherAmountRemainingReturnsNegativeWhenOverRedeemed)",
+      "Bash(php artisan test tests/Unit/Services/VoucherServiceTest.php)",
+      "Bash(git status:*)",
+      "Bash(gh pr create:*)",
+      "Bash(git remote:*)",
+      "Bash(git push:*)",
+      "Bash(gh auth:*)",
+      "Bash(gh issue:*)",
+      "Bash(php artisan:*)",
+      "Bash(composer show:*)",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); pkgs=[p for p in d['packages'] if 'intervention/image' in p['name']]; [print\\(p['name'], p['version']\\) for p in pkgs]\")"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
